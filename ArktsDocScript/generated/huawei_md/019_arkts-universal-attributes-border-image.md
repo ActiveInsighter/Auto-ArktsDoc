@@ -1,4 +1,4 @@
-# 文档中心
+# borderImage
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image
 
 设置组件的图片边框样式。
@@ -32,12 +32,6 @@ borderImage(value: BorderImageOption): T
 
 ## BorderImageOption对象说明
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | source | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | [LinearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#lineargradient) | 否 | 是 | 边框图源或者渐变色设置。参数类型为string类型时，用于设置边框图源，引用方式请参考[加载图片资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-graphics-display#加载图片资源)。 **说明：** 边框图源仅适用于容器组件，如[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)、[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)，在非容器组件上使用会失效。 |
@@ -51,12 +45,6 @@ borderImage(value: BorderImageOption): T
 
 用于设置被切割的图片在边框上的重复方式。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Repeat | 0 | 被切割的图片会重复铺平在图片边框上，超出部分会被剪裁。 |
@@ -65,10 +53,6 @@ borderImage(value: BorderImageOption): T
 | Space | 3 | 被切割的图片会以整数次平铺在图片边框上，无法以整数次平铺时会以空白填充。 |
 
 ## LinearGradient
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -112,7 +96,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/YTglJKCrS-CRXM3RRbzBFQ/zh-cn_image_0000002531105760.png?HW-CC-KV=V1&HW-CC-Date=20260320T120222Z&HW-CC-Expire=86400&HW-CC-Sign=5625DD4F3CCB3E6B3AC780F29C673C6CDB0D6A22C3581ED96B97884ABE12FB0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/YTglJKCrS-CRXM3RRbzBFQ/zh-cn_image_0000002531105760.png?HW-CC-KV=V1&HW-CC-Date=20260320T122150Z&HW-CC-Expire=86400&HW-CC-Sign=5544243E4CBCA1F1D5DDB51FD906A1B9D8B5F7BC1AEB60C1ECE27F4BBC608907)
 
 ### 示例2（动态调整属性值）
 
@@ -205,7 +189,7 @@ struct BorderImage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/odAMBQ77T7u5yLIaSbg0qQ/zh-cn_image_0000002531225694.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120222Z&HW-CC-Expire=86400&HW-CC-Sign=3FB1684253826E20AE5DF28E9CC34AE83C8CC0A87300B9B595C8F6BE0CA0FED6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/odAMBQ77T7u5yLIaSbg0qQ/zh-cn_image_0000002531225694.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122150Z&HW-CC-Expire=86400&HW-CC-Sign=3E2B91D6605FAA3DC3DF22438E15FB202A8E997A6D54FF3B0469AC69C3EA0ECA)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
@@ -354,4 +338,4 @@ struct BorderImage {
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/RS06tC-pT3qhV4D1_eh6cQ/zh-cn_image_0000002562025677.png?HW-CC-KV=V1&HW-CC-Date=20260320T120222Z&HW-CC-Expire=86400&HW-CC-Sign=6A423B6139FEE3267393B9318FCD2441591D3BFE999C42770DB077455465E4F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/RS06tC-pT3qhV4D1_eh6cQ/zh-cn_image_0000002562025677.png?HW-CC-KV=V1&HW-CC-Date=20260320T122150Z&HW-CC-Expire=86400&HW-CC-Sign=E714CC8F5A6E130A7C41CAD0ED81BBE7A0AAB3A93400AAC27B55F6957D69BE9E)

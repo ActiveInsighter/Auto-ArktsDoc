@@ -1,4 +1,4 @@
-# 文档中心
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-rowsplit
 
 将子组件横向布局，并在每个子组件之间插入纵向分割线。
@@ -29,17 +29,15 @@ RowSplit()
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 > **说明**
-> RowSplit组件[形状裁剪](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping)的默认值为true。
+> RowSplit组件
+> 形状裁剪
+> 的默认值为true。
 
 ### resizeable
 
 resizeable(value: boolean)
 
 设置分割线是否可拖拽。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
@@ -79,4 +77,4 @@ struct RowSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/WtgzVWkfR527zIKUoApQNw/zh-cn_image_0000002562145759.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120233Z&HW-CC-Expire=86400&HW-CC-Sign=BBE2FB51156C6A9F54B8E72538920FA5EB8B265D08DC1DDCA3D757EE34B5804C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/WtgzVWkfR527zIKUoApQNw/zh-cn_image_0000002562145759.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122200Z&HW-CC-Expire=86400&HW-CC-Sign=10000AC29CB06B69E7B16D72683C151BE55BEB8A3BF5B90077A42CA8180BD482)

@@ -1,4 +1,4 @@
-# ContextMenu-菜单-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# ContextMenu.close(deprecated)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-menu
 
 在页面范围内关闭通过[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu12)属性绑定的菜单。
@@ -13,9 +13,20 @@ static close()
 可以通过该方法在页面范围内关闭通过[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu12)为组件绑定的菜单。
 
 > **说明**
-> 从API version 18开始废弃，建议使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getContextMenuController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getcontextmenucontroller12)获取[ContextMenuController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-contextmenucontroller)实例，再通过此实例调用替代方法[close](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-contextmenucontroller#close12)。
->
-> 从API version 12开始，可以通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getContextMenuController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getcontextmenucontroller12)来明确UI的执行上下文。
+> 从API version 18开始废弃，建议使用
+> UIContext
+> 中的
+> getContextMenuController
+> 获取
+> ContextMenuController
+> 实例，再通过此实例调用替代方法
+> close
+> 。
+> 从API version 12开始，可以通过使用
+> UIContext
+> 中的
+> getContextMenuController
+> 来明确UI的执行上下文。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -26,9 +37,14 @@ static close()
 该示例为ContextMenu.close关闭通过bindContextMenu属性绑定的菜单。
 
 > **说明**
-> 推荐通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getContextMenuController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getcontextmenucontroller12)来明确UI的执行上下文。
+> 推荐通过使用
+> UIContext
+> 中的
+> getContextMenuController
+> 来明确UI的执行上下文。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct Index {
@@ -43,7 +59,6 @@ struct Index {
     .width(200)
     .height(160)
   }
-
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Column() {
@@ -56,8 +71,8 @@ struct Index {
       }
       .bindContextMenu(this.MenuBuilder, ResponseType.LongPress)
       .onDragStart(()=>{
-
-        ContextMenu.close()
+        // 拖拽时关闭菜单
+        ContextMenu.close() // 建议使用 this.getUIContext().getContextMenuController().close()
       })
     }
     .width('100%')
@@ -66,4 +81,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/OUw_hIAcQyqlZ24KgEX4eg/zh-cn_image_0000002531106254.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120356Z&HW-CC-Expire=86400&HW-CC-Sign=85F3DE332D243B441085D9CD7FE26C04585A66B1CE6BE20EBE6C562EA27BCAFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/OUw_hIAcQyqlZ24KgEX4eg/zh-cn_image_0000002531106254.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122323Z&HW-CC-Expire=86400&HW-CC-Sign=426838516A02C788B20B28BA62D8C9DB6EE796719CA0B7BCFEABB12A5005E7B9)

@@ -1,28 +1,12 @@
-# 文档中心
+# arkts container scroll
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll
-
-javascript:void(0);
-
-简体中文
 
 - 简体中文
 - English
 - Русский
 
-[下载 App](https://developer.huawei.com/consumer/cn/huawei-app/)
+- 智能客服你问我答，随时在线为你解决问题
 
-https://developer.huawei.com/consumer/cn/
+- 合作咨询我们的专家服务团队将竭诚为您提供专业的合作咨询服务
 
-[文档](https://developer.huawei.com/consumer/cn/doc/) [管理中心](https://developer.huawei.com/consumer/cn/console)
-
-在 API参考 中进行搜索
-
-只在 中搜索 只搜索章节标题
-
-请输入您想要搜索的关键词
-
-- 智能客服 你问我答，随时在线为你解决问题
-
-- 合作咨询 我们的专家服务团队将竭诚为您提供专业的合作咨询服务
-
-- 解决方案 精准高效的一站式服务支持，助力开发者商业成功
+- 解决方案精准高效的一站式服务支持，助力开发者商业成功

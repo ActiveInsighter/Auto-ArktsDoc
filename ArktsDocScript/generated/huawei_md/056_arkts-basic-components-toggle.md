@@ -1,4 +1,4 @@
-# Toggle-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle
 
 组件提供勾选框样式、状态按钮样式和开关样式。
@@ -37,8 +37,6 @@ Toggle的信息。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type8+ | [ToggleType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle#toggletype枚举说明) | 否 | 否 | 开关的样式。 默认值：ToggleType.Switch **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -47,12 +45,6 @@ Toggle的信息。
 ## ToggleType枚举说明
 
 Toggle的样式。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -70,14 +62,6 @@ selectedColor(value: ResourceColor)
 
 设置组件在打开状态下的背景颜色。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 组件打开状态的背景颜色。 默认值： 当ToggleType为Switch时，默认值为$r('sys.color.ohos_id_color_emphasize')。 当ToggleType为Checkbox时，默认值为$r('sys.color.ohos_id_color_emphasize')。 当ToggleType为Button时，默认值为$r('sys.color.ohos_id_color_emphasize')混合$r('sys.float.ohos_id_alpha_highlight_bg')的透明度。 |
@@ -87,14 +71,6 @@ selectedColor(value: ResourceColor)
 switchPointColor(color: ResourceColor)
 
 设置Switch类型的圆形滑块颜色。仅当type为ToggleType.Switch生效。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -108,10 +84,6 @@ switchStyle(value: SwitchStyle)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [SwitchStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle#switchstyle12对象说明) | 是 | Switch样式风格。 |
@@ -122,12 +94,6 @@ contentModifier(modifier: ContentModifier<ToggleConfiguration>)
 
 定制Toggle内容区的方法。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | [ContentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#contentmodifiert)[<ToggleConfiguration>](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle#toggleconfiguration12对象说明) | 是 | 在Toggle组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -135,10 +101,6 @@ contentModifier(modifier: ContentModifier<ToggleConfiguration>)
 ## SwitchStyle12+对象说明
 
 Switch类型的样式。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -157,14 +119,6 @@ onChange(callback: (isOn: boolean) => void)
 
 开关状态切换时触发该事件。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isOn | boolean | 是 | 开关的状态。 true：状态从关切换为开；false：状态从开切换为关。 |
@@ -172,10 +126,6 @@ onChange(callback: (isOn: boolean) => void)
 ## ToggleConfiguration12+对象说明
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -190,6 +140,7 @@ onChange(callback: (isOn: boolean) => void)
 该示例通过配置ToggleType设置Toggle的勾选框样式、状态按钮样式及开关样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ToggleExample {
@@ -203,7 +154,6 @@ struct ToggleExample {
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn);
           })
-
         Toggle({ type: ToggleType.Switch, isOn: true })
           .selectedColor('#007DFF')
           .switchPointColor('#FFFFFF')
@@ -211,7 +161,6 @@ struct ToggleExample {
             console.info('Component status:' + isOn);
           })
       }
-
       Text('type: Checkbox').fontSize(12).fontColor(0xcccccc).width('90%')
       Flex({ justifyContent: FlexAlign.SpaceEvenly, alignItems: ItemAlign.Center }) {
         Toggle({ type: ToggleType.Checkbox, isOn: false })
@@ -220,7 +169,6 @@ struct ToggleExample {
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn);
           })
-
         Toggle({ type: ToggleType.Checkbox, isOn: true })
           .size({ width: 20, height: 20 })
           .selectedColor('#007DFF')
@@ -228,7 +176,6 @@ struct ToggleExample {
             console.info('Component status:' + isOn);
           })
       }
-
       Text('type: Button').fontSize(12).fontColor(0xcccccc).width('90%')
       Flex({ justifyContent: FlexAlign.SpaceEvenly, alignItems: ItemAlign.Center }) {
         Toggle({ type: ToggleType.Button, isOn: false }) {
@@ -238,7 +185,6 @@ struct ToggleExample {
         .onChange((isOn: boolean) => {
           console.info('Component status:' + isOn);
         })
-
         Toggle({ type: ToggleType.Button, isOn: true }) {
           Text('status button').fontColor('#182431').fontSize(12)
         }.width(106)
@@ -252,13 +198,14 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pxfYoCM9RYC1HEE41kU23A/zh-cn_image_0000002562025863.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120300Z&HW-CC-Expire=86400&HW-CC-Sign=CEC06A12DCFD7E283CA464D1E8CDA65AF5AD3041782C4CAF0C852F3719FA8930)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pxfYoCM9RYC1HEE41kU23A/zh-cn_image_0000002562025863.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=97FC152A85B6CF1F4836B89CE7AFDE5B3EB2E4DF6FBE4C3BA9C6B5B131012A58)
 
 ### 示例2（自定义开关类型的样式）
 
 该示例实现了自定义设置Toggle组件Switch样式，包括圆形滑块半径、关闭状态的背景颜色、圆形滑块颜色、滑轨的圆角。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ToggleExample {
@@ -276,7 +223,6 @@ struct ToggleExample {
           .onChange((isOn: boolean) => {
             console.info('Component status:' + isOn);
           })
-
         Toggle({ type: ToggleType.Switch, isOn: true })
           .selectedColor('#007DFF')
           .switchStyle({
@@ -293,27 +239,25 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/48XfsHmvTt63VBWf8hrZNA/zh-cn_image_0000002562145849.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120300Z&HW-CC-Expire=86400&HW-CC-Sign=B1C1805617305E0D038997216A364CFD088B8EAC84394C10A78A26C65AF6A9A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/48XfsHmvTt63VBWf8hrZNA/zh-cn_image_0000002562145849.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=A05BC23D937174B59354C3F97DB5D4E2FED4C7D71C6F6F2CB3148A3B53D4AD1D)
 
 ### 示例3（自定义Toggle样式）
 
 该示例实现自定义Toggle样式，通过按钮切换圆形背景颜色：点击蓝圆按钮，背景变蓝色；点击黄圆按钮，背景变黄色。
 
 ```typescript
+// xxx.ets
 class MySwitchStyle implements ContentModifier<ToggleConfiguration> {
   selectedColor: Color = Color.White;
   lamp: string = 'string';
-
   constructor(selectedColor: Color, lamp: string) {
     this.selectedColor = selectedColor;
     this.lamp = lamp;
   }
-
   applyContent(): WrappedBuilder<[ToggleConfiguration]> {
     return wrapBuilder(buildSwitch);
   }
 }
-
 @Builder
 function buildSwitch(config: ToggleConfiguration) {
   Column({ space: 50 }) {
@@ -331,7 +275,6 @@ function buildSwitch(config: ToggleConfiguration) {
     }
   }
 }
-
 @Entry
 @Component
 struct Index {
@@ -348,4 +291,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/teRr8ZziQA-hyiewS-ROtQ/zh-cn_image_0000002531105948.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120300Z&HW-CC-Expire=86400&HW-CC-Sign=F5B913826DD87154504535A4559997E7C43D6150158C6260DEBA4BA566AA2F27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/teRr8ZziQA-hyiewS-ROtQ/zh-cn_image_0000002531105948.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=7587AB31DB6B8C09F60263DEA0AD4DA47F1BA510C69C9B8F2C0BFB188E732645)

@@ -1,4 +1,4 @@
-# Badge-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge
 
 信息标记组件，可以附加在单个组件上用于信息提醒的容器组件。
@@ -11,10 +11,16 @@
 支持单个子组件。
 
 > **说明**
-> - 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)）。
-> - 自定义组件宽高默认为0，需要给其设置宽高，否则标记组件将不显示。
-> - 当存在多个子组件时，只有最后一个子组件会在界面上显示，但其余子组件的状态更新仍会使Badge及其子组件重新布局渲染。
-> - 不影响子组件布局，即不会主动规避子组件内容。
+> 子组件类型：系统组件和自定义组件，支持渲染控制类型（
+> if/else
+> 、
+> ForEach
+> 和
+> LazyForEach
+> ）。
+> 自定义组件宽高默认为0，需要给其设置宽高，否则标记组件将不显示。
+> 当存在多个子组件时，只有最后一个子组件会在界面上显示，但其余子组件的状态更新仍会使Badge及其子组件重新布局渲染。
+> 不影响子组件布局，即不会主动规避子组件内容。
 
 ## 接口
 
@@ -36,21 +42,11 @@ Badge(value: BadgeParamWithNumber)
 | --- | --- | --- | --- |
 | value | [BadgeParamWithNumber](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge#badgeparamwithnumber对象说明) | 是 | 数字标记组件参数。 |
 
-### Badge
-
 Badge(value: BadgeParamWithString)
 
 根据字符串创建标记组件。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 从API version 12开始，该组件显隐时支持scale动效。
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -59,12 +55,6 @@ Badge(value: BadgeParamWithString)
 ## BadgeParam对象说明
 
 包含用于创建Badge组件的基础参数。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -75,12 +65,6 @@ Badge(value: BadgeParamWithString)
 
 BadgeParamWithNumber继承自[BadgeParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge#badgeparam对象说明)，具有BadgeParam的全部属性。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | count | number | 否 | 否 | 设置提醒消息数。 **说明：** 当该值小于等于0且小于maxCount时不显示信息标记。 取值范围：[-2147483648,2147483647]。超出范围时会加上或减去4294967296，使得值仍在范围内，非整数时会舍去小数部分取整数部分，如5.5取5。 |
@@ -90,12 +74,6 @@ BadgeParamWithNumber继承自[BadgeParam](https://developer.huawei.com/consumer/
 
 BadgeParamWithString继承自[BadgeParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge#badgeparam对象说明)，具有BadgeParam的全部属性。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 否 | 否 | 提示内容的文本字符串。 **说明：** 从API version 20开始，支持ResourceStr类型。 |
@@ -103,12 +81,6 @@ BadgeParamWithString继承自[BadgeParam](https://developer.huawei.com/consumer/
 ## BadgePosition枚举说明
 
 提示点显示位置。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -119,8 +91,6 @@ BadgeParamWithString继承自[BadgeParam](https://developer.huawei.com/consumer/
 ## BadgeStyle对象说明
 
 Badge的样式。包括文本颜色、尺寸、字重、圆点颜色和尺寸。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -136,7 +106,11 @@ Badge的样式。包括文本颜色、尺寸、字重、圆点颜色和尺寸。
 | enableAutoAvoidance22+ | boolean | 否 | 是 | 增加角标文本延伸显示时是否避让。 true表示避让，false表示不避让。 默认值：true **说明：** 1. 避让效果为角标文本向组件内部延伸显示。 2. 当外描边的宽度大于0时，角标的延伸起点为外描边的内侧。 3. 当position设置为具体坐标值时，角标不进行避让处理。 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
 
 > **说明**
-> 当borderWidth大于0且borderColor与badgeColor颜色不一致时，先绘制角标，再绘制描边。由于边缘像素经过抗锯齿处理，抗锯齿产生半透明像素，四角会出现 badgeColor 颜色的描边线。如需实现相关场景，建议使用[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件设置[outline](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-outline)代替Badge组件。
+> 当borderWidth大于0且borderColor与badgeColor颜色不一致时，先绘制角标，再绘制描边。由于边缘像素经过抗锯齿处理，抗锯齿产生半透明像素，四角会出现 badgeColor 颜色的描边线。如需实现相关场景，建议使用
+> Text
+> 组件设置
+> outline
+> 代替Badge组件。
 
 ## 属性
 
@@ -296,7 +270,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/a9pVeo3fRquGTWrdMAQPfg/zh-cn_image_0000002531226068.png?HW-CC-KV=V1&HW-CC-Date=20260320T120339Z&HW-CC-Expire=86400&HW-CC-Sign=2B6B5B036807BEC03BF231EC82C186F22430789487F4A098AF7ECBE477FDD8DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/a9pVeo3fRquGTWrdMAQPfg/zh-cn_image_0000002531226068.png?HW-CC-KV=V1&HW-CC-Date=20260320T122307Z&HW-CC-Expire=86400&HW-CC-Sign=510397C2929F7E1C49FFC071C96A6D81DDC7745CB2AA731AC7998050C4FB1488)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -332,7 +306,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/eU1sHxUKTY-s-f2wgv8EQA/zh-cn_image_0000002562026051.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120339Z&HW-CC-Expire=86400&HW-CC-Sign=A8D65CFC2623257BFEE056312EB0B4E8B2A89ADA0C0BD92239D9A209011A995B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/eU1sHxUKTY-s-f2wgv8EQA/zh-cn_image_0000002562026051.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122307Z&HW-CC-Expire=86400&HW-CC-Sign=2BAD8E9333B1D70C3FA7502E5B5C7D3439DC4AAB4A525BDF4A7DE02D4DE659FE)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -381,4 +355,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iqYdTeu7SiWMiTXFuu94Ew/zh-cn_image_0000002562146037.png?HW-CC-KV=V1&HW-CC-Date=20260320T120339Z&HW-CC-Expire=86400&HW-CC-Sign=F2BA3877454F654856721988E514D9455CB8CE82098D24F4480389CC2654D1CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iqYdTeu7SiWMiTXFuu94Ew/zh-cn_image_0000002562146037.png?HW-CC-KV=V1&HW-CC-Date=20260320T122307Z&HW-CC-Expire=86400&HW-CC-Sign=46065D834467D26B64724960FDAC78042891EF0D0298A2BE3AF4EB6DA1838E63)

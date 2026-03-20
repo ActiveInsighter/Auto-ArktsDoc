@@ -1,4 +1,4 @@
-# ArcSwiper-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 导入模块
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper
 
 弧形滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -9,8 +9,8 @@
 ## 导入模块
 
 > **说明**
-> - ArcSwiperAttribute是用于配置ArcSwiper组件属性的关键接口。API version 21及之前版本，导入ArcSwiper组件后需要开发者手动导入ArcSwiperAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcSwiper组件后，会自动导入ArcSwiperAttribute，无需开发者手动导入ArcSwiperAttribute。
-> - 如果开发者手动导入ArcSwiperAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，从API version 22开始，删除对功能无影响。
+> ArcSwiperAttribute是用于配置ArcSwiper组件属性的关键接口。API version 21及之前版本，导入ArcSwiper组件后需要开发者手动导入ArcSwiperAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcSwiper组件后，会自动导入ArcSwiperAttribute，无需开发者手动导入ArcSwiperAttribute。
+> 如果开发者手动导入ArcSwiperAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，从API version 22开始，删除对功能无影响。
 
 API version 21及之前版本：
 
@@ -40,8 +40,14 @@ import {
 可以包含子组件。
 
 > **说明**
-> - 子组件类型：系统组件和自定义组件，支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)）。
-> - 不建议在执行翻页动画过程中增加或减少子组件，会导致未进行动画的子组件提前进入视窗，引起显示异常。
+> 子组件类型：系统组件和自定义组件，支持渲染控制类型（
+> if/else
+> 、
+> ForEach
+> 和
+> LazyForEach
+> ）。
+> 不建议在执行翻页动画过程中增加或减少子组件，会导致未进行动画的子组件提前进入视窗，引起显示异常。
 
 ## 接口
 
@@ -69,12 +75,6 @@ index(index: Optional<number>)
 
 设置当前在容器中显示的子组件的索引值。设置小于0或大于等于子组件数量时，按照默认值0处理。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | Optional<number> | 是 | 当前在容器中显示的子组件的索引值。 当index值为undefined时，按取值为0处理。 |
@@ -84,12 +84,6 @@ index(index: Optional<number>)
 indicator(style: Optional<ArcDotIndicator | boolean>)
 
 设置弧形圆点指示器样式。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -101,12 +95,6 @@ duration(duration: Optional<number>)
 
 设置子组件切换的动画时长。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | duration | Optional<number> | 是 | 子组件切换的动画时长。 默认值：400 单位：毫秒 |
@@ -116,12 +104,6 @@ duration(duration: Optional<number>)
 vertical(isVertical: Optional<boolean>)
 
 设置是否为纵向滑动。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -133,12 +115,6 @@ disableSwipe(disabled: Optional<boolean>)
 
 设置禁用组件滑动切换功能。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | disabled | Optional<boolean> | 是 | 禁用组件滑动切换功能。设置为true禁用，false不禁用。 默认值：false |
@@ -148,12 +124,6 @@ disableSwipe(disabled: Optional<boolean>)
 digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>)
 
 设置旋转表冠的灵敏度。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -165,12 +135,6 @@ effectMode(edgeEffect: Optional<EdgeEffect>)
 
 设置边缘滑动效果。 目前支持的滑动效果参见[EdgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#edgeeffect)的枚举说明。调用控制器接口时回弹不生效。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | edgeEffect | Optional<[EdgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#edgeeffect)> | 是 | 边缘滑动效果。 默认值：EdgeEffect.Spring |
@@ -181,12 +145,6 @@ disableTransitionAnimation(disabled: Optional<boolean>)
 
 是否关闭特殊动效效果。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | disabled | Optional<boolean> | 是 | 是否关闭特殊动效效果。 true：关闭特殊动效效果；false：不关闭特殊动效效果。 传入参数非法时，按false处理。 |
@@ -195,19 +153,11 @@ disableTransitionAnimation(disabled: Optional<boolean>)
 
 ArcSwiper容器组件的控制器，可以将此对象绑定至ArcSwiper组件，可以通过它控制翻页。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
 ### constructor
 
 constructor()
 
 ArcSwiperController的构造函数。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 ### showNext
 
@@ -215,31 +165,17 @@ showNext()
 
 翻至下一页。翻页带动效切换过程，时长通过[duration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#duration)指定。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
 ### showPrevious
 
 showPrevious()
 
 翻至上一页。翻页带动效切换过程，时长通过[duration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#duration)指定。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
 ### finishAnimation
 
 finishAnimation(handler?: FinishAnimationHandler)
 
 停止播放动画。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -249,31 +185,13 @@ finishAnimation(handler?: FinishAnimationHandler)
 
 提供弧形圆点指示器属性及功能。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-### constructor
-
-constructor()
-
 ArcDotIndicator的构造函数。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 ### arcDirection
 
 arcDirection(direction: Optional<ArcDirection>): ArcDotIndicator
 
 设置弧形指示器的方向。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -291,21 +209,9 @@ itemColor(color: Optional<ResourceColor>): ArcDotIndicator
 
 设置弧形指示器中，未选中导航点的颜色。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional<[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)> | 是 | 设置弧形指示器中，未选中导航点的颜色。 默认值：'#A9FFFFFF' |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [ArcDotIndicator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#arcdotindicator) | 提供弧形圆点指示器属性及功能。 |
 
 ### selectedItemColor
 
@@ -313,21 +219,9 @@ selectedItemColor(color: Optional<ResourceColor>): ArcDotIndicator
 
 设置弧形指示器中，选中导航点的颜色。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional<[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)> | 是 | 设置弧形指示器中，选中导航点的颜色。 默认值：'#FF5EA1FF' |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [ArcDotIndicator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#arcdotindicator) | 提供弧形圆点指示器属性及功能。 |
 
 ### backgroundColor
 
@@ -335,21 +229,9 @@ backgroundColor(color: Optional<ResourceColor>): ArcDotIndicator
 
 设置弧形指示器被长按时，弧形指示器的颜色。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional<[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)> | 是 | 设置弧形指示器被长按时，弧形指示器的颜色。 默认值：'#FF404040' |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [ArcDotIndicator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#arcdotindicator) | 提供弧形圆点指示器属性及功能。 |
 
 ### maskColor
 
@@ -357,29 +239,13 @@ maskColor(color: Optional<LinearGradient>): ArcDotIndicator
 
 设置弧形指示器的遮罩渐变色。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | Optional<[LinearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel#lineargradient10)> | 是 | 设置弧形指示器的遮罩渐变色。 起始颜色默认值：'#00000000' 结束颜色默认值：'#FF000000' |
 
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [ArcDotIndicator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#arcdotindicator) | 提供弧形圆点指示器属性及功能。 |
-
 ### ArcDirection
 
 弧形方向。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -393,21 +259,11 @@ type FinishAnimationHandler = () => void
 
 停止播放动画时，告知应用。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
 ## IndexChangedHandler
 
 type IndexChangedHandler = (index: number) => void
 
 当前显示元素的索引变化时，告知应用。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -418,12 +274,6 @@ type IndexChangedHandler = (index: number) => void
 type AnimationStartHandler = (index: number, targetIndex: number, event: SwiperAnimationEvent) => void
 
 切换动画开始时的回调。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -437,12 +287,6 @@ type AnimationEndHandler = (index: number, event: SwiperAnimationEvent) => void
 
 切换动画结束时的回调。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前显示元素的索引。 |
@@ -453,17 +297,6 @@ type AnimationEndHandler = (index: number, event: SwiperAnimationEvent) => void
 type GestureSwipeHandler = (index: number, event: SwiperAnimationEvent) => void
 
 在页面跟手滑动过程中，逐帧触发的回调。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| index | number | 是 | 当前显示元素的索引。 |
-| event | [SwiperAnimationEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#swiperanimationevent10对象说明) | 是 | 动画相关信息，只返回主轴方向上当前显示元素相对于ArcSwiper起始位置的位移。 |
 
 ## 事件
 
@@ -477,12 +310,6 @@ onChange(handler: Optional<IndexChangedHandler>)
 
 ArcSwiper组件结合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)使用时，不能在onChange事件里触发子页面UI的刷新。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional<[IndexChangedHandler](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#indexchangedhandler)> | 是 | 当前显示元素的索引回调。 |
@@ -492,12 +319,6 @@ ArcSwiper组件结合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/
 onAnimationStart(handler: Optional<AnimationStartHandler>)
 
 切换动画开始时触发该回调。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -511,12 +332,6 @@ onAnimationEnd(handler: Optional<AnimationEndHandler>)
 
 当ArcSwiper切换动效结束时触发，包括动画过程中手势中断，通过[SwiperController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#swipercontroller)调用finishAnimation。参数为动画结束后的index值，多列ArcSwiper时，index为最左侧组件的索引。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | Optional<[AnimationEndHandler](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#animationendhandler)> | 是 | 切换动画结束时触发该回调。 |
@@ -526,12 +341,6 @@ onAnimationEnd(handler: Optional<AnimationEndHandler>)
 onGestureSwipe(handler: Optional<GestureSwipeHandler>)
 
 在页面跟手滑动过程中，逐帧触发该回调。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -545,12 +354,6 @@ customContentTransition(transition: Optional<SwiperContentAnimatedTransition>)
 
 在页面跟手滑动和离手后执行切换动画的过程中，会对视窗内所有页面逐帧触发[SwiperContentTransitionProxy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#swipercontenttransitionproxy)回调。例如，当视窗内有下标为0、1的两个页面时，会每帧触发两次index值分别为0和1的回调。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | transition | Optional<[SwiperContentAnimatedTransition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#swipercontentanimatedtransition)> | 是 | ArcSwiper自定义切换动画相关信息。 |
@@ -558,10 +361,6 @@ customContentTransition(transition: Optional<SwiperContentAnimatedTransition>)
 ## SwiperContentAnimatedTransition
 
 ArcSwiper自定义切换动画相关信息。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -573,12 +372,8 @@ ArcSwiper自定义切换动画相关信息。
 ArcSwiper自定义切换动画执行过程中，返回给开发者的proxy对象。开发者可通过该对象获取自定义动画视窗内的页面信息，同时，也可以通过调用该对象的finishTransition接口通知ArcSwiper组件页面自定义动画已结束。
 
 > **说明**
-> - 假设当前选中的子组件的索引为0，从第0页切换到第1页的动画过程中，每帧都会对视窗内所有页面触发回调，当视窗内有第0页和第1页两页时，每帧会触发两次回调。其中第一次回调的selectedIndex为0，index为0，position为当前帧第0页相对于动画开始前第0页的移动比例，mainAxisLength为主轴方向上第0页的长度；第二次回调的selectedIndex仍为0，index为1，position为当前帧第1页相对于动画开始前第0页的移动比例，mainAxisLength为主轴方向上第1页的长度。
-> - 若动画曲线为弹簧插值曲线，从第0页切换到第1页的动画过程中，可能会因为离手时的位置和速度，先过滑到第2页，再回弹到第1页，该过程中每帧会对视窗内第1页和第2页触发回调。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+> 假设当前选中的子组件的索引为0，从第0页切换到第1页的动画过程中，每帧都会对视窗内所有页面触发回调，当视窗内有第0页和第1页两页时，每帧会触发两次回调。其中第一次回调的selectedIndex为0，index为0，position为当前帧第0页相对于动画开始前第0页的移动比例，mainAxisLength为主轴方向上第0页的长度；第二次回调的selectedIndex仍为0，index为1，position为当前帧第1页相对于动画开始前第0页的移动比例，mainAxisLength为主轴方向上第1页的长度。
+> 若动画曲线为弹簧插值曲线，从第0页切换到第1页的动画过程中，可能会因为离手时的位置和速度，先过滑到第2页，再回弹到第1页，该过程中每帧会对视窗内第1页和第2页触发回调。
 
 ### **属性**
 
@@ -595,10 +390,6 @@ finishTransition(): void
 
 通知ArcSwiper组件，此页面的自定义动画已结束。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
-
 ## 示例
 
 ### 示例1（设置arcSwiper基本属性）
@@ -606,6 +397,7 @@ finishTransition(): void
 该示例通过设置arcSwiper的基本属性，展示了组件的基本功能。
 
 ```typescript
+// xxx.ets
 import {
   CircleShape,
   ArcSwiper,
@@ -614,29 +406,23 @@ import {
   ArcDirection,
   ArcSwiperController
 } from '@kit.ArkUI';
-
+// 从API version 22开始，无需手动导入ArcSwiperAttribute。具体请参考ArcSwiper的导入模块说明
 class MyDataSource implements IDataSource {
   private list: Color[] = [];
-
   constructor(list: Color[]) {
     this.list = list;
   }
-
   totalCount(): number {
     return this.list.length;
   }
-
   getData(index: number): Color {
     return this.list[index];
   }
-
   registerDataChangeListener(listener: DataChangeListener): void {
   }
-
   unregisterDataChangeListener() {
   }
 }
-
 @Entry
 @Component
 struct TestNewInterface {
@@ -648,7 +434,6 @@ struct TestNewInterface {
   @State backgroundColors: Color[] =
     [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.White, Color.Gray, Color.Orange, Color.Transparent];
   innerSelectedIndex: number = 0;
-
   aboutToAppear(): void {
     let list: Color[] = [];
     for (let i = 1; i <= 6; i++) {
@@ -656,7 +441,6 @@ struct TestNewInterface {
     }
     this.data = new MyDataSource(this.backgroundColors);
   }
-
   build() {
     Column() {
       Row() {
@@ -695,11 +479,11 @@ struct TestNewInterface {
           console.info("velocity: " + extraInfo.velocity);
         })
         .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-          others: Array<GestureRecognizer>): GestureJudgeResult => {
+          others: Array<GestureRecognizer>): GestureJudgeResult => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
           if (current) {
             let target = current.getEventTargetInfo();
             if (target && current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
-
+              // 此处判断swiperTarget.isBegin()或innerSelectedIndex === 0，表明ArcSwiper滑动到开头
               let swiperTarget = target as ScrollableTargetInfo
               if (swiperTarget instanceof ScrollableTargetInfo &&
                 (swiperTarget.isBegin() || this.innerSelectedIndex === 0)) {
@@ -723,7 +507,7 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/V911Z7nBRFiZ-y7b40-_3w/zh-cn_image_0000002562025813.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120246Z&HW-CC-Expire=86400&HW-CC-Sign=C95FF09E8A8ECE5EA431BCB5D1D367598AD400D0AA281CD0AACE009EC7A253C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/V911Z7nBRFiZ-y7b40-_3w/zh-cn_image_0000002562025813.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122214Z&HW-CC-Expire=86400&HW-CC-Sign=C1286998C9FB3A09394883A2A0921BE770A3890378CF3A7DC1E7843AF2EF96AE)
 
 ### 示例2（设置ArcSwiper自定义页面切换动画）
 
@@ -732,20 +516,18 @@ struct TestNewInterface {
 ```typescript
 import { Decimal } from '@kit.ArkTS';
 import { CircleShape, ArcSwiper, ArcSwiperAttribute } from '@kit.ArkUI';
-
+// 从API version 22开始，无需手动导入ArcSwiperAttribute。具体请参考ArcSwiper的导入模块说明
 @Entry
 @Component
 struct TestNewInterface {
   private backgroundColors: Color[] =
     [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.White, Color.Gray, Color.Orange];
   @State scaleList: number[] = [];
-
   aboutToAppear(): void {
     for (let i = 0; i < this.backgroundColors.length; i++) {
       this.scaleList.push(1.0);
     }
   }
-
   build() {
     Column() {
       Row() {
@@ -766,12 +548,12 @@ struct TestNewInterface {
           console.info('onChange:' + index.toString());
         })
         .customContentTransition({
-
+          // 页面移除视窗时超时1000ms下渲染树
           timeout: 1000,
-
+          // 对视窗内所有页面逐帧回调transition，在回调中修改opacity属性值，实现自定义动画
           transition: (proxy: SwiperContentTransitionProxy) => {
             if (proxy.position <= -1 || proxy.position >= 1) {
-
+              // 页面完全滑出视窗外时，重置属性值
               this.scaleList[proxy.index] = 1.0;
             } else {
               let position: number = Decimal.abs(proxy.position).toNumber();
@@ -786,4 +568,4 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/EoQTD7dzTkiGP2CkDxl3mA/zh-cn_image_0000002562145799.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120246Z&HW-CC-Expire=86400&HW-CC-Sign=8E23100C186BD9D5D2D6776873B9D26DB646501AE768F86B2602E1FE6C91D14A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/EoQTD7dzTkiGP2CkDxl3mA/zh-cn_image_0000002562145799.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122214Z&HW-CC-Expire=86400&HW-CC-Sign=03AE1A7246CC6F21764127819D93C0953C1B906F6A1DC3EED34484CF42419ACC)

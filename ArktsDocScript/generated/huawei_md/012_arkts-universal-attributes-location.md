@@ -1,10 +1,10 @@
-# 文档中心
+# align
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location
 
 设置组件对齐方式、布局方向及显示位置。
 
 > **说明**
-> - 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## align
 
@@ -40,19 +40,9 @@ align(alignment: Alignment | LocalizedAlignment): T
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignment | [Alignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#alignment) | [LocalizedAlignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#localizedalignment20) | 是 | 设置容器元素绘制区域内的子元素的对齐方式，增加支持镜像的能力。 LocalizedAlignment只在[Shape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape)、[Button](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button)、[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)、[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)、[ImageAnimator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator)、[LoadingProgress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress)、[PatternLock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-patternlock)、[Progress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress)、[QRCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode)、[TextClock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textclock)、[TextTimer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer)、[StepperItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-stepperitem)、[MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem)、[Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle)、[Checkbox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox)、[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)中有效果。 其中，除[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)与Alignment的效果保持一致以外，其他组件镜像切换均生效；其他设置LocalizedAlignment无效果的组件按其默认效果显示。 默认值：Alignment.Center、LocalizedAlignment.CENTER 设置异常值按默认值处理，效果为居中显示。 **说明：** Alignment类型不支持镜像能力；LocalizedAlignment类型支持镜像能力，选择LocalizedAlignment中的枚举值，根据direction或系统语言方向的改变实现镜像切换。其中direction的优先级高于系统语言方向，当设置direction且不为auto时，LocalizedAlignment的镜像按照direction进行布局；当设置direction为auto或未设置时，LocalizedAlignment的镜像按照系统语言方向进行布局。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
 
 ## direction
 
@@ -60,23 +50,9 @@ direction(value: Direction): T
 
 设置容器元素内主轴方向上的布局，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Direction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#direction) | 是 | 设置容器元素内主轴方向上的布局。 属性配置为auto的时候，按照系统语言方向进行布局。 该属性在Column组件上不生效。 默认值：Direction.Auto direction取undefined或null时按默认值处理。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
 
 ## position
 
@@ -85,30 +61,24 @@ position(value: Position | Edges | LocalizedEdges): T
 绝对定位，确定子组件相对父组件内容区的位置，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
 > **说明**
-> - position对位置的影响作用在组件的尺寸测量完成之后。
-> - 当父容器为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)或[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时，设置position的子组件不占位。
-> - Position类型基于父组件内容区左上角确定位置；Edges类型基于父组件内容区四边确定位置，top/left/right/bottom分别为组件各边距离父组件内容区相应边的边距，通过边距来确定组件相对于父组件内容区的位置；LocalizedEdges类型基于父组件内容区四边确定位置，支持镜像模式。
-> - 本属性适用于置顶显示、悬浮按钮等组件在父容器中位置固定的场景。
-> - 本属性不支持在宽高为零的布局容器上设置。
-> - 当父容器为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)，且子组件设置了alignRules属性时，子组件的position属性不生效。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
+> position对位置的影响作用在组件的尺寸测量完成之后。
+> 当父容器为
+> Row
+> 、
+> Column
+> 或
+> Flex
+> 时，设置position的子组件不占位。
+> Position类型基于父组件内容区左上角确定位置；Edges类型基于父组件内容区四边确定位置，top/left/right/bottom分别为组件各边距离父组件内容区相应边的边距，通过边距来确定组件相对于父组件内容区的位置；LocalizedEdges类型基于父组件内容区四边确定位置，支持镜像模式。
+> 本属性适用于置顶显示、悬浮按钮等组件在父容器中位置固定的场景。
+> 本属性不支持在宽高为零的布局容器上设置。
+> 当父容器为
+> RelativeContainer
+> ，且子组件设置了alignRules属性时，子组件的position属性不生效。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#position) | [Edges12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#edges12) | [LocalizedEdges12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizededges12) | 是 | 绝对定位，确定子组件相对父组件内容区的位置，父组件内容区的大小为父组件大小减去[border](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#border)、[padding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#padding)、[safeAreaPadding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#safeareapadding14)后提供给子组件可布局的内容区域大小。 设置异常值时该属性不生效。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
 
 ## markAnchor
 
@@ -116,23 +86,9 @@ markAnchor(value: Position | LocalizedPosition): T
 
 设置元素在位置定位时的锚点，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#position) | [LocalizedPosition12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizedposition12) | 是 | 设置元素在位置定位时的锚点，基于position或offset的初始位置，进行进一步的偏移调整。 设置.position({x: value1, y: value2}).markAnchor({x: value3, y: value4})，效果等于设置.position({x: value1 - value3, y: value2 - value4})，offset同理。 单独设置.markAnchor({x: value1, y: value2})，效果等于设置.offset({x: -value1, y: -value2})。 API version 9及以前，默认值为：{x: 0, y: 0} API version 10：无默认值。 设置异常值时该属性不生效。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
 
 ## offset
 
@@ -140,23 +96,9 @@ offset(value: Position | Edges | LocalizedEdges): T
 
 相对偏移，组件相对原本的布局位置进行偏移。和position一起使用时，position生效，offset不生效，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#position) | [Edges12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#edges12) | [LocalizedEdges12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizededges12) | 是 | 相对偏移，组件基于原本的布局位置进行偏移。offset属性不影响父容器布局，仅在绘制时调整位置。 Position类型基于组件自身左上角偏移，Edges类型基于组件自身四边偏移。 offset属性设置{x: x, y: y}与设置{left: x, top: y}以及{right: -x, bottom: -y}效果相同，类型LocalizedEdges支持镜像模式：LTR模式下start等同于x，RTL模式下start等同于-x。 API version 9及以前，默认值为：{x: 0, y: 0} 默认单位：vp API version 10：无默认值。 设置异常值时该属性不生效。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
 
 ## alignRules9+
 
@@ -164,23 +106,9 @@ alignRules(value: AlignRuleOption): T
 
 指定设置在相对容器中子组件的对齐规则，仅当父容器为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [AlignRuleOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#alignruleoption9对象说明) | 是 | 指定设置在相对容器中子组件的对齐规则。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
 
 ## alignRules12+
 
@@ -192,19 +120,9 @@ alignRules(alignRule: LocalizedAlignRuleOptions): T
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignRule | [LocalizedAlignRuleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#localizedalignruleoptions12对象说明) | 是 | 指定设置在相对容器中子组件的对齐规则。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
 
 ## layoutGravity20+
 
@@ -212,29 +130,11 @@ layoutGravity(alignment: LocalizedAlignment): T
 
 单独设置Stack容器中子组件的对齐规则，仅当父容器为Stack时生效。与align属性同时使用时，layoutGravity优先级更高，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
-**卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignment | [LocalizedAlignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#localizedalignment20) | 是 | 指定设置在Stack容器中子组件的对齐规则。 默认值：LocalizedAlignment.CENTER 。说明：当传入异常值时，按默认值处理。 |
 
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
-
 ## AlignRuleOption9+对象说明
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -248,10 +148,6 @@ layoutGravity(alignment: LocalizedAlignment): T
 
 ## LocalizedAlignRuleOptions12+对象说明
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | [LocalizedHorizontalAlignParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#localizedhorizontalalignparam12对象说明) | 否 | 是 | 设置横向对齐方式的参数，LTR模式时为左对齐，RTL模式时为右对齐。 |
@@ -264,20 +160,12 @@ layoutGravity(alignment: LocalizedAlignment): T
 
 ## LocalizedHorizontalAlignParam12+对象说明
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | anchor | string | 否 | 否 | 设置作为锚点的组件的id值。 |
 | align | [HorizontalAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#horizontalalign) | 否 | 否 | 设置相对于锚点组件的横向对齐方式。 |
 
 ## LocalizedVerticalAlignParam12+对象说明
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -292,30 +180,14 @@ chainMode(direction: Axis, style: ChainStyle): T
 
 详细用法请参考[RelativeContainer示例7（设置链）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer#示例7设置链)。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | direction | [Axis](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#axis) | 是 | 链的方向。 |
 | style | [ChainStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#chainstyle12) | 是 | 链的样式。 |
 
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
-
 ## ChainStyle12+
 
 定义链的风格，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 说明 |
 | --- | --- |
@@ -333,23 +205,15 @@ chainWeight(chainWeight: ChainWeightOptions): T
 对形成链的组件进行重新布局。仅当父容器为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效。
 
 > **说明**
-> 该接口不支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+> 该接口不支持在
+> attributeModifier
+> 中调用。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | chainWeight | [ChainWeightOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#chainweightoptions14对象说明) | 是 | 设置了chainWeight属性的组件与同一条链上的兄弟组件在水平或竖直方向的尺寸会按照设置的权重进行分配，分配时会忽略组件本身尺寸设置，按分配的权重自适应占满剩余空间。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
 
 **示例：**
 
@@ -362,14 +226,13 @@ chainWeight(chainWeight: ChainWeightOptions): T
 设置内容在元素内的对齐方式和子元素在父容器主轴方向上的布局。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct PositionExample1 {
   build() {
     Column() {
       Column({ space: 10 }) {
-        // 元素内容<元素宽高，设置内容在与元素内的对齐方式
+
         Text('align').fontSize(9).fontColor(0xCCCCCC).width('90%')
         Stack() {
           Text('First show in bottom end').height('65%').backgroundColor(0xD2B48C)
@@ -380,7 +243,7 @@ struct PositionExample1 {
           Text('top start')
         }.width('90%').height(50).margin({ top: 5 }).backgroundColor(0xFFE4C4)
         .align(Alignment.TopStart)
-        // 父容器设置direction为Direction.Ltr，子元素从左到右排列
+
         Text('direction').fontSize(9).fontColor(0xCCCCCC).width('90%')
         Row() {
           Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3)
@@ -390,7 +253,7 @@ struct PositionExample1 {
         }
         .width('90%')
         .direction(Direction.Ltr)
-        // 父容器设置direction为Direction.Rtl，子元素从右到左排列
+
         Row() {
           Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3).textAlign(TextAlign.End)
           Text('2').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C).textAlign(TextAlign.End)
@@ -406,20 +269,19 @@ struct PositionExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/JJScBWHmRlmNlhYbS0ElWg/zh-cn_image_0000002531225680.png?HW-CC-KV=V1&HW-CC-Date=20260320T120216Z&HW-CC-Expire=86400&HW-CC-Sign=9C6C972F574E813D114A199C30B5633A89CF10F025DFAF08E23B7EF5A5F8DAEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/JJScBWHmRlmNlhYbS0ElWg/zh-cn_image_0000002531225680.png?HW-CC-KV=V1&HW-CC-Date=20260320T122142Z&HW-CC-Expire=86400&HW-CC-Sign=6B0BDC91EB3BB98B2491637A87009E90F0BED23E362897BFA745AE428641B5F7)
 
 ### 示例2（位置偏移）
 
 基于父组件、相对定位、锚点作出位置偏移。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct PositionExample2 {
   build() {
     Column({ space: 20 }) {
-      // 设置子组件左上角相对于父组件左上角的偏移位置
+
       Text('position').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Row() {
         Text('1').size({ width: '30%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
@@ -440,8 +302,7 @@ struct PositionExample2 {
           .fontSize(16)
           .position({ x: '50%', y: '70%' })
       }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
-      // 相对于起点偏移，其中x为最终定位点距离起点水平方向间距，x>0往左，反之向右。
-      // y为最终定位点距离起点垂直方向间距，y>0向上，反之向下
+
       Text('markAnchor').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Stack({ alignContent: Alignment.TopStart }) {
         Row()
@@ -466,7 +327,7 @@ struct PositionExample2 {
           .backgroundColor(Color.Green)
           .markAnchor({ x: 25, y: -25 })
       }.margin({ top: 25 }).border({ width: 1, style: BorderStyle.Dashed })
-      // 相对定位，x>0向右偏移，反之向左，y>0向下偏移，反之向上
+
       Text('offset').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Row() {
         Text('1').size({ width: '15%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
@@ -493,14 +354,13 @@ struct PositionExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/gwn09kRYTpGhssqETdqzBw/zh-cn_image_0000002562025663.png?HW-CC-KV=V1&HW-CC-Date=20260320T120216Z&HW-CC-Expire=86400&HW-CC-Sign=60693A82E62C3924340E35AA7C903254D9EC36768A83BA41C04E2E4F30FF7DB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/gwn09kRYTpGhssqETdqzBw/zh-cn_image_0000002562025663.png?HW-CC-KV=V1&HW-CC-Date=20260320T122142Z&HW-CC-Expire=86400&HW-CC-Sign=4DE5F600766617909AE49635DFF48FA47D14DF435EE50E48AB33C58E0A34C68A)
 
 ### 示例3（绝对定位和相对偏移）
 
 使用position设置绝对定位，确定子组件相对父组件的位置。使用offset设置相对偏移，组件相对原本的布局位置进行偏移。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Example3 {
@@ -537,6 +397,7 @@ struct Example3 {
           .textAlign(TextAlign.Center)
           .position({ bottom: 0, left: 30 })
       }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
+
       Text('offset use Edges').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Row() {
         Text('1')
@@ -571,19 +432,20 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ABV2vn5sRVmN7ORxRBkUXA/zh-cn_image_0000002562145649.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T120216Z&HW-CC-Expire=86400&HW-CC-Sign=9DD63D2589E5CC6E2A13BAFC274010E53FE87D2930B3936E1CE9D2205C62AC14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ABV2vn5sRVmN7ORxRBkUXA/zh-cn_image_0000002562145649.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T122142Z&HW-CC-Expire=86400&HW-CC-Sign=C3D7ED3C902F0C21DEEB8154BC3059568AD8CBBB2D982563DF5401E93B78F0D0)
 
 ### 示例4（镜像效果）
 
 通用布局属性支持[使用镜像能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#使用镜像能力)。下述示例从上到下依次通过[position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#position)、[offset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#offset)和[markAnchor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#markanchor)实现镜像效果，为对比镜像前后的差异，浅蓝色对应镜像前效果，深蓝色对应镜像后效果。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Example4 {
   private scroller: Scroller = new Scroller()
+
   build() {
     Column() {
       Stack({ alignContent: Alignment.End }) {
@@ -592,50 +454,55 @@ struct Example4 {
             RelativeContainer() {
               Row() {
               }
-              .position({ start: LengthMetrics.px(200), top: LengthMetrics.px(100) }) // position接口中的参数使用LocalizedEdges类型，支持镜像翻转效果
+              .position({ start: LengthMetrics.px(200), top: LengthMetrics.px(100) })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(0, 74, 175)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
-              .position({ left: '200px', top: '100px' }) // position接口中的参数使用Edges类型，不支持镜像翻转效果
+              .position({ left: '200px', top: '100px' })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(39, 135, 217)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
-              .offset({ start: LengthMetrics.vp(100), top: LengthMetrics.vp(200) }) // offset接口中的参数使用LocalizedEdges类型，支持镜像翻转效果
+              .offset({ start: LengthMetrics.vp(100), top: LengthMetrics.vp(200) })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(0, 74, 175)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
-              .offset({ left: 100, top: 200 }) // offset接口中的参数使用Edges类型，不支持镜像翻转效果
+              .offset({ left: 100, top: 200 })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(39, 135, 217)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
               .markAnchor({
                 start: LengthMetrics.fp(100),
                 top: LengthMetrics.fp(-350)
-              }) // markAnchor接口中的参数使用LocalizedPosition类型，支持镜像翻转效果
+              })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(0, 74, 175)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
-              .markAnchor({ x: '100fp', y: '-350fp' }) // markAnchor接口中的参数使用Position类型，不支持镜像翻转效果
+              .markAnchor({ x: '100fp', y: '-350fp' })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(39, 135, 217)')
@@ -650,6 +517,7 @@ struct Example4 {
         .width('100%')
         .scrollBar(BarState.Off)
         .scrollable(ScrollDirection.Vertical)
+
         ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto }) {
           Text()
             .width(20)
@@ -665,18 +533,15 @@ struct Example4 {
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/6z-JkXIIQY-jh8Taq4FlRQ/zh-cn_image_0000002531105748.png?HW-CC-KV=V1&HW-CC-Date=20260320T120216Z&HW-CC-Expire=86400&HW-CC-Sign=C9FC840380BCDADAFFAC79F0353F840C7718E787DF5109CBD6950DD7CD118D33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/6z-JkXIIQY-jh8Taq4FlRQ/zh-cn_image_0000002531105748.png?HW-CC-KV=V1&HW-CC-Date=20260320T122142Z&HW-CC-Expire=86400&HW-CC-Sign=3A30F7012A9F9C2BC3805C5AA35D4B03E1DB46E3CE3EE9FD134EB2D5ACD65F6D)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/iRGRV1_NQTibXFXByWKY0Q/zh-cn_image_0000002531225682.png?HW-CC-KV=V1&HW-CC-Date=20260320T120216Z&HW-CC-Expire=86400&HW-CC-Sign=6B575A82F07DF3920B2B7A7545D3878CF74EC871A50DCD16A909DB75A9FE3DCE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/iRGRV1_NQTibXFXByWKY0Q/zh-cn_image_0000002531225682.png?HW-CC-KV=V1&HW-CC-Date=20260320T122142Z&HW-CC-Expire=86400&HW-CC-Sign=2505E0B0D308CD4E468760EA8A163B39079EBF93D36C51EC40AFA544A0252A2A)
 
 ### 示例5（align属性适配镜像特性）
 
-设置内容在元素内的对齐方式和子元素在父容器主轴方向上的布局。
-
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct buttonTestDemo {
@@ -687,9 +552,11 @@ struct buttonTestDemo {
   @State isLocalizedAlignmentIndex: number = 4
   @State isDirection: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto]
   @State isDirectionIndex: number = 0
+
   build() {
     Row() {
       Column() {
+
         Row({ space: 5 }) {
           Button('START')
             .onClick(() => {
@@ -704,6 +571,7 @@ struct buttonTestDemo {
               this.isLocalizedAlignmentIndex = 5
             })
         }.margin(20)
+
         Row({ space: 5 }) {
           Button('Ltr')
             .onClick(() => {
@@ -718,6 +586,7 @@ struct buttonTestDemo {
               this.isDirectionIndex = 2
             })
         }.margin(20)
+
         Row() {
           Button('OK', { type: ButtonType.Capsule, stateEffect: true })
             .backgroundColor(0x317aff)
@@ -734,14 +603,13 @@ struct buttonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XPW7IXKtQIe2S3NwVRxdxg/zh-cn_image_0000002562025665.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120216Z&HW-CC-Expire=86400&HW-CC-Sign=787F0B2011EBECCAA48B7846F0AED0CCD30248599D0B2BDFD2CBE2A154A9367E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XPW7IXKtQIe2S3NwVRxdxg/zh-cn_image_0000002562025665.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122142Z&HW-CC-Expire=86400&HW-CC-Sign=443549DA574BA0F14D10799ED254308F960C1B9082D28318C92DE39D532F6BDE)
 
 ### 示例6（layoutGravity属性单独设置Stack容器中子组件的对齐规则）
 
 更改Stack中Text的位置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index5 {
@@ -752,6 +620,7 @@ struct Index5 {
   @State layoutGravityIndex: number = 0;
   private directionArr: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto];
   @State directionIndex: number = 0;
+
   build() {
     Row() {
       Column() {
@@ -771,6 +640,7 @@ struct Index5 {
         .backgroundColor(Color.Grey)
         .margin({ top: 10, bottom: 10 })
         .direction(this.directionArr[this.directionIndex])
+
         Button("LayoutGravity: " + this.layoutGravityArr[this.layoutGravityIndex])
           .width(300)
           .fontSize(16)
@@ -778,6 +648,7 @@ struct Index5 {
             this.layoutGravityIndex = ++this.layoutGravityIndex % this.layoutGravityArr.length;
           })
           .margin({ bottom: 10 })
+
         Button("Direction: " + this.directionArr[this.directionIndex])
           .width(150)
           .fontSize(16)
@@ -793,4 +664,4 @@ struct Index5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/EVBTfvFsTlSPsWtfriUIlA/zh-cn_image_0000002562145651.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120216Z&HW-CC-Expire=86400&HW-CC-Sign=3FAD70980DD9F83C47D9895D8247D7E55C90F2835D837E65A657A208A1EEA43C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/EVBTfvFsTlSPsWtfriUIlA/zh-cn_image_0000002562145651.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122142Z&HW-CC-Expire=86400&HW-CC-Sign=58A584351B47B4C164320DCB8A74E325761924FF1DC35060222FB52FAF81C7E6)

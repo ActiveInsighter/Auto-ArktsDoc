@@ -1,18 +1,26 @@
-# TabContent-导航与切换-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent
 
 仅在Tabs中使用，对应一个切换页签的内容视图。
 
 > **说明**
-> - 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> - 该组件默认设置了[clip](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#clip12)属性的值为true，若需要扩展内容区到组件外显示，需先关闭clip属性。
+> 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> 该组件默认设置了
+> clip
+> 属性的值为true，若需要扩展内容区到组件外显示，需先关闭clip属性。
 
 ## 子组件
 
 支持单个子组件。
 
 > **说明**
-> 可内置系统组件和自定义组件，支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)）。
+> 可内置系统组件和自定义组件，支持渲染控制类型（
+> if/else
+> 、
+> ForEach
+> 和
+> LazyForEach
+> ）。
 
 ## 接口
 
@@ -38,10 +46,6 @@ tabBar(options: string | Resource | CustomBuilder | TabBarOptions)
 
 设置的内容超出tabBar页签时进行裁切。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -55,14 +59,12 @@ tabBar(value: SubTabBarStyle | BottomTabBarStyle)
 设置TabBar上显示内容。底部样式没有下划线效果。icon异常时显示灰色图块。
 
 > **说明**
-> - 子页签（[SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9)）样式：通常为文字+下划线，文字+背板的页签风格，允许设置文本样式，建议放置在顶部或者底部使用。切换页签时默认支持动画跳转效果。适用于资讯类应用的顶部分类（如"关注、视频、数码"）、功能模块的二级导航场景。
-> - 底部页签/侧边页签（[BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9)）样式：无下划线和背板效果，页签样式通常为图标+文字的组合方式。切换页签时默认无动画跳转效果。底部页签通常用于应用主导航（如首页、发现、推荐）。侧边页签适用于宽屏场景，可设置vertical(true)启用纵向布局，让页签在侧边显示，默认左侧显示。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
+> 子页签（
+> SubTabBarStyle
+> ）样式：通常为文字+下划线，文字+背板的页签风格，允许设置文本样式，建议放置在顶部或者底部使用。切换页签时默认支持动画跳转效果。适用于资讯类应用的顶部分类（如"关注、视频、数码"）、功能模块的二级导航场景。
+> 底部页签/侧边页签（
+> BottomTabBarStyle
+> ）样式：无下划线和背板效果，页签样式通常为图标+文字的组合方式。切换页签时默认无动画跳转效果。底部页签通常用于应用主导航（如首页、发现、推荐）。侧边页签适用于宽屏场景，可设置vertical(true)启用纵向布局，让页签在侧边显示，默认左侧显示。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -72,30 +74,24 @@ tabBar(value: SubTabBarStyle | BottomTabBarStyle)
 
 tabBar(content: ComponentContent | SubTabBarStyle | BottomTabBarStyle | string | Resource | CustomBuilder | TabBarOptions)
 
-设置TabBar上显示内容。
-
 使用BottomTabBarStyle或TabBarOptions类型作为入参并设置icon，icon异常时显示灰色图块。如果icon采用svg格式图源，需删除svg图源内置的宽高属性值。否则，icon大小将使用svg图源内置的宽高属性值。
 
 设置的内容超出TabBar页签时进行裁切。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | [ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent) | [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) |[BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9) | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | [CustomBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#custombuilder8)| [TabBarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbaroptions18对象说明) | 是 | TabBar上显示内容。 ComponentContent： 组件内容的实体封装，可以设置自定义内容。 SubTabBarStyle： 子页签样式。 BottomTabBarStyle： 底部页签和侧边页签样式，底部样式没有下划线效果。 string： 字符串类型。 Resource： 资源引用类型，引入系统资源或者应用资源中的字符串。 CustomBuilder： 构造器，内部可以传入组件。 TabBarOptions： 设置页签内的图片和文字内容。 |
 
 > **说明**
-> - TabContent组件不支持设置通用宽度属性，其宽度默认撑满Tabs父组件。
-> - TabContent组件不支持设置通用高度属性，其高度由Tabs父组件高度与TabBar组件高度决定。
-> - vertical属性为false时，上述2个限制交换。
-> - TabContent组件不支持内容过长时页面的滑动，如需页面滑动，可嵌套List使用。
-> - 建议对Tabs组件的所有TabContent子组件的tabBar属性，采用统一的参数类型。
-> - 若TabContent内部有可获焦组件，Tabs组件内TabContent组件和TabBar组件之间的走焦，仅支持通过键盘的方向键控制。
-> - TabBar的属性动态修改后，会重新进行渲染，更新相关属性并重置所有页签位置。
+> TabContent组件不支持设置通用宽度属性，其宽度默认撑满Tabs父组件。
+> TabContent组件不支持设置通用高度属性，其高度由Tabs父组件高度与TabBar组件高度决定。
+> vertical属性为false时，上述2个限制交换。
+> TabContent组件不支持内容过长时页面的滑动，如需页面滑动，可嵌套List使用。
+> 建议对Tabs组件的所有TabContent子组件的tabBar属性，采用统一的参数类型。
+> 若TabContent内部有可获焦组件，Tabs组件内TabContent组件和TabBar组件之间的走焦，仅支持通过键盘的方向键控制。
+> TabBar的属性动态修改后，会重新进行渲染，更新相关属性并重置所有页签位置。
 
 ## TabBarOptions18+对象说明
 
@@ -103,10 +99,6 @@ tabBar(content: ComponentContent | SubTabBarStyle | BottomTabBarStyle | string |
 
 > **说明**
 > 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -123,12 +115,6 @@ constructor(content: ResourceStr)
 
 SubTabBarStyle的构造函数。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 页签内的文字内容。 |
@@ -141,10 +127,6 @@ SubTabBarStyle的构造函数。支持ComponentContent设置自定义内容。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | [ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent) | 是 | 页签内的内容。 **说明：** 1.自定义内容不支持labelStyle属性。 2.自定义内容超出页签范围，则不显示超出部分。 3.自定义内容小于页签范围，则会居中对齐。 4.自定义内容异常或无可用显示组件，则显示空白。 |
@@ -154,16 +136,6 @@ SubTabBarStyle的构造函数。支持ComponentContent设置自定义内容。
 static of(content: ResourceStr): SubTabBarStyle
 
 SubTabBarStyle的静态构造函数。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| content | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 页签内的文字内容。 |
 
 **返回值：**
 
@@ -177,21 +149,9 @@ static of(content: ResourceStr | ComponentContent): SubTabBarStyle
 
 SubTabBarStyle的静态构造函数。支持ComponentContent设置自定义内容。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | content | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | [ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent) | 是 | 页签内的内容。支持ComponentContent设置自定义内容。 **说明：** 1.自定义内容不支持labelStyle属性。 2.自定义内容超出页签范围，则不显示超出部分。 3.自定义内容小于页签范围，则会居中对齐。 4.自定义内容异常或无可用显示组件，则显示空白。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) | 返回创建的SubTabBarStyle对象。 |
 
 ### indicator10+
 
@@ -199,17 +159,9 @@ indicator(value: IndicatorStyle): SubTabBarStyle
 
 设置选中子页签的下划线风格。子页签的下划线风格仅在水平模式下有效。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [IndicatorStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#indicatorstyle10对象说明) | 是 | 选中子页签的下划线风格对象。 |
-
-**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -223,23 +175,13 @@ indicator(value: IndicatorStyle | DrawableTabBarIndicator): SubTabBarStyle
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [IndicatorStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#indicatorstyle10对象说明) | [DrawableTabBarIndicator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#drawabletabbarindicator22对象说明) | 是 | 选中子页签的下划线风格对象。 IndicatorStyle：一般形式的下划线样式。 DrawableTabBarIndicator：图片形式的下划线样式。 |
 
 > **说明**
-> - 一般形式的下划线样式（IndicatorStyle）：为一条实线，切换页签时默认支持动画跳转效果。
-> - 图片形式的下划线样式（DrawableTabBarIndicator）：为一张图片，切换页签时默认无动画跳转效果。当传入无效图源时将显示一般形式的下划线。
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) | 返回SubTabBarStyle对象本身。 |
+> 一般形式的下划线样式（IndicatorStyle）：为一条实线，切换页签时默认支持动画跳转效果。
+> 图片形式的下划线样式（DrawableTabBarIndicator）：为一张图片，切换页签时默认无动画跳转效果。当传入无效图源时将显示一般形式的下划线。
 
 ### selectedMode10+
 
@@ -247,21 +189,9 @@ selectedMode(value: SelectedMode): SubTabBarStyle
 
 设置选中子页签的显示方式。子页签的显示方式仅在水平模式下有效。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [SelectedMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#selectedmode10枚举说明) | 是 | 选中子页签的显示方式。 默认值：SelectedMode.INDICATOR |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) | 返回SubTabBarStyle对象本身。 |
 
 ### board10+
 
@@ -269,21 +199,9 @@ board(value: BoardStyle): SubTabBarStyle
 
 设置选中子页签的背板风格。子页签的背板风格仅在水平模式下有效。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [BoardStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#boardstyle10对象说明) | 是 | 选中子页签的背板风格对象。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) | 返回SubTabBarStyle对象本身。 |
 
 ### labelStyle10+
 
@@ -291,21 +209,9 @@ labelStyle(value: LabelStyle): SubTabBarStyle
 
 设置子页签的label文本和字体的样式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [LabelStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#labelstyle10对象说明) | 是 | 子页签的label文本和字体的样式对象。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) | 返回SubTabBarStyle对象本身。 |
 
 ### padding10+
 
@@ -313,21 +219,9 @@ padding(value: Padding | Dimension): SubTabBarStyle
 
 设置子页签的内边距属性（不支持百分比设置）。使用Dimension时，四个方向内边距同时生效。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Padding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#padding) | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | 是 | 子页签的内边距属性。 默认值：{left:8.0vp,right:8.0vp,top:17.0vp,bottom:18.0vp} |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) | 返回SubTabBarStyle对象本身。 |
 
 ### padding12+
 
@@ -335,21 +229,9 @@ padding(padding: LocalizedPadding): SubTabBarStyle
 
 设置子页签的内边距属性，支持镜像能力（不支持百分比设置）。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | padding | [LocalizedPadding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizedpadding12) | 是 | 子页签的内边距属性。 默认值：{start:LengthMetrics.vp(8),end:LengthMetrics.vp(8), top:LengthMetrics.vp(17),bottom:LengthMetrics.vp(18)} |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) | 返回SubTabBarStyle对象本身。 |
 
 ### id11+
 
@@ -357,29 +239,13 @@ id(value: string): SubTabBarStyle
 
 设置子页签的[id](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id#id)。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 子页签的[id](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id#id)。 |
 
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [SubTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#subtabbarstyle9) | 返回SubTabBarStyle对象本身。 |
-
 ## IndicatorStyle10+对象说明
 
 下划线风格对象。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -392,10 +258,6 @@ id(value: string): SubTabBarStyle
 ## DrawableTabBarIndicator22+对象说明
 
 使用图片资源作为下划线的对象。
-
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -411,10 +273,6 @@ type DrawableDescriptor = DrawableDescriptor
 
 作为DrawableTabBarIndicator对象中drawable属性的入参对象。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 类型 | 说明 |
 | --- | --- |
 | [DrawableDescriptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-drawabledescriptor#drawabledescriptor) | 返回一个DrawableDescriptor对象。 |
@@ -422,10 +280,6 @@ type DrawableDescriptor = DrawableDescriptor
 ## SelectedMode10+枚举说明
 
 选中子页签的显示模式枚举。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -436,10 +290,6 @@ type DrawableDescriptor = DrawableDescriptor
 
 背板风格对象。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | borderRadius | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 背板的圆角半径（不支持百分比设置）。 默认值：8.0 单位：vp 取值范围：[0, +∞)。 |
@@ -447,8 +297,6 @@ type DrawableDescriptor = DrawableDescriptor
 ## LabelStyle10+对象说明
 
 label文本和字体的样式对象。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -465,63 +313,30 @@ label文本和字体的样式对象。
 
 底部页签和侧边页签样式。
 
-### constructor
-
 constructor(icon: ResourceStr | TabBarSymbol, text: ResourceStr)
 
 BottomTabBarStyle的构造函数。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icon | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | [TabBarSymbol12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbarsymbol12对象说明) | 是 | 页签内的图片内容。 |
 | text | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 页签内的文字内容。 |
-
-### of10+
 
 static of(icon: ResourceStr | TabBarSymbol, text: ResourceStr): BottomTabBarStyle
 
 BottomTabBarStyle的静态构造函数。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| icon | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | [TabBarSymbol12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbarsymbol12对象说明) | 是 | 页签内的图片内容。 |
-| text | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 页签内的文字内容。 |
-
-**返回值：**
-
 | 类型 | 说明 |
 | --- | --- |
 | [BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9) | 返回创建的BottomTabBarStyle对象。 |
-
-### padding10+
 
 padding(value: Padding | Dimension | LocalizedPadding): BottomTabBarStyle
 
 设置底部页签的内边距属性（不支持百分比设置）。使用Dimension时，四个方向内边距同时生效。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Padding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#padding) | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | [LocalizedPadding12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizedpadding12) | 是 | 底部页签的内边距。 默认值：{left:4.0vp,right:4.0vp,top:0.0vp,bottom:0.0vp} 使用LocalizedPadding时，支持镜像能力。 默认值：{start:LengthMetrics.vp(4),end:LengthMetrics.vp(4), top:LengthMetrics.vp(0),bottom:LengthMetrics.vp(0)} |
-
-**返回值：**
 
 | 类型 | 说明 |
 | --- | --- |
@@ -533,21 +348,9 @@ verticalAlign(value: VerticalAlign): BottomTabBarStyle
 
 设置底部页签的图片、文字在垂直方向上的对齐格式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [VerticalAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#verticalalign) | 是 | 底部页签的图片、文字在垂直方向上的对齐格式。 默认值：VerticalAlign.Center |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9) | 返回BottomTabBarStyle对象本身。 |
 
 ### layoutMode10+
 
@@ -555,21 +358,9 @@ layoutMode(value: LayoutMode): BottomTabBarStyle
 
 设置底部页签的图片、文字排布的方式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [LayoutMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#layoutmode10枚举说明) | 是 | 底部页签的图片、文字排布的方式，具体参照LayoutMode枚举。 默认值：LayoutMode.VERTICAL |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9) | 返回BottomTabBarStyle对象本身。 |
 
 ### symmetricExtensible10+
 
@@ -577,65 +368,25 @@ symmetricExtensible(value: boolean): BottomTabBarStyle
 
 设置底部页签的图片、文字是否可以对称借用左右底部页签的空余位置中的最小值，仅fixed水平模式下在底部页签之间有效。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 底部页签的图片、文字是否可以对称借用左右底部页签的空余位置中的最小值。 默认值：false，底部页签的图片、文字不可以对称借用左右底部页签的空余位置中的最小值。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9) | 返回BottomTabBarStyle对象本身。 |
-
-### labelStyle10+
 
 labelStyle(value: LabelStyle): BottomTabBarStyle
 
 设置底部页签的label文本和字体的样式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [LabelStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#labelstyle10对象说明) | 是 | 底部页签的label文本和字体的样式。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9) | 返回BottomTabBarStyle对象本身。 |
-
-### id11+
 
 id(value: string): BottomTabBarStyle
 
 设置底部页签的id。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 设置底部页签的[id](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id#id)。 |
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9) | 返回BottomTabBarStyle对象本身。 |
 
 ### iconStyle12+
 
@@ -643,29 +394,13 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
 设置底部页签的label图标的样式。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | [TabBarIconStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#tabbariconstyle12对象说明) | 是 | 底部页签的label图标的样式。 |
 
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [BottomTabBarStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabcontent#bottomtabbarstyle9) | 返回BottomTabBarStyle对象本身。 |
-
 ## TabBarSymbol12+对象说明
 
 页签内symbol图标样式对象。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -676,10 +411,6 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 
 页签内容排布方式枚举。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTO | 0 | 若页签宽度大于104vp，页签内容为左右排布，否则页签内容为上下排布。仅TabBar为垂直模式或Fixed水平模式时有效。 |
@@ -689,10 +420,6 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 ## TabBarIconStyle12+对象说明
 
 Label图标样式对象。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -710,13 +437,9 @@ onWillShow(event: VoidCallback)
 逻辑回调，TabContent将要显示的时候触发该回调。场景包括TabContent首次显示，TabContent切换，页面切换，窗口前后台切换。
 
 > **说明**
-> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
+> 从API version 20开始，该接口支持在
+> attributeModifier
+> 中调用。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -727,15 +450,6 @@ onWillShow(event: VoidCallback)
 onWillHide(event: VoidCallback)
 
 逻辑回调，TabContent将要隐藏的时候触发该回调。场景包括TabContent切换，页面切换，窗口前后台切换。
-
-> **说明**
-> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -858,7 +572,7 @@ struct TabContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/2XXt3C_uTD-_QE7Zj0vnqQ/zh-cn_image_0000002562145839.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=2F7F9F44AAFDCB224CAD521CCE0492277F9DE0C6B4327F07AF0E1BCEFF0DC644)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/2XXt3C_uTD-_QE7Zj0vnqQ/zh-cn_image_0000002562145839.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=97105C8021408D7146EAF59385CDFF01291D592A3482197332D894C5E50FC48E)
 
 ### 示例2（自定义侧边页签）
 
@@ -925,7 +639,7 @@ struct TabContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/RHNUNqnIQF6y-03SGKwnCA/zh-cn_image_0000002531105938.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=82F9F590F87C26EAFEABA55667E55386FD13B160ECE40C3421667E874C092989)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/RHNUNqnIQF6y-03SGKwnCA/zh-cn_image_0000002531105938.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=6A8C686CC27958ED5FA6684C743671931E839F22A846B56A7DA9309A87559B5E)
 
 ### 示例3（子页签/底部页签/侧边页签样式对比）
 
@@ -1096,7 +810,7 @@ struct TabBarStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/sr8qIMo7SXmwRs27HpQ7Ew/zh-cn_image_0000002531225872.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=C30BD7C6006AB4D635186C0BCC299E531D35AE547030FFED080C07EDC3B4F0B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/sr8qIMo7SXmwRs27HpQ7Ew/zh-cn_image_0000002531225872.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=8DCD49441AAEB803013A2FD6836145A51BEC6B12B454737342040A1EDA79E884)
 
 ### 示例4（设置子页签下划线基本属性）
 
@@ -1333,7 +1047,7 @@ struct TabsAttr {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Q9SvIrLXSWiuGGkpbgzY9g/zh-cn_image_0000002562025855.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=CCD791D97A4D272B633F55EBB5B7CBC686F3D606FC4259D257D26C4919424784)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/Q9SvIrLXSWiuGGkpbgzY9g/zh-cn_image_0000002562025855.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=57F3852C8ACF8DE3EB196C67467345EC41B336A7370F9AC7CAE386003081C929)
 
 ### 示例5（设置子页签文本自适应高度属性）
 
@@ -1422,7 +1136,7 @@ struct TabsTextOverflow {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/tgbRfnDcTlu7hZkm5YNNHg/zh-cn_image_0000002562145841.png?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=009AB9AD2DA647DF843427E149EF2DC16347C231360A40BE70369474C2A21D41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/tgbRfnDcTlu7hZkm5YNNHg/zh-cn_image_0000002562145841.png?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=2E7EA925B3B09C037DA7B79FA02D85CF18520435892F342102B1DE442E9418F9)
 
 ### 示例6（设置底部页签基本属性）
 
@@ -1572,7 +1286,7 @@ struct TabContentExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/wpXk4EQdSEqW7jxc0xzqrw/zh-cn_image_0000002531105940.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=D0CD56B8479796F1357F7804FAB640F928DD6124405B557764D96358B63404DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/wpXk4EQdSEqW7jxc0xzqrw/zh-cn_image_0000002531105940.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=7C82F7BAFB5798D7651F16885C5A82C8544E5CF13ECD4593C68A2D1E35683DC9)
 
 ### 示例7（设置子页签/底部页签文本颜色）
 
@@ -1666,7 +1380,7 @@ struct TabBarStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/-6Eh28hVQHi-EssU3CtnrQ/zh-cn_image_0000002531225874.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=FE98FCEAC30D8B076B11752784C3E157BF67609D0EB874A8165F150535909CD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/-6Eh28hVQHi-EssU3CtnrQ/zh-cn_image_0000002531225874.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=9FEE229CA009F69C47DDF0025D540BF103CF5CBA26B07E823E4673E857678184)
 
 ### 示例8（设置自定义子页签）
 
@@ -1744,7 +1458,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/kHyKFxTyS92TXRDvdnc8qA/zh-cn_image_0000002562025857.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=7AD2D1ACDF40593BBBBD65B2A0809164B4921034B836FC649FDEAD2CC3997C02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/kHyKFxTyS92TXRDvdnc8qA/zh-cn_image_0000002562025857.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=A44D56F3D286CBFE7E86CFDB2C46D79F31D53E53D80C2245006DA1AAB349A47C)
 
 ### 示例9（设置底部页签使用symbol图标）
 
@@ -1827,7 +1541,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/I4Psncj0Su-AwwV1Dd6l6g/zh-cn_image_0000002562145843.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=F5203B86C58C2029827C9CE8A832DACC52AFFF7CB867BFC5D8FE8FCB3FD4B37F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/I4Psncj0Su-AwwV1Dd6l6g/zh-cn_image_0000002562145843.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=F8890302CE596FFF7BB66A120581DF5BFC06DCCAA09390667B425F1DDEEBF319)
 
 ### 示例10（通过ComponentContent设置TabBar）
 
@@ -1932,7 +1646,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/dFQMa5a5QKupQeFKBP5ipQ/zh-cn_image_0000002531105942.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=B68A83BF9ACA8AE7BF1F9FFFB73A1C6A1278FB1E19CC2D4CE552800AF9420C7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/dFQMa5a5QKupQeFKBP5ipQ/zh-cn_image_0000002531105942.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=1EFAF5E5C58CCB770242986F2FCD59F0B8D687CAD4EF405332E49E7C77C5F226)
 
 ### 示例11（通过ComponentContent预加载子节点）
 
@@ -2107,7 +1821,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/mTwouXpKQDif4lUb4PF2Qw/zh-cn_image_0000002531225876.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=B5C737C825230A88ACC7399967F1FC5F281D1081786F276FDCA81D691B610B60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/mTwouXpKQDif4lUb4PF2Qw/zh-cn_image_0000002531225876.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=D9E8BC8608D99A386443E87C0DC89B54E9B09D297A7D292E5DB21016BAD7A91B)
 
 ### 示例12（设置子页签indicator为图片）
 
@@ -2174,4 +1888,4 @@ struct TabsIndicatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3p_oRSbMRsqi8xggSrVyRw/zh-cn_image_0000002562025859.png?HW-CC-KV=V1&HW-CC-Date=20260320T120256Z&HW-CC-Expire=86400&HW-CC-Sign=13AC0D43DADB7F91D81DA5DE07343102D940CDA6AD27D39EDC2F1C693F62AA91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3p_oRSbMRsqi8xggSrVyRw/zh-cn_image_0000002562025859.png?HW-CC-KV=V1&HW-CC-Date=20260320T122225Z&HW-CC-Expire=86400&HW-CC-Sign=F08E44CD28375835825CFE2A2713BE71F114E2593FC197DB611DF054C96F023F)

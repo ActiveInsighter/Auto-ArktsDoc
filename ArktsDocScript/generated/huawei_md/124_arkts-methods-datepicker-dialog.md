@@ -1,13 +1,17 @@
-# 日期滑动选择器弹窗 (DatePickerDialog)-弹窗-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# DatePickerDialog
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-datepicker-dialog
 
 根据指定的日期范围创建日期滑动选择器并展示在弹窗上。
 
 > **说明**
-> - 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> - 本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)说明。
-> - 本模块不支持深浅色模式热更新，如果需要进行深浅色模式切换，请重新打开弹窗。
-> - 最大显示行数在横、竖屏模式下存在差异。竖屏时默认为5行，横屏时依赖系统配置，未配置时默认显示为3行。可通过如下参数查看具体配置值$r('sys.float.ohos_id_picker_show_count_landscape')。
+> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> 本模块功能依赖UI的执行上下文，不可在
+> UI上下文不明确
+> 的地方使用，参见
+> UIContext
+> 说明。
+> 本模块不支持深浅色模式热更新，如果需要进行深浅色模式切换，请重新打开弹窗。
+> 最大显示行数在横、竖屏模式下存在差异。竖屏时默认为5行，横屏时依赖系统配置，未配置时默认显示为3行。可通过如下参数查看具体配置值$r('sys.float.ohos_id_picker_show_count_landscape')。
 
 ## DatePickerDialog
 
@@ -18,9 +22,16 @@ static show(options?: DatePickerDialogOptions)
 定义日期滑动选择器弹窗并弹出。
 
 > **说明**
-> 从API version 8开始支持，从API version 18开始废弃，建议使用[showDatePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showdatepickerdialog)替代。showDatePickerDialog需先获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例后再进行调用。
->
-> 从API version 10开始，可以通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[showDatePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showdatepickerdialog)来明确UI的执行上下文。
+> 从API version 8开始支持，从API version 18开始废弃，建议使用
+> showDatePickerDialog
+> 替代。showDatePickerDialog需先获取
+> UIContext
+> 实例后再进行调用。
+> 从API version 10开始，可以通过使用
+> UIContext
+> 中的
+> showDatePickerDialog
+> 来明确UI的执行上下文。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -39,10 +50,6 @@ static show(options?: DatePickerDialogOptions)
 日期选择器弹窗选项。
 
 继承自[DatePickerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#datepickeroptions对象说明)。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -85,10 +92,6 @@ static show(options?: DatePickerDialogOptions)
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selectedColor | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 否 | 是 | 设置开关开启时开关的背景颜色。 默认值：$r('sys.color.ohos_id_color_text_primary_actived')。 |
@@ -98,7 +101,11 @@ static show(options?: DatePickerDialogOptions)
 ## 示例
 
 > **说明**
-> 推荐通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[showDatePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showdatepickerdialog)来明确UI的执行上下文。
+> 推荐通过使用
+> UIContext
+> 中的
+> showDatePickerDialog
+> 来明确UI的执行上下文。
 
 ### 示例1（设置显示时间）
 
@@ -152,7 +159,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/3euKzY0DSHaI3TIBBeeKIg/zh-cn_image_0000002531106284.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=5B829B6A8687D3CDF05F24400AE0A02BCF90681E0B9FFF8EFE9D88474F5EFFCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/3euKzY0DSHaI3TIBBeeKIg/zh-cn_image_0000002531106284.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=733590FC2EE92A17668591B8539665300F22360683302CE0A2B604843D2F7ADA)
 
 ### 示例2（自定义样式）
 
@@ -230,10 +237,14 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/eZXhQSZ8SkKS_HQztVFqBA/zh-cn_image_0000002531226218.png?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=A939229C8B2D28DCFD2E153803597BA279B9310CD3B9EBDD32F4B89C960CAE85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/eZXhQSZ8SkKS_HQztVFqBA/zh-cn_image_0000002531226218.png?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=2C10798046CB2ED9EB868BEF5955D5CF5CE41092B61E6BCB7142DEB4E117962F)
 
 > **说明**
-> 如需完全自定义实现日期滑动选择器弹窗，可以通过先使用[自定义弹窗 (CustomDialog)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box)，然后使用[DatePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker)组件来实现。
+> 如需完全自定义实现日期滑动选择器弹窗，可以通过先使用
+> 自定义弹窗 (CustomDialog)
+> ，然后使用
+> DatePicker
+> 组件来实现。
 
 ### 示例3（悬停态弹窗）
 
@@ -291,7 +302,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/A0CrlRomRvine6i20etLyA/zh-cn_image_0000002562026201.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=D454DC716E41164091A3BF771833CA91F1205F5CB478D84F69042EE093F6CC6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/A0CrlRomRvine6i20etLyA/zh-cn_image_0000002562026201.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=6774584BD6F4B1B7ECAAFBB9E5E5AD42680AD9FF2FCA85B468A2D41833EA141D)
 
 ### 示例4（设置弹窗位置）
 
@@ -326,7 +337,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/kYZWymJ2TUWbQL3GSPc1wQ/zh-cn_image_0000002562146187.png?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=0B8A2387F6915535CAF6CFAA1306C2EBFAD155887FED3FF771E3C6A2A9E617A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/kYZWymJ2TUWbQL3GSPc1wQ/zh-cn_image_0000002562146187.png?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=9DE762494E80431537EAE3D08A5FCDE47A47E80DA1237499FE3814648949164E)
 
 ### 示例5（设置遮蔽区）
 
@@ -365,7 +376,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/JZyl6ICQRcSKwQQf79CoJQ/zh-cn_image_0000002531106286.png?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=BF5EBBB582A3E93C41303935688D8FDA3DA5A25784AC226C69A9A6123C24473A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/JZyl6ICQRcSKwQQf79CoJQ/zh-cn_image_0000002531106286.png?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=371C900023F838E34CE31442BF92E75A1F055416D5371598A3C06F71DC128737)
 
 ### 示例6（设置弹窗背板）
 
@@ -401,7 +412,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/y_q36uIxRJCnka6dQ3FxHQ/zh-cn_image_0000002531226220.png?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=ABF5988CFB8772C3061B9DBCA0E333AB6990C241EEE0C708C39D95CCAB301EC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/y_q36uIxRJCnka6dQ3FxHQ/zh-cn_image_0000002531226220.png?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=1A1041B622444F7183FE7C9622B132E12CAADAEB49691DAA5A58C1EBF5031E5C)
 
 ### 示例7（设置公历农历）
 
@@ -451,7 +462,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/WALDZm2LS4y0rpVCcMZy8w/zh-cn_image_0000002562026203.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=6558040D486CEC0EE6C8EA7213C9744BFD19551B35CD7010DE9088035D9A659A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/WALDZm2LS4y0rpVCcMZy8w/zh-cn_image_0000002562026203.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=4C80571191EC7962B93F1BBE01BAD55AE2577D660527DB7AC75B7A8A355D17E1)
 
 ### 示例8（设置显示月、日列）
 
@@ -485,7 +496,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/s7TvTG2nR3qq1D2pFAd3JQ/zh-cn_image_0000002562146189.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=C87FCD85C760802F46E9C2D12EE3DF2B872C3A47DE9CE021F86B6ADF8E1D1FD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/s7TvTG2nR3qq1D2pFAd3JQ/zh-cn_image_0000002562146189.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=01880F0B4499C6E66022319FC4CCF31EB1B9ACAFB463AE331C4A2756AF48E969)
 
 ### 示例9（设置循环滚动）
 
@@ -528,7 +539,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/i8_SJ1EtTxWsQ0-v47-ilg/zh-cn_image_0000002531106288.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=23357709010D8079D2DAC5C8EE111FB4055ECBE854D83C8852F4B4F122DFA147)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/i8_SJ1EtTxWsQ0-v47-ilg/zh-cn_image_0000002531106288.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=DDA358C1D7E03130E79AA9A540BCE1848FF7EB1F2092513F5249C9BA35307595)
 
 ### 示例10（自定义背景模糊效果参数）
 
@@ -567,7 +578,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/v8hkgb9lQDefA6iylP0TkA/zh-cn_image_0000002531226222.png?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=3950B100F7C618085DB6C76AA3AFA3F975AFA97F65EAF673F32710B592B7C96B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/v8hkgb9lQDefA6iylP0TkA/zh-cn_image_0000002531226222.png?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=13C3969CB2241473F33878C22B099EFE78DB465407E1CFD769ACC48C0006846C)
 
 ### 示例11（自定义背景效果参数）
 
@@ -608,4 +619,4 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/4inWTOOZSnKgO51lJ-gd2Q/zh-cn_image_0000002562026205.png?HW-CC-KV=V1&HW-CC-Date=20260320T120412Z&HW-CC-Expire=86400&HW-CC-Sign=C8E95DA6E5A1C2E2C65D4626A8C7B4713A4C447B6682D4698B295A169AB9782D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/4inWTOOZSnKgO51lJ-gd2Q/zh-cn_image_0000002562026205.png?HW-CC-KV=V1&HW-CC-Date=20260320T122338Z&HW-CC-Expire=86400&HW-CC-Sign=754BF77A98373E1665A58B0EB1364509875C60E478D40C356A650CC6BE33AE78)

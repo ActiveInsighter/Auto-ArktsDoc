@@ -1,4 +1,4 @@
-# Gauge-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-gauge
 
 数据量规图表组件，用于将数据展示为环形图表。
@@ -11,9 +11,15 @@
 可以包含单个子组件。
 
 > **说明**
-> - 支持的子组件类型：系统组件和自定义组件，支持条件渲染控制[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)，不支持循环渲染控制[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)。
-> - 建议使用文本组件构建当前数值文本和辅助文本。
-> - 若子组件宽高为百分比形式，则基准范围为以外圆环做为内切圆的矩形。
+> 支持的子组件类型：系统组件和自定义组件，支持条件渲染控制
+> if/else
+> ，不支持循环渲染控制
+> ForEach
+> 和
+> LazyForEach
+> 。
+> 建议使用文本组件构建当前数值文本和辅助文本。
+> 若子组件宽高为百分比形式，则基准范围为以外圆环做为内切圆的矩形。
 
 ## 接口
 
@@ -41,8 +47,6 @@ Gauge(options: GaugeOptions)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value8+ | number | 否 | 否 | 量规图的当前数据值，即图中指针指向位置。用于组件创建时量规图初始值的预置。 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 **说明：** value不在min和max范围内时使用min作为默认值。 |
@@ -59,14 +63,6 @@ value(value: number)
 
 设置量规图的数据值。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 量规图的数据值，可用于动态修改量规图的数据值。 默认值：0 |
@@ -77,14 +73,6 @@ startAngle(angle: number)
 
 设置起始角度位置。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | angle | number | 是 | 起始角度位置，时钟0点为0度，顺时针方向为正角度，逆时针方向为负角度，超过360度等价于对360度取余后的角度。 默认值：0 从起始位置到终止位置的绘制只有顺时针方向。 |
@@ -94,14 +82,6 @@ startAngle(angle: number)
 endAngle(angle: number)
 
 设置终止角度位置。起始角度和终止角度的差值过小时，会绘制出异常图像，请取合理的起始角度和终止角度。建议使用单色环改变Gauge的value参数实现数据值的调节，可通过定时器setTimeout进行数值的延迟加载。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -123,14 +103,6 @@ colors(colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGra
 
 分段渐变环最大显示段数为9段，若多于9段，则多于部分不显示。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | colors | [ResourceColor11+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | [LinearGradient11+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel#lineargradient10) | Array<[[ResourceColor10+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | [LinearGradient11+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel#lineargradient10) , number]> | 是 | 量规图的颜色，支持分段颜色设置。 API version 9 默认值：Color.Black API version 11默认值： 若不传颜色，或者数组为空，无法确定圆环类型及颜色，则圆环颜色为"0xFF64BB5C"、"0xFFF7CE00"、"0xFFE84026"的渐变环。 若传入颜色，但颜色值有误，则该颜色为"0xFFE84026"。 若对应颜色的比重为0，则该颜色在圆环中不显示。若所有颜色比重均为0，圆环不显示。 |
@@ -140,14 +112,6 @@ colors(colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGra
 strokeWidth(length: Length)
 
 设置环形量规图的环形厚度。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -161,10 +125,6 @@ description(value: CustomBuilder)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [CustomBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#custombuilder8) | 是 | 说明内容。 **说明：** @Builder中的内容由开发者自定义，建议使用文本或者图片。 若自定义部分的宽高为百分比形式，则基准范围为圆环直径的44.4%*25.4%的矩形（图片为28.6%*28.6%），距离圆环底部0vp，左右居中。 设置null则不显示内容。 不设置则依赖是否设置数据最大最小值。 若设置最大最小值或者只设置其中一个，则显示最大最小值。 若未设置最大最小值，则不显示内容。 最大最小值显示在圆环底部，位置不可移动，若圆环开口角度设置不恰当，存在圆环遮挡文字的情况。 |
@@ -175,12 +135,6 @@ trackShadow(value: GaugeShadowOptions)
 
 设置阴影样式。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [GaugeShadowOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-gauge#gaugeshadowoptions11对象说明) | 是 | 添加阴影效果，可以指定模糊半径、X轴和Y轴的偏移量。 **说明：** 阴影颜色与圆环颜色一致。 设置null为不开启投影。 |
@@ -190,12 +144,6 @@ trackShadow(value: GaugeShadowOptions)
 indicator(value: GaugeIndicatorOptions)
 
 设置指针样式。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -208,15 +156,11 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 设置隐私敏感。
 
 > **说明**
-> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+> 从API version 20开始，该接口支持在
+> attributeModifier
+> 中调用。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -228,12 +172,6 @@ contentModifier(modifier: ContentModifier<GaugeConfiguration>)
 
 定制Gauge内容区的方法。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | [ContentModifier<GaugeConfiguration>](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-gauge#gaugeconfiguration12对象说明) | 是 | 在Gauge组件上定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -242,15 +180,9 @@ contentModifier(modifier: ContentModifier<GaugeConfiguration>)
 
 GaugeShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-information-display-common#multishadowoptions)，具有MultiShadowOptions的全部属性。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
 ## GaugeIndicatorOptions11+对象说明
 
 数据量规图表指针选项。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -260,10 +192,6 @@ GaugeShadowOptions继承自[MultiShadowOptions](https://developer.huawei.com/con
 ## GaugeConfiguration12+对象说明
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -292,6 +220,7 @@ struct Gauge1 {
       .height('100%')
       .textAlign(TextAlign.Center)
   }
+
   build() {
     Column() {
       Gauge({ value: 50, min: 1, max: 100 }) {
@@ -339,7 +268,7 @@ struct Gauge1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/nPjBzALASeiwRcIu1OPJKw/zh-cn_image_0000002531226072.png?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=7CBD1C169F4B820F824CAB1EB0B484A52F980D7B0CB534E5B88A913D3E233967)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/nPjBzALASeiwRcIu1OPJKw/zh-cn_image_0000002531226072.png?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=35B05AEE12804E5DAF9A22C9DFA379BF497D10EDC66B68A4F4B4E11E26650B2B)
 
 ### 示例2（设置单色量规图）
 
@@ -353,6 +282,7 @@ struct Gauge2 {
   descriptionBuilderImage() {
     Image($r('sys.media.ohos_ic_public_clock')).width(72).height(72)
   }
+
   build() {
     Column() {
       Gauge({ value: 50, min: 1, max: 100 }) {
@@ -382,7 +312,7 @@ struct Gauge2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/lR9Zu8eATG2kT62_h35zjw/zh-cn_image_0000002562026055.png?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=8D049B2F14B59E4C66849EA36DFC902A624804B4AD0D5A27F8EABD64A0F2EA99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/lR9Zu8eATG2kT62_h35zjw/zh-cn_image_0000002562026055.png?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=427649D0CA183221B5C29E024F17394FB0DCD61E78B630AFAF0129675144918C)
 
 ### 示例3（设置定制说明区）
 
@@ -403,6 +333,7 @@ struct Gauge2 {
         .height('100%')
         .textAlign(TextAlign.Center)
     }
+
     build() {
       Column() {
         Column() {
@@ -443,7 +374,7 @@ struct Gauge2 {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ogkOMpDjTb2nnmbWkAlw2A/zh-cn_image_0000002562146041.png?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=69DD2929A61EBBAF676A982F0D2B564D9D5878E71265CAC913B0A0510BD2B4D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ogkOMpDjTb2nnmbWkAlw2A/zh-cn_image_0000002562146041.png?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=95820A92935B5A96C15CB1EDE914FAA6043BE81EC21EF7A1138CF53794CCE758)
 
 ### 示例4（设置辅助区）
 
@@ -498,7 +429,7 @@ struct Gauge4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/QAGmDxiCRce7pvvXEauhtA/zh-cn_image_0000002531106140.png?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=A970D64531B7B85E388DC7DD9E7D1469641AC474841EDC64ADFCE9DAAC63B86B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/QAGmDxiCRce7pvvXEauhtA/zh-cn_image_0000002531106140.png?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=0BF541F9CC67FF743BE8765A028826C4CB65D43F11FF2E59672325C9F899B76B)
 
 ### 示例5（设置最大最小值）
 
@@ -540,7 +471,7 @@ struct Gauge5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/odMak0M_TYCT_2qcdmdCtQ/zh-cn_image_0000002531226074.png?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=8E90BED98EA608775581F5C648F4ADAAE4E725AF2D5E04705DC8CC52FF9B13AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/odMak0M_TYCT_2qcdmdCtQ/zh-cn_image_0000002531226074.png?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=5262B5E2FD0E729D10E21EE373C5FDC23003D528D7776FBB0E684B6A35408ADC)
 
 ### 示例6（设置指针）
 
@@ -588,7 +519,7 @@ struct Gauge6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zlPFq-8QRQ2g3imQ2HEivQ/zh-cn_image_0000002562026057.png?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=99C40938F85C9281A036BF01A3023F661A13CFB2123C40F13D908BA5D315C452)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zlPFq-8QRQ2g3imQ2HEivQ/zh-cn_image_0000002562026057.png?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=3E46FD5D3FE77A4596B0CFA59A1C1BDE16DB681E76D07DDAF3166646C8358B08)
 
 ### 示例7（设置起止角度）
 
@@ -628,15 +559,13 @@ struct Gauge7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/RtLxEKfyQFSEdD3z8IfF3w/zh-cn_image_0000002562146043.png?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=BDD33C6C4E45068BB6CC296BB311015EB0FBFBE32CD47BE33202C1E415AA8C4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/RtLxEKfyQFSEdD3z8IfF3w/zh-cn_image_0000002562146043.png?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=C7C7224C2D23E255287C7C842BF5200CE16849EBB586588B0C85AF6103100D0E)
 
 ### 示例8（设置定制内容区）
 
 该示例通过[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-gauge#contentmodifier12)接口，实现了定制量规图内容区的功能。
 
 ```typescript
-// xxx.ets
-// 该示例实现了Gauge组件使用Builder定制内容区，使用了环形图表组件，按钮和文本框。点击增加按钮，环形图表指针位置会向右偏移，反之点减少按钮环形图表指针位置会向左偏移。
 @Builder
 function buildGauge(config: GaugeConfiguration) {
   Column({ space: 30 }) {
@@ -646,6 +575,7 @@ function buildGauge(config: GaugeConfiguration) {
         '  max：' + JSON.stringify((config.contentModifier as MyGaugeStyle).max))
         .fontSize(12)
     }
+
     Text('【Config】value：' + config.value + '  min：' + config.min + '  max：' + config.max).fontSize(12)
     Gauge({
       value: config.value,
@@ -658,25 +588,30 @@ function buildGauge(config: GaugeConfiguration) {
   .margin({ top: 5 })
   .alignItems(HorizontalAlign.Center)
 }
+
 class MyGaugeStyle implements ContentModifier<GaugeConfiguration> {
   value: number = 0
   min: number = 0
   max: number = 0
+
   constructor(value: number, min: number, max: number) {
     this.value = value
     this.min = min
     this.max = max
   }
+
   applyContent(): WrappedBuilder<[GaugeConfiguration]> {
     return wrapBuilder(buildGauge)
   }
 }
+
 @Entry
 @Component
 struct refreshExample {
   @State gaugeValue: number = 20
   @State gaugeMin: number = 0
   @State gaugeMax: number = 100
+
   build() {
     Column({ space: 20 }) {
       Gauge({
@@ -685,6 +620,7 @@ struct refreshExample {
         max: this.gaugeMax
       })
         .contentModifier(new MyGaugeStyle(30, 10, 100))
+
       Column({ space: 20 }) {
         Row({ space: 20 }) {
           Button('增加').onClick(() => {
@@ -704,7 +640,7 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/-P5SFzdBSDC-SR8B43Qglw/zh-cn_image_0000002531106142.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=8234989CF120B70BCA5D95E96CF69BB77FE2BAFD90F177A63861E4889AFFA463)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/-P5SFzdBSDC-SR8B43Qglw/zh-cn_image_0000002531106142.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=DC3ED88BBC51B1DFE7BC9B1EB88A746F50C052D471CAEA4433F59DBBF93491B5)
 
 ### 示例9（设置隐私隐藏）
 
@@ -735,7 +671,7 @@ struct GaugeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/v4FTGgiBTEyA7KbaHags6Q/zh-cn_image_0000002531226076.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=E2C01374C9945A6177D0D15CFA379DD5BC70FA7795960A6FF1103D94468A0EEE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/v4FTGgiBTEyA7KbaHags6Q/zh-cn_image_0000002531226076.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=4A047216AA8D7B9A5AA9322CDC306228C1266CC4CC47C892B9EA4BCFE0C4C3F6)
 
 ### 示例10（设置自定义指针）
 
@@ -748,7 +684,7 @@ struct Gauge2 {
   build() {
     Column() {
       Gauge({ value: 50, min: 1, max: 100 })
-        // $r('app.media.indicator')需要替换为开发者所需的图像资源文件。
+
         .indicator({ space: 10, icon: $r('app.media.indicator') })
         .startAngle(210)
         .endAngle(150)
@@ -770,4 +706,4 @@ struct Gauge2 {
 </svg>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/WNa0B9CHRpKrza6mnSoF1A/zh-cn_image_0000002562026059.png?HW-CC-KV=V1&HW-CC-Date=20260320T120341Z&HW-CC-Expire=86400&HW-CC-Sign=0C7225EE3E3846E68FC159304E844247BF02935312C4636DE5A07F1ACB639ED2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/WNa0B9CHRpKrza6mnSoF1A/zh-cn_image_0000002562026059.png?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=79C1381868A5490C824BBC33C147BB62118AFCBBAB5652EE2AAFAAF1AACDB5F6)

@@ -1,4 +1,4 @@
-# 文档中心
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow
 
 栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性。
@@ -34,12 +34,6 @@ GridRow(option?: GridRowOptions)
 
 设置栅格行布局容器的布局选项。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | columns | number | [GridRowColumnOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow#gridrowcolumnoption) | 否 | 是 | 设置布局列数。 取值为大于0的整数。 - API version 20之前：默认值为12。 - API version 20及之后：默认值为{ xs: 2, sm: 4, md: 8, lg: 12, xl: 12, xxl: 12 } 非法值：按默认值处理。 |
@@ -50,12 +44,6 @@ GridRow(option?: GridRowOptions)
 ## GutterOption
 
 栅格布局间距类型，用于描述栅格子组件不同方向的间距。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -84,12 +72,6 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 每列栅格的宽度为GridRow的内容区大小减去栅格子组件的间距gutter， 再除以总的栅格列数。比如，宽800px的GridRow设置columns为12，gutter设置为10px， padding设置为20px，那么每列栅格的宽度为(800 - 20 * 2 - 10 * 11) / 12。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | xs | number | 否 | 是 | 在栅格大小为xs的设备上，栅格容器组件的栅格列数。 |
@@ -103,12 +85,6 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 栅格在不同宽度设备类型下，gutter的大小。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | xs | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 在最小宽度类型设备上，栅格子组件的间距。 默认值：0vp |
@@ -121,12 +97,6 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 ## BreakPoints
 
 设置栅格容器组件的断点。更多断点的说明参考[栅格容器断点](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -146,12 +116,6 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 
 设置栅格容器组件的断点参照物。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 说明 |
 | --- | --- |
 | WindowSize | 以窗口为参照。 |
@@ -162,17 +126,11 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 栅格元素排列方向。
 
 > **说明**
-> - 栅格元素仅支持Row/RowReverse排列，不支持column/ColumnReverse方向排列。
-> - 栅格子组件仅能通过span、offset计算子组件位置与大小。多个子组件span超过规定列数时自动换行。
-> - 单个元素span大小超过最大列数时后台默认span为最大column数。
-> - 新一行的Offset加上子组件的span超过总列数时，将下一个子组件在新的一行放置。
-> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/3kwheuH_SgCo1vfvKrgmMA/zh-cn_image_0000002562025771.png?HW-CC-KV=V1&HW-CC-Date=20260320T120233Z&HW-CC-Expire=86400&HW-CC-Sign=325169D87370F12F8727BFE4655C768C40E4B902DE16F7FC55B68A35507F3230)
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+> 栅格元素仅支持Row/RowReverse排列，不支持column/ColumnReverse方向排列。
+> 栅格子组件仅能通过span、offset计算子组件位置与大小。多个子组件span超过规定列数时自动换行。
+> 单个元素span大小超过最大列数时后台默认span为最大column数。
+> 新一行的Offset加上子组件的span超过总列数时，将下一个子组件在新的一行放置。
+> 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -191,12 +149,6 @@ alignItems(value: ItemAlign)
 
 **卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ItemAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#itemalign) | 是 | GridRow中的GridCol垂直主轴方向对齐方式。 默认值：ItemAlign.Start 非法值：按默认值处理。 **说明**： ItemAlign支持的枚举：ItemAlign.Start、ItemAlign.Center、ItemAlign.End、ItemAlign.Stretch。 |
@@ -212,15 +164,13 @@ onBreakpointChange(callback: (breakpoints: string) => void)
 断点发生变化时触发回调。
 
 > **说明**
-> - 当[断点参照物](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow#breakpointsreference枚举说明)设置为BreakpointsReference.ComponentSize时，不建议在onBreakpointChange回调中动态修改GridRow组件的[padding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#padding)或[margin](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#margin)属性值。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
+> 当
+> 断点参照物
+> 设置为BreakpointsReference.ComponentSize时，不建议在onBreakpointChange回调中动态修改GridRow组件的
+> padding
+> 或
+> margin
+> 属性值。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -263,7 +213,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/6BhEardySjaUF78o4i8WxA/zh-cn_image_0000002562145757.png?HW-CC-KV=V1&HW-CC-Date=20260320T120233Z&HW-CC-Expire=86400&HW-CC-Sign=9394A7C0E1F5254A1AB18FB2D45315B39CC5718013A01AD4F4B36043075E3D83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/6BhEardySjaUF78o4i8WxA/zh-cn_image_0000002562145757.png?HW-CC-KV=V1&HW-CC-Date=20260320T122201Z&HW-CC-Expire=86400&HW-CC-Sign=1FA58B4523FF705C596AC4FE601CE8A854D50CBC63E3DFDBF406CB09E862CAEA)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -327,4 +277,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/LfqruKj8QlyiQa2-ORy2-g/zh-cn_image_0000002531105856.png?HW-CC-KV=V1&HW-CC-Date=20260320T120233Z&HW-CC-Expire=86400&HW-CC-Sign=F3658860E9C90DC48385E23C2EF2FBBB5DE351666B839EB9FD3409144FAECF7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/LfqruKj8QlyiQa2-ORy2-g/zh-cn_image_0000002531105856.png?HW-CC-KV=V1&HW-CC-Date=20260320T122201Z&HW-CC-Expire=86400&HW-CC-Sign=B0C7CD61C7AD6D6B74AE5CF335157B3A41130A8C190CB86FC88E593C71A1E981)

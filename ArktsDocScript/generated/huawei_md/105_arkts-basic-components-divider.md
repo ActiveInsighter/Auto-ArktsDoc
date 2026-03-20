@@ -1,12 +1,13 @@
-# Divider-空白与分隔-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-divider
 
 提供分割线组件，分割不同内容块/内容元素。
 
 > **说明**
 > 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
->
-> 如果出现分割线粗细不一或者消失的问题，请参考[组件级像素取整常见问题](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-pixelroundforcomponent#常见问题)。
+> 如果出现分割线粗细不一或者消失的问题，请参考
+> 组件级像素取整常见问题
+> 。
 
 ## 子组件
 
@@ -34,12 +35,6 @@ vertical(value: boolean)
 
 设置分割线的方向，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -52,14 +47,6 @@ color(value: ResourceColor)
 
 设置分割线的颜色，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 分割线颜色。 默认值：'#33182431' 非法值：按默认值处理。 支持通过[WithTheme](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-theme)设置通用分割线颜色。 |
@@ -70,14 +57,6 @@ strokeWidth(value: number | string)
 
 设置分割线的宽度，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | string | 是 | 分割线宽度。 默认值：1px。 非法值：按默认值处理 单位：vp **说明：** 分割线的宽度不支持百分比设置。优先级低于[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)，超过通用属性设置大小时，按照通用属性进行裁切。部分设备硬件中存在1像素取整后分割线不显示问题，建议使用2像素。 |
@@ -87,14 +66,6 @@ strokeWidth(value: number | string)
 lineCap(value: LineCapStyle)
 
 设置分割线的端点样式，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -178,7 +149,7 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/oUl_uuZqQIWO6EXLlfqIzw/zh-cn_image_0000002562146059.png?HW-CC-KV=V1&HW-CC-Date=20260320T120351Z&HW-CC-Expire=86400&HW-CC-Sign=3C0ECEE60ECCF0880923FB46DC375C4572055FB2CCB271F9D8AE2BDE99329A3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/oUl_uuZqQIWO6EXLlfqIzw/zh-cn_image_0000002562146059.png?HW-CC-KV=V1&HW-CC-Date=20260320T122318Z&HW-CC-Expire=86400&HW-CC-Sign=12021C8015EC35B373A80BECF23ED783BAAE09B9522911D33C6750D05EF87945)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -216,4 +187,4 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Vur5rKACQ6WCZYZtA8KrgA/zh-cn_image_0000002531106158.png?HW-CC-KV=V1&HW-CC-Date=20260320T120351Z&HW-CC-Expire=86400&HW-CC-Sign=D7F5BD940228F32E53C229E8524A276FC2F74FA8F7C4732E4B8CA53E3B6D0E59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Vur5rKACQ6WCZYZtA8KrgA/zh-cn_image_0000002531106158.png?HW-CC-KV=V1&HW-CC-Date=20260320T122318Z&HW-CC-Expire=86400&HW-CC-Sign=5E27E1C5E0F38F17F8E18922247C69C7472393DA42E7BF8A991251F1A0A2CBF2)

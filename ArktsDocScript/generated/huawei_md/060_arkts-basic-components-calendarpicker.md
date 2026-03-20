@@ -1,4 +1,4 @@
-# CalendarPicker-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker
 
 日历选择器组件，提供下拉日历弹窗，可以让用户选择日期。
@@ -38,14 +38,6 @@ edgeAlign(alignType: CalendarAlign, offset?: Offset)
 
 设置选择器与入口组件的对齐方式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignType | [CalendarAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaralign枚举说明) | 是 | 对齐方式的类型。 默认值：CalendarAlign.END |
@@ -59,12 +51,6 @@ edgeAlign(alignType: Optional<CalendarAlign>, offset?: Offset)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | alignType | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[CalendarAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaralign枚举说明)> | 是 | 对齐方式的类型。 默认值：CalendarAlign.END 当alignType的值为undefined时，使用默认值。 |
@@ -76,14 +62,6 @@ textStyle(value: PickerTextStyle)
 
 入口区的文本颜色、字号、字体粗细。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [PickerTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-picker-common#pickertextstyle对象说明) | 是 | 设置入口区的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } |
@@ -93,14 +71,6 @@ textStyle(value: PickerTextStyle)
 textStyle(style: Optional<PickerTextStyle>)
 
 入口区的文本颜色、字号、字体粗细。与[textStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#textstyle)相比，style参数新增了对undefined类型的支持。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -113,12 +83,6 @@ markToday(enabled: boolean)
 设置日历选择器中系统当前日期是否保持高亮显示。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -134,14 +98,6 @@ onChange(callback: Callback<Date>)
 
 选择日期时触发该事件。不能通过双向绑定的状态变量触发。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | [Callback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#callback12)<Date> | 是 | 选中的日期值。 |
@@ -153,15 +109,9 @@ onChange(callback: Optional<Callback<Date>>)
 选择日期时触发该事件。不能通过双向绑定的状态变量触发。与[onChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#onchange)相比，callback参数新增了对undefined类型的支持。
 
 > **说明**
-> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
-**参数：**
+> 从API version 20开始，该接口支持在
+> attributeModifier
+> 中调用。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -170,10 +120,6 @@ onChange(callback: Optional<Callback<Date>>)
 ## CalendarOptions对象说明
 
 日历选择器组件的参数说明。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -198,12 +144,6 @@ onChange(callback: Optional<Callback<Date>>)
 
 对齐方式类型。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
-
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | START | 0 | 设置选择器与入口组件的对齐方式为左对齐。 |
@@ -217,11 +157,11 @@ onChange(callback: Optional<Callback<Date>>)
 该示例通过calendarPicker实现了日历选择器组件，提供下拉日历弹窗。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct CalendarPickerExample {
   private selectedDate: Date = new Date('2024-03-05');
+
   build() {
     Column() {
       Column() {
@@ -233,13 +173,14 @@ struct CalendarPickerExample {
             console.info(`CalendarPicker onChange: ${value.toString()}`);
           })
       }.alignItems(HorizontalAlign.End).width("100%")
+
       Text('日历日期选择器').fontSize(30)
     }.width('100%').margin({ top: 350 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/co7iEI_fScCJiE2AQH0Wqw/zh-cn_image_0000002562145859.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120305Z&HW-CC-Expire=86400&HW-CC-Sign=645AE037382F24D1850C7D63ABC2B2B3112001812B8E125A5AA71FDA9A4A5158)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/co7iEI_fScCJiE2AQH0Wqw/zh-cn_image_0000002562145859.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122233Z&HW-CC-Expire=86400&HW-CC-Sign=B9ABDAF8BB91F6D76A6F849480D83485E312C53A30C0AFCEF5E29E211EA3EB0D)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -248,13 +189,13 @@ struct CalendarPickerExample {
 从API version 18开始，[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)中新增了start、end属性。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct CalendarPickerExample {
   private selectedDate: Date = new Date('2025-01-15');
   private startDate: Date = new Date('2025-01-05');
   private endDate: Date = new Date('2025-01-25');
+
   build() {
     Column() {
       Column() {
@@ -271,7 +212,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QjrYAvGYTiOGjpi0MX00Og/zh-cn_image_0000002531105958.png?HW-CC-KV=V1&HW-CC-Date=20260320T120305Z&HW-CC-Expire=86400&HW-CC-Sign=81B0DEFAEBC30CACBCB6C9899B87426D748A3AB4A31F3D4432A0AB3606176E23)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QjrYAvGYTiOGjpi0MX00Og/zh-cn_image_0000002531105958.png?HW-CC-KV=V1&HW-CC-Date=20260320T122233Z&HW-CC-Expire=86400&HW-CC-Sign=3935D8D8B070AF62139937FBC31D782BB8F18CF24CFCCCF15508DB3D93C1E282)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -280,7 +221,6 @@ struct CalendarPickerExample {
 从API version 19开始，新增了[markToday](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#marktoday19)接口，[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)中新增了disabledDateRange属性。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct CalendarPickerExample {
@@ -291,6 +231,7 @@ struct CalendarPickerExample {
     { start: new Date('2025-01-19'), end: new Date('2025-01-19') },
     { start: new Date('2025-01-22'), end: new Date('2025-01-25') }
   ];
+
   build() {
     Column() {
       CalendarPicker({ disabledDateRange: this.disabledDateRange })
@@ -304,4 +245,4 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/o7yVCtWCS169tgVB0LE6yg/zh-cn_image_0000002531225892.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120305Z&HW-CC-Expire=86400&HW-CC-Sign=23BD17C57E7B5E783D609C2FB84EA9C5C180174CCC9A075E31E33BEDDA7B5DA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/o7yVCtWCS169tgVB0LE6yg/zh-cn_image_0000002531225892.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122233Z&HW-CC-Expire=86400&HW-CC-Sign=70A255AE3FC3651674D32239C7CBBD716CCC739C3501B9FCA8BE8967B4880F88)

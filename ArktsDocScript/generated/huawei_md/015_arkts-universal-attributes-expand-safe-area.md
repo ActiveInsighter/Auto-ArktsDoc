@@ -1,25 +1,17 @@
-# 文档中心
+# expandSafeArea
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area
 
 安全区域是指页面的显示区域，默认情况下开发者开发的界面都布局在安全区域内，不与系统设置的避让区比如状态栏、导航栏区域重叠。提供属性方法允许开发者设置组件绘制内容突破安全区域的限制，通过[expandSafeArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#expandsafearea)属性支持组件不改变布局情况下扩展其绘制区域至安全区外，通过设置[setKeyboardAvoidMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#setkeyboardavoidmode11)来配置虚拟键盘弹出时页面的避让模式。页面中有标题栏等文字不希望和避让区重叠时，建议对组件设置expandSafeArea属性实现沉浸式效果，也可以直接通过窗口接口[setWindowLayoutFullScreen](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setwindowlayoutfullscreen9)设置全屏沉浸式。
 
 > **说明**
 > 从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
->
 > 摄像头挖孔区域不属于避让区，页面默认不避让挖孔。
->
 > 从API version 12开始，可在module.json5中添加以下配置项，摄像头挖孔区域会视为避让区，实现页面默认避让挖孔：
->
 > "metadata": [
->
 > {
->
 > "name": "avoid_cutout",
->
 > "value": "true",
->
 > }
->
 > ],
 
 ## expandSafeArea
@@ -29,16 +21,20 @@ expandSafeArea(types?: Array<SafeAreaType>, edges?: Array<SafeAreaEdge>): T
 控制组件扩展其安全区域。
 
 > **说明**
-> - 设置expandSafeArea属性进行组件绘制扩展时，建议组件尺寸不要设置固定宽高（百分比除外），当设置固定宽高（包括设置'auto'）时，扩展安全区域的方向只支持[SafeAreaEdge.TOP, SafeAreaEdge.START]，扩展后的组件尺寸保持不变。
-> - 安全区域不会限制内部组件的布局和大小，不会裁剪内部组件。
-> - 当父容器为滚动容器时，组件设置expandSafeArea属性后，自身不会延伸，但仍可触发其子节点中设置了expandSafeArea的延伸范围更新。
-> - 设置expandSafeArea()时，不传参，走默认值处理；设置expandSafeArea([],[])时，相当于入参是空数组，此时expandSafeArea属性设置无效。
-> - 组件设置expandSafeArea生效的条件为： 1.type为SafeAreaType.KEYBOARD时默认生效，表现为组件不避让键盘。 2.设置其他type，组件的边界与安全区域重合时组件能够延伸到安全区域下。例如：设备顶部状态栏高度100，那么组件在屏幕中的绝对位置需要为0 <= y <= 100。
-> - 组件延伸到避让区时，在避让区的事件如点击事件等可能会被系统拦截，优先给状态栏等系统组件响应。
-> - 滚动类容器内的组件不建议设置expandSafeArea属性，如果设置，需要按照组件嵌套关系，将当前节点到滚动类祖先容器间所有直接节点设置expandSafeArea属性，否则expandSafeArea属性在滚动后可能会失效，写法参考[示例7](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#示例7滚动类容器扩展安全区)。
-> - expandSafeArea属性仅作用于当前组件，不会向父组件或子组件传递，因此使用过程中，所有相关组件均需配置。
-> - 同时设置expandSafeArea和position属性时，position属性会优先生效，expandSafeArea属性会后生效。对于未设置position、offset等绘制属性的组件，如果其边界未与避让区重叠，设置expandSafeArea属性将不生效，如弹窗和半模态组件。
-> - 对于expandSafeArea属性无法生效的场景，若要将组件部署在避让区，需要手动调整组件的坐标。
+> 设置expandSafeArea属性进行组件绘制扩展时，建议组件尺寸不要设置固定宽高（百分比除外），当设置固定宽高（包括设置'auto'）时，扩展安全区域的方向只支持[SafeAreaEdge.TOP, SafeAreaEdge.START]，扩展后的组件尺寸保持不变。
+> 安全区域不会限制内部组件的布局和大小，不会裁剪内部组件。
+> 当父容器为滚动容器时，组件设置expandSafeArea属性后，自身不会延伸，但仍可触发其子节点中设置了expandSafeArea的延伸范围更新。
+> 设置expandSafeArea()时，不传参，走默认值处理；设置expandSafeArea([],[])时，相当于入参是空数组，此时expandSafeArea属性设置无效。
+> 组件设置expandSafeArea生效的条件为：
+> 1.type为SafeAreaType.KEYBOARD时默认生效，表现为组件不避让键盘。
+> 2.设置其他type，组件的边界与安全区域重合时组件能够延伸到安全区域下。例如：设备顶部状态栏高度100，那么组件在屏幕中的绝对位置需要为0 <= y <= 100。
+> 组件延伸到避让区时，在避让区的事件如点击事件等可能会被系统拦截，优先给状态栏等系统组件响应。
+> 滚动类容器内的组件不建议设置expandSafeArea属性，如果设置，需要按照组件嵌套关系，将当前节点到滚动类祖先容器间所有直接节点设置expandSafeArea属性，否则expandSafeArea属性在滚动后可能会失效，写法参考
+> 示例7
+> 。
+> expandSafeArea属性仅作用于当前组件，不会向父组件或子组件传递，因此使用过程中，所有相关组件均需配置。
+> 同时设置expandSafeArea和position属性时，position属性会优先生效，expandSafeArea属性会后生效。对于未设置position、offset等绘制属性的组件，如果其边界未与避让区重叠，设置expandSafeArea属性将不生效，如弹窗和半模态组件。
+> 对于expandSafeArea属性无法生效的场景，若要将组件部署在避让区，需要手动调整组件的坐标。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -61,10 +57,6 @@ expandSafeArea(types?: Array<SafeAreaType>, edges?: Array<SafeAreaEdge>): T
 
 扩展安全区域的枚举类型。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SYSTEM | 0 | 系统默认非安全区域，包括状态栏、导航栏。 |
@@ -74,10 +66,6 @@ expandSafeArea(types?: Array<SafeAreaType>, edges?: Array<SafeAreaEdge>): T
 ## SafeAreaEdge
 
 扩展安全区域的边缘。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -92,34 +80,22 @@ setKeyboardAvoidMode(value: KeyboardAvoidMode): void
 
 控制虚拟键盘抬起时页面的避让模式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [KeyboardAvoidMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-e#keyboardavoidmode11) | 是 | 配置虚拟键盘抬起时页面的避让模式。 默认值：KeyboardAvoidMode.OFFSET，键盘抬起时默认避让模式为上抬。 setKeyboardAvoidMode传入异常值时，该属性设置不生效。 |
 
 > **说明**
 > KeyboardAvoidMode.RESIZE模式会压缩页面大小，页面中设置百分比宽高的组件会跟随页面压缩，而直接设置宽高的组件会按设置的固定大小布局。设置KeyboardAvoidMode的RESIZE模式时，expandSafeArea([SafeAreaType.KEYBOARD],[SafeAreaEdge.BOTTOM])不生效。
->
 > KeyboardAvoidMode.NONE模式配置页面不避让键盘，页面会被抬起的键盘遮盖。
->
-> setKeyboardAvoidMode针对页面生效，对于弹窗类组件不生效，比如Dialog、Popup、Menu、BindSheet、BindContentCover、Toast、OverlayManager。弹窗类组件的避让模式可以参考[CustomDialogControllerOptions对象说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box#customdialogcontrolleroptions对象说明)。
+> setKeyboardAvoidMode针对页面生效，对于弹窗类组件不生效，比如Dialog、Popup、Menu、BindSheet、BindContentCover、Toast、OverlayManager。弹窗类组件的避让模式可以参考
+> CustomDialogControllerOptions对象说明
+> 。
 
 ## getKeyboardAvoidMode11+
 
 getKeyboardAvoidMode(): KeyboardAvoidMode
 
 返回虚拟键盘抬起时页面的避让模式。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**返回值：**
 
 | 名称 | 说明 |
 | --- | --- |
@@ -133,28 +109,17 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | types | Array <[LayoutSafeAreaType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#layoutsafeareatype12)> | 否 | 扩展布局安全区域的类型。 默认值：[LayoutSafeAreaType.SYSTEM]，扩展至所有安全区域，比如：状态栏，导航栏和组件级安全区（[safeAreaPadding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#safeareapadding14)）。 非法值：按默认值处理。 |
 | edges | Array <[LayoutSafeAreaEdge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#layoutsafeareaedge12)> | 否 | 扩展布局安全区的边缘，并且支持镜像能力。 默认值：[LayoutSafeAreaEdge.ALL]，扩展组件所有边缘。 非法值：按默认值处理。 |
 
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
-
 > **说明**
-> 忽略布局安全区边缘的组件，如果其宽度或高度设置了[LayoutPolicy.matchParent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#layoutpolicy15)，其大小和位置都会改变，否则仅改变其位置。
->
+> 忽略布局安全区边缘的组件，如果其宽度或高度设置了
+> LayoutPolicy.matchParent
+> ，其大小和位置都会改变，否则仅改变其位置。
 > 依据safeAreaPadding累积功能，组件可扩展其安全区边缘到所有能感知的连续安全区域。
->
 > 滚动类组件的子元素忽略布局安全区边缘时在滚动方向不考虑滚动组件自身及其父组件的安全区域，包括：List、ArcListItem、Grid、WaterFlow、Swiper和Tabs。
->
 > 忽略布局安全区属性.ignoreLayoutSafeArea和忽略渲染安全区属性.expandSafeArea都设置时，.ignoreLayoutSafeArea先生效，.expandSafeArea在前者基础上再生效。
 
 ## LayoutSafeAreaType12+
@@ -163,17 +128,11 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SYSTEM | 0 | 设置后，组件的布局范围可扩展至组件级安全区（[safeAreaPadding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#safeareapadding14)）和页面级安全区（状态栏、导航栏、挖孔区）。 |
 
 ## LayoutSafeAreaEdge12+
-
-扩展安全区域的边缘。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -192,18 +151,18 @@ ignoreLayoutSafeArea(types?: Array<LayoutSafeAreaType>, edges?: Array<LayoutSafe
 该示例通过设置expandSafeArea属性向顶部和底部扩展安全区实现沉浸式效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SafeAreaExample1 {
   @State text: string = ''
   controller: TextInputController = new TextInputController()
+
   build() {
     Row() {
       Column()
         .width('100%')
         .height('100%')
-        // $r('app.media.bg')需要替换为开发者所需的图像资源文件
+
         .backgroundImage($r('app.media.bg'))
         .backgroundImageSize(ImageSize.Cover)
         .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
@@ -212,19 +171,19 @@ struct SafeAreaExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Yd8d5URlSCu8e8blNY-86A/zh-cn_image_0000002531105752.png?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=2EBFCBA8DBD9594FD532D54C3EADC47D0157D6A44DF1B773C532C5877C68CE10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Yd8d5URlSCu8e8blNY-86A/zh-cn_image_0000002531105752.png?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=AE0744AFB466A270A8D1CECDF6C4703A92E4AB8D61B69C1BF3C7FFD89E8D3B76)
 
 ### 示例2（同时设置固定宽高和expandSafeArea属性）
 
 该示例展示了同时设置固定宽高和expandSafeArea属性的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SafeAreaExample2 {
   @State text: string = ''
   controller: TextInputController = new TextInputController()
+
   build() {
     Column() {
       TextInput({ text: this.text, placeholder: 'input your word...', controller: this.controller })
@@ -243,26 +202,26 @@ struct SafeAreaExample2 {
 
 如下图：Column组件扩展至了顶部状态栏[SafeAreaEdge.TOP]，未扩展至底部导航条[SafeAreaEdge.BOTTOM]，扩展后的组件高度与设置的高度一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/jSDS3-hgSD-iS3n9hSSl6g/zh-cn_image_0000002531225686.png?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=A20F5B4E3E1B2F59EE40AD61CAA9B9E1074E6EFFA586435EE018DF8FC7210F47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/jSDS3-hgSD-iS3n9hSSl6g/zh-cn_image_0000002531225686.png?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=4D0F01A5B1375D2346F733022A79B22C06BDFF4EB090BAD95B950EB5EDD1478F)
 
 ### 示例3（键盘避让时固定背景图位置）
 
 该示例通过为背景图组件设置expandSafeArea属性，来实现拉起键盘进行避让时，背景图保持不动的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SafeAreaExample3 {
   @State text: string = ''
   controller: TextInputController = new TextInputController()
+
   build() {
     Row() {
       Stack() {
         Column()
           .width('100%')
           .height('100%')
-          // $r('app.media.bg')需要替换为开发者所需的图像资源文件
+
           .backgroundImage($r('app.media.bg'))
           .backgroundImageSize(ImageSize.Cover)
           .expandSafeArea([SafeAreaType.KEYBOARD, SafeAreaType.SYSTEM])
@@ -286,22 +245,22 @@ struct SafeAreaExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/UI-chsKORNG8C0nBkSJc5g/zh-cn_image_0000002562025669.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=607A80066CD0FD31176DE74094806A4E6108331D4D5ACE597E8B5F2A9EFE3E57)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/UI-chsKORNG8C0nBkSJc5g/zh-cn_image_0000002562025669.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=20ADB9F2C7F1B6AEB8C4E5A574AA92D059D246095994C23D3F085D3A3BF9AA21)
 
 ### 示例4（设置键盘避让模式为压缩）
 
 该示例通过调用setKeyboardAvoidMode设置键盘避让模式为RESIZE模式，实现键盘抬起时page的压缩效果。
 
 ```typescript
-// EntryAbility.ets
 import { KeyboardAvoidMode } from '@kit.ArkUI';
 export default class EntryAbility extends UIAbility{
   onWindowStageCreate(windowStage: window.WindowStage) {
-    // Main window is created, set main page for this ability
+
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
     windowStage.loadContent('pages/Index', (err, data) => {
       let keyboardAvoidMode = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
-      // 设置虚拟键盘抬起时压缩页面大小为减去键盘的高度
+
     windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE);
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
@@ -314,7 +273,6 @@ export default class EntryAbility extends UIAbility{
 ```
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct KeyboardAvoidExample1 {
@@ -339,22 +297,22 @@ struct KeyboardAvoidExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Gc_KlDMiSzybQjnTKT7S_w/zh-cn_image_0000002562145655.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=D27864C07C206C3EE929BF07323DCBCE83E0B9AC08AB70E5BFFE6A1515A19DD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Gc_KlDMiSzybQjnTKT7S_w/zh-cn_image_0000002562145655.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=84E93D9D72A1F6A60C12600B102EF09895890016FED009C886177F1F085F19EE)
 
 ### 示例5（设置键盘避让模式为上抬）
 
 该示例通过调用setKeyboardAvoidMode设置键盘避让模式为OFFSET模式，实现键盘抬起时page的上抬效果。但当输入光标距离屏幕底部的高度大于键盘高度时，page不会抬起，如本例中所示。
 
 ```typescript
-// EntryAbility.ets
 import { KeyboardAvoidMode } from '@kit.ArkUI';
 export default class EntryAbility extends UIAbility{
   onWindowStageCreate(windowStage: window.WindowStage) {
-    // Main window is created, set main page for this ability
+
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
     windowStage.loadContent('pages/Index', (err, data) => {
       let keyboardAvoidMode = windowStage.getMainWindowSync().getUIContext().getKeyboardAvoidMode();
-      // 设置虚拟键盘抬起时把页面上抬直到露出光标
+
     windowStage.getMainWindowSync().getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.OFFSET);
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
@@ -367,7 +325,6 @@ export default class EntryAbility extends UIAbility{
 ```
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct KeyboardAvoidExample2 {
@@ -392,7 +349,7 @@ struct KeyboardAvoidExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/VPzohY9HQY2DwrgMNp6KLg/zh-cn_image_0000002531105754.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=490314D562BE9E30446FCB1B48D6BD0AFF92F20A9D7877E8DA057BC49BDBB10D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/VPzohY9HQY2DwrgMNp6KLg/zh-cn_image_0000002531105754.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=5F6133B4B97486C4941895D954DDFFFC3E9D4A00B964F413CD58D744A255356F)
 
 ### 示例6（切换避让模式）
 
@@ -403,6 +360,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { KeyboardAvoidMode } from '@kit.ArkUI';
 @Entry
 @Component
+
 struct KeyboardAvoidExample3 {
   build() {
     Column() {
@@ -429,14 +387,17 @@ struct KeyboardAvoidExample3 {
       .height('30%')
       .width('100%')
       .backgroundColor(Color.Gray)
+
       TextArea()
         .width('100%')
         .borderWidth(1)
+
       Text('I can see the bottom of the page')
         .width('100%')
         .textAlign(TextAlign.Center)
         .backgroundColor('rgb(179,217,235)')
         .layoutWeight(1)
+
       TextArea()
         .width('100%')
         .borderWidth(1)
@@ -447,7 +408,7 @@ struct KeyboardAvoidExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/HnOCEM09QBeR1nA-dk_4mA/zh-cn_image_0000002531225688.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=AC7B931D0D62E66D1E5926FCC7D58F1D6F9D1CD1B1534E2825B5EBC05EA0E889)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/HnOCEM09QBeR1nA-dk_4mA/zh-cn_image_0000002531225688.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=5028B4835D9C4AB50D588641CB78F79DBAF44E4A3B18F7F44247487B7F20BB81)
 
 ### 示例7（滚动类容器扩展安全区）
 
@@ -513,7 +474,7 @@ struct ExpandSafeAreaTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/wu8ZhABPSsW34FYP75NCJw/zh-cn_image_0000002562025671.png?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=294C6C554011264A546FA2CDC9B56AB883684E00552359AE9F1369650DF4CA33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/wu8ZhABPSsW34FYP75NCJw/zh-cn_image_0000002562025671.png?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=F02117E9AB66D6795E2B8C27C478DD984B70C388D05F9934E4C7338EDBFA7915)
 
 ### 示例8（ignoreLayoutSafeArea延伸组件布局范围）
 
@@ -521,6 +482,7 @@ struct ExpandSafeAreaTest {
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct IgnoreLayoutSafeAreaTest1 {
@@ -529,29 +491,31 @@ struct IgnoreLayoutSafeAreaTest1 {
       Stack() {
         Row()
           .backgroundColor('rgb(39, 135, 217)')
-          .width(75)  // 固定宽度
-          .height(75) // 固定高度
-          .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM], [LayoutSafeAreaEdge.START, LayoutSafeAreaEdge.TOP])  // 设置布局区域延伸取左和上方向，至系统避让区SYSTEM
+          .width(75)
+          .height(75)
+          .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM], [LayoutSafeAreaEdge.START, LayoutSafeAreaEdge.TOP])
+
         Row()
           .backgroundColor('rgb(0, 74, 175)')
           .width(75)
           .height(75)
+
       }
       .width(200)
       .height(200)
       .backgroundColor(Color.Gray)
-      .align(Alignment.TopStart)  // 子组件相对于Stack容器左上对齐
+      .align(Alignment.TopStart)
       .padding({
-        left: 10  // 设置左侧10vp普通内边距
+        left: 10
       })
-      .safeAreaPadding(LengthMetrics.vp(10))  // 设置10vp安全区内边距（即组件级安全区）
+      .safeAreaPadding(LengthMetrics.vp(10))
     }
     .width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/y29vwbe_SBmtOhqmyaZpxg/zh-cn_image_0000002562145657.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=93188649716545B524ACC85E39E0B10B90EB8DF9F72C52E934413B516B1AF960)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/y29vwbe_SBmtOhqmyaZpxg/zh-cn_image_0000002562145657.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=D3063981E31DFEA13A0AEE17E0059D8822E8A4EDC09E86EC4DF2C510599FF14E)
 
 ### 示例9（ignoreLayoutSafeArea配合LayoutPolicy.matchParent延伸组件布局范围）
 
@@ -559,6 +523,7 @@ struct IgnoreLayoutSafeAreaTest1 {
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct IgnoreLayoutSafeAreaTest2 {
@@ -567,27 +532,29 @@ struct IgnoreLayoutSafeAreaTest2 {
       Stack() {
         Row()
           .backgroundColor('rgb(39, 135, 217)')
-          .width(LayoutPolicy.matchParent)  // 自适应宽度
-          .height(LayoutPolicy.matchParent) // 自适应高度
-          .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM], [LayoutSafeAreaEdge.END, LayoutSafeAreaEdge.BOTTOM])  // 设置布局区域延伸取右和下方向，至系统避让区SYSTEM
+          .width(LayoutPolicy.matchParent)
+          .height(LayoutPolicy.matchParent)
+          .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM], [LayoutSafeAreaEdge.END, LayoutSafeAreaEdge.BOTTOM])
+
         Row()
           .backgroundColor('rgb(0, 74, 175)')
           .width(LayoutPolicy.matchParent)
           .height(LayoutPolicy.matchParent)
+
       }
       .width(200)
       .height(200)
       .backgroundColor(Color.Gray)
-      .align(Alignment.TopStart)  // 子组件相对于Stack容器左上对齐
-      .padding(10) // 设置10vp普通内边距
-      .safeAreaPadding(LengthMetrics.vp(10))  // 设置10vp安全区内边距（即组件级安全区）
+      .align(Alignment.TopStart)
+      .padding(10)
+      .safeAreaPadding(LengthMetrics.vp(10))
     }
     .width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/qV91z80eShWp23HzA4HarA/zh-cn_image_0000002531105756.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=4237E9E8AB320C5E2BC3A890B3F3368D0648F27941516DFADA0A6255EE72EE7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/qV91z80eShWp23HzA4HarA/zh-cn_image_0000002531105756.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=F93F3A566C46526E124CBFB665EB0E9A2F8376B4A9238AD06501357C9408226A)
 
 ### 示例10（expandSafeArea与ignoreLayoutSafeArea的区别）
 
@@ -595,6 +562,7 @@ struct IgnoreLayoutSafeAreaTest2 {
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct IgnoreLayoutSafeAreaTest3 {
@@ -603,6 +571,7 @@ struct IgnoreLayoutSafeAreaTest3 {
       Column(){
         Stack(){
           Stack(){
+
           }
           .width(30)
           .height(30)
@@ -612,11 +581,14 @@ struct IgnoreLayoutSafeAreaTest3 {
         .height(100)
         .backgroundColor('rgb(39, 135, 217)')
         .align(Alignment.TopStart)
+
         Text('基准效果').fontColor(Color.White)
       }
+
       Column(){
         Stack(){
           Stack(){
+
           }
           .width(30)
           .height(30)
@@ -626,12 +598,15 @@ struct IgnoreLayoutSafeAreaTest3 {
         .height(100)
         .backgroundColor('rgb(39, 135, 217)')
         .align(Alignment.TopStart)
-        .expandSafeArea()  // 设置绘制区域延伸，自身绘制区域上抬，子组件相对屏幕位置不变
+        .expandSafeArea()
+
         Text('expandSafeArea').fontColor(Color.White)
       }
+
       Column(){
         Stack(){
           Stack(){
+
           }
           .width(30)
           .height(30)
@@ -641,7 +616,8 @@ struct IgnoreLayoutSafeAreaTest3 {
         .height(100)
         .backgroundColor('rgb(39, 135, 217)')
         .align(Alignment.TopStart)
-        .ignoreLayoutSafeArea()  // 设置布局区域延伸，自身布局区域上抬，子组件相对容器位置不变
+        .ignoreLayoutSafeArea()
+
         Text('ignoreLayoutSafeArea').fontColor(Color.White)
       }
     }
@@ -652,4 +628,4 @@ struct IgnoreLayoutSafeAreaTest3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/I58N7JYWQv6EYH4gKFP-Vg/zh-cn_image_0000002531225690.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T120219Z&HW-CC-Expire=86400&HW-CC-Sign=CF1B7A21F2FA51397E5ABF897F64B44932DF0CC6EAED83F37CA8C03F91FB7B56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/I58N7JYWQv6EYH4gKFP-Vg/zh-cn_image_0000002531225690.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T122147Z&HW-CC-Expire=86400&HW-CC-Sign=9AD742951631CEE29C19746080CF2151A2D6D5F61C723DA5B1C545D7B03C032C)

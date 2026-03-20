@@ -1,4 +1,4 @@
-# ImageAnimator-图片与视频-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -30,12 +30,6 @@ images(value: Array<ImageFrameInfo>)
 
 设置图片帧信息集合。不支持动态更新。
 
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -48,14 +42,6 @@ state(value: AnimationStatus)
 
 控制播放状态。
 
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [AnimationStatus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#animationstatus) | 是 | 默认为初始状态，用于控制播放状态。 默认值：AnimationStatus.Initial |
@@ -65,14 +51,6 @@ state(value: AnimationStatus)
 duration(value: number)
 
 设置播放时长。当Images中任意一帧图片设置了单独的duration后，该属性设置无效。
-
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -84,14 +62,6 @@ reverse(value: boolean)
 
 设置播放方向。
 
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 播放方向。 false表示从第1张图片播放到最后1张图片，true表示从最后1张图片播放到第1张图片。 默认值：false |
@@ -101,14 +71,6 @@ reverse(value: boolean)
 fixedSize(value: boolean)
 
 设置图片大小是否固定为组件大小。
-
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -123,10 +85,6 @@ preDecode(value: number)
 > **说明**
 > 从API version 7开始支持，从API version 9开始废弃。当前无可替代接口。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 预解码的图片数量。例如，设置为2时，播放当前页时会提前加载后面两张图片至缓存，以提升性能。 默认值：0 |
@@ -137,14 +95,6 @@ fillMode(value: FillMode)
 
 设置当前播放方向下，动画开始前和结束后的状态。动画结束后的状态由fillMode和reverse属性共同决定。例如，fillMode为Forwards表示停止时维持动画最后一个关键帧的状态，若reverse为false则维持正播的最后一帧，即最后一张图，若reverse为true则维持逆播的最后一帧，即第一张图。
 
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [FillMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#fillmode) | 是 | 当前播放方向下，动画开始前和结束后的状态。 默认值：FillMode.Forwards |
@@ -154,12 +104,6 @@ fillMode(value: FillMode)
 iterations(value: number)
 
 设置播放次数。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -173,10 +117,6 @@ monitorInvisibleArea(monitorInvisibleArea: boolean)
 
 **元服务API：** 从API version 17开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | monitorInvisibleArea | boolean | 是 | 当设置为true时，组件将基于系统的[onVisibleAreaChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-visible-area-change-event#onvisibleareachange)可见性判定，控制组件的暂停和播放。 当组件的运行状态为[AnimationStatus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#animationstatus)的Running时，若判定组件不可见，则自动执行暂停操作；若判定为可见，则自动恢复播放。 当设置为false时，组件的暂停和播放不受到onVisibleAreaChange影响。 默认值：false **说明：** 当该属性由true动态修改为false时，组件将依据当前的[AnimationStatus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#animationstatus)状态进行处理。 例如，若当前状态为Running且因[onVisibleAreaChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-visible-area-change-event#onvisibleareachange)的不可见回调暂停，则在属性由true改为false后，组件会从上次暂停的位置重新开始播放。 由该属性导致的不可见暂停和可见暂停操作不会改变用户设置的[state](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator#state)值。 |
@@ -184,10 +124,6 @@ monitorInvisibleArea(monitorInvisibleArea: boolean)
 ## ImageFrameInfo对象说明
 
 图片帧信息集合。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -208,14 +144,6 @@ onStart(event: () => void)
 
 状态回调，动画开始播放时触发。
 
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 状态回调，动画开始播放时触发。 |
@@ -225,14 +153,6 @@ onStart(event: () => void)
 onPause(event: () => void)
 
 状态回调，动画暂停播放时触发。
-
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -244,12 +164,6 @@ onRepeat(event: () => void)
 
 状态回调，动画重复播放时触发。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 状态回调，动画重复播放时触发。 |
@@ -260,14 +174,6 @@ onCancel(event: () => void)
 
 状态回调，动画返回最初状态时触发。
 
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 状态回调，动画返回最初状态时触发。 |
@@ -277,14 +183,6 @@ onCancel(event: () => void)
 onFinish(event: () => void)
 
 状态回调，动画播放完成时或者停止播放时触发。
-
-**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -377,7 +275,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/UpRwbjW5Roa1UBjskIV_2w/zh-cn_image_0000002531226012.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120330Z&HW-CC-Expire=86400&HW-CC-Sign=58A52D013364CB512DF5AF208589E29553643299897DB65DF623DA3D424FBD6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/UpRwbjW5Roa1UBjskIV_2w/zh-cn_image_0000002531226012.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122300Z&HW-CC-Expire=86400&HW-CC-Sign=4F73E02A5A06F79C625D23D2028FACE3D55EB1B45CE1465D9F761539B0261E3E)
 
 ### 示例2（播放PixelMap动画）
 
@@ -476,7 +374,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/940Eby2rRf-d2yFeiuh_Bw/zh-cn_image_0000002562025995.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120330Z&HW-CC-Expire=86400&HW-CC-Sign=83756E0A9E6908CB97324A62A47E85C8AA1EAC0D8FA632D6EDAECAE127406B46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/940Eby2rRf-d2yFeiuh_Bw/zh-cn_image_0000002562025995.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122300Z&HW-CC-Expire=86400&HW-CC-Sign=B210DAA93135E752854939D0CBF832385EC82C7023FDCA00A2224E1891AAF56A)
 
 ### 示例3（设置不可见自动停播）
 
@@ -579,4 +477,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/jDn-eRVxQtKMA-3lhEhWrw/zh-cn_image_0000002562145981.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120330Z&HW-CC-Expire=86400&HW-CC-Sign=EB5B6C59004EC6837C78AE816A7B0124353E81F9CD8F5273FC982E58C2B9A97D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/jDn-eRVxQtKMA-3lhEhWrw/zh-cn_image_0000002562145981.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122300Z&HW-CC-Expire=86400&HW-CC-Sign=CFDDE1D51844F435AEDAC4A1888D87BDA9FAF94AF390AFBF00533E5ADC011AFF)

@@ -1,4 +1,4 @@
-# 信息展示公共接口-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# MultiShadowOptions
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-information-display-common
 
 用于修饰组件，为[Gauge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-gauge)和[DataPanel](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel)组件提供信息展示能力的公共接口。

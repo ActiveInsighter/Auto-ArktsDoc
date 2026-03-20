@@ -1,4 +1,4 @@
-# 文档中心
+# pixelRound
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-pixelroundforcomponent
 
 组件级像素取整的目标是将像素取整功能作为组件的属性，从而在组件层面实现系统像素取整的开启或关闭。
@@ -13,8 +13,10 @@ pixelRound(value: PixelRoundPolicy): T
 指定当前组件在指定方向上的像素取整对齐方式，某方向不设置时默认在该方向进行四舍五入取整。
 
 > **说明**
-> - 在API version 11，本接口采用半像素对齐方式（即0~0.25取0，0.25~0.75取0.5，0.75~1.0取1）。从API version 12开始，本接口采用四舍五入的取整方式，并支持组件级关闭像素取整的能力。
-> - 从API version 12开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+> 在API version 11，本接口采用半像素对齐方式（即0~0.25取0，0.25~0.75取0.5，0.75~1.0取1）。从API version 12开始，本接口采用四舍五入的取整方式，并支持组件级关闭像素取整的能力。
+> 从API version 12开始，该接口支持在
+> attributeModifier
+> 中调用。
 
 正常计算时，上下方向与组件高度相对应，左右方向（镜像的起始方向称为左）与宽度相对应。为方便描述将两组方向称为左上和右下。
 
@@ -44,12 +46,6 @@ pixelRound(value: PixelRoundPolicy): T
 
 指定组件级像素取整的方向。
 
-**卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件前部边界取整对齐方式。 设置异常值时按四舍五入规则取整。 |
@@ -76,7 +72,6 @@ pixelRound(value: PixelRoundPolicy): T
 @Component
 struct PixelRoundExample {
     @State curWidth : number = 300;
-
     build() {
         Column() {
             Button(){
@@ -88,9 +83,7 @@ struct PixelRoundExample {
             .height(200)
             .width(200)
             .backgroundColor('rgb(213, 213, 213)')
-
             Blank().height(20)
-
             Row() {
                 Row() {
                 }
@@ -121,8 +114,8 @@ struct PixelRoundExample {
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/lpevenqfQn6eu0UBziqXWg/zh-cn_image_0000002562025673.png?HW-CC-KV=V1&HW-CC-Date=20260320T120221Z&HW-CC-Expire=86400&HW-CC-Sign=CD7905B2427930F2259A29053387A5E4DE0BC7D646183D592FE17214DAC3613D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/lpevenqfQn6eu0UBziqXWg/zh-cn_image_0000002562025673.png?HW-CC-KV=V1&HW-CC-Date=20260320T122148Z&HW-CC-Expire=86400&HW-CC-Sign=E5ECDA38F08264A0AF7955D948E22A4CAC0A1E755E3205644CE2E48973D83DEA)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/KXDtH-DyQcW9HAyDAu4GlQ/zh-cn_image_0000002562145659.png?HW-CC-KV=V1&HW-CC-Date=20260320T120221Z&HW-CC-Expire=86400&HW-CC-Sign=0DDDE011308A98674C7A24F735DC08D8CA5045700291AF592D977548437432FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/KXDtH-DyQcW9HAyDAu4GlQ/zh-cn_image_0000002562145659.png?HW-CC-KV=V1&HW-CC-Date=20260320T122148Z&HW-CC-Expire=86400&HW-CC-Sign=79F28B7F7604EA6D4C507E5E0C3B5AE73F2CAC0CF2C504B86A6CF15AF4E37A7B)

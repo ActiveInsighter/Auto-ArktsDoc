@@ -1,4 +1,4 @@
-# 文档中心
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -35,8 +35,6 @@ AlphabetIndexer(options: AlphabetIndexerOptions)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | arrayValue7+ | Array<string> | 否 | 否 | 字符串数组，每个字符串代表一个索引项。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -58,12 +56,6 @@ color(value: ResourceColor)
 
 设置未选中项文本颜色。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 未选中项文本颜色。 默认值：0x99182431，显示为略带透明的棕色。 |
@@ -73,12 +65,6 @@ color(value: ResourceColor)
 selectedColor(value: ResourceColor)
 
 设置选中项文本颜色。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -90,12 +76,6 @@ popupColor(value: ResourceColor)
 
 设置提示弹窗一级索引项文本颜色。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 提示弹窗一级索引项文本颜色。 默认值：0xFF007DFF，显示为蓝色。 |
@@ -105,12 +85,6 @@ popupColor(value: ResourceColor)
 selectedBackgroundColor(value: ResourceColor)
 
 设置选中项背景颜色。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -122,12 +96,6 @@ popupBackground(value: ResourceColor)
 
 设置提示弹窗背景颜色。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 提示弹窗背景颜色。 弹窗的背景模糊材质效果会对背景色产生影响，可通过设置[popupBackgroundBlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#popupbackgroundblurstyle12)属性值为NONE关闭背景模糊材质效果。 默认值： API version 11及以前：0xFFFFFFFF，显示为白色。 API version 12及以后：#66808080，显示为半透明的灰色。 |
@@ -137,12 +105,6 @@ popupBackground(value: ResourceColor)
 usingPopup(value: boolean)
 
 设置是否显示提示弹窗。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -154,12 +116,6 @@ selectedFont(value: Font)
 
 设置选中项文本样式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#font) | 是 | 选中项文本样式。 默认值： API version 11及以前： { size:'12.0fp', style:FontStyle.Normal, weight:FontWeight.Regular, family:'HarmonyOS Sans' } API version 12及以后： { size:'10.0vp', style:FontStyle.Normal, weight:FontWeight.Medium, family:'HarmonyOS Sans' } |
@@ -169,12 +125,6 @@ selectedFont(value: Font)
 popupFont(value: Font)
 
 设置提示弹窗一级索引文本样式。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -186,12 +136,6 @@ font(value: Font)
 
 设置未选中项文本样式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#font) | 是 | 未选中索引项文本样式。 默认值： API version 11及以前： { size:'12.0fp', style:FontStyle.Normal, weight:FontWeight.Regular, family:'HarmonyOS Sans' } API version 12及以后： { size:'10.0vp', style:FontStyle.Normal, weight:FontWeight.Medium, family:'HarmonyOS Sans' } |
@@ -202,12 +146,6 @@ itemSize(value: string | number)
 
 设置索引项区域大小。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | number | 是 | 索引项区域大小，索引项区域为正方形，即正方形边长。不支持设置为百分比。 实际取值会受到组件尺寸的约束，索引项宽度最大为组件宽度-左右[padding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#padding)，索引项高度最大为（组件高度-上下[padding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#padding)）/索引项个数。传入值小于等于0时，按照默认值处理。 默认值：16.0 单位：vp |
@@ -217,12 +155,6 @@ itemSize(value: string | number)
 alignStyle(value: IndexerAlign, offset?: Length)
 
 设置索引条提示弹窗的对齐样式。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -237,12 +169,6 @@ selected(index: number)
 
 从API version 10开始，该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 选中项索引值。 默认值：0 |
@@ -252,12 +178,6 @@ selected(index: number)
 popupPosition(value: Position)
 
 设置弹出窗口相对于索引条上边框中点的位置。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -269,12 +189,6 @@ popupSelectedColor(value: ResourceColor)
 
 设置提示弹窗二级索引选中项文本颜色。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 提示弹窗二级索引选中项文本颜色。 默认值：#FF182431，显示为深暗蓝色。 |
@@ -284,12 +198,6 @@ popupSelectedColor(value: ResourceColor)
 popupUnselectedColor(value: ResourceColor)
 
 设置提示弹窗二级索引未选中项文本颜色。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -301,12 +209,6 @@ popupItemFont(value: Font)
 
 设置提示弹窗二级索引项文本样式。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#font) | 是 | 提示弹窗二级索引项文本样式。 默认值： { size:24, weight:FontWeight.Medium } |
@@ -316,12 +218,6 @@ popupItemFont(value: Font)
 popupItemBackgroundColor(value: ResourceColor)
 
 设置提示弹窗二级索引项背景颜色。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -338,13 +234,11 @@ autoCollapse(value: boolean)
 如果索引项第一项不为“#”，当所有索引项数量 <= 9时，选择全显示模式；9 < 所有索引项数量 <= 13时，根据索引条高度自适应选择全显示模式或者短折叠模式；所有索引项数量 > 13时，根据索引条高度自适应选择短折叠模式或者长折叠模式。
 
 > **说明**
-> 从API version 12开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+> 从API version 12开始，该接口支持在
+> attributeModifier
+> 中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -356,12 +250,6 @@ popupItemBorderRadius(value: number)
 
 设置提示弹窗索引项背板圆角半径。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置提示弹窗索引项背板圆角半径。 默认值：24vp 不支持百分比，小于0时按照0设置。 提示弹窗背板圆角自适应变化（索引项圆角半径+4vp）。 |
@@ -371,12 +259,6 @@ popupItemBorderRadius(value: number)
 itemBorderRadius(value: number)
 
 设置索引项背板圆角半径。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -388,12 +270,6 @@ popupBackgroundBlurStyle(value: BlurStyle)
 
 设置提示弹窗的背景模糊材质。未通过该接口设置时，默认为组件普通材质模糊，对应取值为BlurStyle中的COMPONENT_REGULAR。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [BlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#blurstyle9) | 是 | 设置提示弹窗的背景模糊材质。 弹窗的背景模糊材质效果会对背景色[popupBackground](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#popupbackground)产生影响，可通过设置属性值为NONE关闭背景模糊材质效果。 |
@@ -403,12 +279,6 @@ popupBackgroundBlurStyle(value: BlurStyle)
 popupTitleBackground(value: ResourceColor)
 
 设置提示弹窗一级索引项背景颜色。
-
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -420,12 +290,6 @@ enableHapticFeedback(value: boolean)
 
 设置是否开启触控反馈。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否支持触控反馈。 true：支持触控反馈。 false：不支持触控反馈。 默认值：true 开启触控反馈时，需要在工程的[module.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file)中配置requestPermissions字段开启振动权限，配置如下： "requestPermissions": [{"name": "ohos.permission.VIBRATE"}] |
@@ -433,8 +297,6 @@ enableHapticFeedback(value: boolean)
 ## IndexerAlign枚举说明
 
 索引条提示弹窗的对齐样式枚举。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -454,11 +316,9 @@ onSelected(callback: (index: number) => void)
 索引项选中事件，回调参数为当前选中项索引。
 
 > **说明**
-> 从API version 7开始支持，从API version 8开始废弃，建议使用[onSelect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#onselect8)替代。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
+> 从API version 7开始支持，从API version 8开始废弃，建议使用
+> onSelect
+> 替代。
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -467,14 +327,6 @@ onSelected(callback: (index: number) => void)
 ### onSelect8+
 
 onSelect(callback: OnAlphabetIndexerSelectCallback)
-
-索引项选中事件，回调参数为当前选中项索引。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -486,12 +338,6 @@ onRequestPopupData(callback: OnAlphabetIndexerRequestPopupDataCallback)
 
 设置提示弹窗二级索引项内容事件，回调参数为当前选中项索引，回调返回值为提示弹窗需显示的二级索引项内容。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | [OnAlphabetIndexerRequestPopupDataCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#onalphabetindexerrequestpopupdatacallback18) | 是 | 设置提示弹窗二级索引项内容事件。 |
@@ -501,12 +347,6 @@ onRequestPopupData(callback: OnAlphabetIndexerRequestPopupDataCallback)
 onPopupSelect(callback: OnAlphabetIndexerPopupSelectCallback)
 
 提示弹窗二级索引选中事件，回调参数为当前选中二级索引项索引。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -518,12 +358,6 @@ type OnAlphabetIndexerSelectCallback = (index: number) => void
 
 索引项被选中时触发的事件。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前选中索引项的索引。 |
@@ -534,12 +368,6 @@ type OnAlphabetIndexerPopupSelectCallback = (index: number) => void
 
 提示弹窗二级索引项被选中时触发的事件。
 
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 当前选中的提示弹窗二级索引项的索引。 |
@@ -549,16 +377,6 @@ type OnAlphabetIndexerPopupSelectCallback = (index: number) => void
 type OnAlphabetIndexerRequestPopupDataCallback = (index: number) => Array<string>
 
 [usingPopup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#usingpopup)设置值为true，索引项被选中时触发的事件。
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| index | number | 是 | 当前选中索引项的索引。 |
 
 **返回值：**
 
@@ -573,7 +391,6 @@ type OnAlphabetIndexerRequestPopupDataCallback = (index: number) => Array<string
 通过[onRequestPopupData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#onrequestpopupdata8)事件自定义提示弹窗显示文本内容。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -585,6 +402,7 @@ struct AlphabetIndexerSample {
     'H', 'I', 'J', 'K', 'L', 'M', 'N',
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
     'V', 'W', 'X', 'Y', 'Z'];
+
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -598,6 +416,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -607,6 +426,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -616,6 +436,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayL, (item: string) => {
             ListItem() {
               Text(item)
@@ -628,32 +449,32 @@ struct AlphabetIndexerSample {
         }
         .width('50%')
         .height('100%')
+
         AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-          .autoCollapse(false) // 关闭自适应折叠模式
-          .enableHapticFeedback(false) // 关闭触控反馈
-          .selectedColor(0xFFFFFF) // 选中项文本颜色
-          .popupColor(0xFFFAF0) // 提示弹窗一级索引文本颜色
-          .selectedBackgroundColor(0xCCCCCC) // 选中项背景颜色
-          .popupBackground(0xD2B48C) // 提示弹窗背景颜色
-          .usingPopup(true) // 索引项被选中时显示提示弹窗
-          .selectedFont({ size: 16, weight: FontWeight.Bolder }) // 选中项文本样式
-          .popupFont({ size: 30, weight: FontWeight.Bolder }) // 提示弹窗一级索引的文本样式
-          .itemSize(28) // 索引项的尺寸大小
-          .alignStyle(IndexerAlign.Left) // 提示弹窗在索引条右侧弹出
-          .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
-          .itemBorderRadius(14) // 设置索引项背板圆角半径
-          .popupBackgroundBlurStyle(BlurStyle.NONE) // 设置提示弹窗的背景模糊材质
-          .popupTitleBackground(0xCCCCCC) // 设置提示弹窗一级索引项背景颜色
-          .popupSelectedColor(0x00FF00) // 提示弹窗二级索引选中项文本颜色
-          .popupUnselectedColor(0x0000FF) // 提示弹窗二级索引未选中项文本颜色
-          .popupItemFont({ size: 30, style: FontStyle.Normal }) // 提示弹窗二级索引项文本样式
-          .popupItemBackgroundColor(0xCCCCCC) // 提示弹窗二级索引项背景颜色
+          .autoCollapse(false)
+          .enableHapticFeedback(false)
+          .selectedColor(0xFFFFFF)
+          .popupColor(0xFFFAF0)
+          .selectedBackgroundColor(0xCCCCCC)
+          .popupBackground(0xD2B48C)
+          .usingPopup(true)
+          .selectedFont({ size: 16, weight: FontWeight.Bolder })
+          .popupFont({ size: 30, weight: FontWeight.Bolder })
+          .itemSize(28)
+          .alignStyle(IndexerAlign.Left)
+          .popupItemBorderRadius(24)
+          .itemBorderRadius(14)
+          .popupBackgroundBlurStyle(BlurStyle.NONE)
+          .popupTitleBackground(0xCCCCCC)
+          .popupSelectedColor(0x00FF00)
+          .popupUnselectedColor(0x0000FF)
+          .popupItemFont({ size: 30, style: FontStyle.Normal })
+          .popupItemBackgroundColor(0xCCCCCC)
           .onSelect((index: number) => {
             console.info(this.value[index] + ' Selected!');
           })
           .onRequestPopupData((index: number) => {
-            // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
-            // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
+
             if (this.value[index] == 'A') {
               return this.arrayA;
             } else if (this.value[index] == 'B') {
@@ -677,14 +498,13 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/4NaEgL7hSqqSZMtgHZorbg/zh-cn_image_0000002531226066.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120337Z&HW-CC-Expire=86400&HW-CC-Sign=481B0CF2E7F03B2F40A69E06341D531E1DACAB0829F31EF0D860C4F795F344FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/4NaEgL7hSqqSZMtgHZorbg/zh-cn_image_0000002531226066.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122303Z&HW-CC-Expire=86400&HW-CC-Sign=70DF4BBAB2E3DB97E8B658C4C42EE0711C9A1B6FB6DE4FB636ACF77C873FE9AB)
 
 ### 示例2（开启自适应折叠模式）
 
 通过[autoCollapse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#autocollapse11)属性开启自适应折叠模式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -698,6 +518,7 @@ struct AlphabetIndexerSample {
     'V', 'W', 'X', 'Y', 'Z'];
   @State isNeedAutoCollapse: boolean = false;
   @State indexerHeight: string = '75%';
+
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -711,6 +532,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -720,6 +542,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -729,6 +552,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayJ, (item: string) => {
             ListItem() {
               Text(item)
@@ -741,32 +565,32 @@ struct AlphabetIndexerSample {
         }
         .width('50%')
         .height('100%')
+
         Column() {
           Column() {
             AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-              .autoCollapse(this.isNeedAutoCollapse) // 开启或关闭自适应折叠模式
-              .height(this.indexerHeight) // 索引条高度
-              .enableHapticFeedback(false) // 关闭触控反馈
-              .selectedColor(0xFFFFFF) // 选中项文本颜色
-              .popupColor(0xFFFAF0) // 提示弹窗一级索引文本颜色
-              .selectedBackgroundColor(0xCCCCCC) // 选中项背景颜色
-              .popupBackground(0xD2B48C) // 提示弹窗背景颜色
-              .usingPopup(true) // 索引项被选中时显示提示弹窗
-              .selectedFont({ size: 16, weight: FontWeight.Bolder }) // 选中项文本样式
-              .popupFont({ size: 30, weight: FontWeight.Bolder }) // 提示弹窗内容的文本样式
-              .itemSize(28) // 每一项的尺寸大小
-              .alignStyle(IndexerAlign.Right) // 提示弹窗在索引条左侧弹出
-              .popupTitleBackground("#D2B48C") // 设置提示弹窗一级索引项背景颜色
-              .popupSelectedColor(0x00FF00) // 提示弹窗二级索引未选中项文本颜色
-              .popupUnselectedColor(0x0000FF) // 提示弹窗二级索引选中项文本颜色
-              .popupItemFont({ size: 30, style: FontStyle.Normal }) // 提示弹窗二级索引项文本样式
-              .popupItemBackgroundColor(0xCCCCCC) // 提示弹窗二级索引项背景颜色
+              .autoCollapse(this.isNeedAutoCollapse)
+              .height(this.indexerHeight)
+              .enableHapticFeedback(false)
+              .selectedColor(0xFFFFFF)
+              .popupColor(0xFFFAF0)
+              .selectedBackgroundColor(0xCCCCCC)
+              .popupBackground(0xD2B48C)
+              .usingPopup(true)
+              .selectedFont({ size: 16, weight: FontWeight.Bolder })
+              .popupFont({ size: 30, weight: FontWeight.Bolder })
+              .itemSize(28)
+              .alignStyle(IndexerAlign.Right)
+              .popupTitleBackground("#D2B48C")
+              .popupSelectedColor(0x00FF00)
+              .popupUnselectedColor(0x0000FF)
+              .popupItemFont({ size: 30, style: FontStyle.Normal })
+              .popupItemBackgroundColor(0xCCCCCC)
               .onSelect((index: number) => {
                 console.info(this.value[index] + ' Selected!');
               })
               .onRequestPopupData((index: number) => {
-                // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
-                // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
+
                 if (this.value[index] == 'A') {
                   return this.arrayA;
                 } else if (this.value[index] == 'B') {
@@ -785,6 +609,7 @@ struct AlphabetIndexerSample {
           }
           .height('80%')
           .justifyContent(FlexAlign.Center)
+
           Column() {
             Button('切换成折叠模式')
               .margin('5vp')
@@ -813,14 +638,13 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/lsZV-jBKRGq74wQOMCxX_g/zh-cn_image_0000002562026049.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120337Z&HW-CC-Expire=86400&HW-CC-Sign=06F960D7CA582D00B81A6AB666B1904FB43697B96ED0DF13F71141DA506B49A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/lsZV-jBKRGq74wQOMCxX_g/zh-cn_image_0000002562026049.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122303Z&HW-CC-Expire=86400&HW-CC-Sign=A14C103839D863C24631C4B6FF95367ADFF3DD668C7F48FE3B55C5591D0A9033)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
 通过[popupBackgroundBlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#popupbackgroundblurstyle12)属性实现提示弹窗的背景模糊效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -833,6 +657,7 @@ struct AlphabetIndexerSample {
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
     'V', 'W', 'X', 'Y', 'Z'];
   @State customBlurStyle: BlurStyle = BlurStyle.NONE;
+
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -846,6 +671,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -855,6 +681,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -864,6 +691,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayL, (item: string) => {
             ListItem() {
               Text(item)
@@ -876,6 +704,7 @@ struct AlphabetIndexerSample {
         }
         .width('30%')
         .height('100%')
+
         Column() {
           Column() {
             Text('切换模糊材质: ')
@@ -895,20 +724,20 @@ struct AlphabetIndexerSample {
                 this.customBlurStyle = BlurStyle.BACKGROUND_THIN;
               })
           }.height('20%')
+
           Column() {
             AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-              .usingPopup(true) // 索引项被选中时显示提示弹窗
-              .alignStyle(IndexerAlign.Left) // 提示弹窗在索引条右侧弹出
-              .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
-              .itemBorderRadius(14) // 设置索引项背板圆角半径
-              .popupBackgroundBlurStyle(this.customBlurStyle) // 设置提示弹窗的背景模糊材质
-              .popupTitleBackground(0xCCCCCC) // 设置提示弹窗一级索引项背景颜色
+              .usingPopup(true)
+              .alignStyle(IndexerAlign.Left)
+              .popupItemBorderRadius(24)
+              .itemBorderRadius(14)
+              .popupBackgroundBlurStyle(this.customBlurStyle)
+              .popupTitleBackground(0xCCCCCC)
               .onSelect((index: number) => {
                 console.info(this.value[index] + ' Selected!');
               })
               .onRequestPopupData((index: number) => {
-                // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
-                // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
+
                 if (this.value[index] == 'A') {
                   return this.arrayA;
                 } else if (this.value[index] == 'B') {
@@ -931,11 +760,11 @@ struct AlphabetIndexerSample {
       }
       .width('100%')
       .height('100%')
-      // $r('app.media.image')需要替换为开发者所需的图像资源文件。
+
       .backgroundImage($r("app.media.image"))
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2KZ-Y13xROegIAjhVLkmuQ/zh-cn_image_0000002562146035.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120337Z&HW-CC-Expire=86400&HW-CC-Sign=C95459366200F40EEDF5ACFD13ACF92F71081FD86F15248E9469EE98BFECBA68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2KZ-Y13xROegIAjhVLkmuQ/zh-cn_image_0000002562146035.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122303Z&HW-CC-Expire=86400&HW-CC-Sign=83EE70331BD8D150770E712E9BBDBAC5D9D2E32F3593399EBEC73A8B1692202A)

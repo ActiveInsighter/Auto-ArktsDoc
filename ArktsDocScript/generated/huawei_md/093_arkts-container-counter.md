@@ -1,4 +1,4 @@
-# Counter-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 子组件
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-counter
 
 计数器组件，提供相应的增加或者减少的计数操作。
@@ -30,10 +30,6 @@ enableInc(value: boolean)
 
 设置增加按钮的禁用或使能。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -45,12 +41,6 @@ enableInc(value: boolean)
 enableDec(value: boolean)
 
 设置减少按钮的禁用或使能。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -66,14 +56,6 @@ onInc(event: VoidCallback)
 
 监听数值增加事件。
 
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
-
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | [VoidCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#voidcallback12) | 是 | Counter数值增加的回调函数。 |
@@ -83,14 +65,6 @@ onInc(event: VoidCallback)
 onDec(event: VoidCallback)
 
 监听数值减少事件。
-
-**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
-
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
-
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
-
-**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -138,4 +112,4 @@ struct CounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/KI7R82JFRiCAxKPOSSW9JA/zh-cn_image_0000002531106136.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120338Z&HW-CC-Expire=86400&HW-CC-Sign=ED737549FB643F88D817367B90B9A95589E66DA342F4286B6F627C739A5B6290)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/KI7R82JFRiCAxKPOSSW9JA/zh-cn_image_0000002531106136.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=E8CA5BC2C9A48783A441B33805A11D0433A149C3C96DCA2C215DE64622CEE495)

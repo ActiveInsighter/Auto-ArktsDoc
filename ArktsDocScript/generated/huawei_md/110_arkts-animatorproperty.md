@@ -1,4 +1,4 @@
-# 文档中心
+# animation
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animatorproperty
 
 组件的某些通用属性变化时，可以通过属性动画实现渐变过渡效果，提升用户体验。支持的属性包括[width](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#width)、[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)、[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)、[opacity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-opacity#opacity)、[scale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#scale)、[rotate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#rotate)、[translate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#translate)等。对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-renderfit#renderfit)属性进行配置。
@@ -13,8 +13,14 @@ animation(value:AnimateParam): T
 设置组件的属性动画。
 
 > **说明**
-> - 在单一页面上存在大量应用动效的组件时，可以使用[renderGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#rendergroup10)方法来解决卡顿问题，从而提升动画性能。最佳实践请参考[动画使用指导-使用renderGroup](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-fair-use-animation#section1223162922415)。
-> - 该接口不支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+> 在单一页面上存在大量应用动效的组件时，可以使用
+> renderGroup
+> 方法来解决卡顿问题，从而提升动画性能。最佳实践请参考
+> 动画使用指导-使用renderGroup
+> 。
+> 该接口不支持在
+> attributeModifier
+> 中调用。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -45,33 +51,33 @@ struct AnimationExample {
   @State rotateAngle: number = 0;
   @State flag: boolean = true;
   @State space: number = 10;
+
   build() {
     Column() {
-      Column({ space: this.space }) // 改变Column构造器中的space动画不生效
+      Column({ space: this.space })
         .onClick(() => {
           if (this.flag) {
             this.widthSize = 150;
             this.heightSize = 60;
-            this.space = 20; // 改变this.space动画不生效
+            this.space = 20;
           } else {
             this.widthSize = 250;
             this.heightSize = 100;
-            this.space = 10; // 改变this.space动画不生效
+            this.space = 10;
           }
           this.flag = !this.flag;
         })
         .backgroundColor(Color.Black)
         .margin(30)
-        .width(this.widthSize) // 只有写在animation前面才生效
-        .height(this.heightSize) // 只有写在animation前面才生效
+        .width(this.widthSize)
+        .height(this.heightSize)
         .animation({
           duration: 2000,
           curve: Curve.EaseOut,
           iterations: 3,
           playMode: PlayMode.Normal
         })
-        // .width(this.widthSize) // 动画不生效
-        // .height(this.heightSize) // 动画不生效
+
     }
   }
 }
@@ -82,7 +88,6 @@ struct AnimationExample {
 该示例通过animation实现了组件的属性动画。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AttrAnimationExample {
@@ -90,6 +95,7 @@ struct AttrAnimationExample {
   @State heightSize: number = 100
   @State rotateAngle: number = 0
   @State flag: boolean = true
+
   build() {
     Column() {
       Button('change size')
@@ -122,7 +128,7 @@ struct AttrAnimationExample {
           duration: 1200,
           curve: Curve.Friction,
           delay: 500,
-          iterations: -1, // 设置-1表示动画无限循环
+          iterations: -1,
           playMode: PlayMode.Alternate,
           expectedFrameRateRange: {
             min: 20,
@@ -135,4 +141,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aUTbqd0lRYiffh8kiEHa3g/zh-cn_image_0000002531226188.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120357Z&HW-CC-Expire=86400&HW-CC-Sign=176F465B56BE634FE0C1C07E0915FD0D9B26B9CD512D0DC24C77EACF6F43281B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aUTbqd0lRYiffh8kiEHa3g/zh-cn_image_0000002531226188.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122211Z&HW-CC-Expire=86400&HW-CC-Sign=E8BD491E483F5EF763D7E895487B486F15EEC54F9A105CE33184031FC673A5A6)
