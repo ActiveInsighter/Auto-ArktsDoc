@@ -62,12 +62,25 @@ jobs:
           TARGET_BRANCH="arkts-docs"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 1. 临时备份生成的文档到仓库外部目录
+          mv ArktsDocScript/generated/huawei_md ../huawei_md_backup
+          
+          # 2. 获取并切换到目标分支
           git fetch origin "$TARGET_BRANCH" || true
-          if git show-ref --verify --quiet "refs/remotes/origin/$TARGET_BRANCH"; then
+          if git ls-remote --exit-code --heads origin "$TARGET_BRANCH"; then
             git checkout -B "$TARGET_BRANCH" "origin/$TARGET_BRANCH"
+            # 清理旧文件，确保上游被删除的内容也会被同步删除
+            rm -rf ArktsDocScript/generated/huawei_md
           else
-            git checkout -B "$TARGET_BRANCH"
+            git checkout -b "$TARGET_BRANCH"
           fi
+          
+          # 3. 恢复生成的新文档
+          mkdir -p ArktsDocScript/generated
+          mv ../huawei_md_backup ArktsDocScript/generated/huawei_md
+          
+          # 4. 提交
           git add ArktsDocScript/generated/huawei_md
           if git diff --cached --quiet; then
             echo "No Markdown changes to commit."
