@@ -1,15 +1,12 @@
-# PageTransitionEnter
+# 页面间转场 (pageTransition)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation
 
 当路由([router](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-router))进行切换时，可以通过在[pageTransition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#pagetransition9)函数中自定义页面入场和页面退场的转场动效。详细指导请参考[页面转场动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-transition-animation)。
 
 > **说明**
 > 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 为了实现更好的转场效果，推荐使用
-> Navigation组件
-> 和
-> 模态转场
-> 。
+>
+> 为了实现更好的转场效果，推荐使用[Navigation组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation)和[模态转场](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-transition)。
 
 ## PageTransitionEnter
 
@@ -33,6 +30,12 @@ onEnter(event: PageTransitionCallback): PageTransitionEnterInterface
 
 逐帧回调，直到入场动画结束，progress从0变化到1。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | [PageTransitionCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation#pagetransitioncallback18) | 是 | 入场动画的逐帧回调直到入场动画结束，progress从0变化到1。 |
@@ -55,6 +58,12 @@ PageTransitionExit(value: PageTransitionOptions)
 
 设置当前页面的自定义退场动效。继承自[CommonTransition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation#commontransition)
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [PageTransitionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation#pagetransitionoptions对象说明) | 是 | 配置退场动效的参数。 |
@@ -65,9 +74,17 @@ onExit(event: PageTransitionCallback): PageTransitionExitInterface
 
 逐帧回调，直到出场动画结束，progress从0变化到1。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | [PageTransitionCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation#pagetransitioncallback18) | 是 | 出场动画的逐帧回调直到出场动画结束，progress从0变化到1。 |
+
+**示例：**
 
 ```typescript
   pageTransition() {
@@ -83,6 +100,10 @@ onExit(event: PageTransitionCallback): PageTransitionExitInterface
 
 退场/进场动效的参数。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [RouteType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation#routetype枚举说明) | 否 | 是 | 页面转场效果生效的路由类型。 默认值：RouteType.None。 |
@@ -94,17 +115,31 @@ onExit(event: PageTransitionCallback): PageTransitionExitInterface
 
 页面转场通用动效。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ### constructor
 
 constructor()
 
 转场通用动效的构造函数。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ### slide
 
 slide(value: SlideEffect): T
 
 设置页面转场时的滑入滑出效果。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -122,9 +157,21 @@ translate(value: TranslateOptions): T
 
 设置页面转场时的平移效果。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [TranslateOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#translateoptions对象说明) | 是 | 设置页面转场时的平移效果，为入场时起点和退场时终点的值，和slide同时设置时默认生效slide。 - x：横向的平移距离。 - y：纵向的平移距离。 - z：竖向的平移距离。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前组件。 |
 
 ### scale
 
@@ -132,9 +179,21 @@ scale(value: ScaleOptions): T
 
 设置页面转场时的缩放效果。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ScaleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#scaleoptions对象说明) | 是 | 设置页面转场时的缩放效果，为入场时起点和退场时终点的值。 - x：横向放大倍数（或缩小比例）。 - y：纵向放大倍数（或缩小比例）。 - z：竖向放大倍数（或缩小比例）。 - centerX、centerY缩放中心点。centerX和centerY默认值是"50%"，即默认以页面的中心点为旋转中心点。 - 中心点为(0, 0)代表页面的左上角。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前组件。 |
 
 ### opacity
 
@@ -142,9 +201,21 @@ opacity(value: number): T
 
 设置入场的起点透明度值或者退场的终点透明度值。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置入场的起点透明度值或者退场的终点透明度值。 取值范围：[0, 1] |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前组件。 |
 
 ## PageTransitionCallback18+
 
@@ -153,6 +224,8 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 页面转场事件回调。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -163,6 +236,10 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 
 页面转场类型。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | None | 0 | 页面未重定向。如Push和Pop描述中RouteType为None的情形，即页面进场时PageTransitionEnter的转场效果生效；退场时PageTransitionExit的转场效果生效。 |
@@ -172,6 +249,10 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 ## SlideEffect枚举说明
 
 页面转场时的滑入滑出效果。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -268,7 +349,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Y46zJx9GQ1WcW68WEr8VyQ/zh-cn_image_0000002531226190.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122325Z&HW-CC-Expire=86400&HW-CC-Sign=E787287ACA056578753C0202CBC85E9DEC823D4BD39C6F6AB1392DE49485673B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Y46zJx9GQ1WcW68WEr8VyQ/zh-cn_image_0000002531226190.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144245Z&HW-CC-Expire=86400&HW-CC-Sign=A4947A30550D08F1332185CCD5EECB327E94845AE5CAEA171BA92314F94D1424)
 
 自定义方式2：配置了当前页面的入场动画为从左侧滑入，退场为平移加透明度变化。
 
@@ -324,7 +405,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8FtnxapFRzCp4y_cDLqVGQ/zh-cn_image_0000002562026173.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122325Z&HW-CC-Expire=86400&HW-CC-Sign=0E4A984774344E04A6FBC699CCE338FC28C21CA21DD29AC56BAABEE9E59648C5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/8FtnxapFRzCp4y_cDLqVGQ/zh-cn_image_0000002562026173.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144245Z&HW-CC-Expire=86400&HW-CC-Sign=3A956B8BF4D35E93148BE0CD8F7B1D10F77E8BEBF1F72693D603C029B7C632C1)
 
 ### 示例2（设置退入场平移效果）
 
@@ -406,7 +487,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/yD9MV6cxSLa-5RhS0g2XlA/zh-cn_image_0000002562146159.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122325Z&HW-CC-Expire=86400&HW-CC-Sign=F4706A1372C44BC622A3106A8D3417A35A944877565976DF6917E1C5F5D16431)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/yD9MV6cxSLa-5RhS0g2XlA/zh-cn_image_0000002562146159.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144245Z&HW-CC-Expire=86400&HW-CC-Sign=003A7F048CE21B5F80EAEBEF943D9309325C6CE5AD3E82C1E8563C28A839653A)
 
 自定义方式2：使用系统默认的退入场效果，将系统语言排版模式改为RTL。
 
@@ -464,4 +545,4 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/DnkvqaQmTkeedQWnokSILg/zh-cn_image_0000002531106258.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122325Z&HW-CC-Expire=86400&HW-CC-Sign=2A7E92109C043060B1053D5F961E0C4FC687961727CDE81966F64059206AFC41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/DnkvqaQmTkeedQWnokSILg/zh-cn_image_0000002531106258.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144245Z&HW-CC-Expire=86400&HW-CC-Sign=8F1C9FBBBB49BEC3C518D74C98E2B6773179CC1D0817E0E03772DF03FDB813DD)

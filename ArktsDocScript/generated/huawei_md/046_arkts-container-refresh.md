@@ -1,34 +1,14 @@
-# 子组件
+# Refresh-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh
 
 可以进行页面下拉操作并显示刷新动效的容器组件。
 
 > **说明**
-> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 该组件从API version 12开始支持与垂直滚动的
-> Swiper
-> 和
-> Web
-> 的联动。当
-> Swiper
-> 设置
-> loop
-> 属性为true时，Refresh无法和
-> Swiper
-> 产生联动。
-> Refresh和内容大小小于组件自身的
-> List
-> 组件嵌套使用并且中间还有其他组件时，手势可能会被中间组件响应，导致Refresh未产生下拉刷新效果，可以将
-> alwaysEnabled
-> 参数设为true，此时
-> List
-> 会响应手势并通过嵌套滚动带动Refresh组件产生下拉刷新效果，具体可以参考
-> 示例9不满一屏实现下拉刷新
-> 。
-> 组件内部已绑定手势实现跟手滚动等功能，需要增加自定义手势操作时请参考
-> 手势拦截增强
-> 进行处理。
-> 组件无法通过鼠标按下拖动操作进行下拉刷新。
+> - 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - 该组件从API version 12开始支持与垂直滚动的[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)和[Web](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-web)的联动。当[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)设置[loop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#loop)属性为true时，Refresh无法和[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)产生联动。
+> - Refresh和内容大小小于组件自身的[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)组件嵌套使用并且中间还有其他组件时，手势可能会被中间组件响应，导致Refresh未产生下拉刷新效果，可以将[alwaysEnabled](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#edgeeffectoptions11对象说明)参数设为true，此时[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)会响应手势并通过嵌套滚动带动Refresh组件产生下拉刷新效果，具体可以参考[示例9不满一屏实现下拉刷新](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#示例9不满一屏场景实现下拉刷新)。
+> - 组件内部已绑定手势实现跟手滚动等功能，需要增加自定义手势操作时请参考[手势拦截增强](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gesture-blocking-enhancement)进行处理。
+> - 组件无法通过鼠标按下拖动操作进行下拉刷新。
 
 ## 子组件
 
@@ -56,6 +36,8 @@ Refresh(value: RefreshOptions)
 
 用于设置Refresh组件参数。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | refreshing | boolean | 否 | 否 | 组件当前是否处于刷新中状态。true表示处于刷新中状态，false表示未处于刷新中状态。 默认值：false 该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -66,19 +48,9 @@ Refresh(value: RefreshOptions)
 | refreshingContent12+ | [ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent) | 否 | 是 | 自定义刷新区域显示内容。 **说明：** 与builder参数同时设置时builder参数不生效。 自定义组件设置了固定高度时，自定义组件会以固定高度显示在刷新区域下方；自定义组件未设置高度时，自定义组件高度会自适应刷新区域高度，会发生自定义组件高度跟随刷新区域变化至0的现象。建议对自定义组件设置最小高度约束来避免自定义组件高度小于预期的情况发生，具体可参照[示例4](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#示例4自定义刷新区域显示内容-refreshingcontent)。 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 > **说明**
-> 当未设置builder或refreshingContent时，是通过更新子组件的
-> translate
-> 属性实现的下拉位移效果，下拉位移过程中不会触发子组件的
-> onAreaChange
-> 事件，子组件设置
-> translate
-> 属性时不会生效。
-> 当设置了builder或refreshingContent时，是通过更新子组件相对于Refresh组件的位置实现的下拉位移效果，下拉位移过程中可以触发子组件的
-> onAreaChange
-> 事件，子组件设置
-> position
-> 属性时会固定子组件相对于Refresh组件的位置导致子组件不会跟手进行下拉位移。
-> 通过builder参数设置的自定义组件在未指定宽度和高度时，其尺寸将自适应子组件，在指定宽度而未指定高度时，其高度将自适应下拉距离。通过refreshingContent参数设置的自定义组件若未指定高度，其高度同样会自适应下拉距离。当自定义组件高度自适应下拉距离时，随着下拉距离的增加，该组件的高度亦随之增加；当自定义组件的高度设定为固定值或达到最大高度限制时，随着下拉距离的增加，自定义组件与Refresh组件上边界之间的间距亦会随之增加。
+> - 当未设置builder或refreshingContent时，是通过更新子组件的[translate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#translate)属性实现的下拉位移效果，下拉位移过程中不会触发子组件的[onAreaChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-area-change-event#onareachange)事件，子组件设置[translate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#translate)属性时不会生效。
+> - 当设置了builder或refreshingContent时，是通过更新子组件相对于Refresh组件的位置实现的下拉位移效果，下拉位移过程中可以触发子组件的[onAreaChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-component-area-change-event#onareachange)事件，子组件设置[position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#position)属性时会固定子组件相对于Refresh组件的位置导致子组件不会跟手进行下拉位移。
+> - 通过builder参数设置的自定义组件在未指定宽度和高度时，其尺寸将自适应子组件，在指定宽度而未指定高度时，其高度将自适应下拉距离。通过refreshingContent参数设置的自定义组件若未指定高度，其高度同样会自适应下拉距离。当自定义组件高度自适应下拉距离时，随着下拉距离的增加，该组件的高度亦随之增加；当自定义组件的高度设定为固定值或达到最大高度限制时，随着下拉距离的增加，自定义组件与Refresh组件上边界之间的间距亦会随之增加。
 
 ## 属性
 
@@ -92,6 +64,10 @@ refreshOffset(value: number)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 下拉偏移量，单位vp。 默认值：未设置[promptText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#refreshoptions对象说明)参数时为64vp，设置了[promptText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#refreshoptions对象说明)参数时为96vp。 如果取值为0或负数的时候此接口采用默认值。 |
@@ -102,6 +78,12 @@ pullToRefresh(value: boolean)
 
 设置当下拉距离超过[refreshOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#refreshoffset12)时是否能触发刷新。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 当下拉距离超过[refreshOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#refreshoffset12)时是否能触发刷新。true表示能触发刷新，false表示不能触发刷新。 默认值：true |
@@ -111,6 +93,12 @@ pullToRefresh(value: boolean)
 pullDownRatio(ratio: [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<number>)
 
 设置下拉跟手系数。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -123,6 +111,10 @@ maxPullDownDistance(distance: Optional<number>)
 设置最大下拉距离。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -138,6 +130,12 @@ onStateChange(callback: (state: RefreshStatus) => void)
 
 当前刷新状态变更时，触发回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | state | [RefreshStatus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#refreshstatus枚举说明) | 是 | 刷新状态。 |
@@ -147,6 +145,12 @@ onStateChange(callback: (state: RefreshStatus) => void)
 onRefreshing(callback: () => void)
 
 进入刷新状态时触发回调。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -159,9 +163,13 @@ onOffsetChange(callback: Callback<number>)
 下拉距离发生变化时触发回调。
 
 > **说明**
-> 从API version 20开始，该接口支持在
-> attributeModifier
-> 中调用。
+> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -170,6 +178,10 @@ onOffsetChange(callback: Callback<number>)
 ## RefreshStatus枚举说明
 
 RefreshStatus刷新状态枚举。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -246,7 +258,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/9RkibFKSSuyGoCMsTJkcgQ/zh-cn_image_0000002531105906.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=3EB20373930AC82CEAAEA90F3DE477C98A363D06D842390865F657E707BBB0D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/9RkibFKSSuyGoCMsTJkcgQ/zh-cn_image_0000002531105906.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=1EAB18FBADF3A6D3352D0776E44314EE1C3EB05B6B038E690F3555D961091D17)
 
 ### 示例2（设置刷新区域显示文本）
 
@@ -305,7 +317,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/whUMGafZQYq90KBvFLrtJA/zh-cn_image_0000002531225840.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=9FC64DAECBA5F22C8CC16028C14989B860B90D7F9A49A9F3812E54D5C5A62220)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/whUMGafZQYq90KBvFLrtJA/zh-cn_image_0000002531225840.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=C641BC7E2A6FD8C2FB66003E47F7556F8A6174231DC62DDA83BED35AD3D5E899)
 
 ### 示例3（自定义刷新区域显示内容-builder）
 
@@ -376,7 +388,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Xxd3j-4aTfqpf1E0-k4pnA/zh-cn_image_0000002562025823.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=5EF1184B9E4AFC3BC7F7F156CF81B97E8BBF8F627CA4C0C73B0B3FFA6F58C19F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Xxd3j-4aTfqpf1E0-k4pnA/zh-cn_image_0000002562025823.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=C7E9C23908D768A48C83D73C8D8716E09A8F246AA4344F0E4B06BF06C986F89B)
 
 ### 示例4（自定义刷新区域显示内容-refreshingContent）
 
@@ -469,7 +481,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/BVa4L_TdTUCC4uXcLuVVHg/zh-cn_image_0000002562145809.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=90E34E9112CACB71EF88F276DE5B71A219966FAD91346E6F8B8F82833CC1D695)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/BVa4L_TdTUCC4uXcLuVVHg/zh-cn_image_0000002562145809.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=88F676E126CBA17BA50ABE3351D40503D39C6DC90F00DC9535699B80BC8BA523)
 
 ### 示例5（实现最大下拉距离）
 
@@ -554,7 +566,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/DnWiIFhLT4yBYPvZMjdoCA/zh-cn_image_0000002531105908.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=F45353CF978E0077EB61716556A18A3DB40158A6A3CE6906580D1F3861610D7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/DnWiIFhLT4yBYPvZMjdoCA/zh-cn_image_0000002531105908.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=AEC509DAA71598DE9307F355F5F08A967BC939765810CEB649F3E678FF585ABB)
 
 ### 示例6（实现下拉刷新上拉加载更多）
 
@@ -652,7 +664,7 @@ struct ListRefreshLoad {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qBAVgwnwTO-5MOoxsQ7Snw/zh-cn_image_0000002531225842.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=7DE9FD1FFC27624E4D38686CB48071A34F01FED6D82163E719AEF82E06574879)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qBAVgwnwTO-5MOoxsQ7Snw/zh-cn_image_0000002531225842.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=59FF5418EDF59E27A94A56274133C55A7EE70137B3455B4BE77742982F17E73B)
 
 ### 示例7（设置最大下拉距离）
 
@@ -711,7 +723,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/DD-dHLjAQ4q6pjLbpr8grg/zh-cn_image_0000002562025825.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=DFE4B548D8340F7F78D340DCA7EBBD9307A2CA9B8351136C22D22C4785B1E962)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/DD-dHLjAQ4q6pjLbpr8grg/zh-cn_image_0000002562025825.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=A446B34C211E8C7797BB2CDAED7ADC5B51FA2BAFADE1D55CC9D0DE0BAE75F0E1)
 
 ### 示例8（禁止下拉刷新）
 
@@ -779,7 +791,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/_84hXeojQkKXMygFs1biLA/zh-cn_image_0000002562145811.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=FBBCC070DBC798A502FC1B0752A50E2154D9E42FB8BBB8C8ABAA4D3B8254C640)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/_84hXeojQkKXMygFs1biLA/zh-cn_image_0000002562145811.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=249845033C2E6FA8A84CA4DA13B0190050FCFCEA2C785B6D3132DA81E4A90138)
 
 ### 示例9（不满一屏场景实现下拉刷新）
 
@@ -841,4 +853,4 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ewaQ4zZXSCeGNnq9psLhgA/zh-cn_image_0000002531105910.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122217Z&HW-CC-Expire=86400&HW-CC-Sign=4BE148941B97C041AF350C9F301A1EA7A76F2C6EBB1B30ECB0D381CAF6EA5AA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ewaQ4zZXSCeGNnq9psLhgA/zh-cn_image_0000002531105910.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144117Z&HW-CC-Expire=86400&HW-CC-Sign=B88E21B17A76AF6662F2E302ED18D2950E628C4B6B03AAFF9973077469EC8814)

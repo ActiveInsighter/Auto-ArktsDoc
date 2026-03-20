@@ -1,4 +1,4 @@
-# motionPath
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-motion-path-animation
 
 设置组件进行位移动画时的运动路径。
@@ -31,6 +31,10 @@ motionPath(value: MotionPathOptions): T
 ## MotionPathOptions
 
 设置组件的运动路径。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -68,4 +72,4 @@ struct MotionPathExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/HEu54pAPSBW-qspi9-fpTw/zh-cn_image_0000002562026177.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122330Z&HW-CC-Expire=86400&HW-CC-Sign=D47E1A89866B57A96A3AC8FCD583F3A4002E69D388D320F836C11F4423B95E1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/HEu54pAPSBW-qspi9-fpTw/zh-cn_image_0000002562026177.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144250Z&HW-CC-Expire=86400&HW-CC-Sign=077BA53F4714E5F884F6E0A3FD9A2CCFE67C5E9FCA20A668B78F6204B140AD33)

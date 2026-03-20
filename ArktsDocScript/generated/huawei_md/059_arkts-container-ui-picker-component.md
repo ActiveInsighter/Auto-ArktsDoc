@@ -1,21 +1,15 @@
-# 子组件
+# UIPickerComponent-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-ui-picker-component
 
 UIPickerComponent容器是用于实现用户选择操作的组件。它支持从一组有限的选项中让用户进行单选，可应用于时间选择、日期选择、地区选择、状态选择等多种场景。UIPickerComponent容器的显示效果为立体滚轮样式，支持选项按需定制，包括文本类型、图片类型和图文组合类型。
 
 > **说明**
-> 该组件从API version 22开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> UIPickerComponent容器的选项行高固定为40vp，最多可显示7个选项。由于显示效果为立体滚轮样式，因此除选中项外的其他选项会进行不同角度的旋转，实际的可视高度会小于40vp。
-> UIPickerComponent容器的
-> height
-> 建议设置为200vp。当设置的高度大于等于该建议值时，可完全显示7个选项；小于该建议值时，显示范围会从上下边缘向中间裁剪，可显示的选项数量也会相应减少，始终保持选中项垂直居中。
-> 当UIPickerComponent容器未设置
-> width
-> 时，取当前视图中可见子组件的最大宽度作为容器宽度。建议为UIPickerComponent容器设置宽度，或为每个子组件设置相同宽度，以避免滑动过程中容器宽度动态发生变化，影响显示效果。
-> UIPickerComponent容器的子组件的对齐方式固定为居中对齐，不支持通过
-> align
-> 属性改变子组件的对齐方式。
-> UIPickerComponent容器当前不支持智能手表设备。
+> - 该组件从API version 22开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - UIPickerComponent容器的选项行高固定为40vp，最多可显示7个选项。由于显示效果为立体滚轮样式，因此除选中项外的其他选项会进行不同角度的旋转，实际的可视高度会小于40vp。
+> - UIPickerComponent容器的[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)建议设置为200vp。当设置的高度大于等于该建议值时，可完全显示7个选项；小于该建议值时，显示范围会从上下边缘向中间裁剪，可显示的选项数量也会相应减少，始终保持选中项垂直居中。
+> - 当UIPickerComponent容器未设置[width](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#width)时，取当前视图中可见子组件的最大宽度作为容器宽度。建议为UIPickerComponent容器设置宽度，或为每个子组件设置相同宽度，以避免滑动过程中容器宽度动态发生变化，影响显示效果。
+> - UIPickerComponent容器的子组件的对齐方式固定为居中对齐，不支持通过[align](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#align)属性改变子组件的对齐方式。
+> - UIPickerComponent容器当前不支持智能手表设备。
 
 ## 子组件
 
@@ -24,22 +18,12 @@ UIPickerComponent容器是用于实现用户选择操作的组件。它支持从
 - 支持渲染控制类型：[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)和[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)。
 
 > **说明**
-> 开发者在使用Row容器作为子组件时，Row容器中仅支持包含Text、Image、SymbolGlyph基础组件，包含其他容器组件可能会影响显示效果或滑动功能异常。
-> 统计子组件的个数时，不包含Row容器内的子组件，Row容器及其子组件共同视为1个子组件。
-> 子组件为Text、Image、SymbolGlyph时，
-> height
-> 属性不生效，固定为40vp。
-> 子组件为Row容器时，Row容器的
-> height
-> 属性不生效，固定为40vp，Row容器内的子组件
-> height
-> 属性能正常生效，最终显示效果由Row容器决定。
-> 图文组合类型选项需要使用Row容器包含图片和文本组件。使用图文组合类型选项时，建议将图片的
-> height
-> 设置为40vp及以下，避免图片较大时被裁剪。
-> UIPickerComponent容器内所有文本组件（包括Row容器内的文本组件）的fontSize属性默认为20fp。用户设置将覆盖默认值，设置异常值时以文本组件
-> fontSize
-> 处理的结果为准。建议统一设置或不设置fontSize以保证良好的显示效果。
+> - 开发者在使用Row容器作为子组件时，Row容器中仅支持包含Text、Image、SymbolGlyph基础组件，包含其他容器组件可能会影响显示效果或滑动功能异常。
+> - 统计子组件的个数时，不包含Row容器内的子组件，Row容器及其子组件共同视为1个子组件。
+> - 子组件为Text、Image、SymbolGlyph时，[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)属性不生效，固定为40vp。
+> - 子组件为Row容器时，Row容器的[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)属性不生效，固定为40vp，Row容器内的子组件[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)属性能正常生效，最终显示效果由Row容器决定。
+> - 图文组合类型选项需要使用Row容器包含图片和文本组件。使用图文组合类型选项时，建议将图片的[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)设置为40vp及以下，避免图片较大时被裁剪。
+> - UIPickerComponent容器内所有文本组件（包括Row容器内的文本组件）的fontSize属性默认为20fp。用户设置将覆盖默认值，设置异常值时以文本组件[fontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#fontsize)处理的结果为准。建议统一设置或不设置fontSize以保证良好的显示效果。
 
 ## 接口
 
@@ -63,6 +47,12 @@ UIPickerComponent(options?: UIPickerComponentOptions)
 
 UIPickerComponent容器的参数说明。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | selectedIndex | number | 否 | 是 | 选中项的索引值。 取值范围：[0, 子组件的个数-1]内的整数。不在取值范围内时，使用默认值；设置小数时，使用向下取整后的整数。 默认值：0 **说明：** 统计子组件的个数时，不包含Row容器内的子组件，Row容器及其子组件共同视为1个子组件。 |
@@ -76,6 +66,14 @@ UIPickerComponent容器的参数说明。
 canLoop(isLoop: Optional<boolean>)
 
 设置选项列是否可循环滚动。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -97,6 +95,14 @@ enableHapticFeedback(enable: Optional<boolean>)
 ]
 ```
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<boolean> | 是 | 设置是否开启触控反馈。 - true：开启触控反馈。 - false：不开启触控反馈。 默认值：true 当enable的值为undefined时，使用默认值。 开启后，是否存在触控反馈取决于系统硬件支持情况。 |
@@ -106,6 +112,14 @@ enableHapticFeedback(enable: Optional<boolean>)
 selectionIndicator(style: Optional<PickerIndicatorStyle>)
 
 设置选中项指示器的样式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -123,9 +137,16 @@ onChange(callback: Optional<OnUIPickerComponentCallback>)
 
 > **说明**
 > 如果某个选项有一半以上的区域进入选中项区域内，则该选项成为选中项。
-> 选中项区域可通过设置
-> selectionIndicator
-> 进行标识。如果设置选中项指示器为背景，则背景区域即为选中项区域。如果设置选中项指示器为分割线，则上下分割线的中心线内的区域为选中项区域。
+>
+> 选中项区域可通过设置[selectionIndicator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-ui-picker-component#selectionindicator)进行标识。如果设置选中项指示器为背景，则背景区域即为选中项区域。如果设置选中项指示器为分割线，则上下分割线的中心线内的区域为选中项区域。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -137,6 +158,14 @@ onScrollStop(callback: Optional<OnUIPickerComponentCallback>)
 
 选择器滑动停止时，触发该事件。选择器滑动停止指某次行为触发的滑动动画完全结束。如果某次滑动动画还未结束时又触发了新的滑动动画，则不属于滑动停止。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[OnUIPickerComponentCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-ui-picker-component#onuipickercomponentcallback)> | 是 | 当选择器滑动停止时触发的回调函数。 当callback的值为undefined时，不使用回调函数。 |
@@ -144,6 +173,12 @@ onScrollStop(callback: Optional<OnUIPickerComponentCallback>)
 ## PickerIndicatorStyle对象说明
 
 选中项指示器样式的参数说明。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -159,7 +194,11 @@ onScrollStop(callback: Optional<OnUIPickerComponentCallback>)
 
 设置选中项指示器的类型。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **元服务API：** 从API version 22开始，该类型支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -172,6 +211,14 @@ type OnUIPickerComponentCallback = (selectedIndex: number) => void
 
 定义[onChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-ui-picker-component#onchange)和[onScrollStop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-ui-picker-component#onscrollstop)事件的回调类型。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectedIndex | number | 是 | 当前选中项的索引值。 取值范围：[0, 子组件的个数-1]内的整数。 |
@@ -183,19 +230,20 @@ type OnUIPickerComponentCallback = (selectedIndex: number) => void
 从API version 22开始，该示例通过点击按钮的方式实现切换UIPickerComponent容器的循环滚动和开启/关闭触控反馈功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct UIPickerComponentAttrsExample {
   private dataArray: string[] = [];
   @State loop: boolean = true;
   @State hapticFeedback: boolean = true;
+
   aboutToAppear(): void {
-    // 构造选项数据
+
     for (let i = 1; i <= 10; i++) {
       this.dataArray.push(i.toString())
     }
   }
+
   build() {
     Column() {
       Row() {
@@ -204,12 +252,13 @@ struct UIPickerComponentAttrsExample {
             Text(item)
           })
         }
-        // 配置选项列表循环
+
         .canLoop(this.loop)
-        // 配置触控音振反馈
+
         .enableHapticFeedback(this.hapticFeedback)
         .width('70%')
       }
+
       Column() {
         Row() {
           Toggle({ type: ToggleType.Switch, isOn: true })
@@ -219,6 +268,7 @@ struct UIPickerComponentAttrsExample {
           Text('canLoop').fontSize(20)
         }
         .width('70%')
+
         Row() {
           Toggle({ type: ToggleType.Switch, isOn: true })
             .onChange((isOn: boolean) => {
@@ -228,27 +278,28 @@ struct UIPickerComponentAttrsExample {
         }
         .width('70%')
       }
+
     }
     .width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/nA7n7dwoTM25ra-0h4HcAA/zh-cn_image_0000002562145855.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122232Z&HW-CC-Expire=86400&HW-CC-Sign=8E9CD30BF246229DAB415C2FA0F4295FAF61695550C2011EF9872690B7B8A3EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/nA7n7dwoTM25ra-0h4HcAA/zh-cn_image_0000002562145855.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144135Z&HW-CC-Expire=86400&HW-CC-Sign=673A6CDFAAA8C1372B1CBEBD1401712E173A4434660DA3C0AEED0809623FEEC0)
 
 ### 示例2（设置事件回调）
 
 从API version 22开始，该示例基于状态选择，实现了UIPickerComponent容器的onChange和onScrollStop事件回调。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct UIPickerComponentEventsExample {
-  // 构造状态选项数据
+
   private dataArray: string[] = ['待办', '进行中', '已完成'];
   @State onChangeDesc: string = '';
   @State onScrollStopDesc: string = '';
+
   build() {
     Column() {
       Row() {
@@ -257,50 +308,53 @@ struct UIPickerComponentEventsExample {
             Text(item)
           })
         }
-        // 配置onChange事件回调
+
         .onChange((selectedIndex: number) => {
           this.onChangeDesc = 'on change: ' + selectedIndex
         })
-        // 配置onScrollStop事件回调
+
         .onScrollStop((selectedIndex: number) => {
           this.onScrollStopDesc = 'on scroll stop: ' + selectedIndex
         })
         .width('70%')
       }
+
       Column() {
         Text(this.onChangeDesc)
         Text(this.onScrollStopDesc)
       }
+
     }
     .width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1w3opDi4THCjYIsB5W436Q/zh-cn_image_0000002531105954.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122232Z&HW-CC-Expire=86400&HW-CC-Sign=840451D64623AF11F79347DE067AFC86BEBD8E43259AFF2CFDF2BE4C2A89E2F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1w3opDi4THCjYIsB5W436Q/zh-cn_image_0000002531105954.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144135Z&HW-CC-Expire=86400&HW-CC-Sign=1908FF08CD21B08A6BEB2D2D16CC451E8CF9E897B65930D026647C7379053374)
 
 ### 示例3（设置选中项索引值）
 
 从API version 22开始，该示例实现了设置UIPickerComponent容器的选中项索引值。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct UIPickerComponentSelectedIndexExample {
   private dataArray: string[] = [];
   @State selectedIndex: number = 0;
+
   aboutToAppear(): void {
-    // 构造选项数据
+
     for (let i = 1; i <= 10; i++) {
       this.dataArray.push(i.toString())
     }
   }
+
   build() {
     Column() {
       Row() {
         UIPickerComponent({
-          // 配置选中项索引值
+
           selectedIndex: this.selectedIndex
         }) {
           ForEach(this.dataArray, (item: string) => {
@@ -315,24 +369,26 @@ struct UIPickerComponentSelectedIndexExample {
         })
         .width('70%')
       }
+
       Column() {
         Text('selectedIndex: ' + this.selectedIndex)
       }
+
     }
     .width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/UfTfpg7TT6GLQ8iZ-kU-bg/zh-cn_image_0000002531225888.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122232Z&HW-CC-Expire=86400&HW-CC-Sign=DB93B2560126EABDFCF81DD6C1813176DE1A7D1EECA6A0DD2E55C5EB26470F3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/UfTfpg7TT6GLQ8iZ-kU-bg/zh-cn_image_0000002531225888.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144135Z&HW-CC-Expire=86400&HW-CC-Sign=7ADED260C87CC3DC50A1D3B0D4E03674EC9B62F28FE72F92619C07D5D3CAB209)
 
 ### 示例4（设置选中项指示器）
 
 从API version 22开始，该示例实现了设置UIPickerComponent容器的选中项指示器。具体包括：在使用背景指示器时，设置背景颜色、背景圆角；在使用分割线指示器时，设置分割线颜色、分割线宽度、起始侧边距、结束侧边距。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct UIPickerComponentIndicatorExample {
@@ -360,12 +416,14 @@ struct UIPickerComponentIndicatorExample {
   }
   private controller: TabsController = new TabsController();
   @State curTabIndex: number = 0;
+
   @Builder
   dividerBuilder() {
     Column() {
       Row() {
         Text('分割线线宽')
       }.margin(2)
+
       Row() {
         Button('0')
           .onClick(() => {
@@ -392,9 +450,11 @@ struct UIPickerComponentIndicatorExample {
           .width(100)
           .margin(2)
       }
+
       Row() {
         Text('起始侧边距')
       }.margin(2)
+
       Row() {
         Button('0')
           .onClick(() => {
@@ -421,9 +481,11 @@ struct UIPickerComponentIndicatorExample {
           .width(100)
           .margin(2)
       }
+
       Row() {
         Text('结束侧边距')
       }.margin(2)
+
       Row() {
         Button('0')
           .onClick(() => {
@@ -450,9 +512,11 @@ struct UIPickerComponentIndicatorExample {
           .width(100)
           .margin(2)
       }
+
       Row() {
         Text('分割线颜色')
       }
+
       Row() {
         Button('蓝色')
           .onClick(() => {
@@ -471,6 +535,7 @@ struct UIPickerComponentIndicatorExample {
           .width(73)
           .margin(2)
       }
+
       Row() {
         Button('不使用自定义设置')
           .onClick(() => {
@@ -483,12 +548,14 @@ struct UIPickerComponentIndicatorExample {
       }
     }
   }
+
   @Builder
   backgroundBuilder() {
     Column() {
       Row() {
         Text('圆角设置')
       }.margin(2)
+
       Column() {
         Button('使用LengthMetrics，实现统一圆角')
           .onClick(() => {
@@ -515,9 +582,11 @@ struct UIPickerComponentIndicatorExample {
           .width(300)
           .margin(2)
       }.margin(2)
+
       Row() {
         Text('背景色设置')
       }.margin(2)
+
       Row() {
         Button('蓝色')
           .onClick(() => {
@@ -536,6 +605,7 @@ struct UIPickerComponentIndicatorExample {
           .width(73)
           .margin(2)
       }
+
       Row() {
         Button('不使用自定义设置')
           .onClick(() => {
@@ -548,12 +618,14 @@ struct UIPickerComponentIndicatorExample {
       }
     }
   }
+
   aboutToAppear(): void {
-    // 构造选项数据
+
     for (let i = 1; i <= 10; i++) {
       this.dataArray.push(i.toString())
     }
   }
+
   build() {
     Column() {
       Row() {
@@ -562,7 +634,7 @@ struct UIPickerComponentIndicatorExample {
             Text(item)
           })
         }
-        // 配置选中项指示器
+
         .selectionIndicator({
           type: this.indicatorType,
           strokeWidth: this.strokeWidth,
@@ -578,6 +650,7 @@ struct UIPickerComponentIndicatorExample {
         TabContent() {
           this.backgroundBuilder()
         }.tabBar('背景指示器')
+
         TabContent() {
           this.dividerBuilder()
         }.tabBar('分割线指示器')
@@ -605,25 +678,26 @@ struct UIPickerComponentIndicatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/tjxIBWdkSgOf-ddelCV4tQ/zh-cn_image_0000002562025871.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122232Z&HW-CC-Expire=86400&HW-CC-Sign=D49CC68E84E0E7B958D0A7F27F150696C6E783DB0C0D1904023E210B40C88ABA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/tjxIBWdkSgOf-ddelCV4tQ/zh-cn_image_0000002562025871.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144135Z&HW-CC-Expire=86400&HW-CC-Sign=85CC916D04ACB570970C191C10AD7B85611C48C1C9450BD45316BCB6AB22306D)
 
 ### 示例5（自定义月份选择器）
 
 从API version 22开始，该示例使用UIPickerComponent容器嵌套文本子组件的方式实现月份选择器。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct MonthUIPickerComponentExample {
   private fontSize: number | string | Resource = '20vp';
   private monthArray: string[] = [];
+
   aboutToAppear(): void {
-    // 构造选项数据
+
     for (let i = 1; i <= 12; i++) {
       this.monthArray.push(i + '月')
     }
   }
+
   build() {
     Column() {
       UIPickerComponent() {
@@ -635,17 +709,17 @@ struct MonthUIPickerComponentExample {
         })
       }
       .width('70%')
-      // 配置选项列表循环
+
       .canLoop(true)
-      // 配置触控音振反馈为关闭
+
       .enableHapticFeedback(false)
-      // 配置选中项的指示器标识为分割线
+
       .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
-      // 订阅选中项改变事件
+
       .onChange((idx: number) => {
         console.info('UIPickerComponent item changed: ' + this.monthArray[idx])
       })
-      // 订阅滑动停止事件
+
       .onScrollStop((idx: number) => {
         console.info('UIPickerComponent scroll stopped: ' + this.monthArray[idx])
       })
@@ -655,16 +729,15 @@ struct MonthUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ZWTbmzpVQ4qzn7r3UNuhzw/zh-cn_image_0000002562145857.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122232Z&HW-CC-Expire=86400&HW-CC-Sign=8C322D2FD9BA2528EE97CFAD00A9BF3C0CA2D1343B7CB0CAA1B9E2B838B9FBCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ZWTbmzpVQ4qzn7r3UNuhzw/zh-cn_image_0000002562145857.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144135Z&HW-CC-Expire=86400&HW-CC-Sign=0B232BECF402C0DAC99DAEECB89AD8AF555E51631D33645A86A3D8D922049FA2)
 
 ### 示例6（自定义地区选择器）
 
 从API version 22开始，该示例使用多列UIPickerComponent容器组合实现地区选择器。
 
 ```typescript
-// xxx.ets
 type RegionDict = Record<string, Record<string, Array<string>>>;
-// 定义地区字典
+
 let regionData: RegionDict = {
   '辽宁省': {
     '沈阳市': ['沈河区', '和平区', '浑南区'],
@@ -679,6 +752,7 @@ let regionData: RegionDict = {
     '牡丹江市': ['东安区', '西安区', '爱民区']
   },
 };
+
 @Entry
 @Component
 struct RegionUIPickerComponentExample {
@@ -688,26 +762,30 @@ struct RegionUIPickerComponentExample {
   @State provinces: Array<string> = [];
   @State cities: Array<string> = [];
   @State counties: Array<string> = [];
+
   aboutToAppear(): void {
     this.provinces = Object.keys(regionData);
     this.flushCityColumn()
   }
+
   flushCityColumn() {
     let currentProvince = this.provinces[this.provinceIndex]
     this.cities = Object.keys(regionData[currentProvince])
     this.cityIndex = 0
     this.flushCountyColumn()
   }
+
   flushCountyColumn() {
     let currentProvince = this.provinces[this.provinceIndex]
     let currentCity = this.cities[this.cityIndex]
     this.counties = regionData[currentProvince][currentCity]
     this.countyIndex = 0
   }
+
   build() {
     Column() {
       Row() {
-        // 省级
+
         UIPickerComponent({
           selectedIndex: this.provinceIndex
         }) {
@@ -718,13 +796,14 @@ struct RegionUIPickerComponentExample {
         .onChange((selectedIndex: number) => {
           this.provinceIndex = selectedIndex
           this.flushCityColumn()
+
         })
         .onScrollStop((selectedIndex: number) => {
           this.provinceIndex = selectedIndex
         })
         .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
         .width('25%')
-        // 地级
+
         UIPickerComponent({
           selectedIndex: this.cityIndex
         }) {
@@ -741,7 +820,7 @@ struct RegionUIPickerComponentExample {
         })
         .selectionIndicator({ type: PickerIndicatorType.DIVIDER })
         .width('25%')
-        // 县级
+
         UIPickerComponent({
           selectedIndex: this.countyIndex
         }) {
@@ -764,32 +843,32 @@ struct RegionUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/rvi7ZeNLThSv9Pn0IyYsmQ/zh-cn_image_0000002531105956.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122232Z&HW-CC-Expire=86400&HW-CC-Sign=9522A7B05832D1533CB117B25CA94234870B8CB49FC62BD5ABBAB4A23B6D8C40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/rvi7ZeNLThSv9Pn0IyYsmQ/zh-cn_image_0000002531105956.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144135Z&HW-CC-Expire=86400&HW-CC-Sign=0B4597A816FC27B3F5D7A29ABFA95B13328892ABFA1AB33A694D9F279218DAFC)
 
 ### 示例7（自定义选项类型）
 
 从API version 22开始，该示例使用UIPickerComponent容器实现不同选项类型的选择器，包含文本选择器、图片选择器、图文组合选择器。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct UIPickerComponentExample {
   @State textList: string[] =
     ['text1', 'text2', 'text3', 'text4', 'text5', 'text6', 'text7', 'text8'];
-  // 以下$r('sys.media.*')资源文件需要替换为开发者所需的图像资源文件。
+
   @State imageList: Resource[] =
     [$r('sys.media.ohos_ic_normal_white_grid_audio'), $r('sys.media.ohos_ic_normal_white_grid_calendar'),
       $r('sys.media.ohos_ic_normal_white_grid_compress'), $r('sys.media.ohos_ic_normal_white_grid_doc'),
       $r('sys.media.ohos_ic_normal_white_grid_flac'), $r('sys.media.ohos_ic_normal_white_grid_folder'),
       $r('sys.media.ohos_ic_normal_white_grid_html'), $r('sys.media.ohos_ic_normal_white_grid_image')];
-  // 以下$r('sys.symbol.*')资源文件需要替换为开发者所需的图像资源文件。
+
   @State symbolList: Resource[] =
     [$r('sys.symbol.calendar_01'), $r('sys.symbol.calendar_02'), $r('sys.symbol.calendar_03'),
       $r('sys.symbol.calendar_04'), $r('sys.symbol.calendar_05'), $r('sys.symbol.calendar_06'),
       $r('sys.symbol.calendar_07'), $r('sys.symbol.calendar_08')];
   private controller: TabsController = new TabsController();
   @State curTabIndex: number = 0;
+
   @Builder
   ImagePicker() {
     Column() {
@@ -802,6 +881,7 @@ struct UIPickerComponentExample {
       .width(200)
     }
   }
+
   @Builder
   TextPicker() {
     Column() {
@@ -814,6 +894,7 @@ struct UIPickerComponentExample {
       .width(200)
     }
   }
+
   @Builder
   HybridPicker() {
     Column() {
@@ -830,15 +911,18 @@ struct UIPickerComponentExample {
       .width(200)
     }
   }
+
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.Start, index: this.curTabIndex, controller: this.controller }) {
         TabContent() {
           this.TextPicker()
         }.tabBar('文本选择器')
+
         TabContent() {
           this.ImagePicker()
         }.tabBar('图片选择器')
+
         TabContent() {
           this.HybridPicker()
         }.tabBar('图文组合选择器')
@@ -855,75 +939,30 @@ struct UIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/D17l58sJTsKDPNix3awEpQ/zh-cn_image_0000002531225890.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122232Z&HW-CC-Expire=86400&HW-CC-Sign=EA95C6594AF2288593934F9B22CEDBAC2FA6096A3567CE7ADA73649EF4F76028)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/D17l58sJTsKDPNix3awEpQ/zh-cn_image_0000002531225890.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144135Z&HW-CC-Expire=86400&HW-CC-Sign=0C7DF7D7DB788780494FEEF5E476585269BB06C4EEEBD47D22843874321FAC1D)
 
 ### 示例8（自定义时间选择器）
 
 从API version 22开始，该示例实现了一个时间选择器，功能包含设置切换是否循环滚动、切换是否显示秒数、切换是否使用24小时制、切换是否显示前导0，还可按照当前系统语言显示对应语言的内容，并根据语言习惯调整各列的显示顺序。
 
 > **说明**
-> 该示例中，时间选择器的各列内容根据系统语言显示对应语言的内容，例如：英文系统显示AM/PM，中文系统显示上午/下午。
-> 该示例中，时间选择器的各列根据系统语言调整显示顺序，例如：英文系统显示时/分/秒/AMPM，中文系统显示上下午/时/分/秒。
+> - 该示例中，时间选择器的各列内容根据系统语言显示对应语言的内容，例如：英文系统显示AM/PM，中文系统显示上午/下午。
+> - 该示例中，时间选择器的各列根据系统语言调整显示顺序，例如：英文系统显示时/分/秒/AMPM，中文系统显示上下午/时/分/秒。
 
 为实现"上下午"随系统语言切换，需要在工程的resource目录下添加对应语言的翻译，例如：
 
-- 中文（默认）：在resource目录下创建base目录，在base目录下创建element目录，在element目录添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下： {
- "string": [
- {
- "name": "app_name",
- "value": "timePicker"
- },
- {
- "name": "am",
- "value": "上午"
- },
- {
- "name": "pm",
- "value": "下午"
- }
- ]
-}
-- 英文：在resource目录下创建en目录，在en目录下创建element目录，在element目录添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下： {
- "string": [
- {
- "name": "app_name",
- "value": "timePicker"
- },
- {
- "name": "am",
- "value": "AM"
- },
- {
- "name": "pm",
- "value": "PM"
- }
- ]
-}
-- 阿拉伯语：在resource目录下创建ar目录，在ar目录下创建element目录，在element目录下添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下： {
- "string": [
- {
- "name": "app_name",
- "value": "timePicker"
- },
- {
- "name": "am",
- "value": "ص"
- },
- {
- "name": "pm",
- "value": "م"
- }
- ]
-}
+- 中文（默认）：在resource目录下创建base目录，在base目录下创建element目录，在element目录添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下： ```typescript {  "string": [  {  "name": "app_name",  "value": "timePicker"  },  {  "name": "am",  "value": "上午"  },  {  "name": "pm",  "value": "下午"  }  ] } ```
+- 英文：在resource目录下创建en目录，在en目录下创建element目录，在element目录添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下： ```typescript {  "string": [  {  "name": "app_name",  "value": "timePicker"  },  {  "name": "am",  "value": "AM"  },  {  "name": "pm",  "value": "PM"  }  ] } ```
+- 阿拉伯语：在resource目录下创建ar目录，在ar目录下创建element目录，在element目录下添加string.json文件（若文件已存在，请在文件中追加以下"name"-"value"键值对，请勿直接覆盖原文件）。文件内容如下： ```typescript {  "string": [  {  "name": "app_name",  "value": "timePicker"  },  {  "name": "am",  "value": "ص"  },  {  "name": "pm",  "value": "م"  }  ] } ```
 - 其他语言依此类推。
 
 示例代码如下：
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
 import { i18n, intl } from '@kit.LocalizationKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
+
 @Entry
 @Component
 struct TimeUIPickerComponentExample {
@@ -933,6 +972,7 @@ struct TimeUIPickerComponentExample {
   @State loop: boolean = true;
   @State amPmAtLast: boolean = false
   @State isRtl: boolean = false;
+
   startBorderStyle: LocalizedBorderRadiuses = {
     topStart: LengthMetrics.px(40),
     bottomStart: LengthMetrics.px(40),
@@ -950,19 +990,24 @@ struct TimeUIPickerComponentExample {
   @State hourBorder: LengthMetrics | LocalizedBorderRadiuses = this.startBorderStyle;
   @State minBorder: LengthMetrics | LocalizedBorderRadiuses = this.endBorderStyle;
   @State secBorder: LengthMetrics | LocalizedBorderRadiuses = this.endBorderStyle;
+
   @State amPmIndex: number = 0;
   @State hourIndex: number = 0;
   @State minIndex: number = 0;
   @State secIndex: number = 0;
+
   @State amPmArr: Array<string| undefined> = []
   @State hourArr: Array<string> = []
   @State minSecArr: Array<string> = []
+
   @State currentTime: string = '';
+
   sysLanguageChanged: boolean = false
   zero: string = '0'
   systemLanguage: string = i18n.System.getSystemLanguage();
-  // 使用系统当前区域ID创建NumberFormat对象
+
   formatter: intl.NumberFormat = new intl.NumberFormat();
+
   aboutToAppear(): void {
     this.zero = this.formatter.format(0)
     this.flushAmPmColumn()
@@ -974,7 +1019,7 @@ struct TimeUIPickerComponentExample {
     let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
       events: [commonEventManager.Support.COMMON_EVENT_LOCALE_CHANGED]
     };
-    // 创建订阅者，监听系统语言变化
+
     commonEventManager.createSubscriber(subscribeInfo)
       .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
         console.info("CreateSubscriber");
@@ -999,6 +1044,7 @@ struct TimeUIPickerComponentExample {
         console.error(`CreateSubscriber failed, code is ${err.code}, message is ${err.message}`);
       });
   }
+
   onPageShow(): void {
     if (this.sysLanguageChanged) {
       this.flushAmPmColumn()
@@ -1007,6 +1053,7 @@ struct TimeUIPickerComponentExample {
       this.sysLanguageChanged = false
     }
   }
+
   buildColumnOptions(start: number, end: number, isHour: boolean = false) : string[] {
     let newOptions: string[] = []
     for (let i = start; i <= end; i++) {
@@ -1022,8 +1069,9 @@ struct TimeUIPickerComponentExample {
     }
     return newOptions
   }
+
   flushAmPmColumn() {
-    // 根据语言习惯设置amPm列是否放在最后
+
     if (this.systemLanguage.startsWith('en') || this.systemLanguage == 'ug') {
       this.amPmAtLast = true
     } else {
@@ -1032,6 +1080,7 @@ struct TimeUIPickerComponentExample {
     this.amPmArr[0] = this.getUIContext().getHostContext()?.resourceManager.getStringSync($r('app.string.am').id)
     this.amPmArr[1] = this.getUIContext().getHostContext()?.resourceManager.getStringSync($r('app.string.pm').id)
   }
+
   flushHourColumn() {
     if (this.useMilitary) {
       this.hourArr = this.buildColumnOptions(0, 23)
@@ -1039,13 +1088,15 @@ struct TimeUIPickerComponentExample {
       this.hourArr = this.buildColumnOptions(0, 11, true)
     }
   }
+
   flushMinSecColumn() {
     this.minSecArr = this.buildColumnOptions(0, 59)
   }
+
   flushBorderStyle() {
     let realStartBorder = this.startBorderStyle
     let realEndBorder = this.endBorderStyle
-    // 根据语言习惯设置镜像语言的时间顺序
+
     if (this.systemLanguage == 'ar' || this.systemLanguage == 'ug') {
       this.isRtl = true
       realStartBorder = this.endBorderStyle
@@ -1079,12 +1130,14 @@ struct TimeUIPickerComponentExample {
       this.secBorder = realEndBorder
     }
   }
+
   formatTime(time: number): string {
     if (time < 10) {
       return this.zero + this.formatter.format(time)
     }
     return this.formatter.format(time)
   }
+
   @Builder
   buildAmPmColumn() {
     UIPickerComponent({ selectedIndex: this.amPmIndex }) {
@@ -1107,6 +1160,7 @@ struct TimeUIPickerComponentExample {
       this.flushCurrentTime()
     })
   }
+
   @Builder
   buildHourColumn() {
     UIPickerComponent({ selectedIndex: this.hourIndex }) {
@@ -1129,6 +1183,7 @@ struct TimeUIPickerComponentExample {
       this.flushCurrentTime()
     })
   }
+
   @Builder
   buildMinColumn() {
     UIPickerComponent({ selectedIndex: this.minIndex }) {
@@ -1151,6 +1206,7 @@ struct TimeUIPickerComponentExample {
       this.flushCurrentTime()
     })
   }
+
   @Builder
   buildSecColumn() {
     UIPickerComponent({ selectedIndex: this.secIndex }) {
@@ -1173,6 +1229,7 @@ struct TimeUIPickerComponentExample {
       this.flushCurrentTime()
     })
   }
+
   flushCurrentTime() {
     this.currentTime = ''
     if (!this.useMilitary) {
@@ -1183,10 +1240,11 @@ struct TimeUIPickerComponentExample {
       this.currentTime += ':' + this.minSecArr[this.secIndex]
     }
   }
+
   build() {
     Column() {
       Row() {
-        // 根据镜像语言显示顺序创建column
+
         if (!this.isRtl) {
           if (!this.useMilitary && !this.amPmAtLast) {
             this.buildAmPmColumn()
@@ -1217,6 +1275,7 @@ struct TimeUIPickerComponentExample {
           }
         }
       }
+
       Row() {
         Text('selected time: ' + this.currentTime)
           .margin(5)
@@ -1225,6 +1284,7 @@ struct TimeUIPickerComponentExample {
       }
       .border({ width: 1 })
       .margin(5)
+
       Column() {
         Row() {
           Toggle({ type: ToggleType.Switch, isOn: true })
@@ -1281,4 +1341,4 @@ struct TimeUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/DiQHoAYdTGOW16wfD6an4Q/zh-cn_image_0000002562025873.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122232Z&HW-CC-Expire=86400&HW-CC-Sign=D888EC47008699A9729A654DFAC9565BF73204AF573C7BF0B1DD783026E38FB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/DiQHoAYdTGOW16wfD6an4Q/zh-cn_image_0000002562025873.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144135Z&HW-CC-Expire=86400&HW-CC-Sign=11B7098074ABB6138F9D772E25B62F6F0433CFF3C5E6A011FE87343A0CDB0C37)

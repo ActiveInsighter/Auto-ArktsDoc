@@ -1,4 +1,4 @@
-# 子组件
+# 粒子动画 (Particle)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation
 
 粒子动画是在一定范围内随机生成的大量粒子产生运动而组成的动画。动画元素是一个个粒子，这些粒子可以是圆点、图片。通过对粒子在颜色、透明度、大小、速度、加速度、自旋角度等维度变化做动画，来营造一种氛围感，比如下雪的动效，雪花飘舞就相当于一个个雪花粒子在做动画。
@@ -6,8 +6,8 @@
 粒子动画的效果通过Particle组件展现。
 
 > **说明**
-> 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> Particle在息屏之后再次打开或者切换后台再次唤起，粒子动画会自动暂停。
+> - 该组件从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - Particle在息屏之后再次打开或者切换后台再次唤起，粒子动画会自动暂停。
 
 ## 子组件
 
@@ -59,6 +59,10 @@ disturbanceFields(fields: Array<DisturbanceFieldOptions>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fields | Array<[DisturbanceFieldOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#disturbancefieldoptions12)> | 是 | 扰动场数组。 |
@@ -68,6 +72,12 @@ disturbanceFields(fields: Array<DisturbanceFieldOptions>)
 emitter(value: Array<EmitterProperty>)
 
 支持发射器位置动态更新
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -81,6 +91,10 @@ rippleFields(fields: Array<RippleFieldOptions>|undefined)
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | fields | Array<[RippleFieldOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#ripplefieldoptions22)>|undefined | 是 | 粒子波动场数组。通过数组形式可以设置多个粒子波动场。当设置为undefined时，表示无波动场。 |
@@ -90,6 +104,12 @@ rippleFields(fields: Array<RippleFieldOptions>|undefined)
 velocityFields(fields: Array<VelocityFieldOptions>|undefined)
 
 设置粒子速度场。速度场会对影响范围内的粒子施加一个力，使粒子在原有速度的基础上叠加速度场指定的速度。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -123,6 +143,10 @@ interface ParticleOptions<
 
 设置粒子参数。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | emitter | [EmitterOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#emitteroptions)<[PARTICLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particletype)> | 否 | 否 | 粒子发射器配置。 |
@@ -148,6 +172,8 @@ interface EmitterOptions<PARTICLE extends ParticleType> {
 
 粒子发射器的配置。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | particle | [EmitterParticleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#emitterparticleoptions18)<[PARTICLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particletype)> | 否 | 否 | 粒子配置。 -type表示粒子类型，可以选择图片或者是点。 -config表示对应类型的配置。 -config类型和type值有关联： 1. 如果type为ParticleType.POINT，则config类型为[PointParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#pointparticleparameters) 。 2. 如果type为ParticleType.IMAGE，则config类型为[ImageParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#imageparticleparameters) 。 -count表示发射的粒子总数，count取值>=-1,当count为-1表示粒子总数无限大。 -lifetime表示单个粒子的生命周期，默认值1000（即1000ms，1s）,lifetime>=-1,当lifetime为-1表示粒子生命周期无限大。当lifetime<-1，取默认值。 **说明**：如果不需要动画一直播放，建议不要将生命周期设置为-1，可能对性能造成较大影响。 lifeTimeRange表示粒子生命周期取值范围，设置lifeTimeRange后粒子的生命周期为 [lifetime-lifeTimeRange,lifeTime+lifeTimeRange]中间的一个随机整数。lifeTimeRange 默认值为0，取值范围为0到正无穷。设置为负值时取默认值。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -161,6 +187,10 @@ interface EmitterOptions<PARTICLE extends ParticleType> {
 
 设置粒子配置项。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | [ParticleType.POINT] | [PointParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#pointparticleparameters) | 否 | 否 | 点状粒子配置。 |
@@ -170,6 +200,10 @@ interface EmitterOptions<PARTICLE extends ParticleType> {
 
 设置粒子半径。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | radius | [VP](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#vp10) | 否 | 否 | 粒子半径。 |
@@ -177,6 +211,10 @@ interface EmitterOptions<PARTICLE extends ParticleType> {
 ## ImageParticleParameters
 
 设置图片选项。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -196,6 +234,8 @@ interface ParticleColorPropertyOptions<UPDATER extends ParticleUpdater> {
 
 设置粒子颜色属性更新器配置。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | range | [ParticleTuple](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particletuple18)<[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor), [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)> | 否 | 否 | 粒子初始颜色区间，粒子发射器生成粒子的初始颜色在range区间随机取值。 默认值：range:[Color.White,Color.White] **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -205,6 +245,10 @@ interface ParticleColorPropertyOptions<UPDATER extends ParticleUpdater> {
 ## ParticleColorPropertyUpdaterConfigs
 
 设置粒子颜色属性更新器的配置。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -223,6 +267,10 @@ interface ParticlePropertyOptions<TYPE, UPDATER extends ParticleUpdater> {
 
 设置粒子属性选项。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | range | [ParticleTuple](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particletuple18)<[TYPE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleupdater), [TYPE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleupdater)> | 否 | 否 | 粒子初始属性值区间，粒子发射器生成粒子的属性值在range区间随机取值。 **说明** 各项属性的非法输入取默认值，当最大值小于最小值的时候取默认区间。TYPE为number。 不同属性的默认值不同： 1、opacity属性：range:[1.0,1.0]，取值范围为[0, 1]，默认值为1.0。 2、scale属性：range:[1.0,1.0]，取值范围为[0, 10000]，默认值为1.0。 3、acceleration加速度speed属性：range:[0.0,0.0]，取值范围为[0, 10000]，默认值为0.0。 4、acceleration加速度angle属性：range:[0.0,0.0]，取值范围为[-10000, 10000]，默认值为0.0。 5、spin属性：range:[0.0,0.0]，取值范围为[-10000, 10000]，默认值为0.0。 |
@@ -239,6 +287,10 @@ interface ParticlePropertyUpdaterConfigs<T> {
 ```
 
 设置粒子属性更新器配置。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -260,6 +312,10 @@ interface ParticlePropertyAnimation<T> {
 
 设置粒子属性声明周期。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | from | T | 否 | 否 | 属性起始值。非法输入取对应属性的默认值。 |
@@ -272,6 +328,10 @@ interface ParticlePropertyAnimation<T> {
 
 粒子类型。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | POINT | 'point' | 点状粒子 |
@@ -280,6 +340,8 @@ interface ParticlePropertyAnimation<T> {
 ## ParticleEmitterShape
 
 粒子发射器形状。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -292,6 +354,10 @@ interface ParticlePropertyAnimation<T> {
 
 初始颜色随机值分布类型。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | UNIFORM | 0 | 初始颜色随机值分布为均匀分布。 |
@@ -300,6 +366,10 @@ interface ParticlePropertyAnimation<T> {
 ## ParticleUpdater
 
 粒子变化类型。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -310,6 +380,10 @@ interface ParticlePropertyAnimation<T> {
 ## DisturbanceFieldOptions12+
 
 设置粒子扰动场参数。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -326,6 +400,10 @@ interface ParticlePropertyAnimation<T> {
 
 粒子形状。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RECT | 0 | 长方形。 |
@@ -335,6 +413,8 @@ interface ParticlePropertyAnimation<T> {
 ## EmitterProperty12+
 
 设置发射器属性。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -353,6 +433,8 @@ declare type ParticleTuple<T1, T2> = [T1, T2];
 粒子元组，表示定义一些动画参数的类型。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
@@ -389,6 +471,10 @@ interface Particles<
 > **说明**
 > 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | particles10+ | Array< ParticleOptions< PARTICLE, COLOR_UPDATER, OPACITY_UPDATER, SCALE_UPDATER, ACC_SPEED_UPDATER, ACC_ANGLE_UPDATER, SPIN_UPDATER > > | 否 | 否 | 粒子动画的集合。每一个的粒子动画（[ParticleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleoptions)）包含粒子发射，同时可配置粒子的颜色、透明度、大小、速度、加速度与旋转速度，旋转速度，详见[ParticleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleoptions)属性说明。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -396,6 +482,13 @@ interface Particles<
 ## VelocityOptions18+
 
 粒子速度配置。
+
+> **说明**
+> 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -416,6 +509,13 @@ declare interface AccelerationOptions<
 
 粒子加速度配置。
 
+> **说明**
+> 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | speed10+ | [ParticlePropertyOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particlepropertyoptions)<number, [ACC_SPEED_UPDATER](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleupdater)> | 否 | 是 | 表示加速度大小。 默认值：{range:[0.0,0.0]} **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -434,6 +534,13 @@ interface EmitterParticleOptions<PARTICLE extends ParticleType> {
 ```
 
 粒子配置。
+
+> **说明**
+> 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -454,6 +561,13 @@ interface ParticleUpdaterOptions<TYPE, UPDATER extends ParticleUpdater> {
 
 颜色属性变化配置。
 
+> **说明**
+> 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type10+ | [UPDATER](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleupdater) | 否 | 否 | 表示颜色属性变化类型。 默认值：type默认为ParticleUpdater.NONE。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -468,6 +582,15 @@ interface ParticleColorUpdaterOptions<UPDATER extends ParticleUpdater> {
 }
 ```
 
+颜色属性变化配置。
+
+> **说明**
+> 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type10+ | [UPDATER](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleupdater) | 否 | 否 | 表示颜色属性变化类型。 默认值：type默认为 ParticleUpdater.NONE。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -476,6 +599,13 @@ interface ParticleColorUpdaterOptions<UPDATER extends ParticleUpdater> {
 ## ParticleColorOptions18+
 
 颜色变化方式为均匀变化的时候，在区间内随机生成一个差值。r、g、b、a四个颜色通道每秒分别使用差值叠加当前颜色值，生成目标颜色值。实现颜色随机变化的效果。
+
+> **说明**
+> 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -489,11 +619,15 @@ interface ParticleColorUpdaterOptions<UPDATER extends ParticleUpdater> {
 用于设置环形发射器区域的配置信息。
 
 > **说明**
-> outerRadius、innerRadius小于零或使用百分比单位时，会按零进行处理。
-> 当outerRadius小于innerRadius时（即外圆半径小于内圆半径时），会将当前较小的值作为新的内圆半径，将较大的值作为新的外圆半径。
-> 当endAngle小于startAngle时（即结束角度小于起始角度时），会将当前较小的值作为新的起始角度，将较大的值作为新的结束角度。
+> - outerRadius、innerRadius小于零或使用百分比单位时，会按零进行处理。
+> - 当outerRadius小于innerRadius时（即外圆半径小于内圆半径时），会将当前较小的值作为新的内圆半径，将较大的值作为新的外圆半径。
+> - 当endAngle小于startAngle时（即结束角度小于起始角度时），会将当前较小的值作为新的起始角度，将较大的值作为新的结束角度。
+>
+> ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/PUMrziytQa6RVDTpV8onXQ/zh-cn_image_0000002562146163.png?HW-CC-KV=V1&HW-CC-Date=20260320T144252Z&HW-CC-Expire=86400&HW-CC-Sign=CDCC8038E835C73F7EADEC17702EA9B786813CCAE6B2312994E2AEE63CC00DC7)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -509,6 +643,10 @@ type Vector2T<T> = Vector2T<T>
 
 定义Vector2T类型。其中Vector2T类型包含x和y两个属性值。
 
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 类型 | 说明 |
 | --- | --- |
 | [Vector2T<T>](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#vector2tt12) | 用于表示T类型的包含x和y两个值的向量。x表示向量x轴方向的值。y表示向量y轴方向的值。 单位：vp |
@@ -516,6 +654,10 @@ type Vector2T<T> = Vector2T<T>
 ## FieldRegion22+
 
 用于设置粒子场的区域信息。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -529,6 +671,12 @@ type Vector2T<T> = Vector2T<T>
 
 用于描述粒子波动场信息的参数。
 
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | amplitude | number | 否 | 是 | 描述粒子波动场波的幅值。幅值越大，波动场的力越大。 取值范围：[0, +∞) 默认值：0 设置为负值时取默认值。 |
@@ -541,6 +689,10 @@ type Vector2T<T> = Vector2T<T>
 ## VelocityFieldOptions22+
 
 用于描述粒子速度场信息的参数。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -667,7 +819,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dPpvauQuRTi0UKp2LD4-uA/zh-cn_image_0000002531106262.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122331Z&HW-CC-Expire=86400&HW-CC-Sign=0AC7CBC958DED32EF34EDA14802642633E1D4C8DE11F241B6F6325756481B098)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dPpvauQuRTi0UKp2LD4-uA/zh-cn_image_0000002531106262.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144252Z&HW-CC-Expire=86400&HW-CC-Sign=0E228804CEBF004CFC3512CF240FEA0E8FB99F710F4D307BCF75B3EE57DBE265)
 
 ### 示例2（图片初始化粒子）
 
@@ -1061,7 +1213,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/3GyhkQbVTAmfvU8UaL9SOw/zh-cn_image_0000002531226196.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122331Z&HW-CC-Expire=86400&HW-CC-Sign=9F8132CEA208907AEC4CFDD5647283DE0C88A4553B95DDEA5EC4CAF04576061F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/3GyhkQbVTAmfvU8UaL9SOw/zh-cn_image_0000002531226196.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144252Z&HW-CC-Expire=86400&HW-CC-Sign=3E1E69CFC2FE04B78F65083A86DE8A0AC1C1F206A8656231CA3E8DD3194640A6)
 
 ### 示例3（粒子扰动场的干扰下运动轨迹发生变化）
 
@@ -1188,7 +1340,7 @@ struct ParticleExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/W-BlC76jQrK3-WRcQQf91A/zh-cn_image_0000002562026179.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122331Z&HW-CC-Expire=86400&HW-CC-Sign=21BE7E15EEABA7E792B3913E447068EDC69237F2E67787CE33B7112BC7AF9826)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/W-BlC76jQrK3-WRcQQf91A/zh-cn_image_0000002562026179.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144252Z&HW-CC-Expire=86400&HW-CC-Sign=715D174FA126811089C9E0451B51E988100FA9D8FA9D2D14FCEE21822ADDDEF0)
 
 ### 示例4（调整粒子发射器位置）
 
@@ -1267,7 +1419,7 @@ struct ParticleExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/9wVEHXm5T5-BPvF-s2EP0g/zh-cn_image_0000002562146165.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122331Z&HW-CC-Expire=86400&HW-CC-Sign=FA4DA22C54B70CAD19110123B5B333097B02C374C58DBE1455E4BBCA1B105D6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/9wVEHXm5T5-BPvF-s2EP0g/zh-cn_image_0000002562146165.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144252Z&HW-CC-Expire=86400&HW-CC-Sign=D9CB21BBE97199F635BFD91A2B719249D57408A9877A9B9D7007C0F064B5FB99)
 
 ### 示例5（环形发射器创建）
 
@@ -1354,7 +1506,7 @@ struct ParticleExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/o8oDUq5UTuK_Xy9A3jQIsw/zh-cn_image_0000002531106264.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122331Z&HW-CC-Expire=86400&HW-CC-Sign=8F5DD983F64406DBFF330834D0E9DC5C8FDE384C7972D96F0370811E1B624612)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/o8oDUq5UTuK_Xy9A3jQIsw/zh-cn_image_0000002531106264.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144252Z&HW-CC-Expire=86400&HW-CC-Sign=2680594230A8784E8EE68488D6363C9C95C2591A77C414AC4516A3CF2574D5CE)
 
 ### 示例6（环形发射器更新）
 
@@ -1477,7 +1629,7 @@ struct ParticleExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/FaS8v7TBTQGbKE6-5gMaGg/zh-cn_image_0000002531226198.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122331Z&HW-CC-Expire=86400&HW-CC-Sign=7F535259FD592B2C870A7B330471A6C48CCA0B03DC8C73AE3FC22FB300814897)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/FaS8v7TBTQGbKE6-5gMaGg/zh-cn_image_0000002531226198.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144252Z&HW-CC-Expire=86400&HW-CC-Sign=554FEF3E942262A7076E71E6C24AE798A1AFDC2177871E4BB43B491531AE020D)
 
 ### 示例7（设置波动场和速度场）
 
@@ -1605,4 +1757,4 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/dk8aVFPzSIOpN0ZyCjTf4w/zh-cn_image_0000002562026181.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122331Z&HW-CC-Expire=86400&HW-CC-Sign=45A40D15861157B3229D114B8E17AD7378C16AA1210078E4832CE4882BAE8779)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/dk8aVFPzSIOpN0ZyCjTf4w/zh-cn_image_0000002562026181.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144252Z&HW-CC-Expire=86400&HW-CC-Sign=E5811559410D3105643D4F1F69780F89B4132390C3DBBE10A9BB50647F968FDC)

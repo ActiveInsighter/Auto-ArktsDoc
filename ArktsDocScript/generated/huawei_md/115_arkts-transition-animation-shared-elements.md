@@ -1,4 +1,4 @@
-# sharedTransition
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-shared-elements
 
 可以通过设置组件的sharedTransition属性将该元素标记为共享元素并设置对应的共享元素转场动效。sharedTransition仅发生在[@ohos.router (页面路由)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-router)跳转时。
@@ -35,7 +35,12 @@ sharedTransition(id: string, options?: sharedTransitionOptions): T
 
 > **说明**
 > type为SharedTransitionEffectType.Exchange时motionPath才会生效。
+>
 > type为SharedTransitionEffectType.Exchange时，效果为对匹配的共享元素产生位置、大小的过渡（可通过配置组件的border观察），不支持内容的过渡效果。例如，Text组件在两个页面上使用不同的fontSize属性值，即绘制内容有大小差异，在sharedTransition动画结束后的最后一帧，Text的fontSize效果会突变为跳转目标页fontSize的效果。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -51,13 +56,13 @@ sharedTransition(id: string, options?: sharedTransitionOptions): T
 示例代码为点击图片跳转页面时，显示共享元素图片的自定义转场动效。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SharedTransitionExample {
+
   build() {
     Column() {
-      // $r('app.media.ic_health_heart')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.ic_health_heart')).width(50).height(50).margin({ left: 20, top: 20 })
         .sharedTransition('sharedImage', { duration: 800, curve: Curve.Linear, delay: 100 })
     }.width('100%').height('100%').alignItems(HorizontalAlign.Start)
@@ -65,6 +70,7 @@ struct SharedTransitionExample {
       this.getUIContext().getRouter().pushUrl({ url: 'pages/PageB' })
     })
   }
+
   pageTransition() {
     PageTransitionEnter({ type: RouteType.None, duration: 0 })
     PageTransitionExit({ type: RouteType.None, duration: 0 })
@@ -73,17 +79,17 @@ struct SharedTransitionExample {
 ```
 
 ```typescript
-// PageB.ets
 @Entry
 @Component
 struct PageBExample {
   build() {
     Stack() {
-      // $r('app.media.ic_health_heart')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.ic_health_heart')).width(150).height(150)
         .sharedTransition('sharedImage', { duration: 800, curve: Curve.Linear, delay: 100 })
     }.width('100%').height('100%')
   }
+
   pageTransition() {
     PageTransitionEnter({ type: RouteType.None, duration: 0 })
     PageTransitionExit({ type: RouteType.None, duration: 0 })
@@ -91,4 +97,4 @@ struct PageBExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/igKDzdESTue5RT7ke0JuAQ/zh-cn_image_0000002531106260.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122329Z&HW-CC-Expire=86400&HW-CC-Sign=8B1DCAE378A92B4032FBD3576CC1FA60E9C761553F6D11A163E28AE093263923)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/igKDzdESTue5RT7ke0JuAQ/zh-cn_image_0000002531106260.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144248Z&HW-CC-Expire=86400&HW-CC-Sign=E5E9148EA47A2D0334F72D6947F725713DEBEEF411F39C1D068BC831DB338D2A)

@@ -1,4 +1,4 @@
-# 子组件
+# Blank-空白与分隔-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-blank
 
 空白填充组件，在容器主轴方向上，空白填充组件具有自动填充容器空余部分的能力。仅当父组件为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)/[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)/[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时生效。
@@ -44,6 +44,14 @@ color(value: ResourceColor)
 
 设置空白填充的填充颜色，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 空白填充的填充颜色。 默认值：Color.Transparent 非法值：按默认值处理。 |
@@ -59,7 +67,6 @@ color(value: ResourceColor)
 Blank组件在横竖屏占满空余空间效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct BlankExample {
@@ -77,35 +84,36 @@ struct BlankExample {
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Fj5-UmvCT2e39NpEidVk0w/zh-cn_image_0000002531106156.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122317Z&HW-CC-Expire=86400&HW-CC-Sign=D4A27095992A0EE9B833FAC78ED42657C038E7E7C92719E830F2910C55AFF284)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Fj5-UmvCT2e39NpEidVk0w/zh-cn_image_0000002531106156.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144236Z&HW-CC-Expire=86400&HW-CC-Sign=403B691E991BAFC56361945CD74C8A5C28744638A841BD43805323EF40F1F98D)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ZtnexK0DTca9n9KTdvLWOg/zh-cn_image_0000002531226090.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122317Z&HW-CC-Expire=86400&HW-CC-Sign=0F9BD28D1785206924BE5CA36DDEBCD44991F5B0EFAFF0E592391EFC7F69F803)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ZtnexK0DTca9n9KTdvLWOg/zh-cn_image_0000002531226090.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144236Z&HW-CC-Expire=86400&HW-CC-Sign=316F6EE2B1E31E10F0473C3D323D607D72D312434E5C1FC58FA7848E2BAA14F6)
 
 ### 示例2（填充固定宽度）
 
 Blank组件的父组件未设置宽度时，min参数的使用效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct BlankExample {
   build() {
     Column({ space: 20 }) {
-      // Blank父组件不设置宽度时，Blank失效，可以通过设置min最小宽度填充固定宽度
+
       Row() {
         Text('Bluetooth').fontSize(18)
         Blank().color(Color.Yellow)
         Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
       }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
+
       Row() {
         Text('Bluetooth').fontSize(18)
-        // 设置最小宽度为160
+
         Blank('160').color(Color.Yellow)
         Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
       }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
+
     }.backgroundColor(0xEFEFEF).padding(20).width('100%')
   }
 }
@@ -113,4 +121,4 @@ struct BlankExample {
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/NJWmXxI3T76QQkapgtwjwA/zh-cn_image_0000002562026073.png?HW-CC-KV=V1&HW-CC-Date=20260320T122317Z&HW-CC-Expire=86400&HW-CC-Sign=13988860D6445F4D3667AEF426F25640CE0DBB47F2F86A098E075AE9ECB8F418)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/NJWmXxI3T76QQkapgtwjwA/zh-cn_image_0000002562026073.png?HW-CC-KV=V1&HW-CC-Date=20260320T144236Z&HW-CC-Expire=86400&HW-CC-Sign=94ABD67BC027F28F6BECBBF623E65E471E1A73F8379E6613F894A7378D678B60)

@@ -1,4 +1,4 @@
-# 子组件
+# SideBarContainer-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer
 
 提供侧边栏可以显示和隐藏的容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区。
@@ -11,16 +11,10 @@
 可以包含子组件。
 
 > **说明**
-> 子组件类型：系统组件和自定义组件，不支持渲染控制类型（
-> if/else
-> 、
-> ForEach
-> 和
-> LazyForEach
-> ）。
-> 子组件个数：必须且仅包含2个子组件。
-> 子组件个数异常时：3个或以上子组件，显示第一个和第二个。1个子组件，显示侧边栏，内容区为空白。
-> SideBarContainer走焦时，先在内容区走焦，再在侧边栏走焦。
+> - 子组件类型：系统组件和自定义组件，不支持渲染控制类型（[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)和[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)）。
+> - 子组件个数：必须且仅包含2个子组件。
+> - 子组件个数异常时：3个或以上子组件，显示第一个和第二个。1个子组件，显示侧边栏，内容区为空白。
+> - SideBarContainer走焦时，先在内容区走焦，再在侧边栏走焦。
 
 ## 接口
 
@@ -42,6 +36,10 @@ SideBarContainer( type?: SideBarContainerType )
 
 容器内侧边栏样式枚举。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Embed | 0 | 侧边栏嵌入到组件内，和内容区并列显示。 整体容器大小不变时，显示侧边栏会导致内容区缩小，隐藏侧边栏会扩大内容区。 组件尺寸小于[minContentWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#mincontentwidth10) + [minSideBarWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#minsidebarwidth)，并且未设置showSideBar时，侧边栏自动隐藏。 未设置minSideBarWidth或者minContentWidth采用未设置接口的默认值进行计算。 组件在自动隐藏后，如果通过点击控制按钮唤出侧边栏，则侧边栏悬浮在内容区上显示。 |
@@ -60,6 +58,12 @@ showSideBar(value: boolean)
 
 从API version 10开始，该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否显示侧边栏。 true：显示侧边栏 false：不显示侧边栏 默认值：true |
@@ -70,6 +74,12 @@ controlButton(value: ButtonStyle)
 
 设置侧边栏控制按钮的属性。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ButtonStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#buttonstyle对象说明) | 是 | 侧边栏控制按钮的属性。 |
@@ -79,6 +89,12 @@ controlButton(value: ButtonStyle)
 showControlButton(value: boolean)
 
 设置是否显示控制按钮。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -95,6 +111,12 @@ sideBarWidth(value: number)
 
 从API version 18开始，该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding)双向绑定变量。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 侧边栏的宽度。 默认值：240vp 单位：vp 取值范围：[0, +∞) **说明：** API version 9及以下版本默认值为200vp，API version 10的默认值为240vp。 |
@@ -104,6 +126,14 @@ sideBarWidth(value: number)
 sideBarWidth(value: Length)
 
 设置侧边栏的宽度。设置为小于0的值时按默认值显示。受最小宽度和最大宽度限制，不在限制区域内取最近的点。与[sideBarWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#sidebarwidth)相比，value参数新增了对百分比字符串和其他[像素单位](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)的支持。
+
+从API version 18开始，该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding)双向绑定变量。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -117,6 +147,12 @@ minSideBarWidth(value: number)
 
 minSideBarWidth优先于侧边栏子组件minWidth，minSideBarWidth未设置时默认值优先级高于侧边栏子组件minWidth。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 侧边栏最小宽度。 默认值：API version 9及以下版本默认值为200vp，API version 10的默认值为240vp。 取值范围：[0, +∞) |
@@ -126,6 +162,14 @@ minSideBarWidth优先于侧边栏子组件minWidth，minSideBarWidth未设置时
 minSideBarWidth(value: Length)
 
 设置侧边栏最小宽度。设置为小于0的值时按默认值显示。值不能超过侧边栏容器本身宽度，超过则使用侧边栏容器本身宽度。与[minSideBarWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#minsidebarwidth)相比，value参数新增了对百分比字符串和其他[像素单位](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)的支持。
+
+minSideBarWidth优先于侧边栏子组件minWidth，minSideBarWidth未设置时默认值优先级高于侧边栏子组件minWidth。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -139,6 +183,12 @@ maxSideBarWidth(value: number)
 
 maxSideBarWidth优先于侧边栏子组件maxWidth，maxSideBarWidth未设置时默认值优先级高于侧边栏子组件maxWidth。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 设置侧边栏最大宽度。 默认值：280vp 单位：vp 取值范围：[0, +∞) |
@@ -148,6 +198,14 @@ maxSideBarWidth优先于侧边栏子组件maxWidth，maxSideBarWidth未设置时
 maxSideBarWidth(value: Length)
 
 设置侧边栏最大宽度。设置为小于0的值时按默认值显示。值不能超过侧边栏容器本身宽度，超过则使用侧边栏容器本身宽度。与[maxSideBarWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#maxsidebarwidth)相比，value参数新增了对百分比字符串和其他[像素单位](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)的支持。
+
+maxSideBarWidth优先于侧边栏子组件maxWidth，maxSideBarWidth未设置时默认值优先级高于侧边栏子组件maxWidth。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -161,6 +219,12 @@ autoHide(value: boolean)
 
 拖拽过程中判断是否要自动隐藏。小于最小宽度时需要阻尼效果触发隐藏（越界一段距离）。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 侧边栏拖拽到小于最小宽度后，是否自动隐藏。 true：会自动隐藏 false：不会自动隐藏 默认值：true |
@@ -171,6 +235,12 @@ sideBarPosition(value: SideBarPosition)
 
 设置侧边栏显示位置。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [SideBarPosition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#sidebarposition9枚举说明) | 是 | 侧边栏显示位置。 默认值：SideBarPosition.Start |
@@ -180,6 +250,12 @@ sideBarPosition(value: SideBarPosition)
 divider(value: DividerStyle | null)
 
 设置分割线的样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -204,6 +280,12 @@ Embed场景下，增大组件尺寸时仅增大内容区的尺寸。
 
 minContentWidth优先于侧边栏的[maxSideBarWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#maxsidebarwidth)与sideBarWidth属性，minContentWidth未设置时默认值优先级低于设置的minSideBarWidth与maxSideBarWidth属性。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | 是 | SideBarContainer组件内容区可显示的最小宽度。 默认值：360vp 单位：vp |
@@ -211,6 +293,10 @@ minContentWidth优先于侧边栏的[maxSideBarWidth](https://developer.huawei.c
 ## ButtonStyle对象说明
 
 设置侧边栏控制按钮的样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -229,6 +315,8 @@ minContentWidth优先于侧边栏的[maxSideBarWidth](https://developer.huawei.c
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | shown8+ | string | [PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap) | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 否 | 否 | 设置侧边栏显示时控制按钮的图标。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -239,12 +327,22 @@ minContentWidth优先于侧边栏的[maxSideBarWidth](https://developer.huawei.c
 
 侧边栏显示位置。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Start | 0 | 侧边栏位于容器左侧。 |
 | End | 1 | 侧边栏位于容器右侧。 |
 
 ## DividerStyle10+对象说明
+
+设置分割线的样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -254,21 +352,14 @@ minContentWidth优先于侧边栏的[maxSideBarWidth](https://developer.huawei.c
 | endMargin | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 分割线与侧边栏底端的距离。 默认值：0。 取值范围：[0, +∞)。 |
 
 > **说明**
-> 针对侧边栏子组件设置
-> 通用属性宽高
-> 时，宽高都不生效。
-> 针对侧边栏内容区设置
-> 通用属性宽高
-> 时，宽高都不生效，默认占满SideBarContainer的剩余空间。
-> 当
-> showSideBar
-> 属性未设置时，依据组件大小进行自动显示：
-> 小于
-> minSideBarWidth
-> +
-> minContentWidth
-> ：默认不显示侧边栏。
-> 大于等于minSideBarWidth + minContentWidth：默认显示侧边栏。
+> 针对侧边栏子组件设置[通用属性宽高](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size)时，宽高都不生效。
+>
+> 针对侧边栏内容区设置[通用属性宽高](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size)时，宽高都不生效，默认占满SideBarContainer的剩余空间。
+>
+> 当[showSideBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#showsidebar)属性未设置时，依据组件大小进行自动显示：
+>
+> - 小于[minSideBarWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#minsidebarwidth) + [minContentWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#mincontentwidth10)：默认不显示侧边栏。
+> - 大于等于minSideBarWidth + minContentWidth：默认显示侧边栏。
 
 ## 事件
 
@@ -285,6 +376,12 @@ onChange(callback: (value: boolean) => void)
 1. showSideBar属性值变换时。
 2. showSideBar属性自适应行为变化时。
 3. 分割线拖拽触发[autoHide](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer#autohide9)时。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -349,4 +446,4 @@ struct SideBarContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ioCDvBF1QruUtPQGCt4dBg/zh-cn_image_0000002531105858.png?HW-CC-KV=V1&HW-CC-Date=20260320T122201Z&HW-CC-Expire=86400&HW-CC-Sign=76AC51B229FFF3CA798FFC81EDA39C2BE4CBA86F72D027DC228E144C395DB0A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ioCDvBF1QruUtPQGCt4dBg/zh-cn_image_0000002531105858.png?HW-CC-KV=V1&HW-CC-Date=20260320T144057Z&HW-CC-Expire=86400&HW-CC-Sign=5C6802235ECFCCE5205F3198C80F4DE46F2D3BAA4B601BB012ED2F216D6D8270)

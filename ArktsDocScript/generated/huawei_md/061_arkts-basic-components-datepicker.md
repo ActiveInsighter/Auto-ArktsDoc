@@ -1,12 +1,12 @@
-# 子组件
+# DatePicker-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker
 
 滑动选择日期的组件。
 
 > **说明**
-> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 该组件不建议开发者在动效过程中修改属性数据。
-> 最大显示行数在横、竖屏模式下存在差异。竖屏时默认为5行，横屏时依赖系统配置，未配置时默认显示为3行。可通过如下参数查看具体配置值$r('sys.float.ohos_id_picker_show_count_landscape')。
+> - 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - 该组件不建议开发者在动效过程中修改属性数据。
+> - 最大显示行数在横、竖屏模式下存在差异。竖屏时默认为5行，横屏时依赖系统配置，未配置时默认显示为3行。可通过如下参数查看具体配置值$r('sys.float.ohos_id_picker_show_count_landscape')。
 
 ## 子组件
 
@@ -32,6 +32,8 @@ DatePicker(options?: DatePickerOptions)
 
 日期选择器组件的参数说明。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start | Date | 否 | 是 | 指定选择器的起始日期。 默认值：Date('1970-1-1') 取值范围：[Date('1900-01-31'), Date('2100-12-31')] **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -40,10 +42,8 @@ DatePicker(options?: DatePickerOptions)
 | mode18+ | [DatePickerMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#datepickermode18枚举说明) | 否 | 是 | 设置日期展示模式。 默认值：DatePickerMode.DATE，显示年、月、日三列。 在[DatePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-datepicker-dialog)中，当[DatePickerDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-datepicker-dialog#datepickerdialogoptions对象说明)的showTime设置为true时，此参数不生效，默认显示年、月、日三列。 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 
 > **说明**
-> Date的使用请参考
-> TimePickerOptions
-> 。
-> 在DatePicker组件滑动过程中修改DatePickerOptions中的属性，会导致这些属性无法生效。
+> - Date的使用请参考[TimePickerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker#timepickeroptions对象说明)。
+> - 在DatePicker组件滑动过程中修改DatePickerOptions中的属性，会导致这些属性无法生效。
 
 **起始日期、结束日期和选中日期的异常情形说明：**
 
@@ -72,6 +72,8 @@ DatePicker(options?: DatePickerOptions)
 
 **元服务API：** 从API version 18开始，该类型支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DATE | 0 | 显示年、月、日三列。 |
@@ -91,6 +93,12 @@ lunar(value: boolean)
 > **说明**
 > 仅在简体中文和繁体中文语言环境下生效，其他语言环境下设置该属性无效果。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 日期是否显示为农历。 - true：显示为农历。 - false：不显示为农历。 默认值：false |
@@ -101,7 +109,14 @@ lunar(isLunar: Optional<boolean>)
 
 设置弹窗的日期是否显示为农历。与[lunar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#lunar)相比，isLunar参数新增了对undefined类型的支持。
 
+> **说明**
+> 仅在简体中文和繁体中文语言环境下生效，其他语言环境下设置该属性无效果。
+
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -112,6 +127,12 @@ lunar(isLunar: Optional<boolean>)
 disappearTextStyle(value: PickerTextStyle)
 
 设置边缘项（以选中项为基准向上或向下的第二项）的文本样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -126,15 +147,30 @@ disappearTextStyle(style: Optional<PickerTextStyle>)
 
 设置边缘项（以选中项为基准向上或向下的第二项）的文本样式。与[disappearTextStyle10+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#disappeartextstyle10)相比，style参数新增了对undefined类型的支持。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[PickerTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-picker-common#pickertextstyle对象说明)> | 是 | 边缘项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
+
+> **说明**
+> 若选中项向上或向下的可视项数低于两项则无对应边缘项。
 
 ### textStyle10+
 
 textStyle(value: PickerTextStyle)
 
 设置待选项（以选中项为基准向上或向下的第一项）的文本样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -149,15 +185,30 @@ textStyle(style: Optional<PickerTextStyle>)
 
 设置待选项（以选中项为基准向上或向下的第一项）的文本样式。与[textStyle10+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#textstyle10)相比，style参数新增了对undefined类型的支持。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[PickerTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-picker-common#pickertextstyle对象说明)> | 是 | 待选项的文本颜色、字号、字体粗细。 默认值： { color: '#ff182431', font: { size: '16fp', weight: FontWeight.Regular } } 当style的值为undefined时，使用默认值。 |
+
+> **说明**
+> 若选中项向上或向下可视项数低于一项则无对应待选项。
 
 ### selectedTextStyle10+
 
 selectedTextStyle(value: PickerTextStyle)
 
 设置选中项的文本样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -169,6 +220,12 @@ selectedTextStyle(style: Optional<PickerTextStyle>)
 
 设置选中项的文本样式。与[selectedTextStyle10+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#selectedtextstyle10)相比，style参数新增了对undefined类型的支持。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | style | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[PickerTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-picker-common#pickertextstyle对象说明)> | 是 | 选中项的文本颜色、字号、字体粗细。 默认值： { color: '#ff007dff', font: { size: '20fp', weight: FontWeight.Medium } } 当style的值为undefined时，使用默认值。 |
@@ -178,6 +235,12 @@ selectedTextStyle(style: Optional<PickerTextStyle>)
 enableHapticFeedback(enable: Optional<boolean>)
 
 设置是否开启触控反馈。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -199,14 +262,18 @@ digitalCrownSensitivity(sensitivity: Optional<CrownSensitivity>)
 
 设置表冠灵敏度。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | sensitivity | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[CrownSensitivity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#crownsensitivity18)> | 是 | 表冠响应灵敏度。 默认值：CrownSensitivity.MEDIUM，响应速度适中。 |
 
 > **说明**
-> 用于穿戴设备圆形屏幕使用。组件响应
-> 表冠事件
-> ，需要先获取焦点。
+> 用于穿戴设备圆形屏幕使用。组件响应[表冠事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-crown)，需要先获取焦点。
 
 ### canLoop20+
 
@@ -215,6 +282,10 @@ canLoop(isLoop: Optional<boolean>)
 设置是否可循环滚动。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -232,6 +303,10 @@ onChange(callback: (value: DatePickerResult) => void)
 
 从API version 8开始支持，从API version 10开始废弃，建议使用[onDateChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#ondatechange10)替代。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | (value: [DatePickerResult](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#datepickerresult对象说明)) => void | 是 | 返回选中的时间。 |
@@ -239,6 +314,14 @@ onChange(callback: (value: DatePickerResult) => void)
 ### onDateChange10+
 
 onDateChange(callback: Callback<Date>)
+
+滑动DatePicker文本内容后，选项完全归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -251,9 +334,13 @@ onDateChange(callback: Optional<Callback<Date>>)
 滑动DatePicker文本内容后，选项完全归位至选中项位置时，触发该回调。不能通过双向绑定的状态变量触发。与[onDateChange10+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#ondatechange10)相比，callback参数新增了对undefined类型的支持。
 
 > **说明**
-> 从API version 20开始，该接口支持在
-> attributeModifier
-> 中调用。
+> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -262,6 +349,10 @@ onDateChange(callback: Optional<Callback<Date>>)
 ## DatePickerResult对象说明
 
 日期选择器返回的时间格式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -276,12 +367,12 @@ onDateChange(callback: Optional<Callback<Date>>)
 该示例实现了日期选择器组件，点击按钮可以切换公历农历。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerExample {
   @State isLunar: boolean = false;
   private selectedDate: Date = new Date('2021-08-08');
+
   build() {
     Column() {
       Button('切换公历农历')
@@ -299,23 +390,24 @@ struct DatePickerExample {
           this.selectedDate = value;
           console.info('select current date is: ' + value.toString());
         })
+
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_qQFw8fxRNy0Y6Z-WYRcWg/zh-cn_image_0000002562025875.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122233Z&HW-CC-Expire=86400&HW-CC-Sign=46A121F3E4BBF2D4BB1801986C641FE3AA57CFBE9DA7BBCBB9F1D1CF0840D013)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_qQFw8fxRNy0Y6Z-WYRcWg/zh-cn_image_0000002562025875.gif?HW-CC-KV=V1&HW-CC-Date=20260320T143921Z&HW-CC-Expire=86400&HW-CC-Sign=5EF2B24794AE36666C9B413841CD64EA3823466FCA1919BC4C52633509A5928D)
 
 ### 示例2（设置文本样式）
 
 该示例通过配置[disappearTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#disappeartextstyle10)、[textStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#textstyle10)、[selectedTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#selectedtextstyle10)设置文本样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerExample {
   private selectedDate: Date = new Date('2021-08-08');
+
   build() {
     Column() {
       DatePicker({
@@ -330,12 +422,13 @@ struct DatePickerExample {
           this.selectedDate = value;
           console.info('select current date is: ' + value.toString());
         })
+
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/rQv51DFaRHe7BHSacBQAFg/zh-cn_image_0000002562145861.png?HW-CC-KV=V1&HW-CC-Date=20260320T122233Z&HW-CC-Expire=86400&HW-CC-Sign=2B83438587890A51830EF5B576BDFCD39F585152F99039F70112EE880E9498A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/rQv51DFaRHe7BHSacBQAFg/zh-cn_image_0000002562145861.png?HW-CC-KV=V1&HW-CC-Date=20260320T143921Z&HW-CC-Expire=86400&HW-CC-Sign=A55D496E682E212C1B0E4696FEA6BF37A941B12438BAAA1F478BCA9A4C436BFE)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -344,7 +437,6 @@ struct DatePickerExample {
 从API version 18开始，新增了[DatePickerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#datepickeroptions对象说明)的mode属性。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerExample {
@@ -356,6 +448,7 @@ struct DatePickerExample {
     DatePickerMode.MONTH_AND_DAY,
   ];
   @State datePickerModeIndex: number = 0;
+
   build() {
     Column() {
       Button('切换公历农历')
@@ -374,6 +467,7 @@ struct DatePickerExample {
           this.selectedDate = value;
           console.info('select current date is: ' + value.toString());
         })
+
       Button('mode :' + this.datePickerModeIndex).margin({ top: 20 })
         .onClick(() => {
           this.datePickerModeIndex++;
@@ -386,19 +480,19 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/dZQTAL12TiG98E_wlU4JSQ/zh-cn_image_0000002531105960.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122233Z&HW-CC-Expire=86400&HW-CC-Sign=C46036189E154C1FB529FC0F7023D59DB0DC6B56AC9DDD85F93FACBD3C0547F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/dZQTAL12TiG98E_wlU4JSQ/zh-cn_image_0000002531105960.gif?HW-CC-KV=V1&HW-CC-Date=20260320T143921Z&HW-CC-Expire=86400&HW-CC-Sign=5C5D655F58DA244E53807E49D3C8BD5CEA2A1AB826E2EF87D110E09D76003AB6)
 
 ### 示例4（设置循环滚动）
 
 从API version 20开始，可以通过配置[canLoop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker#canloop20)参数设置DatePicker是否循环滚动。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerExample {
   @State isLoop: boolean = true;
   selectedDate: Date = new Date("2010-1-1");
+
   build() {
     Column() {
       DatePicker({
@@ -410,6 +504,7 @@ struct DatePickerExample {
         .onDateChange((value: Date) => {
             console.info("DatePicker:onDateChange()" + value.toString());
         })
+
       Row() {
         Text('循环滚动').fontSize(20)
         Toggle({ type: ToggleType.Switch, isOn: true })
@@ -422,4 +517,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/CSR9GnbKSe2DyEoiBDlXrg/zh-cn_image_0000002531225894.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122233Z&HW-CC-Expire=86400&HW-CC-Sign=B243AA2922C3EF6609D39489FEFA5BD673C83AC36FD6DEB5113DE27D8265BE05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/CSR9GnbKSe2DyEoiBDlXrg/zh-cn_image_0000002531225894.gif?HW-CC-KV=V1&HW-CC-Date=20260320T143921Z&HW-CC-Expire=86400&HW-CC-Sign=8180348A7B02EF2B26F23AB1DAA7300B0C51829035AD092C19AF40F98D17BE3E)

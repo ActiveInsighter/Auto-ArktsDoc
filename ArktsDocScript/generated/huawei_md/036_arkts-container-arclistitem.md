@@ -1,28 +1,18 @@
-# 导入模块
+# ArcListItem-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem
 
 用来展示列表具体子组件，必须配合[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)来使用。
 
 > **说明**
-> 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 该组件的父组件只能是
-> ArcList
-> 。
-> 当ArcListItem配合
-> LazyForEach
-> 使用时，ArcListItem子组件在ArcListItem创建时创建。配合
-> if/else
-> 、
-> ForEach
-> 使用时，或父组件为
-> ArcList
-> 时，ArcListItem子组件在ArcListItem布局时创建。
+> - 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - 该组件的父组件只能是[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)。
+> - 当ArcListItem配合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)使用时，ArcListItem子组件在ArcListItem创建时创建。配合[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)使用时，或父组件为[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)时，ArcListItem子组件在ArcListItem布局时创建。
 
 ## 导入模块
 
 > **说明**
-> ArcListItemAttribute是用于配置ArcListItem组件属性的关键接口。API version 21及之前版本，导入ArcListItem组件后需要开发者手动导入ArcListItemAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcListItem组件后，会自动导入ArcListItemAttribute，无需开发者手动导入ArcListItemAttribute。
-> 如果开发者手动导入ArcListItemAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，从API version 22开始，删除对功能无影响。
+> - ArcListItemAttribute是用于配置ArcListItem组件属性的关键接口。API version 21及之前版本，导入ArcListItem组件后需要开发者手动导入ArcListItemAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcListItem组件后，会自动导入ArcListItemAttribute，无需开发者手动导入ArcListItemAttribute。
+> - 如果开发者手动导入ArcListItemAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，从API version 22开始，删除对功能无影响。
 
 API version 21及之前版本：
 
@@ -60,6 +50,10 @@ autoScale(enable: Optional<boolean>)
 
 用于设置ArcListItem是否支持自动缩放显示。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -72,6 +66,12 @@ swipeAction(options: Optional<SwipeActionOptions>)
 
 用于设置ArcListItem的划出组件。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | options | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[SwipeActionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem#swipeactionoptions9对象说明)> | 是 | ArcListItem的划出组件。 |
@@ -81,16 +81,17 @@ swipeAction(options: Optional<SwipeActionOptions>)
 该示例展示了子项关闭自动缩放和开启自动缩放后的对比效果。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics, CircleShape } from '@kit.ArkUI';
-// 从API version 22开始，无需手动导入ArcListAttribute和ArcListItemAttribute。具体请参考ArcList、ArcListItem的导入模块说明。
+
 import { ArcList, ArcListItem, ArcListAttribute, ArcListItemAttribute } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct ArcListItemExample {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  private watchSize: string = '466px'; // 手表默认宽高：466*466
-  private itemSize: string = '414px'; // item宽度
+  private watchSize: string = '466px';
+  private itemSize: string = '414px';
+
   @Builder
   buildList() {
     Stack() {
@@ -100,6 +101,7 @@ struct ArcListItemExample {
       .height(this.watchSize)
       .clipShape(new CircleShape({ width: '100%', height: '100%' }))
       .backgroundColor(0x707070)
+
       ArcList({ initialIndex: 3}) {
         ForEach(this.arr, (item: number) => {
           ArcListItem() {
@@ -118,6 +120,7 @@ struct ArcListItemExample {
     .width(this.watchSize)
     .height(this.watchSize)
   }
+
   build() {
     Column() {
       this.buildList();
@@ -130,4 +133,4 @@ struct ArcListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/RNPCxQGSQSiVfCyY32s_ag/zh-cn_image_0000002531225806.png?HW-CC-KV=V1&HW-CC-Date=20260320T122208Z&HW-CC-Expire=86400&HW-CC-Sign=D996ED240F116D5E26AE65DCC1B9A29041E3690DBC61E1C65B12AED7A994CA12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/RNPCxQGSQSiVfCyY32s_ag/zh-cn_image_0000002531225806.png?HW-CC-KV=V1&HW-CC-Date=20260320T144100Z&HW-CC-Expire=86400&HW-CC-Sign=4E5844EF24C897AB5A803D288665AB6B4D549283F29B64C2145F0E3141FFF03E)

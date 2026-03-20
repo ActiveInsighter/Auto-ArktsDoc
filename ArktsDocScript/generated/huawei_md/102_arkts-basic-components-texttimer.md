@@ -1,4 +1,4 @@
-# 子组件
+# TextTimer-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer
 
 通过文本显示计时信息并控制其计时器状态的组件。
@@ -30,6 +30,12 @@ TextTimer(options?: TextTimerOptions)
 
 用于构建TextTimer组件的选项。
 
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | isCountDown | boolean | 否 | 是 | 倒计时开关。 true：计时器开启倒计时，例如从30秒~ 0秒。 false：计时器开始计时，例如从0秒 30秒。 默认值：false |
@@ -48,6 +54,14 @@ format(value: string)
 
 计时器更新频率按format最小单位处理，例如：format设置为'HH:mm'时，更新频率为一分钟。
 
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 自定义日期显示的格式。 默认值：'HH:mm:ss.SS' |
@@ -57,6 +71,14 @@ format(value: string)
 fontColor(value: ResourceColor)
 
 设置字体颜色。
+
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -68,6 +90,14 @@ fontSize(value: Length)
 
 设置字体大小。
 
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 是 | 字体大小。value为Length中的number类型时，单位为fp。字体大小默认为16fp。value为Length中的string类型时，设置值为非数字开头的字符串时，按0fp处理；设置值为数字开头的字符串时，如果数字后内容包含除[像素单位](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)外的字符（如字母、特殊符号等），则取值字符串开头的数字部分，单位为fp。例如设置值为"abc"时取值为0fp，设置值为"10vp"时取值为10vp，设置值为"10vp11abc"时取值为10fp。不支持设置百分比字符串。 |
@@ -77,6 +107,14 @@ fontSize(value: Length)
 fontStyle(value: FontStyle)
 
 设置字体样式。
+
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -88,6 +126,14 @@ fontWeight(value: number | FontWeight | ResourceStr)
 
 设置文本的字体粗细，设置过大可能会导致不同字体下的文字出现截断。
 
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | [FontWeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#fontweight) | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 文本的字体粗细，number类型取值范围为[100, 900]，取值间隔为100，取值越大，字体越粗。number类型取值范围外的默认值为400。[ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr)类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。 默认值：FontWeight.Normal 从API version 20开始，支持Resource类型。 |
@@ -97,6 +143,14 @@ fontWeight(value: number | FontWeight | ResourceStr)
 fontFamily(value: ResourceStr)
 
 设置字体列表。
+
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -109,11 +163,13 @@ textShadow(value: ShadowOptions | Array<ShadowOptions>)
 设置文字阴影效果。该接口支持以数组形式入参，实现多重文字阴影。不支持fill字段, 不支持智能取色模式。
 
 > **说明**
-> 从API version 12开始，该接口支持在
-> attributeModifier
-> 中调用。
+> 从API version 12开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -124,6 +180,12 @@ textShadow(value: ShadowOptions | Array<ShadowOptions>)
 contentModifier(modifier: ContentModifier<TextTimerConfiguration>)
 
 定制TextTimer内容区的方法。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -137,6 +199,14 @@ onTimer(event: (utc: number, elapsedTime: number) => void)
 
 时间文本发生变化时触发该事件。锁屏状态和应用后台状态下不会触发该事件。设置高精度的[format](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer#format)（SS）时，回调间隔可能会出现波动。
 
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | utc | number | 是 | Linux时间戳，即自1970年1月1日起经过的时间，单位为设置格式的最小单位。 |
@@ -145,6 +215,10 @@ onTimer(event: (utc: number, elapsedTime: number) => void)
 ## TextTimerController
 
 TextTimer组件的控制器，用于控制文本计时器。一个TextTimer组件仅支持绑定一个控制器，组件创建完成后相关指令才能被调用。一个TextTimerController只能控制最后一个绑定此TextTimerController的TextTimer组件。
+
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 ### 导入对象
 
@@ -158,11 +232,23 @@ constructor()
 
 TextTimerController的构造函数。
 
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ### start
 
 start()
 
 计时开始。
+
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### pause
 
@@ -170,17 +256,33 @@ pause()
 
 计时暂停。
 
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ### reset
 
 reset()
 
 重置计时器。
 
+**卡片能力：** 从API version 10开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ## TextTimerConfiguration12+对象说明
 
 ContentModifier接口使用的TextTimer配置。
 
 开发者需要自定义class实现ContentModifier接口。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -198,12 +300,12 @@ ContentModifier接口使用的TextTimer配置。
 用户可以通过点击"start"、"pause"、"reset"按钮，开启、暂停、重置计时器。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextTimerExample {
   textTimerController: TextTimerController = new TextTimerController();
   @State format: string = 'mm:ss.SS';
+
   build() {
     Column() {
       TextTimer({ isCountDown: true, count: 30000, controller: this.textTimerController })
@@ -229,14 +331,13 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Yx8FzBbsQHiucUmYWe2irQ/zh-cn_image_0000002562146055.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122315Z&HW-CC-Expire=86400&HW-CC-Sign=FF05F160EA8AAE23F237D20BBF60B519AEF7E355398BC6D28551C055627C5220)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Yx8FzBbsQHiucUmYWe2irQ/zh-cn_image_0000002562146055.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144235Z&HW-CC-Expire=86400&HW-CC-Sign=71C838B36EF3B72C4AD699F25C7E3256985D64E42F31ED31C088FC4767B25F40)
 
 ### 示例2（设定文本阴影样式）
 
 该示例通过[textShadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer#textshadow11)属性设置计时器的文本阴影样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextTimerExample {
@@ -266,6 +367,7 @@ struct TextTimerExample {
     offsetX: 100,
     offsetY: 0
   }];
+
   build() {
     Column({ space: 8 }) {
       TextTimer().fontSize(50).textShadow(this.textShadows)
@@ -274,21 +376,22 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/8OB2rWGxSmSvgp9KumrJZA/zh-cn_image_0000002531106154.png?HW-CC-KV=V1&HW-CC-Date=20260320T122315Z&HW-CC-Expire=86400&HW-CC-Sign=139A31BF22966B575BC6A377281A6946F9CD623DE4B6D3DE0E97F0F264CD2C09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/8OB2rWGxSmSvgp9KumrJZA/zh-cn_image_0000002531106154.png?HW-CC-KV=V1&HW-CC-Date=20260320T144235Z&HW-CC-Expire=86400&HW-CC-Sign=17B0047542FBCC454CE17D598DF9565C834F37503A07C637EDD99BC8C9D48170)
 
 ### 示例3（设定自定义内容区）
 
 该示例实现了两个简易秒表，使用浅灰色背景。计时器开始后，会实时显示时间变化。倒计时器开始后，背景会变成黑色，正计时器开始后，背景会变成灰色。
 
 ```typescript
-// xxx.ets
 class MyTextTimerModifier implements ContentModifier<TextTimerConfiguration> {
   constructor() {
   }
+
   applyContent(): WrappedBuilder<[TextTimerConfiguration]> {
     return wrapBuilder(buildTextTimer);
   }
 }
+
 @Builder
 function buildTextTimer(config: TextTimerConfiguration) {
   Column() {
@@ -308,6 +411,7 @@ function buildTextTimer(config: TextTimerConfiguration) {
     }
   }
 }
+
 @Entry
 @Component
 struct Index {
@@ -315,6 +419,7 @@ struct Index {
   @State myTimerModifier: MyTextTimerModifier = new MyTextTimerModifier();
   countDownTextTimerController: TextTimerController = new TextTimerController();
   countUpTextTimerController: TextTimerController = new TextTimerController();
+
   build() {
     Row() {
       Column() {
@@ -349,19 +454,19 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/1Pmhoj9oQFe7OLhbhyKnQg/zh-cn_image_0000002531226088.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122315Z&HW-CC-Expire=86400&HW-CC-Sign=4A7325A152767566FF34845E480A115545FCDFA0D19E2C7ABA01542EE4C3DE24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/1Pmhoj9oQFe7OLhbhyKnQg/zh-cn_image_0000002531226088.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144235Z&HW-CC-Expire=86400&HW-CC-Sign=19539794F32D2CC730C557CA1FE5B0391F308D0AC11ED4F60FB6F086F18325D3)
 
 ### 示例4（创建之后立即执行计时）
 
 该示例展示了TextTimer计时器如何在创建完成之后立即开始计时。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextTimerStart {
   textTimerController: TextTimerController = new TextTimerController();
   @State format: string = 'mm:ss.SS';
+
   build() {
     Column() {
       Scroll()
@@ -384,20 +489,20 @@ struct TextTimerStart {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/G6W2JCHwR4OXe0jl2oie8w/zh-cn_image_0000002562026071.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122315Z&HW-CC-Expire=86400&HW-CC-Sign=19576A85F42386A30D74F9703C7281AD7621BC7C8356300BF7BD512EA560E626)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/G6W2JCHwR4OXe0jl2oie8w/zh-cn_image_0000002562026071.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144235Z&HW-CC-Expire=86400&HW-CC-Sign=0C78B4309862B01B3C6D71B6D58C140FC0F6DE6E7EB77F23021DC608BDC311B2)
 
 ### 示例5（设置文本样式）
 
 该示例通过[fontColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer#fontcolor)、[fontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer#fontsize)、[fontStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer#fontstyle)、[fontWeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer#fontweight)、[fontFamily](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer#fontfamily)属性展示了不同样式的文本效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct demo {
   textTimerController: TextTimerController = new TextTimerController();
   @State format: string = 'HH:mm:ss.SS';
   @State countValue: number = 5025678;
+
   build() {
     Column({ space: 10 }) {
       Text('设置字体颜色').fontColor(0xCCCCCC)
@@ -405,21 +510,25 @@ struct demo {
         .fontColor(Color.Blue)
       TextTimer({ isCountDown: true, count: this.countValue, controller: this.textTimerController })
         .fontColor(Color.Gray)
+
       Text('设置字体大小').fontColor(0xCCCCCC)
       TextTimer({ isCountDown: true, count: this.countValue, controller: this.textTimerController })
         .fontSize(10)
       TextTimer({ isCountDown: true, count: this.countValue, controller: this.textTimerController })
         .fontSize(30)
+
       Text('设置字体样式').fontColor(0xCCCCCC)
       TextTimer({ isCountDown: true, count: this.countValue, controller: this.textTimerController })
         .fontStyle(FontStyle.Normal)
       TextTimer({ isCountDown: true, count: this.countValue, controller: this.textTimerController })
         .fontStyle(FontStyle.Italic)
+
       Text('设置字重').fontColor(0xCCCCCC)
       TextTimer({ isCountDown: true, count: this.countValue, controller: this.textTimerController })
         .fontWeight(FontWeight.Lighter)
       TextTimer({ isCountDown: true, count: this.countValue, controller: this.textTimerController })
         .fontWeight(FontWeight.Bolder)
+
       Text('设置字体族').fontColor(0xCCCCCC)
       TextTimer({ isCountDown: true, count: this.countValue, controller: this.textTimerController })
         .fontFamily('HMOS Color Emoji')
@@ -433,4 +542,4 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/l5eO6Mr7TP-uh2qARNyA_Q/zh-cn_image_0000002562146057.png?HW-CC-KV=V1&HW-CC-Date=20260320T122315Z&HW-CC-Expire=86400&HW-CC-Sign=B49916CABFB80F872C799A0C6AF45C1CF16965386E49D820466984F266BE1C58)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/l5eO6Mr7TP-uh2qARNyA_Q/zh-cn_image_0000002562146057.png?HW-CC-KV=V1&HW-CC-Date=20260320T144235Z&HW-CC-Expire=86400&HW-CC-Sign=3A4BC11F36E60F4D8B6994F8777CAD56135E28C70B1FAA314A61DB879F97A889)

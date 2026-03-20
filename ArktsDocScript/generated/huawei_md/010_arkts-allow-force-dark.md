@@ -1,4 +1,4 @@
-# allowForceDark
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-allow-force-dark
 
 设置组件是否使用反色能力，反色能力是在深浅色切换时自动对颜色值进行反色或变换，开发者可以通过主动设置不启用反色算法，以保持在深浅色切换时的原有逻辑。
@@ -34,7 +34,6 @@ allowForceDark(value: boolean): T
 ## 示例
 
 ```typescript
-// 组件添加allowForceDark(false)属性后，说明对当前组件不使用反色相关能力。
 @Entry
 @Component
 struct ComponentPage {
@@ -48,7 +47,8 @@ struct ComponentPage {
             console.info(`Text is clicked`);
           })
       }
-      .allowForceDark(false) // Column及其子组件Text不生效反色能力，不受父组件Column使用反色能力的影响。
+      .allowForceDark(false)
+
       Row() {
         Button('BUTTON')
           .backgroundColor(Color.Grey)
@@ -57,7 +57,7 @@ struct ComponentPage {
             console.info(`Button is clicked`);
           })
       }
-      .allowForceDark(false) // Row及其子组件Button不生效反色能力，不受父组件Column使用反色能力的影响。
+      .allowForceDark(false)
     }
     .allowForceDark(true)
     .width('100%')
@@ -66,4 +66,4 @@ struct ComponentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Zt77rql7SO6W4W26ZmyAjA/zh-cn_image_0000002562025659.png?HW-CC-KV=V1&HW-CC-Date=20260320T122141Z&HW-CC-Expire=86400&HW-CC-Sign=244348518B37EE35A8C575F4BB9749A93536F62831F7FBD654D151BA0DABDF1E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Zt77rql7SO6W4W26ZmyAjA/zh-cn_image_0000002562025659.png?HW-CC-KV=V1&HW-CC-Date=20260320T144032Z&HW-CC-Expire=86400&HW-CC-Sign=D1EE2B9D2643060D54939E8740EC18E361A1B4D65468A54C70343EDFD1D66115)

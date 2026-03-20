@@ -1,4 +1,4 @@
-# 子组件
+# Progress-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress
 
 进度条组件，用于显示内容加载或操作处理等进度。
@@ -32,6 +32,10 @@ Progress(options: ProgressOptions)
 
 进度条选项。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | number | 否 | 否 | 指定当前进度值。设置小于0的数值时置为0，设置大于total的数值时置为total。 默认值：0 取值范围：[0, total] **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
@@ -42,6 +46,12 @@ Progress(options: ProgressOptions)
 ## ProgressType8+枚举说明
 
 进度条类型。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -55,6 +65,12 @@ Progress(options: ProgressOptions)
 
 进度条样式。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Linear | 0 | 线性样式。 |
@@ -66,6 +82,10 @@ Progress(options: ProgressOptions)
 ## ProgressStyleMap10+对象说明
 
 进度条类型和样式的映射表。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 |
 | --- | --- |
@@ -80,15 +100,21 @@ Progress(options: ProgressOptions)
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)外，还支持以下属性：
 
 > **说明**
-> 该组件重写了通用属性
-> backgroundColor
-> ，直接添加在Progress组件上，设置进度条的底色。如需设置整个Progress组件的背景色，需要在外层容器上添加backgroundColor，并用该容器包裹Progress组件。
+> 该组件重写了通用属性[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)，直接添加在Progress组件上，设置进度条的底色。如需设置整个Progress组件的背景色，需要在外层容器上添加backgroundColor，并用该容器包裹Progress组件。
 
 ### value
 
 value(value: number)
 
 设置当前进度值。设置小于0的数值时置为0，设置大于total的数值时置为total。非法数值不生效。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -106,6 +132,12 @@ color(value: ResourceColor | LinearGradient)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用，暂不支持LinearGradient。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | [LinearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel#lineargradient10) | 是 | 进度条前景色。 默认值： - Capsule： API version 9及以下：'#ff007dff' API version 10：'#33006cde' API version 11及以上：'#33007dff' - Ring： API version 9及以下：'#ff007dff' API version 10及以上：起始端：'#ff86c1ff'，结束端：'#ff254ff7' - 其他样式：'#ff007dff' |
@@ -115,6 +147,10 @@ color(value: ResourceColor | LinearGradient)
 style(value: ProgressStyleOptions | CapsuleStyleOptions | RingStyleOptions | LinearStyleOptions | ScaleRingStyleOptions | EclipseStyleOptions)
 
 设置组件的样式。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -128,6 +164,10 @@ contentModifier(modifier:ContentModifier<ProgressConfiguration>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | [ContentModifier<ProgressConfiguration>](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#progressconfiguration12) | 是 | 在progress组件上，定制内容区的方法。 modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -139,11 +179,15 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 设置隐私敏感。
 
 > **说明**
-> 从API version 20开始，该接口支持在
-> attributeModifier
-> 中调用。
+> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -152,6 +196,10 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 ## ProgressConfiguration12+
 
 进度条配置。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -162,6 +210,10 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 
 进度条通用样式选项。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enableSmoothEffect | boolean | 否 | 是 | 进度平滑动效的开关。开启平滑动效后设置进度，进度会从当前值渐变至设定值，页面会有进度变化的动效；否则进度从当前值突变至设定值，页面无动效。 true：表示开启进度平滑动效。 false：表示关闭进度平滑动效。 默认值：true |
@@ -169,6 +221,10 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 ## ScanEffectOptions10+
 
 扫光效果选项。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -179,6 +235,12 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 进度条样式选项。
 
 继承自[CommonProgressStyleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#commonprogressstyleoptions10)。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -191,6 +253,10 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 胶囊样式选项。
 
 继承自[ScanEffectOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#scaneffectoptions10)和[CommonProgressStyleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#commonprogressstyleoptions10)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -206,6 +272,12 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 
 环形无刻度样式选项。
 
+继承自[ScanEffectOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#scaneffectoptions10)和[CommonProgressStyleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#commonprogressstyleoptions10)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strokeWidth | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 设置进度条宽度（不支持百分比设置）。当宽度大于等于半径时，宽度默认修改为半径值的二分之一。 默认值：4.0vp |
@@ -216,6 +288,12 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 
 线性样式选项。
 
+继承自[ScanEffectOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#scaneffectoptions10)和[CommonProgressStyleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#commonprogressstyleoptions10)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | strokeWidth | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 设置进度条宽度（不支持百分比设置）。 默认值：4.0vp |
@@ -224,6 +302,12 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 ## ScaleRingStyleOptions10+
 
 环形有刻度样式选项。
+
+继承自[CommonProgressStyleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#commonprogressstyleoptions10)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -235,9 +319,19 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 
 圆形样式选项。圆形样式的显示类似月圆月缺的进度展示效果，从月牙逐渐变化至满月。
 
+继承自[CommonProgressStyleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#commonprogressstyleoptions10)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ## ProgressStatus10+枚举说明
 
 进度条的当前状态。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -255,7 +349,6 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 该示例通过[ProgressOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#progressoptions对象说明)的入参type，实现了设置进度条类型的功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ProgressExample {
@@ -264,11 +357,13 @@ struct ProgressExample {
       Text('Linear Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Progress({ value: 10, type: ProgressType.Linear }).width(200)
       Progress({ value: 20, total: 150, type: ProgressType.Linear }).color(Color.Grey).value(50).width(200)
+
       Text('Eclipse Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Row({ space: 40 }) {
         Progress({ value: 10, type: ProgressType.Eclipse }).width(100)
         Progress({ value: 20, total: 150, type: ProgressType.Eclipse }).color(Color.Grey).value(50).width(100)
       }
+
       Text('ScaleRing Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Row({ space: 40 }) {
         Progress({ value: 10, type: ProgressType.ScaleRing }).width(100)
@@ -276,7 +371,7 @@ struct ProgressExample {
           .color(Color.Grey).value(50).width(100)
           .style({ strokeWidth: 15, scaleCount: 15, scaleWidth: 5 })
       }
-      // scaleCount和scaleWidth效果对比
+
       Row({ space: 40 }) {
         Progress({ value: 20, total: 150, type: ProgressType.ScaleRing })
           .color(Color.Grey).value(50).width(100)
@@ -285,6 +380,7 @@ struct ProgressExample {
           .color(Color.Grey).value(50).width(100)
           .style({ strokeWidth: 20, scaleCount: 30, scaleWidth: 3 })
       }
+
       Text('Ring Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Row({ space: 40 }) {
         Progress({ value: 10, type: ProgressType.Ring }).width(100)
@@ -292,6 +388,7 @@ struct ProgressExample {
           .color(Color.Grey).value(50).width(100)
           .style({ strokeWidth: 20 })
       }
+
       Text('Capsule Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Row({ space: 40 }) {
         Progress({ value: 10, type: ProgressType.Capsule }).width(100).height(50)
@@ -306,25 +403,26 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/MvBVk_PyTPuNNJotijQD5g/zh-cn_image_0000002531106146.png?HW-CC-KV=V1&HW-CC-Date=20260320T122313Z&HW-CC-Expire=86400&HW-CC-Sign=6C57E7E7DAF3E9D591271D5FE1CCE605F53F3C409A32B9749B7C00DBFC55A297)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/MvBVk_PyTPuNNJotijQD5g/zh-cn_image_0000002531106146.png?HW-CC-KV=V1&HW-CC-Date=20260320T144230Z&HW-CC-Expire=86400&HW-CC-Sign=5FADEDF64CF55002CB3F5D8A7DD53544270ED86A58AD489D5C8BEAF90C67198B)
 
 ### 示例2（设置环形进度条属性）
 
 该示例通过[style](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#style8)接口的strokeWidth和shadow属性，实现了环形进度条视觉属性设置功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ProgressExample {
   private gradientColor: LinearGradient = new LinearGradient([{ color: Color.Yellow, offset: 0.5 },
     { color: Color.Orange, offset: 1.0 }])
+
   build() {
     Column({ space: 15 }) {
       Text('Gradient Color').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Progress({ value: 70, total: 100, type: ProgressType.Ring })
         .width(100).style({ strokeWidth: 20 })
         .color(this.gradientColor)
+
       Text('Shadow').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Progress({ value: 70, total: 100, type: ProgressType.Ring })
         .width(120).color(Color.Orange)
@@ -334,14 +432,13 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/VomvgjJhTC6SZVP6BSLygQ/zh-cn_image_0000002531226080.png?HW-CC-KV=V1&HW-CC-Date=20260320T122313Z&HW-CC-Expire=86400&HW-CC-Sign=CBA63B61748B1CA8B58352A8187BDA24BF46DFEDDF3AADAF97F6ACDE2EDEFE0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/VomvgjJhTC6SZVP6BSLygQ/zh-cn_image_0000002531226080.png?HW-CC-KV=V1&HW-CC-Date=20260320T144230Z&HW-CC-Expire=86400&HW-CC-Sign=30381BFB7E50AD39EA1FD4F65F14B0450FC2393E41D5DA309AC6E363ADA98DBC)
 
 ### 示例3（设置环形进度条动画）
 
 该示例通过[style](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#style8)接口的status和enableScanEffect属性，实现了环形进度条动效的开关功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ProgressExample {
@@ -351,6 +448,7 @@ struct ProgressExample {
       Progress({ value: 0, total: 100, type: ProgressType.Ring })
         .width(100).color(Color.Blue)
         .style({ strokeWidth: 20, status: ProgressStatus.LOADING })
+
       Text('Scan Effect').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Progress({ value: 30, total: 100, type: ProgressType.Ring })
         .width(100).color(Color.Orange)
@@ -360,14 +458,13 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/adYKXh6rSY-syRicPuuUjg/zh-cn_image_0000002562026063.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122313Z&HW-CC-Expire=86400&HW-CC-Sign=4CCE39FB5A2ECF86136EFE7C7DAB48329D8C79BDFCD77ED9A1813E5329EF0239)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/adYKXh6rSY-syRicPuuUjg/zh-cn_image_0000002562026063.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144230Z&HW-CC-Expire=86400&HW-CC-Sign=84506E06D4E3AA79E20CDF4CDAF8D4A436CA587BD39B9EA87450B581402ACCEC)
 
 ### 示例4（设置胶囊形进度条属性）
 
 该示例通过[style](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#style8)接口的borderColor、borderWidth、content、font、fontColor、enableScanEffect、showDefaultPercentage属性，实现胶囊形进度条的视觉属性设置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ProgressExample {
@@ -390,18 +487,18 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/FCZqXkwUQ7SqtvOe7G8JWA/zh-cn_image_0000002562146049.png?HW-CC-KV=V1&HW-CC-Date=20260320T122313Z&HW-CC-Expire=86400&HW-CC-Sign=044CA97A849486EF305239A6A107C1092C2D0A13823A393D615A73CB670F7A08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/FCZqXkwUQ7SqtvOe7G8JWA/zh-cn_image_0000002562146049.png?HW-CC-KV=V1&HW-CC-Date=20260320T144230Z&HW-CC-Expire=86400&HW-CC-Sign=9680503118DDE2BA562743F3E83724B8C1D71AD1CC470712C20B22464F7C5436)
 
 ### 示例5（设置进度平滑动效）
 
 该示例通过[style](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#style8)接口的enableSmoothEffect属性，实现了进度平滑动效开关的功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
   @State value: number = 0;
+
   build() {
     Column({ space: 10 }) {
       Text('enableSmoothEffect: true')
@@ -412,9 +509,11 @@ struct Index {
         .margin({ top: 20 })
       Progress({ value: this.value, total: 100, type: ProgressType.Linear })
         .style({ strokeWidth: 10, enableSmoothEffect: true })
+
       Text('enableSmoothEffect: false').fontSize(9).fontColor(0xCCCCCC).width('90%').margin(5)
       Progress({ value: this.value, total: 100, type: ProgressType.Linear })
         .style({ strokeWidth: 10, enableSmoothEffect: false })
+
       Button('value +10').onClick(() => {
         this.value += 10;
       })
@@ -429,25 +528,28 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xUk5aIHtR--Az31ORCnv6A/zh-cn_image_0000002531106148.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122313Z&HW-CC-Expire=86400&HW-CC-Sign=CFC05E02751D02069D3DDDB82554D3AFB4A0EFC44AF1BD00531DE1DE641D0BE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xUk5aIHtR--Az31ORCnv6A/zh-cn_image_0000002531106148.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144230Z&HW-CC-Expire=86400&HW-CC-Sign=C8312683F81265447931DA5CB12F934BCF745C4CA5D1F52358AA3B4369C7C695)
 
 ### 示例6（设置定制内容区）
 
 该示例通过[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#contentmodifier12)接口，实现了自定义进度条的功能，自定义实现星形，其中总进度为3，且当前值可通过按钮进行增减，达到的进度使用自定义颜色填充。
 
 ```typescript
-// xxx.ets
 class MyProgressModifier implements ContentModifier<ProgressConfiguration> {
   color: ResourceColor = Color.White;
+
   constructor(color: ResourceColor) {
     this.color = color;
   }
+
   applyContent(): WrappedBuilder<[ProgressConfiguration]> {
     return wrapBuilder(myProgress);
   }
 }
+
 @Builder
 function myProgress(config: ProgressConfiguration) {
+
   Column({ space: 30 }) {
     Text('当前进度：' + config.value + '/' + config.total).fontSize(20)
     Row() {
@@ -480,12 +582,14 @@ function myProgress(config: ProgressConfiguration) {
     }
   }.margin({ bottom: 100 })
 }
+
 @Entry
 @Component
 struct Index {
   @State currentValue: number = 0;
   modifier = new MyProgressModifier('rgb(39, 135, 217)');
   @State myModifier: (MyProgressModifier | undefined) = this.modifier;
+
   build() {
     Column() {
       Progress({ value: this.currentValue, total: 3, type: ProgressType.Ring }).contentModifier(this.modifier)
@@ -504,7 +608,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/wArfiny7RPiC4HXqytyHag/zh-cn_image_0000002531226082.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122313Z&HW-CC-Expire=86400&HW-CC-Sign=66636DEE85EDE0EB2EAB4232AE952174E37AD30223071CA8B011A1101141FE56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/wArfiny7RPiC4HXqytyHag/zh-cn_image_0000002531226082.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144230Z&HW-CC-Expire=86400&HW-CC-Sign=F1D5019D1D52519C67A7756C71DE90E6B67A82B2F48B4D45A2B7AE58E06C3E50)
 
 ### 示例7（设置隐私隐藏）
 
@@ -541,7 +645,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7UqOMoE-Rh-Sje59hGcgAQ/zh-cn_image_0000002562026065.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122313Z&HW-CC-Expire=86400&HW-CC-Sign=87D46E4889D3527625784925A471114AC33C87F49D89FF360E1283588B4F44E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7UqOMoE-Rh-Sje59hGcgAQ/zh-cn_image_0000002562026065.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144230Z&HW-CC-Expire=86400&HW-CC-Sign=80AE23E470FA7C7C3D5752550164F272C09AD345B492BE9D771DE77E7BA8630F)
 
 ### 示例8（设置capsule进度条圆角半径）
 
@@ -551,6 +655,7 @@ struct ProgressExample {
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct ProgressExample {
@@ -563,6 +668,7 @@ struct ProgressExample {
           .width(100)
           .height(60)
       }
+
       Row({ space: 15 }) {
         Progress({ value: 30, total: 100, type: ProgressType.Capsule })
           .style({ content: '圆角为20vp', borderWidth: 5, borderRadius: LengthMetrics.vp(20) })
@@ -576,4 +682,4 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Os4V5yneTpqPG8uIqvweXQ/zh-cn_image_0000002562146051.png?HW-CC-KV=V1&HW-CC-Date=20260320T122313Z&HW-CC-Expire=86400&HW-CC-Sign=5F331370A713D2B214012D42B1F4EF73402A5DC6568BB683A32A9F7B3E987296)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Os4V5yneTpqPG8uIqvweXQ/zh-cn_image_0000002562146051.png?HW-CC-KV=V1&HW-CC-Date=20260320T144230Z&HW-CC-Expire=86400&HW-CC-Sign=AB2EFF754260D9BC7CAC52A25BD4E60945AB1EA9D769AE00101B4FE8197D3629)

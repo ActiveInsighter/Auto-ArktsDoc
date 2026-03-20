@@ -1,53 +1,14 @@
-# 子组件
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-theme
 
 WithTheme组件用于设置应用局部页面自定义主题风格，可设置子组件深浅色模式和自定义配色。
 
 > **说明**
 > 该组件从API version 12开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> WithTheme支持的系统组件如下：
-> TextInput
-> 、
-> Search
-> 、
-> Button
-> 、
-> Badge
-> 、
-> Swiper
-> 、
-> Text
-> 、
-> Select
-> 、
-> Menu
-> 、
-> TimePicker
-> 、
-> DatePicker
-> 、
-> TextPicker
-> 、
-> Checkbox
-> 、
-> CheckboxGroup
-> 、
-> Radio
-> 、
-> Slider
-> 、
-> Progress
-> 、
-> QRCode
-> 、
-> Toggle
-> 、
-> PatternLock
-> 、
-> Divider
-> WithTheme相关使用指导请参考
-> 设置应用内主题换肤
-> 。
+>
+> WithTheme支持的系统组件如下：[TextInput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput)、[Search](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search)、[Button](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button)、[Badge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge)、[Swiper](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper)、[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)、[Select](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select)、[Menu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menu)、[TimePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker)、[DatePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker)、[TextPicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker)、[Checkbox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox)、[CheckboxGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup)、[Radio](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio)、[Slider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider)、[Progress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress)、[QRCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode)、[Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle)、[PatternLock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-patternlock)、[Divider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-divider)
+>
+> WithTheme相关使用指导请参考[设置应用内主题换肤](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme_skinning)。
 
 ## 子组件
 
@@ -81,6 +42,10 @@ WithTheme(options: WithThemeOptions)
 
 设置WithTheme作用域内组件缺省样式及深浅色模式。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | theme | [CustomTheme](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-theme#customtheme) | 否 | 是 | 用于自定义WithTheme作用域内组件缺省配色。 默认值：undefined，缺省样式跟随系统[token默认样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme_skinning#系统缺省token色值)。 |
@@ -92,6 +57,10 @@ type CustomTheme = CustomTheme
 
 自定义配色。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 类型 | 说明 |
 | --- | --- |
 | [CustomTheme](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-theme#customtheme) | 自定义WithTheme作用域内组件缺省配色。 |
@@ -100,7 +69,7 @@ type CustomTheme = CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Z6V25GU5T36eXJj94WO_AQ/zh-cn_image_0000002562026225.png?HW-CC-KV=V1&HW-CC-Date=20260320T122341Z&HW-CC-Expire=86400&HW-CC-Sign=2061402A09214E44152E27DD3FDAF0041F96A94440449AB27006E3531D1D4D5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Z6V25GU5T36eXJj94WO_AQ/zh-cn_image_0000002562026225.png?HW-CC-KV=V1&HW-CC-Date=20260320T144303Z&HW-CC-Expire=86400&HW-CC-Sign=8BBFB4973611C5023D16EFA04544FE911B114EAF1CA5A672B111DD2A0BF2B948)
 
 dark.json数据示例：
 
@@ -170,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/KdAsAE4BSGSRwHsr6XPM8A/zh-cn_image_0000002562146211.png?HW-CC-KV=V1&HW-CC-Date=20260320T122341Z&HW-CC-Expire=86400&HW-CC-Sign=2BF647A08173ED110697467FF5D7C9E38D94CE85A895F8E26CC003FC44293AB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/KdAsAE4BSGSRwHsr6XPM8A/zh-cn_image_0000002562146211.png?HW-CC-KV=V1&HW-CC-Date=20260320T144303Z&HW-CC-Expire=86400&HW-CC-Sign=ADDC7814516322F017F6C32DDCD1E1C197A4875FB1BD89CB555A2462D0459C98)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -254,4 +223,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/wPifUQObR9W3dC35SR_F2A/zh-cn_image_0000002531106310.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122341Z&HW-CC-Expire=86400&HW-CC-Sign=37F01281B6A5C177B8C7A430679F630C988B06C55835343FF63E7039562600D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/wPifUQObR9W3dC35SR_F2A/zh-cn_image_0000002531106310.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144303Z&HW-CC-Expire=86400&HW-CC-Sign=2607AA279E2CF6821FD9C5B4DADCA1669A504AAFF47B3F55AC67AEF072D32EED)

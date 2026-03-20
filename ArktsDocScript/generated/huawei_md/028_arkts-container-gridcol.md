@@ -1,4 +1,4 @@
-# 子组件
+# GridCol-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol
 
 栅格子组件，必须作为栅格容器组件([GridRow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow))的子组件使用。
@@ -32,6 +32,12 @@ GridCol(option?: GridColOptions)
 
 设置栅格列布局组件布局选项。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | span | number | [GridColColumnOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol#gridcolcolumnoption) | 否 | 是 | 栅格子组件占用栅格容器组件的列数。span为0表示该元素不参与布局计算，即不会被渲染。 取值为非负整数，默认值为1 非法值：按默认值处理。 |
@@ -52,6 +58,14 @@ span(value: number | GridColColumnOption)
 
 设置占用列数。span为0，意味着该元素不参与布局计算，即不会被渲染。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | [GridColColumnOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol#gridcolcolumnoption) | 是 | 占用列数。 取值为非负整数，默认值为1。 非法值：按默认值处理。 |
@@ -61,6 +75,14 @@ span(value: number | GridColColumnOption)
 gridColOffset(value: number | GridColColumnOption)
 
 设置相对于前一个栅格子组件偏移的列数。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -72,6 +94,14 @@ order(value: number | GridColColumnOption)
 
 设置栅格子组件的序号，根据序号从小到大对栅格子组件进行排序。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | [GridColColumnOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol#gridcolcolumnoption) | 是 | 元素的序号，根据栅格子组件的序号，从小到大对栅格子组件做排序。 取值为非负整数，默认值：0 非法值：按默认值处理。 |
@@ -80,11 +110,15 @@ order(value: number | GridColColumnOption)
 
 用于自定义指定在不同宽度设备类型上，栅格子组件占据的栅格数量单位。
 
-- API version 20之前，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取默认值1。 span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8}
-span: {md:4, lg:8} // 等于配置 span: {xs:1, sm:1, md:4, lg:8, xl:8, xxl:8}
-- API version 20及以后，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取已配置的更大断点的列数补全未配置的列数。 span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8}
-span: {md:4, lg:8} // 等于配置 span: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8}
+- API version 20之前，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取默认值1。 ```typescript span: {xs:2, md:4, lg:8} span: {md:4, lg:8} ```
+- API version 20及以后，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取已配置的更大断点的列数补全未配置的列数。 ```typescript span: {xs:2, md:4, lg:8} span: {md:4, lg:8} ```
 - 建议手动配置不同断点下GridCol组件所占列数，避免默认补全列数的布局效果不符合预期。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -104,13 +138,13 @@ span: {md:4, lg:8} // 等于配置 span: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8}
 GridCol的基本用法示例。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct GridColExample {
   @State bgColors: Color[] =
     [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
   @State currentBp: string = 'unknown'
+
   build() {
     Column() {
       GridRow({
@@ -141,4 +175,4 @@ struct GridColExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wtcKN4A2RmqMg1Wht0GN9w/zh-cn_image_0000002562145757.png?HW-CC-KV=V1&HW-CC-Date=20260320T122201Z&HW-CC-Expire=86400&HW-CC-Sign=2DED0E29F7F3FF6F05765EF94C7BDC118A19E4211B185D986CF23DCFEA7C9D97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wtcKN4A2RmqMg1Wht0GN9w/zh-cn_image_0000002562145757.png?HW-CC-KV=V1&HW-CC-Date=20260320T144052Z&HW-CC-Expire=86400&HW-CC-Sign=BD7707F3F050575AEE061F143E7AE75A9218E489532CA7A88ECF1BA20ABE6EB0)

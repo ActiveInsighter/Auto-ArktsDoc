@@ -1,15 +1,12 @@
-# ActionSheetOptions对象说明
+# 列表选择弹窗 (ActionSheet)-弹窗-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet
 
 列表弹窗。
 
 > **说明**
 > 从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 本模块功能依赖UI的执行上下文，不可在
-> UI上下文不明确
-> 的地方使用，参见
-> UIContext
-> 说明。
+>
+> 本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)说明。
 
 ## ActionSheetOptions对象说明
 
@@ -61,6 +58,8 @@
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | title | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 否 | 否 | 选项的文本内容。 文本超长时会触发滚动条。 |
@@ -75,6 +74,8 @@ type LevelMode = LevelMode
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 类型 | 说明 |
 | --- | --- |
 | [LevelMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#levelmode15枚举说明) | 设置弹窗的显示层级。 |
@@ -85,6 +86,10 @@ type ImmersiveMode = ImmersiveMode
 
 弹窗的蒙层效果。
 
+**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 类型 | 说明 |
 | --- | --- |
 | [ImmersiveMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#immersivemode15枚举说明) | 设置页面内弹窗的蒙层效果。 |
@@ -94,6 +99,8 @@ type ImmersiveMode = ImmersiveMode
 Dialog关闭的信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### 属性
 
@@ -111,6 +118,8 @@ Dialog关闭的信息。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enabled10+ | boolean | 否 | 是 | 点击Button是否响应，true表示Button可以响应，false表示Button不可以响应。 默认值：true **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -122,6 +131,10 @@ Dialog关闭的信息。
 ## ActionSheetOffset18+对象说明
 
 弹窗的对齐方式。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -137,16 +150,13 @@ static show(value: ActionSheetOptions)
 定义列表弹窗并弹出。
 
 > **说明**
-> 从API version 8开始支持，从API version 18开始废弃，建议使用
-> showActionSheet
-> 替代。showActionSheet需先获取
-> UIContext
-> 实例后再进行调用。
-> 从API version 10开始，可以通过使用
-> UIContext
-> 中的
-> showActionSheet
-> 来明确UI的执行上下文。
+> 从API version 8开始支持，从API version 18开始废弃，建议使用[showActionSheet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showactionsheet)替代。showActionSheet需先获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例后再进行调用。
+>
+> 从API version 10开始，可以通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[showActionSheet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showactionsheet)来明确UI的执行上下文。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
@@ -157,17 +167,14 @@ static show(value: ActionSheetOptions)
 ## 示例
 
 > **说明**
-> 直接使用ActionSheet可能导致实例不明确的问题，建议使用getUIContext()获取
-> UIContext
-> 实例，并使用
-> showActionSheet
-> 调用绑定实例的ActionSheet.show()。
+> 直接使用ActionSheet可能导致实例不明确的问题，建议使用getUIContext()获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例，并使用[showActionSheet](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showactionsheet)调用绑定实例的ActionSheet.show()。
 
 ### 示例1（弹出列表选择弹窗）
 
 该示例通过点击按钮弹窗列表选择弹窗。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -230,13 +237,14 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VQEvqAGKQXCFaK2tEVkyZA/zh-cn_image_0000002531106270.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122334Z&HW-CC-Expire=86400&HW-CC-Sign=B9D9A84EEB2809AC1B6EF7C98D50585B49D57872A4879FA54DF9A200199C8A05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VQEvqAGKQXCFaK2tEVkyZA/zh-cn_image_0000002531106270.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144255Z&HW-CC-Expire=86400&HW-CC-Sign=F143A483EA754A3202815DE308AFA8CCE055E8C329E27BD2145C3693389A7801)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
 在2in1设备上设置[showInSubWindow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet#actionsheetoptions对象说明)为true时，可以弹出在主窗外显示的弹窗。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -301,13 +309,14 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/yU7Uuuv_TaCme4Tf_knQbA/zh-cn_image_0000002531226204.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T122334Z&HW-CC-Expire=86400&HW-CC-Sign=764A97FEA7FA19EA4882530AD901920220AC280856128E1C70D5C7EE28653BAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/yU7Uuuv_TaCme4Tf_knQbA/zh-cn_image_0000002531226204.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T144255Z&HW-CC-Expire=86400&HW-CC-Sign=9C8B2FB15BE6F5C99DDA24997CE9457D07CB289301C876282BC2454C11D4B08C)
 
 ### 示例3（设置弹窗的动画）
 
 该示例通过配置[transition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet#actionsheetoptions对象说明)实现弹窗的显示和消失动画。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -362,13 +371,14 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-bIfRgfJQry-IOqXor-iHw/zh-cn_image_0000002562026187.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122334Z&HW-CC-Expire=86400&HW-CC-Sign=FAABE5B274858ABAB1430B21D7ACD42AF4C2BBBA91FBCFA361E73B21FEC1E3BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-bIfRgfJQry-IOqXor-iHw/zh-cn_image_0000002562026187.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144255Z&HW-CC-Expire=86400&HW-CC-Sign=CCE9258E2E271E22CECDA90CE51F5C9CB2CD2876618588CB91241071406A51BC)
 
 ### 示例4（设置弹窗的样式）
 
 该示例定义了ActionSheet的样式，如宽度、高度、背景色、阴影等。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -385,8 +395,8 @@ struct ActionSheetExample {
             height: 350,
             cornerRadius: 20,
             borderWidth: 1,
-            borderStyle: BorderStyle.Solid,
-            borderColor: Color.Blue,
+            borderStyle: BorderStyle.Solid, // 使用borderStyle属性，需要和borderWidth属性一起使用
+            borderColor: Color.Blue, // 使用borderColor属性，需要和borderWidth属性一起使用
             backgroundColor: Color.White,
             shadow: ({
               radius: 20,
@@ -443,13 +453,14 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ccx1c8eZREyTI1mANkMAaw/zh-cn_image_0000002562146173.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122334Z&HW-CC-Expire=86400&HW-CC-Sign=DFDB8CC967C511B6BCE78C96B67561831388B13D72D34D5A125DD1D386AFB03E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ccx1c8eZREyTI1mANkMAaw/zh-cn_image_0000002562146173.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144255Z&HW-CC-Expire=86400&HW-CC-Sign=2FEA1CDF361F304B2ACFCCEA1266AFD75FC2AC5BBD81B6C18B6DD6AF74FB64B3)
 
 ### 示例5（悬停态弹窗）
 
 该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -514,7 +525,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/piA3qt3kTj-vfumz4Ksf4A/zh-cn_image_0000002531106272.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122334Z&HW-CC-Expire=86400&HW-CC-Sign=B2AF73F658021AFF3882134FB2CBAC635BA89EBD5EE230AB5C5313019EC83630)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/piA3qt3kTj-vfumz4Ksf4A/zh-cn_image_0000002531106272.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144255Z&HW-CC-Expire=86400&HW-CC-Sign=4EB215BAA5C807C2A02223E1D66393D4FA39806F253D2911E189928FCF0AB2AD)
 
 ### 示例6（弹窗生命周期）
 
@@ -523,12 +534,12 @@ struct ActionSheetExample {
 从API version 19开始，在[ActionSheetOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet#actionsheetoptions对象说明)中新增了onDidAppear、onDidDisappear、onWillAppear和onWillDisappear属性。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct Example1 {
   @State log: string = 'Log information:';
   flag: boolean = false;
-
   build() {
     Column({ space: 5 }) {
       Button('ActionSheet')
@@ -592,7 +603,7 @@ struct Example1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/UwUcRndGT7eYfCMrVe92GQ/zh-cn_image_0000002531226206.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122334Z&HW-CC-Expire=86400&HW-CC-Sign=7972292CABF66B36009E72176B3383E1B35301CE9B9332920A8A28C77A4296A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/UwUcRndGT7eYfCMrVe92GQ/zh-cn_image_0000002531226206.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144255Z&HW-CC-Expire=86400&HW-CC-Sign=23DFF607E786249897919A71EAA0661A7FC16BF71858B91D8B88D94F7FD58F1D)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -652,7 +663,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/0LEkQHBFQ-OwHVKr8H6OFA/zh-cn_image_0000002562026189.png?HW-CC-KV=V1&HW-CC-Date=20260320T122334Z&HW-CC-Expire=86400&HW-CC-Sign=17B316EF784ED7395F2EA57217C029FDBDBFFAF8B8A6F25D14A1CEDD47F108C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/0LEkQHBFQ-OwHVKr8H6OFA/zh-cn_image_0000002562026189.png?HW-CC-KV=V1&HW-CC-Date=20260320T144255Z&HW-CC-Expire=86400&HW-CC-Sign=0745CD4D68DF06B601D4329B587EA63E688DD20051770A589404F0503B0B888B)
 
 ### 示例8（自定义背景效果参数）
 
@@ -713,4 +724,4 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/a3ndrrfwRQmrx3ZVOd4T-Q/zh-cn_image_0000002562146175.png?HW-CC-KV=V1&HW-CC-Date=20260320T122334Z&HW-CC-Expire=86400&HW-CC-Sign=DF819C293DDBF0DFF2FDEF5315CB78C7DBC2C887481F4C736A14CBD72BB834F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/a3ndrrfwRQmrx3ZVOd4T-Q/zh-cn_image_0000002562146175.png?HW-CC-KV=V1&HW-CC-Date=20260320T144255Z&HW-CC-Expire=86400&HW-CC-Sign=C94714C916CE83E3B54F96CC137C254522ED6E761F924293BA858EA7DBC6060C)

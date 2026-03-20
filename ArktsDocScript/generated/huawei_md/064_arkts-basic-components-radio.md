@@ -1,10 +1,11 @@
-# 子组件
+# Radio-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio
 
 单选框，提供相应的用户交互选择项。
 
 > **说明**
 > API version 12开始，Radio选中默认样式由RadioIndicatorType.DOT变为RadioIndicatorType.TICK。
+>
 > 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
@@ -33,6 +34,8 @@ Radio(options: RadioOptions)
 
 单选框的信息。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value | string | 否 | 否 | 当前单选框的值。 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -47,6 +50,8 @@ Radio(options: RadioOptions)
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -68,6 +73,14 @@ checked(value: boolean)
 
 从API version 18开始，该属性支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 单选框的选中状态。 默认值：false 值为true时，单选框被选中。值为false时，单选框不被选中。 |
@@ -84,6 +97,10 @@ checked(isChecked: Optional<boolean>)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isChecked | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<boolean> | 是 | 单选框的选中状态。 当isChecked的值为undefined时取默认值false。 值为true时，单选框被选中。值为false时，单选框不被选中。 |
@@ -96,6 +113,12 @@ radioStyle(value?: RadioStyle)
 
 从API version 10开始，该接口支持在ArkTS组件中使用。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [RadioStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio#radiostyle10对象说明) | 否 | 单选框选中状态和非选中状态的样式。 |
@@ -106,6 +129,12 @@ contentModifier(modifier: ContentModifier<RadioConfiguration>)
 
 定制Radio内容区的方法。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | [ContentModifier<RadioConfiguration>](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio#radioconfiguration12对象说明) | 是 | 在Radio组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -115,6 +144,12 @@ contentModifier(modifier: ContentModifier<RadioConfiguration>)
 contentModifier(modifier: Optional<ContentModifier<RadioConfiguration>>)
 
 定制Radio内容区的方法。与[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio#contentmodifier12)12+相比，modifier参数新增了对undefined类型的支持。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -130,6 +165,14 @@ onChange(callback: (isChecked: boolean) => void)
 
 单选框选中状态改变时触发的回调。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isChecked | boolean | 是 | 单选框选中状态改变时触发该回调。 值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。 |
@@ -139,6 +182,14 @@ onChange(callback: (isChecked: boolean) => void)
 onChange(callback: Optional<OnRadioChangeCallback>)
 
 单选框选中状态改变时触发的回调。与[onChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio#onchange)相比，callback参数新增了对undefined类型的支持。
+
+**卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -150,6 +201,12 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 
 单选框选中状态改变时触发的回调函数类型定义。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isChecked | boolean | 是 | 单选框的状态。 值为true时，表示从未选中变为选中。值为false时，表示从选中变为未选中。 |
@@ -157,6 +214,10 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 ## RadioStyle10+对象说明
 
 单选框的颜色。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -167,6 +228,10 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 ## RadioConfiguration12+对象说明
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -181,7 +246,6 @@ type OnRadioChangeCallback = (isChecked: boolean) => void
 该示例通过配置checkedBackgroundColor实现自定义单选框的底板颜色。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct RadioExample {
@@ -228,20 +292,19 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QO0rOrEzRyuIJmbbh8dUkw/zh-cn_image_0000002531105970.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122236Z&HW-CC-Expire=86400&HW-CC-Sign=ED47EA6D52AA711C3BAB95DDB13E0AB68FDE9696B8033DE194F37D8D71DCFDDB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QO0rOrEzRyuIJmbbh8dUkw/zh-cn_image_0000002531105970.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144142Z&HW-CC-Expire=86400&HW-CC-Sign=22EF96B37884C5DADCF7B70788A9B8C9316CCFB0762BA8FBB58F1B054AF86987)
 
 ### 示例2 （设置选中样式）
 
 该示例通过配置indicatorType、indicatorBuilder实现自定义选中样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct RadioExample {
   @Builder
   indicatorBuilder() {
-    // $r('app.media.star')需要替换为开发者所需的图像资源文件。
+
     Image($r("app.media.star"))
   }
   build() {
@@ -285,7 +348,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/4zwi66S-RaWIJsOo9Sb7IQ/zh-cn_image_0000002531225904.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122236Z&HW-CC-Expire=86400&HW-CC-Sign=3A48403ED511E8250F4E62C025931F69C3D7DBD54B1D088BB2B610D83BA11482)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/4zwi66S-RaWIJsOo9Sb7IQ/zh-cn_image_0000002531225904.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144142Z&HW-CC-Expire=86400&HW-CC-Sign=C2D498BA01DCA29FA52D05A314963018AE03FA3491C9BFB1263BCEA2C0D55AFB)
 
 ### 示例3（设置自定义样式）
 
@@ -295,14 +358,17 @@ struct RadioExample {
 class MyRadioStyle implements ContentModifier<RadioConfiguration> {
   type: number = 0;
   selectedColor: ResourceColor = Color.Black;
+
   constructor(numberType: number, colorType: ResourceColor) {
     this.type = numberType;
     this.selectedColor = colorType;
   }
+
   applyContent(): WrappedBuilder<[RadioConfiguration]> {
     return wrapBuilder(buildRadio);
   }
 }
+
 @Builder
 function buildRadio(config: RadioConfiguration) {
   Row({ space: 30 }) {
@@ -322,6 +388,7 @@ function buildRadio(config: RadioConfiguration) {
       })
   }
 }
+
 @Entry
 @Component
 struct refreshExample {
@@ -334,6 +401,7 @@ struct refreshExample {
           .width(300)
           .height(100)
       }
+
       Row() {
         Radio({ value: 'Radio2', group: 'radioGroup' })
           .checked(true)
@@ -346,4 +414,4 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/JGragB02TuuRbEO8vY3HyA/zh-cn_image_0000002562025887.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122236Z&HW-CC-Expire=86400&HW-CC-Sign=285844D67E48BF2E55A41E892760AF4B1472953BFD8AB83870F145D17EE7C628)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/JGragB02TuuRbEO8vY3HyA/zh-cn_image_0000002562025887.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144142Z&HW-CC-Expire=86400&HW-CC-Sign=BAA152F3BEEABB161D03B3489131BF482156A17A75A117CC183DC851413FAA42)

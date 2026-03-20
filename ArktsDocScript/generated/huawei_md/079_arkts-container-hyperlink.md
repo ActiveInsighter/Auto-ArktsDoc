@@ -1,11 +1,11 @@
-# 需要权限
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-hyperlink
 
 超链接组件，组件宽高范围内点击实现跳转。
 
 > **说明**
-> 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 该组件仅支持与系统浏览器配合使用。
+> - 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - 该组件仅支持与系统浏览器配合使用。
 
 ## 需要权限
 
@@ -40,6 +40,12 @@ color(value: Color | number | string | Resource)
 
 设置超链接文本的颜色。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Color](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#color) | number | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 是 | 超链接文本的颜色。 phone默认值为'#ff007dff'，wearable设备默认值'#1F71FF'，tv设备默认值为'#266EFB'，均显示为蓝色。 |
@@ -73,4 +79,4 @@ struct HyperlinkExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/drmCtpeXT4SK7n4xtWw2zw/zh-cn_image_0000002562025969.png?HW-CC-KV=V1&HW-CC-Date=20260320T122253Z&HW-CC-Expire=86400&HW-CC-Sign=0B49963CD4C276F5A0AE82E965B5DB454482EC64E8DC055A179594A6DBFF847E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/drmCtpeXT4SK7n4xtWw2zw/zh-cn_image_0000002562025969.png?HW-CC-KV=V1&HW-CC-Date=20260320T144206Z&HW-CC-Expire=86400&HW-CC-Sign=E101A5211FBA47B961CF3B568BD56C6A200DC71931F49F02B3AAC52E9748F0E0)

@@ -1,4 +1,4 @@
-# 导入模块
+# ArcAlphabetIndexer-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arc-alphabet-indexer
 
 弧形索引条是一种弧形的、可按字母顺序排序进行快速定位的组件，可以与容器组件联动，按逻辑结构快速定位至容器显示区域。
@@ -9,8 +9,8 @@
 ## 导入模块
 
 > **说明**
-> ArcAlphabetIndexerAttribute是用于配置ArcAlphabetIndexer组件属性的关键接口。API version 21及之前版本，导入ArcAlphabetIndexer组件后需要开发者手动导入ArcAlphabetIndexerAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcAlphabetIndexer组件后，会自动导入ArcAlphabetIndexerAttribute，无需开发者手动导入ArcAlphabetIndexerAttribute。
-> 如果开发者手动导入ArcAlphabetIndexerAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，API version 22开始，删除对功能无影响。
+> - ArcAlphabetIndexerAttribute是用于配置ArcAlphabetIndexer组件属性的关键接口。API version 21及之前版本，导入ArcAlphabetIndexer组件后需要开发者手动导入ArcAlphabetIndexerAttribute，否则会编译报错。从API version 22开始，编译工具链识别到导入ArcAlphabetIndexer组件后，会自动导入ArcAlphabetIndexerAttribute，无需开发者手动导入ArcAlphabetIndexerAttribute。
+> - 如果开发者手动导入ArcAlphabetIndexerAttribute，DevEco Studio会显示置灰，API version 21及之前版本删除会编译报错，API version 22开始，删除对功能无影响。
 
 API version 21及之前版本：
 
@@ -54,6 +54,10 @@ color(color: Optional<ColorMetrics>)
 
 设置普通状态下索引项文字颜色。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -66,6 +70,12 @@ selectedColor(color: Optional<ColorMetrics>)
 
 设置选中项文字颜色。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)> | 是 | 选中项文字颜色。 默认值：0xFFFFFF，显示为白色。 |
@@ -75,6 +85,12 @@ selectedColor(color: Optional<ColorMetrics>)
 popupColor(color: Optional<ColorMetrics>)
 
 设置提示弹窗文字颜色。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -86,6 +102,12 @@ selectedBackgroundColor(color: Optional<ColorMetrics>)
 
 设置选中项背景颜色。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)> | 是 | 选中项背景颜色。 默认值：0x1F71FF，显示为深蓝色。 |
@@ -96,20 +118,30 @@ popupBackground(color: Optional<ColorMetrics>)
 
 设置提示弹窗背景色。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[ColorMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#colormetrics12)> | 是 | 提示弹窗背景色。 默认值：0xD8404040，显示为微透明的深灰色。 |
 
 > **说明**
-> 当通过popupBackground设置弹窗气泡的背景颜色后，不建议再通过
-> popupBackgroundBlurStyle
-> 设置背景模糊效果。
+> 当通过popupBackground设置弹窗气泡的背景颜色后，不建议再通过[popupBackgroundBlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arc-alphabet-indexer#popupbackgroundblurstyle)设置背景模糊效果。
 
 ### usePopup
 
 usePopup(enabled: Optional<boolean>)
 
 设置是否使用提示弹窗。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -121,6 +153,12 @@ selectedFont(font: Optional<Font>)
 
 设置选中项文字尺寸、粗细、字体族、倾斜等样式。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | font | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[Font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#font)> | 是 | 选中项文字样式。 默认值：{ size:'13.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
@@ -130,6 +168,12 @@ selectedFont(font: Optional<Font>)
 popupFont(font: Optional<Font>)
 
 设置提示弹窗字体样式。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -141,6 +185,12 @@ font(font: Optional<Font>)
 
 设置字母索引条默认字体样式。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | font | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[Font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#font)> | 是 | 字母索引条默认字体样式。 默认值： { size:'13.0fp', style:FontStyle.Normal, weight:500, family:'HarmonyOS Sans' } |
@@ -150,6 +200,12 @@ font(font: Optional<Font>)
 itemSize(size: Optional<LengthMetrics>)
 
 设置字母索引条字母区域大小。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -161,6 +217,12 @@ selected(index: Optional<number>)
 
 设置选中项索引值。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | Optional<number> | 是 | 选中项索引值。 默认值：0 该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding)双向绑定变量。 |
@@ -170,6 +232,12 @@ selected(index: Optional<number>)
 autoCollapse(enable: Optional<boolean>)
 
 设置是否使用自适应折叠模式。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -182,9 +250,13 @@ popupBackgroundBlurStyle(style: Optional<BlurStyle>)
 设置提示弹窗的背景模糊材质。未通过该接口设置时，默认为关闭模糊，对应取值为BlurStyle中的NONE。
 
 > **说明**
-> 当通过popupBackgroundBlurStyle设置弹窗气泡的背景模糊材质时，不建议再通过
-> popupBackground
-> 设置背景色。
+> 当通过popupBackgroundBlurStyle设置弹窗气泡的背景模糊材质时，不建议再通过[popupBackground](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arc-alphabet-indexer#popupbackground)设置背景色。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -200,6 +272,12 @@ onSelect(handler: Optional<OnSelectCallback>)
 
 索引条选中回调，返回值为当前选中索引。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | handler | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[OnSelectCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arc-alphabet-indexer#onselectcallback)> | 是 | 回调函数类型。 |
@@ -207,6 +285,10 @@ onSelect(handler: Optional<OnSelectCallback>)
 ## ArcAlphabetIndexerInitInfo对象说明
 
 定义弧形字母索引条的初始化参数。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -219,6 +301,12 @@ type OnSelectCallback = (index: number) => void
 
 定义[onSelect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arc-alphabet-indexer#onselect)中使用的回调类型。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Circle
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | index | number | 是 | 选中项序号。 |
@@ -228,7 +316,6 @@ type OnSelectCallback = (index: number) => void
 该示例实现了弧形索引条和弧形列表联动控制和定位。
 
 ```typescript
-// xxx.ets
 import {
   LengthMetrics,
   ColorMetrics,
@@ -239,7 +326,7 @@ import {
   ArcAlphabetIndexer,
   ArcAlphabetIndexerAttribute
 } from '@kit.ArkUI';
-// 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
+
 @Entry
 @Component
 struct ArcListAndIndexer {
@@ -252,10 +339,13 @@ struct ArcListAndIndexer {
     '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38',
     '39','40', '41','42',
   ];
+
   private scrollerForList: Scroller = new Scroller();
   @State indexerIndex: number = 0;
-  private watchSize: string = '466px'; // 手表默认宽高：233*233
-  private itemSize: number = 24;  // 索引项默认大小：24
+
+  private watchSize: string = '466px';
+  private itemSize: number = 24;
+
   build() {
     Column() {
       Row() {
@@ -282,6 +372,7 @@ struct ArcListAndIndexer {
           .height(this.watchSize)
           .borderRadius(this.watchSize)
           .space(LengthMetrics.px(4))
+
           ArcAlphabetIndexer({ arrayValue: this.fullValue, selected: 0 })
             .autoCollapse(true)
             .width(this.watchSize)
@@ -312,6 +403,7 @@ struct ArcListAndIndexer {
               weight:500,
               family:'HarmonyOS Sans'
             })
+
         }.width('100%').height('100%')
       }.width('100%').height('100%')
     }
@@ -319,4 +411,4 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NpBBdBTkSUizkdtyVm_2Ug/zh-cn_image_0000002531106134.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122305Z&HW-CC-Expire=86400&HW-CC-Sign=B36BB307995BF4CCEA69019A227691348E690DBFEC15F30E767F34349500F618)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NpBBdBTkSUizkdtyVm_2Ug/zh-cn_image_0000002531106134.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144222Z&HW-CC-Expire=86400&HW-CC-Sign=EC56D091E8F54D2A9202861DC98CE5E8EB4A374C9B4D602C0447945DEA4F1E86)

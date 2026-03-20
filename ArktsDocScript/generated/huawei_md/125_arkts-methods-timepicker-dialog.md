@@ -1,17 +1,13 @@
-# TimePickerDialog
+# 时间滑动选择器弹窗 (TimePickerDialog)-弹窗-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-timepicker-dialog
 
 以24小时的时间区间创建时间滑动选择器，展示在弹窗上。
 
 > **说明**
-> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 本模块功能依赖UI的执行上下文，不可在
-> UI上下文不明确
-> 的地方使用，参见
-> UIContext
-> 说明。
-> 本模块不支持深浅色模式热更新，如果需要进行深浅色模式切换，请重新打开弹窗。
-> 最大显示行数在横、竖屏模式下存在差异。竖屏时默认为5行，横屏时依赖系统配置，未配置时默认显示为3行。可通过如下参数查看具体配置值$r('sys.float.ohos_id_picker_show_count_landscape')。
+> - 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - 本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)说明。
+> - 本模块不支持深浅色模式热更新，如果需要进行深浅色模式切换，请重新打开弹窗。
+> - 最大显示行数在横、竖屏模式下存在差异。竖屏时默认为5行，横屏时依赖系统配置，未配置时默认显示为3行。可通过如下参数查看具体配置值$r('sys.float.ohos_id_picker_show_count_landscape')。
 
 ## TimePickerDialog
 
@@ -22,16 +18,9 @@ static show(options?: TimePickerDialogOptions)
 定义时间滑动选择器弹窗并弹出。
 
 > **说明**
-> 从API version 8开始支持，从API version 18开始废弃，建议使用
-> showTimePickerDialog
-> 替代。showTimePickerDialog需先获取
-> UIContext
-> 实例后再进行调用。
-> 从API version 10开始，可以通过使用
-> UIContext
-> 中的
-> showTimePickerDialog
-> 来明确UI的执行上下文。
+> 从API version 8开始支持，从API version 18开始废弃，建议使用[showTimePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showtimepickerdialog)替代。showTimePickerDialog需先获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例后再进行调用。
+>
+> 从API version 10开始，可以通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[showTimePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showtimepickerdialog)来明确UI的执行上下文。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -50,6 +39,10 @@ static show(options?: TimePickerDialogOptions)
 时间选择器弹窗选项。
 
 继承自[TimePickerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker#timepickeroptions对象说明)。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**设备行为差异：** 该接口在Wearable设备上使用时，应用程序运行异常，异常信息中提示接口未定义，在其他设备中可正常调用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -84,11 +77,7 @@ static show(options?: TimePickerDialogOptions)
 ## 示例
 
 > **说明**
-> 推荐通过使用
-> UIContext
-> 中的
-> showTimePickerDialog
-> 来明确UI的执行上下文。
+> 推荐通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[showTimePickerDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showtimepickerdialog)来明确UI的执行上下文。
 
 ### 示例1（设置时间格式）
 
@@ -99,6 +88,7 @@ static show(options?: TimePickerDialogOptions)
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2020-12-25T08:30:00');
+
   build() {
     Column() {
       Button('TimePickerDialog 12小时制')
@@ -110,7 +100,7 @@ struct TimePickerDialogExample {
             useMilitaryTime: false,
             dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
             onAccept: (value: TimePickerResult) => {
-              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+
               if (value.hour != undefined && value.minute != undefined) {
                 this.selectTime.setHours(value.hour, value.minute);
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
@@ -156,18 +146,18 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/qAEog1QxR_21UaHC2etuww/zh-cn_image_0000002562146191.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=28932AFC92863C6FDE492C1B764E8DA9ACF787E889F22636A7F68BA610F6890B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/qAEog1QxR_21UaHC2etuww/zh-cn_image_0000002562146191.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=B77413B01721F33DFCE5F290CD0DE0F3EAE6B7C30E44B4E5498D54469A3084F4)
 
 ### 示例2（自定义样式）
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2020-12-25T08:30:00');
+
   build() {
     Column() {
       Button('TimePickerDialog 12小时制')
@@ -214,7 +204,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/WhmMcjVbSKuY13xLJuj8kA/zh-cn_image_0000002531106290.png?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=1CBA7F6916C9A2FC514EFB22E7645616BC4A247F2D5D13988633A8FA452E79FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/WhmMcjVbSKuY13xLJuj8kA/zh-cn_image_0000002531106290.png?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=0907290EB1CF90A97A90BFB49CA55CC2F7D2BD6D312A6521BDD58D9881964CD7)
 
 ### 示例3（悬停态弹窗）
 
@@ -225,6 +215,7 @@ struct TimePickerDialogExample {
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2020-12-25T08:30:00');
+
   build() {
     Column() {
       Button('TimePickerDialog 12小时制')
@@ -236,7 +227,7 @@ struct TimePickerDialogExample {
             textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TimePickerResult) => {
-              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+
               if (value.hour != undefined && value.minute != undefined) {
                 this.selectTime.setHours(value.hour, value.minute);
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
@@ -269,18 +260,18 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BeNcUmCrQLqu9n-pzcQesg/zh-cn_image_0000002531226224.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=13B9F9C9E76F9FCA46BE99BEFD3B64AB194D2679466F8E9F9AC48335F32280DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BeNcUmCrQLqu9n-pzcQesg/zh-cn_image_0000002531226224.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=A567E1BE6A39B8AB0A63057C9FA2177D6E93AEE3F1B7B904B96D38CD50524B5F)
 
 ### 示例4（设置弹窗位置）
 
 该示例通过alignment和offset设置弹窗的位置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2020-12-25T08:30:00');
+
   build() {
     Column() {
       Button('TimePickerDialog')
@@ -290,7 +281,7 @@ struct TimePickerDialogExample {
             alignment: DialogAlignment.Center,
             offset: { dx: 20 , dy: 0 },
             onAccept: (value: TimePickerResult) => {
-              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+
               if (value.hour != undefined && value.minute != undefined) {
                 this.selectTime.setHours(value.hour, value.minute);
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
@@ -303,18 +294,18 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ZKxdFsEXSMeujLd02Dv64Q/zh-cn_image_0000002562026207.png?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=29CC951E687E1450955750360C29DE3279518BF34CEAF372604B643B8F96684A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ZKxdFsEXSMeujLd02Dv64Q/zh-cn_image_0000002562026207.png?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=2369B6C24806FAC3E219F6B8DA1931176A03961853630F9A144844F3F645ABB5)
 
 ### 示例5（设置遮蔽区）
 
 该示例通过maskRect设置遮蔽区。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2020-12-25T08:30:00');
+
   build() {
     Column() {
       Button('TimePickerDialog')
@@ -323,7 +314,7 @@ struct TimePickerDialogExample {
           this.getUIContext().showTimePickerDialog({
             maskRect: { x: 30, y: 60, width: '100%', height: '60%' },
             onAccept: (value: TimePickerResult) => {
-              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+
               if (value.hour != undefined && value.minute != undefined) {
                 this.selectTime.setHours(value.hour, value.minute);
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
@@ -336,18 +327,18 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/0n4-mFsKSeiDjEKrM857oQ/zh-cn_image_0000002562146193.png?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=60976BA3A48892273B83C041EA9DEF8FF164147150AB52F28BEB46EA9BEED360)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/0n4-mFsKSeiDjEKrM857oQ/zh-cn_image_0000002562146193.png?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=5FDAB4E9784CB722E61F658D45749D79724AF4F94BDF56A86578B49D0746083E)
 
 ### 示例6（设置弹窗背板）
 
 该示例通过maskRect设置弹窗背板。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2020-12-25T08:30:00');
+
   build() {
     Column() {
       Button('TimePickerDialog')
@@ -358,7 +349,7 @@ struct TimePickerDialogExample {
             backgroundBlurStyle: BlurStyle.NONE,
             shadow: ShadowStyle.OUTER_FLOATING_SM,
             onAccept: (value: TimePickerResult) => {
-              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+
               if (value.hour != undefined && value.minute != undefined) {
                 this.selectTime.setHours(value.hour, value.minute);
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
@@ -371,18 +362,18 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Rd2ncyaYS_C5O9HmAva_eA/zh-cn_image_0000002531106292.png?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=23628E3D6579FD411EF09929C0EAB2AADB6FED927E267E7E3A15FEBBBC2A26F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Rd2ncyaYS_C5O9HmAva_eA/zh-cn_image_0000002531106292.png?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=8A992F8AF4E3AF85A4C27FE2C58A4865055BBBD6C87F63B116B6CE1A1CD6B0D3)
 
 ### 示例7（设置时间滑动选择器弹窗的起始时间）
 
 该示例设置TimePickerDialog的起始时间。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2022-07-22T08:50:00');
+
   build() {
     Column() {
       Button('TimePickerDialog')
@@ -394,7 +385,7 @@ struct TimePickerDialogExample {
             format: TimePickerFormat.HOUR_MINUTE_SECOND,
             start: new Date('2022-07-22T08:30:00'),
             onAccept: (value: TimePickerResult) => {
-              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+
               if (value.hour != undefined && value.minute != undefined) {
                 this.selectTime.setHours(value.hour, value.minute);
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
@@ -407,18 +398,18 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/vmIBGag-QfyHkHkmerCDdQ/zh-cn_image_0000002531226226.png?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=B6AB041DDA4D8193376C33C8FD5AFBF99B8B68DE4C69E7675D5A3A7CA88BC042)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/vmIBGag-QfyHkHkmerCDdQ/zh-cn_image_0000002531226226.png?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=AB3C44E18D8657130F9D0219B511AE5D1C8A97D62F7C85CB91868F6BD613B6A7)
 
 ### 示例8（设置时间滑动选择器弹窗的结束时间）
 
 该示例设置TimePickerDialog的结束时间。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2022-07-22T08:50:00');
+
   build() {
     Column() {
       Button('TimePickerDialog')
@@ -430,7 +421,7 @@ struct TimePickerDialogExample {
             format: TimePickerFormat.HOUR_MINUTE_SECOND,
             end: new Date('2022-07-22T15:20:00'),
             onAccept: (value: TimePickerResult) => {
-              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+
               if (value.hour != undefined && value.minute != undefined) {
                 this.selectTime.setHours(value.hour, value.minute);
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
@@ -443,18 +434,18 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/SOzfgxX5S1ybicpAiB2aFw/zh-cn_image_0000002562026209.png?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=1EB3662217F7725915E4EB06A37EE28CDA9A6C7EFD80CA94DE3168B5ABEF9821)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/SOzfgxX5S1ybicpAiB2aFw/zh-cn_image_0000002562026209.png?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=002B56197FEC3320D482022DF21D10E64CAF9A4142AEA209A72F2ACA31636574)
 
 ### 示例9（设置上午下午跟随时间联动）
 
 该示例通过配置enableCascade实现12小时制时上午下午跟随时间联动。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TimePickerDialogExample {
   private selectTime: Date = new Date('2022-07-22T08:00:00');
+
   build() {
     Column() {
       Button('TimePickerDialog')
@@ -465,7 +456,7 @@ struct TimePickerDialogExample {
             selected: this.selectTime,
             enableCascade:true,
             onAccept: (value: TimePickerResult) => {
-              // 设置selectTime为按下确定按钮时的时间，这样当弹窗再次弹出时显示选中的为上一次确定的时间
+
               if (value.hour != undefined && value.minute != undefined) {
                 this.selectTime.setHours(value.hour, value.minute);
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value));
@@ -478,7 +469,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/yz3e1tkwReCjLynw5Kxc_w/zh-cn_image_0000002562146195.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=7095D822627C8ED5B4686E3BC00AB9A07A311B99305906E62D3C83FD219AD6C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/yz3e1tkwReCjLynw5Kxc_w/zh-cn_image_0000002562146195.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=0BDD0DE54DCA8279AE12EFCFB8F2441DA99CDD8FAE4221D56B587067AA11E028)
 
 ### 示例10（自定义背景模糊效果参数）
 
@@ -490,7 +481,7 @@ struct TimePickerDialogExample {
 struct TimePickerDialogExample {
   build() {
     Stack({ alignContent: Alignment.Top }) {
-      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.bg'))
       Column() {
         Button('TimePickerDialog')
@@ -513,7 +504,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/DaUKQ21xR3CLfMs4Wvgi2w/zh-cn_image_0000002531106294.png?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=278FDCE0BB863B10D06AC8B4B5F057E098211FF202D885058C64E6C83084C978)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/DaUKQ21xR3CLfMs4Wvgi2w/zh-cn_image_0000002531106294.png?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=9EBD9F8F094907C9831CAF7221876E0FFC895C7EA0C7C9E8F3AC616B2F263E73)
 
 ### 示例11（自定义背景效果参数）
 
@@ -525,7 +516,7 @@ struct TimePickerDialogExample {
 struct TimePickerDialogExample {
   build() {
     Stack({ alignContent: Alignment.Top }) {
-      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.bg'))
       Column() {
         Button('TimePickerDialog')
@@ -549,4 +540,4 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/jriD9kuVTJefF8Jg_iEsHg/zh-cn_image_0000002531226228.png?HW-CC-KV=V1&HW-CC-Date=20260320T122339Z&HW-CC-Expire=86400&HW-CC-Sign=78427C3F1EE67CA50C9FFF9AA7118CD9A9E26D5A08C269F63BBBCEDA43B6718A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/jriD9kuVTJefF8Jg_iEsHg/zh-cn_image_0000002531226228.png?HW-CC-KV=V1&HW-CC-Date=20260320T144302Z&HW-CC-Expire=86400&HW-CC-Sign=3E5027E27EAA4CA6C94B33FD0FB7920035B020EBEB7844C36EA8991362ACB925)

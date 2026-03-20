@@ -1,4 +1,4 @@
-# MultiShadowOptions
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-information-display-common
 
 用于修饰组件，为[Gauge](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-gauge)和[DataPanel](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel)组件提供信息展示能力的公共接口。

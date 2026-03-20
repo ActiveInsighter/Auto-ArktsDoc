@@ -1,4 +1,4 @@
-# PickerTextStyle对象说明
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-picker-common
 
 选择器组件公共接口。
@@ -25,6 +25,8 @@
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [ButtonType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#buttontype枚举说明) | 否 | 是 | 按钮显示样式。 |
@@ -44,6 +46,8 @@
 日期区间，用于描述起止日期区间。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

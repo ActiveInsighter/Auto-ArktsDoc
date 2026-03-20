@@ -1,21 +1,16 @@
-# 子组件
+# Marquee-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-marquee
 
 跑马灯组件，用于滚动展示一段单行文本。仅当文本内容宽度大于等于跑马灯组件宽度时滚动，当文本内容宽度小于跑马灯组件宽度时不滚动。
 
 > **说明**
 > 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 为了不影响滚动帧率，建议在滚动类组件中Marquee的个数不超过4个，或者使用
-> Text
-> 组件的
-> TextOverflow.MARQUEE
-> 替代。
-> 对于Marquee组件动态帧率的场景，可以使用
-> MarqueeDynamicSyncScene
-> 接口实现。
-> 在文本宽度小于跑马灯组件宽度时，使用
-> 属性动画
-> 实现滚动。
+>
+> 为了不影响滚动帧率，建议在滚动类组件中Marquee的个数不超过4个，或者使用[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件的[TextOverflow.MARQUEE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#textoverflow)替代。
+>
+> 对于Marquee组件动态帧率的场景，可以使用[MarqueeDynamicSyncScene](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-marqueedynamicsyncscene)接口实现。
+>
+> 在文本宽度小于跑马灯组件宽度时，使用[属性动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animatorproperty)实现滚动。
 
 ## 子组件
 
@@ -50,6 +45,10 @@ Marquee初始化参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | start8+ | boolean | 否 | 否 | 控制跑马灯是否进入播放状态。 true：播放；false：不播放。 **说明：** 有限的滚动次数播放完毕后，不可以通过改变start重置滚动次数重新开始播放。 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -68,6 +67,14 @@ fontColor(value: ResourceColor)
 
 设置字体颜色。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 字体颜色。 Wearable设备上默认值为：'#c5ffffff'，显示为淡蓝色，其他设备默认值为：'e6182431'，显示为黑色。 |
@@ -77,6 +84,14 @@ fontColor(value: ResourceColor)
 fontSize(value: Length)
 
 设置字体大小。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -88,6 +103,14 @@ fontWeight(value: number | FontWeight | string)
 
 设置文本的字体粗细，设置过大可能会在不同字体下有截断。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | [FontWeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#fontweight) | string | 是 | 文本的字体粗细，number类型取值[100, 900]，取值间隔为100，默认为400，取值越大，字体越粗。string类型仅支持number类型取值的字符串形式，例如"400"，以及"bold"、"bolder"、"lighter"、"regular"、"medium"，分别对应FontWeight中相应的枚举值。 默认值：FontWeight.Normal |
@@ -98,6 +121,14 @@ fontFamily(value: string | Resource)
 
 设置字体列表。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 是 | 字体列表。默认字体'HarmonyOS Sans'。 应用当前支持'HarmonyOS Sans'字体和注册自定义字体[loadFontSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text#loadfontsync)。 卡片当前仅支持'HarmonyOS Sans'字体。 |
@@ -107,6 +138,14 @@ fontFamily(value: string | Resource)
 allowScale(value: boolean)
 
 设置是否允许文本缩放。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -120,6 +159,10 @@ marqueeUpdateStrategy(value: MarqueeUpdateStrategy)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [MarqueeUpdateStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#marqueeupdatestrategy12) | 是 | 跑马灯组件属性更新后，跑马灯的滚动策略。 默认值: MarqueeUpdateStrategy.DEFAULT |
@@ -132,6 +175,14 @@ onStart(event: () => void)
 
 当滚动的文本内容变化或者开始滚动时触发回调。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 当滚动的文本内容变化或者开始滚动时的回调。 |
@@ -142,6 +193,14 @@ onBounce(event: () => void)
 
 完成一次滚动时触发，若循环次数不为1，则该事件会多次触发。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | () => void | 是 | 完成一次滚动时触发的回调。 |
@@ -151,6 +210,14 @@ onBounce(event: () => void)
 onFinish(event: () => void)
 
 滚动全部循环次数完成时触发回调。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -233,4 +300,4 @@ struct MarqueeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/b0ysgGhiS1GLHlzAzmbChA/zh-cn_image_0000002531226078.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122310Z&HW-CC-Expire=86400&HW-CC-Sign=D79BE74688FD90EC488B9F62C52405F192253159E4FC965BEF1BA2013466E40D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/b0ysgGhiS1GLHlzAzmbChA/zh-cn_image_0000002531226078.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144229Z&HW-CC-Expire=86400&HW-CC-Sign=C954E878E208532C0E61EC721EBE2D5829A49B5D8996EAF8577A406A3D7AD27B)

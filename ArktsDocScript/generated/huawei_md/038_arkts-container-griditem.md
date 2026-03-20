@@ -1,33 +1,13 @@
-# 子组件
+# GridItem-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem
 
 网格容器中单项内容容器。
 
 > **说明**
-> 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 仅支持作为
-> Grid
-> 组件的子组件使用。
-> 当GridItem配合
-> LazyForEach
-> 使用时，GridItem子组件在GridItem创建时创建。配合
-> if/else
-> 、
-> ForEach
-> 使用时，或父组件为Grid时，GridItem子组件在GridItem布局时创建。
-> 当Grid中存在大量GridItem时，使用
-> columnStart
-> /
-> columnEnd
-> 、
-> rowStart
-> /
-> rowEnd
-> 设置GridItem大小会导致在使用scrollToIndex滑动到指定Index时，依次遍历GridItem节点，耗时较长。建议使用
-> GridLayoutOptions
-> 布局，以提高查找GridItem位置的效率。最佳实践请参考
-> 优化Grid组件加载慢丢帧问题
-> 。
+> - 该组件从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - 仅支持作为[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)组件的子组件使用。
+> - 当GridItem配合[LazyForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-lazyforeach)使用时，GridItem子组件在GridItem创建时创建。配合[if/else](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-ifelse)、[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-foreach)使用时，或父组件为Grid时，GridItem子组件在GridItem布局时创建。
+> - 当Grid中存在大量GridItem时，使用[columnStart](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem#columnstart)/[columnEnd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem#columnend)、[rowStart](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem#rowstart)/[rowEnd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem#rowend)设置GridItem大小会导致在使用scrollToIndex滑动到指定Index时，依次遍历GridItem节点，耗时较长。建议使用[GridLayoutOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#gridlayoutoptions10对象说明)布局，以提高查找GridItem位置的效率。最佳实践请参考[优化Grid组件加载慢丢帧问题](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve_grid_performance)。
 
 ## 子组件
 
@@ -57,6 +37,12 @@ rowStart(value: number)
 
 设置当前元素起始行号。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 当前元素起始行号。 需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例1固定行列grid)和[Grid的示例3](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例3可滚动grid设置跨行跨列节点)。 取值范围：[0, 总行数-1] |
@@ -66,6 +52,12 @@ rowStart(value: number)
 rowEnd(value: number)
 
 设置当前元素终点行号。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -77,6 +69,12 @@ columnStart(value: number)
 
 设置当前元素起始列号。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 当前元素起始列号。 需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例1固定行列grid)和[Grid的示例3](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例3可滚动grid设置跨行跨列节点)。 取值范围：[0, 总列数-1] |
@@ -86,6 +84,12 @@ columnStart(value: number)
 columnEnd(value: number)
 
 设置当前元素终点列号。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -123,6 +127,10 @@ forceRebuild(value: boolean)
 > **说明**
 > 从API version 7开始支持，从API version 9开始废弃。GridItem会根据自身属性和子组件变化自行决定是否需要重新创建，无需设置。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 在触发组件build时是否重新创建此节点。 默认值：false |
@@ -134,6 +142,12 @@ selectable(value: boolean)
 设置当前GridItem元素是否可以被鼠标框选。外层Grid容器的鼠标框选开启时，GridItem的框选才生效。
 
 该属性需要在设置[多态样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-polymorphic-style)前使用才能生效选中态样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -147,6 +161,12 @@ selected(value: boolean)
 
 该属性需要在设置[多态样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-polymorphic-style#statestyles)前使用才能生效选中态样式。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 当前GridItem选中状态。设置为true时为选中状态，设置为false时为默认状态。 默认值：false |
@@ -157,6 +177,8 @@ GridItem样式对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | style | [GridItemStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem#griditemstyle11枚举说明) | 否 | 是 | 设置GridItem样式。 默认值：GridItemStyle.NONE 设置为GridItemStyle.NONE时无样式。 设置为GridItemStyle.PLAIN时，显示Hover、Press态样式。 |
@@ -164,6 +186,10 @@ GridItem样式对象。
 ## GridItemStyle11+枚举说明
 
 GridItem样式枚举。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -181,6 +207,12 @@ onSelect(event: (isSelected: boolean) => void)
 
 GridItem元素被鼠标框选的状态改变时触发回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSelected | boolean | 是 | 进入鼠标框选范围即被选中返回true， 移出鼠标框选范围即未被选中返回false。 |
@@ -192,11 +224,11 @@ GridItem元素被鼠标框选的状态改变时触发回调。
 GridItem通过设置合理的ColumnStart、ColumnEnd、RowStart、RowEnd属性来设置自身位置。需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例1固定行列grid)和[Grid的示例3](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例3可滚动grid设置跨行跨列节点)。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct GridItemExample {
   @State numbers: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
+
   build() {
     Column() {
       Grid() {
@@ -207,7 +239,8 @@ struct GridItemExample {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-        }.rowStart(1).rowEnd(2).columnStart(1).columnEnd(2) // 同时设置合理的行列号
+        }.rowStart(1).rowEnd(2).columnStart(1).columnEnd(2)
+
         ForEach(this.numbers, (item: string) => {
           GridItem() {
             Text(item)
@@ -218,6 +251,7 @@ struct GridItemExample {
               .textAlign(TextAlign.Center)
           }
         }, (item: string) => item)
+
         GridItem() {
           Text('5')
             .fontSize(16)
@@ -225,7 +259,7 @@ struct GridItemExample {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-        }.columnStart(1).columnEnd(4) // 只设置列号，不会从第1列开始布局
+        }.columnStart(1).columnEnd(4)
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
@@ -235,18 +269,18 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/zo2EVt7YQgGGdZb451KBhA/zh-cn_image_0000002562025801.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122210Z&HW-CC-Expire=86400&HW-CC-Sign=3B56F22C2723BF757975C527A50E458477250148A3401C2EBC50E033BF2E4E4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/zo2EVt7YQgGGdZb451KBhA/zh-cn_image_0000002562025801.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144107Z&HW-CC-Expire=86400&HW-CC-Sign=225831C0A9E1AF2730C6DD384A9350A26007F26AD9ACC211F95B7CD18F180080)
 
 ### 示例2（设置GridItem样式）
 
 使用GridItemOptions设置GridItem样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct GridItemExample {
   @State numbers: String[] = ['0', '1', '2'];
+
   build() {
     Column({ space: 5 }) {
       Grid() {
@@ -272,6 +306,7 @@ struct GridItemExample {
       .backgroundColor(0xFAEEE0)
       .height(150)
       .padding('4vp')
+
       Grid() {
         ForEach(this.numbers, (day: string) => {
           ForEach(this.numbers, (day: string) => {
@@ -300,4 +335,4 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/8n1NP1QuSDWRYyMcQS0ROw/zh-cn_image_0000002562145787.png?HW-CC-KV=V1&HW-CC-Date=20260320T122210Z&HW-CC-Expire=86400&HW-CC-Sign=09649C35A9F99944A1078C9323DFCCAF7D3E58AD1092C0007842097624476692)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/8n1NP1QuSDWRYyMcQS0ROw/zh-cn_image_0000002562145787.png?HW-CC-KV=V1&HW-CC-Date=20260320T144107Z&HW-CC-Expire=86400&HW-CC-Sign=D4FB0ADF5C8BE4CEB744503D79B18CCC3AC5FAA59138B7005FBEDE6DCDEF8943)

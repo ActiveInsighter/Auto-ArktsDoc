@@ -1,4 +1,4 @@
-# PixelMap
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-common
 
 > **说明**
@@ -34,6 +34,10 @@ type PixelMap = PixelMap
 
 图像AI分析类型，未设置时默认开启主体识别和文字识别功能。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUBJECT | 0 | 主体识别功能。 |
@@ -44,24 +48,27 @@ type PixelMap = PixelMap
 
 图像AI分析选项。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | types | [ImageAnalyzerType[]](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-common#imageanalyzertype12) | 否 | 是 | 图像AI分析类型。 |
 | aiController | [ImageAnalyzerController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-common#imageanalyzercontroller12) | 否 | 是 | 图像AI分析控制器。 |
 
 > **说明**
-> 该特性中的参数types优先级高于
-> ImageAnalyzerConfig
-> 中的参数types，两者同时设置时以该特性设置的值为准。
-> 该特性依赖设备能力，且需要和对应组件的
-> enableAnalyzer
-> 接口（例如
-> Image组件
-> ）搭配使用。
+> 该特性中的参数types优先级高于[ImageAnalyzerConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-common#imageanalyzerconfig12)中的参数types，两者同时设置时以该特性设置的值为准。
+>
+> 该特性依赖设备能力，且需要和对应组件的[enableAnalyzer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#enableanalyzer11)接口（例如[Image组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)）搭配使用。
 
 ## ImageAnalyzerController12+
 
 图像分析控制器。可以将此对象绑定至支持的组件，通过控制器来调用支持的方法。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### constructor12+
 
@@ -69,11 +76,19 @@ constructor()
 
 构造函数。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ### getImageAnalyzerSupportTypes12+
 
 getImageAnalyzerSupportTypes(): ImageAnalyzerType[]
 
 获取对应组件支持的分析类型。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值:**
 
@@ -88,6 +103,8 @@ getImageAnalyzerSupportTypes(): ImageAnalyzerType[]
 ### 属性
 
 **元服务API：** 从 API version 21开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

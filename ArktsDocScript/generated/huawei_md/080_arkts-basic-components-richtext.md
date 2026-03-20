@@ -1,17 +1,15 @@
-# 子组件
+# RichText-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext
 
 富文本组件，解析并显示HTML格式文本。
 
-- 适用场景： RichText组件适用于加载与显示一段HTML字符串，且不需要对显示效果进行较多自定义的应用场景。RichText组件仅支持有限的通用属性和事件。具体见[属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext#属性)与[事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext#事件)小节。 RichText组件底层复用了Web组件来提供基础能力，包括但不限于HTML页面的解析、渲染等。因此使用RichText组件需要遵循Web约束条件。常见典型约束如下： 移动设备的视口默认值大小为980px，默认值可以确保大部分网页在移动设备下可以正常浏览。如果RichText组件宽度低于这个值，content内部的HTML则可能会产生一个可以滑动的页面被RichText组件包裹。如果想替换默认值，可以在content中添加以下标签： <meta name="viewport" content="width=device-width">
+- 适用场景： RichText组件适用于加载与显示一段HTML字符串，且不需要对显示效果进行较多自定义的应用场景。RichText组件仅支持有限的通用属性和事件。具体见[属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext#属性)与[事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext#事件)小节。 RichText组件底层复用了Web组件来提供基础能力，包括但不限于HTML页面的解析、渲染等。因此使用RichText组件需要遵循Web约束条件。常见典型约束如下： 移动设备的视口默认值大小为980px，默认值可以确保大部分网页在移动设备下可以正常浏览。如果RichText组件宽度低于这个值，content内部的HTML则可能会产生一个可以滑动的页面被RichText组件包裹。如果想替换默认值，可以在content中添加以下标签： ```typescript <meta name="viewport" content="width=device-width"> ```
 - 不适用场景： RichText组件不适用于对HTML字符串的显示效果进行较多自定义的应用场景。例如RichText组件不支持通过设置属性与事件，来修改背景颜色、字体颜色、字体大小、动态改变内容等。在这种情况下，推荐使用[Web组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web)。 RichText组件消耗较多内存资源，在List下循环重复使用RichText组件时，会出现卡顿、滑动响应迟缓等现象。
 
 > **说明**
-> 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 该组件无法根据内容自适应设置宽高属性，需要开发者设置显示布局。
-> 该组件不再更新和维护，推荐使用
-> Web组件
-> 。
+> - 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - 该组件无法根据内容自适应设置宽高属性，需要开发者设置显示布局。
+> - 该组件不再更新和维护，推荐使用[Web组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web)。
 
 ## 子组件
 
@@ -35,6 +33,10 @@ RichText(content:string | Resource)
 
 onStart(callback: () => void)
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数:**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | () => void | 是 | 加载网页时触发回调。 |
@@ -42,6 +44,10 @@ onStart(callback: () => void)
 ### onComplete
 
 onComplete(callback: () => void)
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数:**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -125,7 +131,7 @@ struct RichTextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jX4Zl8QhSZ61AuBfWP22DA/zh-cn_image_0000002562145955.png?HW-CC-KV=V1&HW-CC-Date=20260320T122254Z&HW-CC-Expire=86400&HW-CC-Sign=8ACC6F15F655A374A2521CA3EEE43FD5FFAD00E96FBCA44CD67CA2353746D385)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jX4Zl8QhSZ61AuBfWP22DA/zh-cn_image_0000002562145955.png?HW-CC-KV=V1&HW-CC-Date=20260320T144208Z&HW-CC-Expire=86400&HW-CC-Sign=4D835435F736BCBA94A42E094B3391C7C2E05AE681F851303701272E5C78AFCD)
 
 加载本地资源文件。
 

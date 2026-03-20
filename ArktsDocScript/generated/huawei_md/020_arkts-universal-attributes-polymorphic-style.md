@@ -1,26 +1,14 @@
-# stateStyles
+# 多态样式-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-polymorphic-style
 
 设置组件不同状态下的样式。
 
 > **说明**
-> 从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 从API version 11开始支持另一种写法
-> attributeModifier
-> ，可根据开发者需要动态设置属性。
-> 多态样式仅支持
-> 通用属性
-> 。如果多态样式不生效，则该属性可能为组件的私有属性，例如：fontColor、
-> TextInput
-> 组件的
-> backgroundColor
-> 等。此时，可以通过attributeModifier动态设置组件属性来解决此问题。
-> 当前多态样式实现依赖于组件自定义节点的刷新机制。因Builder不具备独立的自定义父节点，无法直接触发刷新，致使多态样式无法直接在Builder中生效。解决方法是将多态样式封装至自定义组件内部，再将此组件置于@Builder中，以此来间接实现多态样式。示例代码可参考
-> 示例3设置Builder多态样式
-> 。
-> 多态样式的焦点态只有在
-> 焦点激活态
-> 开启时生效。
+> - 从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+> - 从API version 11开始支持另一种写法[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier)，可根据开发者需要动态设置属性。
+> - 多态样式仅支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)。如果多态样式不生效，则该属性可能为组件的私有属性，例如：fontColor、[TextInput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput)组件的[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor18)等。此时，可以通过attributeModifier动态设置组件属性来解决此问题。
+> - 当前多态样式实现依赖于组件自定义节点的刷新机制。因Builder不具备独立的自定义父节点，无法直接触发刷新，致使多态样式无法直接在Builder中生效。解决方法是将多态样式封装至自定义组件内部，再将此组件置于@Builder中，以此来间接实现多态样式。示例代码可参考[示例3设置Builder多态样式](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-polymorphic-style#示例3设置builder多态样式)。
+> - 多态样式的焦点态只有在[焦点激活态](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-events-focus-event#基础概念)开启时生效。
 
 ## stateStyles
 
@@ -29,9 +17,7 @@ stateStyles(value: StateStyles): T
 设置组件不同状态的样式。
 
 > **说明**
-> 该接口不支持在
-> attributeModifier
-> 中调用。
+> 该接口不支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -53,6 +39,10 @@ stateStyles(value: StateStyles): T
 
 ## StateStyles
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | normal | any | 否 | 是 | 组件无状态时的样式。 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 |
@@ -65,7 +55,7 @@ stateStyles(value: StateStyles): T
 **selected选中状态说明**
 
 - 当前多态样式的选中状态样式依赖组件选中属性值，可以使用[点击事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-click)修改属性值，或使用属性自带[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定功能。
-- 当前支持selected的组件及其参数/属性值： 组件 支持的参数/属性 起始API版本 [Checkbox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox) select 10 [CheckboxGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup) selectAll 10 [Radio](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio) checked 10 [Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle) isOn 10 [ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem) selected 10 [GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem) selected 10 [MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem) selected 10
+- 当前支持selected的组件及其参数/属性值： | 组件 | 支持的参数/属性 | 起始API版本 | | --- | --- | --- | | [Checkbox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox) | select | 10 | | [CheckboxGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup) | selectAll | 10 | | [Radio](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio) | checked | 10 | | [Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle) | isOn | 10 | | [ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem) | selected | 10 | | [GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem) | selected | 10 | | [MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem) | selected | 10 |
 
 **pressed和clicked状态说明**
 
@@ -78,11 +68,11 @@ stateStyles(value: StateStyles): T
 该示例展示了状态为pressed和disabled时Text组件的样式变化。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct StyleExample {
   @State isEnable: boolean = true
+
   @Styles
   pressedStyles(): void {
     .backgroundColor("#ED6F21")
@@ -94,6 +84,7 @@ struct StyleExample {
     .height(30)
     .opacity(1)
   }
+
   @Styles
   disabledStyles(): void {
     .backgroundColor("#E5E5E5")
@@ -105,6 +96,7 @@ struct StyleExample {
     .height(25)
     .opacity(1)
   }
+
   @Styles
   normalStyles(): void {
     .backgroundColor("#0A59F7")
@@ -116,13 +108,14 @@ struct StyleExample {
     .height(25)
     .opacity(1)
   }
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
       Text("normal")
         .fontSize(14)
         .fontColor(Color.White)
         .opacity(0.5)
-        // stateStyles设置组件无状态时的样式
+
         .stateStyles({
           normal: this.normalStyles,
         })
@@ -139,7 +132,7 @@ struct StyleExample {
         .opacity(1)
         .fontSize(14)
         .fontColor(Color.White)
-        // stateStyles设置组件按下状态时的样式
+
         .stateStyles({
           pressed: this.pressedStyles,
         })
@@ -157,7 +150,7 @@ struct StyleExample {
         .fontSize(14)
         .fontColor(Color.White)
         .enabled(this.isEnable)
-        // stateStyles设置组件禁用状态时的样式
+
         .stateStyles({
           disabled: this.disabledStyles,
         })
@@ -173,28 +166,30 @@ struct StyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/el1FxyM1TQuQqe-ro9vPKA/zh-cn_image_0000002531225734.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122151Z&HW-CC-Expire=86400&HW-CC-Sign=82CB6D05A6C6F3670EFD8BDD2E9F6A4C498BD9524B6D3C86C16C16C89EE2C2A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/el1FxyM1TQuQqe-ro9vPKA/zh-cn_image_0000002531225734.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144044Z&HW-CC-Expire=86400&HW-CC-Sign=33ED0610A2FCCB3CEACA1527D142496B3940069C91B24071D660863F52FFD239)
 
 ### 示例2（设置Radio多态样式）
 
 该示例展示了状态为selected时Radio组件的样式变化。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
   @State value: boolean = false
   @State value2: boolean = false
+
   @Styles
   normalStyles(): void{
     .backgroundColor("#E5E5E1")
   }
+
   @Styles
   selectStyles(): void{
     .backgroundColor("#ED6F21")
     .borderWidth(2)
   }
+
   build() {
     Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
       Column() {
@@ -215,6 +210,7 @@ struct Index {
           })
       }
       .margin(30)
+
       Column() {
         Text('Radio2')
           .fontSize(25)
@@ -235,7 +231,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9BI902NBQDqned8eKNflcg/zh-cn_image_0000002562025717.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122151Z&HW-CC-Expire=86400&HW-CC-Sign=15EDE91A7A7012855C5FF769C3194BF03ED37C8FE7E01797198B155671B2C04A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9BI902NBQDqned8eKNflcg/zh-cn_image_0000002562025717.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144044Z&HW-CC-Expire=86400&HW-CC-Sign=F7334A760437CD66B0594FCACE338D2A8868B50D8B0128F539185856479FC6CE)
 
 ### 示例3（设置Builder多态样式）
 
@@ -244,6 +240,7 @@ struct Index {
 ```typescript
 import { ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+
 @Component
 struct Child {
   build() {
@@ -261,15 +258,18 @@ struct Child {
       })
   }
 }
+
 @Builder
 function buildText() {
   Child()
 }
+
 @Entry
 @Component
 struct Index {
   private contentNode: ComponentContent<Object> =
     new ComponentContent(this.getUIContext(), wrapBuilder(buildText));
+
   build() {
     Column() {
       Button().margin({ top: 200 }).onClick((event: ClickEvent) => {
@@ -292,4 +292,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/eC31s2JPSvOvEzeWRtsKVg/zh-cn_image_0000002562145703.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122151Z&HW-CC-Expire=86400&HW-CC-Sign=D7A877C322AAF486E3E48E285DB22F2B469396EBB29BA7B522C335B4F6EE7664)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/eC31s2JPSvOvEzeWRtsKVg/zh-cn_image_0000002562145703.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144044Z&HW-CC-Expire=86400&HW-CC-Sign=4344B2E4BFD9CE9A103DCB42532A340EEE617A4FA41B3983AD1E68DEE6759C2C)

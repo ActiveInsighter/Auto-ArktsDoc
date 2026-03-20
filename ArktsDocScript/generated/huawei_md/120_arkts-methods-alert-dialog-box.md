@@ -1,15 +1,12 @@
-# AlertDialogParam对象说明
+# 警告弹窗 (AlertDialog)-弹窗-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box
 
 显示警告弹窗组件，可设置文本内容与响应回调。
 
 > **说明**
 > 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 本模块功能依赖UI的执行上下文，不可在
-> UI上下文不明确
-> 的地方使用，参见
-> UIContext
-> 说明。
+>
+> 本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)说明。
 
 ## AlertDialogParam对象说明
 
@@ -63,6 +60,8 @@ type LevelOrder = LevelOrder
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 类型 | 说明 |
 | --- | --- |
 | [LevelOrder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#levelorder18) | 设置弹窗的显示顺序。 |
@@ -72,6 +71,8 @@ type LevelOrder = LevelOrder
 继承自[AlertDialogParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogparam对象说明)。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -97,12 +98,24 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 ## AlertDialogParamWithButtons对象说明
 
+继承自[AlertDialogParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogparam对象说明)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | primaryButton | [AlertDialogButtonBaseOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogbuttonbaseoptions18对象说明) | 否 | 否 | 确认Button的使能状态、默认焦点、按钮风格、文本内容、文本色、按钮背景色和点击回调。在弹窗获焦且未进行tab键走焦时，该按钮默认响应Enter键，且多重弹窗可自动获焦连续响应。默认响应Enter键能力在defaultFocus为true时不生效。 |
 | secondaryButton | [AlertDialogButtonBaseOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogbuttonbaseoptions18对象说明) | 否 | 否 | 确认Button的使能状态、默认焦点、按钮风格、文本内容、文本色、按钮背景色和点击回调。 |
 
 ## AlertDialogParamWithOptions10+对象说明
+
+继承自[AlertDialogParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogparam对象说明)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -112,6 +125,8 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 ## AlertDialogButtonOptions10+对象说明
 
 继承自[AlertDialogButtonBaseOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogbuttonbaseoptions18对象说明)。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -123,6 +138,10 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 > **说明**
 > 为规范匿名对象的定义，API 18版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -138,6 +157,10 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 
 警告弹窗中按钮的对齐方式。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | AUTO | 0 | 两个及以下按钮水平排布，两个以上为竖直排布。 |
@@ -147,6 +170,10 @@ confirm参数优先级：fontColor、backgroundColor > style > defaultFocus
 ## DialogAlignment枚举说明
 
 警告弹窗的对齐方式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -167,6 +194,10 @@ Rectangle是各种Dialog中maskRect参数的类型。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 弹窗遮蔽层区域相对于窗口左上角的x轴坐标。 默认值：0vp |
@@ -176,7 +207,9 @@ Rectangle是各种Dialog中maskRect参数的类型。
 
 > **说明**
 > x和y可以设置正负值百分比。当x设置为'100%'时表示遮蔽层区域往右偏移窗口本身宽度大小，当x设置为'-100%'时表示遮蔽层区域往左偏移窗口本身宽度大小。当y设置为'100%'时表示遮蔽层区域往下偏移窗口本身高度大小，当y设置为'-100%'时表示遮蔽层区域往上偏移窗口本身高度大小。
+>
 > width和height只能设置正值，支持百分比，如果设置为负值，那么该值将被重置为默认值。
+>
 > 百分比相对于窗口自身宽高进行计算。
 
 ## DismissDialogAction12+
@@ -184,6 +217,8 @@ Rectangle是各种Dialog中maskRect参数的类型。
 Dialog关闭的信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### 属性
 
@@ -195,6 +230,10 @@ Dialog关闭的信息。
 ## TextStyle12+对象说明
 
 弹窗中message的截断方式。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -209,16 +248,13 @@ static show(value: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | A
 定义警告弹窗并弹出。
 
 > **说明**
-> 从API version 7开始支持，从API version 18开始废弃，建议使用
-> showAlertDialog
-> 替代。showAlertDialog需先获取
-> UIContext
-> 实例后再进行调用。
-> 从API version 10开始，可以通过使用
-> UIContext
-> 中的
-> showAlertDialog
-> 来明确UI的执行上下文。
+> 从API version 7开始支持，从API version 18开始废弃，建议使用[showAlertDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showalertdialog)替代。showAlertDialog需先获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例后再进行调用。
+>
+> 从API version 10开始，可以通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[showAlertDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showalertdialog)来明确UI的执行上下文。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
@@ -229,20 +265,13 @@ static show(value: AlertDialogParamWithConfirm | AlertDialogParamWithButtons | A
 ## 示例
 
 > **说明**
-> 直接使用AlertDialog可能导致
-> UI上下文不明确
-> 的问题，建议使用getUIContext()获取
-> UIContext
-> 实例，并使用
-> showAlertDialog
-> 调用绑定实例的AlertDialog.show()。
+> 直接使用AlertDialog可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例，并使用[showAlertDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#showalertdialog)调用绑定实例的AlertDialog.show()。
 
 ### 示例1（弹出多个按钮的弹窗）
 
 该示例通过[AlertDialogParamWithConfirm](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogparamwithconfirm对象说明)、[AlertDialogParamWithButtons](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogparamwithbuttons对象说明)和[AlertDialogParamWithOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogparamwithoptions10对象说明)实现了分别弹出一、二、三个按钮的弹窗。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlertDialogExample {
@@ -379,14 +408,13 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/-gjujiO2SiWOpNR4aBeVdw/zh-cn_image_0000002531106266.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122333Z&HW-CC-Expire=86400&HW-CC-Sign=C99B633918273D2FA9C6338A8BA74F020FACED63CD0346D0E2B8FC8E6CB77423)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/-gjujiO2SiWOpNR4aBeVdw/zh-cn_image_0000002531106266.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=081A450D8D1FC513DBCB4056EA83AB1CCFEBEC394B516943D5E68C3760FC1FFA)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
 在2in1设备上设置[AlertDialogParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogparam对象说明)中showInSubWindow属性的值为true时，可以弹出在主窗外显示的弹窗。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlertDialogExample {
@@ -449,14 +477,13 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/H5a9E5wwT22GGaZjOpP_yQ/zh-cn_image_0000002531226200.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T122333Z&HW-CC-Expire=86400&HW-CC-Sign=AE36D980CAC37F1DBC8FE3E393BCA4C0B4CBDE266D5D0507629E5D841B760090)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/H5a9E5wwT22GGaZjOpP_yQ/zh-cn_image_0000002531226200.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=22063635485F8CF0C24C6EFB8A8D6298967E6EF61CCFBF7BAD5B2C0F59E5EF0B)
 
 ### 示例3（设置弹窗的动画）
 
 该示例通过配置[AlertDialogParam](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-alert-dialog-box#alertdialogparam对象说明)中的transition属性来实现弹窗的显示和消失动画。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlertDialogExample {
@@ -496,14 +523,13 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/xMwknBIIRlSJhUkYm6yiFA/zh-cn_image_0000002562026183.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122333Z&HW-CC-Expire=86400&HW-CC-Sign=418A9426F5065B41F2DDCB2B8E1D0BFC2560436F41D0BB28A0701D27A114DA0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/xMwknBIIRlSJhUkYm6yiFA/zh-cn_image_0000002562026183.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=7C30725242554006E63B67575C784F89216E05149E41858578D79CAA33493836)
 
 ### 示例4（设置弹窗的样式）
 
 示例定义了AlertDialog的样式，包括宽度、高度、背景色、阴影等。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlertDialogExample {
@@ -523,8 +549,8 @@ struct AlertDialogExample {
               height: 200,
               cornerRadius: 20,
               borderWidth: 1,
-              borderStyle: BorderStyle.Dashed, // 使用borderStyle属性，需要和borderWidth属性一起使用
-              borderColor: Color.Blue, // 使用borderColor属性，需要和borderWidth属性一起使用
+              borderStyle: BorderStyle.Dashed,
+              borderColor: Color.Blue,
               backgroundColor: Color.White,
               shadow: ({
                 radius: 20,
@@ -561,14 +587,13 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/8UcGWpSfShySIaLZDsf-qQ/zh-cn_image_0000002562146169.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122333Z&HW-CC-Expire=86400&HW-CC-Sign=454A71C62EFC7902849DF92E9A94DA236431B9F868CA2B0166BF1621924096DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/8UcGWpSfShySIaLZDsf-qQ/zh-cn_image_0000002562146169.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=FDE3386247AFE792A26F39D3B23518C9D010420D59F749584D19B4F100D05C4C)
 
 ### 示例5（悬停态弹窗）
 
 该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlertDialogExample {
@@ -613,18 +638,18 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/XDkskKyaQyOTCfryYCsh4Q/zh-cn_image_0000002531106268.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122333Z&HW-CC-Expire=86400&HW-CC-Sign=178EABCD4522DBC0E1894354DF7C3DCB63204B1FEDDF5CA72CAD7183B022317E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/XDkskKyaQyOTCfryYCsh4Q/zh-cn_image_0000002531106268.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=A60BCE1937B1C38123D561BB6DC8B968B633416CCD5F96EDC55F5371B4005863)
 
 ### 示例6（弹窗生命周期）
 
 该示例展示了弹窗生命周期的相关接口的使用方法。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Example2 {
   @State log: string = 'Log information:';
+
   build() {
     Column({ space: 5 }) {
       Button('AlertDialog')
@@ -668,7 +693,7 @@ struct Example2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/KerfnuBGR2O0SyahivNRgQ/zh-cn_image_0000002531226202.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122333Z&HW-CC-Expire=86400&HW-CC-Sign=DD01337217E2646E50A77B79AED3699356E2DC8CCADEAF1A363E5AB55B3FE2C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/KerfnuBGR2O0SyahivNRgQ/zh-cn_image_0000002531226202.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=B29FA0B1AA0F7FC255E122BE7BF18AF2072839A1FCA8BF288516610A44CD534A)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -682,7 +707,7 @@ struct Example2 {
 struct AlertDialogExample {
   build() {
     Stack({ alignContent: Alignment.Top }) {
-      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.bg'))
       Column() {
         Button("AlertDialog")
@@ -719,7 +744,7 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/c6Aw2JhvQOKLL-M8up7e4A/zh-cn_image_0000002562026185.png?HW-CC-KV=V1&HW-CC-Date=20260320T122333Z&HW-CC-Expire=86400&HW-CC-Sign=0B0780CBA124D5E4666948FA0F1C2E7369743C706E732E414F4026E5332CFA41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/c6Aw2JhvQOKLL-M8up7e4A/zh-cn_image_0000002562026185.png?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=3DEBDEC8667226453CA9B530EDB3CBA85F93788A0D59EA165C7A2792241D0758)
 
 ### 示例8（自定义背景效果参数）
 
@@ -733,7 +758,7 @@ struct AlertDialogExample {
 struct AlertDialogExample {
   build() {
     Stack({ alignContent: Alignment.Top }) {
-      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.bg'))
       Column() {
         Button("AlertDialog")
@@ -771,4 +796,4 @@ struct AlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/8ULlRGipQPeFqOZcwo9_Yg/zh-cn_image_0000002562146171.png?HW-CC-KV=V1&HW-CC-Date=20260320T122333Z&HW-CC-Expire=86400&HW-CC-Sign=E8CBBB8F5478C2BE144F377DE295C3B22F0EA8186F9534482BF4637655FC3796)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/8ULlRGipQPeFqOZcwo9_Yg/zh-cn_image_0000002562146171.png?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=0CD633EF8387CA0717CB8EF2B72578EEC01486FF4A3B0F6828687AD410CF04B6)

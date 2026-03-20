@@ -1,4 +1,4 @@
-# 子组件
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress
 
 用于显示加载动效的组件。
@@ -37,6 +37,12 @@ color(value: ResourceColor)
 
 设置加载进度条前景色。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -48,6 +54,12 @@ color(value: ResourceColor)
 enableLoading(value: boolean)
 
 设置LoadingProgress动画是否显示。LoadingProgress动画不显示时，该组件依旧占位。通用属性[Visibility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#visibility).Hidden隐藏的是包括[border](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#border)、[padding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#padding)等整个组件范围，而enableLoading=false只隐藏LoadingProgress本身动画内容，不包括border等。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -61,6 +73,10 @@ contentModifier(modifier: ContentModifier<LoadingProgressConfiguration>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | [ContentModifier<LoadingProgressConfiguration>](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress#loadingprogressconfiguration12对象说明) | 是 | 在LoadingProgress组件上，定制内容区的方法。 modifier： 内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -73,6 +89,10 @@ contentModifier(modifier: ContentModifier<LoadingProgressConfiguration>)
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enableLoading | boolean | 否 | 否 | LoadingProgress动画是否显示。 默认值：true，true表示显示LoadingProgress动画，false表示不显示LoadingProgress动画。 |
@@ -80,6 +100,12 @@ contentModifier(modifier: ContentModifier<LoadingProgressConfiguration>)
 ## LoadingProgressStyle枚举说明
 
 表示LoadingProgress的样式类型，不推荐使用。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -108,7 +134,7 @@ struct LoadingProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/lTlku23kTAqT5VumMa3eLw/zh-cn_image_0000002562146045.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=454CB2BA9A0850BDBB5ED809260FD252BF92CB5B43E4163D6E3DD8C3366ED380)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/lTlku23kTAqT5VumMa3eLw/zh-cn_image_0000002562146045.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144229Z&HW-CC-Expire=86400&HW-CC-Sign=C44FE381537F197557ADC522F2A6DDE865276EEBACA0FF1F33A6E5DF68A63928)
 
 ### 示例2（设置定制内容区）
 
@@ -258,4 +284,4 @@ struct LoadingProgressDemoExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5vnZnbrDTvy4tVCq-pT5KA/zh-cn_image_0000002531106144.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122308Z&HW-CC-Expire=86400&HW-CC-Sign=C5465FAE4FF0DF93B22C92E24B2582C975A56EE687DBDB1EADA870B17555647A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5vnZnbrDTvy4tVCq-pT5KA/zh-cn_image_0000002531106144.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144229Z&HW-CC-Expire=86400&HW-CC-Sign=17480D689BA4167A5E24421EC8D8596887498DBA6507CB74991518AC7C110CA4)

@@ -1,4 +1,4 @@
-# overlay
+# 浮层-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay
 
 设置组件的浮层。
@@ -13,9 +13,7 @@ overlay(value: string | CustomBuilder | ComponentContent, options?: OverlayOptio
 在当前组件上，增加遮罩文本或者叠加自定义组件以及[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay#componentcontent12)作为该组件的浮层。浮层的定位同样基于当前组件进行计算。浮层不通过组件树进行渲染，部分接口（例如[getRectangleById](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentutils#componentutilsgetrectanglebyiddeprecated)）不支持获取浮层中的组件。
 
 > **说明**
-> overlay会将浮层组件覆盖在所绑定的组件上方，阻塞用户对浮层下方组件的所有交互操作。若需用户可操作下方组件，应参照
-> 示例2（通过builder设置浮层）
-> 中的实现，在浮层builder的最外层组件上配置.hitTestBehavior(HitTestMode.Transparent)。此配置在通过浮层实现水印时尤其重要，因为水印显示不应妨碍用户对下层组件的操作。
+> overlay会将浮层组件覆盖在所绑定的组件上方，阻塞用户对浮层下方组件的所有交互操作。若需用户可操作下方组件，应参照[示例2（通过builder设置浮层）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay#示例2通过builder设置浮层)中的实现，在浮层builder的最外层组件上配置.hitTestBehavior(HitTestMode.Transparent)。此配置在通过浮层实现水印时尤其重要，因为水印显示不应妨碍用户对下层组件的操作。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -37,11 +35,7 @@ overlay(value: string | CustomBuilder | ComponentContent, options?: OverlayOptio
 | T | 返回当前组件。 |
 
 > **说明**
-> overlay节点不支持
-> onAppear
-> 和
-> onDisAppear
-> 等和节点挂载/卸载相关的事件。
+> overlay节点不支持[onAppear](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-show-hide#onappear)和[onDisAppear](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-show-hide#ondisappear)等和节点挂载/卸载相关的事件。
 
 ## OverlayOptions12+
 
@@ -51,6 +45,8 @@ overlay(value: string | CustomBuilder | ComponentContent, options?: OverlayOptio
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -62,6 +58,15 @@ overlay(value: string | CustomBuilder | ComponentContent, options?: OverlayOptio
 
 ## OverlayOffset12+
 
+> **说明**
+> 为规范匿名对象的定义，API 12版本修改了此处的元素定义。其中，保留了历史匿名对象的起始版本信息，会出现外层元素@since版本号高于内层元素版本号的情况，但这不影响接口的使用。
+
+**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | x7+ | number | 否 | 是 | 横向偏移量。 单位：vp **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -72,6 +77,10 @@ overlay(value: string | CustomBuilder | ComponentContent, options?: OverlayOptio
 type ComponentContent<T = Object> = ComponentContent<T>
 
 组件内容的实体封装。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
 | --- | --- |
@@ -107,7 +116,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/5_a9QkQYRS2Q2T6m5ktOuw/zh-cn_image_0000002531105738.png?HW-CC-KV=V1&HW-CC-Date=20260320T122140Z&HW-CC-Expire=86400&HW-CC-Sign=D348F861D607673C3C49A1912253C0D08C28B48E6CC3CA87FB1D852888DD08E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/5_a9QkQYRS2Q2T6m5ktOuw/zh-cn_image_0000002531105738.png?HW-CC-KV=V1&HW-CC-Date=20260320T144030Z&HW-CC-Expire=86400&HW-CC-Sign=12DA53DDEFE5C3AA0073592CB7F78C06044B93DF5F1C9099DB3E51C2FDAA580A)
 
 ### 示例2（通过builder设置浮层）
 
@@ -142,7 +151,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/uP8wL1bVSsiYvxK3VXeOvg/zh-cn_image_0000002531225672.png?HW-CC-KV=V1&HW-CC-Date=20260320T122140Z&HW-CC-Expire=86400&HW-CC-Sign=00F291C4DAB05D538BE772E75FE69B601F10CEAC37F278DAC84608CAC0F2D1DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/uP8wL1bVSsiYvxK3VXeOvg/zh-cn_image_0000002531225672.png?HW-CC-KV=V1&HW-CC-Date=20260320T144030Z&HW-CC-Expire=86400&HW-CC-Sign=55D1974778470A5C584A5034A741CB1461E98EBAD7694AFC0B65E0C96489F3C7)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -200,4 +209,4 @@ struct Page_4040 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/gfzuad1PQO-KUyVBqVR-Tw/zh-cn_image_0000002562025655.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122140Z&HW-CC-Expire=86400&HW-CC-Sign=699F7E1661B248885A64BFDF6FD15B685AB86064F84826107DFCB3D48722DFF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/gfzuad1PQO-KUyVBqVR-Tw/zh-cn_image_0000002562025655.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144030Z&HW-CC-Expire=86400&HW-CC-Sign=BF220425D22120B98F0C3F21F1E41F1B67BAFFC7355CEA0690A5AD18005E8012)

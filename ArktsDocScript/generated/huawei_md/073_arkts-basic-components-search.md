@@ -1,13 +1,12 @@
-# 子组件
+# Search-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search
 
 搜索框组件，适用于浏览器的搜索内容输入框等应用场景。
 
 > **说明**
 > 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 该组件仅支持单文本样式，若需实现富文本样式，建议使用
-> RichEditor
-> 组件。
+>
+> 该组件仅支持单文本样式，若需实现富文本样式，建议使用[RichEditor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor)组件。
 
 ## 子组件
 
@@ -36,6 +35,8 @@ Search初始化参数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | value8+ | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 否 | 是 | 设置当前显示的搜索文本内容。 从API version 10开始，该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。 从API version 18开始，该参数支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 从API version 20开始，支持Resource类型。 |
@@ -57,6 +58,10 @@ searchButton(value: ResourceStr, option?: SearchButtonOptions)
 
 Wearable设备上默认字体大小为18fp。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 **参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -70,6 +75,12 @@ placeholderColor(value: ResourceColor)
 
 设置placeholder文本颜色，Wearable设备上默认值为'#99ffffff'。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | placeholder文本颜色。 默认值：'#99182431'。 |
@@ -80,20 +91,32 @@ placeholderFont(value?: Font)
 
 设置placeholder文本样式，包括字体大小、字体粗细、字体族、字体风格。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [Font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#font) | 否 | placeholder文本样式。 |
 
 > **说明**
-> 可以使用
-> loadFontSync
-> 注册自定义字体。
+> 可以使用[loadFontSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text#loadfontsync)注册自定义字体。
 
 ### textFont
 
 textFont(value?: Font)
 
 设置搜索框内输入文本样式，包括字体大小、字体粗细、字体族、字体风格。
+
+Wearable设备上默认字体大小为18fp。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -105,14 +128,18 @@ textAlign(value: TextAlign)
 
 设置文本在搜索框中的对齐方式。目前支持的对齐方式有：TextAlign.Start、TextAlign.Center、TextAlign.End。TextAlign.JUSTIFY的对齐方式按照TextAlign.Start处理。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [TextAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#textalign) | 是 | 文本在搜索框中的对齐方式。 默认值：TextAlign.Start |
 
 > **说明**
-> textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考
-> 镜像状态字符对齐
-> 。
+> textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考[镜像状态字符对齐](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#镜像状态字符对齐)。
 
 ### copyOption9+
 
@@ -121,6 +148,12 @@ copyOption(value: CopyOptions)
 设置输入的文本是否可复制。设置CopyOptions.None时，当前Search中的文字无法被复制、剪切、翻译、分享、搜索和帮写，支持粘贴和全选。
 
 设置CopyOptions.None时，不允许拖拽。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -134,6 +167,12 @@ searchIcon(value: IconOptions | SymbolGlyphModifier)
 
 Wearable设备上默认图标大小为16vp。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [IconOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#iconoptions10对象说明) | [SymbolGlyphModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#symbolglyphmodifier12) | 是 | 左侧搜索图标样式。 浅色模式默认值： { size: '16vp', color: '#99000000', src: ' ' } 深色模式默认值： { size: '16vp', color: '#99ffffff', src: ' ' } |
@@ -146,6 +185,12 @@ cancelButton(value: CancelButtonOptions | CancelButtonSymbolOptions)
 
 Wearable设备上默认图标大小为18fp。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [CancelButtonOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#cancelbuttonoptions12对象说明) | [CancelButtonSymbolOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#cancelbuttonsymboloptions12对象说明) | 是 | 右侧清除按钮样式。 默认值： { style: CancelButtonStyle.INPUT, icon: { size: '16vp', color: '#99ffffff', src: ' ' } } 当style为CancelButtonStyle.CONSTANT时，默认显示清除样式。 |
@@ -156,6 +201,12 @@ fontColor(value: ResourceColor)
 
 设置输入文本的字体颜色。fontSize、fontStyle、fontWeight和fontFamily在[textFont](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#textfont)属性中设置。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 输入文本的字体颜色。 默认值：'#FF182431' Wearable设备上默认值为：'#dbffffff' |
@@ -165,6 +216,12 @@ fontColor(value: ResourceColor)
 caretStyle(value: CaretStyle)
 
 设置光标样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -181,6 +238,12 @@ enableKeyboardOnFocus(value: boolean)
 
 从API version 10开始，获焦默认绑定输入法。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | Search获焦时，是否主动拉起软键盘。 true表示主动拉起，false表示不主动拉起。 默认值：true |
@@ -190,6 +253,12 @@ enableKeyboardOnFocus(value: boolean)
 selectionMenuHidden(value: boolean)
 
 设置是否不弹出系统文本选择菜单。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -214,9 +283,13 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 当设置自定义键盘时，可以通过绑定[onKeyPreIme](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-key#onkeypreime12)事件规避物理键盘的输入。
 
 > **说明**
-> 该接口不支持在
-> attributeModifier
-> 中调用。
+> 该接口不支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -231,6 +304,10 @@ type(value: SearchType)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [SearchType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#searchtype11枚举说明) | 是 | 输入框类型。 默认值：SearchType.NORMAL |
@@ -241,6 +318,12 @@ maxLength(value: number)
 
 设置文本的最大输入字符数。默认不设置最大输入字符数限制。到达文本最大字符限制，将无法继续输入字符。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | 是 | 文本的最大输入字符数。 当value<0时，按照默认值处理，不设限制。 |
@@ -250,6 +333,12 @@ maxLength(value: number)
 enterKeyType(value: EnterKeyType)
 
 设置输入法回车键类型。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -267,6 +356,10 @@ enableSelectedDataDetector(enable: boolean | undefined)
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | undefined | 是 | 开启选中词文本识别。 true：开启识别，false：关闭识别。默认值为：true。 |
@@ -276,6 +369,12 @@ enableSelectedDataDetector(enable: boolean | undefined)
 lineHeight(value: number | string | Resource)
 
 设置文本的文本行高，设置值不大于0时，不限制文本行高，自适应字体大小，number类型时单位为fp。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -290,12 +389,19 @@ decoration(value: TextDecorationOptions)
 
 设置文本装饰线类型样式及其颜色。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [TextDecorationOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#textdecorationoptions12对象说明) | 是 | 文本装饰线对象。 默认值：{ type: TextDecorationType.None, color: Color.Black, style: TextDecorationStyle.SOLID } |
 
 > **说明**
 > 当文字的下边缘轮廓与装饰线位置相交时，会触发下划线避让规则，下划线将在这些字符处避让文字。常见“gjyqp”等英文字符。
+>
 > 当文本装饰线的颜色设置为Color.Transparent时，装饰线颜色设置为跟随每行第一个字的字体颜色。当文本装饰线的颜色设置为透明色16进制对应值“#00FFFFFF”时，装饰线颜色设置为透明色。
 
 ### letterSpacing12+
@@ -307,6 +413,12 @@ letterSpacing(value: number | string | Resource)
 当取值为负值时，文字会发生压缩，负值过小时会将组件内容区大小压缩为0，导致无内容显示。
 
 对每个字符生效，包括行尾字符。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -326,6 +438,12 @@ fontFeature(value: string)
 
 例如，使用等宽数字的输入格式为："ss01" on。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 文字特性效果。 |
@@ -342,6 +460,12 @@ selectedBackgroundColor(value: ResourceColor)
 
 设置文本选中底板颜色。如果未设置不透明度，默认为20%不透明度。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 文本选中底板颜色。 |
@@ -356,6 +480,12 @@ inputFilter(value: ResourceStr, error?: Callback< string >)
 
 设置inputFilter且输入的字符不为空字符，会导致设置输入框类型(即type接口)附带的文本过滤效果失效。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 正则表达式。 |
@@ -366,6 +496,12 @@ inputFilter(value: ResourceStr, error?: Callback< string >)
 textIndent(value: Dimension)
 
 设置首行文本缩进。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -383,6 +519,12 @@ minFontSize(value: number | string | Resource)
 
 minFontSize小于或等于0时，自适应字号不生效，此时按照[textFont](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#textfont)属性里面size的取值生效，未设置时按照其默认值生效。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 是 | 文本最小显示字号。 单位：[fp](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units) |
@@ -395,7 +537,15 @@ maxFontSize(value: number | string | Resource)
 
 需配合[minFontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#minfontsize12)以及布局大小限制使用，单独设置不生效。
 
+自适应字号生效时，fontSize设置不生效。
+
 maxFontSize小于等于0或者maxFontSize小于minFontSize时，自适应字号不生效，此时按照[textFont](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#textfont)属性里面size的取值生效，未设置时按照其默认值生效。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -407,6 +557,12 @@ halfLeading(halfLeading: Optional<boolean>)
 
 设置文本在行内垂直居中，将行间距平分至行的顶部与底部。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | halfLeading | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<boolean> | 是 | 设置文本是否垂直居中。 true表示将行间距平分至行的顶部与底部，false则不平分。 默认值：false |
@@ -417,6 +573,12 @@ minFontScale(scale: Optional<number | Resource>)
 
 设置文本最小的字体缩放倍数。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<number | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource)> | 是 | 文本最小的字体缩放倍数，支持undefined类型。 取值范围：[0, 1] **说明：** 设置的值小于0时，按值为0处理。设置的值大于1，按值为1处理。异常值默认不生效。 使用前需在工程中配置[configuration.json](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file#configuration标签)文件和[app.json5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configuration-file)文件，具体详见[示例19设置最小字体范围与最大字体范围](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#示例19设置最小字体范围与最大字体范围)。 |
@@ -426,6 +588,12 @@ minFontScale(scale: Optional<number | Resource>)
 maxFontScale(scale: Optional<number | Resource>)
 
 设置文本最大的字体缩放倍数。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -439,6 +607,12 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 调用[disableMenuItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller#disablemenuitems20)或[disableSystemServiceMenuItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller#disablesystemservicemenuitems20)接口屏蔽文本选择菜单内的系统服务菜单项时，editMenuOptions接口内回调方法[onCreateMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#oncreatemenu12)的入参列表中不包含被屏蔽的菜单选项。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | editMenu | [EditMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#editmenuoptions) | 是 | 扩展菜单选项。 |
@@ -450,6 +624,12 @@ enablePreviewText(enable: boolean)
 设置是否开启输入预上屏。
 
 预上屏内容定义为文字暂存态，目前不支持文字拦截功能。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -476,6 +656,10 @@ enableHapticFeedback(isEnabled: boolean)
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 是否开启触控反馈。 true表示开启触控反馈，false表示不开启触控反馈。 默认值：true |
@@ -487,6 +671,10 @@ autoCapitalizationMode(mode: AutoCapitalizationMode)
 设置自动大小写模式的文本模式，只提供接口能力，具体实现以输入法应用为主。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -500,6 +688,10 @@ keyboardAppearance(appearance: Optional<KeyboardAppearance>)
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appearance | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[KeyboardAppearance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#keyboardappearance15枚举说明)> | 是 | 键盘样式。 默认值：KeyboardAppearance.NONE_IMMERSIVE |
@@ -509,6 +701,12 @@ keyboardAppearance(appearance: Optional<KeyboardAppearance>)
 strokeWidth(width: Optional<LengthMetrics>)
 
 设置文本描边的宽度。
+
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -520,6 +718,12 @@ strokeColor(color: Optional<ResourceColor>)
 
 设置文本描边的颜色。
 
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)> | 是 | 描边颜色。默认值为字体颜色，设置异常值时取默认值。 |
@@ -529,6 +733,12 @@ strokeColor(color: Optional<ResourceColor>)
 stopBackPress(isStopped: Optional<boolean>)
 
 设置是否阻止返回键传递。
+
+**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -540,11 +750,21 @@ enableAutoSpacing(enabled: Optional<boolean>)
 
 设置是否开启中文与西文的自动间距。
 
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<boolean> | 是 | 是否开启中文与西文的自动间距。 true为开启自动间距，false为不开启。 默认值：false |
 
 ## IconOptions10+对象说明
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -554,6 +774,8 @@ enableAutoSpacing(enabled: Optional<boolean>)
 
 ## SearchButtonOptions10+对象说明
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | fontSize | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 文本按钮字体大小，不支持百分比。**元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -561,6 +783,10 @@ enableAutoSpacing(enabled: Optional<boolean>)
 | autoDisable18+ | Boolean | 否 | 是 | Search无文本内容时按钮置灰且不可点击。 默认值：false true表示开启按钮置灰功能，false表示不开启。 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 
 ## CancelButtonStyle10+枚举说明
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 说明 |
 | --- | --- |
@@ -571,6 +797,8 @@ enableAutoSpacing(enabled: Optional<boolean>)
 ## SearchType11+枚举说明
 
 搜索输入框类型。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -584,12 +812,20 @@ enableAutoSpacing(enabled: Optional<boolean>)
 
 ## CancelButtonOptions12+对象说明
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | style | [CancelButtonStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#cancelbuttonstyle10枚举说明) | 否 | 是 | 右侧清除按钮显示状态。 |
 | icon | [IconOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#iconoptions10对象说明) | 否 | 是 | 右侧清除按钮图标。 |
 
 ## CancelButtonSymbolOptions12+对象说明
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -606,6 +842,12 @@ onSubmit(callback: Callback<string>)
 
 点击搜索图标、搜索按钮或者按下软键盘搜索按钮时触发该回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<string> | 是 | 搜索提交回调，其返回值为当前搜索框中输入的文本内容。 |
@@ -617,6 +859,10 @@ onSubmit(callback: SearchSubmitCallback)
 点击搜索图标、搜索按钮或者按下软键盘搜索按钮时触发该回调事件，提交事件时提供保持Search编辑状态的方法。
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -630,6 +876,12 @@ onChange(callback: EditableTextOnChangeCallback)
 
 在本回调中，若执行了光标操作，需要开发者在预上屏场景下依据previewText参数调整光标逻辑，以适应预上屏场景。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | [EditableTextOnChangeCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#editabletextonchangecallback12) | 是 | 当前输入文本内容变化时的回调。 |
@@ -639,6 +891,12 @@ onChange(callback: EditableTextOnChangeCallback)
 onCopy(callback:Callback<string>)
 
 进行复制操作时，触发该回调。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -650,6 +908,12 @@ onCut(callback:Callback<string>)
 
 进行剪切操作时，触发该回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<string> | 是 | 剪切回调，其返回值为剪切的文本内容。 |
@@ -659,6 +923,12 @@ onCut(callback:Callback<string>)
 onPaste(callback:OnPasteCallback )
 
 进行粘贴操作时，触发该回调。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -670,6 +940,12 @@ onTextSelectionChange(callback: OnTextSelectionChangeCallback)
 
 文本选择的位置或编辑状态下光标位置发生变化时，触发该回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | [OnTextSelectionChangeCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#ontextselectionchangecallback18) | 是 | 文本选择变化回调或光标位置变化回调。 |
@@ -679,6 +955,12 @@ onTextSelectionChange(callback: OnTextSelectionChangeCallback)
 onContentScroll(callback: OnContentScrollCallback)
 
 文本内容滚动时，触发该回调。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -690,6 +972,12 @@ onEditChange(callback: Callback< boolean >)
 
 输入状态变化时，触发该回调。有光标时为编辑态，无光标时为非编辑态。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback< boolean > | 是 | 编辑状态改变回调，其返回值为true表示正在输入，false表示无焦点，无法输入文字。 |
@@ -699,6 +987,12 @@ onEditChange(callback: Callback< boolean >)
 onWillInsert(callback: Callback<InsertValue, boolean>)
 
 在将要输入时，触发该回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -710,6 +1004,12 @@ onDidInsert(callback: Callback<InsertValue>)
 
 在输入完成时，触发该回调。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<[InsertValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#insertvalue12对象说明)> | 是 | 在输入完成时调用的回调。 仅支持系统输入法输入的场景。 |
@@ -720,6 +1020,12 @@ onWillDelete(callback: Callback<DeleteValue, boolean>)
 
 在将要删除时，触发该回调。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<[DeleteValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#deletevalue12对象说明), boolean> | 是 | 在将要删除时调用的回调。 在返回true时，表示正常删除，返回false时，表示不删除。 在预上屏删除操作时，该回调不触发。 仅支持系统输入法输入的场景。 |
@@ -729,6 +1035,12 @@ onWillDelete(callback: Callback<DeleteValue, boolean>)
 onDidDelete(callback: Callback<DeleteValue>)
 
 在删除完成时，触发该回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -745,6 +1057,12 @@ onWillChange(callback: Callback<EditableTextChangeValue, boolean>)
 
 onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert、onDidDelete。
 
+**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<[EditableTextChangeValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#editabletextchangevalue15), boolean> | 是 | 在文本内容将要发生变化时的回调。 返回true时，表示正常修改。返回false时，表示拦截此次触发。 |
@@ -758,6 +1076,15 @@ onWillAttachIME(callback: Callback<IMEClient>)
 从API version 22开始，调用[IMEClient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#imeclient20对象说明)的[setExtraConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#setextraconfig22)方法可以设置输入法扩展信息。在绑定输入法成功后，输入法会收到扩展信息，输入法可以依据此信息实现自定义功能。
 
 IMEClient仅在onWillAttachIME执行期间有效，不可进行异步调用。
+
+> **说明**
+> 该接口不支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -779,11 +1106,21 @@ constructor()
 
 SearchController的构造函数。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ### caretPosition
 
 caretPosition(value: number): void
 
 设置输入光标的位置。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数:**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -795,11 +1132,21 @@ stopEditing(): void
 
 退出编辑态。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ### setTextSelection12+
 
 setTextSelection(selectionStart: number, selectionEnd: number, options?: SelectionOptions): void;
 
 组件在获焦状态下，调用该接口设置文本选择区域并高亮显示，且只有在selectionStart小于selectionEnd时，文字才会被选取并高亮显示。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -809,7 +1156,9 @@ setTextSelection(selectionStart: number, selectionEnd: number, options?: Selecti
 
 > **说明**
 > 如果selectionStart或selectionEnd被赋值为undefined时，当作0处理。
+>
 > 如果selectionMenuHidden被赋值为true或设备为2in1时，即使options被赋值为MenuPolicy.SHOW，调用setTextSelection也不弹出菜单。
+>
 > 如果选中的文本含有emoji表情时，表情的起始位置包含在设置的文本选中区域内就会被选中。
 
 ## SearchSubmitCallback14+
@@ -817,6 +1166,12 @@ setTextSelection(selectionStart: number, selectionEnd: number, options?: Selecti
 type SearchSubmitCallback = (searchContent: string, event?: SubmitEvent) => void
 
 点击搜索图标、搜索按钮或者按下软键盘搜索按钮时的回调事件。
+
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -871,7 +1226,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/4_35hohSR8O8KHwTu-ypmg/zh-cn_image_0000002531106032.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=C63BBC23B38E94A9BAB7FEAF5036C04106C1ED3E9D4B67BE6ADC93D19CA3AFE2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/4_35hohSR8O8KHwTu-ypmg/zh-cn_image_0000002531106032.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=D6A08BACA3742646AE20D59640BF0DFAFFB5C8FF5ACAB29C7C5883B34FDE0AC6)
 
 ### 示例2（设置搜索和删除图标）
 
@@ -917,7 +1272,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/__plVKMLQX-5cFwXhoO_qQ/zh-cn_image_0000002531225966.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=E9692FE3DFF3E47E2034409F317A6B78440E8E86D78C1AEA0AF036754CC1F80A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/__plVKMLQX-5cFwXhoO_qQ/zh-cn_image_0000002531225966.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=BFB35C195F5451B8F5A8E0A92ED338AC02AB63187DFD517729D0154143C3C4D9)
 
 ### 示例3（设置自定义键盘）
 
@@ -987,7 +1342,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/73iomUV0Tu2KkiWp4WnkPA/zh-cn_image_0000002562025949.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=2430B1603F8253052DA98FEB7B9C4F092FBFA8285E825B6FE59215BACDB28212)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/73iomUV0Tu2KkiWp4WnkPA/zh-cn_image_0000002562025949.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=2701B097D77E5773118118C5C158AEA14D06202AF4F883C85F93A4A2D2474B8A)
 
 ### 示例4（设置输入法回车键类型）
 
@@ -1020,7 +1375,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qmtXqpGrRruSgZGG58s4pA/zh-cn_image_0000002562145935.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=5619A42A7DCDA9220A1FC6306634B3E24FCA184A49A0FBF3A9C89694F53F2738)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qmtXqpGrRruSgZGG58s4pA/zh-cn_image_0000002562145935.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=7874DCDA04A1C8D59A75AE627014C9F3C8F304D599637FB77188FBE903889478)
 
 ### 示例5（设置文本样式）
 
@@ -1067,7 +1422,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/KXwEHAkBSU2jBdgmAoBr0Q/zh-cn_image_0000002531106034.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=268AF42AFE0019566AC0DD8D0C6CCE301A9603EDE857F7E578B0EF6902CFFD74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/KXwEHAkBSU2jBdgmAoBr0Q/zh-cn_image_0000002531106034.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=734E54A854960FCDB82D8452E49C13E5190CD425C5171D794DC82550D8D47D5C)
 
 ### 示例6（设置文字特性效果）
 
@@ -1095,7 +1450,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/pCxMfLzITJyuaWO19dL3GA/zh-cn_image_0000002531225968.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=22B8FF875281E04AE3550AB473200D10B04026E31A8D1597A1895FFA436778C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/pCxMfLzITJyuaWO19dL3GA/zh-cn_image_0000002531225968.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=43D26FE1149818B95863C36E1607DD5EB568011B035C3196BC2BACF8323A7CCD)
 
 ### 示例7（自定义键盘避让）
 
@@ -1167,7 +1522,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/MYGyp1m8TEOSs8jwwEeAug/zh-cn_image_0000002562025951.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=AE65FC973B301BE88B045931F6F892B9B9641BFF8CEB50F2AF8225F71AFB4FA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/MYGyp1m8TEOSs8jwwEeAug/zh-cn_image_0000002562025951.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=557267EEB50CCC25231E8DD5AAD84C4A90633DD0099D7844366F35C9B9FBA84D)
 
 ### 示例8（设置文本自适应）
 
@@ -1196,7 +1551,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/nQvYMVRNSYGJ8g--6y9BSg/zh-cn_image_0000002562145937.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=1EC9DED7CDF5110DB951F38029E106931004361A4EB1C2DE0CE3434B95B5DDEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/nQvYMVRNSYGJ8g--6y9BSg/zh-cn_image_0000002562145937.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=1F0A7D3A6F2BC6946CEB4716F7C9923621A149D90900F820BBC38B4F86744363)
 
 ### 示例9（支持插入和删除回调）
 
@@ -1311,7 +1666,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/WnYCjNDqSfa7qsN3dasEYw/zh-cn_image_0000002531106036.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=EE5101DE3E2B428B8ED405BEE6CD588D7257B87536A763BE88EDDDF6C94F04FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/WnYCjNDqSfa7qsN3dasEYw/zh-cn_image_0000002531106036.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=90E8A960F58F7295B4EF2034CA5D9142805A9B85DA5DD11E4CC64A5E79957FAB)
 
 ### 示例10（文本扩展自定义菜单）
 
@@ -1394,7 +1749,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/By0WCIoyRPqNMuNB9VI7cQ/zh-cn_image_0000002531225970.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=779E7F2329EEB14A81355A3755346F75E29FE71D02F4E2CC770950936F4B5932)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/By0WCIoyRPqNMuNB9VI7cQ/zh-cn_image_0000002531225970.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=81B0861ED7B005388B50E2E092E981CDF6E6F728969024B8D6D3D3C9D1D66457)
 
 ### 示例11（设置symbol类型清除按钮）
 
@@ -1433,7 +1788,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/0gzZxe3gTVSryoEIJ7MMdA/zh-cn_image_0000002562025953.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=E50907B0B8ACDE419CCA5E88A02DEC3AC2AC267899D2A6234EC47EB401471A79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/0gzZxe3gTVSryoEIJ7MMdA/zh-cn_image_0000002562025953.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=009D06B35C2F626A8464576151D1A8BE66956053521C274091DC83B1A23B443C)
 
 ### 示例12（设置文本是否可复制）
 
@@ -1488,7 +1843,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/wNlTjRV2Qsqy7QHKjF9EbQ/zh-cn_image_0000002562145939.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=103A3E0D581FB50F2090BA3646A08B5DDF07D1D936532CF0FA82304F9755C103)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/wNlTjRV2Qsqy7QHKjF9EbQ/zh-cn_image_0000002562145939.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=72D4BD5A73A66AE9B5CD7119D7FF2739702530FD7CB1E6DA469D8AA90D511793)
 
 ### 示例13（设置文本水平对齐/光标样式/选中背景色）
 
@@ -1516,7 +1871,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/FHCR2EXjTMS2pJVKESe2gw/zh-cn_image_0000002531106038.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=81BA062D6D8E72D2F311713DC9208875C2399065C69B7C9F63F7FF2840137906)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/FHCR2EXjTMS2pJVKESe2gw/zh-cn_image_0000002531106038.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=AC6E47816B05FF0838E419D2519A53D9BEC50C4472708887D65E6F94C0C18DC4)
 
 ### 示例14（设置默认获焦并拉起软键盘）
 
@@ -1549,7 +1904,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/fYQoiWWRTRuVjeriTl6prQ/zh-cn_image_0000002531225972.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=08B7FCA9719CC21E70311A05FD6CB40270B9E398371FCA21363D0989AF971B90)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/fYQoiWWRTRuVjeriTl6prQ/zh-cn_image_0000002531225972.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=7AC110F9856B96E4F573EE2CEB1B7E4DDA90B4E9178B6C2BFED1CA9159E025AE)
 
 ### 示例15（关闭系统文本选择菜单）
 
@@ -1575,7 +1930,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/JL5WFNzyTsql0zTm8iw81Q/zh-cn_image_0000002562025955.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=BFA5607FD200A31D20EBE967D2BF271204915BFC0C48AC8B8F8C41E0F26EDB8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/JL5WFNzyTsql0zTm8iw81Q/zh-cn_image_0000002562025955.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=2F4F5D0437FEFF0EB8EFFB8E7A0ABDB439D14DF66575FBACBE06C2D4BB223C7F)
 
 ### 示例16（对输入的文本进行过滤）
 
@@ -1606,7 +1961,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6A1KM1oKRcuEUZs8wkiRQA/zh-cn_image_0000002562145941.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=A0D7317B54831591866B12796057A1D5A9459DA6A662A315FFA3C866759A7E50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6A1KM1oKRcuEUZs8wkiRQA/zh-cn_image_0000002562145941.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=BE2FC928D59EC712554F23BD75ADE454D38EC7E7E78618E97086A4777D3EB862)
 
 ### 示例17（设置选中指定区域的文本内容）
 
@@ -1645,7 +2000,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/QF-M7xAmRYmMFk-Sq6-QSw/zh-cn_image_0000002531106040.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=FE8E652DFCF5C18B53982BE1214F3C2AA66914A6CAF40A0252901A5C19DB2DE0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/QF-M7xAmRYmMFk-Sq6-QSw/zh-cn_image_0000002531106040.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=FED91C48B33CC563287F1E05D7173491E52C81232BEDD7D72A07B15C3E629FEE)
 
 ### 示例18（设置文本滚动事件）
 
@@ -1676,7 +2031,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/WFV5uaAoQmK65v2TYAHQtg/zh-cn_image_0000002531225974.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=8D7778038C31F837DEFA8626A9EA6CEFFF4F135A670446CC9ED3792C31F43F88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/WFV5uaAoQmK65v2TYAHQtg/zh-cn_image_0000002531225974.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=C87EBB3A5EF9DBDD25A78E748829E4EBBE0E89078FB69081B44B039F250DCBB7)
 
 ### 示例19（设置最小字体范围与最大字体范围）
 
@@ -1742,7 +2097,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/oiFe9_BKSrWvHjvOJ8kDlg/zh-cn_image_0000002562025957.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=FA587774D6ADDDBE6FE7D1C1E78CEC3CF7FD3A3B4B340C09F5C03EEFEB01E75C) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/dghc2ln5Rxi34nXeUF3U7w/zh-cn_image_0000002562145943.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=C9F6B958A9FEAB4D6CD767EBB40D92D5AAB07E6EAD22D07D70F1F0C6BB9BBD5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/oiFe9_BKSrWvHjvOJ8kDlg/zh-cn_image_0000002562025957.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=C167139A6563D5D256F08F55D3DF0CC16470637E841E6166FB1770E5C4F1C3A9) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/dghc2ln5Rxi34nXeUF3U7w/zh-cn_image_0000002562145943.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=232FD8B91D163D0627E792391D66267481FB2EF09CD13684F1543D930B2701B9)
 
 ### 示例20（设置文本描边）
 
@@ -1789,7 +2144,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/tnk4x4r4R0ucV2il1UHOdg/zh-cn_image_0000002531106042.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=E77BCC84C3F57A783873A93A5DFEE24BC3171855C8E22EAA07F10FC4492D450F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/tnk4x4r4R0ucV2il1UHOdg/zh-cn_image_0000002531106042.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=584AEEEB660BCC9E3EC658CD21837B712CEC1822DC108DCCC50FC2EDB293A1CC)
 
 ### 示例21（设置中西文自动间距）
 
@@ -1815,7 +2170,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/WYfbmzfuQ8GYHOlN1WD62A/zh-cn_image_0000002531225976.png?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=EA7B9DC048B95C6DFDD7B0A60324724DDC1E2BD18DBF7CA27FA6662636A0B563)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/WYfbmzfuQ8GYHOlN1WD62A/zh-cn_image_0000002531225976.png?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=2181E4BB80487156A2EE827C27594F5CCE114671554561BDC4BEEDCEB1D7C86B)
 
 ### 示例22（设置placeholder富文本样式）
 
@@ -1882,7 +2237,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/sZH95HJLTJSXks-svOr-KQ/zh-cn_image_0000002562025959.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T122246Z&HW-CC-Expire=86400&HW-CC-Sign=0FCAEC1941334F50588A1676699B63A3A628CD2E81DF8D5D2E075F4D56500F83)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/sZH95HJLTJSXks-svOr-KQ/zh-cn_image_0000002562025959.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T144154Z&HW-CC-Expire=86400&HW-CC-Sign=42BEC40254486133601A126931CA23476B44F16F9BD6A4E35216A675301D01EB)
 
 ### 示例23（设置输入法扩展信息）
 

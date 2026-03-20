@@ -1,4 +1,4 @@
-# 子组件
+# TextArea-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea
 
 多行文本输入框组件，当输入的文本内容超过组件宽度时会自动换行显示。
@@ -30,6 +30,10 @@ TextArea(value?: TextAreaOptions)
 
 TextArea初始化参数。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | placeholder | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 否 | 是 | 设置无输入时的提示文本。输入内容后，提示文本不显示。 仅设置placeholder属性时，手柄依然跟随拖动，手柄松开后光标停留在文字开头位置。 |
@@ -41,23 +45,33 @@ TextArea初始化参数。
 除支持[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)，还支持以下属性：
 
 > **说明**
-> 通用属性padding
-> 的默认值为：
+> [通用属性padding](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#padding)的默认值为：
+>
 > {
+>
 > top: '8vp',
+>
 > right: '16vp',
+>
 > bottom: '8vp',
+>
 > left: '16vp'
+>
 > }
-> 从API version 11开始，多行输入框可设置.width('auto')使组件宽度自适应文本宽度，自适应时组件宽度受constraintSize属性以及父容器传递的最大最小宽度限制，其余使用方式参考
-> 尺寸设置
-> 。
+>
+> 从API version 11开始，多行输入框可设置.width('auto')使组件宽度自适应文本宽度，自适应时组件宽度受constraintSize属性以及父容器传递的最大最小宽度限制，其余使用方式参考[尺寸设置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size)。
 
 ### placeholderColor
 
 placeholderColor(value: ResourceColor)
 
 设置placeholder文本颜色。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -70,9 +84,13 @@ placeholderFont(value: Font)
 设置placeholder文本样式，包括字体大小、字体粗细、字体族、字体风格。
 
 > **说明**
-> 可以使用
-> loadFontSync
-> 注册自定义字体。
+> 可以使用[loadFontSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text#loadfontsync)注册自定义字体。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -94,20 +112,30 @@ textAlign(value: TextAlign)
 
 当textAlign属性设置为TextAlign.JUSTIFY时，最后一行文本不参与两端对齐，为水平对齐首部效果。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [TextAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#textalign) | 是 | 文本在输入框中的水平对齐方式。 默认值：TextAlign.Start |
 
 > **说明**
-> textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考
-> 镜像状态字符对齐
-> 。
+> textAlign只能调整文本整体的布局，不影响字符的显示顺序。若需要调整字符的显示顺序，请参考[镜像状态字符对齐](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#镜像状态字符对齐)。
 
 ### caretColor
 
 caretColor(value: ResourceColor)
 
 设置输入框光标颜色。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -122,6 +150,12 @@ fontColor(value: ResourceColor)
 
 设置字体颜色。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 字体颜色。 |
@@ -131,6 +165,12 @@ fontColor(value: ResourceColor)
 fontSize(value: Length)
 
 设置字体大小。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -142,6 +182,12 @@ fontStyle(value: FontStyle)
 
 设置字体样式。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [FontStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#fontstyle) | 是 | 字体样式。 默认值：FontStyle.Normal |
@@ -151,6 +197,12 @@ fontStyle(value: FontStyle)
 fontWeight(value: number | FontWeight | ResourceStr)
 
 设置文本的字体粗细，设置过大可能会在不同字体下有截断。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -162,14 +214,18 @@ fontFamily(value: ResourceStr)
 
 设置字体列表。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 字体列表。默认字体'HarmonyOS Sans'。 使用多个字体时，请用逗号','分隔，字体的优先级按顺序生效。例如：'Arial,HarmonyOS Sans'。 |
 
 > **说明**
-> 推荐使用
-> loadFontSync
-> 注册自定义字体。
+> 推荐使用[loadFontSync](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-graphics-text#loadfontsync)注册自定义字体。
 
 ### inputFilter8+
 
@@ -178,6 +234,12 @@ inputFilter(value: ResourceStr, error?: (value: string) => void)
 通过正则表达式设置输入过滤器。匹配表达式的输入允许显示，不匹配的输入将被过滤。
 
 单字符输入场景仅支持单字符匹配，多字符输入场景支持字符串匹配，例如粘贴。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -192,6 +254,12 @@ copyOption(value: CopyOptions)
 
 设置CopyOptions.None时，不支持拖拽操作。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [CopyOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#copyoptions9) | 是 | 输入的文本是否可复制。 默认值：CopyOptions.LocalDevice，支持设备内复制。 |
@@ -201,6 +269,12 @@ copyOption(value: CopyOptions)
 maxLength(value: number)
 
 设置文本的最大输入字符数。默认不设置最大输入字符数限制。到达文本最大字符限制，将无法继续输入字符，同时边框变为红色。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -218,6 +292,12 @@ showCounter(value: boolean, options?: InputCounterOptions)
 
 [示例2（设置计数器）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#示例2设置计数器)展示了设置showCounter的效果。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 是否显示计数器。 true表示显示计数器，false表示不显示。 |
@@ -228,6 +308,12 @@ showCounter(value: boolean, options?: InputCounterOptions)
 style(value: TextContentStyle)
 
 设置文本框多态样式，内联输入风格只支持TextAreaType.NORMAL类型。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -241,6 +327,12 @@ enableKeyboardOnFocus(value: boolean)
 
 从API version 10开始，获焦默认绑定输入法。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 通过点击以外的方式获焦时，是否主动拉起软键盘。 true表示主动拉起，false表示不主动拉起。 默认值：true |
@@ -250,6 +342,12 @@ enableKeyboardOnFocus(value: boolean)
 selectionMenuHidden(value: boolean)
 
 设置是否不弹出系统文本选择菜单。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -261,6 +359,12 @@ barState(value: BarState)
 
 设置输入框滚动条的显示模式。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [BarState](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#barstate) | 是 | 输入框滚动条的显示模式。 默认值：BarState.Auto |
@@ -270,6 +374,12 @@ barState(value: BarState)
 maxLines(value: number)
 
 配置textOverflow一起使用时，maxLines为可显示行数，超出截断；未配置textOverflow时，内联模式获焦状态下内容超出maxLines时，文本可滚动显示，内联模式非获焦状态下不生效maxLines，非内联模式按行截断。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -283,6 +393,10 @@ maxLines(lines: number, options: MaxLinesOptions)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | lines | number | 是 | 内联输入风格编辑态时文本可显示的最大行数。 默认值：3，非内联模式下，默认值为+∞，不限制最大行数。 取值范围：(0, +∞) |
@@ -293,6 +407,12 @@ maxLines(lines: number, options: MaxLinesOptions)
 minLines(lines: Optional<number>)
 
 设置最小行数。组件的高度将根据lines自动调整，确保显示高度不低于lines对应的高度。如果设置了[constraintSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#constraintsize)，那么组件最后显示高度会在[constraintSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#constraintsize)约束内。
+
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -317,9 +437,13 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 当设置自定义键盘时，可以通过绑定[onKeyPrelme](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-key#onkeypreime12)事件规避物理键盘的输入。
 
 > **说明**
-> 该接口不支持在
-> attributeModifier
-> 中调用。
+> 该接口不支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -334,6 +458,10 @@ type(value: TextAreaType)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [TextAreaType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#textareatype11枚举说明) | 是 | 输入框类型。 默认值：TextAreaType.NORMAL |
@@ -345,9 +473,13 @@ enterKeyType(value: EnterKeyType)
 设置输入法回车键类型。
 
 > **说明**
-> 从API version 12开始，该接口支持在
-> attributeModifier
-> 中调用。
+> 从API version 12开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -360,6 +492,12 @@ enableAutoFill(value: boolean)
 设置是否启用自动填充。
 
 具体使用场景请参考[账号密码填充](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault-autofill-acc-password)。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -377,6 +515,10 @@ enableSelectedDataDetector(enable: boolean | undefined)
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | boolean | undefined | 是 | 开启选中词文本识别。 true：开启识别，false：关闭识别。默认值为：true。 |
@@ -387,6 +529,12 @@ contentType(contentType: ContentType)
 
 设置自动填充类型。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | contentType | [ContentType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#contenttype12枚举说明) | 是 | 自动填充类型。 |
@@ -396,6 +544,12 @@ contentType(contentType: ContentType)
 lineHeight(value: number | string | Resource)
 
 设置文本的文本行高，设置值不大于0时，不限制文本行高，自适应字体大小。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -410,12 +564,19 @@ decoration(value: TextDecorationOptions)
 
 设置文本装饰线类型样式及其颜色。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [TextDecorationOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#textdecorationoptions12对象说明) | 是 | 文本装饰线对象。 默认值：{ type: TextDecorationType.None, color: Color.Black, style: TextDecorationStyle.SOLID } |
 
 > **说明**
 > 当文字的下边缘轮廓与装饰线位置相交时，会触发下划线避让规则，下划线将在这些字符处避让文字。常见“gjyqp”等英文字符。
+>
 > 当文本装饰线的颜色设置为Color.Transparent时，装饰线颜色设置为跟随每行第一个字的字体颜色。当文本装饰线的颜色设置为透明色16进制对应值“#00FFFFFF”时，装饰线颜色设置为透明色。
 
 ### letterSpacing12+
@@ -427,6 +588,12 @@ letterSpacing(value: number | string | Resource)
 当取值为负值时，文字会发生压缩，负值过小时会将组件内容区大小压缩为0，导致无内容显示。
 
 对每个字符生效，包括行尾字符。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -446,6 +613,12 @@ fontFeature(value: string)
 
 例如，使用等宽数字的输入格式为："ss01" on。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 文字特性效果。 |
@@ -462,6 +635,12 @@ wordBreak(value: WordBreak)
 
 设置文本断行规则。该属性对placeholder文本无效。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [WordBreak](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#wordbreak11) | 是 | 文本断行规则。 默认值：WordBreak.BREAK_WORD |
@@ -475,6 +654,12 @@ selectedBackgroundColor(value: ResourceColor)
 
 设置文本选中底板颜色。如果未设置不透明度，默认为20%不透明度。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 文本选中底板颜色。 |
@@ -485,12 +670,19 @@ caretStyle(value: CaretStyle)
 
 设置光标风格。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [CaretStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#caretstyle10) | 是 | 光标的风格。 |
 
 > **说明**
 > 当同时设置caretColor属性和caretStyle属性中的color参数时，遵循后设置生效原则。
+>
 > 从API version 12开始，此接口支持设置文本手柄颜色，光标和文本手柄颜色保持一致。
 
 ### textIndent12+
@@ -498,6 +690,12 @@ caretStyle(value: CaretStyle)
 textIndent(value: Dimension)
 
 设置首行文本缩进。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -518,6 +716,12 @@ textOverflow(value: TextOverflow)
 > **说明**
 > TextArea组件不支持设置TextOverflow.MARQUEE模式，当设置为TextOverflow.MARQUEE模式时，显示为TextOverflow.Clip。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [TextOverflow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#textoverflow) | 是 | 文本超长时的显示方式。 默认值：TextOverflow.Clip |
@@ -534,6 +738,12 @@ minFontSize(value: number | string | Resource)
 
 minFontSize小于或等于0时，自适应字号不生效，此时按照[fontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#fontsize)属性的值生效，未设置时按照其默认值生效。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | number | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 是 | 文本最小显示字号。 单位：[fp](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units) |
@@ -546,7 +756,15 @@ maxFontSize(value: number | string | Resource)
 
 需配合[minFontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#minfontsize12)以及[maxLines](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#maxlines10)或布局大小限制使用，单独设置不生效。
 
+自适应字号生效时，fontSize设置不生效。
+
 maxFontSize小于等于0或者maxFontSize小于minFontSize时，自适应字号不生效，此时按照[fontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#fontsize)属性的值生效，未设置时按照其默认值生效。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -566,6 +784,12 @@ heightAdaptivePolicy(value: TextHeightAdaptivePolicy)
 
 当设置为TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST时，优先使用布局约束来调整文本高度。如果布局大小超过布局约束，则尝试在minFontSize和maxFontSize的范围内缩小字体以满足布局约束。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [TextHeightAdaptivePolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#textheightadaptivepolicy10) | 是 | 文本自适应高度的方式。 默认值：TextHeightAdaptivePolicy.MAX_LINES_FIRST |
@@ -575,6 +799,12 @@ heightAdaptivePolicy(value: TextHeightAdaptivePolicy)
 lineSpacing(value: LengthMetrics)
 
 设置文本的行间距，设置值不大于0时，取默认值0。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -586,6 +816,12 @@ lineSpacing(value: LengthMetrics, options?: LineSpacingOptions)
 
 设置文本的行间距。当不配置LineSpacingOptions时，首行上方和尾行下方默认会有行间距。
 
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [LengthMetrics](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-graphics#lengthmetrics12) | 是 | 文本的行间距。设置值不大于0时，取默认值0。 |
@@ -596,6 +832,12 @@ lineSpacing(value: LengthMetrics, options?: LineSpacingOptions)
 lineBreakStrategy(strategy: LineBreakStrategy)
 
 设置折行规则。该属性在[wordBreak](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#wordbreak12)不等于WordBreak.BREAK_ALL的时候生效，不支持连词符。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -609,6 +851,12 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 调用[disableMenuItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller#disablemenuitems20)或[disableSystemServiceMenuItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller#disablesystemservicemenuitems20)接口屏蔽文本选择菜单内的系统服务菜单项时，editMenuOptions接口内回调方法[onCreateMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#oncreatemenu12)的入参列表中不包含被屏蔽的菜单选项。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | editMenu | [EditMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#editmenuoptions) | 是 | 扩展菜单选项。 |
@@ -620,6 +868,12 @@ enablePreviewText(enable: boolean)
 设置是否开启输入预上屏。
 
 预上屏内容定义为文字暂存态，目前不支持文字拦截功能。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -646,6 +900,10 @@ enableHapticFeedback(isEnabled: boolean)
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isEnabled | boolean | 是 | 是否开启触控反馈。 true表示开启，false表示不开启。 默认值：true |
@@ -655,6 +913,12 @@ enableHapticFeedback(isEnabled: boolean)
 autoCapitalizationMode(mode: AutoCapitalizationMode)
 
 设置自动大小写模式的文本模式，只提供接口能力，具体实现以输入法应用为主。
+
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -668,6 +932,10 @@ keyboardAppearance(appearance: Optional<KeyboardAppearance>)
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | appearance | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[KeyboardAppearance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#keyboardappearance15枚举说明)> | 是 | 键盘样式。 默认值：KeyboardAppearance.NONE_IMMERSIVE |
@@ -677,6 +945,12 @@ keyboardAppearance(appearance: Optional<KeyboardAppearance>)
 strokeWidth(width: Optional<LengthMetrics>)
 
 设置文本描边的宽度。
+
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -688,6 +962,12 @@ strokeColor(color: Optional<ResourceColor>)
 
 设置文本描边的颜色。
 
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | color | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)> | 是 | 描边颜色。默认值为字体颜色，设置异常值时取默认值。 |
@@ -697,6 +977,12 @@ strokeColor(color: Optional<ResourceColor>)
 stopBackPress(isStopped: Optional<boolean>)
 
 设置是否阻止返回键传递。
+
+**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -710,6 +996,10 @@ halfLeading(halfLeading: Optional<boolean>)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | halfLeading | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<boolean> | 是 | 设置文本是否垂直居中。 true表示将行间距平分至行的顶部与底部，false则不平分。 默认值：false |
@@ -720,6 +1010,12 @@ minFontScale(scale: Optional<number | Resource>)
 
 设置文本最小的字体缩放倍数。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<number | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource)> | 是 | 文本最小的字体缩放倍数，支持undefined类型。 取值范围：[0, 1] **说明：** 设置的值小于0时，按值为0处理。设置的值大于1，按值为1处理。异常值默认不生效。 使用前需在工程中配置configuration.json文件和app.json5文件，具体详见[示例17设置最小字体范围与最大字体范围](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#示例17设置最小字体范围与最大字体范围)。 |
@@ -729,6 +1025,12 @@ minFontScale(scale: Optional<number | Resource>)
 maxFontScale(scale: Optional<number | Resource>)
 
 设置文本最大的字体缩放倍数。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -742,6 +1044,12 @@ ellipsisMode(mode: Optional<EllipsisMode>)
 
 EllipsisMode.START和EllipsisMode.CENTER仅在[maxLines](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#maxlines10)设置为1生效。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | mode | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[EllipsisMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#ellipsismode11)> | 是 | 省略位置。 默认值：EllipsisMode.END |
@@ -752,6 +1060,12 @@ enableAutoSpacing(enabled: Optional<boolean>)
 
 设置是否开启中文与西文的自动间距。
 
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enabled | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<boolean> | 是 | 是否开启中文与西文的自动间距。 true为开启自动间距，false为不开启。 默认值：false |
@@ -761,6 +1075,12 @@ enableAutoSpacing(enabled: Optional<boolean>)
 scrollBarColor(thumbColor: ColorMetrics | undefined)
 
 设置滚动条的颜色。
+
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -778,6 +1098,12 @@ onChange(callback: EditableTextOnChangeCallback)
 
 在本回调中，若执行了光标操作，需要开发者在预上屏场景下依据[EditableTextOnChangeCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#editabletextonchangecallback12)的previewText参数调整光标逻辑，以适应预上屏场景。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | [EditableTextOnChangeCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#editabletextonchangecallback12) | 是 | 当前输入文本内容变化时的回调。 |
@@ -787,6 +1113,12 @@ onChange(callback: EditableTextOnChangeCallback)
 onEditChange(callback: (isEditing: boolean) => void)
 
 输入状态变化时，触发该回调。有光标时为编辑态，无光标时为非编辑态。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -798,6 +1130,12 @@ onCopy(callback: (value: string) => void)
 
 进行复制操作时，触发该回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 复制的文本内容。 |
@@ -808,6 +1146,12 @@ onCut(callback: (value: string) => void)
 
 进行剪切操作时，触发该回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | 是 | 剪切的文本内容。 |
@@ -817,6 +1161,12 @@ onCut(callback: (value: string) => void)
 onPaste(callback: (value: string, event: PasteEvent) => void)
 
 进行粘贴操作时，触发该回调。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -829,6 +1179,12 @@ onTextSelectionChange(callback: (selectionStart: number, selectionEnd: number) =
 
 文本选择的位置或编辑状态下光标位置发生变化时，触发该回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 所选文本的起始位置，文字的起始位置为0。 |
@@ -840,6 +1196,12 @@ onContentScroll(callback: (totalOffsetX: number, totalOffsetY: number) => void)
 
 文本内容滚动时，触发该回调。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | totalOffsetX | number | 是 | 文本在内容区的横坐标偏移。 单位：[px](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units) |
@@ -850,6 +1212,12 @@ onContentScroll(callback: (totalOffsetX: number, totalOffsetY: number) => void)
 onSubmit(callback: (enterKey: EnterKeyType) => void)
 
 按下软键盘输入法回车键时，触发该回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -863,6 +1231,10 @@ onSubmit(callback: TextAreaSubmitCallback)
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | [TextAreaSubmitCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#textareasubmitcallback14) | 是 | 按下软键盘输入法回车键时的回调事件。 |
@@ -872,6 +1244,12 @@ onSubmit(callback: TextAreaSubmitCallback)
 onWillInsert(callback: Callback<InsertValue, boolean>)
 
 在将要输入时，触发该回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -883,6 +1261,12 @@ onDidInsert(callback: Callback<InsertValue>)
 
 在输入完成时，触发该回调。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<[InsertValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#insertvalue12对象说明)> | 是 | 在输入完成时调用的回调。 仅支持系统输入法输入的场景。 |
@@ -893,6 +1277,12 @@ onWillDelete(callback: Callback<DeleteValue, boolean>)
 
 在将要删除时，触发该回调。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<[DeleteValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#deletevalue12对象说明), boolean> | 是 | 在将要删除时调用的回调。 在返回true时，表示正常删除，返回false时，表示不删除。 在预上屏删除操作时，该回调不触发。 仅支持系统输入法输入的场景。 |
@@ -902,6 +1292,12 @@ onWillDelete(callback: Callback<DeleteValue, boolean>)
 onDidDelete(callback: Callback<DeleteValue>)
 
 在删除完成时，触发该回调。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -918,6 +1314,12 @@ onWillChange(callback: Callback<EditableTextChangeValue, boolean>)
 
 onWillChange的回调时序晚于onWillInsert、onWillDelete，早于onDidInsert、onDidDelete。
 
+**元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<[EditableTextChangeValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#editabletextchangevalue15), boolean> | 是 | 在文本内容将要发生变化时的回调。 返回true时，表示正常修改。返回false时，表示拦截此次触发。 |
@@ -932,6 +1334,12 @@ onWillAttachIME(callback: Callback<IMEClient> | undefined)
 
 IMEClient仅在onWillAttachIME执行期间有效，不可进行异步调用。
 
+**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | Callback<[IMEClient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#imeclient20对象说明)> | undefined | 是 | 在输入框将要绑定输入法前触发该回调。 |
@@ -939,6 +1347,10 @@ IMEClient仅在onWillAttachIME执行期间有效，不可进行异步调用。
 ## TextAreaController8+
 
 TextArea组件的控制器继承自[TextContentControllerBase](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#textcontentcontrollerbase)，涉及的接口有[getTextContentRect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#gettextcontentrect)、[getTextContentLineCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#gettextcontentlinecount)、[getCaretOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#getcaretoffset11)、[addText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#addtext15)、[deleteText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#deletetext15)、[getSelection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#getselection15)、[clearPreviewText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#clearpreviewtext17)、[setStyledPlaceholder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#setstyledplaceholder22)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### 导入对象
 
@@ -952,11 +1364,21 @@ constructor()
 
 TextAreaController的构造函数。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ### caretPosition8+
 
 caretPosition(value: number): void
 
 设置输入光标的位置。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -968,6 +1390,12 @@ setTextSelection(selectionStart: number, selectionEnd: number, options?: Selecti
 
 组件在获焦状态下，调用该接口设置文本选择区域并高亮显示，且只有在selectionStart小于selectionEnd时，文字才会被选取、高亮显示。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 文本选择区域起始位置，文本框中文字的起始位置为0。 当selectionStart小于0时，按0处理；当selectionStart大于文字最大长度时，按照文字最大长度处理。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -976,6 +1404,7 @@ setTextSelection(selectionStart: number, selectionEnd: number, options?: Selecti
 
 > **说明**
 > 如果selectionMenuHidden被赋值为true或设备为2in1时，即使options被赋值为MenuPolicy.SHOW，调用setTextSelection也不弹出菜单。
+>
 > 如果选中的文本含有emoji表情时，表情的起始位置包含在设置的文本选中区域内就会被选中。
 
 ### stopEditing10+
@@ -984,9 +1413,15 @@ stopEditing(): void
 
 退出编辑态。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ## TextAreaType11+枚举说明
 
 多行文本输入框类型。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1004,6 +1439,12 @@ type TextAreaSubmitCallback = (enterKeyType: EnterKeyType, event?: SubmitEvent) 
 
 软键盘按下回车键时的回调事件。
 
+**元服务API：** 从API version 14开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enterKeyType | [EnterKeyType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#enterkeytype枚举说明) | 是 | 软键盘输入法回车键类型。 类型为EnterKeyType.NEW_LINE时不触发onSubmit。 |
@@ -1016,13 +1457,13 @@ type TextAreaSubmitCallback = (enterKeyType: EnterKeyType, event?: SubmitEvent) 
 从API version 8开始，该示例通过[controller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#textareacontroller8)实现了光标位置的设置与获取。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
   @State text: string = '';
   @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 };
   controller: TextAreaController = new TextAreaController();
+
   build() {
     Column() {
       TextArea({
@@ -1045,7 +1486,7 @@ struct TextAreaExample {
         .backgroundColor('#007DFF')
         .margin(15)
         .onClick(() => {
-          // 设置光标位置到第一个字符后
+
           this.controller.caretPosition(1);
         })
       Button('Get CaretOffset')
@@ -1059,19 +1500,19 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ecd0PRyPTRO-vlXuEsx9Gg/zh-cn_image_0000002562145895.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=C0FD995E404B72E60D127401758DD6A76E41CD777A6D1E53B1FC341BAF6F2766)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ecd0PRyPTRO-vlXuEsx9Gg/zh-cn_image_0000002562145895.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=612EB882E709FB0C164060CB4189F8557F5793258873FD9BAA309E5E6B97D482)
 
 ### 示例2（设置计数器）
 
 从API version 10开始，该示例通过[maxLength](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#maxlength10)、[showCounter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#showcounter10)属性实现了计数器的功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
   @State text: string = '';
   controller: TextAreaController = new TextAreaController();
+
   build() {
     Column() {
       TextArea({
@@ -1088,9 +1529,7 @@ struct TextAreaExample {
         .backgroundColor('#FFFFFF')
         .maxLength(4)
         .showCounter(true, { thresholdPercentage: 50, highlightBorder: true })
-          // 计数器显示效果为用户当前输入字符数/最大字符限制数。最大字符限制数通过maxLength()接口设置。
-          // 如果用户当前输入字符数达到最大字符限制乘50%（thresholdPercentage）。字符计数器显示。
-          // 用户设置highlightBorder为false时，配置取消红色边框。不设置此参数时，默认为true。
+
         .onChange((value: string) => {
           this.text = value;
         })
@@ -1099,7 +1538,7 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/GCXObJM6RPuwRxmgiqlJ2Q/zh-cn_image_0000002531105994.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=17B9A949364EEE37B50EB442FAAA8D0CA46AC679FE4C3535C66CD2CF7E107D7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/GCXObJM6RPuwRxmgiqlJ2Q/zh-cn_image_0000002531105994.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=BEEEA71D19997517C5DB89BFE22B455017F429D8F414229B69D990351515B065)
 
 ### 示例3（设置自定义键盘）
 
@@ -1108,11 +1547,11 @@ struct TextAreaExample {
 从API version 22开始[customKeyboard](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#customkeyboard10)属性新增了入参类型[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#componentcontent-1)。
 
 ```typescript
-// xxx.ets
 import { ComponentContent } from '@kit.ArkUI';
 class BuilderParams {
   inputValue: string;
   controller: TextAreaController;
+
   constructor(inputValue: string, controller: TextAreaController) {
     this.inputValue = inputValue;
     this.controller = controller;
@@ -1123,10 +1562,11 @@ function CustomKeyboardBuilder(builderParams: BuilderParams) {
   Column() {
     Row() {
       Button('x').onClick(() => {
-        // 关闭自定义键盘
+
         builderParams.controller.stopEditing();
       }).margin(10)
     }
+
     Grid() {
       ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
         GridItem() {
@@ -1147,8 +1587,9 @@ struct TextAreaExample {
   @State componentContent ?: ComponentContent<BuilderParams> = undefined;
   @State builderParam: BuilderParams = new BuilderParams(this.inputValue, this.controller);
   @State supportAvoidance: boolean = true;
+
   aboutToAppear(): void {
-    // 创建ComponentContent
+
     this.componentContent = new ComponentContent(this.getUIContext(), wrapBuilder(CustomKeyboardBuilder), this.builderParam);
   }
   build(){
@@ -1157,6 +1598,7 @@ struct TextAreaExample {
       TextArea({ controller: this.builderParam.controller, text: this.builderParam.inputValue })
         .customKeyboard(this.componentContent, { supportAvoidance: this.supportAvoidance })
         .margin(10).border({ width: 1 }).height('48vp')
+
       Text('ComponentContent').margin(10).border({ width: 1 })
       TextArea({ controller: this.builderParam.controller, text: this.builderParam.inputValue })
         .customKeyboard(CustomKeyboardBuilder(this.builderParam), { supportAvoidance: this.supportAvoidance })
@@ -1166,14 +1608,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/9Kz0DoXkQhmvZB9CcBp7uw/zh-cn_image_0000002531225928.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=FCFC2D85967970A7910D9929C32D2EEE8A6E487BACC97BD1B227720405F53AD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/9Kz0DoXkQhmvZB9CcBp7uw/zh-cn_image_0000002531225928.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=88C43679E1F2D1A1AFF3F7256C2D8B1345349C07EC213A31F85B5E95D7EFDFF0)
 
 ### 示例4（设置输入法回车键类型）
 
 从API version 11开始，该示例通过[enterKeyType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#enterkeytype11)属性实现了动态切换输入法回车键的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -1182,6 +1623,7 @@ struct TextAreaExample {
     [EnterKeyType.Go, EnterKeyType.Search, EnterKeyType.Send, EnterKeyType.Done, EnterKeyType.Next,
       EnterKeyType.PREVIOUS, EnterKeyType.NEW_LINE];
   @State index: number = 0;
+
   build() {
     Column({ space: 20 }) {
       TextArea({ placeholder: '请输入用户名', text: this.text })
@@ -1196,19 +1638,19 @@ struct TextAreaExample {
       Button('改变EnterKeyType').onClick(() => {
         this.index = (this.index + 1) % this.enterTypes.length;
       })
+
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/S7h7KRsKR6Sp4V6M3Lqhag/zh-cn_image_0000002562025911.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=EAEFCD84F97ED068DA924193936C45B5512F77480542360263897D28D7404761)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/S7h7KRsKR6Sp4V6M3Lqhag/zh-cn_image_0000002562025911.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=E653787127734C00E7B756C8024AF9C2671D20C3C9B6AB33AB5499D315B6F8C1)
 
 ### 示例5（设置文本断行规则）
 
 从API version 12开始，该示例通过[wordBreak](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#wordbreak12)属性实现了TextArea不同断行规则下的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -1247,14 +1689,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/PLJT6B8KRYq2BEEj_jdjAA/zh-cn_image_0000002562145897.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=4CD19CD7A5C1CFD0CC09744C562265DD55B391B572FAE8657857302916B9376E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/PLJT6B8KRYq2BEEj_jdjAA/zh-cn_image_0000002562145897.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=4D0606702764503FF78EAF5F0545F1CEDC9BC1FAA6F84132DEA6A69F73744055)
 
 ### 示例6（设置文本样式）
 
 从API version 12开始，该示例通过[lineHeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#lineheight12)、[letterSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#letterspacing12)、[decoration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#decoration12)属性展示了不同样式的文本效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -1268,6 +1709,7 @@ struct TextAreaExample {
           .border({ width: 1 }).padding(10).margin(5).lineHeight(15)
         TextArea({ text: 'lineHeight 30' })
           .border({ width: 1 }).padding(10).margin(5).lineHeight(30)
+
         Text('letterSpacing').fontSize(9).fontColor(0xCCCCCC)
         TextArea({ text: 'letterSpacing 0' })
           .border({ width: 1 }).padding(5).margin(5).letterSpacing(0)
@@ -1275,6 +1717,7 @@ struct TextAreaExample {
           .border({ width: 1 }).padding(5).margin(5).letterSpacing(3)
         TextArea({ text: 'letterSpacing -1' })
           .border({ width: 1 }).padding(5).margin(5).letterSpacing(-1)
+
         Text('decoration').fontSize(9).fontColor(0xCCCCCC)
         TextArea({ text: 'LineThrough, Red\nsecond line' })
           .border({ width: 1 }).padding(5).margin(5)
@@ -1293,19 +1736,19 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/hNDEbZteQGKzj-mZraV8Eg/zh-cn_image_0000002531105996.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=44FD8CE7062F1E717BD3323617FBA40375252EF1CABF2F9D6EC9E00DEE60F489)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/hNDEbZteQGKzj-mZraV8Eg/zh-cn_image_0000002531105996.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=73EF14C83EAA51FBCBA480745CE501441CA5390D22C82E18FFE9E4D866CF3EBA)
 
 ### 示例7（设置文字特性效果）
 
 从API version 12开始，该示例通过[fontFeature](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#fontfeature12)属性实现了文本在不同文字特性下的展示效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
   @State text1: string = 'This is ss01 on : 0123456789';
   @State text2: string = 'This is ss01 off: 0123456789';
+
   build() {
     Column() {
       TextArea({ text: this.text1 })
@@ -1323,14 +1766,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/eqoTWHsKTHC9sqRUjJSb_g/zh-cn_image_0000002531225930.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=A3328D8FF9A02B29D2842CC307C78165659836AAA7CDF33E924CB5B08CD78B11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/eqoTWHsKTHC9sqRUjJSb_g/zh-cn_image_0000002531225930.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=99AF53B55CDD5BDC68BF287775081FBBA1C23E69F056D0461CB33AC04CA9B2CF)
 
 ### 示例8（自定义键盘避让）
 
 该示例通过[customKeyboard](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#customkeyboard10)（从API version 10开始）属性配置[KeyboardOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#keyboardoptions12)（从API version 12开始）接口实现了自定义键盘避让的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -1339,16 +1781,17 @@ struct TextAreaExample {
   @State height1: string | number = '80%';
   @State height2: number = 100;
   @State supportAvoidance: boolean = true;
-  // 自定义键盘组件
+
   @Builder
   CustomKeyboardBuilder() {
     Column() {
       Row() {
         Button('x').onClick(() => {
-          // 关闭自定义键盘
+
           this.controller.stopEditing();
         }).margin(10)
       }
+
       Grid() {
         ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
           GridItem() {
@@ -1361,6 +1804,7 @@ struct TextAreaExample {
       }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
     }.backgroundColor(Color.Gray)
   }
+
   build() {
     Column() {
       Row() {
@@ -1381,7 +1825,8 @@ struct TextAreaExample {
       .height(this.height1)
       .width("100%")
       .padding({ bottom: 50 })
-      TextArea({ controller: this.controller, text: this.inputValue })// 绑定自定义键盘
+
+      TextArea({ controller: this.controller, text: this.inputValue })
         .height(100)
         .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
         .margin(10)
@@ -1391,14 +1836,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/KdmR7xlBQ8ah8mRjLmbtDA/zh-cn_image_0000002562025913.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=A30745041B6CACE9D30B11B7B64397E7E9D9A78B1D3919D67E4D41DBAC21E44C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/KdmR7xlBQ8ah8mRjLmbtDA/zh-cn_image_0000002562025913.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=80E03E6CC9EDD80769EFBD365CB8EEDD10011755B3EE10C2F8B3741854A40C40)
 
 ### 示例9（设置文本自适应）
 
 从API version 12开始，该示例通过[minFontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#minfontsize12)、[maxFontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#maxfontsize12)、[heightAdaptivePolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#heightadaptivepolicy12)属性展示了文本自适应字号的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -1432,15 +1876,15 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/8duCUK1lRW6xwIAIW7r6jg/zh-cn_image_0000002562145899.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=CBA9C8751FCFE0051F60EACCD8273CF5FA3B18A9D8730280C128EE6E4BC9E6E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/8duCUK1lRW6xwIAIW7r6jg/zh-cn_image_0000002562145899.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=66D9A8AD88B4F91D193AE53ED24E7A680BA45A4AE659B671BD27E305461B37D5)
 
 ### 示例10（设置文本行间距）
 
 从API version 12开始，该示例通过[lineSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#linespacing12)属性展示了文本在不同行间距下的展示效果，同时，配置[LineSpacingOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#linespacingoptions20对象说明)中的onlyBetweenLines（从API version 20开始）属性，可以设置文本的行间距，是否仅在行与行之间生效。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct TextAreaExample {
@@ -1472,21 +1916,21 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-kFIIfEbQKOnsXObl6mGsw/zh-cn_image_0000002531105998.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=111D0546D6FD5401572449CF5CBE7CA769707F3DACBB156A18E4B4E9BC2E6D41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-kFIIfEbQKOnsXObl6mGsw/zh-cn_image_0000002531105998.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=41415FB89B782AB0D36C45797B467A048852C5A6DD58B880347B206AF69B849D)
 
 ### 示例11（设置自动填充）
 
 从API version 12开始，该示例通过[contentType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#contenttype12)、[enableAutoFill](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#enableautofill12)属性实现了文本自动填充的功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
   @State text: string = '';
+
   build() {
     Column() {
-      // 邮箱地址自动填充类型
+
       TextArea({ placeholder: 'input your email...' })
         .width('95%')
         .height(40)
@@ -1494,7 +1938,7 @@ struct TextAreaExample {
         .contentType(ContentType.EMAIL_ADDRESS)
         .enableAutoFill(true)
         .maxLength(20)
-      // 街道地址自动填充类型
+
       TextArea({ placeholder: 'input your street address...' })
         .width('95%')
         .height(40)
@@ -1507,12 +1951,13 @@ struct TextAreaExample {
 }
 ```
 
+具体使用场景请参考[账号密码填充](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/passwordvault-autofill-acc-password)。
+
 ### 示例12（设置折行规则）
 
 从API version 12开始，该示例通过[lineBreakStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#linebreakstrategy12)属性实现了TextArea不同折行规则下的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -1524,6 +1969,7 @@ struct TextAreaExample {
   @State lineBreakStrategy: LineBreakStrategy[] =
     [LineBreakStrategy.GREEDY, LineBreakStrategy.HIGH_QUALITY, LineBreakStrategy.BALANCED];
   @State lineBreakStrategyStr: string[] = ['GREEDY', 'HIGH_QUALITY', 'BALANCED'];
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start }) {
       Text('lineBreakStrategy').fontSize(9).fontColor(0xCCCCCC)
@@ -1546,14 +1992,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/1Jt-LXvZTGygKK-Eh8Nsaw/zh-cn_image_0000002531225932.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=5B259E86CD9EE74206EFF50958388A660B68B6BDF4AE533667B2D34556287996)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/1Jt-LXvZTGygKK-Eh8Nsaw/zh-cn_image_0000002531225932.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=6D80E28F0902A3725E138B4BA2FE00FD892D0847DCE8413D353FA65359EADB94)
 
 ### 示例13（支持插入和删除回调）
 
 从API version 12开始，该示例通过[onWillInsert](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#onwillinsert12)、[onDidInsert](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#ondidinsert12)、[onWillDelete](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#onwilldelete12)、[onDidDelete](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#ondiddelete12)接口实现了插入和删除的功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -1562,6 +2007,7 @@ struct TextAreaExample {
   @State insertOffset: number = 0;
   @State deleteOffset: number = 0;
   @State deleteDirection: number = 0;
+
   build() {
     Row() {
       Column() {
@@ -1575,7 +2021,9 @@ struct TextAreaExample {
           .onDidInsert((info: InsertValue) => {
             this.insertOffset = info.insertOffset;
           })
+
         Text("insertValue:" + this.insertValue + "  insertOffset:" + this.insertOffset).height(30)
+
         TextArea({ text: "TextArea支持删除回调文本b" })
           .width(300)
           .height(60)
@@ -1588,8 +2036,10 @@ struct TextAreaExample {
             this.deleteOffset = info.deleteOffset;
             this.deleteDirection = info.direction;
           })
+
         Text("deleteValue:" + this.deleteValue + "  deleteOffset:" + this.deleteOffset).height(30)
         Text("deleteDirection:" + (this.deleteDirection == 0 ? "BACKWARD" : "FORWARD")).height(30)
+
       }.width('100%')
     }
     .height('100%')
@@ -1597,21 +2047,20 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/piocD2VyRp2SSj6A_N334g/zh-cn_image_0000002562025915.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=77763AC12E1C2811DC0805926EF23D1300180EEC65AD59E8FD1B3409985E413F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/piocD2VyRp2SSj6A_N334g/zh-cn_image_0000002562025915.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=85A3DEDAE9E1658A4E16691A59794C00D322372D5DC6AA03E7C02DE9A92C4E06)
 
 ### 示例14（文本扩展自定义菜单）
 
 从API version 12开始，该示例通过[editMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#editmenuoptions12)接口实现了文本设置自定义菜单扩展项的文本内容、图标以及回调的功能，同时，可以在[onPrepareMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#属性-1)（从API version 20开始）回调中，进行菜单数据的设置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
   @State text: string = 'TextArea editMenuOptions';
   @State endIndex: number = 0;
   onCreateMenu = (menuItems: Array<TextMenuItem>) => {
-    // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
     let item1: TextMenuItem = {
       content: 'create1',
       icon: $r('app.media.startIcon'),
@@ -1646,7 +2095,7 @@ struct TextAreaExample {
     return false;
   }
   onPrepareMenu = (menuItems: Array<TextMenuItem>) => {
-    // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
     let item1: TextMenuItem = {
       content: 'prepare1_' + this.endIndex,
       icon: $r('app.media.startIcon'),
@@ -1660,6 +2109,7 @@ struct TextAreaExample {
     onMenuItemClick: this.onMenuItemClick,
     onPrepareMenu: this.onPrepareMenu
   };
+
   build() {
     Column() {
       TextArea({ text: this.text })
@@ -1677,14 +2127,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/g7hCReI0R3mTxFtJ4MmTgg/zh-cn_image_0000002562145901.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=252BBDFBB815693002955C799642ADC98B3273F0E1BB0A16C0E31260F289B2CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/g7hCReI0R3mTxFtJ4MmTgg/zh-cn_image_0000002562145901.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=7EC9D298D2E209C4A58B92AF178AAB66CA114939421FCA3D2E0742A7F5EEED7A)
 
 ### 示例15（文本设置省略模式）
 
 该示例通过[textOverflow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#textoverflow12)（从API version 12开始）、[ellipsisMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#ellipsismode18)（从API version 18开始）、[maxLines](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#maxlines10)（从API version 10开始）属性展示了文本超长省略以及调整省略位置的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct EllipsisModeExample {
@@ -1706,6 +2155,7 @@ struct EllipsisModeExample {
   @State styleAreaIndex: number = 0;
   @State styleArea: TextContentStyle[] = [TextContentStyle.INLINE, TextContentStyle.DEFAULT];
   @State styleAreaStr: string[] = ['INLINE', 'DEFAULT'];
+
   build() {
     Column({ space: 20 }) {
       TextArea({ text: this.text })
@@ -1715,6 +2165,7 @@ struct EllipsisModeExample {
         .style(this.styleArea[this.styleAreaIndex])
         .fontSize(30)
         .margin(30)
+
       Button('更改ellipsisMode模式：' + this.ellipsisModeStr[this.ellipsisModeIndex]).onClick(() => {
         this.ellipsisModeIndex++;
         if (this.ellipsisModeIndex > (this.ellipsisModeStr.length - 1)) {
@@ -1744,19 +2195,19 @@ struct EllipsisModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/wDLPcXpZQyu4ERDEKTkK8g/zh-cn_image_0000002531106000.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=F953D258685AC50409BCF13D783BC432CFAF9C76E4E2CF3C1D16F6BA14130845)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/wDLPcXpZQyu4ERDEKTkK8g/zh-cn_image_0000002531106000.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=1AA83583933A2712A99390EC2331B5ECD4DDD20708A85E475BAA6F459EF413B9)
 
 ### 示例16（自定义复制、剪切、粘贴）
 
 该示例通过[onCopy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#oncopy8)、[onCut](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#oncut8)、[onPaste](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#onpaste)展示如何监听文本选择菜单的复制、剪切、粘贴按钮，以及如何屏蔽系统粘贴功能并实现自定义的粘贴能力，同时，可以通过[maxFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#maxfontscale18)、[minFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#minfontscale18)属性设置文本最大和最小的字体缩放倍数。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
   @State text: string = '';
   controller: TextAreaController = new TextAreaController();
+
   build() {
     Column() {
       TextArea({
@@ -1771,7 +2222,7 @@ struct TextAreaExample {
         .fontStyle(FontStyle.Italic)
         .fontWeight(FontWeight.Bold)
         .fontFamily('HarmonyOS Sans')
-        .inputFilter('[a-zA-Z]+', (value) => { // 只允许字母输入
+        .inputFilter('[a-zA-Z]+', (value) => {
           console.error(`unsupported char ${value}`);
         })
         .copyOption(CopyOptions.LocalDevice)
@@ -1786,7 +2237,7 @@ struct TextAreaExample {
         .maxFontScale(2)
         .enablePreviewText(true)
         .enableHapticFeedback(true)
-        .stopBackPress(false)// 返回键交给其他组件处理
+        .stopBackPress(false)
         .width(336)
         .height(56)
         .margin(20)
@@ -1801,7 +2252,7 @@ struct TextAreaExample {
           console.info(`cut ${value}`);
         })
         .onPaste((value, event) => {
-          // 阻止系统粘贴功能，开发者可自行实现
+
           if (event.preventDefault) {
             event.preventDefault();
           }
@@ -1819,17 +2270,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Osi76DXPQNqFMjBMmTEK4Q/zh-cn_image_0000002531225934.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=698AAE0229AEC885821120310C8FE946DA69B8A9C8CD5EB3C3CE037277B2259D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Osi76DXPQNqFMjBMmTEK4Q/zh-cn_image_0000002531225934.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=5E170E8EC8AD8E786D5825958805F8BFF6858B1CF3E83F1C080C6E92E5401C91)
 
 ### 示例17（设置最小字体范围与最大字体范围）
 
 从API version 18开始，该示例通过[minFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#minfontscale18)、[maxFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#maxfontscale18)设置字体显示最小与最大范围。
 
 ```typescript
-// 开启应用缩放跟随系统
-// AppScope/resources/base，新建文件夹profile。
-// AppScope/resources/base/profile，新建文件configuration.json。
-// AppScope/resources/base/profile/configuration.json，增加如下代码。
 {
   "configuration": {
     "fontSizeScale": "followSystem",
@@ -1839,7 +2286,6 @@ struct TextAreaExample {
 ```
 
 ```typescript
-// AppScope/app.json5，修改如下代码。
 {
   "app": {
     "bundleName": "com.example.myapplication",
@@ -1854,12 +2300,12 @@ struct TextAreaExample {
 ```
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
   @State minFontScale: number = 0.85;
   @State maxFontScale: number = 2;
+
   build() {
     Column() {
       Column({ space: 30 }) {
@@ -1868,28 +2314,28 @@ struct TextAreaExample {
           placeholder: 'The text area can hold an unlimited amount of text. input your word...',
           text: '通过minFontScale、maxFontScale调整文本显示的最大和最小字体缩放倍数。'
         })
-          .minFontScale(this.minFontScale)// 设置最小字体缩放倍数，参数为undefined则跟随系统默认倍数缩放
-          .maxFontScale(this.maxFontScale) // 设置最大字体缩放倍数，参数为undefined则跟随系统默认倍数缩放
+          .minFontScale(this.minFontScale)
+          .maxFontScale(this.maxFontScale)
       }.width('100%')
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Ij4SngDGTGCu4IatmqrX9g/zh-cn_image_0000002562025917.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=06A8037D9F853DAF8B9365DCBCC2543E89105970D3359DF26C52ED747AA3C9F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/Ij4SngDGTGCu4IatmqrX9g/zh-cn_image_0000002562025917.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=DC031A1E9E36B7CA4451BCBD47380E6B85D00A51B3205AB04753AFFA28350CFB)
 
 ### 示例18（设置选中指定区域的文本内容）
 
 从API version 10开始，该示例通过[setTextSelection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#settextselection10)方法展示如何设置选中指定区域的文本内容以及菜单的显隐策略。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
   controller: TextAreaController = new TextAreaController();
   @State startIndex: number = 0;
   @State endIndex: number = 0;
+
   build() {
     Column({ space: 3 }) {
       Text('Selection start:' + this.startIndex + ' end:' + this.endIndex)
@@ -1903,6 +2349,7 @@ struct TextAreaExample {
           this.startIndex = selectionStart;
           this.endIndex = selectionEnd;
         })
+
       Button('setTextSelection [0,3], set menuPolicy is MenuPolicy.SHOW')
         .onClick(() => {
           this.controller.setTextSelection(0, 3, { menuPolicy: MenuPolicy.SHOW });
@@ -1914,15 +2361,15 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/e4EZjKFcQCa1JD_2RO441w/zh-cn_image_0000002562145903.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=07E6E2A11F781837BA79F96B0588CB97070C22C58CCAA3C08407130B76792C32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/e4EZjKFcQCa1JD_2RO441w/zh-cn_image_0000002562145903.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=3CA9E998B94EE57DD417449F0A4EDDC917C2DB5EC9D81B6C70744ECB9C9163E2)
 
 ### 示例19（设置文本描边）
 
 从API version 20开始，该示例通过[strokeWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#strokewidth20)和[strokeColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#strokecolor20)属性设置文本的描边宽度及颜色。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct TextAreaExample {
@@ -1930,6 +2377,7 @@ struct TextAreaExample {
     Row() {
       Column() {
         Text('stroke feature').fontSize(9).fontColor(0xCCCCCC)
+
         TextArea({ text: 'Text without stroke' })
           .width('100%')
           .height(60)
@@ -1957,14 +2405,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ssEc-p6QS8WQGa6CmLFebg/zh-cn_image_0000002531106002.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=5C9340870B171980989DD413707B03E8ADC0F448424A00018921288F6EBB734A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ssEc-p6QS8WQGa6CmLFebg/zh-cn_image_0000002531106002.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=A98770FF3EAFFFBBF19E7297AA5AD6DA96EF6DB65937DAD1DBF02F4CE31BF1E1)
 
 ### 示例20（设置中西文自动间距）
 
 从API version 20开始，该示例通过[enableAutoSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#enableautospacing20)属性设置中西文自动间距。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -1984,14 +2431,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/pWXvrce4RDqxZ496KeD-OQ/zh-cn_image_0000002531225936.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=C6B0EC0AFC921953D903AB40FB2F85046B7FAE85736689EFACAA2166854A4AEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/pWXvrce4RDqxZ496KeD-OQ/zh-cn_image_0000002531225936.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=595022F13275E984FC7DAFE6E5EDA544061317C8547816AB9CD161AAEBC40978)
 
 ### 示例21（设置最大行数）
 
 从API version 20开始，该示例通过[maxLines](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#maxlines20)属性设置显示最大行数，超出最大行数后可滚动。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -2013,18 +2459,18 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/wfmELgWvQWy8HwrxrcW6Lw/zh-cn_image_0000002562025919.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=D286EBA2875827EA0E8574156B3C3EBE49B1A1AD1F3959F57B43AEEF07E417C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/wfmELgWvQWy8HwrxrcW6Lw/zh-cn_image_0000002562025919.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=AD1315B82A30A572274C57D7D682F0ACC3378E794EDC61359EDB73C44CAD251A)
 
 ### 示例22（设置最小行数）
 
 从API version 20开始，该示例通过[minLines](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#minlines20)属性设置显示的最小行数。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
   @State message: string = 'Hello World';
+
   build() {
     Row() {
       Column() {
@@ -2041,7 +2487,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/vfzYSLffSzOTdfzEx7jeyg/zh-cn_image_0000002562145905.png?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=FF5A32F74576A9831634BF9694A242300218509F1AE3544BC7997317408CBE14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/vfzYSLffSzOTdfzEx7jeyg/zh-cn_image_0000002562145905.png?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=C7F69E374ADA27E2D0177F3B410B3A21F61D86CC92AEA0CAB7032BBDB452426A)
 
 ### 示例23（设置字符计数颜色以及超出字符颜色）
 
@@ -2049,12 +2495,13 @@ struct Index {
 
 ```typescript
 import { ColorMetrics } from '@kit.ArkUI';
-// xxx.ets
+
 @Entry
 @Component
 struct TextAreaExample {
   @State text: string = '';
   controller: TextAreaController = new TextAreaController();
+
   build() {
     Column() {
       TextArea({
@@ -2081,14 +2528,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/j6NiHrlQT76U5nO-HJCDKg/zh-cn_image_0000002531106004.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=96BC90110ADC34FE7793F3BDF0FF411C93EDFB49B42B7A4FA3A58C7BF3946C1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/j6NiHrlQT76U5nO-HJCDKg/zh-cn_image_0000002531106004.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=08A0694BD3C50C9F36E037E56802CA1AE56522F7FBA04A1A035666614556A165)
 
 ### 示例24（设置滚动条颜色）
 
 从API version 22开始，该示例通过[scrollBarColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea#scrollbarcolor22)属性设置滚动条颜色。
 
 ```typescript
-// xxx.ets
 import { ColorMetrics } from '@kit.ArkUI';
 @Entry
 @Component
@@ -2141,15 +2587,15 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/hlrJ0MuGQcKujPlJi77hTg/zh-cn_image_0000002531225938.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=991C6219C4EA28BF0474A8BC43B569D69F871055C5F4375DFB75827F6BA7DE59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/hlrJ0MuGQcKujPlJi77hTg/zh-cn_image_0000002531225938.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=44965CA8F431FEF09DF2609757CA7CA4B523F5A95239A8AADE9220E8B474E5E7)
 
 ### 示例25（设置placeholder富文本样式）
 
 从API version 22开始，该示例通过[setStyledPlaceholder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#setstyledplaceholder22)接口设置placeholder富文本样式。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct TextAreaExample {
@@ -2188,9 +2634,11 @@ struct TextAreaExample {
         }
       ]);
   controller: TextAreaController = new TextAreaController();
+
   aboutToAppear() {
     this.controller.setStyledPlaceholder(this.styledString)
   }
+
   build() {
     Scroll() {
       Column() {
@@ -2207,14 +2655,13 @@ struct TextAreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/0rGnk-PcSTGHEpfIeCaGEA/zh-cn_image_0000002562025921.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T122240Z&HW-CC-Expire=86400&HW-CC-Sign=EB209AE94F7BC9202ED32E799486C35FD6EAF83DD1D1635A61723651B9A118B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/0rGnk-PcSTGHEpfIeCaGEA/zh-cn_image_0000002562025921.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T144151Z&HW-CC-Expire=86400&HW-CC-Sign=A9C462FB2669E1ED5799B2FC8DBCF3DAD5866803958AF68C954372C78CA02C60)
 
 ### 示例26（设置输入法扩展信息）
 
 从API version 22开始，该示例通过[IMEClient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#imeclient20对象说明)的setExtraConfig设置输入法扩展信息。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextAreaExample {
@@ -2224,8 +2671,8 @@ struct TextAreaExample {
         .onWillAttachIME((client: IMEClient) => {
           client.setExtraConfig({
             customSettings: {
-              name: "TextArea", // 自定义属性
-              id: client.nodeId // 自定义属性
+              name: "TextArea",
+              id: client.nodeId
             }
           })
         })

@@ -1,10 +1,11 @@
-# 子组件
+# Checkbox-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox
 
 提供多选框组件，通常用于某选项的打开或关闭。
 
 > **说明**
 > API version 11开始，Checkbox默认样式由圆角方形变为圆形。
+>
 > 该组件从API version 8开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 
 ## 子组件
@@ -33,6 +34,8 @@ Checkbox(options?: CheckboxOptions)
 
 多选框的信息。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 是 | 指定多选框名称。 默认值：undefined，取值为undefined无效果。 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -53,6 +56,14 @@ select(value: boolean)
 
 从API version 18开始，该属性支持[!!](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-binding#系统组件参数双向绑定)双向绑定变量。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 多选框是否选中。 默认值：false 值为true时，多选框被选中。值为false时，多选框未选中。 |
@@ -69,6 +80,10 @@ select(isSelected: Optional<boolean>)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | isSelected | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<boolean> | 是 | 多选框是否选中。 当isSelected的值为undefined时取默认值false。 值为true时，多选框被选中。值为false时，多选框未选中。 |
@@ -78,6 +93,14 @@ select(isSelected: Optional<boolean>)
 selectedColor(value: ResourceColor)
 
 设置多选框选中状态颜色。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -89,6 +112,14 @@ selectedColor(resColor: Optional<ResourceColor>)
 
 设置多选框选中状态颜色。与[selectedColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#selectedcolor)相比，resColor参数新增了对undefined类型的支持。
 
+**卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)> | 是 | 多选框选中状态颜色。 当resColor的值为undefined时取默认值$r('sys.color.ohos_id_color_text_primary_activated')。 异常值按照默认值处理。 |
@@ -98,6 +129,12 @@ selectedColor(resColor: Optional<ResourceColor>)
 unselectedColor(value: ResourceColor)
 
 设置多选框非选中状态的边框颜色。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -109,6 +146,12 @@ unselectedColor(resColor: Optional<ResourceColor>)
 
 设置多选框非选中状态的边框颜色。与[unselectedColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#unselectedcolor10)10+相比，resColor参数新增了对undefined类型的支持。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resColor | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor)> | 是 | 多选框非选中状态边框颜色。 当resColor的值为undefined时取默认值$r('sys.color.ohos_id_color_switch_outline_off') |
@@ -119,6 +162,12 @@ mark(value: MarkStyle)
 
 设置多选框内部图标的样式。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [MarkStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#markstyle10对象说明) | 是 | 多选框内部图标样式。 从API version 12开始，设置了indicatorBuilder时，按照indicatorBuilder中的内容显示。 默认值：{ strokeColor : $r('sys.color.ohos_id_color_foreground_contrary'), strokeWidth: $r('sys.float.ohos_id_checkbox_stroke_width'), size: '20vp' } |
@@ -128,6 +177,12 @@ mark(value: MarkStyle)
 mark(style: Optional<MarkStyle>)
 
 设置多选框内部图标的样式。与[mark](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#mark10)10+相比，style参数新增了对undefined类型的支持。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -143,6 +198,10 @@ shape(value: CheckBoxShape)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [CheckBoxShape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#checkboxshape11) | 是 | Checkbox组件形状，包括圆形和圆角方形。 默认值：CheckBoxShape.CIRCLE |
@@ -152,6 +211,14 @@ shape(value: CheckBoxShape)
 shape(shape: Optional<CheckBoxShape>)
 
 设置Checkbox组件形状，包括圆形和圆角方形。与[shape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#shape11)11+相比，shape参数新增了对undefined类型的支持。如果想要调整当前Checkbox的样式，需使用[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#contentmodifier12)属性自定义Checkbox样式。
+
+**卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -163,6 +230,12 @@ contentModifier(modifier: ContentModifier<CheckBoxConfiguration>)
 
 定制Checkbox内容区的方法。设置该属性时，会导致其他属性设置失效。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | modifier | [ContentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#contentmodifiert)[<CheckBoxConfiguration>](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#checkboxconfiguration12对象说明) | 是 | 在Checkbox组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义class实现ContentModifier接口。 |
@@ -172,6 +245,12 @@ contentModifier(modifier: ContentModifier<CheckBoxConfiguration>)
 contentModifier(modifier: Optional<ContentModifier<CheckBoxConfiguration>>)
 
 定制Checkbox内容区的方法。与[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#contentmodifier12)12+相比，modifier参数新增了对undefined类型的支持。设置该属性时，会导致其他属性设置失效。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -187,6 +266,14 @@ onChange(callback: OnCheckboxChangeCallback)
 
 当选中状态发生变化时，触发该回调。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | callback | [OnCheckboxChangeCallback](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#oncheckboxchangecallback18) | 是 | 返回选中的状态。 |
@@ -196,6 +283,14 @@ onChange(callback: OnCheckboxChangeCallback)
 onChange(callback: Optional<OnCheckboxChangeCallback>)
 
 当选中状态发生变化时，触发该回调。与[onChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#onchange)相比，callback参数新增了对undefined类型的支持。
+
+**卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -207,6 +302,14 @@ type OnCheckboxChangeCallback = (value: boolean) => void
 
 选中的状态。
 
+**卡片能力：** 从API version 18开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | boolean | 是 | 返回true表示已选中。返回false表示未选中。 |
@@ -214,6 +317,10 @@ type OnCheckboxChangeCallback = (value: boolean) => void
 ## CheckBoxConfiguration12+对象说明
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -252,7 +359,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/darhOQBXTnuqWzxgAkOkwg/zh-cn_image_0000002531225882.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122228Z&HW-CC-Expire=86400&HW-CC-Sign=4DC0AB634FC27048802CD540114ABB25D1C69E123D88C47A640C835FA59F6F87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/darhOQBXTnuqWzxgAkOkwg/zh-cn_image_0000002531225882.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144133Z&HW-CC-Expire=86400&HW-CC-Sign=A10D2D4472EA6F6F968FAF5B49BAFBBFA877229A84D91B7AEF08BC69458421BF)
 
 ### 示例2（设置多选框颜色）
 
@@ -302,7 +409,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/y2kljZUoTmiXNz2ZX8TEgw/zh-cn_image_0000002562025865.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122228Z&HW-CC-Expire=86400&HW-CC-Sign=BB1DA2066267C991C620B4FB034DCE7B3A7B96BBF068517E1F35E64B916CE5D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/y2kljZUoTmiXNz2ZX8TEgw/zh-cn_image_0000002562025865.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144133Z&HW-CC-Expire=86400&HW-CC-Sign=DBF858B67430A500831BB173D0B8B23CD0E905182F7A1B9F34178C9515A922C9)
 
 ### 示例3（自定义多选框样式）
 
@@ -392,7 +499,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/bonE5ts4Q2iSOzQGEPGADQ/zh-cn_image_0000002562145851.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122228Z&HW-CC-Expire=86400&HW-CC-Sign=93F843FB97CC582964E4C425327A2B0B62DC503629300DB47CCEAF8A7048465E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/bonE5ts4Q2iSOzQGEPGADQ/zh-cn_image_0000002562145851.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144133Z&HW-CC-Expire=86400&HW-CC-Sign=3B2C5D27D329AFDE058D0C59E7A62E4D3EECA072363B5A73548B8EE1A8E7D747)
 
 ### 示例4（设置文本多选框样式）
 
@@ -448,7 +555,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/lvbQWqcjRO6l38U1Lxqfvg/zh-cn_image_0000002531105950.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122228Z&HW-CC-Expire=86400&HW-CC-Sign=1D319F8ADE8ABFDA5B8CA3DA1D6D00FF52E71C894646139F40B48597C36CA4BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/lvbQWqcjRO6l38U1Lxqfvg/zh-cn_image_0000002531105950.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144133Z&HW-CC-Expire=86400&HW-CC-Sign=113B4A1358A6BC4EC2A6C6CE39CBCAE5C0F92409F86219C7EF71555FC8C21151)
 
 ### 示例5（获取多选框选中信息）
 
@@ -602,7 +709,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/63U8PtWPTr6iFZSpu3yh0g/zh-cn_image_0000002531225884.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122228Z&HW-CC-Expire=86400&HW-CC-Sign=E0E72287433F10A357B954357BAC6B193840FD89A4B4E6BB0B48EACCB2D2C007)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/63U8PtWPTr6iFZSpu3yh0g/zh-cn_image_0000002531225884.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144133Z&HW-CC-Expire=86400&HW-CC-Sign=FAF64330DF85ED2EC64D8F1DEEA0B4949895E729774466A59F2A4AD4186FFE8F)
 
 ### 示例6（设置滑动多选）
 
@@ -816,4 +923,4 @@ enum SelectedState {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DrYB4JOGTnuGmNlT-c05pA/zh-cn_image_0000002562025867.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122228Z&HW-CC-Expire=86400&HW-CC-Sign=472AE6DA954EABCDC22B28498C1C563EC656EC487F309F907816E92A45C952BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DrYB4JOGTnuGmNlT-c05pA/zh-cn_image_0000002562025867.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144133Z&HW-CC-Expire=86400&HW-CC-Sign=355A754B24356CF97247682EC27DEEA3D6A6A3C1063695D5D8B3B93FBCE6F8C2)

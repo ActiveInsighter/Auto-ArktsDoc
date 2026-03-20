@@ -1,4 +1,4 @@
-# animation
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animatorproperty
 
 组件的某些通用属性变化时，可以通过属性动画实现渐变过渡效果，提升用户体验。支持的属性包括[width](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#width)、[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)、[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)、[opacity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-opacity#opacity)、[scale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#scale)、[rotate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#rotate)、[translate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#translate)等。对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-renderfit#renderfit)属性进行配置。
@@ -13,14 +13,8 @@ animation(value:AnimateParam): T
 设置组件的属性动画。
 
 > **说明**
-> 在单一页面上存在大量应用动效的组件时，可以使用
-> renderGroup
-> 方法来解决卡顿问题，从而提升动画性能。最佳实践请参考
-> 动画使用指导-使用renderGroup
-> 。
-> 该接口不支持在
-> attributeModifier
-> 中调用。
+> - 在单一页面上存在大量应用动效的组件时，可以使用[renderGroup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#rendergroup10)方法来解决卡顿问题，从而提升动画性能。最佳实践请参考[动画使用指导-使用renderGroup](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-fair-use-animation#section1223162922415)。
+> - 该接口不支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -141,4 +135,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aUTbqd0lRYiffh8kiEHa3g/zh-cn_image_0000002531226188.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122211Z&HW-CC-Expire=86400&HW-CC-Sign=E8BD491E483F5EF763D7E895487B486F15EEC54F9A105CE33184031FC673A5A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aUTbqd0lRYiffh8kiEHa3g/zh-cn_image_0000002531226188.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144243Z&HW-CC-Expire=86400&HW-CC-Sign=C448F0D1F3F20E1E4F834C07E9F9680B4D74A901A87052D2C990DAB50E0814B8)

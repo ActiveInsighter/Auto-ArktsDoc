@@ -1,15 +1,12 @@
-# AnimateParam对象说明
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation
 
 提供全局animateTo显式动画接口来指定由于闭包代码导致的状态变化插入过渡动效。同属性动画，对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-renderfit#renderfit)属性进行配置。
 
 > **说明**
 > 从API version 7开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> 本模块功能依赖UI的执行上下文，不可在
-> UI上下文不明确
-> 的地方使用，参见
-> UIContext
-> 说明。
+>
+> 本模块功能依赖UI的执行上下文，不可在[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的地方使用，参见[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)说明。
 
 ## AnimateParam对象说明
 
@@ -30,9 +27,9 @@
 | expectedFrameRateRange11+ | [ExpectedFrameRateRange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation#expectedframeraterange11) | 否 | 是 | 设置动画的期望帧率。 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 > **说明**
-> PlayMode推荐使用PlayMode.Normal和PlayMode.Alternate，此场景下动画的第一轮是正向播放的。如使用PlayMode.Reverse和PlayMode.AlternateReverse，则动画的第一轮是逆向播放的，在动画刚开始时会跳变到终止状态，然后逆向播放动画。
-> 使用PlayMode.Alternate或PlayMode.AlternateReverse时，开发者应保证动画最终状态和状态变量的取值一致，即应保证动画的最后一轮是正向播放的。使用PlayMode.Alternate时，iterations应为奇数。使用PlayMode.AlternateReverse时，iterations应为偶数。
-> 不推荐使用PlayMode.Reverse，此场景下不仅会导致动画刚开始就跳变到终止状态，也会导致动画最终状态和状态变量的取值不同。
+> - PlayMode推荐使用PlayMode.Normal和PlayMode.Alternate，此场景下动画的第一轮是正向播放的。如使用PlayMode.Reverse和PlayMode.AlternateReverse，则动画的第一轮是逆向播放的，在动画刚开始时会跳变到终止状态，然后逆向播放动画。
+> - 使用PlayMode.Alternate或PlayMode.AlternateReverse时，开发者应保证动画最终状态和状态变量的取值一致，即应保证动画的最后一轮是正向播放的。使用PlayMode.Alternate时，iterations应为奇数。使用PlayMode.AlternateReverse时，iterations应为偶数。
+> - 不推荐使用PlayMode.Reverse，此场景下不仅会导致动画刚开始就跳变到终止状态，也会导致动画最终状态和状态变量的取值不同。
 
 ## ICurve9+
 
@@ -45,6 +42,8 @@ interpolate(fraction: number): number
 插值曲线的插值计算函数，可以通过传入的归一化时间参数返回当前的插值
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -68,6 +67,8 @@ interpolate(fraction: number): number
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | REMOVED | 0 | 当整个动画结束并立即删除时，将触发回调。 |
@@ -76,6 +77,10 @@ interpolate(fraction: number): number
 ## ExpectedFrameRateRange11+
 
 设置动画期望的帧率。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -90,32 +95,22 @@ animateTo(value: AnimateParam, event: () => void): void
 显式动画接口。在需要动画时，显式调用该接口改变状态以产生动画。
 
 > **说明**
-> 从API version 7开始支持，从API version 18开始废弃，建议使用
-> animateTo
-> 替代。
-> 从API version 10开始，可以通过使用
-> UIContext
-> 中的
-> animateTo
-> 来明确UI的执行上下文。
-> 不推荐在aboutToAppear、aboutToDisappear中调用动画。
-> 如果在
-> aboutToAppear
-> 中调用动画，自定义组件内的build还未执行，内部组件还未创建，动画时机过早，动画属性没有初值无法对组件产生动画。
-> 执行
-> aboutToDisappear
-> 时，组件即将销毁，不能在aboutToDisappear里面做动画。
-> 在组件出现和消失时，可以通过
-> 组件内转场
-> 添加动画效果。
-> 组件内转场不支持的属性，可以参考
-> 示例2
-> ，使用animateTo实现动画执行结束后组件消失的效果。
-> 某些场景下，在
-> 状态管理V2
-> 中使用animateTo动画，会产生异常效果，具体可参考：
-> 在状态管理V2中使用animateTo动画效果异常
-> 。
+> - 从API version 7开始支持，从API version 18开始废弃，建议使用[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)替代。
+> - 从API version 10开始，可以通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)来明确UI的执行上下文。
+> - 不推荐在aboutToAppear、aboutToDisappear中调用动画。
+> - 如果在[aboutToAppear](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#abouttoappear)中调用动画，自定义组件内的build还未执行，内部组件还未创建，动画时机过早，动画属性没有初值无法对组件产生动画。
+> - 执行[aboutToDisappear](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#abouttodisappear)时，组件即将销毁，不能在aboutToDisappear里面做动画。
+> - 在组件出现和消失时，可以通过[组件内转场](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component)添加动画效果。
+> - 组件内转场不支持的属性，可以参考[示例2](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation#示例2动画执行结束后组件消失)，使用animateTo实现动画执行结束后组件消失的效果。
+> - 某些场景下，在[状态管理V2](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-management-overview#状态管理v2)中使用animateTo动画，会产生异常效果，具体可参考：[在状态管理V2中使用animateTo动画效果异常](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-local#在状态管理v2中使用animateto动画效果异常)。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -127,13 +122,7 @@ animateTo(value: AnimateParam, event: () => void): void
 ### 示例1（在组件出现时创建动画）
 
 > **说明**
-> 直接使用animateTo可能导致
-> UI上下文不明确
-> 的问题，建议使用getUIContext()获取
-> UIContext
-> 实例，并使用
-> animateTo
-> 调用绑定实例的animateTo。
+> 直接使用animateTo可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例，并使用[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)调用绑定实例的animateTo。
 
 该示例通过在onAppear方法中创建组件出现时的动画效果。
 
@@ -208,7 +197,7 @@ struct AnimateToExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pKByjk41RzSxgYPl5gRYOg/zh-cn_image_0000002562026171.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122324Z&HW-CC-Expire=86400&HW-CC-Sign=EA77850C0433A5DEB8537835E6233B46E3DF1DE0D90E1BFF301EC71E32869E7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pKByjk41RzSxgYPl5gRYOg/zh-cn_image_0000002562026171.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144243Z&HW-CC-Expire=86400&HW-CC-Sign=64AE617B02CEAB65CD1556BA1629CCFCD10D7AC9ED134CBB05BBC479A5ACB151)
 
 ### 示例2（动画执行结束后组件消失）
 
@@ -260,4 +249,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/b7LhcWNqQ4GvkRQ78y-NWA/zh-cn_image_0000002562146157.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122324Z&HW-CC-Expire=86400&HW-CC-Sign=7E98B5EDB9BE5AAF75D5BE8AE3D2EF1B6793036B35D35CFEDF7B2601716DE74D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/b7LhcWNqQ4GvkRQ78y-NWA/zh-cn_image_0000002562146157.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144243Z&HW-CC-Expire=86400&HW-CC-Sign=43D92C6BD0031DF84AAAAA671A9E030A7D716171627E4ABE428F87E675CB4EAB)

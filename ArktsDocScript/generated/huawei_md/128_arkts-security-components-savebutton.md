@@ -1,4 +1,4 @@
-# 子组件
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton
 
 安全控件的保存控件。应用集成保存控件后，用户首次使用保存控件展示弹窗，在点击允许后自动授权，应用会在短时间内获取访问媒体库特权接口的授权。后续使用无需弹窗授权。在API version 19及之前的版本中，授权持续时间为10秒；在API version 20及之后的版本中，授权持续时间为1分钟。
@@ -24,9 +24,17 @@ SaveButton()
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
+### SaveButton
+
 SaveButton(options: SaveButtonOptions)
 
 创建包含指定元素的保存控件。
+
+为避免控件样式不合法导致授权失败，请开发者先了解安全控件样式的[约束与限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/security-component-overview#约束与限制)。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
 
@@ -39,14 +47,13 @@ SaveButton(options: SaveButtonOptions)
 用于指定保存控件的图标、文本等指定元素。
 
 > **说明**
-> icon或text需至少传入一个。
-> 如果icon、text都不传入，
-> SaveButton
-> 中的options参数不生效，创建的SaveButton为默认样式，默认样式：
-> SaveIconStyle默认样式为FULL_FILLED；
-> SaveDescription默认样式为DOWNLOAD；
-> ButtonType默认样式为Capsule。
-> icon、text、buttonType不支持动态修改。
+> - icon或text需至少传入一个。
+> - 如果icon、text都不传入，[SaveButton](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton#savebutton-1)中的options参数不生效，创建的SaveButton为默认样式，默认样式： SaveIconStyle默认样式为FULL_FILLED； SaveDescription默认样式为DOWNLOAD； ButtonType默认样式为Capsule。
+> - icon、text、buttonType不支持动态修改。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -58,6 +65,10 @@ SaveButton(options: SaveButtonOptions)
 
 保存控件的图标风格。
 
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | FULL_FILLED | 0 | 保存控件展示填充样式图标。 |
@@ -66,6 +77,8 @@ SaveButton(options: SaveButtonOptions)
 ## SaveDescription枚举说明
 
 保存控件的文本描述。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -87,6 +100,8 @@ SaveButton(options: SaveButtonOptions)
 
 保存控件点击后的授权结果。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SUCCESS | 0 | 保存控件点击后权限授权成功。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -101,6 +116,10 @@ type SaveButtonCallback = (event: ClickEvent, result: SaveButtonOnClickResult, e
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | event | [ClickEvent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-events-click#clickevent) | 是 | 见ClickEvent对象说明。 |
@@ -110,6 +129,8 @@ type SaveButtonCallback = (event: ClickEvent, result: SaveButtonOnClickResult, e
 ## SaveButtonAttribute
 
 SaveButtonAttribute提供自定义图标（setIcon）、自定义文本（setText）、图标尺寸（iconSize）、图标圆角（iconBorderRadius），以及按压态效果（stateEffect）等属性设置的方法。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 ### setIcon20+
 
@@ -121,6 +142,10 @@ setIcon(icon: Resource)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | icon | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 是 | 自定义图标资源信息，仅支持Resource类型的数据源。 可支持的图片格式：png、jpg、jpeg、bmp、svg、webp、gif和heif等，支持的图片格式范围见[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)。当资源为非图片资源或不支持的格式时，图标显示为空白。 如果应用无ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则自定义图标设置不生效，保存控件保持默认样式。详见[SaveButtonOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton#savebuttonoptions)说明。 |
@@ -130,6 +155,14 @@ setIcon(icon: Resource)
 setText(text: string | Resource)
 
 设置保存控件的文本。
+
+**需要权限**：ohos.permission.CUSTOMIZE_SAVE_BUTTON
+
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -141,6 +174,12 @@ iconSize(size: Dimension | SizeOptions)
 
 设置保存控件的图标尺寸。
 
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | size | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | [SizeOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#sizeoptions) | 是 | 图标尺寸。宽高默认值均为16vp。 不支持设置百分比字符串。若设置Dimension类型入参的百分比字符串，则图标尺寸显示为默认值；若设置SizeOptions类型入参的width或height属性为百分比字符串，则图标尺寸显示为0。 对于保存控件提供的系统图标： - 使用Dimension类型入参时，宽、高相等，均为设定值。 - 使用SizeOptions类型入参时，若宽、高设定值不一致，则宽、高相等取两者较小值；若仅设定其中一个值，则取该值作为宽、高值。 对于自定义图标： - 使用Dimension类型入参时，宽、高相等，均为设定值。 - 使用SizeOptions类型入参时，建议同时设定宽和高，此时按照指定宽、高生效；若仅设定其中一个值，则宽高均显示为该设定值。 - 当设定的宽高与自定义图标的宽高比例不一致时，图片按[ImageFit.Cover](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#imagefit)的方式填充显示区域。 |
@@ -151,6 +190,14 @@ iconBorderRadius(radius: Dimension | BorderRadiuses)
 
 设置保存控件图标的边框圆角半径。
 
+**需要权限**：ohos.permission.CUSTOMIZE_SAVE_BUTTON
+
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | radius | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | [BorderRadiuses](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#borderradiuses9) | 是 | 保存控件图标的圆角半径，支持设置四个圆角。 如果应用无ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则图标的圆角半径设置不生效。 |
@@ -160,6 +207,14 @@ iconBorderRadius(radius: Dimension | BorderRadiuses)
 stateEffect(enabled: boolean)
 
 设置保存控件的按压效果。
+
+**需要权限**：ohos.permission.CUSTOMIZE_SAVE_BUTTON
+
+**元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -172,6 +227,10 @@ userCancelEvent(enabled: boolean)
 设置接收保存控件的用户取消授权事件。
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -190,6 +249,12 @@ userCancelEvent(enabled: boolean)
 onClick(event: SaveButtonCallback)
 
 点击动作触发该回调。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -269,7 +334,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ULsWZ-HbQ6Cw2hTREjD38w/zh-cn_image_0000002531106308.png?HW-CC-KV=V1&HW-CC-Date=20260320T122341Z&HW-CC-Expire=86400&HW-CC-Sign=5D993D1FE6ABE30D5146BEC83203C7A55187D38DC27C3A6636BCAE3C1C096A4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ULsWZ-HbQ6Cw2hTREjD38w/zh-cn_image_0000002531106308.png?HW-CC-KV=V1&HW-CC-Date=20260320T144303Z&HW-CC-Expire=86400&HW-CC-Sign=D7C91A004D16F477C0158F16E993F91F3EBC80E0E1B500A5E985CD0E55221042)
 
 ## 示例2
 
@@ -343,4 +408,4 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/A8Bf4x1DRcmOfI9IG5ZQSA/zh-cn_image_0000002531226242.png?HW-CC-KV=V1&HW-CC-Date=20260320T122341Z&HW-CC-Expire=86400&HW-CC-Sign=1AD3AFF8504C5EC3D9F01D81A55B43E9F06B9113AC6BF8AF6AB713D30C7E9FFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/A8Bf4x1DRcmOfI9IG5ZQSA/zh-cn_image_0000002531226242.png?HW-CC-KV=V1&HW-CC-Date=20260320T144303Z&HW-CC-Expire=86400&HW-CC-Sign=EFA6CB3CB4721F6FA847BCA2AF11284C295202439A4D591DEF0BCC3D55A019A0)

@@ -1,4 +1,4 @@
-# borderImage
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image
 
 设置组件的图片边框样式。
@@ -32,6 +32,12 @@ borderImage(value: BorderImageOption): T
 
 ## BorderImageOption对象说明
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | source | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | [LinearGradient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#lineargradient) | 否 | 是 | 边框图源或者渐变色设置。参数类型为string类型时，用于设置边框图源，引用方式请参考[加载图片资源](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-graphics-display#加载图片资源)。 **说明：** 边框图源仅适用于容器组件，如[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)、[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)，在非容器组件上使用会失效。 |
@@ -45,6 +51,12 @@ borderImage(value: BorderImageOption): T
 
 用于设置被切割的图片在边框上的重复方式。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | Repeat | 0 | 被切割的图片会重复铺平在图片边框上，超出部分会被剪裁。 |
@@ -53,6 +65,10 @@ borderImage(value: BorderImageOption): T
 | Space | 3 | 被切割的图片会以整数次平铺在图片边框上，无法以整数次平铺时会以空白填充。 |
 
 ## LinearGradient
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -68,7 +84,6 @@ borderImage(value: BorderImageOption): T
 通过[borderImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#borderimage)接口为组件设置渐变色边框。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
@@ -96,14 +111,13 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/YTglJKCrS-CRXM3RRbzBFQ/zh-cn_image_0000002531105760.png?HW-CC-KV=V1&HW-CC-Date=20260320T122150Z&HW-CC-Expire=86400&HW-CC-Sign=5544243E4CBCA1F1D5DDB51FD906A1B9D8B5F7BC1AEB60C1ECE27F4BBC608907)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/YTglJKCrS-CRXM3RRbzBFQ/zh-cn_image_0000002531105760.png?HW-CC-KV=V1&HW-CC-Date=20260320T144045Z&HW-CC-Expire=86400&HW-CC-Sign=CE8358DE4D1152D13E3148F171D82E59BD593199EAD6377C311253CD54AE62F0)
 
 ### 示例2（动态调整属性值）
 
 通过[slider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-slider)接口动态调整[borderImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#borderimage)接口中属性值。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct BorderImage {
@@ -114,6 +128,7 @@ struct BorderImage {
   @State SelectIndex: number = 0
   @State SelectText: string = 'Repeat'
   @State FillValue: boolean = false
+
   build() {
     Row() {
       Column({ space: 20 }) {
@@ -128,6 +143,7 @@ struct BorderImage {
           repeat: this.RepeatValue[this.SelectIndex],
           fill: this.FillValue
         })
+
         Column() {
           Text(`borderImageSlice = ${this.SliceValue}px`)
           Slider({
@@ -140,6 +156,7 @@ struct BorderImage {
               this.SliceValue = value
             })
         }
+
         Column() {
           Text(`borderImageWidth = ${this.WidthValue}px`)
           Slider({
@@ -152,6 +169,7 @@ struct BorderImage {
               this.WidthValue = value
             })
         }
+
         Column() {
           Text(`borderImageOutSet = ${this.OutSetValue}px`)
           Slider({
@@ -164,6 +182,7 @@ struct BorderImage {
               this.OutSetValue = value
             })
         }
+
         Row() {
           Text('borderImageRepeat: ')
           Select([{ value: 'Repeat' }, { value: 'Stretch' }, { value: 'Round' }, { value: 'Space' }])
@@ -174,6 +193,7 @@ struct BorderImage {
               this.SelectText = value as string
             })
         }
+
         Row() {
           Text(`borderImageFill: ${this.FillValue} `)
           Toggle({ type: ToggleType.Switch, isOn: this.FillValue })
@@ -181,6 +201,7 @@ struct BorderImage {
               this.FillValue = isOn
             })
         }
+
       }
       .width('100%')
     }
@@ -189,15 +210,15 @@ struct BorderImage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/odAMBQ77T7u5yLIaSbg0qQ/zh-cn_image_0000002531225694.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122150Z&HW-CC-Expire=86400&HW-CC-Sign=3E2B91D6605FAA3DC3DF22438E15FB202A8E997A6D54FF3B0469AC69C3EA0ECA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/odAMBQ77T7u5yLIaSbg0qQ/zh-cn_image_0000002531225694.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144045Z&HW-CC-Expire=86400&HW-CC-Sign=A7C77F3125B071EE055E9FFD49AA91710DFCDB340B53C9561F3130FFEEA056FD)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
 通过[borderImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#borderimage)接口中的slice、width和outset属性值使用[LocalizedEdgeWidths](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizededgewidths12)类型。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct BorderImage {
@@ -211,6 +232,7 @@ struct BorderImage {
   @State SelectIndex: number = 0
   @State SelectText: string = 'Repeat'
   @State FillValue: boolean = false
+
   build() {
     Row() {
       Column({ space: 20 }) {
@@ -239,6 +261,7 @@ struct BorderImage {
           repeat: this.RepeatValue[this.SelectIndex],
           fill: this.FillValue
         })
+
         Column() {
           Text(`borderImageSliceStart = ${this.SliceStartValue}px`)
           Slider({
@@ -251,6 +274,7 @@ struct BorderImage {
               this.SliceStartValue = value
             })
         }
+
         Column() {
           Text(`borderImageEndSliceStart = ${this.SliceEndValue}px`)
           Slider({
@@ -263,6 +287,7 @@ struct BorderImage {
               this.SliceEndValue = value
             })
         }
+
         Column() {
           Text(`borderImageWidthStart = ${this.WidthStartValue}px`)
           Slider({
@@ -275,6 +300,7 @@ struct BorderImage {
               this.WidthStartValue = value
             })
         }
+
         Column() {
           Text(`borderImageWidthEnd = ${this.WidthEndValue}px`)
           Slider({
@@ -287,6 +313,7 @@ struct BorderImage {
               this.WidthEndValue = value
             })
         }
+
         Column() {
           Text(`borderImageOutSetStart = ${this.OutSetStartValue}px`)
           Slider({
@@ -299,6 +326,7 @@ struct BorderImage {
               this.OutSetStartValue = value
             })
         }
+
         Column() {
           Text(`borderImageOutSetEnd = ${this.OutSetEndValue}px`)
           Slider({
@@ -311,6 +339,7 @@ struct BorderImage {
               this.OutSetEndValue = value
             })
         }
+
         Row() {
           Text('borderImageRepeat: ')
           Select([{ value: 'Repeat' }, { value: 'Stretch' }, { value: 'Round' }, { value: 'Space' }])
@@ -321,6 +350,7 @@ struct BorderImage {
               this.SelectText = value as string
             })
         }
+
         Row() {
           Text(`borderImageFill: ${this.FillValue} `)
           Toggle({ type: ToggleType.Switch, isOn: this.FillValue })
@@ -328,6 +358,7 @@ struct BorderImage {
               this.FillValue = isOn
             })
         }
+
       }
       .width('100%')
     }
@@ -338,4 +369,4 @@ struct BorderImage {
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/RS06tC-pT3qhV4D1_eh6cQ/zh-cn_image_0000002562025677.png?HW-CC-KV=V1&HW-CC-Date=20260320T122150Z&HW-CC-Expire=86400&HW-CC-Sign=E714CC8F5A6E130A7C41CAD0ED81BBE7A0AAB3A93400AAC27B55F6957D69BE9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/RS06tC-pT3qhV4D1_eh6cQ/zh-cn_image_0000002562025677.png?HW-CC-KV=V1&HW-CC-Date=20260320T144045Z&HW-CC-Expire=86400&HW-CC-Sign=75F1B52F38450E1F09A2957CEB6E933C1371E88614233FE477ACB7D3959F6D4E)

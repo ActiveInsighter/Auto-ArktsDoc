@@ -1,4 +1,4 @@
-# 子组件
+# Button-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button
 
 按钮组件，可快速创建不同样式的按钮。
@@ -30,24 +30,44 @@ Button(options: ButtonOptions)
 | --- | --- | --- | --- |
 | options | [ButtonOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#buttonoptions对象说明) | 是 | 配置按钮的显示样式。 |
 
+### Button
+
 Button(label: ResourceStr, options?: ButtonOptions)
 
 使用文本内容创建相应的按钮组件，此时Button无法包含子组件。
 
 文本内容默认单行显示。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 按钮文本内容。 **说明：** 当文本字符的长度超过按钮本身的宽度时，文本将会被截断。 |
 | options | [ButtonOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#buttonoptions对象说明) | 否 | 配置按钮的显示样式。 |
 
+### Button
+
 Button()
 
 创建一个空按钮。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 ## ButtonOptions对象说明
 
 按钮的样式。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -67,6 +87,14 @@ type(value: ButtonType)
 
 设置Button样式。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ButtonType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#buttontype枚举说明) | 是 | Button样式。 API version 18及之后，ButtonType的默认值从ButtonType.Capsule变更为ButtonType.ROUNDED_RECTANGLE。 |
@@ -76,6 +104,14 @@ type(value: ButtonType)
 fontSize(value: Length)
 
 设置文本显示字号。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -87,6 +123,14 @@ fontColor(value: ResourceColor)
 
 设置文本显示颜色。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 文本显示颜色。 默认值：$r('sys.color.font_on_primary')，显示为白色字体。 |
@@ -96,6 +140,14 @@ fontColor(value: ResourceColor)
 fontWeight(value: number | FontWeight | string)
 
 设置文本的字体粗细。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -107,6 +159,14 @@ fontStyle(value: FontStyle)
 
 设置文本的字体样式。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [FontStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#fontstyle) | 是 | 文本的字体样式。 默认值：FontStyle.Normal |
@@ -116,6 +176,14 @@ fontStyle(value: FontStyle)
 stateEffect(value: boolean)
 
 设置是否开启按压态显示效果。
+
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -130,6 +198,14 @@ fontFamily(value: string | Resource)
 
 设置字体列表。
 
+**卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | string | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 是 | 字体列表。默认字体'HarmonyOS Sans'，当前支持'HarmonyOS Sans'字体和[注册自定义字体](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-font)。 |
@@ -139,6 +215,12 @@ fontFamily(value: string | Resource)
 labelStyle(value: LabelStyle)
 
 设置Button组件label文本和字体的样式。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -151,13 +233,15 @@ buttonStyle(value: ButtonStyleMode)
 设置Button组件的样式和重要程度。根据设置枚举值的不同，系统自动会调整按钮的背景色和文字颜色。背景色和文字颜色也支持开发者通过[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)、[fontColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#fontcolor)和[role](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#role12)接口设置，实际显示效果以最后一次设置为准。
 
 > **说明**
-> 从API version 12开始，该接口支持在
-> attributeModifier
-> 中调用。
+> 从API version 12开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -168,6 +252,17 @@ buttonStyle(value: ButtonStyleMode)
 controlSize(value: ControlSize)
 
 设置Button组件的尺寸。
+
+> **说明**
+> 从API version 12开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+
+**卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -181,6 +276,12 @@ role(value: ButtonRole)
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | value | [ButtonRole](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#buttonrole12枚举说明) | 是 | 设置Button组件的角色。 默认值：ButtonRole.NORMAL |
@@ -190,6 +291,12 @@ role(value: ButtonRole)
 contentModifier(modifier: ContentModifier<ButtonConfiguration>)
 
 定制Button内容区的方法。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -203,6 +310,10 @@ minFontScale(scale: number | Resource)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 是 | 文本最小的字体缩放倍数。 取值范围：[0, 1] **说明：** 设置的值小于0时，按值为0处理，设置的值大于1，按值为1处理，异常值默认不生效。 |
@@ -213,6 +324,12 @@ maxFontScale(scale: number | Resource)
 
 设置文本最大的字体缩放倍数。
 
+**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number | [Resource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resource) | 是 | 文本最大的字体缩放倍数。 取值范围：[1, +∞) **说明：** 设置的值小于1时，按值为1处理，异常值默认不生效。 未设置最大缩放倍数时，圆形按钮最大缩放倍数为1倍，胶囊型按钮、普通按钮、圆角矩形按钮最大缩放倍数跟随系统设置。 |
@@ -220,6 +337,8 @@ maxFontScale(scale: number | Resource)
 ## ButtonType枚举说明
 
 按钮的类型。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -229,35 +348,19 @@ maxFontScale(scale: number | Resource)
 | ROUNDED_RECTANGLE15+ | 8 | 圆角矩形按钮（默认值：controlSize为NORMAL，圆角大小20vp，controlSize为SMALL，圆角大小14vp）。 **卡片能力：** 从API version 15开始，该接口支持在ArkTS卡片中使用。 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 
 > **说明**
-> 按钮圆角通过
-> 通用属性borderRadius
-> 设置。
-> 当按钮类型为Capsule时，borderRadius设置不生效，按钮圆角始终为宽、高中较小值的一半。
-> 当按钮类型为Circle时，若同时设置了宽和高，则borderRadius不生效，且按钮半径为宽高中较小值的一半；若只设置宽、高中的一个，则borderRadius不生效，且按钮半径为所设宽或所设高值的一半；若不设置宽高，则borderRadius为按钮半径；若borderRadius的值为负，则borderRadius的值按照0处理。
-> 按钮文本通过
-> fontSize
-> 、
-> fontColor
-> 、
-> fontStyle
-> 、
-> fontFamily
-> 、
-> fontWeight
-> 进行设置。
-> 设置
-> 颜色渐变
-> 需先设置
-> backgroundColor
-> 为透明色。
-> 在不设置borderRadius时，圆角矩形按钮的圆角大小保持默认值不变。圆角大小不会随按钮高度变化而变化，和controlSize属性有关，controlSize为NORMAL时圆角大小20vp，controlSize为SMALL时圆角大小14vp。
-> 设置Button的
-> border
-> 时，会有默认的
-> borderRadius
-> 值。如果同时使用border和borderRadius，需将borderRadius放在border之后，以确保borderRadius不会被border中的默认radius覆盖。
+> - 按钮圆角通过[通用属性borderRadius](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#borderradius)设置。
+> - 当按钮类型为Capsule时，borderRadius设置不生效，按钮圆角始终为宽、高中较小值的一半。
+> - 当按钮类型为Circle时，若同时设置了宽和高，则borderRadius不生效，且按钮半径为宽高中较小值的一半；若只设置宽、高中的一个，则borderRadius不生效，且按钮半径为所设宽或所设高值的一半；若不设置宽高，则borderRadius为按钮半径；若borderRadius的值为负，则borderRadius的值按照0处理。
+> - 按钮文本通过[fontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#fontsize)、[fontColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#fontcolor)、[fontStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#fontstyle8)、[fontFamily](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#fontfamily8)、[fontWeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#fontweight)进行设置。
+> - 设置[颜色渐变](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-gradient-color)需先设置[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundcolor)为透明色。
+> - 在不设置borderRadius时，圆角矩形按钮的圆角大小保持默认值不变。圆角大小不会随按钮高度变化而变化，和controlSize属性有关，controlSize为NORMAL时圆角大小20vp，controlSize为SMALL时圆角大小14vp。
+> - 设置Button的[border](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#border)时，会有默认的[borderRadius](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#borderradius)值。如果同时使用border和borderRadius，需将borderRadius放在border之后，以确保borderRadius不会被border中的默认radius覆盖。
 
 ## LabelStyle10+对象说明
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -272,6 +375,12 @@ maxFontScale(scale: number | Resource)
 
 按钮的重要程度。
 
+**卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 普通按钮（一般界面操作）。 |
@@ -282,6 +391,12 @@ maxFontScale(scale: number | Resource)
 
 按钮的尺寸。
 
+**卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | SMALL | "small" | 小尺寸按钮。 |
@@ -291,6 +406,12 @@ maxFontScale(scale: number | Resource)
 
 按钮的角色。
 
+**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NORMAL | 0 | 正常按钮。 |
@@ -299,6 +420,10 @@ maxFontScale(scale: number | Resource)
 ## ButtonConfiguration12+对象说明
 
 开发者需要自定义class实现ContentModifier接口。继承自[CommonConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-content-modifier#commonconfigurationt)。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -311,6 +436,12 @@ maxFontScale(scale: number | Resource)
 type ButtonTriggerClickCallback = (xPos: number, yPos: number) => void
 
 定义ButtonConfiguration中使用的回调类型。
+
+**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -328,7 +459,6 @@ type ButtonTriggerClickCallback = (xPos: number, yPos: number) => void
 该示例实现了两种创建按钮的方式，包含子组件或使用文本内容创建相应的按钮。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ButtonExample {
@@ -349,9 +479,11 @@ struct ButtonExample {
             Text('loading').fontSize(12).fontColor(0xffffff).margin({ left: 5, right: 12 })
           }.alignItems(VerticalAlign.Center)
         }.borderRadius(8).backgroundColor(0x317aff).width(90).height(40)
+
         Button('Disable', { type: ButtonType.Normal, stateEffect: false }).opacity(0.4)
           .borderRadius(8).backgroundColor(0x317aff).width(90)
       }
+
       Text('Capsule button').fontSize(9).fontColor(0xCCCCCC)
       Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
         Button('OK', { type: ButtonType.Capsule, stateEffect: true }).backgroundColor(0x317aff).width(90)
@@ -361,14 +493,17 @@ struct ButtonExample {
             Text('loading').fontSize(12).fontColor(0xffffff).margin({ left: 5, right: 12 })
           }.alignItems(VerticalAlign.Center).width(90).height(40)
         }.backgroundColor(0x317aff)
+
         Button('Disable', { type: ButtonType.Capsule, stateEffect: false }).opacity(0.4)
           .backgroundColor(0x317aff).width(90)
       }
+
       Text('Circle button').fontSize(9).fontColor(0xCCCCCC)
       Flex({ alignItems: ItemAlign.Center, wrap: FlexWrap.Wrap }) {
         Button({ type: ButtonType.Circle, stateEffect: true }) {
           LoadingProgress().width(20).height(20).color(0xFFFFFF)
         }.width(55).height(55).backgroundColor(0x317aff)
+
         Button({ type: ButtonType.Circle, stateEffect: true }) {
           LoadingProgress().width(20).height(20).color(0xFFFFFF)
         }.width(55).height(55).margin({ left: 20 }).backgroundColor(0xF55A42)
@@ -378,18 +513,18 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/qR4F_bfWROqbvRKeRFwQig/zh-cn_image_0000002562145845.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=C3D1B2A67ECD4314C3F90B25B7842840260A4CCD06D1BA4312B51630155AC6D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/qR4F_bfWROqbvRKeRFwQig/zh-cn_image_0000002562145845.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144128Z&HW-CC-Expire=86400&HW-CC-Sign=33048166A916FDA1E75F2EDA93986447349D69D82C5EE750236047E97DBDCD03)
 
 ### 示例2 （为按钮添加渲染控制）
 
 该示例通过if/else控制按钮的显示文本。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SwipeGestureExample {
   @State count: number = 0;
+
   build() {
     Column() {
       Text(`${this.count}`)
@@ -409,19 +544,19 @@ struct SwipeGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/eJmGvAKFTyifMMYDKztOWA/zh-cn_image_0000002531105944.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=D42310041EDAB24B674A9EB16C12DA6165B5F62D0E17179A53F056FA1EE56644)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/eJmGvAKFTyifMMYDKztOWA/zh-cn_image_0000002531105944.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144128Z&HW-CC-Expire=86400&HW-CC-Sign=69903616D63773ACBEFBE2B168D0C451B1730834ECAF9586B2F9C5ACB3B36D60)
 
 ### 示例3 （设置按钮文本样式）
 
 该示例通过配置labelStyle自定义按钮文本的显示样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ButtonTestDemo {
   @State txt: string = 'overflowTextOverLengthTextOverflow.Clip';
   @State widthShortSize: number = 205;
+
   build() {
     Row() {
       Column() {
@@ -450,14 +585,13 @@ struct ButtonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/SG2oMkBgTwyUDrus_ts0aA/zh-cn_image_0000002531225878.png?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=59503DC1776446A478690362BFCC035F568E225D83E5C4BD2D9EA576AA0B66B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/SG2oMkBgTwyUDrus_ts0aA/zh-cn_image_0000002531225878.png?HW-CC-KV=V1&HW-CC-Date=20260320T144128Z&HW-CC-Expire=86400&HW-CC-Sign=DB93C5B908596E1FA1385835503A46E3A68AF87B96ECAEB33FA3AA7CB50A3710)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
 该示例通过配置controlSize、buttonStyle实现不同尺寸按钮的重要程度。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ButtonExample {
@@ -469,31 +603,33 @@ struct ButtonExample {
         Button('Normal', { buttonStyle: ButtonStyleMode.NORMAL });
         Button('Textual', { buttonStyle: ButtonStyleMode.TEXTUAL });
       }
+
       Text('Small size button').fontSize(9).fontColor(0xCCCCCC)
       Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
         Button('Emphasized', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.EMPHASIZED });
         Button('Normal', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.NORMAL });
         Button('Textual', { controlSize: ControlSize.SMALL, buttonStyle: ButtonStyleMode.TEXTUAL });
       }
+
       Text('Small size button').fontSize(9).fontColor(0xCCCCCC)
       Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
         Button('Emphasized').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.EMPHASIZED);
         Button('Normal').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.NORMAL);
         Button('Textual').controlSize(ControlSize.SMALL).buttonStyle(ButtonStyleMode.TEXTUAL);
       }
+
     }.height(400).padding({ left: 35, right: 35, top: 35 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/vNT5VigPQNK-entQ6dwzKA/zh-cn_image_0000002562025861.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=DC1FCC109F07E504644822300E5245069B0F3A2FBD27C475E8CCEEDE40C0F89C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/vNT5VigPQNK-entQ6dwzKA/zh-cn_image_0000002562025861.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T144128Z&HW-CC-Expire=86400&HW-CC-Sign=56B842E527D2C9095A126770C2CA97C3F8360440BF3FF6E71AC3070A7A7B87FE)
 
 ### 示例5（设置按钮的角色）
 
 该示例通过配置role实现按钮的角色。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ButtonExample {
@@ -516,7 +652,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/XWozZ2jCRlKa_h_K07yh7g/zh-cn_image_0000002562145847.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=9DBE8F5A7743AB31A255DDB1C1B1FADD199872D820421587C15412B197AC2540)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/XWozZ2jCRlKa_h_K07yh7g/zh-cn_image_0000002562145847.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T144128Z&HW-CC-Expire=86400&HW-CC-Sign=253634EFE6748B3AAA983DFFAAD279451FE2B5EEA651A9041889E10D4E9B3769)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -527,15 +663,18 @@ class MyButtonStyle implements ContentModifier<ButtonConfiguration> {
   x: number = 0;
   y: number = 0;
   selectedColor: Color = Color.Black;
+
   constructor(x: number, y: number, colorType: Color) {
     this.x = x;
     this.y = y;
     this.selectedColor = colorType;
   }
+
   applyContent(): WrappedBuilder<[ButtonConfiguration]> {
     return wrapBuilder(buildButton1);
   }
 }
+
 @Builder
 function buildButton1(config: ButtonConfiguration) {
   Column({ space: 30 }) {
@@ -551,6 +690,7 @@ function buildButton1(config: ButtonConfiguration) {
         })).opacity(config.enabled ? 1 : 0.1)
   }
 }
+
 @Entry
 @Component
 struct ButtonExample {
@@ -559,6 +699,7 @@ struct ButtonExample {
   @State positionY: number = 0;
   @State state: boolean[] = [true, false];
   @State index: number = 0;
+
   build() {
     Column() {
       Button('OK')
@@ -582,7 +723,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/fhhAQvYuQ3KnnGVrqsWuoQ/zh-cn_image_0000002531105946.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=80B605EAAFB2DEF4038FD6E5285CCA16D8FEE29FBF5387F7D77B17E332EEAF22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/fhhAQvYuQ3KnnGVrqsWuoQ/zh-cn_image_0000002531105946.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144128Z&HW-CC-Expire=86400&HW-CC-Sign=BBAE0E23AD10A126182270CAB797CF534DEAD67CE2A4964B5D8EDE32B7D12368)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -624,4 +765,4 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/XgrRRQ00SpiKP2UnWjCfMA/zh-cn_image_0000002531225880.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T122227Z&HW-CC-Expire=86400&HW-CC-Sign=9E1EE51CB129D85975C45E31FEE7EE62FA8C051C2C3E24F4649005C97A450C4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/XgrRRQ00SpiKP2UnWjCfMA/zh-cn_image_0000002531225880.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T144128Z&HW-CC-Expire=86400&HW-CC-Sign=89450581777F448083989E10A8CEE7393390D0FAEDF48B1AD9BDB62C83714813)

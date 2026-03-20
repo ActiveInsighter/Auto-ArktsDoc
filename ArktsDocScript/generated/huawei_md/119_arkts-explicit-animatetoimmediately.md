@@ -1,4 +1,4 @@
-# animateToImmediately
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animatetoimmediately
 
 animateToImmediately接口用来提供[显式动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation)立即下发功能。同时加载多个属性动画的情况下，使用该接口可以立即执行闭包代码中状态变化导致的过渡动效。
@@ -36,6 +36,7 @@ animateToImmediately(value: AnimateParam , event: () => void): void
 该示例主要演示通过animateToImmediately接口来实现显式动画立即下发。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct AnimateToImmediatelyExample {
@@ -43,7 +44,6 @@ struct AnimateToImmediatelyExample {
   @State heightSize: number = 100;
   @State opacitySize: number = 0;
   private flag: boolean = true;
-
   build() {
     Column() {
       Column()
@@ -90,4 +90,4 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/PZI3Kc6UQ6-_QzoLhqw1Gg/zh-cn_image_0000002562146167.gif?HW-CC-KV=V1&HW-CC-Date=20260320T122331Z&HW-CC-Expire=86400&HW-CC-Sign=B219C0A8707BA95684E0C36DFF6B4C9033D3112D6F40E0E2C1DC14919A4B6E2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/PZI3Kc6UQ6-_QzoLhqw1Gg/zh-cn_image_0000002562146167.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144253Z&HW-CC-Expire=86400&HW-CC-Sign=C08ED0AEB1719DA7C691CC84431EFA18E307F71B1107A41E361950E201665F79)

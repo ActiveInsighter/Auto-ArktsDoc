@@ -1,4 +1,4 @@
-# obscured
+# 隐私遮罩-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-obscured
 
 用于对组件内容进行隐私遮罩处理。
@@ -33,7 +33,6 @@ obscured(reasons: Array<ObscuredReasons>): T
 该示例通过obscured对Text、Image组件实现了隐私遮罩效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ObscuredExample {
@@ -47,7 +46,7 @@ struct ObscuredExample {
           .fontColor(Color.Black)
           .border({ width: 1 })
         Text('Image not set obscured attribute').fontSize(10).fontColor(Color.Black)
-        // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
+
         Image($r('app.media.icon'))
           .width('200px')
           .height('200px')
@@ -59,7 +58,7 @@ struct ObscuredExample {
           .border({ width: 1 })
           .obscured([ObscuredReasons.PLACEHOLDER])
         Text('Image set obscured attribute').fontSize(10).fontColor(Color.Black)
-        // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
+
         Image($r('app.media.icon'))
           .width('200px')
           .height('200px')
@@ -72,4 +71,4 @@ struct ObscuredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/y8dXX9w5SvWzlhKfrxNd9A/zh-cn_image_0000002531225676.png?HW-CC-KV=V1&HW-CC-Date=20260320T122141Z&HW-CC-Expire=86400&HW-CC-Sign=2AEF3B1E8F6DCD9762FD1F9CBE3497E4779A9B95D4E7F5DC5760A558821C98C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/y8dXX9w5SvWzlhKfrxNd9A/zh-cn_image_0000002531225676.png?HW-CC-KV=V1&HW-CC-Date=20260320T144031Z&HW-CC-Expire=86400&HW-CC-Sign=657AE9A326164AA020A5B91CD4501267DE7DF25DB6F403663D81E0153D5E4CF3)
