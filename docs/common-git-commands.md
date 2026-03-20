@@ -2,6 +2,21 @@
 
 本文档整理了日常开发中最常用的一组 Git 命令，适合新仓库初始化、多人协作和本地分支管理。
 
+
+查看当前改动
+git status
+
+把要提交的文件加入暂存区
+git add .
+
+提交到本地仓库
+git commit -m "docs: add git commands and github actions workflow"
+
+第一次推送到远程并建立跟踪关系
+git push -u origin main
+
+以后再推送
+git push
 ## 1. 仓库初始化与远程仓库
 
 ```bash

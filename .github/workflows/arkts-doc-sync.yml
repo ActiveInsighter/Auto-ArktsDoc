@@ -1,0 +1,72 @@
+name: ArkTS Doc Sync
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: arkts-doc-sync
+  cancel-in-progress: false
+
+jobs:
+  crawl-and-convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: ArktsDocScript/requirements.txt
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ArktsDocScript/requirements.txt
+
+      - name: Install Playwright Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Crawl ArkTS docs to HTML
+        run: |
+          python ArktsDocScript/1.py \
+            --targets-file ArktsDocScript/huawei_targets.txt \
+            --output-dir ArktsDocScript/build/huawei_docs \
+            --max-pages 200 \
+            --concurrency 5 \
+            --page-timeout-ms 20000 \
+            --scroll-passes 4 \
+            --scroll-wait-ms 80 \
+            --render-poll-ms 100 \
+            --fast-mode
+
+      - name: Convert HTML to Markdown
+        run: |
+          python ArktsDocScript/html_to_md.py \
+            --input-dir ArktsDocScript/build/huawei_docs/pages \
+            --output-dir ArktsDocScript/build/huawei_md \
+            --preserve-links
+
+      - name: Upload Markdown output
+        uses: actions/upload-artifact@v4
+        with:
+          name: arkts-docs-md
+          path: ArktsDocScript/build/huawei_md
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload HTML output
+        uses: actions/upload-artifact@v4
+        with:
+          name: arkts-docs-html
+          path: ArktsDocScript/build/huawei_docs
+          if-no-files-found: error
+          retention-days: 7
