@@ -349,6 +349,7 @@ privacySensitive(isPrivacySensitiveMode: Optional<boolean>)
 该示例通过[ProgressOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#progressoptions对象说明)的入参type，实现了设置进度条类型的功能。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ProgressExample {
@@ -357,13 +358,11 @@ struct ProgressExample {
       Text('Linear Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Progress({ value: 10, type: ProgressType.Linear }).width(200)
       Progress({ value: 20, total: 150, type: ProgressType.Linear }).color(Color.Grey).value(50).width(200)
-
       Text('Eclipse Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Row({ space: 40 }) {
         Progress({ value: 10, type: ProgressType.Eclipse }).width(100)
         Progress({ value: 20, total: 150, type: ProgressType.Eclipse }).color(Color.Grey).value(50).width(100)
       }
-
       Text('ScaleRing Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Row({ space: 40 }) {
         Progress({ value: 10, type: ProgressType.ScaleRing }).width(100)
@@ -371,7 +370,7 @@ struct ProgressExample {
           .color(Color.Grey).value(50).width(100)
           .style({ strokeWidth: 15, scaleCount: 15, scaleWidth: 5 })
       }
-
+      // scaleCount和scaleWidth效果对比
       Row({ space: 40 }) {
         Progress({ value: 20, total: 150, type: ProgressType.ScaleRing })
           .color(Color.Grey).value(50).width(100)
@@ -380,7 +379,6 @@ struct ProgressExample {
           .color(Color.Grey).value(50).width(100)
           .style({ strokeWidth: 20, scaleCount: 30, scaleWidth: 3 })
       }
-
       Text('Ring Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Row({ space: 40 }) {
         Progress({ value: 10, type: ProgressType.Ring }).width(100)
@@ -388,7 +386,6 @@ struct ProgressExample {
           .color(Color.Grey).value(50).width(100)
           .style({ strokeWidth: 20 })
       }
-
       Text('Capsule Progress').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Row({ space: 40 }) {
         Progress({ value: 10, type: ProgressType.Capsule }).width(100).height(50)
@@ -403,26 +400,25 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/MvBVk_PyTPuNNJotijQD5g/zh-cn_image_0000002531106146.png?HW-CC-KV=V1&HW-CC-Date=20260320T101530Z&HW-CC-Expire=86400&HW-CC-Sign=013AE102E7C65C818E5676F05C35A37B689D9AB6859DDF2C142D2A45EA2B6160)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/MvBVk_PyTPuNNJotijQD5g/zh-cn_image_0000002531106146.png?HW-CC-KV=V1&HW-CC-Date=20260320T120346Z&HW-CC-Expire=86400&HW-CC-Sign=57D28DB97639E4291F37088023459B0EA1F4E72BB0656C68A0395F9B84941173)
 
 ### 示例2（设置环形进度条属性）
 
 该示例通过[style](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#style8)接口的strokeWidth和shadow属性，实现了环形进度条视觉属性设置功能。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ProgressExample {
   private gradientColor: LinearGradient = new LinearGradient([{ color: Color.Yellow, offset: 0.5 },
     { color: Color.Orange, offset: 1.0 }])
-
   build() {
     Column({ space: 15 }) {
       Text('Gradient Color').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Progress({ value: 70, total: 100, type: ProgressType.Ring })
         .width(100).style({ strokeWidth: 20 })
         .color(this.gradientColor)
-
       Text('Shadow').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Progress({ value: 70, total: 100, type: ProgressType.Ring })
         .width(120).color(Color.Orange)
@@ -432,13 +428,14 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/VomvgjJhTC6SZVP6BSLygQ/zh-cn_image_0000002531226080.png?HW-CC-KV=V1&HW-CC-Date=20260320T101530Z&HW-CC-Expire=86400&HW-CC-Sign=6CDAA794940471FBAD1619F8500B9A0E1CF45A3AB6AFFEFF82F08829B1C68413)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/VomvgjJhTC6SZVP6BSLygQ/zh-cn_image_0000002531226080.png?HW-CC-KV=V1&HW-CC-Date=20260320T120346Z&HW-CC-Expire=86400&HW-CC-Sign=CAF70420BC40972A52D69ACD94A2626A620E65CBAF5F39D4A6F186DDCF721D6C)
 
 ### 示例3（设置环形进度条动画）
 
 该示例通过[style](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#style8)接口的status和enableScanEffect属性，实现了环形进度条动效的开关功能。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ProgressExample {
@@ -448,7 +445,6 @@ struct ProgressExample {
       Progress({ value: 0, total: 100, type: ProgressType.Ring })
         .width(100).color(Color.Blue)
         .style({ strokeWidth: 20, status: ProgressStatus.LOADING })
-
       Text('Scan Effect').fontSize(9).fontColor(0xCCCCCC).width('90%')
       Progress({ value: 30, total: 100, type: ProgressType.Ring })
         .width(100).color(Color.Orange)
@@ -458,13 +454,14 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/adYKXh6rSY-syRicPuuUjg/zh-cn_image_0000002562026063.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101530Z&HW-CC-Expire=86400&HW-CC-Sign=F1FE66450DA00DD198CF52C3E2E140B04450297007679663361DD1FDAAC41435)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/adYKXh6rSY-syRicPuuUjg/zh-cn_image_0000002562026063.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120346Z&HW-CC-Expire=86400&HW-CC-Sign=23E2D009C5CA03624FF352D3CBA9A4C637862663A4240B8E24D8275050300A0C)
 
 ### 示例4（设置胶囊形进度条属性）
 
 该示例通过[style](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#style8)接口的borderColor、borderWidth、content、font、fontColor、enableScanEffect、showDefaultPercentage属性，实现胶囊形进度条的视觉属性设置。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ProgressExample {
@@ -487,18 +484,18 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/FCZqXkwUQ7SqtvOe7G8JWA/zh-cn_image_0000002562146049.png?HW-CC-KV=V1&HW-CC-Date=20260320T101530Z&HW-CC-Expire=86400&HW-CC-Sign=F2692238320CF27FAF29F52A15BE9D5E7E80BFFC47DF3766F38962058C2A8AFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/FCZqXkwUQ7SqtvOe7G8JWA/zh-cn_image_0000002562146049.png?HW-CC-KV=V1&HW-CC-Date=20260320T120346Z&HW-CC-Expire=86400&HW-CC-Sign=4CA3AA3FDA1B181F8BA7854A5D552D29EC656756176AC79AEA01BED2CEB30B43)
 
 ### 示例5（设置进度平滑动效）
 
 该示例通过[style](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#style8)接口的enableSmoothEffect属性，实现了进度平滑动效开关的功能。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct Index {
   @State value: number = 0;
-
   build() {
     Column({ space: 10 }) {
       Text('enableSmoothEffect: true')
@@ -509,11 +506,9 @@ struct Index {
         .margin({ top: 20 })
       Progress({ value: this.value, total: 100, type: ProgressType.Linear })
         .style({ strokeWidth: 10, enableSmoothEffect: true })
-
       Text('enableSmoothEffect: false').fontSize(9).fontColor(0xCCCCCC).width('90%').margin(5)
       Progress({ value: this.value, total: 100, type: ProgressType.Linear })
         .style({ strokeWidth: 10, enableSmoothEffect: false })
-
       Button('value +10').onClick(() => {
         this.value += 10;
       })
@@ -528,28 +523,25 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xUk5aIHtR--Az31ORCnv6A/zh-cn_image_0000002531106148.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101530Z&HW-CC-Expire=86400&HW-CC-Sign=89C7049FF547C81F5E3862EAFE5379C74A44B3762F58E16E5EC15AC758F1BFF2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xUk5aIHtR--Az31ORCnv6A/zh-cn_image_0000002531106148.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120346Z&HW-CC-Expire=86400&HW-CC-Sign=B011715CE98B5CF8B07050ACDA21E2AF52C2C6FB9320415551C269FFC2E26E81)
 
 ### 示例6（设置定制内容区）
 
 该示例通过[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress#contentmodifier12)接口，实现了自定义进度条的功能，自定义实现星形，其中总进度为3，且当前值可通过按钮进行增减，达到的进度使用自定义颜色填充。
 
 ```typescript
+// xxx.ets
 class MyProgressModifier implements ContentModifier<ProgressConfiguration> {
   color: ResourceColor = Color.White;
-
   constructor(color: ResourceColor) {
     this.color = color;
   }
-
   applyContent(): WrappedBuilder<[ProgressConfiguration]> {
     return wrapBuilder(myProgress);
   }
 }
-
 @Builder
 function myProgress(config: ProgressConfiguration) {
-
   Column({ space: 30 }) {
     Text('当前进度：' + config.value + '/' + config.total).fontSize(20)
     Row() {
@@ -582,14 +574,12 @@ function myProgress(config: ProgressConfiguration) {
     }
   }.margin({ bottom: 100 })
 }
-
 @Entry
 @Component
 struct Index {
   @State currentValue: number = 0;
   modifier = new MyProgressModifier('rgb(39, 135, 217)');
   @State myModifier: (MyProgressModifier | undefined) = this.modifier;
-
   build() {
     Column() {
       Progress({ value: this.currentValue, total: 3, type: ProgressType.Ring }).contentModifier(this.modifier)
@@ -608,7 +598,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/wArfiny7RPiC4HXqytyHag/zh-cn_image_0000002531226082.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101530Z&HW-CC-Expire=86400&HW-CC-Sign=D79F243801B688FC760DF842CDEDFF982A7FFB1D95C2BB47FD8935E63752F28B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/wArfiny7RPiC4HXqytyHag/zh-cn_image_0000002531226082.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120346Z&HW-CC-Expire=86400&HW-CC-Sign=E685EE46E56B7DD839E85CF5162372A27D0BDBAA75EC3C86A465880F14C35C63)
 
 ### 示例7（设置隐私隐藏）
 
@@ -645,7 +635,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7UqOMoE-Rh-Sje59hGcgAQ/zh-cn_image_0000002562026065.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101530Z&HW-CC-Expire=86400&HW-CC-Sign=84E1F6B3396A6FDCE53EF1093EB2AF1AC7EEAF814811A2AA0AAAB7D55DE293E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/7UqOMoE-Rh-Sje59hGcgAQ/zh-cn_image_0000002562026065.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120346Z&HW-CC-Expire=86400&HW-CC-Sign=ADA4A7B5A90ED694B3AAF0B79057299C6A0D1D66DC8CF6FD9F59FA0AE3616171)
 
 ### 示例8（设置capsule进度条圆角半径）
 
@@ -655,7 +645,6 @@ struct ProgressExample {
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct ProgressExample {
@@ -668,7 +657,6 @@ struct ProgressExample {
           .width(100)
           .height(60)
       }
-
       Row({ space: 15 }) {
         Progress({ value: 30, total: 100, type: ProgressType.Capsule })
           .style({ content: '圆角为20vp', borderWidth: 5, borderRadius: LengthMetrics.vp(20) })
@@ -682,4 +670,4 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Os4V5yneTpqPG8uIqvweXQ/zh-cn_image_0000002562146051.png?HW-CC-KV=V1&HW-CC-Date=20260320T101530Z&HW-CC-Expire=86400&HW-CC-Sign=AE6F207BE80B28CE0353E7CC04B07C0CD59628623DA414C6EEE5A7020A107E1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Os4V5yneTpqPG8uIqvweXQ/zh-cn_image_0000002562146051.png?HW-CC-KV=V1&HW-CC-Date=20260320T120346Z&HW-CC-Expire=86400&HW-CC-Sign=F284FD3F83C954C23F01090FDB1A75892EDA707267EE162AB9829DD27A105468)

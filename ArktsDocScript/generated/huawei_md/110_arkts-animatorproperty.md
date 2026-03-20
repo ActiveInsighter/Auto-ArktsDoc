@@ -45,33 +45,33 @@ struct AnimationExample {
   @State rotateAngle: number = 0;
   @State flag: boolean = true;
   @State space: number = 10;
-
   build() {
     Column() {
-      Column({ space: this.space })
+      Column({ space: this.space }) // 改变Column构造器中的space动画不生效
         .onClick(() => {
           if (this.flag) {
             this.widthSize = 150;
             this.heightSize = 60;
-            this.space = 20;
+            this.space = 20; // 改变this.space动画不生效
           } else {
             this.widthSize = 250;
             this.heightSize = 100;
-            this.space = 10;
+            this.space = 10; // 改变this.space动画不生效
           }
           this.flag = !this.flag;
         })
         .backgroundColor(Color.Black)
         .margin(30)
-        .width(this.widthSize)
-        .height(this.heightSize)
+        .width(this.widthSize) // 只有写在animation前面才生效
+        .height(this.heightSize) // 只有写在animation前面才生效
         .animation({
           duration: 2000,
           curve: Curve.EaseOut,
           iterations: 3,
           playMode: PlayMode.Normal
         })
-
+        // .width(this.widthSize) // 动画不生效
+        // .height(this.heightSize) // 动画不生效
     }
   }
 }
@@ -82,6 +82,7 @@ struct AnimationExample {
 该示例通过animation实现了组件的属性动画。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct AttrAnimationExample {
@@ -89,7 +90,6 @@ struct AttrAnimationExample {
   @State heightSize: number = 100
   @State rotateAngle: number = 0
   @State flag: boolean = true
-
   build() {
     Column() {
       Button('change size')
@@ -122,7 +122,7 @@ struct AttrAnimationExample {
           duration: 1200,
           curve: Curve.Friction,
           delay: 500,
-          iterations: -1,
+          iterations: -1, // 设置-1表示动画无限循环
           playMode: PlayMode.Alternate,
           expectedFrameRateRange: {
             min: 20,
@@ -135,4 +135,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aUTbqd0lRYiffh8kiEHa3g/zh-cn_image_0000002531226188.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101540Z&HW-CC-Expire=86400&HW-CC-Sign=D069A31621EAAF40C898D6B09812824AC98ADDAC4AA77673C503E49F1353EE49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aUTbqd0lRYiffh8kiEHa3g/zh-cn_image_0000002531226188.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120357Z&HW-CC-Expire=86400&HW-CC-Sign=176F465B56BE634FE0C1C07E0915FD0D9B26B9CD512D0DC24C77EACF6F43281B)

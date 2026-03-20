@@ -1,4 +1,4 @@
-# 文档中心
+# Counter-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-counter
 
 计数器组件，提供相应的增加或者减少的计数操作。
@@ -101,12 +101,12 @@ onDec(event: VoidCallback)
 该示例展示了Counter组件的基本使用方法。点击+、-按钮可以修改value值。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct CounterExample {
   @State value1: number = 0;
   @State value2: number = 0;
+
   build() {
     Column({ space: 50 }) {
       Counter() {
@@ -118,6 +118,7 @@ struct CounterExample {
       .onDec(() => {
         this.value1--;
       })
+
       Counter() {
         Text(this.value2.toString())
       }
@@ -137,4 +138,4 @@ struct CounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/KI7R82JFRiCAxKPOSSW9JA/zh-cn_image_0000002531106136.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101524Z&HW-CC-Expire=86400&HW-CC-Sign=077FE0EC45F52E355E3BE218BB3007922EB855E06F30633F86A739AE0445D199)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/KI7R82JFRiCAxKPOSSW9JA/zh-cn_image_0000002531106136.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120338Z&HW-CC-Expire=86400&HW-CC-Sign=ED737549FB643F88D817367B90B9A95589E66DA342F4286B6F627C739A5B6290)

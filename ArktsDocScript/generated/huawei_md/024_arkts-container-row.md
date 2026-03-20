@@ -1,4 +1,4 @@
-# 文档中心
+# Row-行列与堆叠-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row
 
 沿水平方向布局的容器。
@@ -161,6 +161,7 @@ reverse(isReversed: Optional<boolean>)
 本示例展示设置Row组件的布局属性，如间距、对齐方式等属性后的效果。
 
 ```typescript
+// resources/base/element/string.json
 {
   "string": [
     {
@@ -172,42 +173,41 @@ reverse(isReversed: Optional<boolean>)
 ```
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RowExample {
   build() {
     Column({ space: 5 }) {
-
+      // 设置子组件水平方向的间距为5
       Text('space').width('90%')
       Row({ space: 5 }) {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').height(107).border({ width: 1 })
-
+      // 通过资源引用方式设置子组件水平方向的间距
       Text('Resource space').width('90%')
       Row({ space: $r('app.string.stringSpace') }) {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').height(107).border({ width: 1 })
-
+      // 设置子元素垂直方向对齐方式
       Text('alignItems(Bottom)').width('90%')
       Row() {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').alignItems(VerticalAlign.Bottom).height('15%').border({ width: 1 })
-
       Text('alignItems(Center)').width('90%')
       Row() {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').alignItems(VerticalAlign.Center).height('15%').border({ width: 1 })
-
+      // 设置子元素水平方向对齐方式
       Text('justifyContent(End)').width('90%')
       Row() {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').border({ width: 1 }).justifyContent(FlexAlign.End)
-
       Text('justifyContent(Center)').width('90%')
       Row() {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
@@ -218,7 +218,7 @@ struct RowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Q79Lp_DJSIObuTTc-ugn_Q/zh-cn_image_0000002531225782.png?HW-CC-KV=V1&HW-CC-Date=20260320T101415Z&HW-CC-Expire=86400&HW-CC-Sign=2BD88542E1DD1883D627B2EF216A33AC142EE0E7EA0CAA929B3A3C5C92C5716B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Q79Lp_DJSIObuTTc-ugn_Q/zh-cn_image_0000002531225782.png?HW-CC-KV=V1&HW-CC-Date=20260320T120227Z&HW-CC-Expire=86400&HW-CC-Sign=ABF3FCC2157E4182CD5DA1913723DE53A3538C46EAB20E14F1CDA221F57D807E)
 
 ### 示例2（设置反转属性）
 
@@ -234,7 +234,6 @@ struct RowReverseSample {
         .width(100)
         .height(50)
         .backgroundColor(0xAFEEEE)
-
       Text("2")
         .width(100)
         .height(50)
@@ -248,4 +247,4 @@ struct RowReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/sV245WxlSXOGE0KvhUJbuA/zh-cn_image_0000002562025765.png?HW-CC-KV=V1&HW-CC-Date=20260320T101415Z&HW-CC-Expire=86400&HW-CC-Sign=FF675B5E10AB608E2085965136F028D2166BC19C5C4509238743B7BA5C58DFCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/sV245WxlSXOGE0KvhUJbuA/zh-cn_image_0000002562025765.png?HW-CC-KV=V1&HW-CC-Date=20260320T120227Z&HW-CC-Expire=86400&HW-CC-Sign=466A368A52682634B527949C34C0A3BCAA7CEDE903BE638A0EAA8AA22C56FBD5)

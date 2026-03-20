@@ -1,4 +1,4 @@
-# AlphabetIndexer-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -677,7 +677,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/4NaEgL7hSqqSZMtgHZorbg/zh-cn_image_0000002531226066.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101522Z&HW-CC-Expire=86400&HW-CC-Sign=C2EC80B23A55D64EAB25A79CA56439BA19390D25D1B97118F5466751419E2DDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/4NaEgL7hSqqSZMtgHZorbg/zh-cn_image_0000002531226066.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120337Z&HW-CC-Expire=86400&HW-CC-Sign=481B0CF2E7F03B2F40A69E06341D531E1DACAB0829F31EF0D860C4F795F344FF)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -813,7 +813,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/lsZV-jBKRGq74wQOMCxX_g/zh-cn_image_0000002562026049.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101522Z&HW-CC-Expire=86400&HW-CC-Sign=C3CA1F6090FC28F8C99C3F4F605071B387943B82A423544D9D9BD142B02FF6EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/lsZV-jBKRGq74wQOMCxX_g/zh-cn_image_0000002562026049.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120337Z&HW-CC-Expire=86400&HW-CC-Sign=06F960D7CA582D00B81A6AB666B1904FB43697B96ED0DF13F71141DA506B49A3)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -938,4 +938,4 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2KZ-Y13xROegIAjhVLkmuQ/zh-cn_image_0000002562146035.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101522Z&HW-CC-Expire=86400&HW-CC-Sign=8A0E37446F26F30229B54415D5F8610B40FBD63AE3FBDFEA0635AAB636F215AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2KZ-Y13xROegIAjhVLkmuQ/zh-cn_image_0000002562146035.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120337Z&HW-CC-Expire=86400&HW-CC-Sign=C95459366200F40EEDF5ACFD13ACF92F71081FD86F15248E9469EE98BFECBA68)

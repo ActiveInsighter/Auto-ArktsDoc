@@ -1,4 +1,4 @@
-# 文档中心
+# ImageAnimator-图片与视频-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -297,31 +297,31 @@ onFinish(event: () => void)
 通过ImageAnimator组件播放Resource动画。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ImageAnimatorExample {
   @State state: AnimationStatus = AnimationStatus.Initial;
   @State reverse: boolean = false;
   @State iterations: number = 1;
+
   build() {
     Column({ space: 10 }) {
       ImageAnimator()
         .images([
           {
-            // $r('app.media.img1')需要替换为开发者所需的图像资源文件。
+
             src: $r('app.media.img1')
           },
           {
-            // $r('app.media.img2')需要替换为开发者所需的图像资源文件。
+
             src: $r('app.media.img2')
           },
           {
-            // $r('app.media.img3')需要替换为开发者所需的图像资源文件。
+
             src: $r('app.media.img3')
           },
           {
-            // $r('app.media.img4')需要替换为开发者所需的图像资源文件。
+
             src: $r('app.media.img4')
           }
         ])
@@ -354,12 +354,13 @@ struct ImageAnimatorExample {
           this.state = AnimationStatus.Running
         }).margin(5)
         Button('pause').width(100).padding(5).onClick(() => {
-          this.state = AnimationStatus.Paused // 显示当前帧图片
+          this.state = AnimationStatus.Paused
         }).margin(5)
         Button('stop').width(100).padding(5).onClick(() => {
-          this.state = AnimationStatus.Stopped // 显示动画的起始帧图片
+          this.state = AnimationStatus.Stopped
         }).margin(5)
       }
+
       Row() {
         Button('reverse').width(100).padding(5).onClick(() => {
           this.reverse = !this.reverse
@@ -368,7 +369,7 @@ struct ImageAnimatorExample {
           this.iterations = 1
         }).margin(5)
         Button('infinite').width(100).padding(5).onClick(() => {
-          this.iterations = -1 // 无限循环播放
+          this.iterations = -1
         }).margin(5)
       }
     }.width('100%').height('100%')
@@ -376,15 +377,15 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/UpRwbjW5Roa1UBjskIV_2w/zh-cn_image_0000002531226012.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101516Z&HW-CC-Expire=86400&HW-CC-Sign=D193803BC4741CA7D5B71CC9703FE8C04EADF8E239940B715E71DC464A948D6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/UpRwbjW5Roa1UBjskIV_2w/zh-cn_image_0000002531226012.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120330Z&HW-CC-Expire=86400&HW-CC-Sign=58A52D013364CB512DF5AF208589E29553643299897DB65DF623DA3D424FBD6D)
 
 ### 示例2（播放PixelMap动画）
 
 通过ImageAnimator组件播放PixelMap动画。
 
 ```typescript
-// xxx.ets
 import { image } from '@kit.ImageKit';
+
 @Entry
 @Component
 struct ImageAnimatorExample {
@@ -393,20 +394,22 @@ struct ImageAnimatorExample {
   @State reverse: boolean = false;
   @State iterations: number = 1;
   @State images: Array<ImageFrameInfo> = [];
+
   async aboutToAppear() {
-    // $r('app.media.1')需要替换为开发者所需的图像资源文件。
+
     this.imagePixelMap.push(await this.getPixmapFromMedia($r('app.media.1')));
-    // $r('app.media.2')需要替换为开发者所需的图像资源文件。
+
     this.imagePixelMap.push(await this.getPixmapFromMedia($r('app.media.2')));
-    // $r('app.media.3')需要替换为开发者所需的图像资源文件。
+
     this.imagePixelMap.push(await this.getPixmapFromMedia($r('app.media.3')));
-    // $r('app.media.4')需要替换为开发者所需的图像资源文件。
+
     this.imagePixelMap.push(await this.getPixmapFromMedia($r('app.media.4')));
     this.images.push({ src: this.imagePixelMap[0] });
     this.images.push({ src: this.imagePixelMap[1] });
     this.images.push({ src: this.imagePixelMap[2] });
     this.images.push({ src: this.imagePixelMap[3] });
   }
+
   build() {
     Column({ space: 10 }) {
       ImageAnimator()
@@ -440,12 +443,13 @@ struct ImageAnimatorExample {
           this.state = AnimationStatus.Running;
         }).margin(5)
         Button('pause').width(100).padding(5).onClick(() => {
-          this.state = AnimationStatus.Paused; // 显示当前帧图片
+          this.state = AnimationStatus.Paused;
         }).margin(5)
         Button('stop').width(100).padding(5).onClick(() => {
-          this.state = AnimationStatus.Stopped; // 显示动画的起始帧图片
+          this.state = AnimationStatus.Stopped;
         }).margin(5)
       }
+
       Row() {
         Button('reverse').width(100).padding(5).onClick(() => {
           this.reverse = !this.reverse;
@@ -454,11 +458,12 @@ struct ImageAnimatorExample {
           this.iterations = 1;
         }).margin(5)
         Button('infinite').width(100).padding(5).onClick(() => {
-          this.iterations = -1; // 无限循环播放
+          this.iterations = -1;
         }).margin(5)
       }
     }.width('100%').height('100%')
   }
+
   private async getPixmapFromMedia(resource: Resource) {
     let unit8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
     let imageSource = image.createImageSource(unit8Array?.buffer.slice(0, unit8Array.buffer.byteLength));
@@ -471,7 +476,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/940Eby2rRf-d2yFeiuh_Bw/zh-cn_image_0000002562025995.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101516Z&HW-CC-Expire=86400&HW-CC-Sign=E708FA46A342BC11B6ED193A344E8DE406A253DB7E38541F292AB085F206760D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/940Eby2rRf-d2yFeiuh_Bw/zh-cn_image_0000002562025995.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120330Z&HW-CC-Expire=86400&HW-CC-Sign=83756E0A9E6908CB97324A62A47E85C8AA1EAC0D8FA632D6EDAECAE127406B46)
 
 ### 示例3（设置不可见自动停播）
 
@@ -487,6 +492,7 @@ struct ImageAnimatorAutoPauseTest {
   @State iterations: number = 100;
   @State preCallBack: string = 'Null';
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
       Scroll(this.scroller) {
@@ -494,19 +500,19 @@ struct ImageAnimatorAutoPauseTest {
           ImageAnimator()
             .images([
               {
-                // $r('app.media.Clouds')需要替换为开发者所需的图像资源文件。
+
                 src: $r('app.media.Clouds')
               },
               {
-                // $r('app.media.landscape')需要替换为开发者所需的图像资源文件。
+
                 src: $r('app.media.landscape')
               },
               {
-                // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
+
                 src: $r('app.media.sky')
               },
               {
-                // $r('app.media.mountain')需要替换为开发者所需的图像资源文件。
+
                 src: $r('app.media.mountain')
               }
             ])
@@ -550,10 +556,10 @@ struct ImageAnimatorAutoPauseTest {
           }, (item: string) => item)
         }.width('100%')
       }
-      .scrollable(ScrollDirection.Vertical) // 滚动方向纵向
-      .scrollBar(BarState.On) // 滚动条常驻显示
-      .scrollBarColor(Color.Gray) // 滚动条颜色
-      .scrollBarWidth(10) // 滚动条宽度
+      .scrollable(ScrollDirection.Vertical)
+      .scrollBar(BarState.On)
+      .scrollBarColor(Color.Gray)
+      .scrollBarWidth(10)
       .friction(0.6)
       .edgeEffect(EdgeEffect.None)
       .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState) => {
@@ -565,6 +571,7 @@ struct ImageAnimatorAutoPauseTest {
       .onScrollStop(() => {
         console.info('Scroll Stop');
       })
+
       Text('上次触发的回调（Pause/Start）：' + this.preCallBack)
         .margin({ top: 60, left: 20 })
     }.width('100%').height('100%').backgroundColor(0xDCDCDC)
@@ -572,4 +579,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/jDn-eRVxQtKMA-3lhEhWrw/zh-cn_image_0000002562145981.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101516Z&HW-CC-Expire=86400&HW-CC-Sign=D3BC49DF8A3B39065D51894B99679D5B6CAAD9A95932F4C0DC82CFF3F327B8FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/jDn-eRVxQtKMA-3lhEhWrw/zh-cn_image_0000002562145981.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120330Z&HW-CC-Expire=86400&HW-CC-Sign=EB5B6C59004EC6837C78AE816A7B0124353E81F9CD8F5273FC982E58C2B9A97D)

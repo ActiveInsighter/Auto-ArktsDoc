@@ -1,6 +1,22 @@
 # Select-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select
 
+javascript:void(0);
+
+简体中文
+
+- 简体中文
+- English
+- Русский
+
+[下载 App](https://developer.huawei.com/consumer/cn/huawei-app/)
+
+https://developer.huawei.com/consumer/cn/
+
+[文档](https://developer.huawei.com/consumer/cn/doc/) [管理中心](https://developer.huawei.com/consumer/cn/console)
+
+您当前正在浏览HarmonyOS最新文档，覆盖已发布的所有API版本，可在API参考中[筛选您使用的API版本](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/doc-updates#section1810915471038)。详细的版本配套关系请参考[版本说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion)。
+
 提供下拉选择菜单，让用户在多个选项间选择。
 
 > **说明**
@@ -1013,98 +1029,99 @@ type OnSelectCallback = (index: number, selectStr: string) => void
 该示例通过配置[SelectOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#selectoption对象说明)实现下拉菜单，并从API version 19开始通过设置[avoidance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#avoidance19)属性实现菜单的避让方式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SelectExample {
-  @State text: string = "TTTTT";
-  @State index: number = 2;
-  @State space: number = 8;
-  @State arrowPosition: ArrowPosition = ArrowPosition.END;
-  build() {
-    Column() {
-      // $r('app.media.selection')需要替换为开发者所需的图像资源文件。
-      Select([{ value: 'aaa', icon: $r("app.media.selection") },
-        { value: 'bbb', icon: $r("app.media.selection") },
-        { value: 'ccc', icon: $r("app.media.selection") },
-        { value: 'ddd', icon: $r("app.media.selection") }])
-        .selected(this.index)
-        .value(this.text)
-        .font({ size: 16, weight: 500 })
-        .fontColor('#182431')
-        .selectedOptionFont({ size: 16, weight: 400 })
-        .optionFont({ size: 16, weight: 400 })
-        .space(this.space)
-        .arrowPosition(this.arrowPosition)
-        .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
-        .optionWidth(200)
-        .optionHeight(300)
-        .onSelect((index: number, text?: string | undefined) => {
-          console.info('Select:' + index);
-          this.index = index;
-          if (text) {
-            this.text = text;
-          }
-        })
-        .avoidance(AvoidanceMode.COVER_TARGET);
-    }.width('100%')
-  }
+ @State text: string = "TTTTT";
+ @State index: number = 2;
+ @State space: number = 8;
+ @State arrowPosition: ArrowPosition = ArrowPosition.END;
+
+ build() {
+ Column() {
+
+ Select([{ value: 'aaa', icon: $r("app.media.selection") },
+ { value: 'bbb', icon: $r("app.media.selection") },
+ { value: 'ccc', icon: $r("app.media.selection") },
+ { value: 'ddd', icon: $r("app.media.selection") }])
+ .selected(this.index)
+ .value(this.text)
+ .font({ size: 16, weight: 500 })
+ .fontColor('#182431')
+ .selectedOptionFont({ size: 16, weight: 400 })
+ .optionFont({ size: 16, weight: 400 })
+ .space(this.space)
+ .arrowPosition(this.arrowPosition)
+ .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
+ .optionWidth(200)
+ .optionHeight(300)
+ .onSelect((index: number, text?: string | undefined) => {
+ console.info('Select:' + index);
+ this.index = index;
+ if (text) {
+ this.text = text;
+ }
+ })
+ .avoidance(AvoidanceMode.COVER_TARGET);
+ }.width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/z8vtbq9wReeRnLNoLTns2g/zh-cn_image_0000002562025889.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=E5C270289898E8B4D2907DEB2422D4644350E05C69B4147A5B539527DC45639D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/z8vtbq9wReeRnLNoLTns2g/zh-cn_image_0000002562025889.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=6DE987AEB6997E43C17A763E17E5AD704443726B6987D0D93F99E570B41DD505)
 
 ## 示例2（设置symbol类型图标）
 
 该示例实现了一个下拉菜单中图片为Symbol的Select组件，并从API version 19开始通过设置[avoidance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#avoidance19)属性实现菜单的避让方式。
 
 ```typescript
-// xxx.ets
 import { SymbolGlyphModifier } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct SelectExample {
-  @State text: string = "TTTTT";
-  @State index: number = 2;
-  @State space: number = 8;
-  @State arrowPosition: ArrowPosition = ArrowPosition.END;
-  @State symbolModifier1: SymbolGlyphModifier =
-    new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')).fontColor([Color.Green]);
-  @State symbolModifier2: SymbolGlyphModifier =
-    new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontColor([Color.Red]);
-  @State symbolModifier3: SymbolGlyphModifier =
-    new SymbolGlyphModifier($r('sys.symbol.ohos_trash')).fontColor([Color.Gray]);
-  @State symbolModifier4: SymbolGlyphModifier =
-    new SymbolGlyphModifier($r('sys.symbol.exposure')).fontColor([Color.Gray]);
-  build() {
-    Column() {
-      Select([{ value: 'aaa', symbolIcon: this.symbolModifier1 },
-        { value: 'bbb', symbolIcon: this.symbolModifier2 },
-        { value: 'ccc', symbolIcon: this.symbolModifier3 },
-        { value: 'ddd', symbolIcon: this.symbolModifier4 }])
-        .selected(this.index)
-        .value(this.text)
-        .font({ size: 16, weight: 500 })
-        .fontColor('#182431')
-        .selectedOptionFont({ size: 16, weight: 400 })
-        .optionFont({ size: 16, weight: 400 })
-        .space(this.space)
-        .arrowPosition(this.arrowPosition)
-        .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
-        .onSelect((index: number, text?: string | undefined) => {
-          console.info('Select:' + index);
-          this.index = index;
-          if (text) {
-            this.text = text;
-          }
-        })
-        .avoidance(AvoidanceMode.COVER_TARGET);
-    }.width('100%')
-  }
+ @State text: string = "TTTTT";
+ @State index: number = 2;
+ @State space: number = 8;
+ @State arrowPosition: ArrowPosition = ArrowPosition.END;
+ @State symbolModifier1: SymbolGlyphModifier =
+ new SymbolGlyphModifier($r('sys.symbol.ohos_wifi')).fontColor([Color.Green]);
+ @State symbolModifier2: SymbolGlyphModifier =
+ new SymbolGlyphModifier($r('sys.symbol.ohos_star')).fontColor([Color.Red]);
+ @State symbolModifier3: SymbolGlyphModifier =
+ new SymbolGlyphModifier($r('sys.symbol.ohos_trash')).fontColor([Color.Gray]);
+ @State symbolModifier4: SymbolGlyphModifier =
+ new SymbolGlyphModifier($r('sys.symbol.exposure')).fontColor([Color.Gray]);
+
+ build() {
+ Column() {
+ Select([{ value: 'aaa', symbolIcon: this.symbolModifier1 },
+ { value: 'bbb', symbolIcon: this.symbolModifier2 },
+ { value: 'ccc', symbolIcon: this.symbolModifier3 },
+ { value: 'ddd', symbolIcon: this.symbolModifier4 }])
+ .selected(this.index)
+ .value(this.text)
+ .font({ size: 16, weight: 500 })
+ .fontColor('#182431')
+ .selectedOptionFont({ size: 16, weight: 400 })
+ .optionFont({ size: 16, weight: 400 })
+ .space(this.space)
+ .arrowPosition(this.arrowPosition)
+ .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
+ .onSelect((index: number, text?: string | undefined) => {
+ console.info('Select:' + index);
+ this.index = index;
+ if (text) {
+ this.text = text;
+ }
+ })
+ .avoidance(AvoidanceMode.COVER_TARGET);
+ }.width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/29g_4w6YRbiE_9UXIttaAQ/zh-cn_image_0000002562145875.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=4BA35854D4B999BF68D7E65C961B709B8F5FE3B5E02ACC2A8813298E737D4394)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/29g_4w6YRbiE_9UXIttaAQ/zh-cn_image_0000002562145875.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=C8334B7D93EF343B9D6EF570F293DCA8166ECCFBCE8F048736A12BE840B0520B)
 
 ## 示例3（自定义下拉菜单）
 
@@ -1112,162 +1129,169 @@ struct SelectExample {
 
 ```typescript
 import { SymbolGlyphModifier } from '@kit.ArkUI';
+
 class MyMenuItemContentModifier implements ContentModifier<MenuItemConfiguration> {
-  modifierText: string = "";
-  constructor(text: string) {
-    this.modifierText = text;
-  }
-  applyContent(): WrappedBuilder<[MenuItemConfiguration]> {
-    return wrapBuilder(MenuItemBuilder);
-  }
+ modifierText: string = "";
+
+ constructor(text: string) {
+ this.modifierText = text;
+ }
+
+ applyContent(): WrappedBuilder<[MenuItemConfiguration]> {
+ return wrapBuilder(MenuItemBuilder);
+ }
 }
+
 @Builder
 function MenuItemBuilder(configuration: MenuItemConfiguration) {
-  Row() {
-    Text(configuration.value)
-    Blank()
-    if (configuration.symbolIcon) {
-      SymbolGlyph().attributeModifier(configuration.symbolIcon).fontSize(24)
-    } else if (configuration.icon) {
-      Image(configuration.icon).size({ width: 24, height: 24 })
-    }
-    Blank(30)
-    Text((configuration.contentModifier as MyMenuItemContentModifier).modifierText)
-    Blank(30)
-    Path()
-      .width('100px')
-      .height('150px')
-      .commands('M40 0 L80 100 L0 100 Z')
-      .fillOpacity(0)
-      .stroke(Color.Black)
-      .strokeWidth(3)
-  }
-  .onClick(() => {
-    configuration.triggerSelect(configuration.index, configuration.value.valueOf().toString());
-  })
+ Row() {
+ Text(configuration.value)
+ Blank()
+ if (configuration.symbolIcon) {
+ SymbolGlyph().attributeModifier(configuration.symbolIcon).fontSize(24)
+ } else if (configuration.icon) {
+ Image(configuration.icon).size({ width: 24, height: 24 })
+ }
+ Blank(30)
+ Text((configuration.contentModifier as MyMenuItemContentModifier).modifierText)
+ Blank(30)
+ Path()
+ .width('100px')
+ .height('150px')
+ .commands('M40 0 L80 100 L0 100 Z')
+ .fillOpacity(0)
+ .stroke(Color.Black)
+ .strokeWidth(3)
+ }
+ .onClick(() => {
+ configuration.triggerSelect(configuration.index, configuration.value.valueOf().toString());
+ })
 }
+
 @Entry
 @Component
 struct SelectExample {
-  @State text: string = "Content Modifier Select";
-  @State symbolModifier1: SymbolGlyphModifier =
-    new SymbolGlyphModifier($r('sys.symbol.ohos_trash')).fontColor([Color.Gray]);
-  @State symbolModifier2: SymbolGlyphModifier =
-    new SymbolGlyphModifier($r('sys.symbol.exposure')).fontColor([Color.Gray]);
-  build() {
-    Column() {
-      Row() {
-        // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
-        Select([{ value: 'item1', icon: $r('app.media.icon'), symbolIcon: this.symbolModifier1 },
-          { value: 'item1', icon: $r('app.media.icon'), symbolIcon: this.symbolModifier2 }])
-          .value(this.text)
-          .onSelect((index: number, text?: string) => {
-            console.info('Select index:' + index);
-            console.info('Select text:' + text);
-          })
-          .menuItemContentModifier(new MyMenuItemContentModifier("Content Modifier"))
-      }.alignItems(VerticalAlign.Center).height('50%')
-    }
-  }
+ @State text: string = "Content Modifier Select";
+ @State symbolModifier1: SymbolGlyphModifier =
+ new SymbolGlyphModifier($r('sys.symbol.ohos_trash')).fontColor([Color.Gray]);
+ @State symbolModifier2: SymbolGlyphModifier =
+ new SymbolGlyphModifier($r('sys.symbol.exposure')).fontColor([Color.Gray]);
+
+ build() {
+ Column() {
+ Row() {
+
+ Select([{ value: 'item1', icon: $r('app.media.icon'), symbolIcon: this.symbolModifier1 },
+ { value: 'item1', icon: $r('app.media.icon'), symbolIcon: this.symbolModifier2 }])
+ .value(this.text)
+ .onSelect((index: number, text?: string) => {
+ console.info('Select index:' + index);
+ console.info('Select text:' + text);
+ })
+ .menuItemContentModifier(new MyMenuItemContentModifier("Content Modifier"))
+
+ }.alignItems(VerticalAlign.Center).height('50%')
+ }
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/XmJ8WD-cQ8Wn3r9FcwatuQ/zh-cn_image_0000002531105974.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=DAEDBD30EB5E374C1A296A7BEBD4E07CB0DE9D11BB9BA700F9196C7D9466F29D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/XmJ8WD-cQ8Wn3r9FcwatuQ/zh-cn_image_0000002531105974.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=BA465DCCB7C1A4633F2938334394166636A6E2CC9CD0B98653F3016B7428E14C)
 
 ## 示例4（设置分割线样式）
 
 该示例通过配置divider的DividerOptions类型实现分割线样式的下拉菜单，并从API version 19开始通过设置[avoidance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#avoidance19)属性实现菜单的避让方式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SelectExample {
-  @State text: string = "TTTTT";
-  @State index: number = -1;
-  @State arrowPosition: ArrowPosition = ArrowPosition.END;
-  build() {
-    Column() {
-      // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
-      Select([{ value: 'aaa', icon: $r("app.media.icon") },
-        { value: 'bbb', icon: $r("app.media.icon") },
-        { value: 'ccc', icon: $r("app.media.icon") },
-        { value: 'ddd', icon: $r("app.media.icon") }])
-        .selected(this.index)
-        .value(this.text)
-        .font({ size: 16, weight: 500 })
-        .fontColor('#182431')
-        .selectedOptionFont({ size: 16, weight: 400 })
-        .optionFont({ size: 16, weight: 400 })
-        .arrowPosition(this.arrowPosition)
-        .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
-        .optionWidth(200)
-        .optionHeight(300)
-        .divider({
-          strokeWidth: 5,
-          color: Color.Blue,
-          startMargin: 10,
-          endMargin: 10
-        })
-        .onSelect((index: number, text?: string | undefined) => {
-          console.info('Select:' + index);
-          this.index = index;
-          if (text) {
-            this.text = text;
-          }
-        })
-        .avoidance(AvoidanceMode.COVER_TARGET);
-    }.width('100%')
-  }
+ @State text: string = "TTTTT";
+ @State index: number = -1;
+ @State arrowPosition: ArrowPosition = ArrowPosition.END;
+
+ build() {
+ Column() {
+
+ Select([{ value: 'aaa', icon: $r("app.media.icon") },
+ { value: 'bbb', icon: $r("app.media.icon") },
+ { value: 'ccc', icon: $r("app.media.icon") },
+ { value: 'ddd', icon: $r("app.media.icon") }])
+ .selected(this.index)
+ .value(this.text)
+ .font({ size: 16, weight: 500 })
+ .fontColor('#182431')
+ .selectedOptionFont({ size: 16, weight: 400 })
+ .optionFont({ size: 16, weight: 400 })
+ .arrowPosition(this.arrowPosition)
+ .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
+ .optionWidth(200)
+ .optionHeight(300)
+ .divider({
+ strokeWidth: 5,
+ color: Color.Blue,
+ startMargin: 10,
+ endMargin: 10
+ })
+ .onSelect((index: number, text?: string | undefined) => {
+ console.info('Select:' + index);
+ this.index = index;
+ if (text) {
+ this.text = text;
+ }
+ })
+ .avoidance(AvoidanceMode.COVER_TARGET);
+ }.width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/tFHRC3-1SDGatbv05CaaPg/zh-cn_image_0000002531225908.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=F41B51398F812246B5DCBF8E9B97223FEB2AB54832A39CB0C2898E1B5EFE350B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/tFHRC3-1SDGatbv05CaaPg/zh-cn_image_0000002531225908.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=4076DA5F451E68BBCF61084C9DC4E0353A16AC833B47257E0605375DA0F62B1B)
 
 ## 示例5（设置无分割线样式）
 
 该示例通过配置divider为null实现无分割线样式的下拉菜单，并从API version 19开始通过设置[avoidance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#avoidance19)属性实现菜单的避让方式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SelectExample {
-  @State text: string = "TTTTT";
-  @State index: number = -1;
-  @State arrowPosition: ArrowPosition = ArrowPosition.END;
-  build() {
-    Column() {
-      // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
-      Select([{ value: 'aaa', icon: $r("app.media.icon") },
-        { value: 'bbb', icon: $r("app.media.icon") },
-        { value: 'ccc', icon: $r("app.media.icon") },
-        { value: 'ddd', icon: $r("app.media.icon") }])
-        .selected(this.index)
-        .value(this.text)
-        .font({ size: 16, weight: 500 })
-        .fontColor('#182431')
-        .selectedOptionFont({ size: 16, weight: 400 })
-        .optionFont({ size: 16, weight: 400 })
-        .arrowPosition(this.arrowPosition)
-        .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
-        .optionWidth(200)
-        .optionHeight(300)
-        .divider(null)
-        .onSelect((index: number, text?: string | undefined) => {
-          console.info('Select:' + index);
-          this.index = index;
-          if (text) {
-            this.text = text;
-          }
-        })
-        .avoidance(AvoidanceMode.COVER_TARGET);
-    }.width('100%')
-  }
+ @State text: string = "TTTTT";
+ @State index: number = -1;
+ @State arrowPosition: ArrowPosition = ArrowPosition.END;
+
+ build() {
+ Column() {
+
+ Select([{ value: 'aaa', icon: $r("app.media.icon") },
+ { value: 'bbb', icon: $r("app.media.icon") },
+ { value: 'ccc', icon: $r("app.media.icon") },
+ { value: 'ddd', icon: $r("app.media.icon") }])
+ .selected(this.index)
+ .value(this.text)
+ .font({ size: 16, weight: 500 })
+ .fontColor('#182431')
+ .selectedOptionFont({ size: 16, weight: 400 })
+ .optionFont({ size: 16, weight: 400 })
+ .arrowPosition(this.arrowPosition)
+ .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
+ .optionWidth(200)
+ .optionHeight(300)
+ .divider(null)
+ .onSelect((index: number, text?: string | undefined) => {
+ console.info('Select:' + index);
+ this.index = index;
+ if (text) {
+ this.text = text;
+ }
+ })
+ .avoidance(AvoidanceMode.COVER_TARGET);
+ }.width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/haH5OoXmSM-97zQ_L-baQQ/zh-cn_image_0000002562025891.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=A6A538958598B69AD22FE3BA28C1059E83B06780A09AB6A8BD37468AD2552E93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/haH5OoXmSM-97zQ_L-baQQ/zh-cn_image_0000002562025891.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=82F683CDA23A4033AC2C0F9140F45DC926B4201174B283AB3F444FCB8F60FA53)
 
 ## 示例6（设置Select中文本和箭头样式）
 
@@ -1275,62 +1299,66 @@ struct SelectExample {
 
 ```typescript
 import { TextModifier, SymbolGlyphModifier } from "@kit.ArkUI";
+
 @Entry
 @Component
 struct SelectExample {
-  @State text: string = "TTTTTTTTTT".repeat(3);
-  @State index: number = 2;
-  textModifier: TextModifier = new TextModifier();
-  symbolGlyphModifier: SymbolGlyphModifier = new SymbolGlyphModifier();
-  aboutToAppear(): void {
-    this.textModifier
-      .maxLines(2)
-      .fontSize(18)
-      .textAlign(TextAlign.Center)
-      .fontColor('#333333')
-      .fontWeight(FontWeight.Medium)
-      .textOverflow({overflow:TextOverflow.Clip})
-    this.symbolGlyphModifier
-      .fontSize(25)
-      .fontColor(['#999999'])
-  }
-  build() {
-    Column() {
-      Select([
-        // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-        { value: 'A very long option text that should be truncated nicely'.repeat(3), icon: $r("app.media.startIcon") },
-        { value: 'Option B', icon: $r("app.media.startIcon") },
-        { value: 'Option C', icon: $r("app.media.startIcon") },
-        { value: 'Option D', icon: $r("app.media.startIcon") }
-      ])
-        .selected(this.index)
-        .value(this.text)
-        .textModifier(this.textModifier)
-        .arrowModifier(this.symbolGlyphModifier)
-        .onSelect((index: number, text?: string) => {
-          console.info('Select:' + index);
-          this.index = index;
-          if (text) {
-            this.text = text;
-          }
-        })
-        .margin({ top: 20,left:30 })
-        .borderRadius(12)
-        .width(200)
-        .padding(9)
-        .backgroundColor(Color.White)
-        .shadow({ radius: 10, color: '#888888', offsetX: 0, offsetY: 10 })
-    }
-    .alignItems(HorizontalAlign.Start)
-    .padding(10)
-    .backgroundColor('#F0F2F5')
-    .width('100%')
-    .height('100%')
-  }
+ @State text: string = "TTTTTTTTTT".repeat(3);
+ @State index: number = 2;
+ textModifier: TextModifier = new TextModifier();
+ symbolGlyphModifier: SymbolGlyphModifier = new SymbolGlyphModifier();
+
+ aboutToAppear(): void {
+ this.textModifier
+ .maxLines(2)
+ .fontSize(18)
+ .textAlign(TextAlign.Center)
+ .fontColor('#333333')
+ .fontWeight(FontWeight.Medium)
+ .textOverflow({overflow:TextOverflow.Clip})
+
+ this.symbolGlyphModifier
+ .fontSize(25)
+ .fontColor(['#999999'])
+ }
+
+ build() {
+ Column() {
+ Select([
+
+ { value: 'A very long option text that should be truncated nicely'.repeat(3), icon: $r("app.media.startIcon") },
+ { value: 'Option B', icon: $r("app.media.startIcon") },
+ { value: 'Option C', icon: $r("app.media.startIcon") },
+ { value: 'Option D', icon: $r("app.media.startIcon") }
+ ])
+ .selected(this.index)
+ .value(this.text)
+ .textModifier(this.textModifier)
+ .arrowModifier(this.symbolGlyphModifier)
+ .onSelect((index: number, text?: string) => {
+ console.info('Select:' + index);
+ this.index = index;
+ if (text) {
+ this.text = text;
+ }
+ })
+ .margin({ top: 20,left:30 })
+ .borderRadius(12)
+ .width(200)
+ .padding(9)
+ .backgroundColor(Color.White)
+ .shadow({ radius: 10, color: '#888888', offsetX: 0, offsetY: 10 })
+ }
+ .alignItems(HorizontalAlign.Start)
+ .padding(10)
+ .backgroundColor('#F0F2F5')
+ .width('100%')
+ .height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aJsJ1jlHQySGY_GvHUs0dg/zh-cn_image_0000002562145877.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=AD25DDCF3D22DF921735028E218CD2F87A1F4C93DBE6750C3480C9FB42B3DAA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aJsJ1jlHQySGY_GvHUs0dg/zh-cn_image_0000002562145877.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=E7AA1C4A741FCD86C11E74B5C741D2ADB9B2C10462FBF7B906D39EBE38EA8C54)
 
 ## 示例7（设置Select下拉菜单选中和非选中项文本样式）
 
@@ -1338,66 +1366,69 @@ struct SelectExample {
 
 ```typescript
 import { TextModifier } from "@kit.ArkUI";
+
 @Entry
 @Component
 struct SelectExample {
-  @State text: string = "TTTTTTTTTT".repeat(3);
-  @State index: number = 2;
-  optionTextModifier: TextModifier = new TextModifier();
-  selectedOptionTextModifier: TextModifier = new TextModifier();
-  aboutToAppear(): void {
-    this.optionTextModifier
-      .maxLines(1)
-      .fontSize(16)
-      .textAlign(TextAlign.Start)
-      .fontColor('#666666')
-      .fontWeight(FontWeight.Normal)
-      .width(200)
-    this.selectedOptionTextModifier
-      .maxLines(1)
-      .fontSize(18)
-      .textAlign(TextAlign.Start)
-      .fontColor('#007BFF')
-      .fontWeight(FontWeight.Bold)
-      .width(200)
-  }
-  build() {
-    Column() {
-      Select([
-        // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-        { value: 'A very long option text that should be truncated nicely'.repeat(3), icon: $r("app.media.startIcon") },
-        { value: 'Option B', icon: $r("app.media.startIcon") },
-        { value: 'Option C', icon: $r("app.media.startIcon") },
-        { value: 'Option D', icon: $r("app.media.startIcon") }
-      ])
-        .selected(this.index)
-        .value(this.text)
-        .onSelect((index: number, text?: string) => {
-          console.info('Select:' + index);
-          this.index = index;
-          if (text) {
-            this.text = text;
-          }
-        })
-        .optionTextModifier(this.optionTextModifier)
-        .selectedOptionTextModifier(this.selectedOptionTextModifier)
-        .margin({ top: 20,left:30 })
-        .borderRadius(12)
-        .width(200)
-        .padding(9)
-        .backgroundColor(Color.White)
-        .shadow({ radius: 10, color: '#888888', offsetX: 0, offsetY: 10 })
-    }
-    .alignItems(HorizontalAlign.Start)
-    .padding(10)
-    .backgroundColor('#F0F2F5')
-    .width('100%')
-    .height('100%')
-  }
+ @State text: string = "TTTTTTTTTT".repeat(3);
+ @State index: number = 2;
+ optionTextModifier: TextModifier = new TextModifier();
+ selectedOptionTextModifier: TextModifier = new TextModifier();
+ aboutToAppear(): void {
+ this.optionTextModifier
+ .maxLines(1)
+ .fontSize(16)
+ .textAlign(TextAlign.Start)
+ .fontColor('#666666')
+ .fontWeight(FontWeight.Normal)
+ .width(200)
+
+ this.selectedOptionTextModifier
+ .maxLines(1)
+ .fontSize(18)
+ .textAlign(TextAlign.Start)
+ .fontColor('#007BFF')
+ .fontWeight(FontWeight.Bold)
+ .width(200)
+ }
+
+ build() {
+ Column() {
+ Select([
+
+ { value: 'A very long option text that should be truncated nicely'.repeat(3), icon: $r("app.media.startIcon") },
+ { value: 'Option B', icon: $r("app.media.startIcon") },
+ { value: 'Option C', icon: $r("app.media.startIcon") },
+ { value: 'Option D', icon: $r("app.media.startIcon") }
+ ])
+ .selected(this.index)
+ .value(this.text)
+ .onSelect((index: number, text?: string) => {
+ console.info('Select:' + index);
+ this.index = index;
+ if (text) {
+ this.text = text;
+ }
+ })
+ .optionTextModifier(this.optionTextModifier)
+ .selectedOptionTextModifier(this.selectedOptionTextModifier)
+ .margin({ top: 20,left:30 })
+ .borderRadius(12)
+ .width(200)
+ .padding(9)
+ .backgroundColor(Color.White)
+ .shadow({ radius: 10, color: '#888888', offsetX: 0, offsetY: 10 })
+ }
+ .alignItems(HorizontalAlign.Start)
+ .padding(10)
+ .backgroundColor('#F0F2F5')
+ .width('100%')
+ .height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/_Q7hDOCpQW6kW9b6oV3maA/zh-cn_image_0000002531105976.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=474A2524C1C7569B065D732F13137EF30B1CCA3955BE6B32FC1D83AB464AAFB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/_Q7hDOCpQW6kW9b6oV3maA/zh-cn_image_0000002531105976.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=42A89078482687C393B0B5500C457337C9CC3BF4CE128E5B202E779A76F5B1C8)
 
 ## 示例8（设置分割线模式）
 
@@ -1405,72 +1436,111 @@ struct SelectExample {
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct Index {
-  build() {
-    RelativeContainer() {
-      Select([{ value: "SelectItem" }, { value: "SelectItem" }, { value: "SelectItem" },])
-        .value("请选择")
-        .dividerStyle({
-          strokeWidth: LengthMetrics.vp(5),
-          color: '#d5d5d5',
-          mode: DividerMode.EMBEDDED_IN_MENU
-        })
-    }
-    .height('100%')
-    .width('100%')
-  }
+ build() {
+ RelativeContainer() {
+ Select([{ value: "SelectItem" }, { value: "SelectItem" }, { value: "SelectItem" },])
+ .value("请选择")
+ .dividerStyle({
+ strokeWidth: LengthMetrics.vp(5),
+ color: '#d5d5d5',
+ mode: DividerMode.EMBEDDED_IN_MENU
+ })
+ }
+ .height('100%')
+ .width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/E3ROBKkzTKiScNlmzprXsQ/zh-cn_image_0000002531225910.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=D1B54107F2F1142C331C0C64228679206C7CFE2CFBB5C5D702FB6C7A55505197)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/E3ROBKkzTKiScNlmzprXsQ/zh-cn_image_0000002531225910.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=6F3AEE42665C26E89AFA769073CAE057B63975D1DB407C1A3EA5A5766A72137B)
 
 ## 示例9（设置Select下拉菜单外描边样式）
 
 从API version 20开始该示例通过配置menuOutline的width和color属性设置下拉菜单外描边样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SelectExample {
-  @State text: string = "TTTTT";
-  @State index: number = -1;
-  @State arrowPosition: ArrowPosition = ArrowPosition.END;
-  build() {
-    Column() {
-      Select([{ value: 'aaa' },
-        { value: 'bbb' },
-        { value: 'ccc' },
-        { value: 'ddd' }])
-        .selected(this.index)
-        .value(this.text)
-        .font({ size: 16, weight: 500 })
-        .fontColor('#182431')
-        .selectedOptionFont({ size: 16, weight: 400 })
-        .optionFont({ size: 16, weight: 400 })
-        .arrowPosition(this.arrowPosition)
-        .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
-        .optionWidth(200)
-        .optionHeight(300)
-        .menuOutline({
-          width: '5vp',
-          color: Color.Blue
-        })
-        .onSelect((index: number, text?: string | undefined) => {
-          console.info('Select:' + index);
-          this.index = index;
-          if (text) {
-            this.text = text;
-          }
-        })
-    }
-    .width('100%')
-    .height('100%')
-    .backgroundColor('#F0F2F5')
-  }
+ @State text: string = "TTTTT";
+ @State index: number = -1;
+ @State arrowPosition: ArrowPosition = ArrowPosition.END;
+
+ build() {
+ Column() {
+ Select([{ value: 'aaa' },
+ { value: 'bbb' },
+ { value: 'ccc' },
+ { value: 'ddd' }])
+ .selected(this.index)
+ .value(this.text)
+ .font({ size: 16, weight: 500 })
+ .fontColor('#182431')
+ .selectedOptionFont({ size: 16, weight: 400 })
+ .optionFont({ size: 16, weight: 400 })
+ .arrowPosition(this.arrowPosition)
+ .menuAlign(MenuAlignType.START, { dx: 0, dy: 0 })
+ .optionWidth(200)
+ .optionHeight(300)
+ .menuOutline({
+ width: '5vp',
+ color: Color.Blue
+ })
+ .onSelect((index: number, text?: string | undefined) => {
+ console.info('Select:' + index);
+ this.index = index;
+ if (text) {
+ this.text = text;
+ }
+ })
+ }
+ .width('100%')
+ .height('100%')
+ .backgroundColor('#F0F2F5')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/rPc1xVEtSzaUVyKGYBOM5g/zh-cn_image_0000002562025893.png?HW-CC-KV=V1&HW-CC-Date=20260320T101454Z&HW-CC-Expire=86400&HW-CC-Sign=8ADFE9CCAC32083AAE26262620FA1FDBA04F7723114ED496A8E85DB53FA508A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/rPc1xVEtSzaUVyKGYBOM5g/zh-cn_image_0000002562025893.png?HW-CC-KV=V1&HW-CC-Date=20260320T120309Z&HW-CC-Expire=86400&HW-CC-Sign=D871D6A6F802FC4B42BE739E6365F609A56BD570B6314B92403001B5BE41D908)
+
+[Rating](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-rating)
+
+[Slider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-slider)
+
+相关推荐
+
+*文档*[select](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-select)
+
+*文档*[使用ContactsKit中的selectContacts方法报错](https://developer.huawei.com/consumer/cn/doc/architecture-guides/tools-v1_2-ts_135-0000002401142145)
+
+*文档*[Select组件默认加粗字体](https://developer.huawei.com/consumer/cn/doc/architecture-guides/insurance-v1_2-ts_154-0000002378698304)
+
+*文档*[如何对SelectDialog的单选项进行增减](https://developer.huawei.com/consumer/cn/doc/architecture-guides/common-v1_26-ts_178-0000002416782265)
+
+*文档*[ServiceCollaboration_SelectInfo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/servicecollaboration-selectinfo)
+
+*文档*[文本概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-introduction)
+
+*文档*[优化跳转至新Web组件过程中的页面闪烁现象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-router-flash-optimization)
+
+*文档*[Interfaces (其他)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-i)
+
+*文档*[option](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-option)
+
+*文档*[SelectionMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arkui-advanced-selectionmenu)
+
+本文导读 在 API参考 中进行搜索
+
+只在 按钮与选择 中搜索 只搜索章节标题
+
+请输入您想要搜索的关键词
+
+- 智能客服 你问我答，随时在线为你解决问题
+
+- 合作咨询 我们的专家服务团队将竭诚为您提供专业的合作咨询服务
+
+- 解决方案 精准高效的一站式服务支持，助力开发者商业成功

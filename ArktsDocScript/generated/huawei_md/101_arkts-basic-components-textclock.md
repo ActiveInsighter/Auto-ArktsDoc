@@ -1,4 +1,4 @@
-# 文档中心
+# TextClock-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textclock
 
 TextClock组件通过文本将当前系统时间显示在设备上。支持不同时区的时间显示，最高精度到秒级。
@@ -413,14 +413,13 @@ stop()
 @Component
 struct Second {
   @State accumulateTime: number = 0;
-
+  // 导入对象
   controller: TextClockController = new TextClockController();
-
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Current milliseconds is ' + this.accumulateTime)
         .fontSize(20)
-
+      // 以12小时制显示东八区的系统时间，精确到秒。
       TextClock({ timeZoneOffset: -8, controller: this.controller })
         .format('aa hh:mm:ss')
         .onDateChange((value: number) => {
@@ -431,12 +430,12 @@ struct Second {
       Button('start TextClock')
         .margin({ bottom: 10 })
         .onClick(() => {
-
+          // 启动文本时钟
           this.controller.start();
         })
       Button('stop TextClock')
         .onClick(() => {
-
+          // 停止文本时钟
           this.controller.stop();
         })
     }
@@ -446,7 +445,7 @@ struct Second {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/cy0nGXJSQfGr1X1UY4Mp0Q/zh-cn_image_0000002562026067.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101533Z&HW-CC-Expire=86400&HW-CC-Sign=2F5C8F59F4B90B452B078739B7297127A7258908CF3B445B94B966BE4AD26DF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/cy0nGXJSQfGr1X1UY4Mp0Q/zh-cn_image_0000002562026067.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120348Z&HW-CC-Expire=86400&HW-CC-Sign=00A817680AB1F26CE3BC378FCB37DC761FB40D0DD7B7B06C250B14370B3DEAF9)
 
 ### 示例2（设定文本阴影样式）
 
@@ -482,7 +481,6 @@ struct TextClockExample {
     offsetX: 100,
     offsetY: 0
   }];
-
   build() {
     Column({ space: 8 }) {
       TextClock().fontSize(50).textShadow(this.textShadows)
@@ -491,7 +489,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/vz-GPrpNQI2tXpQQcPWWSA/zh-cn_image_0000002562146053.png?HW-CC-KV=V1&HW-CC-Date=20260320T101533Z&HW-CC-Expire=86400&HW-CC-Sign=5269935CEB39C22161B7BCD17526E33C4788F4963C7E4FA6B6B18AA186359C67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/vz-GPrpNQI2tXpQQcPWWSA/zh-cn_image_0000002562146053.png?HW-CC-KV=V1&HW-CC-Date=20260320T120348Z&HW-CC-Expire=86400&HW-CC-Sign=70E10776589C98D736D4F451649E8D716E054866C08683C1B2D0C627B4DA2310)
 
 ### 示例3（设定自定义内容区）
 
@@ -501,16 +499,13 @@ struct TextClockExample {
 class MyTextClockStyle implements ContentModifier<TextClockConfiguration> {
   currentTimeZoneOffset: number = new Date().getTimezoneOffset() / 60;
   title: string = '';
-
   constructor(title: string) {
     this.title = title;
   }
-
   applyContent(): WrappedBuilder<[TextClockConfiguration]> {
     return wrapBuilder(buildTextClock);
   }
 }
-
 @Builder
 function buildTextClock(config: TextClockConfiguration) {
   Row() {
@@ -528,7 +523,6 @@ function buildTextClock(config: TextClockConfiguration) {
     }
   }
 }
-
 @Entry
 @Component
 struct TextClockExample {
@@ -536,7 +530,6 @@ struct TextClockExample {
   @State timeZoneOffset: number = -8;
   controller1: TextClockController = new TextClockController();
   controller2: TextClockController = new TextClockController();
-
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Current milliseconds is ' + this.accumulateTime1)
@@ -556,18 +549,17 @@ struct TextClockExample {
       Button('start TextClock')
         .margin({ top: 20, bottom: 10 })
         .onClick(() => {
-
+          // 启动文本时钟
           this.controller1.start();
           this.controller2.start();
         })
       Button('stop TextClock')
         .margin({ bottom: 30 })
         .onClick(() => {
-
+          // 停止文本时钟
           this.controller1.stop();
           this.controller2.stop();
         })
-
     }
     .width('100%')
     .height('100%')
@@ -575,7 +567,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/AXXnBoAHRzuvMyXcuC3XyQ/zh-cn_image_0000002531106152.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101533Z&HW-CC-Expire=86400&HW-CC-Sign=1E998932A79BD9CC46FB77C6124B4583561AF1D9EFCD979C48766F15A1DE6F34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/AXXnBoAHRzuvMyXcuC3XyQ/zh-cn_image_0000002531106152.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120348Z&HW-CC-Expire=86400&HW-CC-Sign=B8EBF39986C07AC45BDCA989E49FF758AA0E06750AE089485D1945C2420338A8)
 
 ### 示例4（设置前导零）
 
@@ -595,7 +587,6 @@ struct TextClockExample {
           .format('HH:mm:ss')
           .dateTimeOptions({ hour: 'numeric' })
       }
-
       Row() {
         Text('12小时制增加前导0：')
           .fontSize(20)
@@ -610,7 +601,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/XeVZPKBoQ4KLlCSWzVyTmg/zh-cn_image_0000002531226086.png?HW-CC-KV=V1&HW-CC-Date=20260320T101533Z&HW-CC-Expire=86400&HW-CC-Sign=72F4E7BBB83742E1D0D0BB0595F9269EA0CDA6402E8425CA7544814744DFA970)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/XeVZPKBoQ4KLlCSWzVyTmg/zh-cn_image_0000002531226086.png?HW-CC-KV=V1&HW-CC-Date=20260320T120348Z&HW-CC-Expire=86400&HW-CC-Sign=204690FAD3C4D4A00971A3A78E2DA814DEAFCB51DC3279EE3156055D2E3BB77E)
 
 ### 示例5（设置文字显示样式）
 
@@ -623,38 +614,35 @@ struct Index {
   build() {
     Column() {
       Text('fontFeature').fontColor(0xCCCCCC)
-
+      // 设置文本特性
       TextClock()
         .fontFeature('\"sinf\" off')
       TextClock()
         .fontFeature('\"sinf\" on')
         .margin('10%')
-
+      // 设置字体颜色
       Text('fontColor').fontColor(0xCCCCCC)
       TextClock()
         .fontColor(Color.Black)
       TextClock()
         .fontColor(Color.Blue)
         .margin('10%')
-
       Text('fontStyle').fontColor(0xCCCCCC)
-
+      // 设置字体样式
       TextClock()
         .fontStyle(FontStyle.Normal)
       TextClock()
         .fontStyle(FontStyle.Italic)
         .margin('10%')
-
       Text('fontWeight').fontColor(0xCCCCCC)
-
+      // 设置字体粗细
       TextClock()
         .fontWeight(FontWeight.Normal)
       TextClock()
         .fontWeight(FontWeight.Bold)
         .margin('10%')
-
       Text('fontFamily').fontColor(0xCCCCCC)
-
+      // 设置字体
       TextClock()
         .fontFamily('HarmonyOS Sans')
     }
@@ -664,4 +652,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/HmC-dCmVTLK2ImVqSntnkQ/zh-cn_image_0000002562026069.png?HW-CC-KV=V1&HW-CC-Date=20260320T101533Z&HW-CC-Expire=86400&HW-CC-Sign=FF240CD7AA2F5653ECAC5C9CCE70924C59AA10F26B5396717E24F214F8A58E1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/HmC-dCmVTLK2ImVqSntnkQ/zh-cn_image_0000002562026069.png?HW-CC-KV=V1&HW-CC-Date=20260320T120348Z&HW-CC-Expire=86400&HW-CC-Sign=1B5B9E3D0F24BC5F16C2DFC7918C6E35724A9BA0335F0363698757205C4B93F7)

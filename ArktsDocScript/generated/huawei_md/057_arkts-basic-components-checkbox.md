@@ -1,4 +1,4 @@
-# Checkbox-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox
 
 提供多选框组件，通常用于某选项的打开或关闭。
@@ -335,6 +335,7 @@ type OnCheckboxChangeCallback = (value: boolean) => void
 该示例通过配置CheckBoxShape实现圆形和圆角方形多选框样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CheckboxExample {
@@ -359,17 +360,17 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/darhOQBXTnuqWzxgAkOkwg/zh-cn_image_0000002531225882.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101446Z&HW-CC-Expire=86400&HW-CC-Sign=05919A9CB1188198D9818405494B0C916F65A03377713FB1CE9F4F90558251E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/darhOQBXTnuqWzxgAkOkwg/zh-cn_image_0000002531225882.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120129Z&HW-CC-Expire=86400&HW-CC-Sign=1A05F34A8CA3679477ED5DD9069A14349FD3D3E8C2410B8F265F308EE5174E96)
 
 ### 示例2（设置多选框颜色）
 
 该示例通过配置mark实现自定义多选框的颜色。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct Index {
-
   build() {
     Row() {
       Column() {
@@ -409,25 +410,23 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/y2kljZUoTmiXNz2ZX8TEgw/zh-cn_image_0000002562025865.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101446Z&HW-CC-Expire=86400&HW-CC-Sign=678F0D44D3F6B34ED1846A8C5C455203F4BE0633F7C8380555C4ABBF4BB76095)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/y2kljZUoTmiXNz2ZX8TEgw/zh-cn_image_0000002562025865.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120129Z&HW-CC-Expire=86400&HW-CC-Sign=83BB66FB8B5EF40B220F066D39EAF6A8D3E5F210B11E100962468BC06C1210EF)
 
 ### 示例3（自定义多选框样式）
 
 该示例通过[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox#contentmodifier12)属性实现了自定义多选框样式的功能，自定义样式实现了一个五边形多选框，如果选中，内部会出现红色三角图案，标题会显示选中字样，如果取消选中，红色三角图案消失，标题会显示非选中字样。
 
 ```typescript
+// xxx.ets
 class MyCheckboxStyle implements ContentModifier<CheckBoxConfiguration> {
   selectedColor: Color = Color.White;
-
   constructor(selectedColor: Color) {
     this.selectedColor = selectedColor;
   }
-
   applyContent(): WrappedBuilder<[CheckBoxConfiguration]> {
     return wrapBuilder(buildCheckbox);
   }
 }
-
 @Builder
 function buildCheckbox(config: CheckBoxConfiguration) {
   Column({ space: 10 }) {
@@ -471,12 +470,10 @@ function buildCheckbox(config: CheckBoxConfiguration) {
     .margin({ left: 50 })
   }
 }
-
 @Entry
 @Component
 struct Index {
   @State checkboxEnabled: boolean = true;
-
   build() {
     Column({ space: 100 }) {
       Checkbox({ name: '多选框状态', group: 'checkboxGroup' })
@@ -484,7 +481,6 @@ struct Index {
         .onChange((value: boolean) => {
           console.info('Checkbox change is' + value);
         }).enabled(this.checkboxEnabled)
-
       Row() {
         Toggle({ type: ToggleType.Switch, isOn: true }).onChange((value: boolean) => {
           if (value) {
@@ -499,13 +495,14 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/bonE5ts4Q2iSOzQGEPGADQ/zh-cn_image_0000002562145851.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101446Z&HW-CC-Expire=86400&HW-CC-Sign=B46301787479F9AC743A6F9C3C9E0C8D84CA184AAD05A54B8DFA2FD46485D5D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/bonE5ts4Q2iSOzQGEPGADQ/zh-cn_image_0000002562145851.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120129Z&HW-CC-Expire=86400&HW-CC-Sign=A994741A1B932BDD0505B68E9879FFA69B1F0ED55F598DFEC8CA2EC99D7C84F6)
 
 ### 示例4（设置文本多选框样式）
 
 该示例通过配置indicatorBuilder实现选中样式为Text。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CheckboxExample {
@@ -555,13 +552,14 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/lvbQWqcjRO6l38U1Lxqfvg/zh-cn_image_0000002531105950.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101446Z&HW-CC-Expire=86400&HW-CC-Sign=9A9C2C4AFFD86BD32693490C8C941FDEA9CA9FEF3BE6683AE11ABFC996B00B55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/lvbQWqcjRO6l38U1Lxqfvg/zh-cn_image_0000002531105950.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120129Z&HW-CC-Expire=86400&HW-CC-Sign=A7DE5346CD6754C0D388B3CAC80539BAFE1EDA119CB1906AF6BA1DC80D7CEC26)
 
 ### 示例5（获取多选框选中信息）
 
 该示例通过选中Checkbox以及CheckboxGroup多选框来获取选中的信息。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CheckboxExample {
@@ -572,10 +570,9 @@ struct CheckboxExample {
   @State infoOne: string = '';
   @State infoTwo: string = '';
   @State infoThree: string = '';
-
   build() {
     Column() {
-
+      // 单元项全选按钮
       Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
         CheckboxGroup({ group: 'checkboxGroupOne' })
           .selectAll(this.selected)
@@ -587,7 +584,7 @@ struct CheckboxExample {
           })
         Text('checkboxGroupOne Select All').fontSize(14).lineHeight(20).fontColor('#182431').fontWeight(500)
       }
-
+      // 选项1
       Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
         Column() {
           ForEach(this.arrOne, (item: string) => {
@@ -609,7 +606,6 @@ struct CheckboxExample {
           }, (item: string) => item)
         }
       }.margin({ bottom: 15 })
-
       Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
         CheckboxGroup({ group: 'checkboxGroupTwo' })
           .selectAll(this.selected)
@@ -621,7 +617,7 @@ struct CheckboxExample {
           })
         Text('checkboxGroupTwo Select All').fontSize(14).lineHeight(20).fontColor('#182431').fontWeight(500)
       }
-
+      // 选项2
       Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
         Column() {
           ForEach(this.arrTwo, (item: string) => {
@@ -643,7 +639,6 @@ struct CheckboxExample {
           }, (item: string) => item)
         }
       }.margin({ bottom: 15 })
-
       Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
         CheckboxGroup({ group: 'checkboxGroupThree' })
           .selectAll(this.selected)
@@ -655,7 +650,7 @@ struct CheckboxExample {
           })
         Text('checkboxGroupThree Select All').fontSize(14).lineHeight(20).fontColor('#182431').fontWeight(500)
       }
-
+      // 选项3
       Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
         Column() {
           ForEach(this.arrThree, (item: string) => {
@@ -677,7 +672,7 @@ struct CheckboxExample {
           }, (item: string) => item)
         }
       }.margin({ bottom: 15 })
-
+      // 全选按钮
       Flex({ justifyContent: FlexAlign.Start, alignItems: ItemAlign.Center }) {
         Row() {
           CheckboxGroup({ group: 'checkboxGroup' })
@@ -696,7 +691,7 @@ struct CheckboxExample {
             .margin({ left: 10 })
         }
       }.margin({ bottom: 15 })
-
+      // 获取选中信息
       Button('get selected info')
         .margin({ top: 10 })
         .onClick(() => {
@@ -709,16 +704,16 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/63U8PtWPTr6iFZSpu3yh0g/zh-cn_image_0000002531225884.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101446Z&HW-CC-Expire=86400&HW-CC-Sign=F43A8DF2EF482BFCA863AFB048CF3ED0065F141BD5735FDB65ECBE23E8762738)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/63U8PtWPTr6iFZSpu3yh0g/zh-cn_image_0000002531225884.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120129Z&HW-CC-Expire=86400&HW-CC-Sign=A066DAC7288CA1DA0427A4EC32B2A8C4362A4F82185C3E38531F65139FA4F808)
 
 ### 示例6（设置滑动多选）
 
 该示例通过设置手势事件实现Checkbox滑动多选。
 
 ```typescript
+// xxx.ets
 import { componentUtils, ComponentUtils, UIContext } from '@kit.ArkUI';
 import { LinkedList } from '@kit.ArkTS';
-
 @Entry
 @Component
 struct Index {
@@ -728,21 +723,18 @@ struct Index {
   selectedPhotos: LinkedList<number> = new LinkedList();
   @State selectedList: number[] = [];
   @State image: Resource[] =
-
+    // $r('app.media.xxx')需要替换为开发者所需的图像资源文件。
     [$r("app.media.imageOne"), $r('app.media.imageTwo'), $r('app.media.imageThree'), $r('app.media.imageFour')];
   private selectedState: SelectedState = SelectedState.None;
   private componentUtils: ComponentUtils = this.getUIContext().getComponentUtils();
   private listScroller: ListScroller = new ListScroller();
   private currentOffsetY: number = 0;
-
   onChange() {
     console.info('change successful');
   }
-
   getSpeed(fingerY: number, edge: number) {
     return 150 * 150 * (fingerY - edge) / 2000 / Math.abs(fingerY - edge);
   }
-
   getIndex(fingerX: number, fingerY: number) {
     let rect: componentUtils.ComponentInfo | null = null;
     for (let i = 0; i < 100; i++) {
@@ -760,7 +752,6 @@ struct Index {
     }
     return this.selectedEnd;
   }
-
   onSelectedEndChange() {
     let start: number = -1;
     let end: number = -1;
@@ -786,7 +777,6 @@ struct Index {
     }
     this.selectedList = this.selectedPhotos.convertToArray();
   }
-
   scroll(fingerY: number) {
     if (fingerY > 700 && !this.listScroller.isAtEnd()) {
       this.listScroller.scrollBy(0, this.getSpeed(fingerY, 700));
@@ -797,7 +787,6 @@ struct Index {
       return;
     }
   }
-
   onPanGestureUpdate(event: GestureEvent) {
     const fingerInfo = event.fingerList[event.fingerList.length - 1];
     const fingerX = fingerInfo.globalX;
@@ -805,7 +794,6 @@ struct Index {
     this.selectedEnd = this.getIndex(fingerX, fingerY);
     this.scroll(fingerY);
   }
-
   build() {
     Column() {
       if (this.isChoosing) {
@@ -915,7 +903,6 @@ struct Index {
     }
   }
 }
-
 enum SelectedState {
   None,
   Selected,
@@ -923,4 +910,4 @@ enum SelectedState {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DrYB4JOGTnuGmNlT-c05pA/zh-cn_image_0000002562025867.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101446Z&HW-CC-Expire=86400&HW-CC-Sign=1F912E4B1A1F98FA5A2EC99363F3628C68438FFDBD25EA712ED3B2129E34B043)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/DrYB4JOGTnuGmNlT-c05pA/zh-cn_image_0000002562025867.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120129Z&HW-CC-Expire=86400&HW-CC-Sign=6CE32399782D9984DB202426783C4A5F1125DF92231F9307AA6BF49C7F93B319)

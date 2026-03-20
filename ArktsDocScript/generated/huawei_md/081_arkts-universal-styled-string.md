@@ -1,5 +1,21 @@
-# 文档中心
+# 属性字符串-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string
+
+javascript:void(0);
+
+简体中文
+
+- 简体中文
+- English
+- Русский
+
+[下载 App](https://developer.huawei.com/consumer/cn/huawei-app/)
+
+https://developer.huawei.com/consumer/cn/
+
+[文档](https://developer.huawei.com/consumer/cn/doc/) [管理中心](https://developer.huawei.com/consumer/cn/console)
+
+您当前正在浏览HarmonyOS最新文档，覆盖已发布的所有API版本，可在API参考中[筛选您使用的API版本](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/doc-updates#section1810915471038)。详细的版本配套关系请参考[版本说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion)。
 
 方便灵活应用文本样式的对象，可通过[TextController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textcontroller11)中的[setStyledString](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#setstyledstring12)方法与Text组件绑定，可通过[RichEditorStyledStringController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#richeditorstyledstringcontroller12)中的[setStyledString](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#setstyledstring12)方法与[RichEditor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor)组件绑定。
 
@@ -1323,167 +1339,167 @@ constructor(url: string)
 @Entry
 @Component
 struct styled_string_process_demo {
-  @State height1: number = 450;
-  @State fontSize1: number = 16;
-  @State fontWeight1: number = 400;
-  @State color1: Color = Color.Blue;
-  scroll: Scroller = new Scroller();
-  fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
-  fontStyleAttr2: TextStyle = new TextStyle({ fontColor: Color.Orange });
-  // 创建可读写属性字符串的对象mutableStyledString1
-  mutableStyledString1: MutableStyledString = new MutableStyledString("运动45分钟");
-  // 创建构造入参有字符串和样式的对象mutableStyledString2
-  mutableStyledString2: MutableStyledString = new MutableStyledString("test hello world", [{
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.FONT,
-    styledValue: this.fontStyleAttr1
-  }]);
-  // 创建只读属性字符串对象styledString2
-  styledString2: StyledString = new StyledString("运动45分钟");
-  spanStyle1: SpanStyle = {
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.FONT,
-    styledValue: new TextStyle({ fontColor: Color.Pink })
-  };
-  spanStyle2: SpanStyle = {
-    start: 0,
-    length: 2,
-    styledKey: StyledStringKey.FONT,
-    styledValue: new TextStyle({ fontColor: Color.Red })
-  };
-  @State string1: string = '';
-  @State fontColor1: ResourceColor = Color.Red;
-  controller1: TextController = new TextController();
-  controller2: TextController = new TextController();
-  controller3: TextController = new TextController();
-  async onPageShow() {
-    this.controller1.setStyledString(this.styledString2);
-    this.controller2.setStyledString(this.mutableStyledString1);
-    this.controller3.setStyledString(this.mutableStyledString2);
-  }
-  build() {
-    Column() {
-      Scroll(this.scroll) {
-        Column() {
-          // 显示属性字符串
-          Text(undefined, { controller: this.controller1 })
-          Text(undefined, { controller: this.controller3 }).key('mutableStyledString2')
-          Button('修改string1的值')
-            .onClick(() => {
-              let result = this.mutableStyledString1.equals(this.styledString2);
-              if (result) {
-                this.string1 = this.mutableStyledString1.getString();
-                console.info("mutableStyledString1 content:", this.mutableStyledString1.getString());
-                console.info("mutableStyledString1 length:", this.mutableStyledString1.length);
-              }
-            })
-          // 属性字符串与Span冲突时忽略Span,以及样式与Text组件属性未冲突部分生效Text设置的属性
-          Text(undefined, { controller: this.controller2 }) {
-            Span("span and styledString test")
-              .fontColor(Color.Yellow)
-              .decoration({ type: TextDecorationType.LineThrough })
-            // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-            ImageSpan($r('app.media.startIcon'))
-          }
-          .key('styledString2')
-          .fontColor(this.fontColor1)
-          .letterSpacing(10)
-          .fontSize(32)
-          .fontWeight(600)
-          .fontStyle(FontStyle.Italic)
-          .lineHeight(30)
-          .textShadow({
-            radius: 5,
-            color: Color.Blue,
-            offsetX: 5,
-            offsetY: 5
-          })
-          .textCase(TextCase.UpperCase)
-          .decoration({ type: TextDecorationType.LineThrough, color: Color.Yellow })
-          .baselineOffset(2)
-          .copyOption(CopyOptions.InApp)
-          .margin({ top: 10 })
-          .draggable(true)
-          // 以上冲突测试对照组
-          Text() {
-            Span(this.string1)
-              .fontColor(this.color1)
-              .decoration({ type: TextDecorationType.LineThrough })
-            // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-            ImageSpan($r('app.media.startIcon'))
-              .width(50).height(50)
-          }
-          .letterSpacing(10)
-          .fontSize(32)
-          .fontWeight(600)
-          .fontStyle(FontStyle.Italic)
-          .lineHeight(30)
-          .textShadow({
-            radius: 5,
-            color: Color.Blue,
-            offsetX: 5,
-            offsetY: 5
-          })
-          .textCase(TextCase.UpperCase)
-          .decoration({ type: TextDecorationType.LineThrough, color: Color.Yellow })
-          .baselineOffset(2)
-          Button('设置样式及替换文本')
-            .onClick(() => {
-              this.mutableStyledString1.replaceStyle({
-                start: 2,
-                length: 2,
-                styledKey: StyledStringKey.FONT,
-                styledValue: this.fontStyleAttr1
-              });
-              this.mutableStyledString1.insertString(0, "压力85偏高，");
-              this.mutableStyledString1.setStyle({
-                start: 2,
-                length: 2,
-                styledKey: StyledStringKey.FONT,
-                styledValue: this.fontStyleAttr2
-              });
-              this.controller2.setStyledString(this.mutableStyledString1);
-            })
-            .margin({ top: 10 })
-          Button('查询样式及清空样式')
-            .onClick(() => {
-              let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length);
-              if (styles.length == 2) {
-                for (let i = 0; i < styles.length; i++) {
-                  console.info('StyledString style object start:' + styles[i].start);
-                  console.info('StyledString style object length:' + styles[i].length);
-                  console.info('StyledString style object key:' + styles[i].styledKey);
-                  if (styles[i].styledKey === 0) {
-                    let fontAttr = styles[i].styledValue as TextStyle;
-                    console.info('StyledString fontColor:' + fontAttr.fontColor);
-                  }
-                }
-              }
-              if (styles[0] !== undefined) {
-                this.mutableStyledString2.setStyle(styles[0]);
-                this.controller3.setStyledString(this.mutableStyledString2);
-              }
-              this.mutableStyledString1.removeStyles(2, 3);
-              this.controller2.setStyledString(this.mutableStyledString1);
-            })
-            .margin({ top: 10 })
-        }.width('100%')
-      }
-      .expandSafeArea([SafeAreaType.KEYBOARD])
-      .scrollable(ScrollDirection.Vertical)
-      .scrollBar(BarState.On)
-      .scrollBarColor(Color.Gray)
-      .scrollBarWidth(10)
-      .edgeEffect(EdgeEffect.None)
-    }
-    .width('100%')
-  }
+ @State height1: number = 450;
+ @State fontSize1: number = 16;
+ @State fontWeight1: number = 400;
+ @State color1: Color = Color.Blue;
+ scroll: Scroller = new Scroller();
+ fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
+ fontStyleAttr2: TextStyle = new TextStyle({ fontColor: Color.Orange });
+ // 创建可读写属性字符串的对象mutableStyledString1
+ mutableStyledString1: MutableStyledString = new MutableStyledString("运动45分钟");
+ // 创建构造入参有字符串和样式的对象mutableStyledString2
+ mutableStyledString2: MutableStyledString = new MutableStyledString("test hello world", [{
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: this.fontStyleAttr1
+ }]);
+ // 创建只读属性字符串对象styledString2
+ styledString2: StyledString = new StyledString("运动45分钟");
+ spanStyle1: SpanStyle = {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Pink })
+ };
+ spanStyle2: SpanStyle = {
+ start: 0,
+ length: 2,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Red })
+ };
+ @State string1: string = '';
+ @State fontColor1: ResourceColor = Color.Red;
+ controller1: TextController = new TextController();
+ controller2: TextController = new TextController();
+ controller3: TextController = new TextController();
+ async onPageShow() {
+ this.controller1.setStyledString(this.styledString2);
+ this.controller2.setStyledString(this.mutableStyledString1);
+ this.controller3.setStyledString(this.mutableStyledString2);
+ }
+ build() {
+ Column() {
+ Scroll(this.scroll) {
+ Column() {
+ // 显示属性字符串
+ Text(undefined, { controller: this.controller1 })
+ Text(undefined, { controller: this.controller3 }).key('mutableStyledString2')
+ Button('修改string1的值')
+ .onClick(() => {
+ let result = this.mutableStyledString1.equals(this.styledString2);
+ if (result) {
+ this.string1 = this.mutableStyledString1.getString();
+ console.info("mutableStyledString1 content:", this.mutableStyledString1.getString());
+ console.info("mutableStyledString1 length:", this.mutableStyledString1.length);
+ }
+ })
+ // 属性字符串与Span冲突时忽略Span,以及样式与Text组件属性未冲突部分生效Text设置的属性
+ Text(undefined, { controller: this.controller2 }) {
+ Span("span and styledString test")
+ .fontColor(Color.Yellow)
+ .decoration({ type: TextDecorationType.LineThrough })
+ // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+ ImageSpan($r('app.media.startIcon'))
+ }
+ .key('styledString2')
+ .fontColor(this.fontColor1)
+ .letterSpacing(10)
+ .fontSize(32)
+ .fontWeight(600)
+ .fontStyle(FontStyle.Italic)
+ .lineHeight(30)
+ .textShadow({
+ radius: 5,
+ color: Color.Blue,
+ offsetX: 5,
+ offsetY: 5
+ })
+ .textCase(TextCase.UpperCase)
+ .decoration({ type: TextDecorationType.LineThrough, color: Color.Yellow })
+ .baselineOffset(2)
+ .copyOption(CopyOptions.InApp)
+ .margin({ top: 10 })
+ .draggable(true)
+ // 以上冲突测试对照组
+ Text() {
+ Span(this.string1)
+ .fontColor(this.color1)
+ .decoration({ type: TextDecorationType.LineThrough })
+ // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+ ImageSpan($r('app.media.startIcon'))
+ .width(50).height(50)
+ }
+ .letterSpacing(10)
+ .fontSize(32)
+ .fontWeight(600)
+ .fontStyle(FontStyle.Italic)
+ .lineHeight(30)
+ .textShadow({
+ radius: 5,
+ color: Color.Blue,
+ offsetX: 5,
+ offsetY: 5
+ })
+ .textCase(TextCase.UpperCase)
+ .decoration({ type: TextDecorationType.LineThrough, color: Color.Yellow })
+ .baselineOffset(2)
+ Button('设置样式及替换文本')
+ .onClick(() => {
+ this.mutableStyledString1.replaceStyle({
+ start: 2,
+ length: 2,
+ styledKey: StyledStringKey.FONT,
+ styledValue: this.fontStyleAttr1
+ });
+ this.mutableStyledString1.insertString(0, "压力85偏高，");
+ this.mutableStyledString1.setStyle({
+ start: 2,
+ length: 2,
+ styledKey: StyledStringKey.FONT,
+ styledValue: this.fontStyleAttr2
+ });
+ this.controller2.setStyledString(this.mutableStyledString1);
+ })
+ .margin({ top: 10 })
+ Button('查询样式及清空样式')
+ .onClick(() => {
+ let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length);
+ if (styles.length == 2) {
+ for (let i = 0; i < styles.length; i++) {
+ console.info('StyledString style object start:' + styles[i].start);
+ console.info('StyledString style object length:' + styles[i].length);
+ console.info('StyledString style object key:' + styles[i].styledKey);
+ if (styles[i].styledKey === 0) {
+ let fontAttr = styles[i].styledValue as TextStyle;
+ console.info('StyledString fontColor:' + fontAttr.fontColor);
+ }
+ }
+ }
+ if (styles[0] !== undefined) {
+ this.mutableStyledString2.setStyle(styles[0]);
+ this.controller3.setStyledString(this.mutableStyledString2);
+ }
+ this.mutableStyledString1.removeStyles(2, 3);
+ this.controller2.setStyledString(this.mutableStyledString1);
+ })
+ .margin({ top: 10 })
+ }.width('100%')
+ }
+ .expandSafeArea([SafeAreaType.KEYBOARD])
+ .scrollable(ScrollDirection.Vertical)
+ .scrollBar(BarState.On)
+ .scrollBarColor(Color.Gray)
+ .scrollBarWidth(10)
+ .edgeEffect(EdgeEffect.None)
+ }
+ .width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ExsVlayrQOq9z4E4xIwzfA/zh-cn_image_0000002531106054.png?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=B8014DE8EB256C695C0EE8CAA20B15EAC29DAAB08A0E887D99103B7266035C6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ExsVlayrQOq9z4E4xIwzfA/zh-cn_image_0000002531106054.png?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=169D3276489DEF77F0A16D270B8E2BDF0AAA067B1DF6DB5E2CB0BB30FD000EE0)
 
 ### 示例2（设置事件）
 
@@ -1494,84 +1510,84 @@ struct styled_string_process_demo {
 @Entry
 @Component
 struct styled_string_bind_events_demo {
-  scroll: Scroller = new Scroller();
-  fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
-  private uiContext: UIContext = this.getUIContext();
-  clickGestureAttr: GestureStyle = new GestureStyle({
-    onClick: () => {
-      this.uiContext.getPromptAction().showToast({ message: 'clickGestureAttr object trigger click event' });
-      this.backgroundColor1 = Color.Yellow;
-    }
-  })
-  gestureStyleAttr: GestureStyle = new GestureStyle({
-    onClick: () => {
-      this.uiContext.getPromptAction().showToast({ message: 'gestureStyleAttr object trigger click event' });
-      this.backgroundColor1 = Color.Green;
-    },
-    onLongPress: () => {
-      this.uiContext.getPromptAction().showToast({ message: 'gestureStyleAttr object trigger long press event' });
-      this.backgroundColor1 = Color.Orange;
-    },
-    onTouch: () => {
-      this.uiContext.getPromptAction().showToast({ message: 'gestureStyleAttr object trigger touch event' });
-      this.backgroundColor1 = Color.Red;
-    }
-  });
-  // 创建事件的对象mutableStyledString3
-  mutableStyledString3: MutableStyledString = new MutableStyledString("hello world", [{
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.GESTURE,
-    styledValue: this.clickGestureAttr
-  },
-    {
-      start: 0,
-      length: 5,
-      styledKey: StyledStringKey.FONT,
-      styledValue: this.fontStyleAttr1
-    },
-    {
-      start: 6,
-      length: 5,
-      styledKey: StyledStringKey.GESTURE,
-      styledValue: this.gestureStyleAttr
-    },
-    {
-      start: 6,
-      length: 5,
-      styledKey: StyledStringKey.FONT,
-      styledValue: new TextStyle({ fontColor: Color.Pink })
-    }]);
-  @State backgroundColor1: ResourceColor | undefined = undefined;
-  controller3: TextController = new TextController();
-  async onPageShow() {
-    this.controller3.setStyledString(this.mutableStyledString3);
-  }
-  build() {
-    Column() {
-      Scroll(this.scroll) {
-        Column({ space: 30 }) {
-          Button("响应属性字符串事件改变背景色").backgroundColor(this.backgroundColor1).width('80%')
-          // 包含事件的属性字符串
-          Text(undefined, { controller: this.controller3 }).fontSize(30)
-            .copyOption(CopyOptions.InApp)
-            .draggable(true)
-            .clip(true)
-        }.width('100%')
-      }
-      .expandSafeArea([SafeAreaType.KEYBOARD])
-      .scrollable(ScrollDirection.Vertical)
-      .scrollBar(BarState.On)
-      .scrollBarColor(Color.Gray)
-      .scrollBarWidth(10)
-      .edgeEffect(EdgeEffect.None)
-    }
-    .width('100%')
-  }
+ scroll: Scroller = new Scroller();
+ fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
+ private uiContext: UIContext = this.getUIContext();
+ clickGestureAttr: GestureStyle = new GestureStyle({
+ onClick: () => {
+ this.uiContext.getPromptAction().showToast({ message: 'clickGestureAttr object trigger click event' });
+ this.backgroundColor1 = Color.Yellow;
+ }
+ })
+ gestureStyleAttr: GestureStyle = new GestureStyle({
+ onClick: () => {
+ this.uiContext.getPromptAction().showToast({ message: 'gestureStyleAttr object trigger click event' });
+ this.backgroundColor1 = Color.Green;
+ },
+ onLongPress: () => {
+ this.uiContext.getPromptAction().showToast({ message: 'gestureStyleAttr object trigger long press event' });
+ this.backgroundColor1 = Color.Orange;
+ },
+ onTouch: () => {
+ this.uiContext.getPromptAction().showToast({ message: 'gestureStyleAttr object trigger touch event' });
+ this.backgroundColor1 = Color.Red;
+ }
+ });
+ // 创建事件的对象mutableStyledString3
+ mutableStyledString3: MutableStyledString = new MutableStyledString("hello world", [{
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.GESTURE,
+ styledValue: this.clickGestureAttr
+ },
+ {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: this.fontStyleAttr1
+ },
+ {
+ start: 6,
+ length: 5,
+ styledKey: StyledStringKey.GESTURE,
+ styledValue: this.gestureStyleAttr
+ },
+ {
+ start: 6,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Pink })
+ }]);
+ @State backgroundColor1: ResourceColor | undefined = undefined;
+ controller3: TextController = new TextController();
+ async onPageShow() {
+ this.controller3.setStyledString(this.mutableStyledString3);
+ }
+ build() {
+ Column() {
+ Scroll(this.scroll) {
+ Column({ space: 30 }) {
+ Button("响应属性字符串事件改变背景色").backgroundColor(this.backgroundColor1).width('80%')
+ // 包含事件的属性字符串
+ Text(undefined, { controller: this.controller3 }).fontSize(30)
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ .clip(true)
+ }.width('100%')
+ }
+ .expandSafeArea([SafeAreaType.KEYBOARD])
+ .scrollable(ScrollDirection.Vertical)
+ .scrollBar(BarState.On)
+ .scrollBarColor(Color.Gray)
+ .scrollBarWidth(10)
+ .edgeEffect(EdgeEffect.None)
+ }
+ .width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/7chqWUNgSQ6jeWLs_BiT7w/zh-cn_image_0000002531225988.png?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=71516A120DE37BC58F000B2F69ADB2A3F7F867CD9F81205B82E6DD81DD498577)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/7chqWUNgSQ6jeWLs_BiT7w/zh-cn_image_0000002531225988.png?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=D84E4F2DACCC1FF5223D3929B99C215E5338756F5A2A774F15DB7CA4235A5B86)
 
 ### 示例3（设置文本样式）
 
@@ -1583,182 +1599,182 @@ import { LengthMetrics, LengthUnit } from '@kit.ArkUI';
 @Entry
 @Component
 struct styled_string_set_text_style_demo {
-  fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
-  fontStyleAttr2: TextStyle = new TextStyle({
-    fontColor: Color.Orange,
-    fontSize: LengthMetrics.vp(20),
-    fontWeight: FontWeight.Bolder,
-    fontStyle: FontStyle.Italic,
-    fontFamily: "Arial",
-    superscript: SuperscriptStyle.SUPERSCRIPT
-  });
-  fontStyleAttr3: TextStyle = new TextStyle({
-    fontColor: Color.Orange,
-    fontSize: LengthMetrics.vp(20),
-    fontWeight: FontWeight.Lighter,
-    fontStyle: FontStyle.Italic,
-    fontFamily: "Arial",
-    superscript: SuperscriptStyle.SUBSCRIPT
-  });
-  // 创建多重TextStyle样式的对象mutableStyledString1
-  mutableStyledString1: MutableStyledString = new MutableStyledString("运动45分钟", [{
-    start: 0,
-    length: 2,
-    styledKey: StyledStringKey.FONT,
-    styledValue: this.fontStyleAttr3
-  }, {
-    start: 2,
-    length: 2,
-    styledKey: StyledStringKey.FONT,
-    styledValue: this.fontStyleAttr2
-  }
-  ]);
-  // 创建有多种样式组合对象mutableStyledString2
-  mutableStyledString2: MutableStyledString = new MutableStyledString("test hello world", [{
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.FONT,
-    styledValue: this.fontStyleAttr1
-  }, {
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.DECORATION,
-    styledValue: new DecorationStyle({ type: TextDecorationType.LineThrough, color: Color.Blue })
-  }, {
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.TEXT_SHADOW,
-    styledValue: new TextShadowStyle({
-      radius: 5,
-      type: ShadowType.COLOR,
-      color: Color.Yellow,
-      offsetX: 10,
-      offsetY: -10
-    })
-  }, {
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.BASELINE_OFFSET,
-    styledValue: new BaselineOffsetStyle(LengthMetrics.px(20))
-  }, {
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.LETTER_SPACING,
-    styledValue: new LetterSpacingStyle(new LengthMetrics(10, LengthUnit.VP))
-  }, {
-    start: 6,
-    length: 5,
-    styledKey: StyledStringKey.BASELINE_OFFSET,
-    styledValue: new BaselineOffsetStyle(LengthMetrics.fp(10))
-  }
-  ]);
-  @State fontColor1: ResourceColor = Color.Red;
-  controller: TextController = new TextController();
-  options: TextOptions = { controller: this.controller };
-  controller2: TextController = new TextController();
-  spanStyle1: SpanStyle = {
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.FONT,
-    styledValue: new TextStyle({ fontColor: Color.Pink })
-  };
-  async onPageShow() {
-    this.controller.setStyledString(this.mutableStyledString1);
-    this.controller2.setStyledString(this.mutableStyledString2);
-  }
-  build() {
-    Column() {
-      Column({ space: 10 }) {
-        // 显示配了字体各种样式的属性字符串，Text组件亦配置冲突部分生效属性字符串配置，未冲突区间生效Text组件属性设置值
-        Text(undefined, this.options)
-          .fontColor(this.fontColor1)
-          .font({ size: 20, weight: 500, style: FontStyle.Normal })
-        // 显示配置了文本阴影、划线、字符间距、基线偏移量的属性字符串，Text组件亦配置生效属性字符串配置
-        Text(undefined, { controller: this.controller2 })
-          .fontSize(30)
-          .copyOption(CopyOptions.InApp)
-          .draggable(true)
-          .decoration({ type: TextDecorationType.Overline, color: Color.Pink })
-          .textShadow({
-            radius: 10,
-            type: ShadowType.COLOR,
-            color: Color.Green,
-            offsetX: -10,
-            offsetY: 10
-          })
-        Button('查询字体样式')
-          .onClick(() => {
-            let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length);
-            if (styles.length !== 0) {
-              for (let i = 0; i < styles.length; i++) {
-                console.info('mutableStyledString1 style object start:' + styles[i].start);
-                console.info('mutableStyledString1 style object length:' + styles[i].length);
-                console.info('mutableStyledString1 style object key:' + styles[i].styledKey);
-                if (styles[i].styledKey === 0) {
-                  let fontAttr = styles[i].styledValue as TextStyle;
-                  console.info('mutableStyledString1 fontColor:' + fontAttr.fontColor);
-                  console.info('mutableStyledString1 fontSize:' + fontAttr.fontSize);
-                  console.info('mutableStyledString1 fontWeight:' + fontAttr.fontWeight);
-                  console.info('mutableStyledString1 fontStyle:' + fontAttr.fontStyle);
-                  console.info('mutableStyledString1 fontFamily:' + fontAttr.fontFamily);
-                  console.info('mutableStyledString1 superscript:' + fontAttr.superscript);
-                }
-              }
-            }
-          })
-          .margin({ top: 10 })
-        Button('查询其他文本样式')
-          .onClick(() => {
-            let styles = this.mutableStyledString2.getStyles(0, this.mutableStyledString2.length);
-            if (styles.length !== 0) {
-              for (let i = 0; i < styles.length; i++) {
-                console.info('mutableStyledString2 style object start:' + styles[i].start);
-                console.info('mutableStyledString2 style object length:' + styles[i].length);
-                console.info('mutableStyledString2 style object key:' + styles[i].styledKey);
-                if (styles[i].styledKey === 1) {
-                  let decoAttr = styles[i].styledValue as DecorationStyle;
-                  console.info('mutableStyledString2 decoration type:' + decoAttr.type);
-                  console.info('mutableStyledString2 decoration color:' + decoAttr.color);
-                }
-                if (styles[i].styledKey === 2) {
-                  let baselineAttr = styles[i].styledValue as BaselineOffsetStyle;
-                  console.info('mutableStyledString2 baselineOffset:' + baselineAttr.baselineOffset);
-                }
-                if (styles[i].styledKey === 3) {
-                  let letterAttr = styles[i].styledValue as LetterSpacingStyle;
-                  console.info('mutableStyledString2 letterSpacing:' + letterAttr.letterSpacing);
-                }
-                if (styles[i].styledKey === 4) {
-                  let textShadowAttr = styles[i].styledValue as TextShadowStyle;
-                  let shadowValues = textShadowAttr.textShadow;
-                  if (shadowValues.length > 0) {
-                    for (let j = 0; j < shadowValues.length; j++) {
-                      console.info('mutableStyledString2 textShadow type:' + shadowValues[j].type);
-                      console.info('mutableStyledString2 textShadow radius:' + shadowValues[j].radius);
-                      console.info('mutableStyledString2 textShadow color:' + shadowValues[j].color);
-                      console.info('mutableStyledString2 textShadow offsetX:' + shadowValues[j].offsetX);
-                      console.info('mutableStyledString2 textShadow offsetY:' + shadowValues[j].offsetY);
-                    }
-                  }
-                }
-              }
-            }
-          })
-          .margin({ top: 10 })
-        Button('更新mutableStyledString1样式')
-          .onClick(() => {
-            this.mutableStyledString1.setStyle(this.spanStyle1);
-            this.controller.setStyledString(this.mutableStyledString1);
-          })
-          .margin({ top: 10 })
-      }.width('100%')
-    }
-    .width('100%')
-  }
+ fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
+ fontStyleAttr2: TextStyle = new TextStyle({
+ fontColor: Color.Orange,
+ fontSize: LengthMetrics.vp(20),
+ fontWeight: FontWeight.Bolder,
+ fontStyle: FontStyle.Italic,
+ fontFamily: "Arial",
+ superscript: SuperscriptStyle.SUPERSCRIPT
+ });
+ fontStyleAttr3: TextStyle = new TextStyle({
+ fontColor: Color.Orange,
+ fontSize: LengthMetrics.vp(20),
+ fontWeight: FontWeight.Lighter,
+ fontStyle: FontStyle.Italic,
+ fontFamily: "Arial",
+ superscript: SuperscriptStyle.SUBSCRIPT
+ });
+ // 创建多重TextStyle样式的对象mutableStyledString1
+ mutableStyledString1: MutableStyledString = new MutableStyledString("运动45分钟", [{
+ start: 0,
+ length: 2,
+ styledKey: StyledStringKey.FONT,
+ styledValue: this.fontStyleAttr3
+ }, {
+ start: 2,
+ length: 2,
+ styledKey: StyledStringKey.FONT,
+ styledValue: this.fontStyleAttr2
+ }
+ ]);
+ // 创建有多种样式组合对象mutableStyledString2
+ mutableStyledString2: MutableStyledString = new MutableStyledString("test hello world", [{
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: this.fontStyleAttr1
+ }, {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({ type: TextDecorationType.LineThrough, color: Color.Blue })
+ }, {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.TEXT_SHADOW,
+ styledValue: new TextShadowStyle({
+ radius: 5,
+ type: ShadowType.COLOR,
+ color: Color.Yellow,
+ offsetX: 10,
+ offsetY: -10
+ })
+ }, {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.BASELINE_OFFSET,
+ styledValue: new BaselineOffsetStyle(LengthMetrics.px(20))
+ }, {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.LETTER_SPACING,
+ styledValue: new LetterSpacingStyle(new LengthMetrics(10, LengthUnit.VP))
+ }, {
+ start: 6,
+ length: 5,
+ styledKey: StyledStringKey.BASELINE_OFFSET,
+ styledValue: new BaselineOffsetStyle(LengthMetrics.fp(10))
+ }
+ ]);
+ @State fontColor1: ResourceColor = Color.Red;
+ controller: TextController = new TextController();
+ options: TextOptions = { controller: this.controller };
+ controller2: TextController = new TextController();
+ spanStyle1: SpanStyle = {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Pink })
+ };
+ async onPageShow() {
+ this.controller.setStyledString(this.mutableStyledString1);
+ this.controller2.setStyledString(this.mutableStyledString2);
+ }
+ build() {
+ Column() {
+ Column({ space: 10 }) {
+ // 显示配了字体各种样式的属性字符串，Text组件亦配置冲突部分生效属性字符串配置，未冲突区间生效Text组件属性设置值
+ Text(undefined, this.options)
+ .fontColor(this.fontColor1)
+ .font({ size: 20, weight: 500, style: FontStyle.Normal })
+ // 显示配置了文本阴影、划线、字符间距、基线偏移量的属性字符串，Text组件亦配置生效属性字符串配置
+ Text(undefined, { controller: this.controller2 })
+ .fontSize(30)
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ .decoration({ type: TextDecorationType.Overline, color: Color.Pink })
+ .textShadow({
+ radius: 10,
+ type: ShadowType.COLOR,
+ color: Color.Green,
+ offsetX: -10,
+ offsetY: 10
+ })
+ Button('查询字体样式')
+ .onClick(() => {
+ let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length);
+ if (styles.length !== 0) {
+ for (let i = 0; i < styles.length; i++) {
+ console.info('mutableStyledString1 style object start:' + styles[i].start);
+ console.info('mutableStyledString1 style object length:' + styles[i].length);
+ console.info('mutableStyledString1 style object key:' + styles[i].styledKey);
+ if (styles[i].styledKey === 0) {
+ let fontAttr = styles[i].styledValue as TextStyle;
+ console.info('mutableStyledString1 fontColor:' + fontAttr.fontColor);
+ console.info('mutableStyledString1 fontSize:' + fontAttr.fontSize);
+ console.info('mutableStyledString1 fontWeight:' + fontAttr.fontWeight);
+ console.info('mutableStyledString1 fontStyle:' + fontAttr.fontStyle);
+ console.info('mutableStyledString1 fontFamily:' + fontAttr.fontFamily);
+ console.info('mutableStyledString1 superscript:' + fontAttr.superscript);
+ }
+ }
+ }
+ })
+ .margin({ top: 10 })
+ Button('查询其他文本样式')
+ .onClick(() => {
+ let styles = this.mutableStyledString2.getStyles(0, this.mutableStyledString2.length);
+ if (styles.length !== 0) {
+ for (let i = 0; i < styles.length; i++) {
+ console.info('mutableStyledString2 style object start:' + styles[i].start);
+ console.info('mutableStyledString2 style object length:' + styles[i].length);
+ console.info('mutableStyledString2 style object key:' + styles[i].styledKey);
+ if (styles[i].styledKey === 1) {
+ let decoAttr = styles[i].styledValue as DecorationStyle;
+ console.info('mutableStyledString2 decoration type:' + decoAttr.type);
+ console.info('mutableStyledString2 decoration color:' + decoAttr.color);
+ }
+ if (styles[i].styledKey === 2) {
+ let baselineAttr = styles[i].styledValue as BaselineOffsetStyle;
+ console.info('mutableStyledString2 baselineOffset:' + baselineAttr.baselineOffset);
+ }
+ if (styles[i].styledKey === 3) {
+ let letterAttr = styles[i].styledValue as LetterSpacingStyle;
+ console.info('mutableStyledString2 letterSpacing:' + letterAttr.letterSpacing);
+ }
+ if (styles[i].styledKey === 4) {
+ let textShadowAttr = styles[i].styledValue as TextShadowStyle;
+ let shadowValues = textShadowAttr.textShadow;
+ if (shadowValues.length > 0) {
+ for (let j = 0; j < shadowValues.length; j++) {
+ console.info('mutableStyledString2 textShadow type:' + shadowValues[j].type);
+ console.info('mutableStyledString2 textShadow radius:' + shadowValues[j].radius);
+ console.info('mutableStyledString2 textShadow color:' + shadowValues[j].color);
+ console.info('mutableStyledString2 textShadow offsetX:' + shadowValues[j].offsetX);
+ console.info('mutableStyledString2 textShadow offsetY:' + shadowValues[j].offsetY);
+ }
+ }
+ }
+ }
+ }
+ })
+ .margin({ top: 10 })
+ Button('更新mutableStyledString1样式')
+ .onClick(() => {
+ this.mutableStyledString1.setStyle(this.spanStyle1);
+ this.controller.setStyledString(this.mutableStyledString1);
+ })
+ .margin({ top: 10 })
+ }.width('100%')
+ }
+ .width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/dYHDBmoASG2BfuStcq5vbw/zh-cn_image_0000002562025971.png?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=688ED3997148E5F9C3B209B4C490EAC7B61A7AAE252F5A58DA3E6990584E683A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/dYHDBmoASG2BfuStcq5vbw/zh-cn_image_0000002562025971.png?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=1EB2DC278749262A3529CB4B4DD98FF527BFD0539F403790A19F3A934A6DF219)
 
 ### 示例4（设置图片）
 
@@ -1771,125 +1787,125 @@ import { LengthMetrics } from '@kit.ArkUI';
 @Entry
 @Component
 struct styled_string_set_image_demo {
-  @State message: string = 'Hello World';
-  imagePixelMap: image.PixelMap | undefined = undefined;
-  @State imagePixelMap3: image.PixelMap | undefined = undefined;
-  mutableStr: MutableStyledString = new MutableStyledString('123');
-  controller: TextController = new TextController();
-  private uiContext: UIContext = this.getUIContext();
-  mutableStr2: MutableStyledString = new MutableStyledString('This is set decoration line style to the mutableStr2', [{
-    start: 0,
-    length: 15,
-    styledKey: StyledStringKey.DECORATION,
-    styledValue: new DecorationStyle({
-      type: TextDecorationType.Overline,
-      color: Color.Orange,
-      style: TextDecorationStyle.DOUBLE
-    })
-  }]);
-  async aboutToAppear() {
-    console.info("aboutToAppear initial imagePixelMap");
-    // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-    this.imagePixelMap =
-      await this.getPixmapFromMedia($r('app.media.startIcon'));
-  }
-  private async getPixmapFromMedia(resource: Resource) {
-    let unit8Array = await this.uiContext.getHostContext()?.resourceManager?.getMediaContent(resource.id);
-    let imageSource = image.createImageSource(unit8Array?.buffer.slice(0, unit8Array.buffer.byteLength));
-    let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
-      desiredPixelFormat: image.PixelMapFormat.RGBA_8888
-    });
-    await imageSource.release();
-    return createPixelMap;
-  }
-  build() {
-    Row() {
-      Column({ space: 5 }) {
-        Text(undefined, { controller: this.controller })
-          .copyOption(CopyOptions.InApp)
-          .draggable(true)
-          .fontSize(30)
-        Button('设置图片')
-          .onClick(() => {
-            if (this.imagePixelMap !== undefined) {
-              this.mutableStr = new MutableStyledString(new ImageAttachment({
-                value: this.imagePixelMap,
-                size: { width: 50, height: 50 },
-                layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-                verticalAlign: ImageSpanAlignment.BASELINE,
-                objectFit: ImageFit.Contain
-              }));
-              this.controller.setStyledString(this.mutableStr);
-            }
-          })
-        Button('设置资源类型图片')
-          .onClick(() => {
-            if (this.imagePixelMap !== undefined) {
-              this.mutableStr = new MutableStyledString(new ImageAttachment({
-                // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
-                resourceValue: $r('app.media.sky'),
-                size: { width: 50, height: 50 },
-                layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-                verticalAlign: ImageSpanAlignment.BASELINE,
-                objectFit: ImageFit.Contain,
-                syncLoad: true
-              }));
-              this.controller.setStyledString(this.mutableStr);
-            }
-          })
-        Button('Image之Get')
-          .onClick(() => {
-            let imageArray = this.mutableStr.getStyles(0, 1, StyledStringKey.IMAGE);
-            for (let i = 0; i < imageArray.length; ++i) {
-              console.info('mutableStr start ' + imageArray[i].start + ' length ' + imageArray[i].length + ' type ' +
-              imageArray[i].styledKey);
-              if (imageArray[i].styledKey === 300) {
-                let attachment = imageArray[i].styledValue as ImageAttachment;
-                this.imagePixelMap3 = attachment.value;
-                console.info('mutableStr value ' + JSON.stringify(attachment.value));
-                if (attachment.size !== undefined) {
-                  console.info('mutableStr size width ' + attachment.size.width + ' height ' + attachment.size.height);
-                }
-                console.info('mutableStr vertical ' + attachment.verticalAlign);
-                console.info('mutableStr fit ' + attachment.objectFit);
-                if (attachment.layoutStyle !== undefined) {
-                  let radius = attachment.layoutStyle.borderRadius as BorderRadiuses;
-                  console.info('mutableStr radius ' + JSON.stringify(radius));
-                }
-              }
-            }
-          })
-        Image(this.imagePixelMap3).width(50).height(50)
-        Button('Image之Append')
-          .onClick(() => {
-            let str = new StyledString('123');
-            this.mutableStr.appendStyledString(str);
-            this.controller.setStyledString(this.mutableStr);
-          })
-        Button('Image之Insert 前')
-          .onClick(() => {
-            this.mutableStr.insertString(0, '123');
-            this.controller.setStyledString(this.mutableStr);
-          })
-        Button('Image之Insert 后')
-          .onClick(() => {
-            this.mutableStr.insertString(1, '123');
-            this.controller.setStyledString(this.mutableStr);
-          })
-        Button('Image之replace')
-          .onClick(() => {
-            this.mutableStr.replaceString(2, 5, "789");
-            this.controller.setStyledString(this.mutableStr);
-          })
-      }
-      .width('100%')
-    }
-    .height('100%')
-  }
+ @State message: string = 'Hello World';
+ imagePixelMap: image.PixelMap | undefined = undefined;
+ @State imagePixelMap3: image.PixelMap | undefined = undefined;
+ mutableStr: MutableStyledString = new MutableStyledString('123');
+ controller: TextController = new TextController();
+ private uiContext: UIContext = this.getUIContext();
+ mutableStr2: MutableStyledString = new MutableStyledString('This is set decoration line style to the mutableStr2', [{
+ start: 0,
+ length: 15,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({
+ type: TextDecorationType.Overline,
+ color: Color.Orange,
+ style: TextDecorationStyle.DOUBLE
+ })
+ }]);
+ async aboutToAppear() {
+ console.info("aboutToAppear initial imagePixelMap");
+ // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+ this.imagePixelMap =
+ await this.getPixmapFromMedia($r('app.media.startIcon'));
+ }
+ private async getPixmapFromMedia(resource: Resource) {
+ let unit8Array = await this.uiContext.getHostContext()?.resourceManager?.getMediaContent(resource.id);
+ let imageSource = image.createImageSource(unit8Array?.buffer.slice(0, unit8Array.buffer.byteLength));
+ let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
+ desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+ });
+ await imageSource.release();
+ return createPixelMap;
+ }
+ build() {
+ Row() {
+ Column({ space: 5 }) {
+ Text(undefined, { controller: this.controller })
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ .fontSize(30)
+ Button('设置图片')
+ .onClick(() => {
+ if (this.imagePixelMap !== undefined) {
+ this.mutableStr = new MutableStyledString(new ImageAttachment({
+ value: this.imagePixelMap,
+ size: { width: 50, height: 50 },
+ layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+ verticalAlign: ImageSpanAlignment.BASELINE,
+ objectFit: ImageFit.Contain
+ }));
+ this.controller.setStyledString(this.mutableStr);
+ }
+ })
+ Button('设置资源类型图片')
+ .onClick(() => {
+ if (this.imagePixelMap !== undefined) {
+ this.mutableStr = new MutableStyledString(new ImageAttachment({
+ // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
+ resourceValue: $r('app.media.sky'),
+ size: { width: 50, height: 50 },
+ layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+ verticalAlign: ImageSpanAlignment.BASELINE,
+ objectFit: ImageFit.Contain,
+ syncLoad: true
+ }));
+ this.controller.setStyledString(this.mutableStr);
+ }
+ })
+ Button('Image之Get')
+ .onClick(() => {
+ let imageArray = this.mutableStr.getStyles(0, 1, StyledStringKey.IMAGE);
+ for (let i = 0; i < imageArray.length; ++i) {
+ console.info('mutableStr start ' + imageArray[i].start + ' length ' + imageArray[i].length + ' type ' +
+ imageArray[i].styledKey);
+ if (imageArray[i].styledKey === 300) {
+ let attachment = imageArray[i].styledValue as ImageAttachment;
+ this.imagePixelMap3 = attachment.value;
+ console.info('mutableStr value ' + JSON.stringify(attachment.value));
+ if (attachment.size !== undefined) {
+ console.info('mutableStr size width ' + attachment.size.width + ' height ' + attachment.size.height);
+ }
+ console.info('mutableStr vertical ' + attachment.verticalAlign);
+ console.info('mutableStr fit ' + attachment.objectFit);
+ if (attachment.layoutStyle !== undefined) {
+ let radius = attachment.layoutStyle.borderRadius as BorderRadiuses;
+ console.info('mutableStr radius ' + JSON.stringify(radius));
+ }
+ }
+ }
+ })
+ Image(this.imagePixelMap3).width(50).height(50)
+ Button('Image之Append')
+ .onClick(() => {
+ let str = new StyledString('123');
+ this.mutableStr.appendStyledString(str);
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Button('Image之Insert 前')
+ .onClick(() => {
+ this.mutableStr.insertString(0, '123');
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Button('Image之Insert 后')
+ .onClick(() => {
+ this.mutableStr.insertString(1, '123');
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Button('Image之replace')
+ .onClick(() => {
+ this.mutableStr.replaceString(2, 5, "789");
+ this.controller.setStyledString(this.mutableStr);
+ })
+ }
+ .width('100%')
+ }
+ .height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/1AC46-qkQS-Vu0eM3PTUHQ/zh-cn_image_0000002562145957.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=02A6E98F57AFAEAE222E819BA5DAF9566885015B047D4D1A016597E41F1747F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/1AC46-qkQS-Vu0eM3PTUHQ/zh-cn_image_0000002562145957.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=50FE20B2CEBA90870E00F6710FD5997939D92224A70354F8F6E40C8141D54F8C)
 
 ### 示例5（设置文本行高和段落样式）
 
@@ -1900,148 +1916,148 @@ import { LengthMetrics } from '@kit.ArkUI';
 const canvasWidth = 1000;
 const canvasHeight = 100;
 class LeadingMarginCreator {
-  private settings: RenderingContextSettings = new RenderingContextSettings(true);
-  private offscreenCanvas: OffscreenCanvas = new OffscreenCanvas(canvasWidth, canvasHeight);
-  private offContext: OffscreenCanvasRenderingContext2D = this.offscreenCanvas.getContext("2d", this.settings);
-  public static instance: LeadingMarginCreator = new LeadingMarginCreator();
-  public genSquareMark(fontSize: number): PixelMap {
-    this.offContext = this.offscreenCanvas.getContext("2d", this.settings);
-    this.clearCanvas();
-    const coordinate = fontSize * (1 - 1 / 1.5) / 2;
-    const sideLength = fontSize / 1.5;
-    this.offContext.fillRect(coordinate, coordinate, sideLength, sideLength);
-    return this.offContext.getPixelMap(0, 0, fontSize, fontSize);
-  }
-  private clearCanvas() {
-    this.offContext.clearRect(0, 0, canvasWidth, canvasHeight);
-  }
+ private settings: RenderingContextSettings = new RenderingContextSettings(true);
+ private offscreenCanvas: OffscreenCanvas = new OffscreenCanvas(canvasWidth, canvasHeight);
+ private offContext: OffscreenCanvasRenderingContext2D = this.offscreenCanvas.getContext("2d", this.settings);
+ public static instance: LeadingMarginCreator = new LeadingMarginCreator();
+ public genSquareMark(fontSize: number): PixelMap {
+ this.offContext = this.offscreenCanvas.getContext("2d", this.settings);
+ this.clearCanvas();
+ const coordinate = fontSize * (1 - 1 / 1.5) / 2;
+ const sideLength = fontSize / 1.5;
+ this.offContext.fillRect(coordinate, coordinate, sideLength, sideLength);
+ return this.offContext.getPixelMap(0, 0, fontSize, fontSize);
+ }
+ private clearCanvas() {
+ this.offContext.clearRect(0, 0, canvasWidth, canvasHeight);
+ }
 }
 @Entry
 @Component
 struct styled_string_set_lineheight_paragraphstyle_demo {
-  private leadingMarkCreatorInstance = LeadingMarginCreator.instance;
-  leadingMarginPlaceholder1: LeadingMarginPlaceholder = {
-    pixelMap: this.leadingMarkCreatorInstance.genSquareMark(24),
-    size: [15, 15]
-  };
-  titleParagraphStyleAttr: ParagraphStyle =
-    new ParagraphStyle({ textAlign: TextAlign.Center, paragraphSpacing: LengthMetrics.px(10) });
-  // 第一段落首行缩进15vp
-  paragraphStyleAttr1: ParagraphStyle = new ParagraphStyle({ textIndent: LengthMetrics.vp(15) });
-  // 第二段落缩进15vp且首行有placeholder占位显示
-  paragraphStyleAttr2: ParagraphStyle =
-    new ParagraphStyle({ textAlign: TextAlign.Start, leadingMargin: this.leadingMarginPlaceholder1 });
-  // 第三段落不设置缩进配置最大行数及超长显示方式
-  paragraphStyleAttr3: ParagraphStyle = new ParagraphStyle({
-    textAlign: TextAlign.End,
-    textVerticalAlign: TextVerticalAlign.BASELINE,
-    maxLines: 1,
-    wordBreak: WordBreak.BREAK_ALL,
-    overflow: TextOverflow.Ellipsis
-  });
-  // 行高样式对象
-  lineHeightStyle1: LineHeightStyle = new LineHeightStyle(new LengthMetrics(24));
-  // 创建含段落样式的对象paragraphStyledString1
-  paragraphStyledString1: StyledString =
-    new StyledString("段落标题\n正文第一段落开始0123456789正文第一段落结束\n正文第二段落开始hello world正文第二段落结束\n正文第三段落ABCDEFGHIJKLMNOPQRSTUVWXYZ。",
-      [
-        {
-          start: 0,
-          length: 4,
-          styledKey: StyledStringKey.PARAGRAPH_STYLE,
-          styledValue: this.titleParagraphStyleAttr
-        },
-        {
-          start: 0,
-          length: 4,
-          styledKey: StyledStringKey.LINE_HEIGHT,
-          styledValue: new LineHeightStyle(new LengthMetrics(50))
-        }, {
-        start: 0,
-        length: 4,
-        styledKey: StyledStringKey.FONT,
-        styledValue: new TextStyle({ fontSize: LengthMetrics.vp(24), fontWeight: FontWeight.Bolder })
-      },
-        {
-          start: 5,
-          length: 3,
-          styledKey: StyledStringKey.PARAGRAPH_STYLE,
-          styledValue: this.paragraphStyleAttr1
-        },
-        {
-          start: 5,
-          length: 20,
-          styledKey: StyledStringKey.LINE_HEIGHT,
-          styledValue: this.lineHeightStyle1
-        },
-        {
-          start: 32,
-          length: 5,
-          styledKey: StyledStringKey.PARAGRAPH_STYLE,
-          styledValue: this.paragraphStyleAttr2
-        },
-        {
-          start: 32,
-          length: 20,
-          styledKey: StyledStringKey.LINE_HEIGHT,
-          styledValue: this.lineHeightStyle1
-        },
-        {
-          start: 60,
-          length: 5,
-          styledKey: StyledStringKey.PARAGRAPH_STYLE,
-          styledValue: this.paragraphStyleAttr3
-        },
-        {
-          start: 60,
-          length: 5,
-          styledKey: StyledStringKey.LINE_HEIGHT,
-          styledValue: this.lineHeightStyle1
-        }
-      ]);
-  controller: TextController = new TextController();
-  async onPageShow() {
-    this.controller.setStyledString(this.paragraphStyledString1);
-  }
-  build() {
-    Row() {
-      Column({ space: 5 }) {
-        Text(undefined, { controller: this.controller })
-          .width(240)
-          .borderWidth(1)
-          .copyOption(CopyOptions.InApp)
-          .draggable(true)
-        // 查询段落样式
-        Text()
-          .onClick(() => {
-            let styles = this.paragraphStyledString1.getStyles(0, this.paragraphStyledString1.length);
-            if (styles.length !== 0) {
-              for (let i = 0; i < styles.length; i++) {
-                console.info('paragraphStyledString1 style object start:' + styles[i].start);
-                console.info('paragraphStyledString1 style object length:' + styles[i].length);
-                console.info('paragraphStyledString1 style object key:' + styles[i].styledKey);
-                if (styles[i].styledKey === 200) {
-                  let paraAttr = styles[i].styledValue as ParagraphStyle;
-                  console.info('paragraphStyledString1 textAlign:' + paraAttr.textAlign);
-                  console.info('paragraphStyledString1 textIndent:' + paraAttr.textIndent);
-                  console.info('paragraphStyledString1 maxLines:' + paraAttr.maxLines);
-                  console.info('paragraphStyledString1 wordBreak:' + paraAttr.wordBreak);
-                  console.info('paragraphStyledString1 leadingMargin:' + paraAttr.leadingMargin);
-                  console.info('paragraphStyledString1 overflow:' + paraAttr.overflow);
-                }
-              }
-            }
-          })
-          .margin({ top: 10 })
-      }
-      .width('100%')
-    }
-    .height('100%')
-  }
+ private leadingMarkCreatorInstance = LeadingMarginCreator.instance;
+ leadingMarginPlaceholder1: LeadingMarginPlaceholder = {
+ pixelMap: this.leadingMarkCreatorInstance.genSquareMark(24),
+ size: [15, 15]
+ };
+ titleParagraphStyleAttr: ParagraphStyle =
+ new ParagraphStyle({ textAlign: TextAlign.Center, paragraphSpacing: LengthMetrics.px(10) });
+ // 第一段落首行缩进15vp
+ paragraphStyleAttr1: ParagraphStyle = new ParagraphStyle({ textIndent: LengthMetrics.vp(15) });
+ // 第二段落缩进15vp且首行有placeholder占位显示
+ paragraphStyleAttr2: ParagraphStyle =
+ new ParagraphStyle({ textAlign: TextAlign.Start, leadingMargin: this.leadingMarginPlaceholder1 });
+ // 第三段落不设置缩进配置最大行数及超长显示方式
+ paragraphStyleAttr3: ParagraphStyle = new ParagraphStyle({
+ textAlign: TextAlign.End,
+ textVerticalAlign: TextVerticalAlign.BASELINE,
+ maxLines: 1,
+ wordBreak: WordBreak.BREAK_ALL,
+ overflow: TextOverflow.Ellipsis
+ });
+ // 行高样式对象
+ lineHeightStyle1: LineHeightStyle = new LineHeightStyle(new LengthMetrics(24));
+ // 创建含段落样式的对象paragraphStyledString1
+ paragraphStyledString1: StyledString =
+ new StyledString("段落标题\n正文第一段落开始0123456789正文第一段落结束\n正文第二段落开始hello world正文第二段落结束\n正文第三段落ABCDEFGHIJKLMNOPQRSTUVWXYZ。",
+ [
+ {
+ start: 0,
+ length: 4,
+ styledKey: StyledStringKey.PARAGRAPH_STYLE,
+ styledValue: this.titleParagraphStyleAttr
+ },
+ {
+ start: 0,
+ length: 4,
+ styledKey: StyledStringKey.LINE_HEIGHT,
+ styledValue: new LineHeightStyle(new LengthMetrics(50))
+ }, {
+ start: 0,
+ length: 4,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontSize: LengthMetrics.vp(24), fontWeight: FontWeight.Bolder })
+ },
+ {
+ start: 5,
+ length: 3,
+ styledKey: StyledStringKey.PARAGRAPH_STYLE,
+ styledValue: this.paragraphStyleAttr1
+ },
+ {
+ start: 5,
+ length: 20,
+ styledKey: StyledStringKey.LINE_HEIGHT,
+ styledValue: this.lineHeightStyle1
+ },
+ {
+ start: 32,
+ length: 5,
+ styledKey: StyledStringKey.PARAGRAPH_STYLE,
+ styledValue: this.paragraphStyleAttr2
+ },
+ {
+ start: 32,
+ length: 20,
+ styledKey: StyledStringKey.LINE_HEIGHT,
+ styledValue: this.lineHeightStyle1
+ },
+ {
+ start: 60,
+ length: 5,
+ styledKey: StyledStringKey.PARAGRAPH_STYLE,
+ styledValue: this.paragraphStyleAttr3
+ },
+ {
+ start: 60,
+ length: 5,
+ styledKey: StyledStringKey.LINE_HEIGHT,
+ styledValue: this.lineHeightStyle1
+ }
+ ]);
+ controller: TextController = new TextController();
+ async onPageShow() {
+ this.controller.setStyledString(this.paragraphStyledString1);
+ }
+ build() {
+ Row() {
+ Column({ space: 5 }) {
+ Text(undefined, { controller: this.controller })
+ .width(240)
+ .borderWidth(1)
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ // 查询段落样式
+ Text()
+ .onClick(() => {
+ let styles = this.paragraphStyledString1.getStyles(0, this.paragraphStyledString1.length);
+ if (styles.length !== 0) {
+ for (let i = 0; i < styles.length; i++) {
+ console.info('paragraphStyledString1 style object start:' + styles[i].start);
+ console.info('paragraphStyledString1 style object length:' + styles[i].length);
+ console.info('paragraphStyledString1 style object key:' + styles[i].styledKey);
+ if (styles[i].styledKey === 200) {
+ let paraAttr = styles[i].styledValue as ParagraphStyle;
+ console.info('paragraphStyledString1 textAlign:' + paraAttr.textAlign);
+ console.info('paragraphStyledString1 textIndent:' + paraAttr.textIndent);
+ console.info('paragraphStyledString1 maxLines:' + paraAttr.maxLines);
+ console.info('paragraphStyledString1 wordBreak:' + paraAttr.wordBreak);
+ console.info('paragraphStyledString1 leadingMargin:' + paraAttr.leadingMargin);
+ console.info('paragraphStyledString1 overflow:' + paraAttr.overflow);
+ }
+ }
+ }
+ })
+ .margin({ top: 10 })
+ }
+ .width('100%')
+ }
+ .height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/0GhrCDj5TvW9-nsJtMXrsQ/zh-cn_image_0000002531106056.png?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=A41C4689FA8E485F92BC4DB3B9E88DD2E559C5A0CB65A8C95C01AAA0BC0B96FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/0GhrCDj5TvW9-nsJtMXrsQ/zh-cn_image_0000002531106056.png?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=8D6F966E3E6315D1976B254967709F2D2EDA53E1F1832C82F4DB819D6B96F0CC)
 
 ### 示例6（设置自定义绘制Span）
 
@@ -2053,134 +2069,134 @@ import { drawing } from '@kit.ArkGraphics2D';
 import { LengthMetrics } from '@kit.ArkUI';
 let gUIContext: UIContext;
 class MyCustomSpan extends CustomSpan {
-  constructor(word: string, width: number, height: number) {
-    super();
-    this.word = word;
-    this.width = width;
-    this.height = height;
-  }
-  onMeasure(measureInfo: CustomSpanMeasureInfo): CustomSpanMetrics {
-    this.setPx(gUIContext.vp2px(2));
-    let textSize = gUIContext.getMeasureUtils().measureTextSize({ textContent: this.word, fontSize: this.wordFontSize })
-    this.width = textSize.width as number;
-    this.height = textSize.height as number;
-    return {
-      width: gUIContext.px2vp(this.width) + (this.paddingLeft + this.paddingRight) * 2,
-      height: gUIContext.px2vp(this.height) + this.paddingTop + this.paddingBottom
-    };
-  }
-  onDraw(context: DrawContext, options: CustomSpanDrawInfo) {
-    let canvas = context.canvas;
-    const brush = new drawing.Brush();
-    brush.setColor({
-      alpha: 255,
-      red: 0,
-      green: 74,
-      blue: 175
-    });
-    const font = new drawing.Font();
-    font.setSize(gUIContext.vp2px(this.wordFontSize));
-    const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-    canvas.attachBrush(brush);
-    canvas.drawRect({
-      // 绘制的矩形在Span占位大小的范围里居中
-      left: options.x + gUIContext.vp2px(this.paddingLeft),
-      right: options.x + this.width + 2 * gUIContext.vp2px(this.paddingLeft) + gUIContext.vp2px(this.paddingRight),
-      top: options.lineTop,
-      bottom: options.baseline
-    });
-    brush.setColor({
-      alpha: 255,
-      red: 23,
-      green: 169,
-      blue: 141
-    });
-    canvas.attachBrush(brush);
-    // 文字在绘制的矩形里居中
-    canvas.drawTextBlob(textBlob, options.x + 2 * gUIContext.vp2px(this.paddingLeft),
-      options.baseline - gUIContext.vp2px(this.paddingBottom));
-    canvas.detachBrush();
-  }
-  setWord(word: string) {
-    this.word = word;
-  }
-  setPx(px: number) {
-    this.paddingLeft = px;
-    this.paddingRight = px;
-    this.paddingTop = px;
-    this.paddingBottom = px;
-  }
-  width: number = 160;
-  word: string = "drawing";
-  height: number = 10;
-  paddingLeft: number = 0;
-  paddingRight: number = 0;
-  paddingTop: number = 0;
-  paddingBottom: number = 0;
-  wordFontSize: number = 20;
+ constructor(word: string, width: number, height: number) {
+ super();
+ this.word = word;
+ this.width = width;
+ this.height = height;
+ }
+ onMeasure(measureInfo: CustomSpanMeasureInfo): CustomSpanMetrics {
+ this.setPx(gUIContext.vp2px(2));
+ let textSize = gUIContext.getMeasureUtils().measureTextSize({ textContent: this.word, fontSize: this.wordFontSize })
+ this.width = textSize.width as number;
+ this.height = textSize.height as number;
+ return {
+ width: gUIContext.px2vp(this.width) + (this.paddingLeft + this.paddingRight) * 2,
+ height: gUIContext.px2vp(this.height) + this.paddingTop + this.paddingBottom
+ };
+ }
+ onDraw(context: DrawContext, options: CustomSpanDrawInfo) {
+ let canvas = context.canvas;
+ const brush = new drawing.Brush();
+ brush.setColor({
+ alpha: 255,
+ red: 0,
+ green: 74,
+ blue: 175
+ });
+ const font = new drawing.Font();
+ font.setSize(gUIContext.vp2px(this.wordFontSize));
+ const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+ canvas.attachBrush(brush);
+ canvas.drawRect({
+ // 绘制的矩形在Span占位大小的范围里居中
+ left: options.x + gUIContext.vp2px(this.paddingLeft),
+ right: options.x + this.width + 2 * gUIContext.vp2px(this.paddingLeft) + gUIContext.vp2px(this.paddingRight),
+ top: options.lineTop,
+ bottom: options.baseline
+ });
+ brush.setColor({
+ alpha: 255,
+ red: 23,
+ green: 169,
+ blue: 141
+ });
+ canvas.attachBrush(brush);
+ // 文字在绘制的矩形里居中
+ canvas.drawTextBlob(textBlob, options.x + 2 * gUIContext.vp2px(this.paddingLeft),
+ options.baseline - gUIContext.vp2px(this.paddingBottom));
+ canvas.detachBrush();
+ }
+ setWord(word: string) {
+ this.word = word;
+ }
+ setPx(px: number) {
+ this.paddingLeft = px;
+ this.paddingRight = px;
+ this.paddingTop = px;
+ this.paddingBottom = px;
+ }
+ width: number = 160;
+ word: string = "drawing";
+ height: number = 10;
+ paddingLeft: number = 0;
+ paddingRight: number = 0;
+ paddingTop: number = 0;
+ paddingBottom: number = 0;
+ wordFontSize: number = 20;
 }
 @Entry
 @Component
 struct styled_string_set_customspan_demo {
-  customSpan1: MyCustomSpan = new MyCustomSpan("Hello", 80, 10);
-  customSpan2: MyCustomSpan = new MyCustomSpan("World", 80, 40);
-  style: MutableStyledString = new MutableStyledString(this.customSpan1);
-  textController: TextController = new TextController();
-  isPageShow: boolean = true;
-  aboutToAppear() {
-    gUIContext = this.getUIContext();
-  }
-  async onPageShow() {
-    if (!this.isPageShow) {
-      return;
-    }
-    this.isPageShow = false;
-    this.style.appendStyledString(new MutableStyledString("文本绘制 示例代码 CustomSpan", [
-      {
-        start: 0,
-        length: 5,
-        styledKey: StyledStringKey.FONT,
-        styledValue: new TextStyle({ fontColor: Color.Pink })
-      }, {
-      start: 5,
-      length: 5,
-      styledKey: StyledStringKey.FONT,
-      styledValue: new TextStyle({ fontColor: Color.Orange, fontStyle: FontStyle.Italic })
-    }, {
-      start: 10,
-      length: 500,
-      styledKey: StyledStringKey.FONT,
-      styledValue: new TextStyle({ fontColor: Color.Green, fontWeight: FontWeight.Bold })
-    }
-    ]));
-    this.style.appendStyledString(new StyledString(this.customSpan2));
-    this.style.appendStyledString(new StyledString("自定义绘制", [{
-      start: 0,
-      length: 5,
-      styledKey: StyledStringKey.FONT,
-      styledValue: new TextStyle({ fontColor: Color.Green, fontSize: LengthMetrics.px(50) })
-    }]));
-    this.textController.setStyledString(this.style);
-  }
-  build() {
-    Row() {
-      Column() {
-        Text(undefined, { controller: this.textController })
-          .copyOption(CopyOptions.InApp)
-          .fontSize(30)
-        Button("invalidate").onClick(() => {
-          this.customSpan1.setWord("你好");
-          this.customSpan1.invalidate();
-        })
-      }
-      .width('100%')
-    }
-    .height('100%')
-  }
+ customSpan1: MyCustomSpan = new MyCustomSpan("Hello", 80, 10);
+ customSpan2: MyCustomSpan = new MyCustomSpan("World", 80, 40);
+ style: MutableStyledString = new MutableStyledString(this.customSpan1);
+ textController: TextController = new TextController();
+ isPageShow: boolean = true;
+ aboutToAppear() {
+ gUIContext = this.getUIContext();
+ }
+ async onPageShow() {
+ if (!this.isPageShow) {
+ return;
+ }
+ this.isPageShow = false;
+ this.style.appendStyledString(new MutableStyledString("文本绘制 示例代码 CustomSpan", [
+ {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Pink })
+ }, {
+ start: 5,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Orange, fontStyle: FontStyle.Italic })
+ }, {
+ start: 10,
+ length: 500,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Green, fontWeight: FontWeight.Bold })
+ }
+ ]));
+ this.style.appendStyledString(new StyledString(this.customSpan2));
+ this.style.appendStyledString(new StyledString("自定义绘制", [{
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Green, fontSize: LengthMetrics.px(50) })
+ }]));
+ this.textController.setStyledString(this.style);
+ }
+ build() {
+ Row() {
+ Column() {
+ Text(undefined, { controller: this.textController })
+ .copyOption(CopyOptions.InApp)
+ .fontSize(30)
+ Button("invalidate").onClick(() => {
+ this.customSpan1.setWord("你好");
+ this.customSpan1.invalidate();
+ })
+ }
+ .width('100%')
+ }
+ .height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/5ClhqFHPRHOjrDZqTpdzWg/zh-cn_image_0000002531225990.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=2C09E84167F6ECAEA98D33355B124481A197C1C1BDDA378DD86F1BB6F67F2755)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/5ClhqFHPRHOjrDZqTpdzWg/zh-cn_image_0000002531225990.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=74DC45DB2D8C1B84072BDCCE6F7C084900DFA59EA6A191D11AA21B969470D5EA)
 
 ### 示例7（支持存储自定义扩展信息）
 
@@ -2189,45 +2205,45 @@ struct styled_string_set_customspan_demo {
 ```typescript
 // xxx.ets
 class MyUserDataSpan extends UserDataSpan {
-  constructor(name: string, age: number) {
-    super();
-    this.name = name;
-    this.age = age;
-  }
-  name: string;
-  age: number;
+ constructor(name: string, age: number) {
+ super();
+ this.name = name;
+ this.age = age;
+ }
+ name: string;
+ age: number;
 }
 @Entry
 @Component
 struct styled_string_set_userdataspan_demo {
-  @State name: string = "world";
-  @State age: number = 10;
-  controller: TextController = new TextController();
-  styleString: MutableStyledString = new MutableStyledString("hello world", [{
-    start: 0,
-    length: 11,
-    styledKey: StyledStringKey.USER_DATA,
-    styledValue: new MyUserDataSpan("hello", 21)
-  }]);
-  onPageShow(): void {
-    this.controller.setStyledString(this.styleString);
-  }
-  build() {
-    Column() {
-      Text(undefined, { controller: this.controller })
-      Button("get user data").onClick(() => {
-        let arr = this.styleString.getStyles(0, this.styleString.length);
-        let userDataSpan = arr[0].styledValue as MyUserDataSpan;
-        this.name = userDataSpan.name;
-        this.age = userDataSpan.age;
-      })
-      Text("name:" + this.name + "  age: " + this.age)
-    }.width('100%').height(250).padding({ left: 35, right: 35, top: 35 })
-  }
+ @State name: string = "world";
+ @State age: number = 10;
+ controller: TextController = new TextController();
+ styleString: MutableStyledString = new MutableStyledString("hello world", [{
+ start: 0,
+ length: 11,
+ styledKey: StyledStringKey.USER_DATA,
+ styledValue: new MyUserDataSpan("hello", 21)
+ }]);
+ onPageShow(): void {
+ this.controller.setStyledString(this.styleString);
+ }
+ build() {
+ Column() {
+ Text(undefined, { controller: this.controller })
+ Button("get user data").onClick(() => {
+ let arr = this.styleString.getStyles(0, this.styleString.length);
+ let userDataSpan = arr[0].styledValue as MyUserDataSpan;
+ this.name = userDataSpan.name;
+ this.age = userDataSpan.age;
+ })
+ Text("name:" + this.name + " age: " + this.age)
+ }.width('100%').height(250).padding({ left: 35, right: 35, top: 35 })
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/_FPCwwguQZu9TKcx_SAWEw/zh-cn_image_0000002562025973.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=777F0358042ABC4AB25D88F0F737D03BBA7910319C5BE8BFF89F2653EB4DCB05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/_FPCwwguQZu9TKcx_SAWEw/zh-cn_image_0000002562025973.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=385DD8A193749FFE4A29AF02199B9F36A4ABD0C8879FCAF057BEC24AFDBF847F)
 
 ### 示例8（设置超链接）
 
@@ -2238,28 +2254,28 @@ struct styled_string_set_userdataspan_demo {
 @Entry
 @Component
 struct styled_string_set_urlstyle_demo {
-  urlString: UrlStyle = new UrlStyle("https://www.example.com");
-  mutableStyledString: MutableStyledString = new MutableStyledString("Hello World", [{
-    start: 0,
-    length: "Hello".length,
-    styledKey: StyledStringKey.URL,
-    styledValue: this.urlString
-  }]);
-  controller: TextController = new TextController();
-  async onPageShow() {
-    this.controller.setStyledString(this.mutableStyledString);
-  }
-  build() {
-    Column() {
-      Column() {
-        Text(undefined, { controller: this.controller }).key('mutableStyledString').fontSize(30)
-      }
-    }.width('100%').height(250).padding({ left: 35, right: 35, top: 35 })
-  }
+ urlString: UrlStyle = new UrlStyle("https://www.example.com");
+ mutableStyledString: MutableStyledString = new MutableStyledString("Hello World", [{
+ start: 0,
+ length: "Hello".length,
+ styledKey: StyledStringKey.URL,
+ styledValue: this.urlString
+ }]);
+ controller: TextController = new TextController();
+ async onPageShow() {
+ this.controller.setStyledString(this.mutableStyledString);
+ }
+ build() {
+ Column() {
+ Column() {
+ Text(undefined, { controller: this.controller }).key('mutableStyledString').fontSize(30)
+ }
+ }.width('100%').height(250).padding({ left: 35, right: 35, top: 35 })
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/GWErA1J1Snm30hKX0IQbRg/zh-cn_image_0000002562145959.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=F8D19F9A8BEADF07D09E4407D67E1CBF72F370D1EA5CAD322F6B98A7068C52B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/GWErA1J1Snm30hKX0IQbRg/zh-cn_image_0000002562145959.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=E42A5A8FECAEFB0F9904A08E8429064028DCF1B780253DE5DD6EDEAF72ADE21D)
 
 ### 示例9 （给图片设置colorFilter）
 
@@ -2272,63 +2288,63 @@ import { drawing, common2D } from '@kit.ArkGraphics2D';
 @Entry
 @Component
 struct styled_string_set_image_colorfilter_demo {
-  @State message: string = 'Hello World';
-  mutableStr: MutableStyledString = new MutableStyledString('origin image:');
-  mutableStr2: MutableStyledString = new MutableStyledString('with filter:');
-  controller: TextController = new TextController();
-  controller2: TextController = new TextController();
-  private color: common2D.Color = {
-    alpha: 125,
-    red: 125,
-    green: 125,
-    blue: 255
-  };
-  build() {
-    Row() {
-      Column({ space: 5 }) {
-        Text(undefined, { controller: this.controller })
-          .copyOption(CopyOptions.InApp)
-          .draggable(true)
-          .fontSize(30)
-          .onAppear(() => {
-            this.mutableStr = new MutableStyledString(new ImageAttachment({
-              // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-              resourceValue: $r('app.media.startIcon'),
-              size: { width: 50, height: 50 },
-              layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-              verticalAlign: ImageSpanAlignment.BASELINE,
-              objectFit: ImageFit.Contain,
-              syncLoad: true
-            }));
-            this.controller.setStyledString(this.mutableStr);
-          })
-        Text(undefined, { controller: this.controller2 })
-          .copyOption(CopyOptions.InApp)
-          .draggable(true)
-          .fontSize(30)
-        Button('set image color filter')
-          .onClick(() => {
-            this.mutableStr2 = new MutableStyledString(new ImageAttachment({
-              // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
-              resourceValue: $r('app.media.startIcon'),
-              size: { width: 50, height: 50 },
-              layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-              verticalAlign: ImageSpanAlignment.BASELINE,
-              objectFit: ImageFit.Contain,
-              colorFilter: drawing.ColorFilter.createBlendModeColorFilter(this.color, drawing.BlendMode.SRC_IN),
-              syncLoad: true
-            }));
-            this.controller2.setStyledString(this.mutableStr2);
-          })
-      }
-      .width('100%')
-    }
-    .height('100%')
-  }
+ @State message: string = 'Hello World';
+ mutableStr: MutableStyledString = new MutableStyledString('origin image:');
+ mutableStr2: MutableStyledString = new MutableStyledString('with filter:');
+ controller: TextController = new TextController();
+ controller2: TextController = new TextController();
+ private color: common2D.Color = {
+ alpha: 125,
+ red: 125,
+ green: 125,
+ blue: 255
+ };
+ build() {
+ Row() {
+ Column({ space: 5 }) {
+ Text(undefined, { controller: this.controller })
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ .fontSize(30)
+ .onAppear(() => {
+ this.mutableStr = new MutableStyledString(new ImageAttachment({
+ // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+ resourceValue: $r('app.media.startIcon'),
+ size: { width: 50, height: 50 },
+ layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+ verticalAlign: ImageSpanAlignment.BASELINE,
+ objectFit: ImageFit.Contain,
+ syncLoad: true
+ }));
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Text(undefined, { controller: this.controller2 })
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ .fontSize(30)
+ Button('set image color filter')
+ .onClick(() => {
+ this.mutableStr2 = new MutableStyledString(new ImageAttachment({
+ // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+ resourceValue: $r('app.media.startIcon'),
+ size: { width: 50, height: 50 },
+ layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+ verticalAlign: ImageSpanAlignment.BASELINE,
+ objectFit: ImageFit.Contain,
+ colorFilter: drawing.ColorFilter.createBlendModeColorFilter(this.color, drawing.BlendMode.SRC_IN),
+ syncLoad: true
+ }));
+ this.controller2.setStyledString(this.mutableStr2);
+ })
+ }
+ .width('100%')
+ }
+ .height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/5dPsTLQSSD2Ht5sx3PNh7A/zh-cn_image_0000002531106058.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=FDD3E32B6A68D7B12B62F725D709EC295904318A4FA421CF6D8E9BF597E89D4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/5dPsTLQSSD2Ht5sx3PNh7A/zh-cn_image_0000002531106058.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=1AB27D3D55692FD7ECD8B0F405952B9343CB5CF74A85C6158FF3355F3A062952)
 
 ### 示例10（属性字符串的插入、删除、替换）
 
@@ -2339,72 +2355,72 @@ struct styled_string_set_image_colorfilter_demo {
 @Entry
 @Component
 struct styled_string_modify_demo {
-  @State message: string = 'Hello World';
-  mutableStr: MutableStyledString = new MutableStyledString('123456', [{
-    start: 0,
-    length: 2,
-    styledKey: StyledStringKey.FONT,
-    styledValue: new TextStyle({ fontColor: Color.Red })
-  }, {
-    start: 0,
-    length: 3,
-    styledKey: StyledStringKey.DECORATION,
-    styledValue: new DecorationStyle({ type: TextDecorationType.LineThrough })
-  }]);
-  mutableStr2: MutableStyledString = new MutableStyledString('with filter:');
-  controller: TextController = new TextController();
-  controller2: TextController = new TextController();
-  build() {
-    Row() {
-      Column({ space: 5 }) {
-        Text(undefined, { controller: this.controller })
-          .copyOption(CopyOptions.InApp)
-          .draggable(true)
-          .fontSize(30)
-          .onAppear(() => {
-            this.controller.setStyledString(this.mutableStr);
-          })
-        Text(undefined, { controller: this.controller2 })
-          .copyOption(CopyOptions.InApp)
-          .draggable(true)
-          .fontSize(30)
-        Button('GetSubStyledString (0,3)').onClick(() => {
-          this.controller2.setStyledString(this.mutableStr.subStyledString(0, 3));
-        })
-        Button('RemoveStyle (0,1,Decoration)').onClick(() => {
-          this.mutableStr.removeStyle(0, 1, StyledStringKey.DECORATION);
-          this.controller.setStyledString(this.mutableStr);
-        })
-        Button('RemoveString (5,1)').onClick(() => {
-          this.mutableStr.removeString(5, 1);
-          this.controller.setStyledString(this.mutableStr);
-        })
-        Button('ClearStyles').onClick(() => {
-          this.mutableStr.clearStyles();
-          this.controller.setStyledString(this.mutableStr);
-        })
-        Button('replaceStyledString').onClick(() => {
-          this.mutableStr.replaceStyledString(3, 1, new StyledString("abc", [{
-            start: 0,
-            length: 3,
-            styledKey: StyledStringKey.FONT,
-            styledValue: new TextStyle({ fontColor: Color.Blue })
-          }]));
-          this.controller.setStyledString(this.mutableStr);
-        })
-        Button('insertStyledString').onClick(() => {
-          this.mutableStr.insertStyledString(4, new StyledString("A"));
-          this.controller.setStyledString(this.mutableStr);
-        })
-      }
-      .width('100%')
-    }
-    .height('100%')
-  }
+ @State message: string = 'Hello World';
+ mutableStr: MutableStyledString = new MutableStyledString('123456', [{
+ start: 0,
+ length: 2,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Red })
+ }, {
+ start: 0,
+ length: 3,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({ type: TextDecorationType.LineThrough })
+ }]);
+ mutableStr2: MutableStyledString = new MutableStyledString('with filter:');
+ controller: TextController = new TextController();
+ controller2: TextController = new TextController();
+ build() {
+ Row() {
+ Column({ space: 5 }) {
+ Text(undefined, { controller: this.controller })
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ .fontSize(30)
+ .onAppear(() => {
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Text(undefined, { controller: this.controller2 })
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ .fontSize(30)
+ Button('GetSubStyledString (0,3)').onClick(() => {
+ this.controller2.setStyledString(this.mutableStr.subStyledString(0, 3));
+ })
+ Button('RemoveStyle (0,1,Decoration)').onClick(() => {
+ this.mutableStr.removeStyle(0, 1, StyledStringKey.DECORATION);
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Button('RemoveString (5,1)').onClick(() => {
+ this.mutableStr.removeString(5, 1);
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Button('ClearStyles').onClick(() => {
+ this.mutableStr.clearStyles();
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Button('replaceStyledString').onClick(() => {
+ this.mutableStr.replaceStyledString(3, 1, new StyledString("abc", [{
+ start: 0,
+ length: 3,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Blue })
+ }]));
+ this.controller.setStyledString(this.mutableStr);
+ })
+ Button('insertStyledString').onClick(() => {
+ this.mutableStr.insertStyledString(4, new StyledString("A"));
+ this.controller.setStyledString(this.mutableStr);
+ })
+ }
+ .width('100%')
+ }
+ .height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/mZJO36BfS5KOeobPzStzSA/zh-cn_image_0000002531225992.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=32D99B0C43D31C9A5238C412E189239BF8F6E0424ADD6027259730FA78A2E745)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/mZJO36BfS5KOeobPzStzSA/zh-cn_image_0000002531225992.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=C29E25F14D9F8C0CEBFEB28F89B8EC213FE28692296ACB3ED4B89F14B98477E0)
 
 ### 示例11（属性字符串的文本描边）
 
@@ -2416,63 +2432,63 @@ import { LengthMetrics } from '@kit.ArkUI';
 @Entry
 @Component
 struct styled_string_strokewidth_strokecolor_demo {
-  @State string1: string = "Hello";
-  spanStyle: SpanStyle = {
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.FONT,
-    styledValue: new TextStyle({
-      fontColor: '#ff2787d9',
-      strokeWidth: LengthMetrics.px(-5),
-      strokeColor: Color.Black,
-      fontWeight: FontWeight.Bolder,
-      fontSize: LengthMetrics.px(100)
-    })
-  };
-  spanStyle1: SpanStyle = {
-    start: 0,
-    length: 5,
-    styledKey: StyledStringKey.FONT,
-    styledValue: new TextStyle({
-      fontColor: '#ff2787d9',
-      strokeWidth: LengthMetrics.px(5),
-      strokeColor: Color.Black,
-      fontWeight: FontWeight.Bolder,
-      fontSize: LengthMetrics.px(100)
-    })
-  };
-  mutableStyledString: MutableStyledString = new MutableStyledString(this.string1, []);
-  controller: TextController = new TextController();
-  mutableStyledString1: MutableStyledString = new MutableStyledString(this.string1, []);
-  controller1: TextController = new TextController();
-  async onPageShow() {
-    this.mutableStyledString.setStyle(this.spanStyle)
-    this.controller.setStyledString(this.mutableStyledString);
-    this.mutableStyledString1.setStyle(this.spanStyle1)
-    this.controller1.setStyledString(this.mutableStyledString1);
-  }
-  build() {
-    Column() {
-      // 实心字
-      Text(undefined, { controller: this.controller })
-        .margin({ top: 10, bottom: 50 })
-        .draggable(true)
-        .onDragStart(() => {
-        })
-      // 空心字
-      Text(undefined, { controller: this.controller1 })
-        .margin({ top: 10, bottom: 50 })
-        .draggable(true)
-        .onDragStart(() => {
-        })
-    }
-    .height('100%')
-    .width('100%')
-  }
+ @State string1: string = "Hello";
+ spanStyle: SpanStyle = {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({
+ fontColor: '#ff2787d9',
+ strokeWidth: LengthMetrics.px(-5),
+ strokeColor: Color.Black,
+ fontWeight: FontWeight.Bolder,
+ fontSize: LengthMetrics.px(100)
+ })
+ };
+ spanStyle1: SpanStyle = {
+ start: 0,
+ length: 5,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({
+ fontColor: '#ff2787d9',
+ strokeWidth: LengthMetrics.px(5),
+ strokeColor: Color.Black,
+ fontWeight: FontWeight.Bolder,
+ fontSize: LengthMetrics.px(100)
+ })
+ };
+ mutableStyledString: MutableStyledString = new MutableStyledString(this.string1, []);
+ controller: TextController = new TextController();
+ mutableStyledString1: MutableStyledString = new MutableStyledString(this.string1, []);
+ controller1: TextController = new TextController();
+ async onPageShow() {
+ this.mutableStyledString.setStyle(this.spanStyle)
+ this.controller.setStyledString(this.mutableStyledString);
+ this.mutableStyledString1.setStyle(this.spanStyle1)
+ this.controller1.setStyledString(this.mutableStyledString1);
+ }
+ build() {
+ Column() {
+ // 实心字
+ Text(undefined, { controller: this.controller })
+ .margin({ top: 10, bottom: 50 })
+ .draggable(true)
+ .onDragStart(() => {
+ })
+ // 空心字
+ Text(undefined, { controller: this.controller1 })
+ .margin({ top: 10, bottom: 50 })
+ .draggable(true)
+ .onDragStart(() => {
+ })
+ }
+ .height('100%')
+ .width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/px995J6TQj-NQ-DKp9bZ8g/zh-cn_image_0000002562025975.png?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=89B844BA08C1A68E1C82DB814E72E5B477C48FDCCF33D121375809323D5615E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/px995J6TQj-NQ-DKp9bZ8g/zh-cn_image_0000002562025975.png?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=F4BAC8E2B3EE5A416733FBA9541A5A8C769F71A9D752D2388B7048070AD45FC9)
 
 ### 示例12（fromHtml和toHtml互相转换）
 
@@ -2483,57 +2499,57 @@ struct styled_string_strokewidth_strokecolor_demo {
 @Entry
 @Component
 struct styled_string_html_convert_demo {
-  @State html: string = "<p>This is <b>b</b> <strong>strong</strong> <em>em</em> <i>i</i> <u>u</u> <del>del</del> <s>s</s> <span style = \"foreground-color:blue\"> <a href='https://www.example.com'>www.example</a> </span> <span style=\"background-color: red;\">red span</span> <sup>superscript</sup> and <sub>subscript</sub></p>"; // 从API version 20开始支持b、em、i、u、del、s、a、sup、sub标签
-  @State spanString: StyledString | undefined = undefined;
-  @State resultText: string = ""; // 保存结果文本的状态
-  controller: TextController = new TextController;
-  build() {
-    Column() {
-      // 显示转换后的spanString
-      Text(undefined, { controller: this.controller }).height(100)
-      // TextArea显示每个步骤的结果
-      TextArea({ text: this.html })
-        .width("100%")
-        .height(100)
-        .margin(5)
-      // 按钮1:将HTML转换为SpanString
-      Button("将HTML转换为SpanString").onClick(async () => {
-        this.spanString = await StyledString.fromHtml(this.html);
-        this.controller.setStyledString(this.spanString);
-        this.resultText = "Converted HTML to SpanString successfully.";
-      }).margin(5)
-      // 按钮2:将SpanString转换为HTML
-      Button("将SpanString转换为HTML").onClick(() => {
-        if (this.spanString) {
-          // 将spanString转换为HTML并替换当前的HTML状态
-          const newHtml = StyledString.toHtml(this.spanString);
-          if (newHtml !== this.html) { // 通过检查内容是否已经相同来防止重复
-            this.html = newHtml;
-          }
-          this.resultText = "Converted SpanString to HTML successfully.";
-        } else {
-          this.resultText = "SpanString is undefined.";
-        }
-      }).margin(5)
-      // 按钮3:将HTML转换回SpanString
-      Button("将HTML转换回SpanString").onClick(async () => {
-        this.spanString = await StyledString.fromHtml(this.html);
-        this.controller.setStyledString(this.spanString);
-        this.resultText = "Converted HTML back to SpanString successfully.";
-      }).margin(5)
-      // 重置：重置HTML和SpanString
-      Button("重置").onClick(() => {
-        this.html = "<p>This is <b>b</b> <strong>strong</strong> <em>em</em> <i>i</i> <u>u</u> <del>del</del> <s>s</s> <span style = \"foreground-color:blue\"> <a href='https://www.example.com'>www.example</a> </span> <span style=\"background-color: red;\">red span</span> <sup>superscript</sup> and <sub>subscript</sub></p>";
-        this.spanString = undefined;
-        this.controller.setStyledString(new StyledString("")); // 使用空的StyledString实例
-        this.resultText = "Reset HTML and SpanString successfully.";
-      }).margin(5)
-    }.width("100%").padding(20)
-  }
+ @State html: string = "<p>This is <b>b</b> <strong>strong</strong> <em>em</em> <i>i</i> <u>u</u> <del>del</del> <s>s</s> <span style = \"foreground-color:blue\"> <a href='https://www.example.com'>www.example</a> </span> <span style=\"background-color: red;\">red span</span> <sup>superscript</sup> and <sub>subscript</sub></p>"; // 从API version 20开始支持b、em、i、u、del、s、a、sup、sub标签
+ @State spanString: StyledString | undefined = undefined;
+ @State resultText: string = ""; // 保存结果文本的状态
+ controller: TextController = new TextController;
+ build() {
+ Column() {
+ // 显示转换后的spanString
+ Text(undefined, { controller: this.controller }).height(100)
+ // TextArea显示每个步骤的结果
+ TextArea({ text: this.html })
+ .width("100%")
+ .height(100)
+ .margin(5)
+ // 按钮1:将HTML转换为SpanString
+ Button("将HTML转换为SpanString").onClick(async () => {
+ this.spanString = await StyledString.fromHtml(this.html);
+ this.controller.setStyledString(this.spanString);
+ this.resultText = "Converted HTML to SpanString successfully.";
+ }).margin(5)
+ // 按钮2:将SpanString转换为HTML
+ Button("将SpanString转换为HTML").onClick(() => {
+ if (this.spanString) {
+ // 将spanString转换为HTML并替换当前的HTML状态
+ const newHtml = StyledString.toHtml(this.spanString);
+ if (newHtml !== this.html) { // 通过检查内容是否已经相同来防止重复
+ this.html = newHtml;
+ }
+ this.resultText = "Converted SpanString to HTML successfully.";
+ } else {
+ this.resultText = "SpanString is undefined.";
+ }
+ }).margin(5)
+ // 按钮3:将HTML转换回SpanString
+ Button("将HTML转换回SpanString").onClick(async () => {
+ this.spanString = await StyledString.fromHtml(this.html);
+ this.controller.setStyledString(this.spanString);
+ this.resultText = "Converted HTML back to SpanString successfully.";
+ }).margin(5)
+ // 重置：重置HTML和SpanString
+ Button("重置").onClick(() => {
+ this.html = "<p>This is <b>b</b> <strong>strong</strong> <em>em</em> <i>i</i> <u>u</u> <del>del</del> <s>s</s> <span style = \"foreground-color:blue\"> <a href='https://www.example.com'>www.example</a> </span> <span style=\"background-color: red;\">red span</span> <sup>superscript</sup> and <sub>subscript</sub></p>";
+ this.spanString = undefined;
+ this.controller.setStyledString(new StyledString("")); // 使用空的StyledString实例
+ this.resultText = "Reset HTML and SpanString successfully.";
+ }).margin(5)
+ }.width("100%").padding(20)
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fwgkKJOaTIy_-HP04J-cSA/zh-cn_image_0000002562145961.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=98F3D68D998D120D05B783291FA2D0E7BD8DB0B7C611827A24E2F96ED84A5648)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/fwgkKJOaTIy_-HP04J-cSA/zh-cn_image_0000002562145961.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=B1ABC3276C80EC90279BC10AADFF83512B643108DE6699C5F4B4DC60C3947AAC)
 
 ### 示例13（多装饰线与加粗装饰线）
 
@@ -2545,68 +2561,68 @@ import { LengthMetrics } from '@kit.ArkUI'
 @Entry
 @Component
 struct styled_string_set_decorationstyle_demo {
-  @State styledString : StyledString | undefined = undefined
-  controller : TextController = new TextController
-  thickness: number = 2.0
-  mutableStyledString1: MutableStyledString = new MutableStyledString("1234567890", [
-    {
-      start: 0,
-      length: 10,
-      styledKey: StyledStringKey.FONT,
-      styledValue: new TextStyle({ fontColor: Color.Orange, fontSize: LengthMetrics.vp(30) })
-    },
-    {
-      start: 0,
-      length: 4,
-      styledKey: StyledStringKey.DECORATION,
-      styledValue: new DecorationStyle({type: TextDecorationType.LineThrough, thicknessScale: this.thickness}, {enableMultiType: true})
-    },
-    {
-      start: 2,
-      length: 5,
-      styledKey: StyledStringKey.DECORATION,
-      styledValue: new DecorationStyle({type: TextDecorationType.Underline, thicknessScale: this.thickness}, {enableMultiType: true})
-    },
-    {
-      start: 0,
-      length: 4,
-      styledKey: StyledStringKey.DECORATION,
-      styledValue: new DecorationStyle({type: TextDecorationType.Overline, thicknessScale: this.thickness}, {enableMultiType: true})
-    },
-    {
-      start: 6,
-      length: 2,
-      styledKey: StyledStringKey.DECORATION,
-      styledValue: new DecorationStyle({type: TextDecorationType.LineThrough})
-    },
-    {
-      start: 7,
-      length: 2,
-      styledKey: StyledStringKey.DECORATION,
-      styledValue: new DecorationStyle({type: TextDecorationType.LineThrough, color: Color.Green}, {enableMultiType: true})
-    },
-    {
-      start: 8,
-      length: 2,
-      styledKey: StyledStringKey.DECORATION,
-      styledValue: new DecorationStyle({type: TextDecorationType.Overline, color: Color.Green}, {enableMultiType: true})
-    }
-  ]);
-  build() {
-    Column({ space:3 }) {
-      Text(undefined, { controller: this.controller })
-        .height(100)
-        .copyOption(CopyOptions.LocalDevice)
-        .onAppear(()=>{
-          this.styledString = this.mutableStyledString1
-          this.controller.setStyledString(this.mutableStyledString1)
-        })
-    }.width("100%")
-  }
+ @State styledString : StyledString | undefined = undefined
+ controller : TextController = new TextController
+ thickness: number = 2.0
+ mutableStyledString1: MutableStyledString = new MutableStyledString("1234567890", [
+ {
+ start: 0,
+ length: 10,
+ styledKey: StyledStringKey.FONT,
+ styledValue: new TextStyle({ fontColor: Color.Orange, fontSize: LengthMetrics.vp(30) })
+ },
+ {
+ start: 0,
+ length: 4,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({type: TextDecorationType.LineThrough, thicknessScale: this.thickness}, {enableMultiType: true})
+ },
+ {
+ start: 2,
+ length: 5,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({type: TextDecorationType.Underline, thicknessScale: this.thickness}, {enableMultiType: true})
+ },
+ {
+ start: 0,
+ length: 4,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({type: TextDecorationType.Overline, thicknessScale: this.thickness}, {enableMultiType: true})
+ },
+ {
+ start: 6,
+ length: 2,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({type: TextDecorationType.LineThrough})
+ },
+ {
+ start: 7,
+ length: 2,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({type: TextDecorationType.LineThrough, color: Color.Green}, {enableMultiType: true})
+ },
+ {
+ start: 8,
+ length: 2,
+ styledKey: StyledStringKey.DECORATION,
+ styledValue: new DecorationStyle({type: TextDecorationType.Overline, color: Color.Green}, {enableMultiType: true})
+ }
+ ]);
+ build() {
+ Column({ space:3 }) {
+ Text(undefined, { controller: this.controller })
+ .height(100)
+ .copyOption(CopyOptions.LocalDevice)
+ .onAppear(()=>{
+ this.styledString = this.mutableStyledString1
+ this.controller.setStyledString(this.mutableStyledString1)
+ })
+ }.width("100%")
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/iW6S0HzMRNCJ8MjHmrHZSg/zh-cn_image_0000002531106060.png?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=75CA37DE00D0BC1EBA297776741AB4753A0574B84773E8CB8DA7F9533598E0D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/iW6S0HzMRNCJ8MjHmrHZSg/zh-cn_image_0000002531106060.png?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=83858A76896490AB0E84443580A178C7BA055AF6626588FEF7415A085932446E)
 
 ### 示例14（获取以vp为单位的图片尺寸）
 
@@ -2619,88 +2635,88 @@ import { LengthMetrics } from '@kit.ArkUI';
 @Entry
 @Component
 struct styled_string_demo4 {
-  @State message: string = "Image info: \n";
-  imagePixelMap: image.PixelMap | undefined = undefined;
-  @State mutableStr: MutableStyledString = new MutableStyledString("");
-  controller: TextController = new TextController();
-  async aboutToAppear() {
-    this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.startIcon'));
-  }
-  private async updateImageInfoStr() {
-    this.message = "Image info: \n";
-    let imageArray = this.mutableStr.getStyles(0, this.mutableStr.length, StyledStringKey.IMAGE);
-    for (let i = 0; i < imageArray.length; ++i) {
-      this.message += (' Image ' + i + ':\n');
-      if (imageArray[i].styledKey === StyledStringKey.IMAGE) {
-        let attachment = imageArray[i].styledValue as ImageAttachment;
-        if (attachment.size !== undefined) {
-          let w: number = attachment.size.width as number;
-          let h: number = attachment.size.height as number;
-          this.message += ('    px size  width = ' + w.toFixed(2) + ' \theight = ' + h.toFixed(2) + '\n');
-        }
-        if (attachment.sizeInVp !== undefined) {
-          let w: number = attachment.sizeInVp.width as number;
-          let h: number = attachment.sizeInVp.height as number;
-          this.message += ('    sizeInVp width = ' + w.toFixed(2) + ' \theight = ' + h.toFixed(2) + '\n\n');
-        }
-      }
-    }
-  }
-  private async getPixmapFromMedia(resource: Resource) {
-    let unit8Array =
-      await this.getUIContext()?.getHostContext()?.resourceManager?.getMediaContent(resource.id);
-    let imageSource = image.createImageSource(unit8Array?.buffer.slice(0, unit8Array.buffer.byteLength));
-    let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
-      desiredPixelFormat: image.PixelMapFormat.RGBA_8888
-    });
-    await imageSource.release();
-    return createPixelMap;
-  }
-  build() {
-    Row() {
-      Column({ space: 5 }) {
-        Text(undefined, { controller: this.controller })
-          .copyOption(CopyOptions.InApp)
-          .draggable(true)
-          .fontSize(30)
-        Button('设置图片 50vp x 50vp')
-          .onClick(() => {
-            if (this.imagePixelMap !== undefined) {
-              this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
-                value: this.imagePixelMap,
-                size: { width: 50, height: 50 },
-                layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-                verticalAlign: ImageSpanAlignment.BASELINE,
-                objectFit: ImageFit.Contain
-              })));
-              this.controller.setStyledString(this.mutableStr);
-              this.updateImageInfoStr();
-            }
-          }).margin(10)
-        Button('设置图片 70vp x 70vp')
-          .onClick(() => {
-            if (this.imagePixelMap !== undefined) {
-              this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
-                value: this.imagePixelMap,
-                size: { width: 70, height: 70 },
-                layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-                verticalAlign: ImageSpanAlignment.BASELINE,
-                objectFit: ImageFit.Contain
-              })));
-              this.controller.setStyledString(this.mutableStr);
-              this.updateImageInfoStr();
-            }
-          }).margin(10)
-        Text(this.message).width("80%").padding(30)
-      }
-      .width('100%')
-    }
-    .height('100%')
-  }
+ @State message: string = "Image info: \n";
+ imagePixelMap: image.PixelMap | undefined = undefined;
+ @State mutableStr: MutableStyledString = new MutableStyledString("");
+ controller: TextController = new TextController();
+ async aboutToAppear() {
+ this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.startIcon'));
+ }
+ private async updateImageInfoStr() {
+ this.message = "Image info: \n";
+ let imageArray = this.mutableStr.getStyles(0, this.mutableStr.length, StyledStringKey.IMAGE);
+ for (let i = 0; i < imageArray.length; ++i) {
+ this.message += (' Image ' + i + ':\n');
+ if (imageArray[i].styledKey === StyledStringKey.IMAGE) {
+ let attachment = imageArray[i].styledValue as ImageAttachment;
+ if (attachment.size !== undefined) {
+ let w: number = attachment.size.width as number;
+ let h: number = attachment.size.height as number;
+ this.message += (' px size width = ' + w.toFixed(2) + ' \theight = ' + h.toFixed(2) + '\n');
+ }
+ if (attachment.sizeInVp !== undefined) {
+ let w: number = attachment.sizeInVp.width as number;
+ let h: number = attachment.sizeInVp.height as number;
+ this.message += (' sizeInVp width = ' + w.toFixed(2) + ' \theight = ' + h.toFixed(2) + '\n\n');
+ }
+ }
+ }
+ }
+ private async getPixmapFromMedia(resource: Resource) {
+ let unit8Array =
+ await this.getUIContext()?.getHostContext()?.resourceManager?.getMediaContent(resource.id);
+ let imageSource = image.createImageSource(unit8Array?.buffer.slice(0, unit8Array.buffer.byteLength));
+ let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
+ desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+ });
+ await imageSource.release();
+ return createPixelMap;
+ }
+ build() {
+ Row() {
+ Column({ space: 5 }) {
+ Text(undefined, { controller: this.controller })
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ .fontSize(30)
+ Button('设置图片 50vp x 50vp')
+ .onClick(() => {
+ if (this.imagePixelMap !== undefined) {
+ this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
+ value: this.imagePixelMap,
+ size: { width: 50, height: 50 },
+ layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+ verticalAlign: ImageSpanAlignment.BASELINE,
+ objectFit: ImageFit.Contain
+ })));
+ this.controller.setStyledString(this.mutableStr);
+ this.updateImageInfoStr();
+ }
+ }).margin(10)
+ Button('设置图片 70vp x 70vp')
+ .onClick(() => {
+ if (this.imagePixelMap !== undefined) {
+ this.mutableStr.appendStyledString(new MutableStyledString(new ImageAttachment({
+ value: this.imagePixelMap,
+ size: { width: 70, height: 70 },
+ layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+ verticalAlign: ImageSpanAlignment.BASELINE,
+ objectFit: ImageFit.Contain
+ })));
+ this.controller.setStyledString(this.mutableStr);
+ this.updateImageInfoStr();
+ }
+ }).margin(10)
+ Text(this.message).width("80%").padding(30)
+ }
+ .width('100%')
+ }
+ .height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/p0OEcMdzTj2yE6018UWd9A/zh-cn_image_0000002531225994.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=EEE875FF56B0BBF888C72FF0AD63A428563FB26C9E4E990F5C91C532CE43A966)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/p0OEcMdzTj2yE6018UWd9A/zh-cn_image_0000002531225994.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=3302558490EDB9F393FA5DBB91EE3D28A0471E27C14F72B51EF28F94A782D96C)
 
 ### 示例15（设置段落自定义缩进）
 
@@ -2714,103 +2730,103 @@ import { LengthMetrics } from '@kit.ArkUI';
  * 实现LeadingMarginSpan
  */
 class MyLeadingMarginSpan extends LeadingMarginSpan {
-  text: string = ""
-  constructor(text: string) {
-    super()
-    this.text = text
-  }
-  getText() {
-    return this.text;
-  }
-  // 返回缩进距离
-  getLeadingMargin(): LengthMetrics {
-    console.info("getLeadingMargin")
-    return LengthMetrics.vp(10)
-  }
-  // 回调给开发者行信息，用于canvas绘制
-  onDraw(context: DrawContext, options: LeadingMarginSpanDrawInfo) {
-    console.info("x = " + options.x + options.direction + ", top = " + options.top
-      + ", bottom = " + options.bottom + ", baseline = " + options.baseline
-      + ", direction = " + ", start = " + options.start + ", end = " + options.end + ", first = " + options.first)
-    let canvas = context.canvas;
-    if (!options.first) {
-      return
-    }
-    // 绘制文本符号
-    const font = new drawing.Font();
-    font.setSize(20);
-    const textBlob = drawing.TextBlob.makeFromString(this.text, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-    canvas.drawTextBlob(textBlob, options.x - 30, options.top + (options.bottom - options.top) / 2);
-  }
+ text: string = ""
+ constructor(text: string) {
+ super()
+ this.text = text
+ }
+ getText() {
+ return this.text;
+ }
+ // 返回缩进距离
+ getLeadingMargin(): LengthMetrics {
+ console.info("getLeadingMargin")
+ return LengthMetrics.vp(10)
+ }
+ // 回调给开发者行信息，用于canvas绘制
+ onDraw(context: DrawContext, options: LeadingMarginSpanDrawInfo) {
+ console.info("x = " + options.x + options.direction + ", top = " + options.top
+ + ", bottom = " + options.bottom + ", baseline = " + options.baseline
+ + ", direction = " + ", start = " + options.start + ", end = " + options.end + ", first = " + options.first)
+ let canvas = context.canvas;
+ if (!options.first) {
+ return
+ }
+ // 绘制文本符号
+ const font = new drawing.Font();
+ font.setSize(20);
+ const textBlob = drawing.TextBlob.makeFromString(this.text, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+ canvas.drawTextBlob(textBlob, options.x - 30, options.top + (options.bottom - options.top) / 2);
+ }
 }
 @Entry
 @Component
 struct leadingMarginSpanDemo {
-  controller: RichEditorStyledStringController = new RichEditorStyledStringController();
-  options: RichEditorStyledStringOptions = { controller: this.controller };
-  textController: TextController = new TextController();
-  leadingMarginSpan: LeadingMarginSpan = new MyLeadingMarginSpan("●");
-  paragraphStyleAttr2: ParagraphStyle =
-    new ParagraphStyle({ leadingMarginSpan: this.leadingMarginSpan });
-  style: StyledString = new StyledString("段落标题\n段落内容101234567890123456789012345678901234567890123456789",
-    [
-      {
-        start: 0,
-        length: 10,
-        styledKey: StyledStringKey.PARAGRAPH_STYLE,
-        styledValue: this.paragraphStyleAttr2
-      }
-    ]
-  );
-  build() {
-    Column() {
-      Text(undefined, { controller: this.textController })
-        .width("90%")
-        .height("20%")
-        .margin({ top: 10 })
-        .borderWidth(1)
-        .copyOption(CopyOptions.InApp)
-        .draggable(true)
-      RichEditor(this.options)
-        .width("90%")
-        .height("20%")
-        .margin({ top: 10 })
-        .borderWidth(1)
-      Column() {
-        Button('setStyledString')
-          .onClick(() => {
-            this.textController.setStyledString(this.style);
-            this.controller.setStyledString(this.style);
-          }).margin({ top: 10 })
-        // 查询段落样式
-        Button("getStyles")
-          .onClick(() => {
-            let styles = this.style.getStyles(0, this.style.length);
-            if (styles.length == 0) {
-              return
-            }
-            for (let i = 0; i < styles.length; i++) {
-              console.info('getStyles style object start:' + styles[i].start);
-              console.info('getStyles style object length:' + styles[i].length);
-              console.info('getStyles style object key:' + styles[i].styledKey);
-              if (styles[i].styledKey === 200) {
-                let paraAttr = styles[i].styledValue as ParagraphStyle;
-                console.info('getStyles leadingMarginSpan:' + paraAttr.leadingMarginSpan);
-                let leadingMarginSpanClass = paraAttr.leadingMarginSpan as MyLeadingMarginSpan
-                if (leadingMarginSpanClass != null) {
-                  console.info('getStyles leadingMarginSpan getText: ' + leadingMarginSpanClass.getText());
-                }
-              }
-            }
-          }).margin({ top: 10 })
-      }
-    }
-    .width('100%')
-  }
+ controller: RichEditorStyledStringController = new RichEditorStyledStringController();
+ options: RichEditorStyledStringOptions = { controller: this.controller };
+ textController: TextController = new TextController();
+ leadingMarginSpan: LeadingMarginSpan = new MyLeadingMarginSpan("●");
+ paragraphStyleAttr2: ParagraphStyle =
+ new ParagraphStyle({ leadingMarginSpan: this.leadingMarginSpan });
+ style: StyledString = new StyledString("段落标题\n段落内容101234567890123456789012345678901234567890123456789",
+ [
+ {
+ start: 0,
+ length: 10,
+ styledKey: StyledStringKey.PARAGRAPH_STYLE,
+ styledValue: this.paragraphStyleAttr2
+ }
+ ]
+ );
+ build() {
+ Column() {
+ Text(undefined, { controller: this.textController })
+ .width("90%")
+ .height("20%")
+ .margin({ top: 10 })
+ .borderWidth(1)
+ .copyOption(CopyOptions.InApp)
+ .draggable(true)
+ RichEditor(this.options)
+ .width("90%")
+ .height("20%")
+ .margin({ top: 10 })
+ .borderWidth(1)
+ Column() {
+ Button('setStyledString')
+ .onClick(() => {
+ this.textController.setStyledString(this.style);
+ this.controller.setStyledString(this.style);
+ }).margin({ top: 10 })
+ // 查询段落样式
+ Button("getStyles")
+ .onClick(() => {
+ let styles = this.style.getStyles(0, this.style.length);
+ if (styles.length == 0) {
+ return
+ }
+ for (let i = 0; i < styles.length; i++) {
+ console.info('getStyles style object start:' + styles[i].start);
+ console.info('getStyles style object length:' + styles[i].length);
+ console.info('getStyles style object key:' + styles[i].styledKey);
+ if (styles[i].styledKey === 200) {
+ let paraAttr = styles[i].styledValue as ParagraphStyle;
+ console.info('getStyles leadingMarginSpan:' + paraAttr.leadingMarginSpan);
+ let leadingMarginSpanClass = paraAttr.leadingMarginSpan as MyLeadingMarginSpan
+ if (leadingMarginSpanClass != null) {
+ console.info('getStyles leadingMarginSpan getText: ' + leadingMarginSpanClass.getText());
+ }
+ }
+ }
+ }).margin({ top: 10 })
+ }
+ }
+ .width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/4ZcAXmOxQVaZAj6zltRtIA/zh-cn_image_0000002562025977.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=5445118E277CAD875DA3E2F2843B2711D73AB51C2C64453C7A2804DB2CCD656C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/4ZcAXmOxQVaZAj6zltRtIA/zh-cn_image_0000002562025977.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=AF9DBA21342D8D8F55960B782542EC59717E51BF8B36425017EBE4152D584677)
 
 ### 示例16（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -2822,59 +2838,97 @@ import { LengthMetrics } from '@kit.ArkUI';
 @Entry
 @Component
 struct styled_string_process_demo {
-  controller: TextController = new TextController();
-  controller1: TextController = new TextController();
-  imageAttachment: ImageAttachment = new ImageAttachment({
-    // $r("app.media.ice")需要替换为开发者所需的图像资源文件。
-    resourceValue: $r("app.media.ice"),
-    size: { width: 50, height: 50 },
-    layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-    verticalAlign: ImageSpanAlignment.BASELINE,
-    objectFit: ImageFit.Contain,
-    syncLoad: true,
-    supportSvg2: true,
-    colorFilter: drawing.ColorFilter.createBlendModeColorFilter(
-      drawing.Tool.makeColorFromResourceColor(Color.Blue), drawing.BlendMode.SRC_IN)
-  })
-  imageAttachment1: ImageAttachment = new ImageAttachment({
-    // $r("app.media.ice")需要替换为开发者所需的图像资源文件。
-    resourceValue: $r("app.media.ice"),
-    size: { width: 50, height: 50 },
-    layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-    verticalAlign: ImageSpanAlignment.BASELINE,
-    objectFit: ImageFit.Contain,
-    syncLoad: true,
-    supportSvg2: false,
-    colorFilter: drawing.ColorFilter.createBlendModeColorFilter(
-      drawing.Tool.makeColorFromResourceColor(Color.Blue), drawing.BlendMode.SRC_IN)
-  })
-  scroller: Scroller = new Scroller();
-  mutableStr: MutableStyledString = new MutableStyledString('');
-  mutableStr1: MutableStyledString = new MutableStyledString('');
-  aboutToAppear() {
-    this.mutableStr = new MutableStyledString(this.imageAttachment);
-    this.controller.setStyledString(this.mutableStr);
-    this.mutableStr1 = new MutableStyledString(this.imageAttachment1);
-    this.controller1.setStyledString(this.mutableStr1);
-  }
-  build() {
-    Column() {
-      Scroll(this.scroller) {
-        Column() {
-          Text('属性字符串不支持svg2')
-          Text(undefined, { controller: this.controller1 })
-            .draggable(true)
-            .fontSize(30)
-          Text('属性字符串支持svg2')
-          Text(undefined, { controller: this.controller })
-            .draggable(true)
-            .fontSize(30)
-        }.width('100%')
-      }
-    }
-    .width('100%')
-  }
+ controller: TextController = new TextController();
+ controller1: TextController = new TextController();
+ imageAttachment: ImageAttachment = new ImageAttachment({
+ // $r("app.media.ice")需要替换为开发者所需的图像资源文件。
+ resourceValue: $r("app.media.ice"),
+ size: { width: 50, height: 50 },
+ layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+ verticalAlign: ImageSpanAlignment.BASELINE,
+ objectFit: ImageFit.Contain,
+ syncLoad: true,
+ supportSvg2: true,
+ colorFilter: drawing.ColorFilter.createBlendModeColorFilter(
+ drawing.Tool.makeColorFromResourceColor(Color.Blue), drawing.BlendMode.SRC_IN)
+ })
+ imageAttachment1: ImageAttachment = new ImageAttachment({
+ // $r("app.media.ice")需要替换为开发者所需的图像资源文件。
+ resourceValue: $r("app.media.ice"),
+ size: { width: 50, height: 50 },
+ layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+ verticalAlign: ImageSpanAlignment.BASELINE,
+ objectFit: ImageFit.Contain,
+ syncLoad: true,
+ supportSvg2: false,
+ colorFilter: drawing.ColorFilter.createBlendModeColorFilter(
+ drawing.Tool.makeColorFromResourceColor(Color.Blue), drawing.BlendMode.SRC_IN)
+ })
+ scroller: Scroller = new Scroller();
+ mutableStr: MutableStyledString = new MutableStyledString('');
+ mutableStr1: MutableStyledString = new MutableStyledString('');
+ aboutToAppear() {
+ this.mutableStr = new MutableStyledString(this.imageAttachment);
+ this.controller.setStyledString(this.mutableStr);
+ this.mutableStr1 = new MutableStyledString(this.imageAttachment1);
+ this.controller1.setStyledString(this.mutableStr1);
+ }
+ build() {
+ Column() {
+ Scroll(this.scroller) {
+ Column() {
+ Text('属性字符串不支持svg2')
+ Text(undefined, { controller: this.controller1 })
+ .draggable(true)
+ .fontSize(30)
+ Text('属性字符串支持svg2')
+ Text(undefined, { controller: this.controller })
+ .draggable(true)
+ .fontSize(30)
+ }.width('100%')
+ }
+ }
+ .width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/fCa1OHZjRh6_FF2h4dD3uw/zh-cn_image_0000002531225982.png?HW-CC-KV=V1&HW-CC-Date=20260320T101513Z&HW-CC-Expire=86400&HW-CC-Sign=22E351DD41387B460B258D7163283573B5DEF89FD45F903CEF63B4ACFC1F8853)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/fCa1OHZjRh6_FF2h4dD3uw/zh-cn_image_0000002531225982.png?HW-CC-KV=V1&HW-CC-Date=20260320T120325Z&HW-CC-Expire=86400&HW-CC-Sign=3E1459E401D846E2090DBFF6EE4B7E3ECF33AD3A0F7FE7E1F17BA8D8B8C769C4)
+
+[RichText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext)
+
+[输入框类组件通用接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style)
+
+相关推荐
+
+*文档*[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)
+
+*文档*[文本组件公共接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common)
+
+*文档*[TextArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea)
+
+*文档*[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)
+
+*文档*[AtomicServiceWeb](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atomicservice-atomicserviceweb)
+
+*文档*[使用AVPlayer播放音频(ArkTS)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avplayer-for-playback)
+
+*文档*[@ohos.net.http (数据请求)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http)
+
+*文档*[属性字符串（StyledString/MutableStyledString）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-styled-string)
+
+*文档*[text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-text)
+
+*文档*[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)
+
+本文导读 在 API参考 中进行搜索
+
+只在 文本与输入 中搜索 只搜索章节标题
+
+请输入您想要搜索的关键词
+
+- 智能客服 你问我答，随时在线为你解决问题
+
+- 合作咨询 我们的专家服务团队将竭诚为您提供专业的合作咨询服务
+
+- 解决方案 精准高效的一站式服务支持，助力开发者商业成功

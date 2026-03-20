@@ -1,2 +1,14 @@
 # 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext
+
+搜索
+
+只在 中搜索 只搜索章节标题
+
+请输入您想要搜索的关键词
+
+- 智能客服 你问我答，随时在线为你解决问题
+
+- 合作咨询 我们的专家服务团队将竭诚为您提供专业的合作咨询服务
+
+- 解决方案 精准高效的一站式服务支持，助力开发者商业成功

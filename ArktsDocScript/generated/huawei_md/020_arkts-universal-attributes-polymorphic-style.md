@@ -1,4 +1,4 @@
-# 多态样式-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-polymorphic-style
 
 设置组件不同状态下的样式。
@@ -68,11 +68,11 @@ stateStyles(value: StateStyles): T
 该示例展示了状态为pressed和disabled时Text组件的样式变化。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct StyleExample {
   @State isEnable: boolean = true
+
   @Styles
   pressedStyles(): void {
     .backgroundColor("#ED6F21")
@@ -84,6 +84,7 @@ struct StyleExample {
     .height(30)
     .opacity(1)
   }
+
   @Styles
   disabledStyles(): void {
     .backgroundColor("#E5E5E5")
@@ -95,6 +96,7 @@ struct StyleExample {
     .height(25)
     .opacity(1)
   }
+
   @Styles
   normalStyles(): void {
     .backgroundColor("#0A59F7")
@@ -106,13 +108,14 @@ struct StyleExample {
     .height(25)
     .opacity(1)
   }
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
       Text("normal")
         .fontSize(14)
         .fontColor(Color.White)
         .opacity(0.5)
-        // stateStyles设置组件无状态时的样式
+
         .stateStyles({
           normal: this.normalStyles,
         })
@@ -129,7 +132,7 @@ struct StyleExample {
         .opacity(1)
         .fontSize(14)
         .fontColor(Color.White)
-        // stateStyles设置组件按下状态时的样式
+
         .stateStyles({
           pressed: this.pressedStyles,
         })
@@ -147,7 +150,7 @@ struct StyleExample {
         .fontSize(14)
         .fontColor(Color.White)
         .enabled(this.isEnable)
-        // stateStyles设置组件禁用状态时的样式
+
         .stateStyles({
           disabled: this.disabledStyles,
         })
@@ -163,28 +166,30 @@ struct StyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/el1FxyM1TQuQqe-ro9vPKA/zh-cn_image_0000002531225734.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101411Z&HW-CC-Expire=86400&HW-CC-Sign=FA9F7963B301B8EE9A9A93295C47CF320DB579B2D701D3708CC9E094E1DA54EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/el1FxyM1TQuQqe-ro9vPKA/zh-cn_image_0000002531225734.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120223Z&HW-CC-Expire=86400&HW-CC-Sign=17B5451358B6D6A1C4776D6C3CECC0653BC755A71E5B6D07B1D1018FF0BCA261)
 
 ### 示例2（设置Radio多态样式）
 
 该示例展示了状态为selected时Radio组件的样式变化。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
   @State value: boolean = false
   @State value2: boolean = false
+
   @Styles
   normalStyles(): void{
     .backgroundColor("#E5E5E1")
   }
+
   @Styles
   selectStyles(): void{
     .backgroundColor("#ED6F21")
     .borderWidth(2)
   }
+
   build() {
     Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
       Column() {
@@ -205,6 +210,7 @@ struct Index {
           })
       }
       .margin(30)
+
       Column() {
         Text('Radio2')
           .fontSize(25)
@@ -225,7 +231,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9BI902NBQDqned8eKNflcg/zh-cn_image_0000002562025717.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101411Z&HW-CC-Expire=86400&HW-CC-Sign=27815A34E92B14BBE9FBE58BCEF38D00A79C046C9AFF1BE157D23B4B620599B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9BI902NBQDqned8eKNflcg/zh-cn_image_0000002562025717.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120223Z&HW-CC-Expire=86400&HW-CC-Sign=BB455DBD4F3A6F78CAF2D865325C2EBE036E08570C004BAE3F6A64090E7B8E6D)
 
 ### 示例3（设置Builder多态样式）
 
@@ -234,6 +240,7 @@ struct Index {
 ```typescript
 import { ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+
 @Component
 struct Child {
   build() {
@@ -251,15 +258,18 @@ struct Child {
       })
   }
 }
+
 @Builder
 function buildText() {
   Child()
 }
+
 @Entry
 @Component
 struct Index {
   private contentNode: ComponentContent<Object> =
     new ComponentContent(this.getUIContext(), wrapBuilder(buildText));
+
   build() {
     Column() {
       Button().margin({ top: 200 }).onClick((event: ClickEvent) => {
@@ -282,4 +292,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/eC31s2JPSvOvEzeWRtsKVg/zh-cn_image_0000002562145703.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101411Z&HW-CC-Expire=86400&HW-CC-Sign=362ED6887E10A80AEFD7DC1E4D95943CA51BD0FC582A81C8975961D90A98A44E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/eC31s2JPSvOvEzeWRtsKVg/zh-cn_image_0000002562145703.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120223Z&HW-CC-Expire=86400&HW-CC-Sign=9637C3304BF8F342A723A7562FAD52922F142B801374D3782EEFC9D486D70453)

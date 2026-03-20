@@ -313,6 +313,7 @@ baselineOffset(value: LengthMetrics): T
 该示例展示了设置不同样式的文本效果以及span配置点击事件。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct SpanExample {
@@ -324,86 +325,78 @@ struct SpanExample {
         Span(' Component')
         Span(' !')
       }
-
       Text() {
         Span('This is the Span component').fontSize(12).textCase(TextCase.Normal)
           .decoration({ type: TextDecorationType.None, color: Color.Red })
           .fontFamily('HarmonyOS Sans')
       }.margin({ top: 12 })
-
+      // 文本横线添加
       Text('Text Decoration').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
       Text() {
         Span('I am Underline-WAVY-span')
           .decoration({ type: TextDecorationType.Underline, color: Color.Red, style: TextDecorationStyle.WAVY })
           .fontSize(12)
       }
-
       Text() {
         Span('I am LineThrough-DOTTED-span')
           .decoration({ type: TextDecorationType.LineThrough, color: Color.Red, style: TextDecorationStyle.DOTTED })
           .fontSize(12)
       }
-
       Text() {
         Span('I am Overline-DASHED-span')
           .decoration({ type: TextDecorationType.Overline, color: Color.Red, style: TextDecorationStyle.DASHED })
           .fontSize(12)
       }
-
+      // 文本字符间距
       Text('LetterSpacing').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
       Text() {
         Span('span letter spacing')
           .letterSpacing(0)
           .fontSize(12)
       }
-
       Text() {
         Span('span letter spacing')
           .letterSpacing(-2)
           .fontSize(12)
       }
-
       Text() {
         Span('span letter spacing')
           .letterSpacing(3)
           .fontSize(12)
       }
-
+      // 文本大小写展示设置
       Text('Text Case').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
       Text() {
         Span('I am Lower-span').fontSize(12)
           .textCase(TextCase.LowerCase)
           .decoration({ type: TextDecorationType.None })
       }
-
       Text() {
         Span('I am Upper-span').fontSize(12)
           .textCase(TextCase.UpperCase)
           .decoration({ type: TextDecorationType.None })
       }
-
+      // 文本字体样式设置
       Text('FontStyle').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
       Text() {
         Span('I am FontStyle-Normal').fontSize(12)
           .fontStyle(FontStyle.Normal)
       }
-
       Text() {
         Span('I am FontStyle-Italic').fontSize(12)
           .fontStyle(FontStyle.Italic)
       }
-
+      // 文本字体粗细设置
       Text('FontWeight').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
       Text() {
         Span('I am FontWeight-Lighter').fontSize(12)
           .fontWeight(FontWeight.Lighter)
       }
-
       Text() {
         Span('I am FontWeight-Bold').fontSize(12)
           .fontWeight(FontWeight.Bold)
       }
-
+      // 文本行高设置
       Text('LineHeight').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
       Text() {
         Span('I am lineHeight default\n').fontSize(12)
@@ -412,7 +405,7 @@ struct SpanExample {
           .lineHeight(30)
       }
       .backgroundColor(Color.Gray)
-
+      // 文本样式设置
       Text('Font').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
       Text() {
         Span('span font 12 Bolder Italic')
@@ -423,7 +416,7 @@ struct SpanExample {
             family: "HarmonyOS Sans"
           })
       }
-
+      // span点击事件设置
       Text('span click event').fontSize(9).fontColor(0xCCCCCC).margin({ top: 12 })
       Text() {
         Span('Span default ').fontSize(12)
@@ -437,13 +430,14 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/AsPPnBczRdWfezGZnQgVBA/zh-cn_image_0000002562145945.png?HW-CC-KV=V1&HW-CC-Date=20260320T101505Z&HW-CC-Expire=86400&HW-CC-Sign=96C6FCA9FF5E890ACC49A3EF73B919966395F38A120A195448DB784D857ABCD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/AsPPnBczRdWfezGZnQgVBA/zh-cn_image_0000002562145945.png?HW-CC-KV=V1&HW-CC-Date=20260320T120318Z&HW-CC-Expire=86400&HW-CC-Sign=53772350AC908CAD074DD4DCF0A16FD746CB66CEB98D2CAB6CE1081B97B04075)
 
 ### 示例2（设置文本阴影）
 
 从API version 11开始，该示例通过[textShadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span#textshadow11)属性展示了文本设置阴影的效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct SpanExample {
@@ -475,28 +469,27 @@ struct SpanExample {
       offsetX: 100,
       offsetY: 0
     }]
-
   build() {
     Column({ space: 8 }) {
       Text() {
         Span('123456789').fontSize(50).textShadow(this.textShadows).fontColor(Color.Pink)
       }
-
       Text() {
-        Span('123456789')
+        Span('123456789') // span can inherit text shadow & font size from outer text
       }.fontSize(50).textShadow(this.textShadows).fontColor(Color.Pink)
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jrpEeXu8TvOuFuM7t86tjQ/zh-cn_image_0000002531106044.png?HW-CC-KV=V1&HW-CC-Date=20260320T101505Z&HW-CC-Expire=86400&HW-CC-Sign=00EADDF159CF5D7F70B1AFB767AA409C70CB6B9B5300613E2A591A819E434ED3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jrpEeXu8TvOuFuM7t86tjQ/zh-cn_image_0000002531106044.png?HW-CC-KV=V1&HW-CC-Date=20260320T120318Z&HW-CC-Expire=86400&HW-CC-Sign=FA93FB7CEC9779E6E29828FCD79C57E32C192717834B437702D0AC4C8CB11EB5)
 
 ### 示例3（设置背景样式）
 
 从API version 11开始，该示例通过[textBackgroundStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span#textbackgroundstyle11)属性展示了文本设置背景样式的效果。
 
 ```typescript
+// xxx.ets
 @Component
 @Entry
 struct SpanExample {
@@ -513,15 +506,15 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/RiUupb2KQ1WpQ_di5FUrJg/zh-cn_image_0000002531225978.png?HW-CC-KV=V1&HW-CC-Date=20260320T101505Z&HW-CC-Expire=86400&HW-CC-Sign=3F22460688AB5B4A2AFE65BE2EEE03DD6E010DF281B23F9173AF49FD708B0E8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/RiUupb2KQ1WpQ_di5FUrJg/zh-cn_image_0000002531225978.png?HW-CC-KV=V1&HW-CC-Date=20260320T120318Z&HW-CC-Expire=86400&HW-CC-Sign=79FCCA2DDC7B4700F3FE37541972B7F2265A2511DB39E87D0A8F016C11626D9B)
 
 ### 示例4（设置文本基线偏移量）
 
 从API version 12开始，该示例通过[baselineOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span#baselineoffset12)属性展示了文本设置不同基线偏移量的效果。
 
 ```typescript
+// xxx.ets
 import { LengthUnit, LengthMetrics } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct SpanExample {
@@ -535,7 +528,7 @@ struct SpanExample {
           Span('SpanTwo')
             .fontSize(10)
             .baselineOffset(new LengthMetrics(0, LengthUnit.VP))
-
+          // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
           ImageSpan($r("app.media.sky"))
             .width('80px')
             .baselineOffset(new LengthMetrics(-20, LengthUnit.VP))
@@ -549,4 +542,4 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/6hw_AUMoQIuF4R7X27nXkg/zh-cn_image_0000002562025961.png?HW-CC-KV=V1&HW-CC-Date=20260320T101505Z&HW-CC-Expire=86400&HW-CC-Sign=5064E14879F66632B7731412304290669CCE6E22C82C4B98A4627EEFB679B0ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/6hw_AUMoQIuF4R7X27nXkg/zh-cn_image_0000002562025961.png?HW-CC-KV=V1&HW-CC-Date=20260320T120318Z&HW-CC-Expire=86400&HW-CC-Sign=E48C32AE7B9B59C7825A298DD483FBF92BD88EA995BDFE3382867ED5CAFF9FC4)

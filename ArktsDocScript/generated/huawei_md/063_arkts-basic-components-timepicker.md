@@ -1,4 +1,4 @@
-# TimePicker-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker
 
 滑动选择时间的组件。
@@ -527,7 +527,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/SRRIRcn0SqmFoENKvMXKcg/zh-cn_image_0000002531225900.png?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=970F7C0946C641E79380DCC126CF48B4E43A2C77BA0B3C163237D48159538FD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/SRRIRcn0SqmFoENKvMXKcg/zh-cn_image_0000002531225900.png?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=A18B0322CEECF4D61EF3A694614DEE725B5D44E4FB54999097EEE5A35C86C0A8)
 
 ### 示例2（切换小时制）
 
@@ -565,7 +565,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Iop1biJARAKcXXjNDPLUVA/zh-cn_image_0000002562025883.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=29D656D39A349DE83FF3CCA7DCCB70124B46CA27B276A6F2E2FB1D9B8BE483DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Iop1biJARAKcXXjNDPLUVA/zh-cn_image_0000002562025883.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=4B143565EC8E0BF1868D51E2DC37D8C205703E33CE67B5D3452B2BC136FB00E5)
 
 ### 示例3（设置时间格式）
 
@@ -595,7 +595,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ebhUzimUQOSmBtpuQySWkg/zh-cn_image_0000002562145869.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=86C6DEBBA3E83D83B220B7622AA67E9EC08211DC5C2B97EBFFE54F6E6B49C4CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ebhUzimUQOSmBtpuQySWkg/zh-cn_image_0000002562145869.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=31294AD4FE3CDFA1B1ECADEF449C722A45012B0B3C2A118791641B8DEB605862)
 
 ### 示例4（设置循环滚动）
 
@@ -632,7 +632,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/I6TYpF4kQpytKuvIwfN4Lg/zh-cn_image_0000002531105968.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=971D5501FC2EB7E7A691E8A2F7A4B5A53C6863AFF0CB822E3F919E55E0F68C47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/I6TYpF4kQpytKuvIwfN4Lg/zh-cn_image_0000002531105968.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=9F60459940BE1D559C56FD96972C77090DC925B4C6BE26109990B089607889A1)
 
 ### 示例5（设置时间选择组件的起始时间）
 
@@ -663,7 +663,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/RKQzwBTTSLSBJc8TdTRXyQ/zh-cn_image_0000002531225902.png?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=B300CD3249203BCB4CC2C2A5206EAF81DE5FE88FCB9D31D0BF7CEB780BA453FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/RKQzwBTTSLSBJc8TdTRXyQ/zh-cn_image_0000002531225902.png?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=133C9121386EAC41301A89873EE64403A0DBA251CF4FD8B629726E70B8F01969)
 
 ### 示例6（设置时间选择组件的结束时间）
 
@@ -694,7 +694,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/9uNnLoU3Q0KsCcopiJ6BPw/zh-cn_image_0000002562025885.png?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=A1EDFA897A3D36A5F0C2FF8961BD67EAFA207CE006B6C15E1239D8827BC7342E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/9uNnLoU3Q0KsCcopiJ6BPw/zh-cn_image_0000002562025885.png?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=C10FE3ABD5D666A645DA170CCCD2989AC7BF8CC7E2DCFC85AB024BE2A66DDA93)
 
 ### 示例7（设置上午下午跟随时间联动）
 
@@ -726,4 +726,4 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/itwYbVJCTCyKv9bd2SXrvQ/zh-cn_image_0000002562145871.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=15E2B7F0D4E54387C97888996A9622CEB2F2F728F3BB7FE04363E2B2128D130C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/itwYbVJCTCyKv9bd2SXrvQ/zh-cn_image_0000002562145871.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=1B7E86E89CE48FF9E27D867B117F49A0C4C47155A7D032C1751BA02D1DE123F5)

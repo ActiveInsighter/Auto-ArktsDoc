@@ -77,6 +77,7 @@ Flex布局容器。
 该示例通过设置direction实现不同的子组件排列方向效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct FlexExample1 {
@@ -84,7 +85,7 @@ struct FlexExample1 {
     Column() {
       Column({ space: 5 }) {
         Text('direction:Row').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ direction: FlexDirection.Row }) {
+        Flex({ direction: FlexDirection.Row }) { // 子组件在容器主轴上行布局
           Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
           Text('2').width('20%').height(50).backgroundColor(0xD2B48C)
           Text('3').width('20%').height(50).backgroundColor(0xF5DEB3)
@@ -94,9 +95,8 @@ struct FlexExample1 {
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
-
         Text('direction:RowReverse').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ direction: FlexDirection.RowReverse }) {
+        Flex({ direction: FlexDirection.RowReverse }) { // 子组件在容器主轴上反向行布局
           Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
           Text('2').width('20%').height(50).backgroundColor(0xD2B48C)
           Text('3').width('20%').height(50).backgroundColor(0xF5DEB3)
@@ -106,9 +106,8 @@ struct FlexExample1 {
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
-
         Text('direction:Column').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ direction: FlexDirection.Column }) {
+        Flex({ direction: FlexDirection.Column }) { // 子组件在容器主轴上列布局
           Text('1').width('100%').height(40).backgroundColor(0xF5DEB3)
           Text('2').width('100%').height(40).backgroundColor(0xD2B48C)
           Text('3').width('100%').height(40).backgroundColor(0xF5DEB3)
@@ -118,9 +117,8 @@ struct FlexExample1 {
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
-
         Text('direction:ColumnReverse').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ direction: FlexDirection.ColumnReverse }) {
+        Flex({ direction: FlexDirection.ColumnReverse }) { // 子组件在容器主轴上反向列布局
           Text('1').width('100%').height(40).backgroundColor(0xF5DEB3)
           Text('2').width('100%').height(40).backgroundColor(0xD2B48C)
           Text('3').width('100%').height(40).backgroundColor(0xF5DEB3)
@@ -136,13 +134,14 @@ struct FlexExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Qod6lh2OQDiAZmiskKa8Ew/zh-cn_image_0000002531105844.png?HW-CC-KV=V1&HW-CC-Date=20260320T101413Z&HW-CC-Expire=86400&HW-CC-Sign=2D2EFDFB0AC430DE033ED7945763E732A30DEFD71278726BB5B4DDC28CBFBE8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/Qod6lh2OQDiAZmiskKa8Ew/zh-cn_image_0000002531105844.png?HW-CC-KV=V1&HW-CC-Date=20260320T120225Z&HW-CC-Expire=86400&HW-CC-Sign=15FA57CB9A3EF7A91D8669F2F4FD51F0C75FE84AFA54088C4BC70328CF4FD2ED)
 
 ### 示例2（子组件单/多行排列）
 
 该示例通过设置wrap实现子组件单行或多行的排列效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct FlexExample2 {
@@ -150,7 +149,7 @@ struct FlexExample2 {
     Column() {
       Column({ space: 5 }) {
         Text('Wrap').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ wrap: FlexWrap.Wrap }) {
+        Flex({ wrap: FlexWrap.Wrap }) { // 子组件多行布局
           Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
           Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
@@ -158,9 +157,8 @@ struct FlexExample2 {
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
-
         Text('NoWrap').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ wrap: FlexWrap.NoWrap }) {
+        Flex({ wrap: FlexWrap.NoWrap }) { // 子组件单行布局
           Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
           Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
           Text('3').width('50%').height(50).backgroundColor(0xF5DEB3)
@@ -168,9 +166,8 @@ struct FlexExample2 {
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
-
         Text('WrapReverse').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ wrap: FlexWrap.WrapReverse , direction:FlexDirection.Row }) {
+        Flex({ wrap: FlexWrap.WrapReverse , direction:FlexDirection.Row }) { // 子组件反向多行布局
           Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
           Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
           Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
@@ -185,17 +182,17 @@ struct FlexExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/mLyRrCgyQza7eYzXsWh8Rg/zh-cn_image_0000002531225778.png?HW-CC-KV=V1&HW-CC-Date=20260320T101413Z&HW-CC-Expire=86400&HW-CC-Sign=E3FB211DE6E254D0774CD92D61BAE9870805E7537D05C95A10A778F0D1EAA61E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/mLyRrCgyQza7eYzXsWh8Rg/zh-cn_image_0000002531225778.png?HW-CC-KV=V1&HW-CC-Date=20260320T120225Z&HW-CC-Expire=86400&HW-CC-Sign=04EAB205837F8578DAB9E2B5C9E6BEB606919FE3F0CF37194AC04CE0A8CD10E3)
 
 ### 示例3（子组件在主轴上的对齐格式）
 
 该示例通过设置justifyContent实现子组件在主轴上不同的对齐效果。
 
 ```typescript
+// xxx.ets
 @Component
 struct JustifyContentFlex {
   justifyContent : number = 0;
-
   build() {
     Flex({ justifyContent: this.justifyContent }) {
       Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
@@ -207,7 +204,6 @@ struct JustifyContentFlex {
     .backgroundColor(0xAFEEEE)
   }
 }
-
 @Entry
 @Component
 struct FlexExample3 {
@@ -215,39 +211,34 @@ struct FlexExample3 {
     Column() {
       Column({ space: 5 }) {
         Text('justifyContent:Start').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        JustifyContentFlex({ justifyContent: FlexAlign.Start })
-
+        JustifyContentFlex({ justifyContent: FlexAlign.Start }) // 子组件在容器主轴上首端对齐
         Text('justifyContent:Center').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        JustifyContentFlex({ justifyContent: FlexAlign.Center })
-
+        JustifyContentFlex({ justifyContent: FlexAlign.Center }) // 子组件在容器主轴上居中对齐
         Text('justifyContent:End').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        JustifyContentFlex({ justifyContent: FlexAlign.End })
-
+        JustifyContentFlex({ justifyContent: FlexAlign.End }) // 子组件在容器主轴上尾端对齐
         Text('justifyContent:SpaceBetween').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        JustifyContentFlex({ justifyContent: FlexAlign.SpaceBetween })
-
+        JustifyContentFlex({ justifyContent: FlexAlign.SpaceBetween }) // 子组件在容器主轴上均分容器布局，第一个子组件与行首对齐，最后一个子组件与行尾对齐。
         Text('justifyContent:SpaceAround').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        JustifyContentFlex({ justifyContent: FlexAlign.SpaceAround })
-
+        JustifyContentFlex({ justifyContent: FlexAlign.SpaceAround }) // 子组件在容器主轴上均分容器布局，第一个子组件到行首的距离和最后一个子组件到行尾的距离是相邻子组件之间距离的一半。
         Text('justifyContent:SpaceEvenly').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        JustifyContentFlex({ justifyContent: FlexAlign.SpaceEvenly })
+        JustifyContentFlex({ justifyContent: FlexAlign.SpaceEvenly }) // 子组件在容器主轴上均分容器布局，子组件之间的距离与第一子组件到行首、最后一个子组件到行尾的距离相等
       }.width('100%').margin({ top: 5 })
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/15-v2Eh4SCyHAsy8HvxPLw/zh-cn_image_0000002562025761.png?HW-CC-KV=V1&HW-CC-Date=20260320T101413Z&HW-CC-Expire=86400&HW-CC-Sign=20D1B17DF38F865C9B09FF27469B75597973EF71394AE9DEC426687A6C20AB30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/15-v2Eh4SCyHAsy8HvxPLw/zh-cn_image_0000002562025761.png?HW-CC-KV=V1&HW-CC-Date=20260320T120225Z&HW-CC-Expire=86400&HW-CC-Sign=1E3DA8221E06C568A3E16235E77C69B89227DEFCF02FF4C12E4833D1BC5571AF)
 
 ### 示例4（子组件在交叉轴上的对齐方式）
 
 该示例通过设置alignItems实现子组件在交叉轴上的不同的对齐效果。
 
 ```typescript
+// xxx.ets
 @Component
 struct AlignItemsFlex {
   alignItems : number = 0;
-
   build() {
     Flex({ alignItems: this.alignItems }) {
       Text('1').width('33%').height(30).backgroundColor(0xF5DEB3)
@@ -259,7 +250,6 @@ struct AlignItemsFlex {
     .backgroundColor(0xAFEEEE)
   }
 }
-
 @Entry
 @Component
 struct FlexExample4 {
@@ -267,39 +257,34 @@ struct FlexExample4 {
     Column() {
       Column({ space: 5 }) {
         Text('alignItems:Auto').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignItemsFlex({ alignItems: ItemAlign.Auto })
-
+        AlignItemsFlex({ alignItems: ItemAlign.Auto }) // 子组件在容器交叉轴上首部对齐
         Text('alignItems:Start').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignItemsFlex({ alignItems: ItemAlign.Start })
-
+        AlignItemsFlex({ alignItems: ItemAlign.Start }) // 子组件在容器交叉轴上首部对齐
         Text('alignItems:Center').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignItemsFlex({ alignItems: ItemAlign.Center })
-
+        AlignItemsFlex({ alignItems: ItemAlign.Center }) // 子组件在容器交叉轴上居中对齐
         Text('alignItems:End').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignItemsFlex({ alignItems: ItemAlign.End })
-
+        AlignItemsFlex({ alignItems: ItemAlign.End }) // 子组件在容器交叉轴上尾部对齐
         Text('alignItems:Stretch').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignItemsFlex({ alignItems: ItemAlign.Stretch })
-
+        AlignItemsFlex({ alignItems: ItemAlign.Stretch }) // 子组件在容器交叉轴上拉伸填充
         Text('alignItems:Baseline').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignItemsFlex({ alignItems: ItemAlign.Baseline })
+        AlignItemsFlex({ alignItems: ItemAlign.Baseline }) // 子组件在容器交叉轴上与文本基线对齐
       }.width('100%').margin({ top: 5 })
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/OzV2VtXJRJKuIxmSDXf2iw/zh-cn_image_0000002562145747.png?HW-CC-KV=V1&HW-CC-Date=20260320T101413Z&HW-CC-Expire=86400&HW-CC-Sign=CE04A506D5039C25EB7D7A8E8EBC7B9B64654ADE3A2A33B8400B728AE8DC99DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/OzV2VtXJRJKuIxmSDXf2iw/zh-cn_image_0000002562145747.png?HW-CC-KV=V1&HW-CC-Date=20260320T120225Z&HW-CC-Expire=86400&HW-CC-Sign=40F878EA82BD48D142592DA50663D3B54246EB96364269DDAFF5DC66A2A8192C)
 
 ### 示例5（多行内容的对齐方式）
 
 该示例通过设置alignContent实现多行内容的不同对齐效果。
 
 ```typescript
+// xxx.ets
 @Component
 struct AlignContentFlex {
   alignContent: number = 0;
-
   build() {
     Flex({ wrap: FlexWrap.Wrap, alignContent: this.alignContent }) {
       Text('1').width('50%').height(20).backgroundColor(0xF5DEB3)
@@ -311,7 +296,6 @@ struct AlignContentFlex {
     .backgroundColor(0xAFEEEE)
   }
 }
-
 @Entry
 @Component
 struct FlexExample5 {
@@ -319,25 +303,20 @@ struct FlexExample5 {
     Column() {
       Column({ space: 5 }) {
         Text('alignContent:Start').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignContentFlex({ alignContent: FlexAlign.Start })
-
+        AlignContentFlex({ alignContent: FlexAlign.Start }) // 多行布局下子组件首部对齐
         Text('alignContent:Center').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignContentFlex({ alignContent: FlexAlign.Center })
-
+        AlignContentFlex({ alignContent: FlexAlign.Center }) // 多行布局下子组件居中对齐
         Text('alignContent:End').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignContentFlex({ alignContent: FlexAlign.End })
-
+        AlignContentFlex({ alignContent: FlexAlign.End }) // 多行布局下子组件尾部对齐
         Text('alignContent:SpaceBetween').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignContentFlex({ alignContent: FlexAlign.SpaceBetween })
-
+        AlignContentFlex({ alignContent: FlexAlign.SpaceBetween }) // 多行布局下第一行子组件与列首对齐，最后一行子组件与列尾对齐
         Text('alignContent:SpaceAround').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        AlignContentFlex({ alignContent: FlexAlign.SpaceAround })
-
+        AlignContentFlex({ alignContent: FlexAlign.SpaceAround }) // 多行布局下第一行子组件到列首的距离和最后一行子组件到列尾的距离是相邻行之间距离的一半
         Text('alignContent:SpaceEvenly').fontSize(9).fontColor(0xCCCCCC).width('90%')
         Flex({
           wrap: FlexWrap.Wrap,
           alignContent: FlexAlign.SpaceEvenly
-        }) {
+        }) { // 多行布局下相邻行之间的距离与第一行子组件到列首的距离、最后一行子组件到列尾的距离完全一样
           Text('1').width('50%').height(20).backgroundColor(0xF5DEB3)
           Text('2').width('50%').height(20).backgroundColor(0xD2B48C)
           Text('3').width('50%').height(20).backgroundColor(0xF5DEB3)
@@ -353,7 +332,7 @@ struct FlexExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/JyQVxt15Rsyg6jeam5l_mQ/zh-cn_image_0000002531105846.png?HW-CC-KV=V1&HW-CC-Date=20260320T101413Z&HW-CC-Expire=86400&HW-CC-Sign=13BA1B2F42FBDAC92FAAE078E01C598F1974930FDA1F30C451E391760487CBEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/JyQVxt15Rsyg6jeam5l_mQ/zh-cn_image_0000002531105846.png?HW-CC-KV=V1&HW-CC-Date=20260320T120225Z&HW-CC-Expire=86400&HW-CC-Sign=5D1CC476B0611A58D9E40B57F50C26D78163498D2C2A2541E03053ADDC7F3989)
 
 ### 示例6（子组件单/多行排列时的主/交叉轴间距）
 
@@ -361,7 +340,6 @@ struct FlexExample5 {
 
 ```typescript
 import {LengthMetrics} from '@kit.ArkUI';
-
 @Entry
 @Component
 struct FlexExample2 {
@@ -369,7 +347,7 @@ struct FlexExample2 {
     Column() {
       Column({ space: 5 }) {
         Text('Wrap').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ wrap: FlexWrap.Wrap, space: {main: LengthMetrics.px(50), cross: LengthMetrics.px(50)} }) {
+        Flex({ wrap: FlexWrap.Wrap, space: {main: LengthMetrics.px(50), cross: LengthMetrics.px(50)} }) { // 子组件多行布局
           Text('1').width('40%').height(50).backgroundColor(0xF5DEB3)
           Text('2').width('40%').height(50).backgroundColor(0xD2B48C)
           Text('3').width('40%').height(50).backgroundColor(0xD2B48C)
@@ -377,9 +355,8 @@ struct FlexExample2 {
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
-
         Text('NoWrap').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ wrap: FlexWrap.NoWrap, space: {main: LengthMetrics.px(50), cross: LengthMetrics.px(50)} }) {
+        Flex({ wrap: FlexWrap.NoWrap, space: {main: LengthMetrics.px(50), cross: LengthMetrics.px(50)} }) { // 子组件单行布局
           Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
           Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
           Text('3').width('50%').height(50).backgroundColor(0xF5DEB3)
@@ -387,9 +364,8 @@ struct FlexExample2 {
         .width('90%')
         .padding(10)
         .backgroundColor(0xAFEEEE)
-
         Text('WrapReverse').fontSize(9).fontColor(0xCCCCCC).width('90%')
-        Flex({ wrap: FlexWrap.WrapReverse, direction:FlexDirection.Row, space: {main: LengthMetrics.px(50), cross: LengthMetrics.px(50)} }) {
+        Flex({ wrap: FlexWrap.WrapReverse, direction:FlexDirection.Row, space: {main: LengthMetrics.px(50), cross: LengthMetrics.px(50)} }) { // 子组件反向多行布局
           Text('1').width('40%').height(50).backgroundColor(0xF5DEB3)
           Text('2').width('40%').height(50).backgroundColor(0xD2B48C)
           Text('3').width('40%').height(50).backgroundColor(0xD2B48C)
@@ -404,7 +380,7 @@ struct FlexExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/9qOP2OR_Q8qBrcZ59-AMnw/zh-cn_image_0000002531225780.png?HW-CC-KV=V1&HW-CC-Date=20260320T101413Z&HW-CC-Expire=86400&HW-CC-Sign=1D420242D517A1B4C30D7A4BBF394E983CD913EDAA75AEEC558A6163AA267AEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/9qOP2OR_Q8qBrcZ59-AMnw/zh-cn_image_0000002531225780.png?HW-CC-KV=V1&HW-CC-Date=20260320T120225Z&HW-CC-Expire=86400&HW-CC-Sign=E478119DF7229F92E67761C769B59989ED5D3C6100E739AAA3236CB6F77EE34A)
 
 ### 示例7（宽度自适应的Flex容器）
 
@@ -414,14 +390,12 @@ struct FlexExample2 {
 @Component
 struct Demo {
   @Require @Prop text: string
-
   build() {
     Button() {
       Flex() {
         Image($r('sys.media.ohos_ic_public_voice'))
           .width(16)
           .height(16)
-
         Row() {
           Text(this.text)
             .margin({
@@ -432,7 +406,6 @@ struct Demo {
             .maxLines(1)
             .textOverflow({ overflow: TextOverflow.Ellipsis })
         }
-
         Image($r('sys.media.ohos_ic_public_sound'))
           .width(16)
           .height(16)
@@ -445,7 +418,6 @@ struct Demo {
     .width('auto')
   }
 }
-
 @Entry
 @Component
 struct Index {
@@ -460,4 +432,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ITRe5Wz5TX21VwcP-5rhrw/zh-cn_image_0000002562025763.png?HW-CC-KV=V1&HW-CC-Date=20260320T101413Z&HW-CC-Expire=86400&HW-CC-Sign=310C5E3ACA72C06A7C8DF621589A720852EA69C21D6228270592100E6477121B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ITRe5Wz5TX21VwcP-5rhrw/zh-cn_image_0000002562025763.png?HW-CC-KV=V1&HW-CC-Date=20260320T120225Z&HW-CC-Expire=86400&HW-CC-Sign=DAB2471B307CD397103416B585F988BC47F7D83DD765D03E6D53087F323CCB7C)

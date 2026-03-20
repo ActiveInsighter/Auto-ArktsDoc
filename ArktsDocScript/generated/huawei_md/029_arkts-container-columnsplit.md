@@ -92,7 +92,6 @@ divider(value: ColumnSplitDividerStyle | null)
 本示例展示如何设置可拖动的ColumnSplit组件及其效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ColumnSplitExample {
@@ -107,21 +106,20 @@ struct ColumnSplitExample {
         Text('5').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
       .borderWidth(1)
-      .resizeable(true) // 可拖动
+      .resizeable(true)
       .width('90%').height('60%')
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jGfuHj_MRUOrSRZGSs61pg/zh-cn_image_0000002531225790.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101046Z&HW-CC-Expire=86400&HW-CC-Sign=7E0BCC87499795DF3F4620181D583C52619893B0D605135110AF52F3B6C798CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jGfuHj_MRUOrSRZGSs61pg/zh-cn_image_0000002531225790.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120233Z&HW-CC-Expire=86400&HW-CC-Sign=5741CCB3A91C3979C708642D1826FDD7E4FFF8E872D343FB7411EC348F26E3DF)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
 本示例展示如何设置带有间隔的ColumnSplit组件及其效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ColumnSplitDividerExample {
@@ -136,7 +134,7 @@ struct ColumnSplitDividerExample {
         Text('5').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
       .borderWidth(1)
-      .divider({ startMargin: 5, endMargin: 5 }) // 设置间隔
+      .divider({ startMargin: 5, endMargin: 5 })
       .width('90%')
       .height('60%')
     }.width('100%')
@@ -144,4 +142,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/u0xIIJqXSrCZmAlZtrgZCw/zh-cn_image_0000002562025773.png?HW-CC-KV=V1&HW-CC-Date=20260320T101046Z&HW-CC-Expire=86400&HW-CC-Sign=991AD41E8E63BF86A44C6ACDDA4C5F0ECC805426A7CCC5B66F17869DA5958292)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/u0xIIJqXSrCZmAlZtrgZCw/zh-cn_image_0000002562025773.png?HW-CC-KV=V1&HW-CC-Date=20260320T120233Z&HW-CC-Expire=86400&HW-CC-Sign=A649502B129DBA6A665E1682231280EA2D2A5F4988079391E111E7EEBC667EFD)

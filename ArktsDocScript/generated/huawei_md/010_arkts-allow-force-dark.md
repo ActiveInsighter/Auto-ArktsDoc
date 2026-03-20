@@ -1,69 +1,28 @@
 # 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-allow-force-dark
 
-设置组件是否使用反色能力，反色能力是在深浅色切换时自动对颜色值进行反色或变换，开发者可以通过主动设置不启用反色算法，以保持在深浅色切换时的原有逻辑。
+javascript:void(0);
 
-> **说明**
-> 本模块首批接口从API version 21开始支持。后续版本的新增接口，采用上角标单独标记该接口的起始版本。
+简体中文
 
-## allowForceDark
+- 简体中文
+- English
+- Русский
 
-allowForceDark(value: boolean): T
+[下载 App](https://developer.huawei.com/consumer/cn/huawei-app/)
 
-设置组件是否使用反色能力。
+https://developer.huawei.com/consumer/cn/
 
-> **说明**
-> 当组件主动设置不使用反色能力时，组件及其所有子组件均不使用反色能力，不受父组件或祖先组件主动设置使用反色能力的影响。
+[文档](https://developer.huawei.com/consumer/cn/doc/) [管理中心](https://developer.huawei.com/consumer/cn/console)
 
-**元服务API：** 从API version 21开始，该接口支持在元服务中使用。
+搜索
 
-**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+只在 中搜索 只搜索章节标题
 
-**参数：**
+请输入您想要搜索的关键词
 
-| 参数名 | 类型 | 必填 | 说明 |
-| --- | --- | --- | --- |
-| value | boolean | 是 | 组件是否使用反色能力。true：组件使用反色能力；false：组件不使用反色能力。 |
+- 智能客服 你问我答，随时在线为你解决问题
 
-**返回值：**
+- 合作咨询 我们的专家服务团队将竭诚为您提供专业的合作咨询服务
 
-| 类型 | 说明 |
-| --- | --- |
-| T | 返回当前组件。 |
-
-## 示例
-
-```typescript
-// 组件添加allowForceDark(false)属性后，说明对当前组件不使用反色相关能力。
-@Entry
-@Component
-struct ComponentPage {
-  build() {
-    Column() {
-      Column() {
-        Text("Hello World")
-          .fontSize(20)
-          .fontColor(Color.Blue)
-          .onClick(() => {
-            console.info(`Text is clicked`);
-          })
-      }
-      .allowForceDark(false) // Column及其子组件Text不生效反色能力，不受父组件Column使用反色能力的影响。
-      Row() {
-        Button('BUTTON')
-          .backgroundColor(Color.Grey)
-          .allowForceDark(true)
-          .onClick(() => {
-            console.info(`Button is clicked`);
-          })
-      }
-      .allowForceDark(false) // Row及其子组件Button不生效反色能力，不受父组件Column使用反色能力的影响。
-    }
-    .allowForceDark(true)
-    .width('100%')
-    .height('100%')
-  }
-}
-```
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Zt77rql7SO6W4W26ZmyAjA/zh-cn_image_0000002562025659.png?HW-CC-KV=V1&HW-CC-Date=20260320T101403Z&HW-CC-Expire=86400&HW-CC-Sign=2E6877A02B1FD49620A522942C91D72E5E4A4992ED1961B6BD36E6BC8FA24B91)
+- 解决方案 精准高效的一站式服务支持，助力开发者商业成功

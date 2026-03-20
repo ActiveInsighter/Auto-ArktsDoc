@@ -1,5 +1,21 @@
-# 文档中心
+# TextPicker-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker
+
+javascript:void(0);
+
+简体中文
+
+- 简体中文
+- English
+- Русский
+
+[下载 App](https://developer.huawei.com/consumer/cn/huawei-app/)
+
+https://developer.huawei.com/consumer/cn/
+
+[文档](https://developer.huawei.com/consumer/cn/doc/) [管理中心](https://developer.huawei.com/consumer/cn/console)
+
+您当前正在浏览HarmonyOS最新文档，覆盖已发布的所有API版本，可在API参考中[筛选您使用的API版本](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/doc-updates#section1810915471038)。详细的版本配套关系请参考[版本说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion)。
 
 滑动选择文本、图片或图文混排内容的组件，用户可以按需创建单列数据选择器、多列非联动数据选择器和多列联动数据选择器。
 
@@ -455,9 +471,9 @@ defaultTextStyle(style: TextPickerTextStyle)
 
 ```typescript
 "requestPermissions": [
-   {
-      "name": "ohos.permission.VIBRATE",
-   }
+ {
+ "name": "ohos.permission.VIBRATE",
+ }
 ]
 ```
 
@@ -481,9 +497,9 @@ enableHapticFeedback(enable: Optional<boolean>)
 
 ```typescript
 "requestPermissions": [
-   {
-      "name": "ohos.permission.VIBRATE",
-   }
+ {
+ "name": "ohos.permission.VIBRATE",
+ }
 ]
 ```
 
@@ -746,314 +762,323 @@ type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: num
 从API version 18开始，新增了[TextPickerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#textpickeroptions对象说明)的columnWidths属性。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 class Bottom {
-  bottom: number = 50;
+ bottom: number = 50;
 }
+
 let bott: Bottom = new Bottom();
 @Entry
 @Component
 struct TextPickerExample {
-  private select: number = 1;
-  private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
-  private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4'];
-  private pefruits: string[] = ['peach1', 'peach2', 'peach3', 'peach4'];
-  private multi: string[][] = [this.apfruits, this.orfruits, this.pefruits];
-  private cascade: TextCascadePickerRangeContent[] = [
-    {
-      text: '辽宁省',
-      children: [{ text: '沈阳市', children: [{ text: '沈河区' }, { text: '和平区' }, { text: '浑南区' }] },
-        { text: '大连市', children: [{ text: '中山区' }, { text: '金州区' }, { text: '长海县' }] }]
-    },
-    {
-      text: '吉林省',
-      children: [{ text: '长春市', children: [{ text: '南关区' }, { text: '宽城区' }, { text: '朝阳区' }] },
-        { text: '四平市', children: [{ text: '铁西区' }, { text: '铁东区' }, { text: '梨树县' }] }]
-    },
-    {
-      text: '黑龙江省',
-      children: [{ text: '哈尔滨市', children: [{ text: '道里区' }, { text: '道外区' }, { text: '南岗区' }] },
-        { text: '牡丹江市', children: [{ text: '东安区' }, { text: '西安区' }, { text: '爱民区' }] }]
-    }
-  ];
-  private singleColumnWidths: LengthMetrics[] = [
-    LengthMetrics.percent(50)
-  ];
-  private multipleColumnWidths: LengthMetrics[] = [
-    LengthMetrics.vp(100),
-    LengthMetrics.vp(200),
-    LengthMetrics.vp(100)
-  ];
-  private cascadeColumnWidths: LengthMetrics[] = [
-    LengthMetrics.percent(20),
-    LengthMetrics.percent(30),
-    LengthMetrics.percent(50)
-  ];
-  build() {
-    Column() {
-      TextPicker({ range: this.apfruits, selected: this.select, columnWidths: this.singleColumnWidths })
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index);
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
-        }).margin(bott)
-        .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
-          console.info('Picker item enter selected area, value: ' + value + ', index: ' + index);
-        })
-      TextPicker({ range: this.multi, columnWidths: this.multipleColumnWidths })
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('TextPicker 多列:onScrollStop ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-        }).margin(bott)
-        .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
-          console.info('TextPicker 多列:onEnterSelectedArea ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-        })
-      TextPicker({ range: this.cascade, columnWidths: this.cascadeColumnWidths })
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('TextPicker 多列联动:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('TextPicker 多列联动:onScrollStop ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-        })
-        .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
-          console.info('TextPicker 多列联动:onEnterSelectedArea ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
-        })
-    }
-  }
+ private select: number = 1;
+ private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
+ private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4'];
+ private pefruits: string[] = ['peach1', 'peach2', 'peach3', 'peach4'];
+ private multi: string[][] = [this.apfruits, this.orfruits, this.pefruits];
+ private cascade: TextCascadePickerRangeContent[] = [
+ {
+ text: '辽宁省',
+ children: [{ text: '沈阳市', children: [{ text: '沈河区' }, { text: '和平区' }, { text: '浑南区' }] },
+ { text: '大连市', children: [{ text: '中山区' }, { text: '金州区' }, { text: '长海县' }] }]
+ },
+ {
+ text: '吉林省',
+ children: [{ text: '长春市', children: [{ text: '南关区' }, { text: '宽城区' }, { text: '朝阳区' }] },
+ { text: '四平市', children: [{ text: '铁西区' }, { text: '铁东区' }, { text: '梨树县' }] }]
+ },
+ {
+ text: '黑龙江省',
+ children: [{ text: '哈尔滨市', children: [{ text: '道里区' }, { text: '道外区' }, { text: '南岗区' }] },
+ { text: '牡丹江市', children: [{ text: '东安区' }, { text: '西安区' }, { text: '爱民区' }] }]
+ }
+ ];
+ private singleColumnWidths: LengthMetrics[] = [
+ LengthMetrics.percent(50)
+ ];
+
+ private multipleColumnWidths: LengthMetrics[] = [
+ LengthMetrics.vp(100),
+ LengthMetrics.vp(200),
+ LengthMetrics.vp(100)
+ ];
+
+ private cascadeColumnWidths: LengthMetrics[] = [
+ LengthMetrics.percent(20),
+ LengthMetrics.percent(30),
+ LengthMetrics.percent(50)
+ ];
+ build() {
+ Column() {
+
+ TextPicker({ range: this.apfruits, selected: this.select, columnWidths: this.singleColumnWidths })
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('Picker item changed, value: ' + value + ', index: ' + index);
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
+ }).margin(bott)
+ .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
+ console.info('Picker item enter selected area, value: ' + value + ', index: ' + index);
+ })
+
+ TextPicker({ range: this.multi, columnWidths: this.multipleColumnWidths })
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('TextPicker 多列:onScrollStop ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
+ }).margin(bott)
+ .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
+ console.info('TextPicker 多列:onEnterSelectedArea ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
+ })
+
+ TextPicker({ range: this.cascade, columnWidths: this.cascadeColumnWidths })
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('TextPicker 多列联动:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('TextPicker 多列联动:onScrollStop ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
+ })
+ .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
+ console.info('TextPicker 多列联动:onEnterSelectedArea ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
+ })
+ }
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/nQtqd_0fT-SB_nYYPOgjEw/zh-cn_image_0000002562025877.png?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=5718BB176A1D17EE5D1FC13C978F2AE47DF6E7FF0A195A1E860ACA874F58FF19)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/nQtqd_0fT-SB_nYYPOgjEw/zh-cn_image_0000002562025877.png?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=33060170320C8FE2B69EE0E2FAB7131E84FEB7FEFB547BA6AC739114A20F252D)
 
 ### 示例2（设置文本样式）
 
 该示例使用[disappearTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#disappeartextstyle10)、[textStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#textstyle10)、[selectedTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#selectedtextstyle10)设置文本选择器中的文本样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  private select: number = 0;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-  build() {
-    Column() {
-      TextPicker({
-        range: this.fruits,
-        selected: this.select,
-        value: this.fruits[this.select]
-      })
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index);
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
-        })
-        .disappearTextStyle({ color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } })
-        .textStyle({ color: Color.Black, font: { size: 20, weight: FontWeight.Normal } })
-        .selectedTextStyle({ color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } })
-        .defaultPickerItemHeight(50)
-        .canLoop(false)
-        .selectedIndex(2)
-    }.width('100%').height('100%')
-  }
+ private select: number = 0;
+ private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+
+ build() {
+ Column() {
+ TextPicker({
+ range: this.fruits,
+ selected: this.select,
+ value: this.fruits[this.select]
+ })
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('Picker item changed, value: ' + value + ', index: ' + index);
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
+ })
+ .disappearTextStyle({ color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } })
+ .textStyle({ color: Color.Black, font: { size: 20, weight: FontWeight.Normal } })
+ .selectedTextStyle({ color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } })
+ .defaultPickerItemHeight(50)
+ .canLoop(false)
+ .selectedIndex(2)
+ }.width('100%').height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/aa_zRMjGQmeaK9gmu_eKKg/zh-cn_image_0000002562145863.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=1797B5987271A3EEDFF92F093088BCAAFD8395FC76A66B43C6D3BE03EA72D319)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/aa_zRMjGQmeaK9gmu_eKKg/zh-cn_image_0000002562145863.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=FB9BA9EAF70CAE0D397BB3A0BEA33B367FC0E94B3688AD0717FB34C7DD90B182)
 
 ### 示例3（设置无分割线样式）
 
 该示例通过配置[divider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#divider12)为null实现无分割线样式的文本选择器。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  private select: number = 0;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-  build() {
-    Column() {
-      TextPicker({ range: this.fruits, selected: this.select })
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index);
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
-        })
-        .disappearTextStyle({color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}})
-        .textStyle({color: Color.Black, font: {size: 20, weight: FontWeight.Normal}})
-        .selectedTextStyle({color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}})
-        .divider(null)
-    }.width('100%').height('100%')
-  }
+ private select: number = 0;
+ private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+
+ build() {
+ Column() {
+ TextPicker({ range: this.fruits, selected: this.select })
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('Picker item changed, value: ' + value + ', index: ' + index);
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
+ })
+ .disappearTextStyle({color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}})
+ .textStyle({color: Color.Black, font: {size: 20, weight: FontWeight.Normal}})
+ .selectedTextStyle({color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}})
+ .divider(null)
+ }.width('100%').height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/gLgP1yXuTCulupyP3ZP8NQ/zh-cn_image_0000002531105962.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=95A791BC5D52CB62BF033092ADD7C33610242D8C919F4BD99AA2468DD258CFA4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/gLgP1yXuTCulupyP3ZP8NQ/zh-cn_image_0000002531105962.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=CF0803EB7B82E8A972CAF991AC166FA864054940BE95740E4D3A21DBD6360751)
 
 ### 示例4（设置分割线样式）
 
 该示例通过配置divider的DividerOptions设置文本选择器的分割线样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  private select: number = 1;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-  build() {
-    Column() {
-      TextPicker({ range: this.fruits, selected: this.select })
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index);
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
-        })
-        .disappearTextStyle({color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}})
-        .textStyle({color: Color.Black, font: {size: 20, weight: FontWeight.Normal}})
-        .selectedTextStyle({color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}})
-        .divider({
-          strokeWidth: 10,
-          color: Color.Red,
-          startMargin: 10,
-          endMargin: 20
-        } as DividerOptions)
-    }.width('100%').height('100%')
-  }
+ private select: number = 1;
+ private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+
+ build() {
+ Column() {
+ TextPicker({ range: this.fruits, selected: this.select })
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('Picker item changed, value: ' + value + ', index: ' + index);
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
+ })
+ .disappearTextStyle({color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}})
+ .textStyle({color: Color.Black, font: {size: 20, weight: FontWeight.Normal}})
+ .selectedTextStyle({color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}})
+ .divider({
+ strokeWidth: 10,
+ color: Color.Red,
+ startMargin: 10,
+ endMargin: 20
+ } as DividerOptions)
+ }.width('100%').height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/yEm5WKkBRL2DrfyCVT5gFg/zh-cn_image_0000002531225896.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=216D6263074C71429A96616735B7096C1E8AD8BFE78CFC6B8CC3F8E2AF05C37C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/yEm5WKkBRL2DrfyCVT5gFg/zh-cn_image_0000002531225896.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=992D44A949657C1F17F098CDDF845E1A93C6A0097549ED01A72A0B9BEAB86783)
 
 ### 示例5（设置渐隐效果）
 
 该示例通过配置[gradientHeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#gradientheight12)设置文本选择器的渐隐效果高度。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  private select: number = 1;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-  build() {
-    Column() {
-      TextPicker({ range: this.fruits, selected: this.select })
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index);
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
-        })
-        .disappearTextStyle({color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}})
-        .textStyle({color: Color.Black, font: {size: 20, weight: FontWeight.Normal}})
-        .selectedTextStyle({color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}})
-        .gradientHeight(100)
-    }.width('100%').height('100%')
-  }
+ private select: number = 1;
+ private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+
+ build() {
+ Column() {
+ TextPicker({ range: this.fruits, selected: this.select })
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('Picker item changed, value: ' + value + ', index: ' + index);
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
+ })
+ .disappearTextStyle({color: Color.Red, font: {size: 15, weight: FontWeight.Lighter}})
+ .textStyle({color: Color.Black, font: {size: 20, weight: FontWeight.Normal}})
+ .selectedTextStyle({color: Color.Blue, font: {size: 30, weight: FontWeight.Bolder}})
+ .gradientHeight(100)
+ }.width('100%').height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/UlFwemuPRmixV-AhSutMfQ/zh-cn_image_0000002562025879.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=940475FEA5C9655210391E2365EB39BB37ABFB70596CCC8268F1382400A1467A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/UlFwemuPRmixV-AhSutMfQ/zh-cn_image_0000002562025879.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=A2F601C0F906929DA186882929980FE5973DF61E3F7FC6D42CCD7A52F3C1A998)
 
 ### 示例6（设置选择项高度）
 
 该示例通过配置[defaultPickerItemHeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#defaultpickeritemheight)设置选择项的高度。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  private select: number = 1;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-  build() {
-    Column() {
-      TextPicker({ range: this.fruits, selected: this.select })
-        .defaultPickerItemHeight(60)
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index);
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
-        })
-    }.width('100%').height('100%')
-  }
+ private select: number = 1;
+ private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+
+ build() {
+ Column() {
+ TextPicker({ range: this.fruits, selected: this.select })
+ .defaultPickerItemHeight(60)
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('Picker item changed, value: ' + value + ', index: ' + index);
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
+ })
+ }.width('100%').height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/DKpmsWcXQFSKFW9tdpTi6g/zh-cn_image_0000002562145865.png?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=84F7B1638051F36F81BE6B81E22D933A47AED6BEF6864C8072A44FB499A9EFC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/DKpmsWcXQFSKFW9tdpTi6g/zh-cn_image_0000002562145865.png?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=F0B0CD3340E4ECFC5FC9DC7E3BAD22522CB0E279FBD86ABBBDD75BCF22EE3ACC)
 
 ### 示例7（设置循环滚动）
 
 该示例通过配置[canLoop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#canloop10)设置文本选择器是否循环滚动。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  @State isLoop: boolean = false;
-  private select: number = 1;
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-  build() {
-    Column() {
-      TextPicker({ range: this.fruits, selected: this.select })
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index);
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
-        })
-        .canLoop(this.isLoop)
-      Row() {
-        Text('循环滚动').fontSize(20)
-        Toggle({ type: ToggleType.Switch, isOn: false })
-          .onChange((isOn: boolean) => {
-            this.isLoop = isOn;
-          })
-      }.position({ x: '60%', y: '40%' })
-    }.width('100%')
-  }
+ @State isLoop: boolean = false;
+ private select: number = 1;
+ private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+
+ build() {
+ Column() {
+ TextPicker({ range: this.fruits, selected: this.select })
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('Picker item changed, value: ' + value + ', index: ' + index);
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
+ })
+ .canLoop(this.isLoop)
+
+ Row() {
+ Text('循环滚动').fontSize(20)
+
+ Toggle({ type: ToggleType.Switch, isOn: false })
+ .onChange((isOn: boolean) => {
+ this.isLoop = isOn;
+ })
+ }.position({ x: '60%', y: '40%' })
+
+ }.width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LmtrGqfiSMusr4n_WzEkEA/zh-cn_image_0000002531105964.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=47D501801EAAA474E735FE4AA468685705C1C33AAF17BE3AE4077A58C280F0E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LmtrGqfiSMusr4n_WzEkEA/zh-cn_image_0000002531105964.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=212FBA8AC2AEC2D0C59112E45527114D7342FA7FD6702259DBBC67F55213CFC7)
 
 ### 示例8（设置选中项索引值）
 
 该示例通过配置[selectedIndex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#selectedindex10)设置默认选中项的索引值。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-  build() {
-    Column() {
-      TextPicker({ range: this.fruits, selected: 1 })
-        .selectedIndex(2)
-        .onChange((value: string | string[], index: number | number[]) => {
-          console.info('Picker item changed, value: ' + value + ', index: ' + index);
-        })
-        .onScrollStop((value: string | string[], index: number | number[]) => {
-          console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
-        })
-    }.width('100%').height('100%')
-  }
+ private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
+
+ build() {
+ Column() {
+ TextPicker({ range: this.fruits, selected: 1 })
+ .selectedIndex(2)
+ .onChange((value: string | string[], index: number | number[]) => {
+ console.info('Picker item changed, value: ' + value + ', index: ' + index);
+ })
+ .onScrollStop((value: string | string[], index: number | number[]) => {
+ console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
+ })
+ }.width('100%').height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/UmqO-m2tRh2DrWZS4d-pWA/zh-cn_image_0000002531225898.png?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=B46562444CFE46CCE1FC309F7E4E319D4FAB10FF80AFB6B13CA4A5373A60B96C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/UmqO-m2tRh2DrWZS4d-pWA/zh-cn_image_0000002531225898.png?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=FEBB0C18D8E363F96EE98320F00B74AEA23F65E913AE55CB213021C1E9387A93)
 
 ### 示例9（设置关闭文本样式变化动效与对应文本样式）
 
@@ -1062,34 +1087,34 @@ struct TextPickerExample {
 从API version 15开始，新增disableTextStyleAnimation、defaultTextStyle接口。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  private select: number = 1;
-  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE'];
-  build() {
-    Column() {
-      TextPicker({
-        range: this.fruits,
-        selected: this.select,
-        value: this.fruits[this.select]
-      })
-        .disableTextStyleAnimation(true)
-        .margin({ bottom: 30 })
-      TextPicker({
-        range: this.fruits,
-        selected: this.select,
-        value: this.fruits[this.select]
-      })
-        .disableTextStyleAnimation(true)
-        .defaultTextStyle({ minFontSize: 18, maxFontSize: 28, overflow: TextOverflow.Ellipsis })
-    }.width('100%').height('100%')
-  }
+ private select: number = 1;
+ private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE'];
+
+ build() {
+ Column() {
+ TextPicker({
+ range: this.fruits,
+ selected: this.select,
+ value: this.fruits[this.select]
+ })
+ .disableTextStyleAnimation(true)
+ .margin({ bottom: 30 })
+ TextPicker({
+ range: this.fruits,
+ selected: this.select,
+ value: this.fruits[this.select]
+ })
+ .disableTextStyleAnimation(true)
+ .defaultTextStyle({ minFontSize: 18, maxFontSize: 28, overflow: TextOverflow.Ellipsis })
+ }.width('100%').height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/QIpee-C6QmynuLb52yF0yw/zh-cn_image_0000002562025881.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=6A8A6A3593C9B5DACF9711AD47000DCF6C3257B57B97C401772E08EEF98FCDE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/QIpee-C6QmynuLb52yF0yw/zh-cn_image_0000002562025881.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=358E5AA63B4DB1D2E6F0408040E1AC1602C2202B74869A6107E311BC97405142)
 
 ### 示例10（设置选中项背景样式）
 
@@ -1097,58 +1122,60 @@ struct TextPickerExample {
 
 ```typescript
 import { LengthUnit } from '@kit.ArkUI';
-// xxx.ets
+
 @Entry
 @Component
 struct TextPickerExample {
-  private showText1: string [] =
-    ['Text1', 'Text1', 'Text1', 'Text1']
-  private showText2: string[] [] =
-    [
-      ['Text2', 'Text2', 'Text2', 'Text2'],
-      ['Text3', 'Text3', 'Text3', 'Text3']
-  ]
-  build() {
-    Column() {
-      Row() {
-        TextPicker({ range: this.showText1 })
-          .selectedBackgroundStyle({
-            color: '#FFD5D5D5',
-            borderRadius: { value: 0, unit: LengthUnit.VP }
-          })
-        Column()
-          .width('10%')
-        TextPicker({ range: this.showText1 })
-          .selectedBackgroundStyle({
-            color: '#FFE3F8F9',
-            borderRadius: {
-              topStart: { value: 5, unit: LengthUnit.VP },
-              topEnd: { value: 10, unit: LengthUnit.VP },
-              bottomStart: { value: 15, unit: LengthUnit.VP },
-              bottomEnd: { value: 20, unit: LengthUnit.VP },
-            }
-          })
-      }
-      Row()
-        .height('10%')
-      Row() {
-        TextPicker({ range: this.showText2 })
-          .selectedBackgroundStyle({
-            borderRadius: {
-              topLeft: 8,
-              topRight: 8,
-              bottomLeft: 8,
-              bottomRight: 8
-            },
-            color: '#FFFFEEF6'
-          })
-      }
-    }.height('100%')
-  }
+ private showText1: string [] =
+ ['Text1', 'Text1', 'Text1', 'Text1']
+ private showText2: string[] [] =
+ [
+ ['Text2', 'Text2', 'Text2', 'Text2'],
+ ['Text3', 'Text3', 'Text3', 'Text3']
+ ]
+
+ build() {
+ Column() {
+ Row() {
+ TextPicker({ range: this.showText1 })
+ .selectedBackgroundStyle({
+ color: '#FFD5D5D5',
+ borderRadius: { value: 0, unit: LengthUnit.VP }
+ })
+ Column()
+ .width('10%')
+ TextPicker({ range: this.showText1 })
+ .selectedBackgroundStyle({
+ color: '#FFE3F8F9',
+ borderRadius: {
+ topStart: { value: 5, unit: LengthUnit.VP },
+ topEnd: { value: 10, unit: LengthUnit.VP },
+ bottomStart: { value: 15, unit: LengthUnit.VP },
+ bottomEnd: { value: 20, unit: LengthUnit.VP },
+ }
+ })
+ }
+
+ Row()
+ .height('10%')
+ Row() {
+ TextPicker({ range: this.showText2 })
+ .selectedBackgroundStyle({
+ borderRadius: {
+ topLeft: 8,
+ topRight: 8,
+ bottomLeft: 8,
+ bottomRight: 8
+ },
+ color: '#FFFFEEF6'
+ })
+ }
+ }.height('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/vdEgMiQIQPGWJyIQK1LHjQ/zh-cn_image_0000002562145867.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=274189D1536637201108EA0395609DF8EAB9517D3980952925743429894C1231)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/vdEgMiQIQPGWJyIQK1LHjQ/zh-cn_image_0000002562145867.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=9A10589CE7E9D0E49B3C228F60D755EE3CE012F52B31CE6877B46140E6468C8C)
 
 ### 示例11（设置文本的最大字号、最小字号、超长文本截断方式）
 
@@ -1157,42 +1184,80 @@ struct TextPickerExample {
 从API version 20开始，新增disappearTextStyle、textStyle和selectedTextStyle接口。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
-  private rangeValue: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEEEEEEEEEEEEEE'];
-  build() {
-    RelativeContainer() {
-      TextPicker({
-        range: this.rangeValue
-      })
-        .disappearTextStyle({
-          color: '#fff52769',
-          // 设置minFontSize与maxFontSize时，font中的size属性将被忽略。
-          font: { size: 50 },
-          minFontSize: 12,
-          maxFontSize: 18,
-          overflow: TextOverflow.Ellipsis
-        })
-        .textStyle({
-          color: Color.Orange,
-          minFontSize: 12,
-          maxFontSize: 18,
-          overflow: TextOverflow.MARQUEE
-        })
-        .selectedTextStyle({
-          color: '#ff9eea48',
-          minFontSize: 12,
-          maxFontSize: 18,
-          overflow: TextOverflow.Clip
-        })
-        .width('100%')
-    }
-    .height('100%')
-    .width('100%')
-  }
+ private rangeValue: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEEEEEEEEEEEEEE'];
+
+ build() {
+ RelativeContainer() {
+ TextPicker({
+ range: this.rangeValue
+ })
+ .disappearTextStyle({
+ color: '#fff52769',
+
+ font: { size: 50 },
+ minFontSize: 12,
+ maxFontSize: 18,
+ overflow: TextOverflow.Ellipsis
+ })
+ .textStyle({
+ color: Color.Orange,
+ minFontSize: 12,
+ maxFontSize: 18,
+ overflow: TextOverflow.MARQUEE
+ })
+ .selectedTextStyle({
+ color: '#ff9eea48',
+ minFontSize: 12,
+ maxFontSize: 18,
+ overflow: TextOverflow.Clip
+ })
+ .width('100%')
+ }
+ .height('100%')
+ .width('100%')
+ }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Uc21_SJqRWus0o4YLwQRVQ/zh-cn_image_0000002531105966.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101453Z&HW-CC-Expire=86400&HW-CC-Sign=26EB807DEA62898F186AAA30E892017360710D6E1CDA8FF3062EC286C7203049)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Uc21_SJqRWus0o4YLwQRVQ/zh-cn_image_0000002531105966.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120306Z&HW-CC-Expire=86400&HW-CC-Sign=9875AE5FFF81FF5E5785FB716132EF8339337D28D0FA92B31D38A7479FB20861)
+
+[DatePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker)
+
+[TimePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker)
+
+相关推荐
+
+*文档*[DatePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker)
+
+*文档*[TimePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker)
+
+*文档*[TextArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea)
+
+*文档*[AlphabetIndexer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer)
+
+*文档*[MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem)
+
+*文档*[@ReusableV2装饰器：V2组件复用](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-reusablev2)
+
+*文档*[使用画布绘制自定义图形 (Canvas)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-drawing-customization-on-canvas)
+
+*文档*[文本滑动选择器弹窗 (TextPickerDialog)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-textpicker-dialog)
+
+*文档*[picker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-picker)
+
+*文档*[日期滑动选择器弹窗 (DatePickerDialog)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-datepicker-dialog)
+
+本文导读 在 API参考 中进行搜索
+
+只在 按钮与选择 中搜索 只搜索章节标题
+
+请输入您想要搜索的关键词
+
+- 智能客服 你问我答，随时在线为你解决问题
+
+- 合作咨询 我们的专家服务团队将竭诚为您提供专业的合作咨询服务
+
+- 解决方案 精准高效的一站式服务支持，助力开发者商业成功

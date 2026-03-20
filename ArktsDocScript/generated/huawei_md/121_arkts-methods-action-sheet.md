@@ -174,6 +174,7 @@ static show(value: ActionSheetOptions)
 该示例通过点击按钮弹窗列表选择弹窗。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -236,13 +237,14 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VQEvqAGKQXCFaK2tEVkyZA/zh-cn_image_0000002531106270.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101548Z&HW-CC-Expire=86400&HW-CC-Sign=06E3E82D04592697145DF124330E9A8859F504084F08D7D55A524AFE7FF2CA54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/VQEvqAGKQXCFaK2tEVkyZA/zh-cn_image_0000002531106270.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120410Z&HW-CC-Expire=86400&HW-CC-Sign=94468D2EB63C6AE1892DD30B1D66C4FB887DDF2A19A5B499D5289729D374B4CD)
 
 ### 示例2（可在主窗外弹出的弹窗）
 
 在2in1设备上设置[showInSubWindow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet#actionsheetoptions对象说明)为true时，可以弹出在主窗外显示的弹窗。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -307,13 +309,14 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/yU7Uuuv_TaCme4Tf_knQbA/zh-cn_image_0000002531226204.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T101548Z&HW-CC-Expire=86400&HW-CC-Sign=D7894BFA398CC6914FF059EAB343479D80842657945A655A2295A1CC6CA5A772)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/yU7Uuuv_TaCme4Tf_knQbA/zh-cn_image_0000002531226204.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T120410Z&HW-CC-Expire=86400&HW-CC-Sign=3B4FF81994A1AD6B93F89CC8E176398D42C190D8F315B9378483EE0C634D99BF)
 
 ### 示例3（设置弹窗的动画）
 
 该示例通过配置[transition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet#actionsheetoptions对象说明)实现弹窗的显示和消失动画。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -368,13 +371,14 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-bIfRgfJQry-IOqXor-iHw/zh-cn_image_0000002562026187.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101548Z&HW-CC-Expire=86400&HW-CC-Sign=1ACC026C3A47B7C0D719549119BBE1AF903D3012329ADB740A1B279D53EA99C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/-bIfRgfJQry-IOqXor-iHw/zh-cn_image_0000002562026187.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120410Z&HW-CC-Expire=86400&HW-CC-Sign=AF3D09C1AADEE894C94FE3C83C288312742019F439084A4A72FC39C7577C545D)
 
 ### 示例4（设置弹窗的样式）
 
 该示例定义了ActionSheet的样式，如宽度、高度、背景色、阴影等。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -391,8 +395,8 @@ struct ActionSheetExample {
             height: 350,
             cornerRadius: 20,
             borderWidth: 1,
-            borderStyle: BorderStyle.Solid,
-            borderColor: Color.Blue,
+            borderStyle: BorderStyle.Solid, // 使用borderStyle属性，需要和borderWidth属性一起使用
+            borderColor: Color.Blue, // 使用borderColor属性，需要和borderWidth属性一起使用
             backgroundColor: Color.White,
             shadow: ({
               radius: 20,
@@ -449,13 +453,14 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ccx1c8eZREyTI1mANkMAaw/zh-cn_image_0000002562146173.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101548Z&HW-CC-Expire=86400&HW-CC-Sign=4613755175624143C03633824AE87F79F3AD061369395AF3BB343815A180CEEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ccx1c8eZREyTI1mANkMAaw/zh-cn_image_0000002562146173.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120410Z&HW-CC-Expire=86400&HW-CC-Sign=2D066D046F05679A5752D0A50677668269A6FA09F2FF7D3B8AD3B55D08499A4B)
 
 ### 示例5（悬停态弹窗）
 
 该示例展示了在折叠屏悬停态下设置dialog布局区域的效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ActionSheetExample {
@@ -520,7 +525,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/piA3qt3kTj-vfumz4Ksf4A/zh-cn_image_0000002531106272.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101548Z&HW-CC-Expire=86400&HW-CC-Sign=C36840258B8E489B4F103B33B9CF47DC38FC56CD20805188896E518C76B290DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/piA3qt3kTj-vfumz4Ksf4A/zh-cn_image_0000002531106272.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120410Z&HW-CC-Expire=86400&HW-CC-Sign=E0AC3EAD3D18156DF5E7D69BACA14C1CCDAE40755074C092CDBB747182CD9B71)
 
 ### 示例6（弹窗生命周期）
 
@@ -529,12 +534,12 @@ struct ActionSheetExample {
 从API version 19开始，在[ActionSheetOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-action-sheet#actionsheetoptions对象说明)中新增了onDidAppear、onDidDisappear、onWillAppear和onWillDisappear属性。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct Example1 {
   @State log: string = 'Log information:';
   flag: boolean = false;
-
   build() {
     Column({ space: 5 }) {
       Button('ActionSheet')
@@ -598,7 +603,7 @@ struct Example1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/UwUcRndGT7eYfCMrVe92GQ/zh-cn_image_0000002531226206.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101548Z&HW-CC-Expire=86400&HW-CC-Sign=1C8CCD1C9E4B540217B17F56CAA6835FBFA85EB36E6BB21C4F986CD78143A902)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/UwUcRndGT7eYfCMrVe92GQ/zh-cn_image_0000002531226206.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120410Z&HW-CC-Expire=86400&HW-CC-Sign=A87523CF800D32FFA54DBDD3116139E09909A5C77216684B6290ED2A8B30EC65)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -658,7 +663,7 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/0LEkQHBFQ-OwHVKr8H6OFA/zh-cn_image_0000002562026189.png?HW-CC-KV=V1&HW-CC-Date=20260320T101548Z&HW-CC-Expire=86400&HW-CC-Sign=52E5D92A32F7CD9B0CC4560E5B2D40CD5D30A8381FD4E457179B0894BC12A7FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/0LEkQHBFQ-OwHVKr8H6OFA/zh-cn_image_0000002562026189.png?HW-CC-KV=V1&HW-CC-Date=20260320T120410Z&HW-CC-Expire=86400&HW-CC-Sign=5F578FDD0400362F2419BF0EF87ACB3085D681420A2B81FC424A910A81763C9C)
 
 ### 示例8（自定义背景效果参数）
 
@@ -719,4 +724,4 @@ struct ActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/a3ndrrfwRQmrx3ZVOd4T-Q/zh-cn_image_0000002562146175.png?HW-CC-KV=V1&HW-CC-Date=20260320T101548Z&HW-CC-Expire=86400&HW-CC-Sign=0393F980C65387B4CEF2857F0779478F6C50EBC21709138AE6DCB63D69B3ED9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/a3ndrrfwRQmrx3ZVOd4T-Q/zh-cn_image_0000002562146175.png?HW-CC-KV=V1&HW-CC-Date=20260320T120410Z&HW-CC-Expire=86400&HW-CC-Sign=549DE243CB03CBCE765B7730AB6B4B594E7C87BD0DD3AFE230955E53A3596353)

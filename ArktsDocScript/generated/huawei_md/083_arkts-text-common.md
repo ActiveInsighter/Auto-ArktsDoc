@@ -1,6 +1,22 @@
 # 文本组件公共接口-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common
 
+javascript:void(0);
+
+简体中文
+
+- 简体中文
+- English
+- Русский
+
+[下载 App](https://developer.huawei.com/consumer/cn/huawei-app/)
+
+https://developer.huawei.com/consumer/cn/
+
+[文档](https://developer.huawei.com/consumer/cn/doc/) [管理中心](https://developer.huawei.com/consumer/cn/console)
+
+您当前正在浏览HarmonyOS最新文档，覆盖已发布的所有API版本，可在API参考中[筛选您使用的API版本](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/doc-updates#section1810915471038)。详细的版本配套关系请参考[版本说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/overview-allversion)。
+
 > **说明**
 > 文本类组件公共接口。
 >
@@ -1179,3 +1195,41 @@ type InputMethodExtraConfig = InputMethodExtraConfig
 | 类型 | 说明 |
 | --- | --- |
 | [InputMethodExtraConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inputmethod-extraconfig#inputmethodextraconfig) | 输入法扩展信息。 |
+
+[输入框类组件通用接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style)
+
+[图片与视频](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/images-and-videos)
+
+相关推荐
+
+*文档*[RenderNode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-rendernode)
+
+*文档*[Enums](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-e)
+
+*文档*[Panel](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-panel)
+
+*文档*[页面间转场 (pageTransition)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation)
+
+*文档*[SaveButton](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton)
+
+*文档*[使用Web组件的手势与应用交互](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-gesture)
+
+*文档*[使用UI上下文接口操作界面（UIContext）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface)
+
+*文档*[输入框类组件通用接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style)
+
+*文档*[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)
+
+*文档*[选择器（Picker）公共接口](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-picker-common)
+
+本文导读 在 API参考 中进行搜索
+
+只在 文本与输入 中搜索 只搜索章节标题
+
+请输入您想要搜索的关键词
+
+- 智能客服 你问我答，随时在线为你解决问题
+
+- 合作咨询 我们的专家服务团队将竭诚为您提供专业的合作咨询服务
+
+- 解决方案 精准高效的一站式服务支持，助力开发者商业成功

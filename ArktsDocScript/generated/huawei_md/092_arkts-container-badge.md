@@ -1,4 +1,4 @@
-# 文档中心
+# Badge-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge
 
 信息标记组件，可以附加在单个组件上用于信息提醒的容器组件。
@@ -296,7 +296,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/a9pVeo3fRquGTWrdMAQPfg/zh-cn_image_0000002531226068.png?HW-CC-KV=V1&HW-CC-Date=20260320T101523Z&HW-CC-Expire=86400&HW-CC-Sign=944C43FDB8149B89240585390880E3A6AF35013288660CD6216B7E861008E7BB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/a9pVeo3fRquGTWrdMAQPfg/zh-cn_image_0000002531226068.png?HW-CC-KV=V1&HW-CC-Date=20260320T120339Z&HW-CC-Expire=86400&HW-CC-Sign=2B6B5B036807BEC03BF231EC82C186F22430789487F4A098AF7ECBE477FDD8DF)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -332,7 +332,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/eU1sHxUKTY-s-f2wgv8EQA/zh-cn_image_0000002562026051.gif?HW-CC-KV=V1&HW-CC-Date=20260320T101523Z&HW-CC-Expire=86400&HW-CC-Sign=85AF1A9B3E149AC30D56870413B41A1E7244EEC9701F5C6C67FE4AADF76C2A59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/eU1sHxUKTY-s-f2wgv8EQA/zh-cn_image_0000002562026051.gif?HW-CC-KV=V1&HW-CC-Date=20260320T120339Z&HW-CC-Expire=86400&HW-CC-Sign=A8D65CFC2623257BFEE056312EB0B4E8B2A89ADA0C0BD92239D9A209011A995B)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -381,4 +381,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iqYdTeu7SiWMiTXFuu94Ew/zh-cn_image_0000002562146037.png?HW-CC-KV=V1&HW-CC-Date=20260320T101523Z&HW-CC-Expire=86400&HW-CC-Sign=4B121B7B391308F24AC7BBD395B26641F8A29A362A207890EA4296CE2B83C7F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iqYdTeu7SiWMiTXFuu94Ew/zh-cn_image_0000002562146037.png?HW-CC-KV=V1&HW-CC-Date=20260320T120339Z&HW-CC-Expire=86400&HW-CC-Sign=F2BA3877454F654856721988E514D9455CB8CE82098D24F4480389CC2654D1CC)
