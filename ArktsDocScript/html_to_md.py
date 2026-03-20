@@ -1,14 +1,10 @@
 """Convert rendered Huawei docs HTML into compact Markdown.
 
-The converter keeps the useful documentation content and strips the noisy UI
-chrome such as navigation, breadcrumbs, sidebars, device labels, and toolbars.
-It focuses on:
-- headings
-- paragraphs
-- lists
-- tables
-- code blocks
-- note/info callouts
+This converter focuses on stable extraction quality:
+- keep core documentation content
+- remove navigation and chrome noise
+- build a reliable title and summary
+- generate deterministic Markdown file names
 
 Usage:
   python html_to_md.py --input-dir ./huawei_docs/pages --output-dir ./huawei_md
@@ -33,6 +29,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 DEFAULT_INPUT_DIR = Path("./huawei_docs/pages")
 DEFAULT_OUTPUT_DIR = Path("./huawei_md")
 TOC_FILENAME = "目录.md"
+
 REMOVABLE_TAGS = {"script", "style", "noscript", "svg"}
 IGNORED_CLASS_PATTERNS = (
     "second-nav",
@@ -69,44 +66,49 @@ IGNORED_CLASS_PATTERNS = (
     "doc-right",
     "doc-left",
     "top-nav",
-    "second-nav",
     "video-box",
     "screen-link-div",
     "highlight-div-header",
     "scrollbar",
 )
 
-BLOCK_TAGS = {
-    "article",
-    "aside",
-    "blockquote",
-    "div",
-    "dl",
-    "dt",
-    "dd",
-    "figure",
-    "figcaption",
+GENERIC_TITLES = {
+    "文档中心",
+    "document center",
+    "harmonyos开发者",
+    "harmonyos developer",
+}
+
+NOISE_PARAGRAPHS = {
+    "说明",
+    "简介",
+    "提示",
+    "注意",
+    "概述",
+    "目录",
+}
+
+STRUCTURAL_BLOCK_TAGS = {
     "h1",
     "h2",
     "h3",
     "h4",
     "h5",
     "h6",
-    "hr",
-    "li",
-    "ol",
     "p",
-    "pre",
-    "section",
-    "table",
-    "tbody",
-    "td",
-    "tfoot",
-    "th",
-    "thead",
-    "tr",
     "ul",
+    "ol",
+    "pre",
+    "table",
+    "blockquote",
 }
+
+
+@dataclass
+class Block:
+    kind: str
+    text: str
+    markdown: str
 
 
 @dataclass
@@ -150,212 +152,172 @@ def normalize_whitespace(text: str) -> str:
     return text.strip()
 
 
-def is_ignored_node(node: Tag) -> bool:
-    classes = node.get("class") or []
-    return any(
-        ignored in " ".join(classes)
-        for ignored in IGNORED_CLASS_PATTERNS
-    )
+def safe_class_text(node: Tag) -> str:
+    return " ".join(node.get("class") or [])
 
 
-def canonical_slug_from_url(canonical_url: str | None, fallback_name: str) -> str:
-    if canonical_url:
-        parsed = urlparse(canonical_url)
-        stem = parsed.path.rstrip("/").split("/")[-1] or fallback_name
-    else:
-        stem = fallback_name
-
-    stem = re.sub(r"(?i)^ts(?=-)", "arkts", stem)
-    stem = re.sub(r"(?i)^ts(?=_)", "arkts", stem)
-    if stem.lower() == "ts":
-        stem = "arkts"
-
-    safe = re.sub(r"[^0-9A-Za-z._-]+", "-", stem).strip("-_.")
-    return safe or fallback_name
+def is_ignored_by_class(node: Tag) -> bool:
+    class_text = safe_class_text(node)
+    if not class_text:
+        return False
+    return any(pattern in class_text for pattern in IGNORED_CLASS_PATTERNS)
 
 
-def slugify_filename(text: str, fallback_name: str) -> str:
-    text = normalize_whitespace(text)
-    if not text:
-        return fallback_name
-
-    text = re.sub(r'[\\/:*?"<>|\x00-\x1f]+', "-", text)
-    text = re.sub(r"\s+", "-", text)
-    text = re.sub(r"-{2,}", "-", text)
-    text = text.strip(" -._")
-    if len(text) > 80:
-        text = text[:80].rstrip("-._")
-    return text or fallback_name
-
-
-def choose_markdown_slug(canonical_url: str | None, title: str, fallback_name: str) -> str:
-    url_slug = canonical_slug_from_url(canonical_url, fallback_name)
-    if url_slug.isdigit() or url_slug.lower() in {fallback_name.lower(), "index", "default", "home"}:
-        title_slug = slugify_filename(title, fallback_name)
-        if title_slug and title_slug != fallback_name:
-            return title_slug
-    return url_slug
-
-
-def has_block_children(node: Tag) -> bool:
-    for child in node.children:
-        if not isinstance(child, Tag):
+def clean_dom(container: Tag) -> None:
+    nodes_to_remove: list[Tag] = []
+    for node in container.find_all(True):
+        if node.name in REMOVABLE_TAGS or node.name == "app-anchor-list":
+            nodes_to_remove.append(node)
             continue
-        if child.name in BLOCK_TAGS:
-            return True
-    return False
+        if is_ignored_by_class(node) and node.name not in {"pre", "code", "table"}:
+            nodes_to_remove.append(node)
+
+    for node in reversed(nodes_to_remove):
+        if node.parent is not None:
+            node.decompose()
 
 
-def render_node(node: Tag | NavigableString, preserve_links: bool, base_url: str | None) -> str:
-    if isinstance(node, NavigableString):
-        return str(node)
+def score_container(candidate: Tag) -> tuple[int, int, int]:
+    text = normalize_whitespace(candidate.get_text(" ", strip=True))
+    if not text:
+        return (0, 0, 0)
 
-    if not isinstance(node, Tag):
-        return ""
+    class_names = safe_class_text(candidate)
+    base_bonus = 0
+    if candidate.name == "app-document-text":
+        base_bonus = 5000
+    elif "document-content-html" in class_names or "markdown-body" in class_names:
+        base_bonus = 3500
+    elif candidate.name in {"main", "article"}:
+        base_bonus = 2000
+    elif candidate.name == "body":
+        base_bonus = 0
 
-    if node.name in {"script", "style", "noscript", "svg"}:
-        return ""
-
-    if node.name == "br":
-        return "\n"
-
-    if node.name in {"strong", "b"}:
-        inner = render_inline_children(node, preserve_links, base_url)
-        return f"**{inner}**" if inner else ""
-
-    if node.name in {"em", "i"}:
-        inner = render_inline_children(node, preserve_links, base_url)
-        return f"*{inner}*" if inner else ""
-
-    if node.name == "code":
-        return f"`{normalize_whitespace(node.get_text(' ', strip=True))}`"
-
-    if node.name == "a":
-        text = render_inline_children(node, preserve_links, base_url)
-        href = node.get("href", "").strip()
-        if not preserve_links or not href:
-            return text
-        absolute_href = urljoin(base_url, href) if base_url else href
-        if text and text != absolute_href:
-            return f"[{text}]({absolute_href})"
-        return absolute_href
-
-    if node.name == "img":
-        alt = node.get("alt", "")
-        src = node.get("src", "")
-        if src and preserve_links:
-            absolute_src = urljoin(base_url, src) if base_url else src
-            return f"![{alt}]({absolute_src})" if alt else f"![]({absolute_src})"
-        return alt
-
-    if node.name == "pre":
-        return render_pre(node)
-
-    if node.name == "table":
-        return render_table(node, preserve_links, base_url)
-
-    if node.name in {"ul", "ol"}:
-        return render_list(node, preserve_links, base_url)
-
-    if node.name == "li":
-        return render_list_item(node, preserve_links, base_url)
-
-    if node.name in {"h1", "h2", "h3", "h4", "h5", "h6"}:
-        level = int(node.name[1])
-        text = render_inline_children(node, preserve_links, base_url)
-        return f"{'#' * level} {text}".strip() if text else ""
-
-    if node.name == "blockquote":
-        inner = render_block(node, preserve_links, base_url)
-        if not inner:
-            return ""
-        lines = [f"> {line}" if line.strip() else ">" for line in inner.splitlines()]
-        return "\n".join(lines)
-
-    if node.name == "hr":
-        return "---"
-
-    if node.name in {"div", "section", "article", "main", "aside"}:
-        class_names = " ".join(node.get("class") or [])
-        if "hw-editor-tip" in class_names:
-            return render_callout(node, preserve_links, base_url)
-        if "highlight-scroll-div" in class_names:
-            pre = node.find("pre")
-            return render_pre(pre) if pre else ""
-        if "tablenoborder" in class_names or "tbBox" in class_names or "tiledSection" in class_names:
-            return render_block(node, preserve_links, base_url)
-        if has_block_children(node):
-            return render_block(node, preserve_links, base_url)
-        return render_inline_children(node, preserve_links, base_url)
-
-    return render_inline_children(node, preserve_links, base_url)
+    semantic_count = len(
+        candidate.find_all(
+            ["p", "li", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "table"],
+            recursive=True,
+        )
+    )
+    return (base_bonus + len(text), semantic_count, 1 if candidate.name != "body" else 0)
 
 
-def render_inline_children(node: Tag, preserve_links: bool, base_url: str | None) -> str:
+def extract_main_container(soup: BeautifulSoup) -> Tag:
+    candidates = [
+        soup.find("app-document-text"),
+        soup.find(class_="document-content-html"),
+        soup.find("main"),
+        soup.find("article"),
+        soup.find(class_="markdown-body"),
+        soup.body,
+    ]
+
+    best: Tag | None = None
+    best_score = (-1, -1, -1)
+    for candidate in candidates:
+        if candidate is None:
+            continue
+        current_score = score_container(candidate)
+        if current_score > best_score:
+            best = candidate
+            best_score = current_score
+
+    if best is not None:
+        return best
+    raise ValueError("No document body found")
+
+
+def render_inline(node: Tag, preserve_links: bool, base_url: str | None) -> str:
     pieces: list[str] = []
     for child in node.children:
         if isinstance(child, NavigableString):
             pieces.append(str(child))
-        else:
-            pieces.append(render_node(child, preserve_links, base_url))
+            continue
+
+        if child.name in {"script", "style", "noscript", "svg"}:
+            continue
+        if child.name in {"strong", "b"}:
+            inner = render_inline(child, preserve_links, base_url)
+            if inner:
+                pieces.append(f"**{inner}**")
+            continue
+        if child.name in {"em", "i"}:
+            inner = render_inline(child, preserve_links, base_url)
+            if inner:
+                pieces.append(f"*{inner}*")
+            continue
+        if child.name == "code":
+            inline_code = normalize_whitespace(child.get_text(" ", strip=True))
+            if inline_code:
+                pieces.append(f"`{inline_code}`")
+            continue
+        if child.name == "br":
+            pieces.append("\n")
+            continue
+        if child.name == "a":
+            text = render_inline(child, preserve_links, base_url)
+            href = (child.get("href") or "").strip()
+            if not preserve_links or not href:
+                pieces.append(text)
+                continue
+            absolute_href = urljoin(base_url, href) if base_url else href
+            if text and text != absolute_href:
+                pieces.append(f"[{text}]({absolute_href})")
+            else:
+                pieces.append(absolute_href)
+            continue
+        if child.name == "img":
+            alt = (child.get("alt") or "").strip()
+            src = (child.get("src") or "").strip()
+            if src and preserve_links:
+                absolute_src = urljoin(base_url, src) if base_url else src
+                pieces.append(f"![{alt}]({absolute_src})" if alt else f"![]({absolute_src})")
+            elif alt:
+                pieces.append(alt)
+            continue
+
+        pieces.append(render_inline(child, preserve_links, base_url))
+
     return normalize_whitespace("".join(pieces))
 
 
-def render_list_item(node: Tag, preserve_links: bool, base_url: str | None) -> str:
-    parts: list[str] = []
-    for child in node.children:
-        if isinstance(child, NavigableString):
-            parts.append(str(child))
-        else:
-            parts.append(render_node(child, preserve_links, base_url))
-    text = normalize_whitespace("".join(parts))
-    text = re.sub(r"\n+", " ", text)
-    return text
-
-
 def render_pre(node: Tag) -> str:
-    if node is None:
-        return ""
-
     if node.find("li") is not None:
-        list_items = node.find_all("li", recursive=True)
         lines: list[str] = []
-        for item in list_items:
-            line_html = item.get_text("", strip=False)
-            line_html = html.unescape(line_html)
-            line_html = line_html.replace("\r\n", "\n").replace("\r", "\n")
-            line = line_html.rstrip("\n")
+        for item in node.find_all("li", recursive=True):
+            line_text = html.unescape(item.get_text("", strip=False)).replace("\r\n", "\n").replace("\r", "\n")
+            line = line_text.rstrip("\n")
             if not line.strip():
                 lines.append("")
-                continue
-            lines.append(line.rstrip())
+            else:
+                lines.append(line.rstrip())
         while lines and not lines[0].strip():
             lines.pop(0)
         while lines and not lines[-1].strip():
             lines.pop()
         return "```typescript\n" + "\n".join(lines) + "\n```" if lines else ""
 
-    code = node.get_text("\n", strip=False)
-    code = html.unescape(code)
-    code = code.replace("\r\n", "\n").replace("\r", "\n")
-    lines = [line.rstrip() for line in code.splitlines()]
-    lines = [line for line in lines if line.strip()]
+    code_text = html.unescape(node.get_text("\n", strip=False)).replace("\r\n", "\n").replace("\r", "\n")
+    lines = [line.rstrip() for line in code_text.splitlines() if line.strip()]
     return "```typescript\n" + "\n".join(lines) + "\n```" if lines else ""
 
 
-def cell_text(cell: Tag, preserve_links: bool, base_url: str | None) -> str:
-    pieces: list[str] = []
-    for child in cell.children:
-        if isinstance(child, NavigableString):
-            pieces.append(str(child))
-        else:
-            pieces.append(render_node(child, preserve_links, base_url))
-    text = normalize_whitespace("".join(pieces))
-    text = re.sub(r"\n+", " ", text)
-    return text
+def render_list(node: Tag, preserve_links: bool, base_url: str | None) -> str:
+    ordered = node.name == "ol"
+    lines: list[str] = []
+    for idx, li in enumerate(node.find_all("li", recursive=False), start=1):
+        text = normalize_whitespace(render_inline(li, preserve_links, base_url))
+        if not text:
+            continue
+        prefix = f"{idx}." if ordered else "-"
+        lines.append(f"{prefix} {text}")
+    return "\n".join(lines)
 
 
 def render_table(table: Tag, preserve_links: bool, base_url: str | None) -> str:
+    def cell_text(cell: Tag) -> str:
+        return normalize_whitespace(render_inline(cell, preserve_links, base_url)).replace("\n", " ")
+
     header_row: list[str] | None = None
     body_rows: list[list[str]] = []
 
@@ -363,14 +325,14 @@ def render_table(table: Tag, preserve_links: bool, base_url: str | None) -> str:
     if thead:
         row = thead.find("tr")
         if row:
-            header_row = [cell_text(th, preserve_links, base_url) for th in row.find_all(["th", "td"], recursive=False)]
+            header_row = [cell_text(cell) for cell in row.find_all(["th", "td"], recursive=False)]
 
     tbody = table.find("tbody") or table
     for row in tbody.find_all("tr", recursive=False):
         cells = row.find_all(["th", "td"], recursive=False)
         if not cells:
             continue
-        body_rows.append([cell_text(cell, preserve_links, base_url) for cell in cells])
+        body_rows.append([cell_text(cell) for cell in cells])
 
     if header_row is None and body_rows:
         header_row = body_rows.pop(0)
@@ -398,184 +360,247 @@ def render_table(table: Tag, preserve_links: bool, base_url: str | None) -> str:
 def render_callout(node: Tag, preserve_links: bool, base_url: str | None) -> str:
     title_node = node.find(class_="title")
     content_node = node.find(class_="content")
+
     title = normalize_whitespace(title_node.get_text(" ", strip=True)) if title_node else "说明"
-    content = ""
-    if content_node:
-        content = render_block(content_node, preserve_links, base_url)
-    else:
-        content = render_block(node, preserve_links, base_url)
-    content = content.strip()
+    content_source = content_node or node
+    content = normalize_whitespace(content_source.get_text("\n", strip=True))
     if not content:
         return ""
+
     lines = [f"> **{title}**"]
     for line in content.splitlines():
-        lines.append(f"> {line}" if line.strip() else ">")
+        line = line.strip()
+        lines.append(f"> {line}" if line else ">")
     return "\n".join(lines)
 
 
-def render_block(node: Tag, preserve_links: bool, base_url: str | None) -> str:
-    chunks: list[str] = []
-    for child in node.children:
-        rendered = render_node(child, preserve_links, base_url)
-        rendered = rendered.strip()
-        if rendered:
-            chunks.append(rendered)
-    return collapse_blocks(chunks)
+def block_kind_from_tag(node: Tag) -> str:
+    if node.name in {"h1", "h2", "h3", "h4", "h5", "h6"}:
+        return "heading"
+    if node.name == "p":
+        return "paragraph"
+    if node.name in {"ul", "ol"}:
+        return "list"
+    if node.name == "pre":
+        return "code"
+    if node.name == "table":
+        return "table"
+    if node.name == "blockquote":
+        return "quote"
+    return "paragraph"
 
 
-def collapse_blocks(chunks: Iterable[str]) -> str:
-    out: list[str] = []
-    for chunk in chunks:
-        chunk = chunk.strip()
-        if not chunk:
-            continue
-        if out and out[-1] != "":
-            out.append("")
-        out.extend(chunk.splitlines())
-    return "\n".join(out).strip()
+def render_structural_block(node: Tag, preserve_links: bool, base_url: str | None) -> Block | None:
+    kind = block_kind_from_tag(node)
 
-
-def extract_main_container(soup: BeautifulSoup) -> Tag:
-    candidates = [
-        soup.find("app-document-text"),
-        soup.find(class_="document-content-html"),
-        soup.find("main"),
-        soup.find("article"),
-        soup.find(class_="markdown-body"),
-        soup.body,
-    ]
-    best_candidate: Tag | None = None
-    best_score = (-1, -1, -1)
-    for candidate in candidates:
-        if candidate is None:
-            continue
-
-        text = normalize_whitespace(candidate.get_text(" ", strip=True))
+    if kind == "heading":
+        level = int(node.name[1])
+        text = render_inline(node, preserve_links, base_url)
         if not text:
-            score = (0, 0, 0)
-        else:
-            class_names = " ".join(candidate.get("class") or [])
-            bonus = 0
-            if candidate.name == "app-document-text":
-                bonus = 3000
-            elif "document-content-html" in class_names or "markdown-body" in class_names:
-                bonus = 2000
-            elif candidate.name in {"main", "article"}:
-                bonus = 1000
-            node_count = len(candidate.find_all(["p", "li", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "table"], recursive=True))
-            score = (bonus + len(text), node_count, 1 if candidate.name != "body" else 0)
+            return None
+        return Block(kind="heading", text=text, markdown=f"{'#' * level} {text}")
 
-        if score > best_score:
-            best_candidate = candidate
-            best_score = score
-
-    if best_candidate is not None:
-        return best_candidate
-    for candidate in candidates:
-        if candidate is not None:
-            return candidate
-    raise ValueError("No document body found")
-
-
-def clean_dom(container: Tag) -> None:
-    nodes_to_remove: list[Tag] = []
-    for node in container.find_all(True):
-        if not isinstance(node, Tag):
-            continue
-        if node.name in REMOVABLE_TAGS or node.name == "app-anchor-list":
-            nodes_to_remove.append(node)
-            continue
-        class_values = node.attrs.get("class") if getattr(node, "attrs", None) else None
-        if not class_values:
-            continue
-        classes = " ".join(class_values)
-        if any(part in classes for part in IGNORED_CLASS_PATTERNS):
-            if node.name not in {"pre", "code", "table"}:
-                nodes_to_remove.append(node)
-
-    for node in reversed(nodes_to_remove):
-        if getattr(node, "parent", None) is not None:
-            node.decompose()
-
-
-def gather_blocks(container: Tag, preserve_links: bool, base_url: str | None) -> list[str]:
-    blocks: list[str] = []
-    for child in container.children:
-        rendered = render_node(child, preserve_links, base_url)
-        if rendered:
-            blocks.append(rendered)
-    return blocks
-
-
-def render_list(node: Tag, preserve_links: bool, base_url: str | None) -> str:
-    ordered = node.name == "ol"
-    items: list[str] = []
-    for index, li in enumerate(node.find_all("li", recursive=False), start=1):
-        text = render_list_item(li, preserve_links, base_url)
+    if kind == "paragraph":
+        text = render_inline(node, preserve_links, base_url)
         if not text:
-            continue
-        prefix = f"{index}." if ordered else "-"
-        items.append(f"{prefix} {text}")
-    return "\n".join(items)
+            return None
+        return Block(kind="paragraph", text=text, markdown=text)
+
+    if kind == "list":
+        markdown = render_list(node, preserve_links, base_url)
+        text = normalize_whitespace(node.get_text(" ", strip=True))
+        if not markdown:
+            return None
+        return Block(kind="list", text=text, markdown=markdown)
+
+    if kind == "code":
+        markdown = render_pre(node)
+        text = normalize_whitespace(node.get_text(" ", strip=True))
+        if not markdown:
+            return None
+        return Block(kind="code", text=text, markdown=markdown)
+
+    if kind == "table":
+        markdown = render_table(node, preserve_links, base_url)
+        text = normalize_whitespace(node.get_text(" ", strip=True))
+        if not markdown:
+            return None
+        return Block(kind="table", text=text, markdown=markdown)
+
+    if kind == "quote":
+        quote_text = normalize_whitespace(node.get_text("\n", strip=True))
+        if not quote_text:
+            return None
+        markdown = "\n".join(f"> {line}" if line else ">" for line in quote_text.splitlines())
+        return Block(kind="quote", text=quote_text, markdown=markdown)
+
+    return None
 
 
-def render_blockquote(node: Tag, preserve_links: bool, base_url: str | None) -> str:
-    rendered = render_block(node, preserve_links, base_url)
-    if not rendered:
-        return ""
-    return "\n".join((f"> {line}" if line else ">") for line in rendered.splitlines())
+def should_skip_subtree(node: Tag) -> bool:
+    if node.name in REMOVABLE_TAGS:
+        return True
+    if is_ignored_by_class(node):
+        return True
+    return False
 
 
-def extract_summary_from_markdown(markdown_text: str, max_length: int = 160) -> str:
-    lines = markdown_text.splitlines()
-    index = 0
+def collect_blocks(container: Tag, preserve_links: bool, base_url: str | None) -> list[Block]:
+    blocks: list[Block] = []
 
-    if index < len(lines) and lines[index].startswith("# "):
-        index += 1
+    def walk(node: Tag) -> None:
+        if should_skip_subtree(node):
+            return
 
-    while index < len(lines) and not lines[index].strip():
-        index += 1
+        class_names = safe_class_text(node)
+        if "hw-editor-tip" in class_names:
+            markdown = render_callout(node, preserve_links, base_url)
+            text = normalize_whitespace(node.get_text(" ", strip=True))
+            if markdown and text:
+                blocks.append(Block(kind="callout", text=text, markdown=markdown))
+            return
 
-    if index < len(lines) and lines[index].startswith("来源:"):
-        index += 1
+        if node.name in STRUCTURAL_BLOCK_TAGS:
+            block = render_structural_block(node, preserve_links, base_url)
+            if block is not None:
+                blocks.append(block)
+            return
 
-    while index < len(lines) and not lines[index].strip():
-        index += 1
+        for child in node.children:
+            if isinstance(child, Tag):
+                walk(child)
 
-    paragraph_lines: list[str] = []
-    while index < len(lines):
-        line = lines[index].strip()
-        if not line:
-            break
-        if not paragraph_lines and line.startswith(("#", ">", "|", "```")):
-            index += 1
-            continue
-        if paragraph_lines and line.startswith(("#", ">", "|", "```")):
-            break
-        paragraph_lines.append(line)
-        index += 1
+    walk(container)
 
-    summary = re.sub(r"\s+", " ", " ".join(paragraph_lines)).strip()
-    if len(summary) > max_length:
-        summary = summary[: max_length - 1].rstrip() + "…"
-    return summary
-
-
-def extract_summary_from_blocks(blocks: Iterable[str], max_length: int = 160) -> str:
+    deduped: list[Block] = []
+    seen_markdown: set[str] = set()
     for block in blocks:
-        candidate = re.sub(r"\s+", " ", block).strip()
+        key = block.markdown.strip()
+        if not key or key in seen_markdown:
+            continue
+        seen_markdown.add(key)
+        deduped.append(block)
+    return deduped
+
+
+def humanize_slug(slug: str) -> str:
+    slug = slug.replace("_", "-").strip("- ")
+    if not slug:
+        return ""
+    return slug.replace("-", " ")
+
+
+def choose_title(
+    blocks: list[Block],
+    fallback_title: str,
+    fallback_stem: str,
+    canonical_url: str | None,
+) -> str:
+    for block in blocks:
+        if block.kind != "heading":
+            continue
+        candidate = normalize_whitespace(block.text)
         if not candidate:
             continue
-        if candidate.startswith(("#", ">", "|", "```", "- ", "* ")):
+        if candidate.lower() in GENERIC_TITLES or candidate in GENERIC_TITLES:
             continue
-        if candidate in {"说明", "简介", "提示", "注意", "概述", "目录"}:
+        if len(candidate) <= 2:
             continue
-        if len(candidate) <= 12 and not re.search(r"[。！？!?；;：,:，、]", candidate):
-            continue
-        if len(candidate) > max_length:
-            candidate = candidate[: max_length - 1].rstrip() + "…"
         return candidate
+
+    normalized_fallback = normalize_whitespace(fallback_title)
+    if normalized_fallback and normalized_fallback.lower() not in GENERIC_TITLES and normalized_fallback not in GENERIC_TITLES:
+        return normalized_fallback
+
+    canonical_slug = canonical_slug_from_url(canonical_url, fallback_stem)
+    if canonical_slug and not canonical_slug.isdigit() and canonical_slug.lower() not in {"index", "default", "home"}:
+        readable = humanize_slug(canonical_slug)
+        if readable:
+            return readable
+
+    return fallback_stem
+
+
+def extract_summary_from_blocks(blocks: list[Block], max_length: int = 160) -> str:
+    for block in blocks:
+        if block.kind != "paragraph":
+            continue
+        text = normalize_whitespace(block.text)
+        if not text:
+            continue
+        if text in NOISE_PARAGRAPHS:
+            continue
+        if len(text) <= 12 and not re.search(r"[。！？!?；;：,:，、]", text):
+            continue
+        if len(text) > max_length:
+            return text[: max_length - 1].rstrip() + "…"
+        return text
     return ""
+
+
+def canonical_slug_from_url(canonical_url: str | None, fallback_name: str) -> str:
+    if not canonical_url:
+        return fallback_name
+
+    parsed = urlparse(canonical_url)
+    stem = parsed.path.rstrip("/").split("/")[-1] or fallback_name
+    stem = re.sub(r"(?i)^ts(?=-)", "arkts", stem)
+    stem = re.sub(r"(?i)^ts(?=_)", "arkts", stem)
+    if stem.lower() == "ts":
+        stem = "arkts"
+
+    safe = re.sub(r"[^0-9A-Za-z._-]+", "-", stem).strip("-_.")
+    return safe or fallback_name
+
+
+def slugify_filename(text: str, fallback_name: str) -> str:
+    text = normalize_whitespace(text)
+    if not text:
+        return fallback_name
+
+    text = re.sub(r'[\\/:*?"<>|\x00-\x1f]+', "-", text)
+    text = re.sub(r"\s+", "-", text)
+    text = re.sub(r"-{2,}", "-", text)
+    text = text.strip(" -._")
+    if len(text) > 96:
+        text = text[:96].rstrip("-._")
+    return text or fallback_name
+
+
+def choose_markdown_slug(canonical_url: str | None, title: str, fallback_name: str) -> str:
+    url_slug = canonical_slug_from_url(canonical_url, fallback_name)
+    lower_slug = url_slug.lower()
+    bad_slug = (
+        url_slug.isdigit()
+        or lower_slug in {"index", "default", "home", fallback_name.lower()}
+        or lower_slug.startswith("document")
+    )
+
+    if bad_slug:
+        title_slug = slugify_filename(title, fallback_name)
+        if title_slug and title_slug != fallback_name:
+            return title_slug
+    return url_slug
+
+
+def build_markdown(title: str, base_url: str | None, blocks: list[Block]) -> str:
+    lines: list[str] = [f"# {title}"]
+    if base_url:
+        lines.append(f"来源: {base_url}")
+    lines.append("")
+
+    start_index = 0
+    if blocks and blocks[0].kind == "heading" and normalize_whitespace(blocks[0].text) == normalize_whitespace(title):
+        start_index = 1
+
+    for block in blocks[start_index:]:
+        markdown = block.markdown.strip()
+        if not markdown:
+            continue
+        lines.append(markdown)
+        lines.append("")
+
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip() + "\n"
 
 
 def build_toc_markdown(results: list[ConvertResult]) -> str:
@@ -584,43 +609,45 @@ def build_toc_markdown(results: list[ConvertResult]) -> str:
         return text.replace("|", "\\|")
 
     lines = ["# 目录", "", "| 编号 | 标题 | 简介 |", "| --- | --- | --- |"]
-    for result in results:
+    for index, result in enumerate(results, start=1):
         relative_name = result.md_path.name
         title = clean_cell(result.title)
-        description = clean_cell(result.summary or "")
-        lines.append(
-            f"| {relative_name[:3]} | [打开]({relative_name}) | {title} | {description} |"
-        )
+        summary = clean_cell(result.summary)
+        lines.append(f"| {index:03d} | [打开]({relative_name}) | {title} | {summary} |")
     return "\n".join(lines).strip() + "\n"
 
 
-def write_markdown(html_path: Path, output_dir: Path, preserve_links: bool) -> ConvertResult:
+def write_markdown(
+    html_path: Path,
+    output_dir: Path,
+    serial: int,
+    preserve_links: bool,
+) -> ConvertResult:
     raw_html = html_path.read_text(encoding="utf-8", errors="replace")
     soup = BeautifulSoup(raw_html, "lxml")
-    title = normalize_whitespace(soup.title.get_text(" ", strip=True)) if soup.title else html_path.stem
+
+    fallback_title = normalize_whitespace(soup.title.get_text(" ", strip=True)) if soup.title else html_path.stem
     canonical = soup.select_one('link[rel="canonical"]')
     base_url = canonical.get("href") if canonical else None
+
     container = extract_main_container(soup)
     clean_dom(container)
+    blocks = collect_blocks(container, preserve_links=preserve_links, base_url=base_url)
 
-    blocks = gather_blocks(container, preserve_links=preserve_links, base_url=base_url)
-    md_parts: list[str] = []
-    md_parts.append(f"# {title}")
-    if base_url:
-        md_parts.append(f"来源: {base_url}")
-    md_parts.append("")
-    for block in blocks:
-        block = block.strip()
-        if not block:
-            continue
-        md_parts.append(block)
-        md_parts.append("")
+    title = choose_title(
+        blocks,
+        fallback_title=fallback_title,
+        fallback_stem=html_path.stem,
+        canonical_url=base_url,
+    )
+    summary = extract_summary_from_blocks(blocks)
 
-    markdown_text = re.sub(r"\n{3,}", "\n\n", "\n".join(md_parts)).strip() + "\n"
-    summary = extract_summary_from_blocks(blocks) or extract_summary_from_markdown(markdown_text)
-    md_name = choose_markdown_slug(base_url, title, html_path.stem)
-    md_path = output_dir / f"{len(list(output_dir.glob('*.md'))) + 1:03d}_{md_name}.md"
+    markdown_text = build_markdown(title=title, base_url=base_url, blocks=blocks)
+    slug = choose_markdown_slug(base_url, title, html_path.stem)
+
+    md_path = output_dir / f"{serial:03d}_{slug}.md"
     md_path.write_text(markdown_text, encoding="utf-8")
+
     return ConvertResult(html_path=html_path, md_path=md_path, title=title, summary=summary)
 
 
@@ -635,6 +662,7 @@ def main() -> int:
     args = parse_args()
     input_dir = args.input_dir.expanduser().resolve()
     output_dir = args.output_dir.expanduser().resolve()
+
     prepare_output_dir(output_dir)
 
     html_files = list(iter_html_files(input_dir, args.single))
@@ -642,8 +670,13 @@ def main() -> int:
         raise FileNotFoundError(f"No HTML files found in {input_dir}")
 
     results: list[ConvertResult] = []
-    for html_path in html_files:
-        result = write_markdown(html_path, output_dir, preserve_links=args.preserve_links)
+    for serial, html_path in enumerate(html_files, start=1):
+        result = write_markdown(
+            html_path=html_path,
+            output_dir=output_dir,
+            serial=serial,
+            preserve_links=args.preserve_links,
+        )
         results.append(result)
         print(f"[ok] {html_path.name} -> {result.md_path.name}")
 
