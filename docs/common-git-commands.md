@@ -8,6 +8,9 @@ git status
 
 把要提交的文件加入暂存区
 git add .
+git commit -m "test"
+git push
+
 
 提交到本地仓库
 git commit -m "test"

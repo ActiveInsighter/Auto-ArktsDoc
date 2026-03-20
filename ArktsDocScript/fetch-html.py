@@ -5,7 +5,7 @@ exporting the final HTML. It crawls only an explicit whitelist of URLs loaded
 from a text file, so the crawl stays bounded and easy to maintain.
 
 Usage:
-	python fetch-html.py --targets-file ./huawei_targets.txt --output-dir ./huawei_docs
+	python 1.py --targets-file ./huawei_targets.txt --output-dir ./huawei_docs
 
 Dependencies:
 	pip install playwright
@@ -48,6 +48,11 @@ FAST_MODE_SCROLL_PASSES = 2
 FAST_MODE_SCROLL_WAIT_MS = 40
 FAST_MODE_RENDER_POLL_MS = 50
 BLOCKED_RESOURCE_TYPES = {"image", "media", "font"}
+MAIN_CONTENT_SELECTORS = [
+	"app-document-text",
+	".document-content-html",
+	".markdown-body",
+]
 
 TRACKING_QUERY_KEYS = {
 	"from",
@@ -223,12 +228,19 @@ async def wait_for_true_render(page, stable_ms: int, timeout_ms: int, poll_ms: i
 			() => {
 			  const domState = window.__crawlerDomState || { lastMutationAt: performance.now() };
 			  const body = document.body;
+			  const contentSelectors = ['app-document-text', '.document-content-html', '.markdown-body'];
+			  const mainContent = contentSelectors
+				.map((selector) => document.querySelector(selector))
+				.find((element) => element && (element.textContent || '').trim());
+			  const mainContentText = mainContent ? (mainContent.textContent || '').replace(/\s+/g, ' ').trim() : '';
 
 			  return {
 				readyState: document.readyState,
 				msSinceMutation: performance.now() - domState.lastMutationAt,
 				title: document.title || '',
 				bodyPresent: Boolean(body),
+				hasMainContent: Boolean(mainContentText),
+				mainContentTextLength: mainContentText.length,
 			  };
 			}
 			"""
@@ -238,6 +250,7 @@ async def wait_for_true_render(page, stable_ms: int, timeout_ms: int, poll_ms: i
 			last_snapshot.get("readyState") in {"interactive", "complete"}
 			and last_snapshot.get("msSinceMutation", 0) >= stable_ms
 			and last_snapshot.get("bodyPresent", False)
+			and last_snapshot.get("hasMainContent", False)
 		):
 			return last_snapshot
 		await page.wait_for_timeout(poll_ms)
@@ -408,7 +421,7 @@ async def crawl_docs(
 						log("[crawl] step=auto-scroll")
 						await auto_scroll(page, max_passes=scroll_passes, wait_ms=scroll_wait_ms)
 						log("[crawl] step=stability-check")
-						await wait_for_true_render(
+						render_snapshot = await wait_for_true_render(
 							page,
 							stable_ms=stable_ms,
 							timeout_ms=page_timeout_ms,
@@ -421,6 +434,8 @@ async def crawl_docs(
 						html_path.write_text(html, encoding="utf-8")
 
 						outbound_links = await extract_links(page, final_url)
+						if not render_snapshot.get("hasMainContent", False):
+							status = "shell-page"
 						log(f"[crawl] saved {html_path.name} title={title or '(empty)'} links={len(outbound_links)}")
 
 					except Exception as exc:  # noqa: BLE001
