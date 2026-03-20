@@ -487,19 +487,23 @@ def extract_summary_from_markdown(markdown_text: str, max_length: int = 160) -> 
     if index < len(lines) and lines[index].startswith("来源:"):
         index += 1
 
-    while index < len(lines) and not lines[index].strip():
-        index += 1
-
     paragraph_lines: list[str] = []
     while index < len(lines):
         line = lines[index].strip()
-        if not line:
-            break
-        if not paragraph_lines and line.startswith(("#", ">", "|", "```")):
+
+        if not paragraph_lines and not line:
             index += 1
             continue
-        if paragraph_lines and line.startswith(("#", ">", "|", "```")):
+
+        if not line:
             break
+
+        if line.startswith(("#", ">", "|", "```")):
+            if paragraph_lines:
+                break
+            index += 1
+            continue
+
         paragraph_lines.append(line)
         index += 1
 

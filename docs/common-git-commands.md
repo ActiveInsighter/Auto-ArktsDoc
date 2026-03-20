@@ -10,7 +10,7 @@ git status
 git add .
 
 提交到本地仓库
-git commit -m "docs: add git commands and github actions workflow"
+git commit -m "test"
 
 第一次推送到远程并建立跟踪关系
 git push -u origin main

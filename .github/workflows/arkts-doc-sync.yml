@@ -39,7 +39,7 @@ jobs:
 
       - name: Crawl ArkTS docs to HTML
         run: |
-          python ArktsDocScript/1.py \
+          python ArktsDocScript/fetch-html.py \
             --targets-file ArktsDocScript/huawei_targets.txt \
             --output-dir ArktsDocScript/build/huawei_docs \
             --max-pages 200 \

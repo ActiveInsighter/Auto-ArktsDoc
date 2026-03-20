@@ -4,7 +4,7 @@ Auto-ArktsDoc 仓库的初始化说明与日常 Git 命令速查。
 
 - 远程仓库：`origin -> https://github.com/ActiveInsighter/Auto-ArktsDoc.git`
 - 常用命令文档：[`docs/common-git-commands.md`](docs/common-git-commands.md)
-- ArkTS 文档抓取脚本：[`ArktsDocScript/1.py`](ArktsDocScript/1.py)
+- ArkTS 文档抓取脚本：[`ArktsDocScript/fetch-html.py`](ArktsDocScript/fetch-html.py)
 - HTML 转 Markdown 脚本：[`ArktsDocScript/html_to_md.py`](ArktsDocScript/html_to_md.py)
 - 自动化工作流：[`.github/workflows/arkts-doc-sync.yml`](.github/workflows/arkts-doc-sync.yml)
 

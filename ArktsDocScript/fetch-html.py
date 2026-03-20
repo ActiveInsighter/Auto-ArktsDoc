@@ -5,7 +5,7 @@ exporting the final HTML. It crawls only an explicit whitelist of URLs loaded
 from a text file, so the crawl stays bounded and easy to maintain.
 
 Usage:
-	python 1.py --targets-file ./huawei_targets.txt --output-dir ./huawei_docs
+	python fetch-html.py --targets-file ./huawei_targets.txt --output-dir ./huawei_docs
 
 Dependencies:
 	pip install playwright
