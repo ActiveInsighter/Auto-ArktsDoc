@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: arkts-doc-sync
@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,21 +54,19 @@ jobs:
         run: |
           python ArktsDocScript/html_to_md.py \
             --input-dir ArktsDocScript/build/huawei_docs/pages \
-            --output-dir ArktsDocScript/build/huawei_md \
+            --output-dir ArktsDocScript/generated/huawei_md \
             --preserve-links
 
-      - name: Upload Markdown output
-        uses: actions/upload-artifact@v4
-        with:
-          name: arkts-docs-md
-          path: ArktsDocScript/build/huawei_md
-          if-no-files-found: error
-          retention-days: 7
-
-      - name: Upload HTML output
-        uses: actions/upload-artifact@v4
-        with:
-          name: arkts-docs-html
-          path: ArktsDocScript/build/huawei_docs
-          if-no-files-found: error
-          retention-days: 7
+      - name: Commit Markdown to branch
+        run: |
+          TARGET_BRANCH="arkts-docs"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$TARGET_BRANCH"
+          git add ArktsDocScript/generated/huawei_md
+          if git diff --cached --quiet; then
+            echo "No Markdown changes to commit."
+            exit 0
+          fi
+          git commit -m "docs: sync ArkTS Markdown"
+          git push --force origin HEAD:"$TARGET_BRANCH"

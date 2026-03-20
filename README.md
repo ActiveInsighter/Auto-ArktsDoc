@@ -21,7 +21,9 @@ Auto-ArktsDoc 仓库的初始化说明与日常 Git 命令速查。
 
 - 每天 00:00 UTC 自动运行一次，换算成北京时间是早上 8 点
 - 你也可以在 GitHub 页面手动点 `Run workflow` 触发
-- 运行结果会上传为 Actions 产物，便于下载和交给 AI 使用
+- 运行结果会自动提交到 `arkts-docs` 分支，Markdown 会直接出现在仓库里
+
+生成流程是：先抓取 HTML，再转换成 Markdown，最后把 Markdown 提交到专用分支。
 
 本地安装依赖时可以执行：
 

@@ -13,7 +13,7 @@ env/
 # Playwright / workflow generated data
 ArktsDocScript/build/
 ArktsDocScript/huawei_docs/
-ArktsDocScript/huawei_md/
+
 
 # OS / editor
 .DS_Store
