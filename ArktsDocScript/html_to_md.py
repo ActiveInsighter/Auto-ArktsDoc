@@ -174,6 +174,29 @@ def canonical_slug_from_url(canonical_url: str | None, fallback_name: str) -> st
     return safe or fallback_name
 
 
+def slugify_filename(text: str, fallback_name: str) -> str:
+    text = normalize_whitespace(text)
+    if not text:
+        return fallback_name
+
+    text = re.sub(r'[\\/:*?"<>|\x00-\x1f]+', "-", text)
+    text = re.sub(r"\s+", "-", text)
+    text = re.sub(r"-{2,}", "-", text)
+    text = text.strip(" -._")
+    if len(text) > 80:
+        text = text[:80].rstrip("-._")
+    return text or fallback_name
+
+
+def choose_markdown_slug(canonical_url: str | None, title: str, fallback_name: str) -> str:
+    url_slug = canonical_slug_from_url(canonical_url, fallback_name)
+    if url_slug.isdigit() or url_slug.lower() in {fallback_name.lower(), "index", "default", "home"}:
+        title_slug = slugify_filename(title, fallback_name)
+        if title_slug and title_slug != fallback_name:
+            return title_slug
+    return url_slug
+
+
 def has_block_children(node: Tag) -> bool:
     for child in node.children:
         if not isinstance(child, Tag):
@@ -416,9 +439,38 @@ def extract_main_container(soup: BeautifulSoup) -> Tag:
     candidates = [
         soup.find("app-document-text"),
         soup.find(class_="document-content-html"),
+        soup.find("main"),
+        soup.find("article"),
         soup.find(class_="markdown-body"),
         soup.body,
     ]
+    best_candidate: Tag | None = None
+    best_score = (-1, -1, -1)
+    for candidate in candidates:
+        if candidate is None:
+            continue
+
+        text = normalize_whitespace(candidate.get_text(" ", strip=True))
+        if not text:
+            score = (0, 0, 0)
+        else:
+            class_names = " ".join(candidate.get("class") or [])
+            bonus = 0
+            if candidate.name == "app-document-text":
+                bonus = 3000
+            elif "document-content-html" in class_names or "markdown-body" in class_names:
+                bonus = 2000
+            elif candidate.name in {"main", "article"}:
+                bonus = 1000
+            node_count = len(candidate.find_all(["p", "li", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "table"], recursive=True))
+            score = (bonus + len(text), node_count, 1 if candidate.name != "body" else 0)
+
+        if score > best_score:
+            best_candidate = candidate
+            best_score = score
+
+    if best_candidate is not None:
+        return best_candidate
     for candidate in candidates:
         if candidate is not None:
             return candidate
@@ -509,6 +561,23 @@ def extract_summary_from_markdown(markdown_text: str, max_length: int = 160) -> 
     return summary
 
 
+def extract_summary_from_blocks(blocks: Iterable[str], max_length: int = 160) -> str:
+    for block in blocks:
+        candidate = re.sub(r"\s+", " ", block).strip()
+        if not candidate:
+            continue
+        if candidate.startswith(("#", ">", "|", "```", "- ", "* ")):
+            continue
+        if candidate in {"说明", "简介", "提示", "注意", "概述", "目录"}:
+            continue
+        if len(candidate) <= 12 and not re.search(r"[。！？!?；;：,:，、]", candidate):
+            continue
+        if len(candidate) > max_length:
+            candidate = candidate[: max_length - 1].rstrip() + "…"
+        return candidate
+    return ""
+
+
 def build_toc_markdown(results: list[ConvertResult]) -> str:
     def clean_cell(text: str) -> str:
         text = re.sub(r"\s+", " ", text).strip()
@@ -548,8 +617,8 @@ def write_markdown(html_path: Path, output_dir: Path, preserve_links: bool) -> C
         md_parts.append("")
 
     markdown_text = re.sub(r"\n{3,}", "\n\n", "\n".join(md_parts)).strip() + "\n"
-    summary = extract_summary_from_markdown(markdown_text)
-    md_name = canonical_slug_from_url(base_url, html_path.stem)
+    summary = extract_summary_from_blocks(blocks) or extract_summary_from_markdown(markdown_text)
+    md_name = choose_markdown_slug(base_url, title, html_path.stem)
     md_path = output_dir / f"{len(list(output_dir.glob('*.md'))) + 1:03d}_{md_name}.md"
     md_path.write_text(markdown_text, encoding="utf-8")
     return ConvertResult(html_path=html_path, md_path=md_path, title=title, summary=summary)

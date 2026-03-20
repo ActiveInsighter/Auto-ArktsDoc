@@ -62,11 +62,16 @@ jobs:
           TARGET_BRANCH="arkts-docs"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$TARGET_BRANCH"
           git add ArktsDocScript/generated/huawei_md
           if git diff --cached --quiet; then
             echo "No Markdown changes to commit."
             exit 0
           fi
           git commit -m "docs: sync ArkTS Markdown"
-          git push --force origin HEAD:"$TARGET_BRANCH"
+          GENERATED_COMMIT="$(git rev-parse HEAD)"
+          git fetch origin "$TARGET_BRANCH" || true
+          if git show-ref --verify --quiet "refs/remotes/origin/$TARGET_BRANCH"; then
+            git checkout -B "$TARGET_BRANCH" "origin/$TARGET_BRANCH"
+            git cherry-pick "$GENERATED_COMMIT"
+          fi
+          git push origin HEAD:"$TARGET_BRANCH"
