@@ -1,4 +1,4 @@
-# RichText-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext
 
 富文本组件，解析并显示HTML格式文本。
@@ -131,7 +131,7 @@ struct RichTextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jX4Zl8QhSZ61AuBfWP22DA/zh-cn_image_0000002562145955.png?HW-CC-KV=V1&HW-CC-Date=20260320T144208Z&HW-CC-Expire=86400&HW-CC-Sign=4D835435F736BCBA94A42E094B3391C7C2E05AE681F851303701272E5C78AFCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jX4Zl8QhSZ61AuBfWP22DA/zh-cn_image_0000002562145955.png?HW-CC-KV=V1&HW-CC-Date=20260321T021429Z&HW-CC-Expire=86400&HW-CC-Sign=5BF174CD1A62A18CA96C8D30C2934E142EF67265ABF5D0A1680403B10986FF1D)
 
 加载本地资源文件。
 

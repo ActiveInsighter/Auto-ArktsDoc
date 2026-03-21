@@ -1,4 +1,4 @@
-# CalendarPicker-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker
 
 日历选择器组件，提供下拉日历弹窗，可以让用户选择日期。
@@ -240,7 +240,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/co7iEI_fScCJiE2AQH0Wqw/zh-cn_image_0000002562145859.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144136Z&HW-CC-Expire=86400&HW-CC-Sign=E69D0AF80EE9F786E9C285C41310633A6013AD65A51BCA64BE0BC9622FB558C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/co7iEI_fScCJiE2AQH0Wqw/zh-cn_image_0000002562145859.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021401Z&HW-CC-Expire=86400&HW-CC-Sign=F6B64D834F65CD02BD5FEE07384E7D391B6CA3069281C1D127198304254E52B8)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -272,7 +272,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QjrYAvGYTiOGjpi0MX00Og/zh-cn_image_0000002531105958.png?HW-CC-KV=V1&HW-CC-Date=20260320T144136Z&HW-CC-Expire=86400&HW-CC-Sign=1E72B0E5BD716F3A3FC619F1BC402B17FC8EC8A2104A73C7807B51BF20E2B8ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QjrYAvGYTiOGjpi0MX00Og/zh-cn_image_0000002531105958.png?HW-CC-KV=V1&HW-CC-Date=20260321T021401Z&HW-CC-Expire=86400&HW-CC-Sign=10F50C966E13E76E183454B50892FECE1D43FACDFAB1289EA6560D51364EBE4A)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -305,4 +305,4 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/o7yVCtWCS169tgVB0LE6yg/zh-cn_image_0000002531225892.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144136Z&HW-CC-Expire=86400&HW-CC-Sign=1E13C6A95C30977CA0D1E6F271541C9C36CE16B98E274BF3E10A96B3F94F0220)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/o7yVCtWCS169tgVB0LE6yg/zh-cn_image_0000002531225892.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021401Z&HW-CC-Expire=86400&HW-CC-Sign=2109951063FF393EB98ED9309A54D7717128E8373C1761091E13EE5629EECB9B)

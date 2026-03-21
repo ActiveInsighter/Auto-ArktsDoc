@@ -1,4 +1,4 @@
-# 文档中心
+# Divider-空白与分隔-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-divider
 
 提供分割线组件，分割不同内容块/内容元素。
@@ -111,13 +111,12 @@ lineCap(value: LineCapStyle)
 该示例定义了Divider的样式，如方向、颜色及宽度。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DividerExample {
   build() {
     Column() {
-      // 使用横向分割线场景
+
       Text('Horizontal divider').fontSize(9).fontColor(0xCCCCCC)
       List() {
         ForEach([1, 2, 3], (item: number) => {
@@ -126,6 +125,7 @@ struct DividerExample {
           }.width(244).height(48)
         }, (item: number) => item.toString())
       }.padding({ left: 24, bottom: 8 })
+
       Divider().strokeWidth(8).color('#F1F3F5')
       List() {
         ForEach([4, 5], (item: number) => {
@@ -134,7 +134,7 @@ struct DividerExample {
           }.width(244).height(48)
         }, (item: number) => item.toString())
       }.padding({ left: 24, top: 8 })
-      // 使用纵向分割线场景
+
       Text('Vertical divider').fontSize(9).fontColor(0xCCCCCC)
       Column() {
         Column() {
@@ -178,14 +178,13 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/oUl_uuZqQIWO6EXLlfqIzw/zh-cn_image_0000002562146059.png?HW-CC-KV=V1&HW-CC-Date=20260320T144237Z&HW-CC-Expire=86400&HW-CC-Sign=D1B748369FECAD5F7E8DF190AB35C47CBB52589C229CDA18B715831795C751FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/oUl_uuZqQIWO6EXLlfqIzw/zh-cn_image_0000002562146059.png?HW-CC-KV=V1&HW-CC-Date=20260321T021459Z&HW-CC-Expire=86400&HW-CC-Sign=349B0814BC1CBC2F9FFB0B347E0BC69A28C88DEA8EAFC149BE1304DC9F4554AF)
 
 ### 示例2（定义Divider的lineCap样式）
 
 该示例定义了Divider的lineCap样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DividerExample {
@@ -197,21 +196,24 @@ struct DividerExample {
         .width("90%")
         .color('#F1F3F5')
         .lineCap(LineCapStyle.Butt)
+
       Text("LineCap:Round")
       Divider()
         .strokeWidth(20)
         .width("90%")
         .color('#F1F3F5')
         .lineCap(LineCapStyle.Round)
+
       Text("LineCap:Square")
       Divider()
         .strokeWidth(20)
         .width("90%")
         .color('#F1F3F5')
         .lineCap(LineCapStyle.Square)
+
     }.width('100%').padding({ top: 24 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Vur5rKACQ6WCZYZtA8KrgA/zh-cn_image_0000002531106158.png?HW-CC-KV=V1&HW-CC-Date=20260320T144237Z&HW-CC-Expire=86400&HW-CC-Sign=DC0FBB8D1B8B7D49AE193857D93CE9A398FEDC637C18B9377856F19BF4A3E525)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Vur5rKACQ6WCZYZtA8KrgA/zh-cn_image_0000002531106158.png?HW-CC-KV=V1&HW-CC-Date=20260321T021459Z&HW-CC-Expire=86400&HW-CC-Sign=D9B05BC600DCF6BE62E2A45D4944D7ADFA59750954DA5265144B5646D247837C)

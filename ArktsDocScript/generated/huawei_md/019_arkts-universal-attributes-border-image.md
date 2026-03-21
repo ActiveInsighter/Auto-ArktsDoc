@@ -1,4 +1,4 @@
-# 文档中心
+# 图片边框设置-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image
 
 设置组件的图片边框样式。
@@ -111,7 +111,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/YTglJKCrS-CRXM3RRbzBFQ/zh-cn_image_0000002531105760.png?HW-CC-KV=V1&HW-CC-Date=20260320T144045Z&HW-CC-Expire=86400&HW-CC-Sign=CE8358DE4D1152D13E3148F171D82E59BD593199EAD6377C311253CD54AE62F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/YTglJKCrS-CRXM3RRbzBFQ/zh-cn_image_0000002531105760.png?HW-CC-KV=V1&HW-CC-Date=20260321T021308Z&HW-CC-Expire=86400&HW-CC-Sign=9F0BE78ECDA65D17FD8205E9AFFD0CFC145A4742C1957D80D648262ED59023A8)
 
 ### 示例2（动态调整属性值）
 
@@ -210,7 +210,7 @@ struct BorderImage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/odAMBQ77T7u5yLIaSbg0qQ/zh-cn_image_0000002531225694.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144045Z&HW-CC-Expire=86400&HW-CC-Sign=A7C77F3125B071EE055E9FFD49AA91710DFCDB340B53C9561F3130FFEEA056FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/odAMBQ77T7u5yLIaSbg0qQ/zh-cn_image_0000002531225694.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021308Z&HW-CC-Expire=86400&HW-CC-Sign=994B4C36FA45C7E7DB09D064DCA4E22D3118D45B4E1E0E442B9889C86F2EE63F)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
@@ -369,4 +369,4 @@ struct BorderImage {
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/RS06tC-pT3qhV4D1_eh6cQ/zh-cn_image_0000002562025677.png?HW-CC-KV=V1&HW-CC-Date=20260320T144045Z&HW-CC-Expire=86400&HW-CC-Sign=75F1B52F38450E1F09A2957CEB6E933C1371E88614233FE477ACB7D3959F6D4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/RS06tC-pT3qhV4D1_eh6cQ/zh-cn_image_0000002562025677.png?HW-CC-KV=V1&HW-CC-Date=20260321T021308Z&HW-CC-Expire=86400&HW-CC-Sign=A94997DAA86299E5E9F044D6AFA305288525BFC6CF0589E360F3FE783CD6DD64)

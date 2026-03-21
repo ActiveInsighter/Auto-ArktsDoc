@@ -1,4 +1,4 @@
-# 浮层-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay
 
 设置组件的浮层。
@@ -116,7 +116,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/5_a9QkQYRS2Q2T6m5ktOuw/zh-cn_image_0000002531105738.png?HW-CC-KV=V1&HW-CC-Date=20260320T144030Z&HW-CC-Expire=86400&HW-CC-Sign=12DA53DDEFE5C3AA0073592CB7F78C06044B93DF5F1C9099DB3E51C2FDAA580A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/5_a9QkQYRS2Q2T6m5ktOuw/zh-cn_image_0000002531105738.png?HW-CC-KV=V1&HW-CC-Date=20260321T021255Z&HW-CC-Expire=86400&HW-CC-Sign=774602BC1D8B309C3805A96D16A1E35482A1E779EB0C80BB44CEC7C2448BA804)
 
 ### 示例2（通过builder设置浮层）
 
@@ -151,7 +151,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/uP8wL1bVSsiYvxK3VXeOvg/zh-cn_image_0000002531225672.png?HW-CC-KV=V1&HW-CC-Date=20260320T144030Z&HW-CC-Expire=86400&HW-CC-Sign=55D1974778470A5C584A5034A741CB1461E98EBAD7694AFC0B65E0C96489F3C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/uP8wL1bVSsiYvxK3VXeOvg/zh-cn_image_0000002531225672.png?HW-CC-KV=V1&HW-CC-Date=20260321T021255Z&HW-CC-Expire=86400&HW-CC-Sign=04F9DA1662C9440E81C9C6071CA17705EE9AE1E1983DC55B62C022EDA60C25FB)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -209,4 +209,4 @@ struct Page_4040 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/gfzuad1PQO-KUyVBqVR-Tw/zh-cn_image_0000002562025655.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144030Z&HW-CC-Expire=86400&HW-CC-Sign=BF220425D22120B98F0C3F21F1E41F1B67BAFFC7355CEA0690A5AD18005E8012)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/gfzuad1PQO-KUyVBqVR-Tw/zh-cn_image_0000002562025655.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021255Z&HW-CC-Expire=86400&HW-CC-Sign=4A1DF8F02AE6D58FF5FEA82B13D9D2D61AD0C89EEB8348F00797BBA8AE098F30)

@@ -1,4 +1,4 @@
-# 文档中心
+# Span-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span
 
 作为[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)、[ContainerSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-containerspan)组件的子组件，用于显示行内文本的组件。
@@ -437,7 +437,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/AsPPnBczRdWfezGZnQgVBA/zh-cn_image_0000002562145945.png?HW-CC-KV=V1&HW-CC-Date=20260320T144155Z&HW-CC-Expire=86400&HW-CC-Sign=53805A9D81E11450937566CD2D6DC4D941A793EB5EB8C95677077D25E564D547)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/AsPPnBczRdWfezGZnQgVBA/zh-cn_image_0000002562145945.png?HW-CC-KV=V1&HW-CC-Date=20260321T021418Z&HW-CC-Expire=86400&HW-CC-Sign=5463A475D3085DBEB307D904DE4A8ED75DE97F6010AB7F058E5A9FCD517C587D)
 
 ### 示例2（设置文本阴影）
 
@@ -490,7 +490,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jrpEeXu8TvOuFuM7t86tjQ/zh-cn_image_0000002531106044.png?HW-CC-KV=V1&HW-CC-Date=20260320T144155Z&HW-CC-Expire=86400&HW-CC-Sign=D409E18265D313C6FD63F3459EAECF0DA36BFCE5BFC98EBC87704431F79594A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jrpEeXu8TvOuFuM7t86tjQ/zh-cn_image_0000002531106044.png?HW-CC-KV=V1&HW-CC-Date=20260321T021418Z&HW-CC-Expire=86400&HW-CC-Sign=E8B3CC01C96C9379D5C343DCDF228CF649682687BD10B5A16CCF6BDF57B7B08D)
 
 ### 示例3（设置背景样式）
 
@@ -513,7 +513,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/RiUupb2KQ1WpQ_di5FUrJg/zh-cn_image_0000002531225978.png?HW-CC-KV=V1&HW-CC-Date=20260320T144155Z&HW-CC-Expire=86400&HW-CC-Sign=707E235D1C888EB9D487F4EB88846774E1CE34F0B50C43B4A4B5CC1593DBC3A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/RiUupb2KQ1WpQ_di5FUrJg/zh-cn_image_0000002531225978.png?HW-CC-KV=V1&HW-CC-Date=20260321T021418Z&HW-CC-Expire=86400&HW-CC-Sign=35C3FEBBB22842E5A5E927CF2BDEB723FC2772A200AB06C45513AB381AD6DD42)
 
 ### 示例4（设置文本基线偏移量）
 
@@ -549,4 +549,4 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/6hw_AUMoQIuF4R7X27nXkg/zh-cn_image_0000002562025961.png?HW-CC-KV=V1&HW-CC-Date=20260320T144155Z&HW-CC-Expire=86400&HW-CC-Sign=FBA844B2EBF909FF60796603B1C0186972C8AAB07B944D01FF9ECE5F649262E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/6hw_AUMoQIuF4R7X27nXkg/zh-cn_image_0000002562025961.png?HW-CC-KV=V1&HW-CC-Date=20260321T021418Z&HW-CC-Expire=86400&HW-CC-Sign=2B01BA53546614E19F806314427417B6528DD102387D6457D1AA1E3B035723B6)

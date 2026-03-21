@@ -1,4 +1,4 @@
-# 文档中心
+# Toggle-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle
 
 组件提供勾选框样式、状态按钮样式和开关样式。
@@ -252,7 +252,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pxfYoCM9RYC1HEE41kU23A/zh-cn_image_0000002562025863.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144130Z&HW-CC-Expire=86400&HW-CC-Sign=3348932AF0619DE82FE785CACE73227FFBA149982894D36C2C54E978C2CA3279)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/pxfYoCM9RYC1HEE41kU23A/zh-cn_image_0000002562025863.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021356Z&HW-CC-Expire=86400&HW-CC-Sign=7DC9411A2630CB00395F384E01EB9A893F8A467AE373130EEBA3FF365A8EFC63)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/48XfsHmvTt63VBWf8hrZNA/zh-cn_image_0000002562145849.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144130Z&HW-CC-Expire=86400&HW-CC-Sign=3381FBADCD4E7C02740A0FABB87E35DEC8971D9A2E0BE9769F96EF236BDD8409)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/48XfsHmvTt63VBWf8hrZNA/zh-cn_image_0000002562145849.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021356Z&HW-CC-Expire=86400&HW-CC-Sign=B20C5A0F89E3263AACD308ADBABB79CBA674AD7E0F39BFAE159018D3C328D73E)
 
 ### 示例3（自定义Toggle样式）
 
@@ -348,4 +348,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/teRr8ZziQA-hyiewS-ROtQ/zh-cn_image_0000002531105948.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144130Z&HW-CC-Expire=86400&HW-CC-Sign=07579D8F82612526F5A8539EF68639AC98013EBB7CFA5A95E96A294090F1C09E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/teRr8ZziQA-hyiewS-ROtQ/zh-cn_image_0000002531105948.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021356Z&HW-CC-Expire=86400&HW-CC-Sign=3B64A79D369BE640E031FA44B4D5A146957041E53014CD3F0D2CBC910BD61EA4)

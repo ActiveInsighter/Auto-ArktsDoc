@@ -457,13 +457,13 @@ colorFilter(value: ColorFilter | DrawingColorFilter)
 
 如果输入的滤镜矩阵如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/4zWUMfMxRsyApuOhiF20fQ/zh-cn_image_0000002562145947.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=95B406143472F1DBFFA792FFF6E4CA6EFDB6BBF2D86E1BCB75910CF33A660DE1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/4zWUMfMxRsyApuOhiF20fQ/zh-cn_image_0000002562145947.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=15D8F26E2986F43BA85B1FD2A1979210987B5CE8C21BDEAD2E9A730C87D67765)
 
 像素点为[R, G, B, A]，色值的范围[0, 255]
 
 则过滤后的颜色为 [R’, G’, B’, A’]
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/IcR-CeoBTAulyWH4TOiXAQ/zh-cn_image_0000002531106046.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=E3E57EDF937A23F33CC64EC5DCC82941FDF941979460C8F8E85A7227F89D399B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/IcR-CeoBTAulyWH4TOiXAQ/zh-cn_image_0000002531106046.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=C9562591CD32AAF26A378AF3B0EAFCBBBB787B3822C136DC2048C894D08EEE90)
 
 该属性的具体使用可以参考[示例9](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#示例9为图像设置颜色滤镜效果)。
 
@@ -709,7 +709,7 @@ contentTransition(transition: ContentTransitionEffect)
 
 **图1** 设置EdgeWidths效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/AKnPv4LyTBSmzR0T_APyXQ/zh-cn_image_0000002562145963.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=3959CC654BA85C262CE7565574699518A91CAF842FBF8DD472CB2900CB0B2853)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/AKnPv4LyTBSmzR0T_APyXQ/zh-cn_image_0000002562145963.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=AD3F3B2464A47E2C5F31A32D025BBC4215ED1D1017474A66DC27274BAC42B1DC)
 
 ## ImageAlt22+
 
@@ -748,15 +748,15 @@ contentTransition(transition: ContentTransitionEffect)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| AUTO | 0 | 读取图片携带的EXIF元数据作为显示方向，支持旋转和镜像。 [PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)和[DrawableDescriptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#drawabledescriptor10)类型的图片不包含头信息，调用该接口时图片显示效果不变化。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/USApPj21RUWaeRUDz1pN3Q/zh-cn_image_0000002531106062.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=C409F6C4F622584E0652282FE951786C40518D074D8B387768AB6B8D10F2C25D) |
+| AUTO | 0 | 读取图片携带的EXIF元数据作为显示方向，支持旋转和镜像。 [PixelMap](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-pixelmap)和[DrawableDescriptor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#drawabledescriptor10)类型的图片不包含头信息，调用该接口时图片显示效果不变化。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/USApPj21RUWaeRUDz1pN3Q/zh-cn_image_0000002531106062.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=CF5815848607DED9FEE208C76198898E0A04B87ACD64FDA64E419137609A1026) |
 | UP | 1 | 默认按照当前图片的像素数据进行显示，不做任何处理。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
-| RIGHT | 2 | 将当前图片顺时针旋转90度后显示。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/7R6x4dA1TFuxuow1VwZssg/zh-cn_image_0000002531225996.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=0C8BAF0E3C9BBB5F8D7CAA4BC1B44C8874DE0C04ED3BC180DD408B38E3185EE3) |
-| DOWN | 3 | 将当前图片顺时针旋转180度后显示。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/yAE-PrhIQHeHxP4N6x1FPA/zh-cn_image_0000002562025979.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=02CC732DCDD8813B6EC76F8AF66CBCC7E02AE04F2AD387D43B345AA73CEFD838) |
-| LEFT | 4 | 将当前图片顺时针旋转270度后显示。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/y3AaoLvyRLuc6YIJQxowzg/zh-cn_image_0000002562145965.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=DC3C4B2ED741802FF0355DF6BA972E3DC5A65917C9D6AB6F196389134EC449D8) |
-| UP_MIRRORED20+ | 5 | 将当前图片水平翻转后显示。 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/O_YdREWkQ5Kp_ZeSlo_y-w/zh-cn_image_0000002531106064.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=109EA75547F736883F5E7E64E315681B6D65C245826E4313E14E1C741DE766AC) |
-| RIGHT_MIRRORED20+ | 6 | 将当前图片水平翻转再顺时针旋转90度后显示。 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/c4K0cMosTUG0-d8LykO7NQ/zh-cn_image_0000002531225998.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=6026FF4C888B1811CC694DE282774AA1E9041B7C795A06E2F9405E726C7EF798) |
-| DOWN_MIRRORED20+ | 7 | 将当前图片垂直翻转后显示。 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/4nX5exbwSzq7QXvb-L2jAg/zh-cn_image_0000002562025981.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=B53842B9ECE8532C2D92193A2C9D17E183161363C46A4BAFAE6713E2A0F2AF93) |
-| LEFT_MIRRORED20+ | 8 | 将当前图片水平翻转再顺时针旋转270度后显示。 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/2656bag5TpGET2J4UyVq6g/zh-cn_image_0000002562145967.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=66155B05F33A51B9466B10DD80D62680DB0A9B3A0A64ED490CA19D46931AFC17) |
+| RIGHT | 2 | 将当前图片顺时针旋转90度后显示。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/7R6x4dA1TFuxuow1VwZssg/zh-cn_image_0000002531225996.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=CB7F9BA829A31FA83CD6BDAD198EB1518189BC05969771BD94E627D783CA6DC3) |
+| DOWN | 3 | 将当前图片顺时针旋转180度后显示。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/yAE-PrhIQHeHxP4N6x1FPA/zh-cn_image_0000002562025979.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=A4E8F60A2B098E036A98489C361ADFA615D13BA4F82F4C3B17E098CD4B3D88B2) |
+| LEFT | 4 | 将当前图片顺时针旋转270度后显示。 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/y3AaoLvyRLuc6YIJQxowzg/zh-cn_image_0000002562145965.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=B10A0F0DF3CD5E83987CF555574FF2941FE353865D119CCBE52D0589A9880D71) |
+| UP_MIRRORED20+ | 5 | 将当前图片水平翻转后显示。 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/O_YdREWkQ5Kp_ZeSlo_y-w/zh-cn_image_0000002531106064.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=92A42F029432A3A727C09837BFCABB216B2C048EEB21A2BC3B9A366A41939D0A) |
+| RIGHT_MIRRORED20+ | 6 | 将当前图片水平翻转再顺时针旋转90度后显示。 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/c4K0cMosTUG0-d8LykO7NQ/zh-cn_image_0000002531225998.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=741EF2D4579FA32EE18FB6CF950AD7B7026E9885FEB1EFE3E6964CF3A5D8ABE8) |
+| DOWN_MIRRORED20+ | 7 | 将当前图片垂直翻转后显示。 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/4nX5exbwSzq7QXvb-L2jAg/zh-cn_image_0000002562025981.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=D09077184204B12A24312762F6A9B8FAD57727B5F9AA85DEFF0E933E09CDEDF4) |
+| LEFT_MIRRORED20+ | 8 | 将当前图片水平翻转再顺时针旋转270度后显示。 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/2656bag5TpGET2J4UyVq6g/zh-cn_image_0000002562145967.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=A0576DA031FF3F2BA7912796E5AB84C5321FAB690731ECD7216B809787E6CB16) |
 
 ## ImageSourceSize18+对象说明
 
@@ -1036,7 +1036,7 @@ struct ImageExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/hW8Hbg8CS6GIv0Lqip8HKQ/zh-cn_image_0000002531106066.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=5FA40645B01195941E265EAA7751D3C94B2B6B39A697D27CBFC58DCC9AC988BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/hW8Hbg8CS6GIv0Lqip8HKQ/zh-cn_image_0000002531106066.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=64DC69F1BCA587F288A25EF9A481315A4F3EAC30B1AF81876370013219ACACCA)
 
 ### 示例2（下载与显示静态网络图片）
 
@@ -1101,7 +1101,7 @@ struct ImageExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/FjkF6OzQQ16PnwWo9ndU_Q/zh-cn_image_0000002531226000.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=9BA44AEF2A359CA80C9190C6EF48A67EACEE8CC876CBAFF29DB06521401F0EC6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/FjkF6OzQQ16PnwWo9ndU_Q/zh-cn_image_0000002531226000.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=985E28D1EF526F851C8A21A03F092D58C29EE0203219A0895900BC5FE32FB144)
 
 ### 示例3（下载与显示网络gif图片）
 
@@ -1182,7 +1182,7 @@ struct ImageExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/7g_sDpXsSKW2qc8KqjiOEg/zh-cn_image_0000002562025983.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=294E7F9382E4474A6C2685A23C5A7A92E16CCC84624BEA36F84894290D78652A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/7g_sDpXsSKW2qc8KqjiOEg/zh-cn_image_0000002562025983.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=B47F5450D3BD76700A195A3A76A237EEFB6FF530F782E09F1317802F63289363)
 
 ### 示例5（开启图像AI分析）
 
@@ -1235,7 +1235,7 @@ struct ImageExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/KbpjjaICQ8u56Gcix8b8Cw/zh-cn_image_0000002562145969.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=1C5AD4F4E6B5E5A39BA0989CBAADC5A9F3186693F600F8A09C76B78799243503)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/KbpjjaICQ8u56Gcix8b8Cw/zh-cn_image_0000002562145969.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=701CD8B81AA821179E8CC7059CF6C996FE85D59297AA69796DE3C5FCB0446A60)
 
 ### 示例6（通过slice拉伸图片）
 
@@ -1301,7 +1301,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/0WnjWmn9T7C3OMUUYzSTIQ/zh-cn_image_0000002531106068.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=F4BDB768CE1E38F8BDA45F5B8678C51F3668A6C164DF9C316694EC75010CE46B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/0WnjWmn9T7C3OMUUYzSTIQ/zh-cn_image_0000002531106068.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=DBDAE852A91DA58ACE02984B3378FFF3DD970B1F7E179BCC37D84ED719281D6D)
 
 ### 示例7（通过lattice拉伸图片）
 
@@ -1347,7 +1347,7 @@ struct drawingLatticeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Jk61eSpbTeCV4q8JxO51Iw/zh-cn_image_0000002531226002.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=DD80B11846109E707CF28176853192DB2FF0EFB572A2FDC78E7552760FC06EB9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Jk61eSpbTeCV4q8JxO51Iw/zh-cn_image_0000002531226002.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=2ABF1BE9B99C0AB78830DC5F43B4EE07B220DCA63FA9EFFBBBE3A3A5722FE610)
 
 ### 示例8（播放PixelMap数组动画）
 
@@ -1426,7 +1426,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/rfVW5_nHR6af5QQ-P3E0mg/zh-cn_image_0000002562025985.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=9738D1A76CEEF2B79A5AC8B67AFCBA9C28DAC48F1E0CAE132575DA93AF2D5647)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/rfVW5_nHR6af5QQ-P3E0mg/zh-cn_image_0000002562025985.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=51564299EAA29CB07147F8788B0B134D18E796DA40D98DB6904F6627411AA636)
 
 ### 示例9（为图像设置颜色滤镜效果）
 
@@ -1491,7 +1491,7 @@ struct ImageExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ID5cVG9OR7qC8Debz1RUhw/zh-cn_image_0000002562145971.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=682000C01418D1AF06B9B6A8E435F75636D6E52F8CF518289849B07B19D0C256)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ID5cVG9OR7qC8Debz1RUhw/zh-cn_image_0000002562145971.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=31F606A86DBDF936A1791278F3E4A09B66EA0B5459AE78A5680AA07685F1E48B)
 
 ### 示例10（为图像设置填充效果）
 
@@ -1538,7 +1538,7 @@ struct ImageExample{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ypKZ19oGRc6sTlo1OSqa-Q/zh-cn_image_0000002531106070.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=0A91CD0BEEEFC441E17D0CD962434656F7EBE50C7EBC3D0CC318B79DA542F874)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ypKZ19oGRc6sTlo1OSqa-Q/zh-cn_image_0000002531106070.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=D7787715A00697DA08B7CA427C421BFD57212A79141C025E7D4B7626B6E3C50D)
 
 ### 示例11（切换显示不同类型图片）
 
@@ -1568,7 +1568,7 @@ struct ImageContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/nYO7EEs7QSukQMWiGmv0KQ/zh-cn_image_0000002531226004.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=F0854CAEB4CE5C6133DD17BA47D6F3771662E3B3FDF15E2CE3E1D6A1AEA0258E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/nYO7EEs7QSukQMWiGmv0KQ/zh-cn_image_0000002531226004.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=048E51B011B096C082C9C45D6FF4DB568588DB4FF2973AFFABC89F796615D0B5)
 
 ### 示例12（配置隐私隐藏）
 
@@ -1593,7 +1593,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/K_frsw9-Rb26vTaOGiy9oA/zh-cn_image_0000002562025987.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=4CCB0F6B5E2739054E7F6CB454679D022B0AA02E12BC60CC9CE76E94FAFC897A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/K_frsw9-Rb26vTaOGiy9oA/zh-cn_image_0000002562025987.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=EC3B31971D8A3C24B6D085021F2B74956043393875DC67FA39EB28B1D4EEB1E8)
 
 ### 示例13（为图片设置扫光效果）
 
@@ -1682,7 +1682,7 @@ struct ImageExample11 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/TycuoCKNTReT0_ZSM2Q-sw/zh-cn_image_0000002562145973.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=995F0EFA0FA886F71972975863E6458AEB77C7727A38C7A8A03A99BCD0F6A58F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/TycuoCKNTReT0_ZSM2Q-sw/zh-cn_image_0000002562145973.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=5FDD2EA4357313FA9A7E4F7025F9F44B3571ECFD401CCDC692777159309D83B2)
 
 ### 示例14（为图片添加变换效果）
 
@@ -1751,7 +1751,7 @@ struct Test {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/6LETJIeHTe6OowsCEwsF9Q/zh-cn_image_0000002531106072.jpeg?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=5BBDC88CE8C5737D939AF393436BFE9736A34A740E8D2B7667183A19C3042289)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/6LETJIeHTe6OowsCEwsF9Q/zh-cn_image_0000002531106072.jpeg?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=0C5DCF6E2962E8ECB72F2E08823CB40CE4B8A9DF2F93DAE09CB8E92076E00302)
 
 ### 示例15（通过sourceSize设置图片解码尺寸）
 
@@ -1785,7 +1785,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/lZTJULPhSNSQSQ-bv7UVcQ/zh-cn_image_0000002531226006.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=87F8B614FF71FEABD47472CC43777932F5391A2E780564D9501BCD91F1CD9063)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/lZTJULPhSNSQSQ-bv7UVcQ/zh-cn_image_0000002531226006.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=80992C849A10A76E1DF5E7F222BACED93D2463457A326E9767236224DD65C60C)
 
 ### 示例16（通过renderMode设置图片的渲染模式）
 
@@ -1812,7 +1812,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/1XhxOBS9R0uKutA3RbfM_g/zh-cn_image_0000002562025989.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=D3FEDC72EBFB0158EDAF8A57F1894BC1E8C9F5C50E11F28D6B01138F8B27C164)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/1XhxOBS9R0uKutA3RbfM_g/zh-cn_image_0000002562025989.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=34A014C4BE1C3E552EAF2AB80B279EB8B51459B94193EDB96236FDC93FFE15A9)
 
 ### 示例17（通过objectRepeat设置图片的重复样式）
 
@@ -1839,7 +1839,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/p7d8g30OS3G9l7QFws48Gw/zh-cn_image_0000002562145975.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=23E0B5C83039CB7541D99DB4AA751DB211AB0C21DE35BB027ED4E41C0A705AE3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/p7d8g30OS3G9l7QFws48Gw/zh-cn_image_0000002562145975.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=AF429298295B833BA39C5F1ED4FED4B1937D3F944B90DB4035DE497F7AF2CEE9)
 
 ### 示例18（设置SVG图片的填充颜色）
 
@@ -1889,7 +1889,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/NVjJ0ROhT8WYjTxogdjkig/zh-cn_image_0000002531106074.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=F1B14DB3FA720A5DF8C3AD97A2849719F3E532119E808A10398318F9B66D68DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/NVjJ0ROhT8WYjTxogdjkig/zh-cn_image_0000002531106074.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=25267D944C0E500F9FAD36204296610A5A50EF33FBF52E296590EF11E8D87905)
 
 ### 示例19（设置HDR图源动态提亮）
 
@@ -1977,7 +1977,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/JczcrJdkS9u1kI9Sy5nGoQ/zh-cn_image_0000002531226008.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=C7254E181820160839F91C52DADF01DC4C0403E2088B3BF0BA028145FCD1C8F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/JczcrJdkS9u1kI9Sy5nGoQ/zh-cn_image_0000002531226008.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=97DFF9AD958316E72D93FEDF44CDE4CD9848BB2726703FC3371A268E71865706)
 
 ### 示例21（设置图像内容的显示方向）
 
@@ -2071,7 +2071,7 @@ struct OrientationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/LZJIGdGNTAiRGeed0BrUkA/zh-cn_image_0000002562025991.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=B7199578100C3101DDC0A5FD558B5C6B33D92FCF5003C898BAEEFA3ED567B829)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/LZJIGdGNTAiRGeed0BrUkA/zh-cn_image_0000002562025991.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=24E5CF5D935CAD3037F5D5E063D873FF3CB7C5B899D9095078D8AF11FA774722)
 
 ### 示例22（获取图片的exif信息并设置图像内容的显示方向）
 
@@ -2189,7 +2189,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Rse67Qf4RaqCiYHjtBbByA/zh-cn_image_0000002562145977.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=A2299602A974344CBB01323960676F1F720EEEFE69E5CBDA92F66E1CC2A3C19A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Rse67Qf4RaqCiYHjtBbByA/zh-cn_image_0000002562145977.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=1A4B79BD6B1D839BD839257D0C4BEA05D3C10B20E7BA3B6C5AA7270AF5203EE4)
 
 ### 示例23（动态切换SVG图片的填充颜色）
 
@@ -2249,7 +2249,7 @@ struct fillColorMetricsDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ne-aQz4sS1mJZzSJpvsFAw/zh-cn_image_0000002531106076.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=1BD9E239DB854DCB30E258A38C403D87389E2F2A075B4980D1E45AE3DE856023)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ne-aQz4sS1mJZzSJpvsFAw/zh-cn_image_0000002531106076.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=600D177828211E0AE603C44D8AADD7EE8EF7516CB8CAC4B0E808EB88F09D87EF)
 
 ### 示例24（使用应用沙箱路径显示图片）
 
@@ -2282,7 +2282,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/48ai6Eb4TEmGavd89fJZNQ/zh-cn_image_0000002531226010.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=8D1B674D777B7B79E855E4EAD9C283853C7A547B03ABCB33248CB479AFF8BACE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/48ai6Eb4TEmGavd89fJZNQ/zh-cn_image_0000002531226010.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=7DAC3CE9DA2517FADB8B21995194E3CAB6E90B90381B65F35DFE4FE7D593E209)
 
 ### 示例25（使用相对路径显示图片）
 
@@ -2304,7 +2304,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/C09h6DSyQR6wxogJW3oQ5Q/zh-cn_image_0000002531226010.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=F54DA19877EBE5BC64A0C58C52D8F29C72262B7D840B4451167763C6D4F08A37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/C09h6DSyQR6wxogJW3oQ5Q/zh-cn_image_0000002531226010.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=E372B92F4DBFC216B08D9ECBB945E9CA19CEC05FC40FD0A41B5E32CDC77F13F2)
 
 ### 示例26（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -2341,7 +2341,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/3dCjwACsSBmt0A-NyDPf7Q/zh-cn_image_0000002562025993.png?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=618AF1FB792BF1B494024013BC94A6FD97D042129BE4D17994924D10D127FF53)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/3dCjwACsSBmt0A-NyDPf7Q/zh-cn_image_0000002562025993.png?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=FA28A53496E32C12A9A68E4CEDBBC481EBA4F8C3CD02C1767B7A4D1ACFE6AB0A)
 
 ### 示例27（使用ContentTransition属性实现图片淡入淡出切换效果）
 
@@ -2374,7 +2374,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/DS1YJzumSXuNVPx6bdnyqQ/zh-cn_image_0000002562145979.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=0C3D285B4A2DFE21B40D6A4277522F8AFF67FF1C8DFC700A83DC08EA529EE213)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/DS1YJzumSXuNVPx6bdnyqQ/zh-cn_image_0000002562145979.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=74227A9132970DCB78CB53768E67154C05917D248B581B68114D3B92B77EE1E4)
 
 ### 示例28（使用alt属性实现设置加载失败中图片和加载失败时图片）
 
@@ -2413,4 +2413,4 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/S-u2kqFiSbmlCf5mNtH1fA/zh-cn_image_0000002531106078.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144127Z&HW-CC-Expire=86400&HW-CC-Sign=035679853F88B6C8E56068EDAA562C12BE5B426D4D9280824CE87A8AC74E953C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/S-u2kqFiSbmlCf5mNtH1fA/zh-cn_image_0000002531106078.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021434Z&HW-CC-Expire=86400&HW-CC-Sign=93E449D13FB63308C009517D2B5CEF9B61EA9E1E8445552090FB72306D08259E)

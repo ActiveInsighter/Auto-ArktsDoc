@@ -1,4 +1,4 @@
-# 文档中心
+# 显式动画 (animateTo)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation
 
 提供全局animateTo显式动画接口来指定由于闭包代码导致的状态变化插入过渡动效。同属性动画，对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-renderfit#renderfit)属性进行配置。
@@ -197,7 +197,7 @@ struct AnimateToExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pKByjk41RzSxgYPl5gRYOg/zh-cn_image_0000002562026171.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144243Z&HW-CC-Expire=86400&HW-CC-Sign=64AE617B02CEAB65CD1556BA1629CCFCD10D7AC9ED134CBB05BBC479A5ACB151)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pKByjk41RzSxgYPl5gRYOg/zh-cn_image_0000002562026171.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021505Z&HW-CC-Expire=86400&HW-CC-Sign=CAA9EDD26AA1E24A4E0C83BC49F13B9BB785A35667FAAC0D815ACBDC8B9C2B3F)
 
 ### 示例2（动画执行结束后组件消失）
 
@@ -249,4 +249,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/b7LhcWNqQ4GvkRQ78y-NWA/zh-cn_image_0000002562146157.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144243Z&HW-CC-Expire=86400&HW-CC-Sign=43D92C6BD0031DF84AAAAA671A9E030A7D716171627E4ABE428F87E675CB4EAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/b7LhcWNqQ4GvkRQ78y-NWA/zh-cn_image_0000002562146157.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021505Z&HW-CC-Expire=86400&HW-CC-Sign=4D95279DA36FC819AF3A70C2C72FE78920635BA5D3A55C1DF5ACBB08699EBF08)

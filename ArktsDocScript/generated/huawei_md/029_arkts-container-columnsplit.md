@@ -1,4 +1,4 @@
-# 文档中心
+# ColumnSplit-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-columnsplit
 
 将子组件纵向布局，并在每个子组件之间插入横向分割线。
@@ -113,7 +113,7 @@ struct ColumnSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jGfuHj_MRUOrSRZGSs61pg/zh-cn_image_0000002531225790.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144053Z&HW-CC-Expire=86400&HW-CC-Sign=05BC0E8852B5F90DE4583F313DE9A5041EEFF5BBDC2FE23092095297D786EC2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jGfuHj_MRUOrSRZGSs61pg/zh-cn_image_0000002531225790.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021317Z&HW-CC-Expire=86400&HW-CC-Sign=54B82A8F0DFEB2E84AB7CF612B9597B77593D3E30CD524D3E28B44572A43FEC1)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
@@ -142,4 +142,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/u0xIIJqXSrCZmAlZtrgZCw/zh-cn_image_0000002562025773.png?HW-CC-KV=V1&HW-CC-Date=20260320T144053Z&HW-CC-Expire=86400&HW-CC-Sign=61D2D854C38BE22EAE64D5D4826EFC291EDC5000E3BBFE1DD9F0463C53AC57F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/u0xIIJqXSrCZmAlZtrgZCw/zh-cn_image_0000002562025773.png?HW-CC-KV=V1&HW-CC-Date=20260321T021317Z&HW-CC-Expire=86400&HW-CC-Sign=AFD6533D8C96CA1B822997E135E76E8A69AE32BF06DFBC1B1E9F5FB92CE6A4F4)

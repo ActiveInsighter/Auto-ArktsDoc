@@ -1,4 +1,4 @@
-# 文档中心
+# Badge-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge
 
 信息标记组件，可以附加在单个组件上用于信息提醒的容器组件。
@@ -302,7 +302,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/a9pVeo3fRquGTWrdMAQPfg/zh-cn_image_0000002531226068.png?HW-CC-KV=V1&HW-CC-Date=20260320T144222Z&HW-CC-Expire=86400&HW-CC-Sign=0D29C4B0DB68776E5097A5FB3556457E20A93CAE411AE2F7BB7F4069CD5A1416)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/a9pVeo3fRquGTWrdMAQPfg/zh-cn_image_0000002531226068.png?HW-CC-KV=V1&HW-CC-Date=20260321T021445Z&HW-CC-Expire=86400&HW-CC-Sign=5A968F51C16658243392877C68B24FD035E2F08552412E460D23807CBEE6BFAD)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -339,7 +339,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/eU1sHxUKTY-s-f2wgv8EQA/zh-cn_image_0000002562026051.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144222Z&HW-CC-Expire=86400&HW-CC-Sign=72C7E1D05BA1DB7ABF2BE420C51425AF966A8AE37CC2ACB651F54C8C526EA2BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/eU1sHxUKTY-s-f2wgv8EQA/zh-cn_image_0000002562026051.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021445Z&HW-CC-Expire=86400&HW-CC-Sign=191CFAE91E993E27C34833CFA8B6B6F1317E34A531E67EA820948BAEA61F630C)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -388,4 +388,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iqYdTeu7SiWMiTXFuu94Ew/zh-cn_image_0000002562146037.png?HW-CC-KV=V1&HW-CC-Date=20260320T144222Z&HW-CC-Expire=86400&HW-CC-Sign=82D0C26FE83B2E3401954EA1D75EFB511097C543E5028252758FBAACCDF78764)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iqYdTeu7SiWMiTXFuu94Ew/zh-cn_image_0000002562146037.png?HW-CC-KV=V1&HW-CC-Date=20260321T021445Z&HW-CC-Expire=86400&HW-CC-Sign=E116FFC529AF7CABD6B33D82A5B5FF972F2CE470391A2F3445C126A6780E5F5B)

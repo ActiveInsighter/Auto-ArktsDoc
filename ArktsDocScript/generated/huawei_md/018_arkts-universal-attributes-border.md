@@ -1,4 +1,4 @@
-# 文档中心
+# 边框设置-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border
 
 设置组件边框样式。
@@ -197,7 +197,7 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/eWTtoaouTHaeKoK-oaGMjw/zh-cn_image_0000002531105758.gif?HW-CC-KV=V1&HW-CC-Date=20260320T144043Z&HW-CC-Expire=86400&HW-CC-Sign=314EC1426BE85148D37AB5395AE5D67D98529290BC9FB4407B1B984C7A631A54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/eWTtoaouTHaeKoK-oaGMjw/zh-cn_image_0000002531105758.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021306Z&HW-CC-Expire=86400&HW-CC-Sign=5539A40C4AB606018BC45A3B764264C5352535CB56D07A57ACC237370E66F458)
 
 ### 示例2（边框宽度类型和边框颜色）
 
@@ -263,11 +263,11 @@ struct BorderExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/SKys8TPlTEKXencVHoYgNQ/zh-cn_image_0000002531225692.png?HW-CC-KV=V1&HW-CC-Date=20260320T144043Z&HW-CC-Expire=86400&HW-CC-Sign=D464659C277077C126F88083FA17DD044FE61919602391BB9A174FF985AD33F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/SKys8TPlTEKXencVHoYgNQ/zh-cn_image_0000002531225692.png?HW-CC-KV=V1&HW-CC-Date=20260321T021306Z&HW-CC-Expire=86400&HW-CC-Sign=74C183A103F8A5163C40F6C36301BB07F901259C14D2F2C7AE244A1024F193E8)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_d9c5MeYQl-M9ag_Bu1HOg/zh-cn_image_0000002562025675.png?HW-CC-KV=V1&HW-CC-Date=20260320T144043Z&HW-CC-Expire=86400&HW-CC-Sign=CAA2705756B5D49C7B4DF88B428BDFC2B135A400C5397622E1835EFE7E30752F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_d9c5MeYQl-M9ag_Bu1HOg/zh-cn_image_0000002562025675.png?HW-CC-KV=V1&HW-CC-Date=20260321T021306Z&HW-CC-Expire=86400&HW-CC-Sign=64B4497CDF43396D6F70A07C24FD6EA305B0261F50BD9810660BCB81585E0C76)
 
 ### 示例3（设置离屏圆角）
 
@@ -341,4 +341,4 @@ struct RenderStrategyExample {
 
 设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RlyEn8D7R4q8go8nYHvE5g/zh-cn_image_0000002562145661.jpg?HW-CC-KV=V1&HW-CC-Date=20260320T144043Z&HW-CC-Expire=86400&HW-CC-Sign=C14C8F8EDD3A697CF8070FBD941E8AFD100209B141C412B204E7B8D8BB1ED537)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RlyEn8D7R4q8go8nYHvE5g/zh-cn_image_0000002562145661.jpg?HW-CC-KV=V1&HW-CC-Date=20260321T021306Z&HW-CC-Expire=86400&HW-CC-Sign=7152330943DD8A1E26932BAC172C99337A5F35D6CC20DC1EEAE0765560A74CD5)

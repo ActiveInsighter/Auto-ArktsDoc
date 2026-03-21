@@ -1,4 +1,4 @@
-# Flex布局-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-flex-layout
 
 可以灵活排列、对齐和分配容器内的子组件空间，使元素根据可用空间扩展或收缩，以满足不同屏幕尺寸下的响应式布局。
@@ -194,4 +194,4 @@ struct FlexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Xnub7aXFQcONoyQqA9JNnQ/zh-cn_image_0000002562145653.png?HW-CC-KV=V1&HW-CC-Date=20260320T144037Z&HW-CC-Expire=86400&HW-CC-Sign=1D6AE7F8AC0903215752A218979C37D39F38941C556498EB9F5E889AF5ED631A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Xnub7aXFQcONoyQqA9JNnQ/zh-cn_image_0000002562145653.png?HW-CC-KV=V1&HW-CC-Date=20260321T021300Z&HW-CC-Expire=86400&HW-CC-Sign=AD98D79FAAB5484AFD0F5AF98ADC08939A347902E72C65DA04138975CE1705B8)
