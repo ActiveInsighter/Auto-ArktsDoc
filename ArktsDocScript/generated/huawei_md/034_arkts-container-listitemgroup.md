@@ -1,4 +1,4 @@
-# ListItemGroup-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitemgroup
 
 该组件用来展示列表item分组，宽度默认充满[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)组件，必须配合List组件来使用。
@@ -267,7 +267,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/J6HJAzR4SVGSTXW3lgkR7A/zh-cn_image_0000002531105870.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021053Z&HW-CC-Expire=86400&HW-CC-Sign=8317510D89062084EE38FC75FA5627BFE31A0AB49BA54F1D5A9E1B854B3FA02F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/J6HJAzR4SVGSTXW3lgkR7A/zh-cn_image_0000002531105870.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023440Z&HW-CC-Expire=86400&HW-CC-Sign=38A1CC1363347831BAADCEB45E64E4A6B120261381348748C9FFECAE8246AA49)
 
 ### 示例2（设置卡片样式）
 
@@ -328,7 +328,7 @@ interface ArrObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/-2APPzItRza18AaoBjb07A/zh-cn_image_0000002531225804.jpeg?HW-CC-KV=V1&HW-CC-Date=20260321T021053Z&HW-CC-Expire=86400&HW-CC-Sign=058BFE69E5C6DEF035108931F065AC33407757A16D6C1E467D081EE27AC35C42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/-2APPzItRza18AaoBjb07A/zh-cn_image_0000002531225804.jpeg?HW-CC-KV=V1&HW-CC-Date=20260322T023440Z&HW-CC-Expire=86400&HW-CC-Sign=AA6B15537DA1E43AEC21703A2F94A6B419DF78F7DDA7EE2479E84E8AF573B4F0)
 
 ### 示例3（设置Header/Footer）
 
@@ -465,7 +465,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/TOtuMX0_SLm7irwD9ZOlKQ/zh-cn_image_0000002562025787.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021053Z&HW-CC-Expire=86400&HW-CC-Sign=06EA03309EF17E1AF80A37E334CE12956B30AC4627B464F125886428637D6A41)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/TOtuMX0_SLm7irwD9ZOlKQ/zh-cn_image_0000002562025787.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023440Z&HW-CC-Expire=86400&HW-CC-Sign=DB4CFDDD5061600983BC90C93B166317D20D63DEF7113E07BAF5CDF8B508EE10)
 
 ### 示例4（设置多列布局）
 
@@ -628,4 +628,4 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/UOp1pUehR4KMifbL9mSZcA/zh-cn_image_0000002562145773.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021053Z&HW-CC-Expire=86400&HW-CC-Sign=37A52312D28FC300FB6BD065FF0CB58CE870DB894C0F644A187B0E0D43B33A75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/UOp1pUehR4KMifbL9mSZcA/zh-cn_image_0000002562145773.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023440Z&HW-CC-Expire=86400&HW-CC-Sign=8E077807BE493BE35A8C18ADB510C300CF8E45BE5755DAD4C3887A3AD6CD8531)

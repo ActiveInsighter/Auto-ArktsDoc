@@ -1,4 +1,4 @@
-# LazyVGridLayout-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazyvgridlayout
 
 该组件用于实现支持懒加载的网格布局，其父组件仅限于[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)或[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)，并支持使用自定义组件、[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件封装后，在WaterFlow或FlowItem组件下应用。
@@ -252,4 +252,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/GQtuyc5ESeu6d2mrwD5iQQ/zh-cn_image_0000002531105904.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021340Z&HW-CC-Expire=86400&HW-CC-Sign=AA60B6CD35C5066E345FD0BFEF92B3D444DB8B15682AB8FA1CE4DF973B3E0AED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/GQtuyc5ESeu6d2mrwD5iQQ/zh-cn_image_0000002531105904.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023452Z&HW-CC-Expire=86400&HW-CC-Sign=48283BA6D94262E0208B5E43B599D4F39F6EAF8088873AED1A9F54CD165FB905)

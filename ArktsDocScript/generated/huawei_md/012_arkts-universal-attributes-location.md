@@ -1,4 +1,4 @@
-# 位置设置-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location
 
 设置组件对齐方式、布局方向及显示位置。
@@ -405,7 +405,7 @@ struct PositionExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/JJScBWHmRlmNlhYbS0ElWg/zh-cn_image_0000002531225680.png?HW-CC-KV=V1&HW-CC-Date=20260321T021259Z&HW-CC-Expire=86400&HW-CC-Sign=C7BA12A50AE65552197FEDB719DBA8D5D170479BCA91BBDEFE753B2ED99863AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/JJScBWHmRlmNlhYbS0ElWg/zh-cn_image_0000002531225680.png?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=D573F26B926AF305B6CA6F46EDD37B7DBA5B6CF4BA6FF61DF70D03B0E3B91CBF)
 
 ### 示例2（位置偏移）
 
@@ -490,7 +490,7 @@ struct PositionExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/gwn09kRYTpGhssqETdqzBw/zh-cn_image_0000002562025663.png?HW-CC-KV=V1&HW-CC-Date=20260321T021259Z&HW-CC-Expire=86400&HW-CC-Sign=CA12FD3695E0551C58801CAD6760BECB4F3030AD6FAC81E668DA651B0B1248B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/gwn09kRYTpGhssqETdqzBw/zh-cn_image_0000002562025663.png?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=3894BB364FA0E4FA5839A363B38DC6E8178B508742AC6FA59AA4B7975A483385)
 
 ### 示例3（绝对定位和相对偏移）
 
@@ -568,7 +568,7 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ABV2vn5sRVmN7ORxRBkUXA/zh-cn_image_0000002562145649.jpeg?HW-CC-KV=V1&HW-CC-Date=20260321T021259Z&HW-CC-Expire=86400&HW-CC-Sign=BCD3F17B84B3DA72C8508E0314762F7AF12BE37DF894B980F6B321EC9121230D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ABV2vn5sRVmN7ORxRBkUXA/zh-cn_image_0000002562145649.jpeg?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=DCD4EC9418178166CA45ABEDA515361D77BFB72C8BB202F4D9D07D2A7427E3AC)
 
 ### 示例4（镜像效果）
 
@@ -669,11 +669,11 @@ struct Example4 {
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/6z-JkXIIQY-jh8Taq4FlRQ/zh-cn_image_0000002531105748.png?HW-CC-KV=V1&HW-CC-Date=20260321T021259Z&HW-CC-Expire=86400&HW-CC-Sign=F63D4AB1A56B1C53767D2ACA2DA50CEEC24892985868B3297167EEC9688122CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/6z-JkXIIQY-jh8Taq4FlRQ/zh-cn_image_0000002531105748.png?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=9DE92D960D162117585A8847EDD17130C26C769AA89CCB5349E61F744AA0AF98)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/iRGRV1_NQTibXFXByWKY0Q/zh-cn_image_0000002531225682.png?HW-CC-KV=V1&HW-CC-Date=20260321T021259Z&HW-CC-Expire=86400&HW-CC-Sign=4A611EF979411AC60B89EC8788F1BC4ABD74B429D338B44E463C6E45F289C786)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/iRGRV1_NQTibXFXByWKY0Q/zh-cn_image_0000002531225682.png?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=56A3CE1E9E88BBDC0BF1F662267541EE60E713622E462F528D17FEA2A695BFBF)
 
 ### 示例5（align属性适配镜像特性）
 
@@ -741,7 +741,7 @@ struct buttonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XPW7IXKtQIe2S3NwVRxdxg/zh-cn_image_0000002562025665.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021259Z&HW-CC-Expire=86400&HW-CC-Sign=5FB42428FE3A6E6E8E4B1935F0D5CC3B3010B3B1D0BD0A33B68C8DEC24C0E193)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XPW7IXKtQIe2S3NwVRxdxg/zh-cn_image_0000002562025665.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=463AD909D0C3400FA2501A2C69B0E01550F35F39712156714789775790B946B9)
 
 ### 示例6（layoutGravity属性单独设置Stack容器中子组件的对齐规则）
 
@@ -802,4 +802,4 @@ struct Index5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/EVBTfvFsTlSPsWtfriUIlA/zh-cn_image_0000002562145651.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021259Z&HW-CC-Expire=86400&HW-CC-Sign=932EEBE6E62434AAFB6B4EE5842F3CC53F5FF48CE79695A654E1FDFCCCD75AAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/EVBTfvFsTlSPsWtfriUIlA/zh-cn_image_0000002562145651.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=5FD36E13EC9CF1DE0D0A797FD922D1899877353C745B5E8842F60DE136A840AE)

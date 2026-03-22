@@ -1,4 +1,4 @@
-# 布局约束-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-layout-constraints
 
 通过组件的宽高比和显示优先级约束组件显示效果。
@@ -119,11 +119,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/dF0YMBnzTHKUJPzq57RBwA/zh-cn_image_0000002531105750.png?HW-CC-KV=V1&HW-CC-Date=20260321T021301Z&HW-CC-Expire=86400&HW-CC-Sign=341515ABBB5D89444DCEDDE5E5237B69C8504000EBC234ABAEC3C1C74E811CEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/dF0YMBnzTHKUJPzq57RBwA/zh-cn_image_0000002531105750.png?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=5009012F9CE470E444A871432E54044D8AAFF481B04A64F35F1D2CF0CF778AAE)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/dYFukN5BSkavVDW_Y29BfQ/zh-cn_image_0000002531225684.png?HW-CC-KV=V1&HW-CC-Date=20260321T021301Z&HW-CC-Expire=86400&HW-CC-Sign=81E21C6566EF9A988ED188B5FD97941340D985F09739FAF101915331C050DE38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/dYFukN5BSkavVDW_Y29BfQ/zh-cn_image_0000002531225684.png?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=C887B1035C38F7F2BF6044667E9DE0FAA56BE4E516266CF75E789B9565D71F43)
 
 ### 示例2（设置组件显示优先级）
 
@@ -187,4 +187,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/KLDVrbK7TUCWg50g-vkfjw/zh-cn_image_0000002562025667.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021301Z&HW-CC-Expire=86400&HW-CC-Sign=6E3D00D6197375B5F1B505D6FA358B07EC5566961F466487511CCF1D8E4F1F1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/KLDVrbK7TUCWg50g-vkfjw/zh-cn_image_0000002562025667.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023417Z&HW-CC-Expire=86400&HW-CC-Sign=6B90D7A069E582B5BDD3C45581A4CBCC2F7BFC45A886518720F3EE8C8D09F32B)

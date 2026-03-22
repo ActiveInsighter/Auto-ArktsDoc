@@ -150,7 +150,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/uNEwklyKSTuKblpmfp5cFg/zh-cn_image_0000002531225838.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021340Z&HW-CC-Expire=86400&HW-CC-Sign=9D0665C52F656C81FD5ED6864EACC555DEEEDBC66D071271D4E28972D9E1F741)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/uNEwklyKSTuKblpmfp5cFg/zh-cn_image_0000002531225838.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023453Z&HW-CC-Expire=86400&HW-CC-Sign=1C59BC668A68A728531C74F79DC3AD0CE88E22EA715ACA69D152274BF2A91C58)
 
 ## 示例2（不设置子节点）
 
@@ -197,7 +197,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/lt2pFHtpSbuFuE7wtNs1QQ/zh-cn_image_0000002562025821.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021340Z&HW-CC-Expire=86400&HW-CC-Sign=C7DD82643A4D7EB76AFB66EB2BEE868E63819AB3EB00B224548848AD6E4149B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/lt2pFHtpSbuFuE7wtNs1QQ/zh-cn_image_0000002562025821.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023453Z&HW-CC-Expire=86400&HW-CC-Sign=61644C60C415BFCCDC75A3E9AE34227577E9DEC600C7D044B9DF67408C2A8C64)
 
 ## 示例3（支持嵌套滚动）
 
@@ -269,4 +269,4 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/0lOq2ngKRbC_TZWF2Q2E3Q/zh-cn_image_0000002562145807.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021340Z&HW-CC-Expire=86400&HW-CC-Sign=8038B5E63FC229B7192D2B15CC578A1541F713895DD699101D8CD097AAE4435D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/0lOq2ngKRbC_TZWF2Q2E3Q/zh-cn_image_0000002562145807.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023453Z&HW-CC-Expire=86400&HW-CC-Sign=26A86CA70317E318C6E252A1A2687190E483AE98E9D6DE958963AB2BA4D2DD3F)

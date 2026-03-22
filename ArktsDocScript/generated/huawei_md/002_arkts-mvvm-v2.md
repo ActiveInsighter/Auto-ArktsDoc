@@ -1,4 +1,4 @@
-# 文档中心
+# MVVM模式（V2）-学习UI范式状态管理-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm-v2
 
 ## 概述
@@ -980,7 +980,7 @@ struct TodoList {
 
 ### 效果图展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/-lmzin3fTZKSK3o9Udt8PA/zh-cn_image_0000002531104686.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021251Z&HW-CC-Expire=86400&HW-CC-Sign=19F73CE8E168BC24428350868805152F4555573A7DC727E51B862CE7E861DB09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/-lmzin3fTZKSK3o9Udt8PA/zh-cn_image_0000002531104686.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023408Z&HW-CC-Expire=86400&HW-CC-Sign=12B1C08FD61DA67E0A44AE3527F9EF6D6D1F111AB4024F44AD90F2D9E120B22A)
 
 ## 重构代码以符合MVVM架构
 

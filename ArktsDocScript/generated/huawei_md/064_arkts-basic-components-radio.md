@@ -1,4 +1,4 @@
-# Radio-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio
 
 单选框，提供相应的用户交互选择项。
@@ -292,7 +292,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QO0rOrEzRyuIJmbbh8dUkw/zh-cn_image_0000002531105970.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021405Z&HW-CC-Expire=86400&HW-CC-Sign=99E361DFAACF9DE9861F4D53BB9F103961B5DDD68A3C2A08D2B2D805B1B7D88B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QO0rOrEzRyuIJmbbh8dUkw/zh-cn_image_0000002531105970.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023518Z&HW-CC-Expire=86400&HW-CC-Sign=FC3389D9B5680137C9906747931277E3E4E015A4A8FC49402AA5A02504F61658)
 
 ### 示例2 （设置选中样式）
 
@@ -348,7 +348,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/4zwi66S-RaWIJsOo9Sb7IQ/zh-cn_image_0000002531225904.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021405Z&HW-CC-Expire=86400&HW-CC-Sign=459EA94913B22043BA417DADF55BFA63A5EAE66B043C7F4B7001DA7E26005484)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/4zwi66S-RaWIJsOo9Sb7IQ/zh-cn_image_0000002531225904.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023518Z&HW-CC-Expire=86400&HW-CC-Sign=B3C702825E0B5EB62D7099E21DD15F9B3BA6A2F6C98BE5732786B766AE8183A5)
 
 ### 示例3（设置自定义样式）
 
@@ -414,4 +414,4 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/JGragB02TuuRbEO8vY3HyA/zh-cn_image_0000002562025887.gif?HW-CC-KV=V1&HW-CC-Date=20260321T021405Z&HW-CC-Expire=86400&HW-CC-Sign=86D848CB4F50B0B8954447EA8801B1673D35035EC210180E7E59E91FA1B33AE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/JGragB02TuuRbEO8vY3HyA/zh-cn_image_0000002562025887.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023518Z&HW-CC-Expire=86400&HW-CC-Sign=72EB12486FD8AF0CF78F9310513265611A7A33D7BB29DE414E8EA26D54F66B36)
