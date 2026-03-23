@@ -1,4 +1,4 @@
-# 文档中心
+# Indicator-导航与切换-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-swiper-components-indicator
 
 导航点组件，提供圆点导航点以及数字导航点两种导航点样式。
@@ -287,7 +287,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/BmyhksqsS0qpdX_TKSmVYw/zh-cn_image_0000002531225846.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023457Z&HW-CC-Expire=86400&HW-CC-Sign=115C09F49C87295A4D5FE77A9B9F576795048FA33FCA2D0C552FF02C54BE9728)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/BmyhksqsS0qpdX_TKSmVYw/zh-cn_image_0000002531225846.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023532Z&HW-CC-Expire=86400&HW-CC-Sign=00C5BA64336853021160496A57FCF0E8AEC4CBD8F35B4FC9571796677F3389BC)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -349,4 +349,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/63Ctb0jdQ7K2BlUdzAaF6g/zh-cn_image_0000002562025829.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023457Z&HW-CC-Expire=86400&HW-CC-Sign=1B16575520A06D8762CFD4733F560E92A5AAF167AC583AC440BE872A9252FD02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/63Ctb0jdQ7K2BlUdzAaF6g/zh-cn_image_0000002562025829.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023532Z&HW-CC-Expire=86400&HW-CC-Sign=CE7C2E9D7CB230FCEAA4BCBA49148AAE59AB694A114A451BCBD5CC97159EF78C)

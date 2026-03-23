@@ -1,4 +1,4 @@
-# Badge-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge
 
 信息标记组件，可以附加在单个组件上用于信息提醒的容器组件。
@@ -302,7 +302,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/a9pVeo3fRquGTWrdMAQPfg/zh-cn_image_0000002531226068.png?HW-CC-KV=V1&HW-CC-Date=20260322T023551Z&HW-CC-Expire=86400&HW-CC-Sign=4AC9BBB5C08AD0D4B99E42B155FF154D994F1A376DF15770EED1B4D770208C33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/a9pVeo3fRquGTWrdMAQPfg/zh-cn_image_0000002531226068.png?HW-CC-KV=V1&HW-CC-Date=20260323T023634Z&HW-CC-Expire=86400&HW-CC-Sign=CBED14850849DD2CB45A962D9CAD9B89B70BC3E64E9D544A2D8817F9FBB60129)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -339,7 +339,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/eU1sHxUKTY-s-f2wgv8EQA/zh-cn_image_0000002562026051.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023551Z&HW-CC-Expire=86400&HW-CC-Sign=34729078DE283CBEF45645F52D64CF1109A03048CBD24276D26A296F86422D3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/eU1sHxUKTY-s-f2wgv8EQA/zh-cn_image_0000002562026051.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023634Z&HW-CC-Expire=86400&HW-CC-Sign=BF94B2DB7246AC71F080E5AA466BA730E3CA9BB3A222EEEC436ED39353A2D27E)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -388,4 +388,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iqYdTeu7SiWMiTXFuu94Ew/zh-cn_image_0000002562146037.png?HW-CC-KV=V1&HW-CC-Date=20260322T023551Z&HW-CC-Expire=86400&HW-CC-Sign=23B251C3EA85DB7494C454E1182EB3ACDD2167AF5FE53927E26B10699E51C1AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/iqYdTeu7SiWMiTXFuu94Ew/zh-cn_image_0000002562146037.png?HW-CC-KV=V1&HW-CC-Date=20260323T023634Z&HW-CC-Expire=86400&HW-CC-Sign=13156CD16202E62074B393623700AC77EF70AEF8F0F5A200C0B1091D6E084392)

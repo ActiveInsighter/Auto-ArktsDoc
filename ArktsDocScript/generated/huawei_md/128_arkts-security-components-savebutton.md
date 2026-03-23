@@ -263,10 +263,10 @@ onClick(event: SaveButtonCallback)
 ## 示例1
 
 ```typescript
-// xxx.ets
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+
 @Entry
 @Component
 struct Index {
@@ -277,11 +277,11 @@ struct Index {
           const context = this.getUIContext().getHostContext();
           let helper = photoAccessHelper.getPhotoAccessHelper(context);
           let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'png');
-          // 使用uri打开文件，可以持续写入内容，写入过程不受时间限制。
+
           let file = await fileIo.open(uri, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-          // 写入文件
+
           await fileIo.write(file.fd, "context");
-          // 关闭文件
+
           await fileIo.close(file.fd);
         } catch (error) {
           console.error(`errCode: ${error.code}, errMessage: ${error.message}`);
@@ -294,27 +294,28 @@ struct Index {
         console.error("errMessage: " + error?.message);
       }
     };
+
   build() {
     Row() {
       Column({ space: 10 }) {
-        // 默认参数下，图标、文字、背景都存在。
+
         SaveButton().onClick((this.handleSaveButtonClick))
-        // 传入参数即表示元素存在，不传入的参数表示元素不存在，如果不传入buttonType，会默认添加ButtonType.Capsule配置，显示图标+背景。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED })
-        // 只显示图标+背景，如果设置背景色高八位的α值低于0x1a，则会被系统强制调整为0xff。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, buttonType: ButtonType.Capsule })
           .backgroundColor(0x10007dff)
-        // 图标、文字、背景都存在，如果设置背景色高八位的α值低于0x1a，则会被系统强制调整为0xff。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
-        // 图标、文字、背景都存在，如果设置宽度小于当前属性组合下允许的最小宽度时，宽度仍为设置值，此时按钮文本信息会自动换行，以保证安全控件显示的完整性。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
           .fontSize(16)
           .width(30)
-        // 图标、文字、背景都存在，如果设置宽度小于当前属性组合下允许的最小宽度时，宽度仍为设置值，此时按钮文本信息会自动换行，以保证安全控件显示的完整性。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
           .fontSize(16)
           .size({ width: 30, height: 30 })
-        // 图标、文字、背景都存在，如果设置宽度小于当前属性组合下允许的最小宽度时，宽度仍为设置值，此时按钮文本信息会自动换行，以保证安全控件显示的完整性。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
           .fontSize(16)
           .constraintSize({
@@ -323,7 +324,7 @@ struct Index {
             minHeight: 0,
             maxHeight: 30
           })
-        // 设置保存控件接收用户取消授权事件。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .onClick((this.handleSaveButtonClick))
           .userCancelEvent(true)
@@ -333,57 +334,56 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ULsWZ-HbQ6Cw2hTREjD38w/zh-cn_image_0000002531106308.png?HW-CC-KV=V1&HW-CC-Date=20260322T023627Z&HW-CC-Expire=86400&HW-CC-Sign=ACE1B32E233A8647C0125743D6E98B8A069226BD5335E75764506716FE40DD6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ULsWZ-HbQ6Cw2hTREjD38w/zh-cn_image_0000002531106308.png?HW-CC-KV=V1&HW-CC-Date=20260323T023714Z&HW-CC-Expire=86400&HW-CC-Sign=3D0D7DFB3D683597169DDC7C202CD455BDA108677E8234FFE324908DD5B96231)
 
 ## 示例2
 
 应用需要申请权限：ohos.permission.CUSTOMIZE_SAVE_BUTTON
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SetIcon {
   build() {
     Row() {
       Column({ space: 10 }) {
-        // 设置图标为resource类型，有权限时显示设置的图标。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setIcon($r('app.media.startIcon'))
-        // 设置文本为string类型，有权限时显示设置的文本。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setText("保存控件设置文本")
-        // 设置文本为resource类型，有权限时显示设置的资源文本。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setText($r('app.string.app_name'))
-        // 设置保存控件图标大小，入参为Dimension类型。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .iconSize(28)
-        // 设置保存控件的默认图标大小，入参为SizeOptions类型。将默认图标设置为宽高中的较小值。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .iconSize({ width: 20, height: 40 })
-        // 设置保存控件的自定义图标大小，入参为SizeOptions类型。图片按设置的宽高显示。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setIcon($r('app.media.startIcon'))
           .iconSize({ width: 30, height: 40 })
-        // 设置保存控件的自定义图标大小，入参为SizeOptions类型且只设置一个值。图片宽高均显示为设置值。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setIcon($r('app.media.startIcon'))
           .iconSize({ width: 40 })
-        // 设置保存控件的图标圆角，入参为Dimension类型。图片四个圆角的半径均为入参大小。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .backgroundColor(Color.Orange)
           .setIcon($r('app.media.background'))
           .iconSize(30)
           .iconBorderRadius(6)
-        // 设置正方形图标圆角大于边长一半时图标显示为圆形。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, buttonType: ButtonType.Circle })
           .backgroundColor(Color.Orange)
           .setIcon($r('app.media.foreground'))
           .iconSize(30)
           .iconBorderRadius(30)
           .padding(0)
-        // 自定义图标通过iconBorderRadius设置为圆形，背托设置为透明色并设置边框。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, buttonType:ButtonType.Circle })
           .setIcon($r('app.media.background'))
           .backgroundColor(Color.Transparent)
@@ -393,13 +393,13 @@ struct SetIcon {
           .borderColor(Color.Black)
           .borderStyle(BorderStyle.Solid)
           .padding(10)
-        // 设置保存控件的图标圆角，入参为BorderRadiuses类型。图片四个圆角的半径分别为对应入参大小，未设置的无圆角。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .backgroundColor(Color.Orange)
           .setIcon($r('app.media.background'))
           .iconSize(30)
           .iconBorderRadius({ topLeft: 10, topRight: 16, bottomRight: 20 })
-        // 设置保存控件的按压特效为无按压特效。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .stateEffect(false)
       }.width('100%')
@@ -408,4 +408,4 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/A8Bf4x1DRcmOfI9IG5ZQSA/zh-cn_image_0000002531226242.png?HW-CC-KV=V1&HW-CC-Date=20260322T023627Z&HW-CC-Expire=86400&HW-CC-Sign=D2F559BFDBA2B08488AE80825D5092B40BA16B3A44BD9FD0144091374681957D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/A8Bf4x1DRcmOfI9IG5ZQSA/zh-cn_image_0000002531226242.png?HW-CC-KV=V1&HW-CC-Date=20260323T023714Z&HW-CC-Expire=86400&HW-CC-Sign=CE972C0B69EFC313D53F7C80217E3D2A2AA4703438ED5026B44FF8CDDDC5A887)

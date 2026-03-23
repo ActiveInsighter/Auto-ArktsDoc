@@ -79,6 +79,7 @@ onComplete(callback: () => void)
 示例效果请以真机运行为准，当前DevEco Studio预览器不支持。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RichTextExample {
@@ -92,7 +93,6 @@ struct RichTextExample {
   '<p style="font-size: 35px;text-align: center;font-weight: bold; color: rgb(24,78,228)">字体大小35px,行高45px</p>' +
   '<p style="background-color: #e5e5e5;line-height: 45px;font-size: 35px;text-indent: 2em;">' +
   '<p>这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</p>';
-
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center,
       justifyContent: FlexAlign.Center }) {
@@ -131,20 +131,20 @@ struct RichTextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jX4Zl8QhSZ61AuBfWP22DA/zh-cn_image_0000002562145955.png?HW-CC-KV=V1&HW-CC-Date=20260322T023539Z&HW-CC-Expire=86400&HW-CC-Sign=D769254BB1F232766FF7DDBD6D751E7C85D8A49FE2961ACF2D2CFE0DC357C7CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/jX4Zl8QhSZ61AuBfWP22DA/zh-cn_image_0000002562145955.png?HW-CC-KV=V1&HW-CC-Date=20260323T023619Z&HW-CC-Expire=86400&HW-CC-Sign=B30614A4A632DFACFB5E13B2C19A5167869345F59F3EDBD613643B6CDFA21980)
 
 加载本地资源文件。
 
 通过$rawfile方式加载。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RichTextComponent {
-
   build() {
     Column() {
-
+      // 通过$rawfile加载本地资源文件。
       RichText($rawfile("index.html"))
     }
   }
@@ -156,13 +156,13 @@ struct RichTextComponent {
 使用 resource://rawfile/ 协议前缀可以避免常规 $rawfile 方式在处理带有"#"路由链接时的局限性。当URL中包含"#"号时，"#"后面的内容会被视为锚点（fragment）。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RichTextComponent {
-
   build() {
     Column() {
-
+      // 通过resource协议加载本地资源文件。
       RichText("resource://rawfile/index.html#home")
     }
   }
@@ -174,6 +174,7 @@ struct RichTextComponent {
 加载的html文件。
 
 ```typescript
+<!-- index.html -->
 <!DOCTYPE html>
 <html>
     <body>

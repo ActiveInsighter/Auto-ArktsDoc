@@ -101,12 +101,12 @@ onDec(event: VoidCallback)
 该示例展示了Counter组件的基本使用方法。点击+、-按钮可以修改value值。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CounterExample {
   @State value1: number = 0;
   @State value2: number = 0;
-
   build() {
     Column({ space: 50 }) {
       Counter() {
@@ -118,7 +118,6 @@ struct CounterExample {
       .onDec(() => {
         this.value1--;
       })
-
       Counter() {
         Text(this.value2.toString())
       }
@@ -138,4 +137,4 @@ struct CounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/KI7R82JFRiCAxKPOSSW9JA/zh-cn_image_0000002531106136.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023552Z&HW-CC-Expire=86400&HW-CC-Sign=B5B19FEB75A9C0E147AE8EF8972DCE84BDCED2FA7454138320C2D41370651966)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/KI7R82JFRiCAxKPOSSW9JA/zh-cn_image_0000002531106136.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023634Z&HW-CC-Expire=86400&HW-CC-Sign=2FAC226B18BB7F7C1B59F354832F16CE8EEBBDFCD9CF185D7692F35ACFB36EF6)

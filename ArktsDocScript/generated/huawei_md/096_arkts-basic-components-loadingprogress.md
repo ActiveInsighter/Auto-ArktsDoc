@@ -1,4 +1,4 @@
-# LoadingProgress-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress
 
 用于显示加载动效的组件。
@@ -134,7 +134,7 @@ struct LoadingProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/lTlku23kTAqT5VumMa3eLw/zh-cn_image_0000002562146045.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023557Z&HW-CC-Expire=86400&HW-CC-Sign=821C6460860F18EBAA6A7711B39AB7E8206BF41D532134768A7CD09BCE0BB58B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/lTlku23kTAqT5VumMa3eLw/zh-cn_image_0000002562146045.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023640Z&HW-CC-Expire=86400&HW-CC-Sign=C090A1F5EFF505DB5B0270307A4BDA011DEC37B63170EB5BAF93511F18A35519)
 
 ### 示例2（设置定制内容区）
 
@@ -284,4 +284,4 @@ struct LoadingProgressDemoExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5vnZnbrDTvy4tVCq-pT5KA/zh-cn_image_0000002531106144.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023557Z&HW-CC-Expire=86400&HW-CC-Sign=E283EC1D6DDB0031A79FEC20F92F69F70A96E239DEA05AAC77108B066A8538E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/5vnZnbrDTvy4tVCq-pT5KA/zh-cn_image_0000002531106144.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023640Z&HW-CC-Expire=86400&HW-CC-Sign=4A6D723AD741853EE34E632B2AC9284807EAF62447CF69E4BAA5EF9A90BA1B22)

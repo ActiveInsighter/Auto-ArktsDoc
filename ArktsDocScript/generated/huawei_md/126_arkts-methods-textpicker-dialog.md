@@ -143,13 +143,13 @@ static show(options?: TextPickerDialogOptions)
 该示例通过点击按钮弹出文本选择弹窗。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerDialogExample {
   private select: number | number[] = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
   @State selectedValue: string = '';
+
   build() {
     Row() {
       Column() {
@@ -162,10 +162,10 @@ struct TextPickerDialogExample {
               value: this.selectedValue,
               defaultPickerItemHeight: 40,
               onAccept: (value: TextPickerResult) => {
-                // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
+
                 this.select = value.index;
                 console.info(this.select + '');
-                // 点击确定后，被选到的文本数据展示到页面
+
                 this.selectedValue = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               },
@@ -198,20 +198,20 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/qb-zXMqSStilS3DQDbVSug/zh-cn_image_0000002562026211.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=E742CA9C599E7964C9C0EB48FD0BB3EFCEDDDAED619135F60FDD6733B8ADBC6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/qb-zXMqSStilS3DQDbVSug/zh-cn_image_0000002562026211.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=9435774DA67D241BA996EBB84813AC2A9A83ADAB3537F3484F6C7FEE8AC519D1)
 
 ### 示例2（自定义样式）
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本和按钮样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerDialogExample {
   private select: number | number[] = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
   @State selectedValue: string = '';
+
   build() {
     Row() {
       Column() {
@@ -249,10 +249,10 @@ struct TextPickerDialogExample {
                 borderRadius: 10
               },
               onAccept: (value: TextPickerResult) => {
-                // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
+
                 this.select = value.index;
                 console.info(this.select + '');
-                // 点击确定后，被选到的文本数据展示到页面
+
                 this.selectedValue = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               },
@@ -285,7 +285,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/BCsJEU7oQjyZFE3WPY_dCg/zh-cn_image_0000002562146197.png?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=E40770F9E769EBBADA1B165715E318CB68D1D6E776C9905D7792736B5AD2702D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/BCsJEU7oQjyZFE3WPY_dCg/zh-cn_image_0000002562146197.png?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=03A1E0AD5F002B974EC1B993E867F4A11AD9FE1DD4A3C8E4169ACB999F1EE385)
 
 ### 示例3（悬停态弹窗）
 
@@ -298,6 +298,7 @@ struct TextPickerDialogExample {
   private select: number | number[] = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
   @State selectedValue: string = '';
+
   build() {
     Row() {
       Column() {
@@ -311,10 +312,10 @@ struct TextPickerDialogExample {
               textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal }},
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder }},
               onAccept: (value: TextPickerResult) => {
-                // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
+
                 this.select = value.index;
                 console.info(this.select + '');
-                // 点击确定后，被选到的文本数据展示到页面
+
                 this.selectedValue = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               },
@@ -349,20 +350,20 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/kJqoNV02TXG9P1EvwjuzTQ/zh-cn_image_0000002531106296.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=ED7359CEA1EE6462012CEA607D83BB8222261540F6E93996875FE484F8E1C37F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/kJqoNV02TXG9P1EvwjuzTQ/zh-cn_image_0000002531106296.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=D20CD21E187C07E59250D7B2D0D3234A659E5873675D5C67771DFE3494D0CAAA)
 
 ### 示例4（设置弹窗位置）
 
 该示例通过alignment、offset设置弹窗的位置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerDialogExample {
   private select: number | number[] = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
   @State selectedValue: string = '';
+
   build() {
     Row() {
       Column() {
@@ -375,10 +376,10 @@ struct TextPickerDialogExample {
               alignment: DialogAlignment.Center,
               offset: { dx: 20, dy: 0 },
               onAccept: (value: TextPickerResult) => {
-                // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
+
                 this.select = value.index;
                 console.info(this.select + '');
-                // 点击确定后，被选到的文本数据展示到页面
+
                 this.selectedValue = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               }
@@ -390,20 +391,20 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/7mCz_tn4TRawIbkorx2hWA/zh-cn_image_0000002531226230.png?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=D154C79381106AA0D453D755CEF9D117560F01F9C75085336BBA31AA6F80769F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/7mCz_tn4TRawIbkorx2hWA/zh-cn_image_0000002531226230.png?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=E6B5BFCF11F94CEAA1927845A2C83035F22EC01B76B74E88008D4CEC2BA9F5FF)
 
 ### 示例5（设置遮蔽区）
 
 该示例通过maskRect设置遮蔽区。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerDialogExample {
   private select: number | number[] = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
   @State selectedValue: string = '';
+
   build() {
     Row() {
       Column() {
@@ -420,10 +421,10 @@ struct TextPickerDialogExample {
                 height: '60%'
               },
               onAccept: (value: TextPickerResult) => {
-                // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
+
                 this.select = value.index;
                 console.info(this.select + '');
-                // 点击确定后，被选到的文本数据展示到页面
+
                 this.selectedValue = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               }
@@ -435,20 +436,20 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/u3T8-4JcS5u5oiSzmeDGvg/zh-cn_image_0000002562026213.png?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=EACFCE1171F2F988CC18C8F8F11E52348E68EEFEDDA95D0DB59F7341E7DED839)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/u3T8-4JcS5u5oiSzmeDGvg/zh-cn_image_0000002562026213.png?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=2987BFCDC59516E02FC14B349277784495A690A617B37D37A267714F0DEBD168)
 
 ### 示例6（设置弹窗背板）
 
 该示例通过backgroundColor、backgroundBlurStyle和shadow设置弹窗背板。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerDialogExample {
   private select: number | number[] = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
   @State selectedValue: string = '';
+
   build() {
     Row() {
       Column() {
@@ -462,10 +463,10 @@ struct TextPickerDialogExample {
               backgroundBlurStyle: BlurStyle.NONE,
               shadow: ShadowStyle.OUTER_FLOATING_SM,
               onAccept: (value: TextPickerResult) => {
-                // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
+
                 this.select = value.index;
                 console.info(this.select + '');
-                // 点击确定后，被选到的文本数据展示到页面
+
                 this.selectedValue = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               }
@@ -477,20 +478,20 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/ZgkwPyUPTB2Yt_Kyey1sCQ/zh-cn_image_0000002562146199.png?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=02A405A72C311CD2BB0D4EB9FAF749AC1C8A013B76D438DA40DE7423B575F49C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/ZgkwPyUPTB2Yt_Kyey1sCQ/zh-cn_image_0000002562146199.png?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=88481582E0B47D8716044B757C96D26F0C7E39BBE55BEE288A8A93FABDE3DF18)
 
 ### 示例7（设置循环滚动）
 
 该示例通过配置canLoop设置是否循环滚动。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerDialogExample {
   private select: number | number[] = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
   @State selectedValue: string = '';
+
   build() {
     Row() {
       Column() {
@@ -503,10 +504,10 @@ struct TextPickerDialogExample {
               value: this.selectedValue,
               canLoop: false,
               onAccept: (value: TextPickerResult) => {
-                // 设置select为按下确定按钮时候的选中项index，这样当弹窗再次弹出时显示选中的是上一次确定的选项
+
                 this.select = value.index;
                 console.info(this.select + '');
-                // 点击确定后，被选到的文本数据展示到页面
+
                 this.selectedValue = value.value as string;
                 console.info('TextPickerDialog:onAccept()' + JSON.stringify(value));
               }
@@ -518,7 +519,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/GliW9aoXSbqpA7I7sFPTuA/zh-cn_image_0000002531106298.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=FE3B09B72003F7EE24B30DC96B2079C8A924BDF785B02CD2211B6898AA44AFAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/GliW9aoXSbqpA7I7sFPTuA/zh-cn_image_0000002531106298.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=B90ACBC2C091BEC1258B3E465A4FE8676FA4C4F9273D5747F79051F589F2CA0C)
 
 ### 示例8（设置选中项的背景样式）
 
@@ -527,7 +528,6 @@ struct TextPickerDialogExample {
 从API version 20开始，新增了[TextPickerDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-textpicker-dialog#textpickerdialogoptions对象说明)的selectedBackgroundStyle属性。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
@@ -557,7 +557,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Zd1cnxTgS-62pVBDn-iScA/zh-cn_image_0000002531226232.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=652E891F456399AD8D57F62E20B6A508235385083C6B99BCC04F25FF9F0533A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Zd1cnxTgS-62pVBDn-iScA/zh-cn_image_0000002531226232.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=30BBFBBDD622330E0F4BE272B3F988C9B83731CC4DD9884C7765EBE732708CC4)
 
 ### 示例9（自定义背景模糊效果参数）
 
@@ -568,9 +568,10 @@ struct TextPickerExample {
 @Component
 struct TextPickerExample {
   private showText1: string [] = ['Text1', 'Text1', 'Text1', 'Text1']
+
   build() {
     Stack({ alignContent: Alignment.Top }) {
-      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.bg'))
       Column() {
         Button('TextPickerDialog')
@@ -594,7 +595,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/lXz-nLghQM6Y4yRjEv1s9g/zh-cn_image_0000002562026215.png?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=D06F0D14DA4B9567DEE08CFF158CBC9CD25912946A6AA307150A704E39252C74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/lXz-nLghQM6Y4yRjEv1s9g/zh-cn_image_0000002562026215.png?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=2C89B4B94826646788BDA83C03D41B429E27FDEA5B1929857E24C3C93E37103E)
 
 ### 示例10（自定义背景效果参数）
 
@@ -605,9 +606,10 @@ struct TextPickerExample {
 @Component
 struct TextPickerExample {
   private showText1: string [] = ['Text1', 'Text1', 'Text1', 'Text1']
+
   build() {
     Stack({ alignContent: Alignment.Top }) {
-      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.bg'))
       Column() {
         Button('TextPickerDialog')
@@ -632,4 +634,4 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/P7O0YilDTZSwbKl8xPxLYQ/zh-cn_image_0000002562146201.png?HW-CC-KV=V1&HW-CC-Date=20260322T023626Z&HW-CC-Expire=86400&HW-CC-Sign=1C03BCEC9819B4EFDBD25A77ABAAB1B5C6C3B68CE1201E9D7C077CA6C2928D56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/P7O0YilDTZSwbKl8xPxLYQ/zh-cn_image_0000002562146201.png?HW-CC-KV=V1&HW-CC-Date=20260323T023713Z&HW-CC-Expire=86400&HW-CC-Sign=0E2F3B46B7560778AF440147354A536258D29D57784A257B46C3AF2E6C1C8D76)

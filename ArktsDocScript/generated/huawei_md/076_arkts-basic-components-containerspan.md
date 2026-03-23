@@ -1,4 +1,4 @@
-# 文档中心
+# ContainerSpan-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-containerspan
 
 [Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件的子组件，用于统一管理多个[Span](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span)、[ImageSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan)的背景色及圆角弧度。
@@ -97,7 +97,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/RWtxAtsNT3OPp9TEwx1SJg/zh-cn_image_0000002562025965.png?HW-CC-KV=V1&HW-CC-Date=20260322T023534Z&HW-CC-Expire=86400&HW-CC-Sign=96A85310576D8C730F67AF7E683E387E8B4AE4BF7091F09DDD7CAF9B72033F54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/RWtxAtsNT3OPp9TEwx1SJg/zh-cn_image_0000002562025965.png?HW-CC-KV=V1&HW-CC-Date=20260323T023614Z&HW-CC-Expire=86400&HW-CC-Sign=303E5331B799FACED81F50BA2FBE650EB3C3A0F8115F43294EDDAA218E170C63)
 
 ### 示例2（通过attributeModifier设置背景样式）
 
@@ -135,4 +135,4 @@ struct ContainerSpanModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/d0oJLC-MTxGNlpEPGSX9YA/zh-cn_image_0000002562145951.png?HW-CC-KV=V1&HW-CC-Date=20260322T023534Z&HW-CC-Expire=86400&HW-CC-Sign=3F89F546A7CEA71CFF8BF136E8CF64FAE16A2F8588D6D38A58E3D752B88D0D29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/d0oJLC-MTxGNlpEPGSX9YA/zh-cn_image_0000002562145951.png?HW-CC-KV=V1&HW-CC-Date=20260323T023614Z&HW-CC-Expire=86400&HW-CC-Sign=169305A75BD08F31431CFDB1C9D908843DC9A0783801EFB6E745501C8C4F2D73)

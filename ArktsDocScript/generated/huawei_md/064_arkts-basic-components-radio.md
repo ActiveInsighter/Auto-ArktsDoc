@@ -1,4 +1,4 @@
-# 文档中心
+# Radio-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio
 
 单选框，提供相应的用户交互选择项。
@@ -292,7 +292,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QO0rOrEzRyuIJmbbh8dUkw/zh-cn_image_0000002531105970.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023518Z&HW-CC-Expire=86400&HW-CC-Sign=FC3389D9B5680137C9906747931277E3E4E015A4A8FC49402AA5A02504F61658)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QO0rOrEzRyuIJmbbh8dUkw/zh-cn_image_0000002531105970.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023556Z&HW-CC-Expire=86400&HW-CC-Sign=E1B2E3CFB0FE5A8991951E384AC99B5841A1BB5AE75ECC85D2CDDBFA1F5AC15C)
 
 ### 示例2 （设置选中样式）
 
@@ -348,7 +348,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/4zwi66S-RaWIJsOo9Sb7IQ/zh-cn_image_0000002531225904.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023518Z&HW-CC-Expire=86400&HW-CC-Sign=B3C702825E0B5EB62D7099E21DD15F9B3BA6A2F6C98BE5732786B766AE8183A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/4zwi66S-RaWIJsOo9Sb7IQ/zh-cn_image_0000002531225904.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023556Z&HW-CC-Expire=86400&HW-CC-Sign=59B07A52C438C3D1151DDB8A9E24D46380F5835A3F569DE0C49DB49610CF7438)
 
 ### 示例3（设置自定义样式）
 
@@ -414,4 +414,4 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/JGragB02TuuRbEO8vY3HyA/zh-cn_image_0000002562025887.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023518Z&HW-CC-Expire=86400&HW-CC-Sign=72EB12486FD8AF0CF78F9310513265611A7A33D7BB29DE414E8EA26D54F66B36)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/JGragB02TuuRbEO8vY3HyA/zh-cn_image_0000002562025887.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023556Z&HW-CC-Expire=86400&HW-CC-Sign=74DF4BBA0E96B7791D065AA412A206DB47383819D3E35CAFA21DC6E3F8C3695A)

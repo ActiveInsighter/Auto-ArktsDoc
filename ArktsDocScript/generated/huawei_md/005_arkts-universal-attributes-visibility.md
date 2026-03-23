@@ -35,20 +35,19 @@ visibility(value: Visibility): T
 该示例通过配置visibility的不同值，实现不同的显隐控制效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct VisibilityExample {
   build() {
     Column() {
       Column() {
-        // 隐藏不参与占位
+
         Text('None').fontSize(9).width('90%').fontColor(0xCCCCCC)
         Row().visibility(Visibility.None).width('90%').height(80).backgroundColor(0xAFEEEE)
-        // 隐藏参与占位
+
         Text('Hidden').fontSize(9).width('90%').fontColor(0xCCCCCC)
         Row().visibility(Visibility.Hidden).width('90%').height(80).backgroundColor(0xAFEEEE)
-        // 正常显示，组件默认的显示模式
+
         Text('Visible').fontSize(9).width('90%').fontColor(0xCCCCCC)
         Row().visibility(Visibility.Visible).width('90%').height(80).backgroundColor(0xAFEEEE)
       }.width('90%').border({ width: 1 })
@@ -57,4 +56,4 @@ struct VisibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FC6gXz9-TR2bj4Ac4R2uaA/zh-cn_image_0000002531105732.png?HW-CC-KV=V1&HW-CC-Date=20260322T023408Z&HW-CC-Expire=86400&HW-CC-Sign=3D629C7C2657D55F85EA20BFCA1D0457F10E1971C26CA1AE283553A051D50C40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FC6gXz9-TR2bj4Ac4R2uaA/zh-cn_image_0000002531105732.png?HW-CC-KV=V1&HW-CC-Date=20260323T023439Z&HW-CC-Expire=86400&HW-CC-Sign=D8CAAACAC3E6D9298DBB1FD23A667CA171765D38F495191890B7D1D1A8425EEB)

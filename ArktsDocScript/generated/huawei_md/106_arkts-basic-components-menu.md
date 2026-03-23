@@ -1,4 +1,4 @@
-# 文档中心
+# Menu-菜单-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menu
 
 以垂直列表形式显示的菜单。
@@ -245,7 +245,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/q7I1MbQjTsG1ZvExh0PqCA/zh-cn_image_0000002531106252.png?HW-CC-KV=V1&HW-CC-Date=20260322T023607Z&HW-CC-Expire=86400&HW-CC-Sign=1ADC49D3F5023F8069341E3B530B44A64375AAB0BF99FA0B8E8ABE7147EB4D91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/q7I1MbQjTsG1ZvExh0PqCA/zh-cn_image_0000002531106252.png?HW-CC-KV=V1&HW-CC-Date=20260323T023649Z&HW-CC-Expire=86400&HW-CC-Sign=A63DE3E263E3F41E1C251E6797893A8A382E568625749D9A521F52A852C84FE3)
 
 ### 示例2（设置symbol类型图标）
 
@@ -318,7 +318,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/tiniVmjvTiWRCWFkQiWZNg/zh-cn_image_0000002531226186.png?HW-CC-KV=V1&HW-CC-Date=20260322T023607Z&HW-CC-Expire=86400&HW-CC-Sign=0F9BED075F478FA8E74701F1817F30371BF036AA99A596084F4D508CBD29A3D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/tiniVmjvTiWRCWFkQiWZNg/zh-cn_image_0000002531226186.png?HW-CC-KV=V1&HW-CC-Date=20260323T023649Z&HW-CC-Expire=86400&HW-CC-Sign=05BDA4F5836813DA44B1CE77A911C99C4F5129DDCB3DB7F080CF10B73782F2A9)
 
 ### 示例3（设置Menu子菜单展开符号）
 
@@ -382,7 +382,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/TeuFrl9JS1CX1daCuBwJ9A/zh-cn_image_0000002562026169.gif?HW-CC-KV=V1&HW-CC-Date=20260322T023607Z&HW-CC-Expire=86400&HW-CC-Sign=2C0A334251224D00708AE0BA2F2F789F2B312D906563FBD981B22024FD8162DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/TeuFrl9JS1CX1daCuBwJ9A/zh-cn_image_0000002562026169.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023649Z&HW-CC-Expire=86400&HW-CC-Sign=DD554DC30A37F5B80FD722C85BCFACB53C7DB0F442BEFD264023B7598AF75791)
 
 ### 示例4（设置分割线样式）
 
@@ -430,4 +430,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/wWLNg6hCR7u9nOFrdrBxgw/zh-cn_image_0000002562146155.png?HW-CC-KV=V1&HW-CC-Date=20260322T023607Z&HW-CC-Expire=86400&HW-CC-Sign=AE5408283144BD0436F7F07CF3ED567F88830DC1187AA0A5CD7F811D3B5184B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/wWLNg6hCR7u9nOFrdrBxgw/zh-cn_image_0000002562146155.png?HW-CC-KV=V1&HW-CC-Date=20260323T023649Z&HW-CC-Expire=86400&HW-CC-Sign=86128862854E0021A41789BC2F0FC4368C5EEAD8E2FFDE2FE542CE45BF9DC3B1)
