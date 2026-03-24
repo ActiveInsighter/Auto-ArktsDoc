@@ -110,6 +110,7 @@ MyDataSource实现了[LazyForEach](https://developer.huawei.com/consumer/cn/doc/
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI'
 import { MyDataSource } from './MyDataSource'
+
 @Entry
 @Component
 struct LazyVGridLayoutSample1 {
@@ -130,6 +131,7 @@ struct LazyVGridLayoutSample1 {
         }
         .columnsTemplate('1fr')
         .rowsGap(LengthMetrics.vp(10))
+
         LazyVGridLayout() {
           LazyForEach(this.arr2, (item:number)=>{
             Text('item' + item.toString())
@@ -149,6 +151,7 @@ struct LazyVGridLayoutSample1 {
     .width('100%').height('100%')
     .backgroundColor('#DCDCDC')
   }
+
   aboutToAppear(): void {
     for (let i = 0; i < 6; i++) {
       this.arr1.pushData(i);
@@ -161,22 +164,25 @@ struct LazyVGridLayoutSample1 {
 ```
 
 ```typescript
-// MyDataSource.ets
 export class BasicDataSource<T> implements IDataSource {
   private listeners: DataChangeListener[] = [];
   protected dataArray: T[] = [];
+
   public totalCount(): number {
     return this.dataArray.length;
   }
+
   public getData(index: number): T {
     return this.dataArray[index];
   }
+
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       console.info('add listener');
       this.listeners.push(listener);
     }
   }
+
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
@@ -184,37 +190,44 @@ export class BasicDataSource<T> implements IDataSource {
       this.listeners.splice(pos, 1);
     }
   }
+
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
     })
   }
+
   notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
     })
   }
+
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     })
   }
+
   notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
     })
   }
+
   notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);
     })
   }
+
   notifyDatasetChange(operations: DataOperation[]): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange(operations);
     })
   }
 }
+
 export class MyDataSource<T> extends BasicDataSource<T> {
   public shiftData(): void {
     this.dataArray.shift();
@@ -239,4 +252,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/GQtuyc5ESeu6d2mrwD5iQQ/zh-cn_image_0000002531105904.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023527Z&HW-CC-Expire=86400&HW-CC-Sign=CEC398DD06503B71ADA77845B6A05D2735D4E98C81EFB606BD6B9BF6AA2A2D5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/XY9V90N3QkehRC-jV_wdlA/zh-cn_image_0000002531635694.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022727Z&HW-CC-Expire=86400&HW-CC-Sign=99463EF7DD645B48573E673963410DB92059834C31E7D26C408EFDB782EFA3DB)

@@ -346,10 +346,10 @@ minContentWidth优先于侧边栏的[maxSideBarWidth](https://developer.huawei.c
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| strokeWidth | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 否 | 分割线的线宽。 默认值：1vp。 取值范围：[0, +∞)。 **说明**： 分割线的宽度不支持百分比设置。优先级低于[通用属性height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)，超过通用属性设置大小时，按照通用属性进行裁切。部分设备硬件中存在1像素取整后分割线不显示问题，建议使用2像素。 |
+| strokeWidth | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 否 | 分割线的线宽。 默认值：1vp 单位：vp 取值范围：[0, +∞)。 **说明**： 分割线的宽度不支持百分比设置。优先级低于[通用属性height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)，超过通用属性设置大小时，按照通用属性进行裁切。部分设备硬件中存在1像素取整后分割线不显示问题，建议使用2像素。 |
 | color | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 否 | 是 | 分割线的颜色。 默认值：#000000，3% |
-| startMargin | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 分割线与侧边栏顶端的距离。 默认值：0。 取值范围：[0, +∞)。 |
-| endMargin | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 分割线与侧边栏底端的距离。 默认值：0。 取值范围：[0, +∞)。 |
+| startMargin | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 分割线与侧边栏顶端的距离。 默认值：0 单位：vp 取值范围：[0, +∞)。 |
+| endMargin | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | 否 | 是 | 分割线与侧边栏底端的距离。 默认值：0 单位：vp 取值范围：[0, +∞)。 |
 
 > **说明**
 > 针对侧边栏子组件设置[通用属性宽高](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size)时，宽高都不生效。
@@ -446,4 +446,4 @@ struct SideBarContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ioCDvBF1QruUtPQGCt4dBg/zh-cn_image_0000002531105858.png?HW-CC-KV=V1&HW-CC-Date=20260323T023508Z&HW-CC-Expire=86400&HW-CC-Sign=ECEF54BAF9449433E783017DBE0CE1B184B1C1F627771560DA08C293B77AB5A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/tupZu-JpTK-pq41gHCuO2Q/zh-cn_image_0000002531635648.png?HW-CC-KV=V1&HW-CC-Date=20260324T022710Z&HW-CC-Expire=86400&HW-CC-Sign=323BE7731ED74725D54C4A95784FEE4882D21A86E9CE51CC39A1F2C58CEA8209)

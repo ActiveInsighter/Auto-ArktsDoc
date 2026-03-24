@@ -176,7 +176,7 @@ interface EmitterOptions<PARTICLE extends ParticleType> {
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| particle | [EmitterParticleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#emitterparticleoptions18)<[PARTICLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particletype)> | 否 | 否 | 粒子配置。 -type表示粒子类型，可以选择图片或者是点。 -config表示对应类型的配置。 -config类型和type值有关联： 1. 如果type为ParticleType.POINT，则config类型为[PointParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#pointparticleparameters) 。 2. 如果type为ParticleType.IMAGE，则config类型为[ImageParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#imageparticleparameters) 。 -count表示发射的粒子总数，count取值>=-1,当count为-1表示粒子总数无限大。 -lifetime表示单个粒子的生命周期，默认值1000（即1000ms，1s）,lifetime>=-1,当lifetime为-1表示粒子生命周期无限大。当lifetime<-1，取默认值。 **说明**：如果不需要动画一直播放，建议不要将生命周期设置为-1，可能对性能造成较大影响。 lifeTimeRange表示粒子生命周期取值范围，设置lifeTimeRange后粒子的生命周期为 [lifetime-lifeTimeRange,lifeTime+lifeTimeRange]中间的一个随机整数。lifeTimeRange 默认值为0，取值范围为0到正无穷。设置为负值时取默认值。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| particle | [EmitterParticleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#emitterparticleoptions18)<[PARTICLE](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particletype)> | 否 | 否 | 粒子配置。 -type表示粒子类型，可以选择图片或者是点。 -config表示对应类型的配置。 -config类型和type值有关联： 1. 如果type为ParticleType.POINT，则config类型为[PointParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#pointparticleparameters) 。 2. 如果type为ParticleType.IMAGE，则config类型为[ImageParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#imageparticleparameters) 。 -count表示发射的粒子总数，count取值>=-1，当count为-1表示粒子总数无限大。 -lifetime表示单个粒子的生命周期，默认值1000（即1000ms，1s），lifetime>=-1，当lifetime为-1表示粒子生命周期无限大。当lifetime<-1，取默认值。 **说明**：如果不需要动画一直播放，建议不要将生命周期设置为-1，可能对性能造成较大影响。 lifetimeRange表示粒子生命周期取值范围，设置lifetimeRange后粒子的生命周期为[lifetime-lifetimeRange, lifetime+lifetimeRange]中间的一个随机整数。lifetimeRange默认值为0，取值范围为[0, +∞）。设置为负值时取默认值。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | emitRate | number | 否 | 是 | 发射器发射速率（即每秒发射粒子数）。 默认值：5，小于0时取默认值5。emitRate值超过5000时会极大影响性能，建议设置参数小于5000。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | shape | [ParticleEmitterShape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleemittershape) | 否 | 是 | 发射器形状。 默认值：ParticleEmitterShape.RECTANGLE **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | position | [ParticleTuple](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particletuple18)<[Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10), [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10)> | 否 | 是 | 发射器位置（距离组件左上角的位置。第一个参数为x方向上的相对偏移，第二个参数为y轴方向相对偏移。） 默认值：[0.0, 0.0] **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
@@ -394,7 +394,7 @@ interface ParticlePropertyAnimation<T> {
 | feather | number | 否 | 是 | 羽化值，表示场从中心点到场边缘的衰减程度，取值范围0到100的整数，如果0则表示场是一个刚体，所有范围内的粒子都被排斥在外。羽化值越大场的缓和程度越大，场范围内出现越多靠近中心点的粒子。 默认值为0。 |
 | noiseScale | number | 否 | 是 | 噪声尺度，用于控制噪声图案的整体大小，取值大于等于0。 默认值1。 |
 | noiseFrequency | number | 否 | 是 | 噪声频率，频率越大噪声越细腻，取值大于等于0。 默认值1。 |
-| noiseAmplitude | number | 否 | 是 | 噪声震幅，噪声的波动的范围，震幅越大噪音之间差异越大。取值大于等于0。 默认值1。 |
+| noiseAmplitude | number | 否 | 是 | 噪声振幅，噪声的波动的范围，振幅越大噪音之间差异越大。取值大于等于0。 默认值1。 |
 
 ## DisturbanceFieldShape12+
 
@@ -548,7 +548,7 @@ interface EmitterParticleOptions<PARTICLE extends ParticleType> {
 | config10+ | [ParticleConfigs](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#particleconfigs)[PARTICLE] | 否 | 否 | 表示对应类型的配置。 config类型和type值有关联： 1. 如果type为ParticleType.POINT，则config类型为[PointParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#pointparticleparameters) 。 2. 如果type为ParticleType.IMAGE，则config类型为[ImageParticleParameters](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-particle-animation#imageparticleparameters) 。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | count10+ | number | 否 | 否 | 表示发射的粒子总数，count取值>=-1,当count为-1表示粒子总数无限大。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | lifetime10+ | number | 否 | 是 | 表示单个粒子的生命周期，默认值1000（即1000ms，1s），lifetime>=-1。当lifetime为-1表示粒子生命周期无限大。当lifetime<-1，取默认值。 **说明**：如果不需要动画一直播放，建议不要将生命周期设置为-1，可能对性能造成较大影响。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| lifetimeRange12+ | number | 否 | 是 | 表示粒子生命周期取值范围，设置lifetimeRange后粒子的生命周期为 [lifetime-lifetimeRange,lifeTime+lifetimeRange]中间的一个随机整数。lifetimeRange 默认值为0，取值范围为0到正无穷。设置为负值时取默认值。 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| lifetimeRange12+ | number | 否 | 是 | 表示粒子生命周期取值范围，设置lifetimeRange后粒子的生命周期为[lifetime-lifetimeRange, lifetime+lifetimeRange]中间的一个随机整数。lifetimeRange默认值为0，取值范围为0到正无穷。设置为负值时取默认值。 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 
 ## ParticleUpdaterOptions18+
 
@@ -623,7 +623,7 @@ interface ParticleColorUpdaterOptions<UPDATER extends ParticleUpdater> {
 > - 当outerRadius小于innerRadius时（即外圆半径小于内圆半径时），会将当前较小的值作为新的内圆半径，将较大的值作为新的外圆半径。
 > - 当endAngle小于startAngle时（即结束角度小于起始角度时），会将当前较小的值作为新的起始角度，将较大的值作为新的结束角度。
 >
-> ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/PUMrziytQa6RVDTpV8onXQ/zh-cn_image_0000002562146163.png?HW-CC-KV=V1&HW-CC-Date=20260323T023702Z&HW-CC-Expire=86400&HW-CC-Sign=619C8B10BAAE51355246B8508360D7FF70E1975F562D2909A7DA3E1679B83DDB)
+> ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/aW5lR_BaQ6aKylawymBwAg/zh-cn_image_0000002562715923.png?HW-CC-KV=V1&HW-CC-Date=20260324T022856Z&HW-CC-Expire=86400&HW-CC-Sign=69D16D1DB10796D0902871C8509E5592674C95A7542E67DC958562B59A676193)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -819,7 +819,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dPpvauQuRTi0UKp2LD4-uA/zh-cn_image_0000002531106262.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023702Z&HW-CC-Expire=86400&HW-CC-Sign=E19F937C7232D7EE07E0915C0F0EFA42877E9F3F2B8742113EC8ED513FB7CBAB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/JZonFIR0QC6DCzvmW34Uxg/zh-cn_image_0000002531636052.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022856Z&HW-CC-Expire=86400&HW-CC-Sign=E122159C065986DBC0393C4033F860FBBD7D7ADFCD5532220CDEBC46FF292A33)
 
 ### 示例2（图片初始化粒子）
 
@@ -1213,7 +1213,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/3GyhkQbVTAmfvU8UaL9SOw/zh-cn_image_0000002531226196.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023702Z&HW-CC-Expire=86400&HW-CC-Sign=DF77DBC8622447C223F83028B6353E394FE267A5B7D7386CDE5ADEF8E8406AE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/olNl6dH3Tsu6ES0q3Mpqng/zh-cn_image_0000002531795988.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022856Z&HW-CC-Expire=86400&HW-CC-Sign=8DA1FD37C2026AC94F16BF537DB9777D2AD17CEB0146A223F94B7A5562CE0D98)
 
 ### 示例3（粒子扰动场的干扰下运动轨迹发生变化）
 
@@ -1340,7 +1340,7 @@ struct ParticleExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/W-BlC76jQrK3-WRcQQf91A/zh-cn_image_0000002562026179.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023702Z&HW-CC-Expire=86400&HW-CC-Sign=A5409EEC8B8549C0CF1B3934865E27A243F96D1B2E4B5AC9212B1E171BA42A2C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/myXs8pvbSdmJs24mFCv6lw/zh-cn_image_0000002562555953.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022856Z&HW-CC-Expire=86400&HW-CC-Sign=734725D021601BC2E6143460E34905FBAB000031520A32002997DB800003B2ED)
 
 ### 示例4（调整粒子发射器位置）
 
@@ -1419,7 +1419,7 @@ struct ParticleExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/9wVEHXm5T5-BPvF-s2EP0g/zh-cn_image_0000002562146165.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023702Z&HW-CC-Expire=86400&HW-CC-Sign=65B5414EAA59320E3A8C3BDA4CFFDE21EFFCB054E22193E776784EF28BD2D412)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/fyRZk8eTQzqJAY_Sf-afeg/zh-cn_image_0000002562715925.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022856Z&HW-CC-Expire=86400&HW-CC-Sign=561911CF60A5B42BE1729D4616D58416616A4FF0CA4BA8287932B20F340219C6)
 
 ### 示例5（环形发射器创建）
 
@@ -1506,7 +1506,7 @@ struct ParticleExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/o8oDUq5UTuK_Xy9A3jQIsw/zh-cn_image_0000002531106264.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023702Z&HW-CC-Expire=86400&HW-CC-Sign=FB36F70032EC00B0D1C31C7C4EF6F7640BCB3687622D56BBAB4BCC1AD4C74D73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/VJuY93wYTpS3uXh-L7guzQ/zh-cn_image_0000002531636054.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022856Z&HW-CC-Expire=86400&HW-CC-Sign=250B69078404C115720FDF152E8C390400A57CF0D1A63C75886B6D564D92C611)
 
 ### 示例6（环形发射器更新）
 
@@ -1629,7 +1629,7 @@ struct ParticleExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/FaS8v7TBTQGbKE6-5gMaGg/zh-cn_image_0000002531226198.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023702Z&HW-CC-Expire=86400&HW-CC-Sign=978A00EC06B44665E7A7CE2F1BFBBC6BE0DE6865C139153A7BBE9C473A69A053)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/R20hGoyrSfibMengOLqLAQ/zh-cn_image_0000002531795990.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022856Z&HW-CC-Expire=86400&HW-CC-Sign=15F44183F9F678F70BA7A09886CF784971D6CCD9DA2B8B4CDA7D3BCD116507A5)
 
 ### 示例7（设置波动场和速度场）
 
@@ -1757,4 +1757,4 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/dk8aVFPzSIOpN0ZyCjTf4w/zh-cn_image_0000002562026181.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023702Z&HW-CC-Expire=86400&HW-CC-Sign=C2A064EEDCF34FB771DDAFB5DF404D63CC76C787F419817C0E66D5BD47FEE2DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/hzkU2gWHQWuwzAMGYQ7OAA/zh-cn_image_0000002562555955.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022856Z&HW-CC-Expire=86400&HW-CC-Sign=03900C069AEA539742271E58EF9A4603FA8A15CEE0665A7330A3CF5A9E18AF48)

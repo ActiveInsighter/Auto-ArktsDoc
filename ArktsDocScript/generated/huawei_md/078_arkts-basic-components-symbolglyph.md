@@ -123,7 +123,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/abgT_44ARliM3WKwrV8Sxw/zh-cn_image_0000002531106050.png?HW-CC-KV=V1&HW-CC-Date=20260323T023453Z&HW-CC-Expire=86400&HW-CC-Sign=BD753F7933CB3B95FDB5FC6F327F06C9A565EB99679B2696B7408DB52F612BF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/YWdxLRzxSS2jSrb7oha7gA/zh-cn_image_0000002531635840.png?HW-CC-KV=V1&HW-CC-Date=20260324T022813Z&HW-CC-Expire=86400&HW-CC-Sign=F229F6B22DE641A49DCC4EA09B337D5CE803268435101E1DC952E27117031709)
 
 ### effectStrategy
 
@@ -684,7 +684,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/2IU5cKntTmaiLHjLa3zNbw/zh-cn_image_0000002562145953.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023453Z&HW-CC-Expire=86400&HW-CC-Sign=3E107F16D2457DC949AC46F53CA27D95CD513E14B8FBA6F0EEDC16CA8102F4A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/0Otnc500SB62y3WponKOAw/zh-cn_image_0000002562715713.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022813Z&HW-CC-Expire=86400&HW-CC-Sign=16609FE9ACF001BA20705C944A373D6131E4BD991C264CD121A3F2F010EA47F8)
 
 ### 示例2（设置动效和阴影）
 
@@ -787,7 +787,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ahAzBBR5T2egE1s05Dfy7A/zh-cn_image_0000002531106052.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023453Z&HW-CC-Expire=86400&HW-CC-Sign=B1D43F040A3DC0C588A129D44560410DD031DE8ED205461BBE9951C873DE4832)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/zQyEJpSATaajHdf2aP0cSw/zh-cn_image_0000002531635842.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022813Z&HW-CC-Expire=86400&HW-CC-Sign=48DD150242DF0ECB5CC44C43E3CB56DB3B37292232A3297219B0F4E4DB31B787)
 
 ### 示例3（设置颜色渐变）
 
@@ -928,4 +928,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/8kkJNmczQPCFvN7MZN52qw/zh-cn_image_0000002531225986.jpeg?HW-CC-KV=V1&HW-CC-Date=20260323T023453Z&HW-CC-Expire=86400&HW-CC-Sign=49EFCEF010243F7ABC51AF6D10986A69B1C4E9186C5A95233F90FE055F1082A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/uWwaUNmBTpiG64XsL0-c5A/zh-cn_image_0000002531795778.jpeg?HW-CC-KV=V1&HW-CC-Date=20260324T022813Z&HW-CC-Expire=86400&HW-CC-Sign=84ED80C65C83667877E0E3FB63E4938303F985255DB87EE9E13B72690776CEF3)

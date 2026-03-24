@@ -1,4 +1,4 @@
-# CheckboxGroup-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup
 
 多选框群组，用于控制多选框全选或者不全选状态。
@@ -247,7 +247,7 @@ contentModifier(modifier: Optional<ContentModifier<CheckBoxGroupConfiguration>>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[ContentModifier<CheckBoxGroupConfiguration>](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup#checkboxgroupconfiguration21对象说明)> | 是 | 在CheckboxGroup组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义类以实现ContentModifier接口。 当modifier的值为undefined时，不使用内容修改器。 |
+| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<ContentModifier<[CheckBoxGroupConfiguration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup#checkboxgroupconfiguration21对象说明)>> | 是 | 在CheckboxGroup组件上，定制内容区的方法。 modifier：内容修改器，开发者需要自定义类以实现ContentModifier接口。 当modifier的值为undefined时，不使用内容修改器。 |
 
 ## 事件
 
@@ -411,7 +411,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/g0QV8zzzSL-YyKIvtqGX2Q/zh-cn_image_0000002562145853.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023331Z&HW-CC-Expire=86400&HW-CC-Sign=1547D58849A57557AE0F6AEC1F895FB6AD53C12178396888F98D3AF69FC93189)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/RgTf8gOkQV-GEBE-lmSM3g/zh-cn_image_0000002562715613.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022745Z&HW-CC-Expire=86400&HW-CC-Sign=02B727300D68711CB56715B336715C0EFB32639E93BA325FA37C008F57A35982)
 
 ### 示例2（自定义勾选样式）
 
@@ -489,7 +489,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ffK_N1eFTpixI5qYTtGr3g/zh-cn_image_0000002531105952.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023331Z&HW-CC-Expire=86400&HW-CC-Sign=59734E84C709D558354461C7F3B93F71137AA095043AC8FDDDC64996CDE7B13F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/YYlfnKAbSUqWcCjTM7fs1w/zh-cn_image_0000002531635742.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022745Z&HW-CC-Expire=86400&HW-CC-Sign=B864CA9591F2EC5C30704860227728A459D029A67E1FE5065C5FAFAC70A1EEE7)
 
 ### 示例3（自定义多选框样式）
 
@@ -608,7 +608,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Zj9N6enhQ1iG3ykjmW1AQQ/zh-cn_image_0000002531225886.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023331Z&HW-CC-Expire=86400&HW-CC-Sign=1A5FDBCCEC0385E0E18EC7DD2717F2E139BADCAA23177F952340EE6E0E56EBE9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/qQ0r1qCtTAK_8jncs9Jycg/zh-cn_image_0000002531795678.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022745Z&HW-CC-Expire=86400&HW-CC-Sign=FAB55796824059AA87BF14D2A67F8B61E8E82A94E4E1AA94D618499FA55899D0)
 
 ### 示例4（设置全选）
 
@@ -765,4 +765,4 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/h9U9bfehR7WCbLbO8L9OxA/zh-cn_image_0000002562025869.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023331Z&HW-CC-Expire=86400&HW-CC-Sign=F02EF0DA3DCB819DEF6B2EFBD6FC307D236C96A1F5FABEB7D510141D075153A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/fPzwE2OoTd2-75DTGRSqOQ/zh-cn_image_0000002562555643.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022745Z&HW-CC-Expire=86400&HW-CC-Sign=9C25E628104907D718A2FF7030D2D4C72D094687370E34535E543EEFC5C6158D)

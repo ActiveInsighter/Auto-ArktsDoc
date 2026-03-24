@@ -1,4 +1,4 @@
-# 文档中心
+# 显隐控制-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-visibility
 
 控制组件是否可见。
@@ -56,4 +56,4 @@ struct VisibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/FC6gXz9-TR2bj4Ac4R2uaA/zh-cn_image_0000002531105732.png?HW-CC-KV=V1&HW-CC-Date=20260323T023439Z&HW-CC-Expire=86400&HW-CC-Sign=D8CAAACAC3E6D9298DBB1FD23A667CA171765D38F495191890B7D1D1A8425EEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/wCs7VGaFQDuxowi9hrkqvw/zh-cn_image_0000002562715393.png?HW-CC-KV=V1&HW-CC-Date=20260324T022644Z&HW-CC-Expire=86400&HW-CC-Sign=897DB188F4C34DCB33B15DD000E7355DBAB16B37BDA82810E3EFDB104AA64681)

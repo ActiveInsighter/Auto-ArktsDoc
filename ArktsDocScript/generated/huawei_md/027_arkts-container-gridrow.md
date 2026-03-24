@@ -1,4 +1,4 @@
-# GridRow-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow
 
 栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性。
@@ -165,7 +165,7 @@ columns: {md:4, lg:8}
 > - 栅格子组件仅能通过span、offset计算子组件位置与大小。多个子组件span超过规定列数时自动换行。
 > - 单个元素span大小超过最大列数时后台默认span为最大column数。
 > - 新一行的Offset加上子组件的span超过总列数时，将下一个子组件在新的一行放置。
-> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/3kwheuH_SgCo1vfvKrgmMA/zh-cn_image_0000002562025771.png?HW-CC-KV=V1&HW-CC-Date=20260323T023505Z&HW-CC-Expire=86400&HW-CC-Sign=C906B42C4402D87637CFCE8008AA3B7949AE9DC0FF4C9400106829AA73D30EE9)
+> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/leGv76OiSQGiW4FfG17bHg/zh-cn_image_0000002562555545.png?HW-CC-KV=V1&HW-CC-Date=20260324T022708Z&HW-CC-Expire=86400&HW-CC-Sign=CEFAEE45B3B03B04EA575BD64E13B12599118E26CED338C013AC73D4EFF9082E)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -262,7 +262,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/6BhEardySjaUF78o4i8WxA/zh-cn_image_0000002562145757.png?HW-CC-KV=V1&HW-CC-Date=20260323T023505Z&HW-CC-Expire=86400&HW-CC-Sign=4DC1F903FA931D0C3AC57FEEA422C969DE8915675FF3B792F1DBE1638FA3B027)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/iKJze-CiQd-f_bkbT25ngg/zh-cn_image_0000002562715517.png?HW-CC-KV=V1&HW-CC-Date=20260324T022708Z&HW-CC-Expire=86400&HW-CC-Sign=EC8A2581C7ACBC091FE0B3FB678FB7A1FED85F460616C444B6F93421A70D6093)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -330,4 +330,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/LfqruKj8QlyiQa2-ORy2-g/zh-cn_image_0000002531105856.png?HW-CC-KV=V1&HW-CC-Date=20260323T023505Z&HW-CC-Expire=86400&HW-CC-Sign=D692996D476736C2DFBBA1167448CA1365F84F49CD574ED6BACDBEC1B97972A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sm1UcIEBRH-rXog86_f64w/zh-cn_image_0000002531635646.png?HW-CC-KV=V1&HW-CC-Date=20260324T022708Z&HW-CC-Expire=86400&HW-CC-Sign=2F8C90C6D38DAB3578347852EEE21ECF9F21DFA3FEDD21E05B778DA0490E51D8)

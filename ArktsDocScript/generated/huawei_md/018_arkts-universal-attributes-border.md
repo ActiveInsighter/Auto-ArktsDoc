@@ -121,7 +121,7 @@ borderRadius(value: Length | BorderRadiuses | LocalizedBorderRadiuses): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | [BorderRadiuses](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#borderradiuses9)9+ | [LocalizedBorderRadiuses](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizedborderradiuses12)12+ | 是 | 设置元素的边框圆角半径，支持百分比，百分比依据组件宽度。设置圆角后，可搭配[clip](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#clip12)属性进行裁剪，避免子组件超出组件自身。 |
+| value | [Length](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#length) | [BorderRadiuses](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#borderradiuses9)9+ | [LocalizedBorderRadiuses](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizedborderradiuses12)12+ | 是 | 设置元素的边框圆角半径，支持百分比，百分比依据组件宽度。设置圆角后，可搭配[clip](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#clip12)属性进行裁剪，避免子组件超出组件自身。 设置四个不同圆角值，若某个圆角值超过高度或者宽度最小值一半时，按值的比例绘制异形圆角。 |
 
 **返回值：**
 
@@ -197,7 +197,7 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/eWTtoaouTHaeKoK-oaGMjw/zh-cn_image_0000002531105758.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023437Z&HW-CC-Expire=86400&HW-CC-Sign=F41EB0FC700675C1C5DC57B41C8A93F5FDCD60903F1B0BAB5F9DD0A0DF0C999F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/yEZ96Q3yT6GwBqBI0eHEeg/zh-cn_image_0000002562715419.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022657Z&HW-CC-Expire=86400&HW-CC-Sign=1444316684FF941F0A3A37B5C262B60138050CEA23C9D2D2D18F0D46FC649CCC)
 
 ### 示例2（边框宽度类型和边框颜色）
 
@@ -263,11 +263,11 @@ struct BorderExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/SKys8TPlTEKXencVHoYgNQ/zh-cn_image_0000002531225692.png?HW-CC-KV=V1&HW-CC-Date=20260323T023437Z&HW-CC-Expire=86400&HW-CC-Sign=2BA770BF6182B942790AB86BB4CB46F75E44222DE67B6BBED6E2C566F0E193D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/dCH8_L3eRQSxGm-9OcC0vg/zh-cn_image_0000002531635548.png?HW-CC-KV=V1&HW-CC-Date=20260324T022657Z&HW-CC-Expire=86400&HW-CC-Sign=54CF95CDE9A55659150DB5C6D965EF32C635D061EE1F1B8E37781367B529443A)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/_d9c5MeYQl-M9ag_Bu1HOg/zh-cn_image_0000002562025675.png?HW-CC-KV=V1&HW-CC-Date=20260323T023437Z&HW-CC-Expire=86400&HW-CC-Sign=97F34C530260FE1E72219013922FD9103B1272B706CA8CACB1739A0803ABECE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/oMrKK_vzSK2K3lHiwenqMg/zh-cn_image_0000002531795484.png?HW-CC-KV=V1&HW-CC-Date=20260324T022657Z&HW-CC-Expire=86400&HW-CC-Sign=FAF40C9C23E0E3B0CEAE9D4B5C5472B2411486AD0C67EDD8609BFAC1C6DB5A9A)
 
 ### 示例3（设置离屏圆角）
 
@@ -341,4 +341,36 @@ struct RenderStrategyExample {
 
 设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RlyEn8D7R4q8go8nYHvE5g/zh-cn_image_0000002562145661.jpg?HW-CC-KV=V1&HW-CC-Date=20260323T023437Z&HW-CC-Expire=86400&HW-CC-Sign=47C2EA62374688A8EFDA873C56A9800F3ED1F46DAB7BDDC5B5141651585E4429)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/lFNo8k9oQfiyUfHHRPnQzA/zh-cn_image_0000002562555449.jpg?HW-CC-KV=V1&HW-CC-Date=20260324T022657Z&HW-CC-Expire=86400&HW-CC-Sign=B63E798521053C25BB94CFE5EB3493BC9BDFAED9046D039B6C36B38113ADC35D)
+
+### 示例4（设置异形圆角）
+
+该示例通过[borderRadius](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#borderradius)设置四个不同圆角值。当其中一个圆角值超过高度或宽度最小值的一半时，按值的比例绘制异形圆角。
+
+```typescript
+@Entry
+@Component
+struct BorderExample {
+  build() {
+    Column() {
+      Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
+        Text('Text')
+          .borderWidth(5)
+          .borderColor(0xAFEEEE)
+          .borderRadius({
+            topLeft: 2000,
+            topRight: 10,
+            bottomLeft: 30,
+            bottomRight: 50
+          })
+          .width(100)
+          .height(100)
+          .textAlign(TextAlign.Center)
+          .fontSize(16)
+      }
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/7ocxXIf0S0CrLg70ZXCaiw/zh-cn_image_0000002562715421.png?HW-CC-KV=V1&HW-CC-Date=20260324T022657Z&HW-CC-Expire=86400&HW-CC-Sign=2EF490EBCCD804BC4DB379377814E51D3E9C526753546EE369A0FE56C1BD6009)

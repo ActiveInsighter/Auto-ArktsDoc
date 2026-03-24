@@ -1,4 +1,4 @@
-# 文档中心
+# ArcListItem-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem
 
 用来展示列表具体子组件，必须配合[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)来使用。
@@ -133,4 +133,4 @@ struct ArcListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/RNPCxQGSQSiVfCyY32s_ag/zh-cn_image_0000002531225806.png?HW-CC-KV=V1&HW-CC-Date=20260323T023317Z&HW-CC-Expire=86400&HW-CC-Sign=89A10505766C463728E6903B3E0BA5FE3E8D5961DF3BB081E3E88075C372FBA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/n_gQFrRtQYqpBCBeVBNTQQ/zh-cn_image_0000002531795598.png?HW-CC-KV=V1&HW-CC-Date=20260324T022716Z&HW-CC-Expire=86400&HW-CC-Sign=52CE355648B7139120C307A2C4D33DF06258F1A63D39A98FFBE9D216984EAD0F)

@@ -258,7 +258,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/9RkibFKSSuyGoCMsTJkcgQ/zh-cn_image_0000002531105906.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=119F2AC287C7E6519A1DE0ECEF951466B7C4572C384F8B2B68A8A5E0C759616C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/n2D0DiTrQG29WSv1kf-xpw/zh-cn_image_0000002531635696.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=50C7F732277D76E24906289BF0AF84E57934FF4E680107F67CF4BDD661D5049C)
 
 ### 示例2（设置刷新区域显示文本）
 
@@ -317,7 +317,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/whUMGafZQYq90KBvFLrtJA/zh-cn_image_0000002531225840.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=DA28150F01E633148A88D0E440B53BBBD7D0AC74BCA78DED3920DF2D888B5326)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/WVVypwR-Thuuk5Kzi0n_9g/zh-cn_image_0000002531795632.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=A6079904BAC83AF1CF011A9533120372A39723A5B09B62F767F46BC546253DAC)
 
 ### 示例3（自定义刷新区域显示内容-builder）
 
@@ -388,7 +388,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Xxd3j-4aTfqpf1E0-k4pnA/zh-cn_image_0000002562025823.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=CC7E575D4665A5BA3110BA4EFE7C6DFA4AE58E3BFEFF0CEBA5100AB1AD20764A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/BM3sQ7blRJChjuWtIKEdtw/zh-cn_image_0000002562555597.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=7C00109FBAF69A026ABEFCC47B49EBE3ABC8D4FE42096B3C3DEE5227826339F3)
 
 ### 示例4（自定义刷新区域显示内容-refreshingContent）
 
@@ -481,7 +481,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/BVa4L_TdTUCC4uXcLuVVHg/zh-cn_image_0000002562145809.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=0E910DCFFE866CF8066F1335C979BBA164CC99350A7DF2D238EC3BC3938E68DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ushZBAjWRiOMwmjF9hYKbA/zh-cn_image_0000002562715569.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=1C32588CEACC31E5CA97BCFCEF9E2514C3754DF9BEDC2800C86271B4C2EC3E89)
 
 ### 示例5（实现最大下拉距离）
 
@@ -566,7 +566,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/DnWiIFhLT4yBYPvZMjdoCA/zh-cn_image_0000002531105908.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=CCC5559E74728909F38341EA23E85F0204938E8E66B183AACC8E9912FA844EA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Q5dNhd90QsuLHvUxXKbp0Q/zh-cn_image_0000002531635698.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=C0E3E10F922603DBAE0E5CE52E9283BB60FFA9088A5BE26565A04478F3CC9523)
 
 ### 示例6（实现下拉刷新上拉加载更多）
 
@@ -664,7 +664,7 @@ struct ListRefreshLoad {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/qBAVgwnwTO-5MOoxsQ7Snw/zh-cn_image_0000002531225842.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=B65B3752A71C951B39D4E4BE36214C08AFE627798CCCB038697D6485B1352D65)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/c2-orrcURi-yT43pyHwhng/zh-cn_image_0000002531795634.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=FBDB29A05EFD70275B2BEEA14D122D28E8CDE12FD651202587C1AD9B97170B10)
 
 ### 示例7（设置最大下拉距离）
 
@@ -723,7 +723,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/DD-dHLjAQ4q6pjLbpr8grg/zh-cn_image_0000002562025825.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=EFD4B15C85B10EC216B3A3517293225F99979644724CFC60FC7A836DC0C74407)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/FT2Fl9GYSJCr2tl8zp2MWg/zh-cn_image_0000002562555599.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=26A1177FF54E1D19A01BFF3307EDBFD28F8F8FC9A7E2F67731742AC4408FAA21)
 
 ### 示例8（禁止下拉刷新）
 
@@ -791,7 +791,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/_84hXeojQkKXMygFs1biLA/zh-cn_image_0000002562145811.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=95F70C694D9CE42689F17A9AF2CD66A7160C5460DA1C98BDCAC4161B9F5F667A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/9lBnr8arQKCkqbmHtwZ-lw/zh-cn_image_0000002562715571.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=073FEE087CE9A8256ACD914A8D743C4BC2E897157723C38E2277A7E013963147)
 
 ### 示例9（不满一屏场景实现下拉刷新）
 
@@ -853,4 +853,4 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/ewaQ4zZXSCeGNnq9psLhgA/zh-cn_image_0000002531105910.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023531Z&HW-CC-Expire=86400&HW-CC-Sign=3BE3DA73CBDF003D727D8F4953D958804D90728D864D3D3EF9524085E0A46E04)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/-r-Hc3ZqRneEAZYyiH6LRg/zh-cn_image_0000002531635700.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022729Z&HW-CC-Expire=86400&HW-CC-Sign=E8DCEE0B88C01F1A5480F7EBEF509205A43D6A64D168E80D37D0C5488B92A3A2)

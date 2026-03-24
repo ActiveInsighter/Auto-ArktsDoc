@@ -9,7 +9,7 @@
 > 当前有两种方式触发组件的transition：
 >
 > 1. 当组件插入或删除时（如if条件改变、ForEach新增删除组件），会递归的触发所有新插入/删除的组件的transition效果。
-> 2. 当组件[visibility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-visibility#visibility)属性在可见和不可见（Visibility.Hidden或Visibility.None）之间改变时，只触发该组件的transition效果。在Visibility.Visible与Visibility.None之间切换时，若直接设置为Visibility.None，会导致组件布局大小为0，此时无法观察到transition效果。而当在动画中修改visiblity属性为Visibility.None时，组件布局为0是带动画的，将呈现transition与布局动画的叠加效果，形成双动画的复合表现。
+> 2. 当组件[visibility](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-visibility#visibility)属性在可见和不可见（Visibility.Hidden或Visibility.None）之间改变时，只触发该组件的transition效果。在Visibility.Visible与Visibility.None之间切换时，若直接设置为Visibility.None，会导致组件布局大小为0，此时无法观察到transition效果。而当在动画中修改visibility属性为Visibility.None时，组件布局为0是带动画的，将呈现transition与布局动画的叠加效果，形成双动画的复合表现。
 
 ## transition
 
@@ -402,7 +402,7 @@ struct TransitionEffectExample1 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/Yj6o4dUKRyOLv5TK7HKF0w/zh-cn_image_0000002531226192.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023658Z&HW-CC-Expire=86400&HW-CC-Sign=BB7487ADE41FE853D4D562621061FB92A5CBA93279F0270D3D6C4E51A5E1A8BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/w_b25ZWaSvaZKGJmFgGSiw/zh-cn_image_0000002531795984.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022853Z&HW-CC-Expire=86400&HW-CC-Sign=0E65F811663CE66B28696C3623109165F33A4F8E9BDA957C907F76620A3157C1)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
@@ -458,7 +458,7 @@ struct TransitionEffectExample2 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/vamMgBOjSUqYjOBbpqpZ4g/zh-cn_image_0000002562026175.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023658Z&HW-CC-Expire=86400&HW-CC-Sign=1D6C74502C30B715330F4EDA01CCBFF44348F054EB186179786DC8E25C04FE6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/rnJIStARQGS3eFHc3iODMw/zh-cn_image_0000002562555949.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022853Z&HW-CC-Expire=86400&HW-CC-Sign=0F7120D8037B33C63B0B470B192A4A1C9F5F5803A9DB81EF19CE6227B497FB8E)
 
 ### 示例3（设置父子组件为transition）
 
@@ -515,4 +515,4 @@ struct TransitionEffectExample3 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/luuFW1wSTme2oayj384FuQ/zh-cn_image_0000002562146161.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023658Z&HW-CC-Expire=86400&HW-CC-Sign=C6464F66C48F8CBF93BD920F11465C26647CE00322080D7F1AC9D1F2FE25BF54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/bdWwm2iOSlCIL0A_h34KIw/zh-cn_image_0000002562715921.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022853Z&HW-CC-Expire=86400&HW-CC-Sign=946F9DA18DCC60977D1A4D81184FC14435055F8A8E75DA61B76DD3475616FEF1)

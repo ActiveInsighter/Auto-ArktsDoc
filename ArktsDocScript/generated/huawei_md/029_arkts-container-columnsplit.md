@@ -73,8 +73,8 @@ divider(value: ColumnSplitDividerStyle | null)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| startMargin | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | 否 | 是 | 子组件与其上方分割线的距离。 默认值：0 非法值：按默认值处理，此时[getInspectorByKey()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id#getinspectorbykey9)接口获取到的属性值为undefined。 |
-| endMargin | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | 否 | 是 | 子组件与其下方分割线的距离。 默认值：0 非法值：按默认值处理，此时[getInspectorByKey()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id#getinspectorbykey9)接口获取到的属性值为undefined。 |
+| startMargin | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | 否 | 是 | 子组件与其上方分割线的距离。 默认值：0vp 非法值：按默认值处理，此时[getInspectorByKey()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id#getinspectorbykey9)接口获取到的属性值为undefined。 |
+| endMargin | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | 否 | 是 | 子组件与其下方分割线的距离。 默认值：0vp 非法值：按默认值处理，此时[getInspectorByKey()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id#getinspectorbykey9)接口获取到的属性值为undefined。 |
 
 > **说明**
 > 与[RowSplit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-rowsplit)相同，ColumnSplit的分割线可调整上下两侧子组件的高度，子组件的高度调整范围受其最大最小高度限制。
@@ -113,7 +113,7 @@ struct ColumnSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/jGfuHj_MRUOrSRZGSs61pg/zh-cn_image_0000002531225790.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023234Z&HW-CC-Expire=86400&HW-CC-Sign=F8B4AD40831B2B303B36063600D27B1F0936200062904EBD4456164C16F927E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Ac4QYQh3T06EepQaDu2FgQ/zh-cn_image_0000002531795582.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022710Z&HW-CC-Expire=86400&HW-CC-Sign=29337D44A9481D95E21E75DF45A3D5091D36847054B0C5690C6D9881B10A85E5)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
@@ -142,4 +142,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/u0xIIJqXSrCZmAlZtrgZCw/zh-cn_image_0000002562025773.png?HW-CC-KV=V1&HW-CC-Date=20260323T023234Z&HW-CC-Expire=86400&HW-CC-Sign=95A3E66322489DA13BB9FAACBFC15F3799AF89E487DC4FE7F32C8A94666318E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/W_Dn3Jk_QCepkwlTDPq5_g/zh-cn_image_0000002562555547.png?HW-CC-KV=V1&HW-CC-Date=20260324T022710Z&HW-CC-Expire=86400&HW-CC-Sign=3BC456ADBAF08F746F4C0D7C2DDADA11A85C7DFCCD012A637165E58898E80AFA)

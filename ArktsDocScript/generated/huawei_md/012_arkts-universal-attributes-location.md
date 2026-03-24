@@ -10,7 +10,7 @@
 
 align(value: Alignment): T
 
-设置容器元素绘制区域内的子元素的对齐方式，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
+设置当前组件绘制区域内的子组件的对齐方式，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -22,7 +22,7 @@ align(value: Alignment): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Alignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#alignment) | 是 | 设置容器元素绘制区域内的子元素的对齐方式。 只在[Stack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-stack)、[FolderStack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-folderstack)、[Shape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape)、[Button](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button)、[Marquee](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-marquee)、[StepperItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-stepperitem)、[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)、[TextArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea)、[TextInput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput)、[RichEditor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor)、[Hyperlink](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-hyperlink)、[SymbolGlyph](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolglyph)、[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)、[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)、[ImageAnimator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator)、[LoadingProgress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress)、[PatternLock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-patternlock)、[Progress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress)、[QRCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode)、[TextClock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textclock)、[TextTimer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer)、[MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem)、[Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle)、[Checkbox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox)、[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)中生效，其中和文本相关的组件Marquee、Text、TextArea、TextInput、RichEditor、Hyperlink的align结果参考[textAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textalign)。 不支持textAlign属性的组件则无法设置水平方向的文字对齐。 默认值：Alignment.Center **说明：** 该属性在[Stack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-stack)组件上支持镜像能力，在其他组件上不支持镜像能力。 在Stack中该属性与alignContent效果一致，只能设置子组件在容器内的对齐方式。 |
+| value | [Alignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#alignment) | 是 | 设置当前组件绘制区域内的子组件的对齐方式。 只在[Stack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-stack)、[FolderStack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-folderstack)、[Shape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape)、[Button](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button)、[Marquee](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-marquee)、[StepperItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-stepperitem)、[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)、[TextArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea)、[TextInput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput)、[RichEditor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor)、[Hyperlink](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-hyperlink)、[SymbolGlyph](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolglyph)、[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)、[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)、[ImageAnimator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator)、[LoadingProgress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress)、[PatternLock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-patternlock)、[Progress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress)、[QRCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode)、[TextClock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textclock)、[TextTimer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer)、[MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem)、[Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle)、[Checkbox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox)、[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)中生效，其中和文本相关的组件Marquee、Text、TextArea、TextInput、RichEditor、Hyperlink的align结果参考[textAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textalign)。 不支持textAlign属性的组件则无法设置水平方向的文字对齐。 默认值：Alignment.Center **说明：** 该属性在[Stack](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-stack)组件上支持镜像能力，在其他组件上不支持镜像能力。 在Stack中该属性与alignContent效果一致，只能设置子组件在当前组件内的对齐方式。 |
 
 **返回值：**
 
@@ -34,7 +34,7 @@ align(value: Alignment): T
 
 align(alignment: Alignment | LocalizedAlignment): T
 
-设置容器元素绘制区域内的子元素的对齐方式，增加支持镜像的能力，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
+设置当前组件绘制区域内的子组件的对齐方式，增加支持镜像的能力，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
@@ -46,7 +46,7 @@ align(alignment: Alignment | LocalizedAlignment): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| alignment | [Alignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#alignment) | [LocalizedAlignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#localizedalignment20) | 是 | 设置容器元素绘制区域内的子元素的对齐方式，增加支持镜像的能力。 LocalizedAlignment只在[Shape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape)、[Button](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button)、[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)、[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)、[ImageAnimator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator)、[LoadingProgress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress)、[PatternLock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-patternlock)、[Progress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress)、[QRCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode)、[TextClock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textclock)、[TextTimer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer)、[StepperItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-stepperitem)、[MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem)、[Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle)、[Checkbox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox)、[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)中有效果。 其中，除[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)与Alignment的效果保持一致以外，其他组件镜像切换均生效；其他设置LocalizedAlignment无效果的组件按其默认效果显示。 默认值：Alignment.Center、LocalizedAlignment.CENTER 设置异常值按默认值处理，效果为居中显示。 **说明：** Alignment类型不支持镜像能力；LocalizedAlignment类型支持镜像能力，选择LocalizedAlignment中的枚举值，根据direction或系统语言方向的改变实现镜像切换。其中direction的优先级高于系统语言方向，当设置direction且不为auto时，LocalizedAlignment的镜像按照direction进行布局；当设置direction为auto或未设置时，LocalizedAlignment的镜像按照系统语言方向进行布局。 |
+| alignment | [Alignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#alignment) | [LocalizedAlignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#localizedalignment20) | 是 | 设置当前组件绘制区域内的子组件的对齐方式，增加支持镜像的能力。 LocalizedAlignment只在[Shape](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawing-components-shape)、[Button](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button)、[GridItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem)、[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)、[ImageAnimator](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator)、[LoadingProgress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress)、[PatternLock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-patternlock)、[Progress](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-progress)、[QRCode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode)、[TextClock](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textclock)、[TextTimer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer)、[StepperItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-stepperitem)、[MenuItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem)、[Toggle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle)、[Checkbox](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox)、[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)中有效果。 其中，除[ListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem)与Alignment的效果保持一致以外，其他组件镜像切换均生效；其他设置LocalizedAlignment无效果的组件按其默认效果显示。 默认值：Alignment.Center、LocalizedAlignment.CENTER 设置异常值按默认值处理，效果为居中显示。 **说明：** Alignment类型不支持镜像能力；LocalizedAlignment类型支持镜像能力，选择LocalizedAlignment中的枚举值，根据direction或系统语言方向的改变实现镜像切换。其中direction的优先级高于系统语言方向，当设置direction且不为auto时，LocalizedAlignment的镜像按照direction进行布局；当设置direction为auto或未设置时，LocalizedAlignment的镜像按照系统语言方向进行布局。 |
 
 **返回值：**
 
@@ -58,7 +58,7 @@ align(alignment: Alignment | LocalizedAlignment): T
 
 direction(value: Direction): T
 
-设置容器元素内主轴方向上的布局，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
+设置当前组件绘制区域内主轴方向上的布局，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -70,7 +70,7 @@ direction(value: Direction): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Direction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#direction) | 是 | 设置容器元素内主轴方向上的布局。 属性配置为auto的时候，按照系统语言方向进行布局。 该属性在Column组件上不生效。 默认值：Direction.Auto direction取undefined或null时按默认值处理。 |
+| value | [Direction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#direction) | 是 | 设置当前组件绘制区域内主轴方向上的布局。 属性配置为auto的时候，按照系统语言方向进行布局。 该属性在Column组件上不生效。 默认值：Direction.Auto direction取undefined或null时按默认值处理。 |
 
 **返回值：**
 
@@ -86,11 +86,12 @@ position(value: Position | Edges | LocalizedEdges): T
 
 > **说明**
 > - position对位置的影响作用在组件的尺寸测量完成之后。
-> - 当父容器为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)或[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时，设置position的子组件不占位。
+> - 当父组件为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)或[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时，设置position的子组件不占位。
 > - Position类型基于父组件内容区左上角确定位置；Edges类型基于父组件内容区四边确定位置，top/left/right/bottom分别为组件各边距离父组件内容区相应边的边距，通过边距来确定组件相对于父组件内容区的位置；LocalizedEdges类型基于父组件内容区四边确定位置，支持镜像模式。
-> - 本属性适用于置顶显示、悬浮按钮等组件在父容器中位置固定的场景。
-> - 本属性不支持在宽高为零的布局容器上设置。
-> - 当父容器为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)，且子组件设置了alignRules属性时，子组件的position属性不生效。
+> - 本属性适用于置顶显示、悬浮按钮等组件在父组件中位置固定的场景。
+> - 本属性不支持在宽高为零的布局组件上设置。
+> - 当父组件为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)，且子组件设置了alignRules属性时，子组件的position属性不生效。
+> - 若本属性所在组件的父组件未设置固定宽高，那么本组件会参考第一个设置固定宽高的祖先组件进行绝对定位。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -150,7 +151,7 @@ offset(value: Position | Edges | LocalizedEdges): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#position) | [Edges12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#edges12) | [LocalizedEdges12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizededges12) | 是 | 相对偏移，组件基于原本的布局位置进行偏移。offset属性不影响父容器布局，仅在绘制时调整位置。 Position类型基于组件自身左上角偏移，Edges类型基于组件自身四边偏移。 offset属性设置{x: x, y: y}与设置{left: x, top: y}以及{right: -x, bottom: -y}效果相同，类型LocalizedEdges支持镜像模式：LTR模式下start等同于x，RTL模式下start等同于-x。 API version 9及以前，默认值为：{x: 0, y: 0} 默认单位：vp API version 10：无默认值。 设置异常值时该属性不生效。 |
+| value | [Position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#position) | [Edges12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#edges12) | [LocalizedEdges12+](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizededges12) | 是 | 相对偏移，组件基于原本的布局位置进行偏移。offset属性不影响父组件布局，仅在绘制时调整位置。 Position类型基于组件自身左上角偏移，Edges类型基于组件自身四边偏移。 offset属性设置{x: x, y: y}与设置{left: x, top: y}以及{right: -x, bottom: -y}效果相同，类型LocalizedEdges支持镜像模式：LTR模式下start等同于x，RTL模式下start等同于-x。 API version 9及以前，默认值为：{x: 0, y: 0} 默认单位：vp API version 10：无默认值。 设置异常值时该属性不生效。 |
 
 **返回值：**
 
@@ -162,7 +163,7 @@ offset(value: Position | Edges | LocalizedEdges): T
 
 alignRules(value: AlignRuleOption): T
 
-指定设置在相对容器中子组件的对齐规则，仅当父容器为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
+指定设置在相对布局组件中子组件的对齐规则，仅当父组件为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -174,7 +175,7 @@ alignRules(value: AlignRuleOption): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [AlignRuleOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#alignruleoption9对象说明) | 是 | 指定设置在相对容器中子组件的对齐规则。 |
+| value | [AlignRuleOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#alignruleoption9对象说明) | 是 | 指定设置在相对布局组件中子组件的对齐规则。 |
 
 **返回值：**
 
@@ -186,7 +187,7 @@ alignRules(value: AlignRuleOption): T
 
 alignRules(alignRule: LocalizedAlignRuleOptions): T
 
-指定设置在相对容器中子组件的对齐规则，仅当父容器为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效。该方法水平方向上以start和end分别替代原方法的left和right，以便在RTL模式下能镜像显示，建议使用该方法指定设置在相对容器中子组件的对齐规则，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
+指定设置在相对布局组件中子组件的对齐规则，仅当父组件为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效。该方法水平方向上以start和end分别替代原方法的left和right，以便在RTL模式下能镜像显示，建议使用该方法指定设置在相对布局组件中子组件的对齐规则，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -198,7 +199,7 @@ alignRules(alignRule: LocalizedAlignRuleOptions): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| alignRule | [LocalizedAlignRuleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#localizedalignruleoptions12对象说明) | 是 | 指定设置在相对容器中子组件的对齐规则。 |
+| alignRule | [LocalizedAlignRuleOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#localizedalignruleoptions12对象说明) | 是 | 指定设置在相对布局组件中子组件的对齐规则。 |
 
 **返回值：**
 
@@ -210,7 +211,7 @@ alignRules(alignRule: LocalizedAlignRuleOptions): T
 
 layoutGravity(alignment: LocalizedAlignment): T
 
-单独设置Stack容器中子组件的对齐规则，仅当父容器为Stack时生效。与align属性同时使用时，layoutGravity优先级更高，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
+单独设置Stack组件中子组件的对齐规则，仅当父组件为Stack时生效。与align属性同时使用时，layoutGravity优先级更高，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
 **卡片能力：** 从API version 20开始，该接口支持在ArkTS卡片中使用。
 
@@ -222,7 +223,7 @@ layoutGravity(alignment: LocalizedAlignment): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| alignment | [LocalizedAlignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#localizedalignment20) | 是 | 指定设置在Stack容器中子组件的对齐规则。 默认值：LocalizedAlignment.CENTER 。说明：当传入异常值时，按默认值处理。 |
+| alignment | [LocalizedAlignment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#localizedalignment20) | 是 | 指定设置在Stack组件中子组件的对齐规则。 默认值：LocalizedAlignment.CENTER 。说明：当传入异常值时，按默认值处理。 |
 
 **返回值：**
 
@@ -288,7 +289,7 @@ layoutGravity(alignment: LocalizedAlignment): T
 
 chainMode(direction: Axis, style: ChainStyle): T
 
-指定以该组件为链头所构成的链的参数，仅当父容器为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效。链头指满足成链规则时链的第一个组件（水平方向从左边起始，镜像语言下从右边起始；竖直方向从上边起始）。
+指定以该组件为链头所构成的链的参数，仅当父组件为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效。链头指满足成链规则时链的第一个组件（水平方向从左边起始，镜像语言下从右边起始；竖直方向从上边起始）。
 
 详细用法请参考[RelativeContainer示例7（设置链）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer#示例7设置链)。
 
@@ -330,7 +331,7 @@ chainMode(direction: Axis, style: ChainStyle): T
 
 chainWeight(chainWeight: ChainWeightOptions): T
 
-对形成链的组件进行重新布局。仅当父容器为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效。
+对形成链的组件进行重新布局。仅当父组件为[RelativeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer)时生效。
 
 > **说明**
 > 该接口不支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
@@ -359,7 +360,7 @@ chainWeight(chainWeight: ChainWeightOptions): T
 
 ### 示例1（对齐方式和主轴方向上的布局）
 
-设置内容在元素内的对齐方式和子元素在父容器主轴方向上的布局。
+设置内容在元素内的对齐方式和子元素在父组件主轴方向上的布局。
 
 ```typescript
 @Entry
@@ -405,7 +406,7 @@ struct PositionExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/JJScBWHmRlmNlhYbS0ElWg/zh-cn_image_0000002531225680.png?HW-CC-KV=V1&HW-CC-Date=20260323T023324Z&HW-CC-Expire=86400&HW-CC-Sign=E1EE11B3406FB81C7197D51027A2580E08B46E8C7DDD68672BCEF060155D2B51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/d-oIaBMcRfOrLySFL8dAeA/zh-cn_image_0000002531635536.png?HW-CC-KV=V1&HW-CC-Date=20260324T022520Z&HW-CC-Expire=86400&HW-CC-Sign=4D4B6DF9AEBF9227056DC5A7CAC30C5F185EFA265062555882C0C44B5D1D8460)
 
 ### 示例2（位置偏移）
 
@@ -490,7 +491,7 @@ struct PositionExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/gwn09kRYTpGhssqETdqzBw/zh-cn_image_0000002562025663.png?HW-CC-KV=V1&HW-CC-Date=20260323T023324Z&HW-CC-Expire=86400&HW-CC-Sign=1209E95A0BCB45AE90FE5798AE31235C8B3507AF1F40E237F868310E22356512)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/DlzmVndfRa-QermKlF0-OA/zh-cn_image_0000002531795472.png?HW-CC-KV=V1&HW-CC-Date=20260324T022520Z&HW-CC-Expire=86400&HW-CC-Sign=F4C8B3C98434EF3386BF17567BF50205B6A26880D5AD37250F64DEC36CF3A083)
 
 ### 示例3（绝对定位和相对偏移）
 
@@ -568,7 +569,7 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ABV2vn5sRVmN7ORxRBkUXA/zh-cn_image_0000002562145649.jpeg?HW-CC-KV=V1&HW-CC-Date=20260323T023324Z&HW-CC-Expire=86400&HW-CC-Sign=3EFF1901232D5C46DE12B62047DDEA56DBCE2921DDA2E1F68E8F50856F690AB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/7qplr7PyTgKLBuAWHGINpw/zh-cn_image_0000002562555437.jpeg?HW-CC-KV=V1&HW-CC-Date=20260324T022520Z&HW-CC-Expire=86400&HW-CC-Sign=DE0A30883F5FFD4F552D968B91FE0743D89AC5E7176EC22261A28CC0D275396E)
 
 ### 示例4（镜像效果）
 
@@ -669,15 +670,15 @@ struct Example4 {
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/6z-JkXIIQY-jh8Taq4FlRQ/zh-cn_image_0000002531105748.png?HW-CC-KV=V1&HW-CC-Date=20260323T023324Z&HW-CC-Expire=86400&HW-CC-Sign=C15567F273FD55BC29B578098B6094D87CDE85E6E7D2631EA9ECCC2B2BFA17AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5jJ2SeW1TVCyNy-1cWlnvA/zh-cn_image_0000002562715409.png?HW-CC-KV=V1&HW-CC-Date=20260324T022520Z&HW-CC-Expire=86400&HW-CC-Sign=895509E7BECB399561EDB17C5BD7ED194E6BA7480064D836D769636BA19F21A0)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/iRGRV1_NQTibXFXByWKY0Q/zh-cn_image_0000002531225682.png?HW-CC-KV=V1&HW-CC-Date=20260323T023324Z&HW-CC-Expire=86400&HW-CC-Sign=2C1E907E0A425B97F9BF8E8DE328E84A9B44A5D4A92FA5707D62FA2B295196CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ghAbSsd9SIG4x7r4AOGikg/zh-cn_image_0000002531635538.png?HW-CC-KV=V1&HW-CC-Date=20260324T022520Z&HW-CC-Expire=86400&HW-CC-Sign=7B1920371A8256A490BA5D328424F7375E4C4DA39496D4F3E3EA8A0EB31ECA56)
 
 ### 示例5（align属性适配镜像特性）
 
-设置内容在元素内的对齐方式和子元素在父容器主轴方向上的布局。
+设置内容在元素内的对齐方式和子元素在父组件主轴方向上的布局。
 
 ```typescript
 @Entry
@@ -741,9 +742,9 @@ struct buttonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/XPW7IXKtQIe2S3NwVRxdxg/zh-cn_image_0000002562025665.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023324Z&HW-CC-Expire=86400&HW-CC-Sign=33E8C87052923651F88AFEFB83C0F4E8149985EE9D244E88F7911A66A61F65E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/OGNa1dqBRSKM4q1JHuxKDg/zh-cn_image_0000002531795474.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022520Z&HW-CC-Expire=86400&HW-CC-Sign=932479FAE02DF23693DC253263B460A972D722E9459EBD91A62903C64031786E)
 
-### 示例6（layoutGravity属性单独设置Stack容器中子组件的对齐规则）
+### 示例6（layoutGravity属性单独设置Stack组件中子组件的对齐规则）
 
 更改Stack中Text的位置。
 
@@ -802,4 +803,4 @@ struct Index5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/EVBTfvFsTlSPsWtfriUIlA/zh-cn_image_0000002562145651.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023324Z&HW-CC-Expire=86400&HW-CC-Sign=96BE2446A1AF825078196B1099F2F9A0874585509F3AB1B7D986D1B2B05085F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/htsR3uTWTOuJjFjwt5E2ng/zh-cn_image_0000002562555439.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022520Z&HW-CC-Expire=86400&HW-CC-Sign=2FE7DCDB5B7C023BDF60C95E855F21C674873181A2131BBA4CB582CF17B2A350)

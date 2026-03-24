@@ -52,10 +52,10 @@ pixelRound(value: PixelRoundPolicy): T
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| start | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件前部边界取整对齐方式。 设置异常值时按四舍五入规则取整。 |
-| top | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件上部边界取整对齐方式。 设置异常值时按四舍五入规则取整。 |
-| end | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件尾部边界取整对齐方式。 设置异常值时按四舍五入规则取整。 |
-| bottom | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件底部边界取整对齐方式。 设置异常值时按四舍五入规则取整。 |
+| start | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件前部边界取整对齐方式。 不设置[pixelRound](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-pixelroundforcomponent#pixelround)或者设置异常值时按四舍五入规则取整。 |
+| top | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件上部边界取整对齐方式。 不设置pixelRound或者设置异常值时按四舍五入规则取整。 |
+| end | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件尾部边界取整对齐方式。 不设置pixelRound或者设置异常值时按四舍五入规则取整。 |
+| bottom | [PixelRoundCalcPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#pixelroundcalcpolicy11) | 否 | 是 | 组件底部边界取整对齐方式。 不设置pixelRound或者设置异常值时按四舍五入规则取整。 |
 
 ## 常见问题
 
@@ -79,7 +79,7 @@ struct PixelRoundExample {
 
     build() {
         Column() {
-            Button(){
+            Button() {
                 Text(this.curWidth.toString())
             }
             .onClick(() => {
@@ -110,7 +110,7 @@ struct PixelRoundExample {
                 end : PixelRoundCalcPolicy.NO_FORCE_ROUND,
             })
         }
-        .width("100%")
+        .width('100%')
         .height('100%')
         .backgroundColor('#ffe5e5e5')
     }
@@ -121,8 +121,8 @@ struct PixelRoundExample {
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/lpevenqfQn6eu0UBziqXWg/zh-cn_image_0000002562025673.png?HW-CC-KV=V1&HW-CC-Date=20260323T023453Z&HW-CC-Expire=86400&HW-CC-Sign=C135FCDFE9AD583ABF05702533F6B58548CB5716137F154AC5425B04153B7641)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/av6nReGsRxOnxkgf472t-A/zh-cn_image_0000002531795482.png?HW-CC-KV=V1&HW-CC-Date=20260324T022657Z&HW-CC-Expire=86400&HW-CC-Sign=EB68106B0E4EC4DCB831AEE7C2BDA86E10677E5E89CB55672F881CA87F0F5E33)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/KXDtH-DyQcW9HAyDAu4GlQ/zh-cn_image_0000002562145659.png?HW-CC-KV=V1&HW-CC-Date=20260323T023453Z&HW-CC-Expire=86400&HW-CC-Sign=DB601844380200F71B5593664EA24AF08E9111E623B913336C69C1D5DB257954)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/mPnFxVuWRvOweeFDo2BGAg/zh-cn_image_0000002562555447.png?HW-CC-KV=V1&HW-CC-Date=20260324T022657Z&HW-CC-Expire=86400&HW-CC-Sign=67DDFACFB7C0FF17D5494CE2B56D0C57D612F1F62D8800D78AB1CFC9401B3DCF)

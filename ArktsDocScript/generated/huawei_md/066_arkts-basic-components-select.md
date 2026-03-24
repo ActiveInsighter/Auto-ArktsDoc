@@ -1013,6 +1013,7 @@ type OnSelectCallback = (index: number, selectStr: string) => void
 该示例通过配置[SelectOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#selectoption对象说明)实现下拉菜单，并从API version 19开始通过设置[avoidance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#avoidance19)属性实现菜单的避让方式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct SelectExample {
@@ -1020,10 +1021,9 @@ struct SelectExample {
   @State index: number = 2;
   @State space: number = 8;
   @State arrowPosition: ArrowPosition = ArrowPosition.END;
-
   build() {
     Column() {
-
+      // $r('app.media.selection')需要替换为开发者所需的图像资源文件。
       Select([{ value: 'aaa', icon: $r("app.media.selection") },
         { value: 'bbb', icon: $r("app.media.selection") },
         { value: 'ccc', icon: $r("app.media.selection") },
@@ -1052,15 +1052,15 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/z8vtbq9wReeRnLNoLTns2g/zh-cn_image_0000002562025889.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=56447921C2D2E794CE7DEB994DC51D11EB3271EFA3AB9392C0EECDD3C5EF5D29)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/6itw79FYQfSPYMj1Bm_EGA/zh-cn_image_0000002562555663.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=8077A7BC29341A3F391573C5E3186B787DBD26C3AEB8CC4F47B7DECA8FC09844)
 
 ## 示例2（设置symbol类型图标）
 
 该示例实现了一个下拉菜单中图片为Symbol的Select组件，并从API version 19开始通过设置[avoidance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#avoidance19)属性实现菜单的避让方式。
 
 ```typescript
+// xxx.ets
 import { SymbolGlyphModifier } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct SelectExample {
@@ -1076,7 +1076,6 @@ struct SelectExample {
     new SymbolGlyphModifier($r('sys.symbol.ohos_trash')).fontColor([Color.Gray]);
   @State symbolModifier4: SymbolGlyphModifier =
     new SymbolGlyphModifier($r('sys.symbol.exposure')).fontColor([Color.Gray]);
-
   build() {
     Column() {
       Select([{ value: 'aaa', symbolIcon: this.symbolModifier1 },
@@ -1105,7 +1104,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/29g_4w6YRbiE_9UXIttaAQ/zh-cn_image_0000002562145875.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=9BD66E7EAB8F25A6600DC77CD269BC02B527CB06EEA6B259504E25FAA58E549B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/REZjCG2JTz2Uz_1uJg8Egg/zh-cn_image_0000002562715635.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=3973E805FA7945BA85DD7EE477FB52E755664F54DAEA9F03C5478F223B304004)
 
 ## 示例3（自定义下拉菜单）
 
@@ -1113,19 +1112,15 @@ struct SelectExample {
 
 ```typescript
 import { SymbolGlyphModifier } from '@kit.ArkUI';
-
 class MyMenuItemContentModifier implements ContentModifier<MenuItemConfiguration> {
   modifierText: string = "";
-
   constructor(text: string) {
     this.modifierText = text;
   }
-
   applyContent(): WrappedBuilder<[MenuItemConfiguration]> {
     return wrapBuilder(MenuItemBuilder);
   }
 }
-
 @Builder
 function MenuItemBuilder(configuration: MenuItemConfiguration) {
   Row() {
@@ -1151,7 +1146,6 @@ function MenuItemBuilder(configuration: MenuItemConfiguration) {
     configuration.triggerSelect(configuration.index, configuration.value.valueOf().toString());
   })
 }
-
 @Entry
 @Component
 struct SelectExample {
@@ -1160,11 +1154,10 @@ struct SelectExample {
     new SymbolGlyphModifier($r('sys.symbol.ohos_trash')).fontColor([Color.Gray]);
   @State symbolModifier2: SymbolGlyphModifier =
     new SymbolGlyphModifier($r('sys.symbol.exposure')).fontColor([Color.Gray]);
-
   build() {
     Column() {
       Row() {
-
+        // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
         Select([{ value: 'item1', icon: $r('app.media.icon'), symbolIcon: this.symbolModifier1 },
           { value: 'item1', icon: $r('app.media.icon'), symbolIcon: this.symbolModifier2 }])
           .value(this.text)
@@ -1173,30 +1166,29 @@ struct SelectExample {
             console.info('Select text:' + text);
           })
           .menuItemContentModifier(new MyMenuItemContentModifier("Content Modifier"))
-
       }.alignItems(VerticalAlign.Center).height('50%')
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/XmJ8WD-cQ8Wn3r9FcwatuQ/zh-cn_image_0000002531105974.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=55C791CCDC546CEBBD9D732D30D45C9A3DBEA26A54CFF1FE36F4CDB28FE89E86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/OdFmE57tS0WPOOPe17fVKA/zh-cn_image_0000002531635764.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=ED02CAE9F93CAA7AB13A778B511C004D711483B3E3BFCC10AED84C5F2C507BF6)
 
 ## 示例4（设置分割线样式）
 
 该示例通过配置divider的DividerOptions类型实现分割线样式的下拉菜单，并从API version 19开始通过设置[avoidance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#avoidance19)属性实现菜单的避让方式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct SelectExample {
   @State text: string = "TTTTT";
   @State index: number = -1;
   @State arrowPosition: ArrowPosition = ArrowPosition.END;
-
   build() {
     Column() {
-
+      // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
       Select([{ value: 'aaa', icon: $r("app.media.icon") },
         { value: 'bbb', icon: $r("app.media.icon") },
         { value: 'ccc', icon: $r("app.media.icon") },
@@ -1230,23 +1222,23 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/tFHRC3-1SDGatbv05CaaPg/zh-cn_image_0000002531225908.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=DE9F2C4D18B740A2CCEAA5B17FF910A87F80F8D3EFF4753366A422FDE76175CE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/txoq-b93R12iPQSVxGQS2w/zh-cn_image_0000002531795700.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=76449058CBC1371B9DF65CD2397CC00C50FBD5D8BC871931BB1CD8E26A9708E5)
 
 ## 示例5（设置无分割线样式）
 
 该示例通过配置divider为null实现无分割线样式的下拉菜单，并从API version 19开始通过设置[avoidance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-select#avoidance19)属性实现菜单的避让方式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct SelectExample {
   @State text: string = "TTTTT";
   @State index: number = -1;
   @State arrowPosition: ArrowPosition = ArrowPosition.END;
-
   build() {
     Column() {
-
+      // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
       Select([{ value: 'aaa', icon: $r("app.media.icon") },
         { value: 'bbb', icon: $r("app.media.icon") },
         { value: 'ccc', icon: $r("app.media.icon") },
@@ -1275,7 +1267,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/haH5OoXmSM-97zQ_L-baQQ/zh-cn_image_0000002562025891.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=C9CA3165BB096A7C988B08D951163F6A0EAF546C1F05D25BF91F87CC1199A57D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/BBhTf9E5RAuVGq8DNRqG5g/zh-cn_image_0000002562555665.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=1057E899C0CD247EBC390B77AB7CF4602D51E4F85D934D37922620F0830897FD)
 
 ## 示例6（设置Select中文本和箭头样式）
 
@@ -1283,7 +1275,6 @@ struct SelectExample {
 
 ```typescript
 import { TextModifier, SymbolGlyphModifier } from "@kit.ArkUI";
-
 @Entry
 @Component
 struct SelectExample {
@@ -1291,7 +1282,6 @@ struct SelectExample {
   @State index: number = 2;
   textModifier: TextModifier = new TextModifier();
   symbolGlyphModifier: SymbolGlyphModifier = new SymbolGlyphModifier();
-
   aboutToAppear(): void {
     this.textModifier
       .maxLines(2)
@@ -1300,16 +1290,14 @@ struct SelectExample {
       .fontColor('#333333')
       .fontWeight(FontWeight.Medium)
       .textOverflow({overflow:TextOverflow.Clip})
-
     this.symbolGlyphModifier
       .fontSize(25)
       .fontColor(['#999999'])
   }
-
   build() {
     Column() {
       Select([
-
+        // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
         { value: 'A very long option text that should be truncated nicely'.repeat(3), icon: $r("app.media.startIcon") },
         { value: 'Option B', icon: $r("app.media.startIcon") },
         { value: 'Option C', icon: $r("app.media.startIcon") },
@@ -1342,7 +1330,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aJsJ1jlHQySGY_GvHUs0dg/zh-cn_image_0000002562145877.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=53370173B608826027CAE043E109CE55D25E07C8995343DFBB9F43FE237B9B22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/v-f5j-gmRkugzBKWR4KBtA/zh-cn_image_0000002562715637.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=AA8616B404E2CF83A9993D790B1510373A1AA5EA44A6B00697493B370A8AB3AD)
 
 ## 示例7（设置Select下拉菜单选中和非选中项文本样式）
 
@@ -1350,7 +1338,6 @@ struct SelectExample {
 
 ```typescript
 import { TextModifier } from "@kit.ArkUI";
-
 @Entry
 @Component
 struct SelectExample {
@@ -1366,7 +1353,6 @@ struct SelectExample {
       .fontColor('#666666')
       .fontWeight(FontWeight.Normal)
       .width(200)
-
     this.selectedOptionTextModifier
       .maxLines(1)
       .fontSize(18)
@@ -1375,11 +1361,10 @@ struct SelectExample {
       .fontWeight(FontWeight.Bold)
       .width(200)
   }
-
   build() {
     Column() {
       Select([
-
+        // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
         { value: 'A very long option text that should be truncated nicely'.repeat(3), icon: $r("app.media.startIcon") },
         { value: 'Option B', icon: $r("app.media.startIcon") },
         { value: 'Option C', icon: $r("app.media.startIcon") },
@@ -1412,7 +1397,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/_Q7hDOCpQW6kW9b6oV3maA/zh-cn_image_0000002531105976.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=5AC1DC4BEA3054D7BAED68FC57917FC7968ADDFC61E85C61E813AAC36DF629F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/PU2Uade1Q_yyE5xE5nFPlQ/zh-cn_image_0000002531635766.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=166E9E252BD04FD8FD6338864F8B3ED28E73ED1182C57CD7282F9FF4D0D44076)
 
 ## 示例8（设置分割线模式）
 
@@ -1420,7 +1405,6 @@ struct SelectExample {
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI'
-
 @Entry
 @Component
 struct Index {
@@ -1440,20 +1424,20 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/E3ROBKkzTKiScNlmzprXsQ/zh-cn_image_0000002531225910.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=5E099F9BDE05AFF9CAF6043CE3EEA1E6763CD4405029C2E62BCCF76E80F763AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/maUiNIlvTEy5qurzy3chsQ/zh-cn_image_0000002531795702.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=66DAA479AF8C81DF5AA64535862F1B41494AF50657F868E5F2BBC33B7DFED247)
 
 ## 示例9（设置Select下拉菜单外描边样式）
 
 从API version 20开始该示例通过配置menuOutline的width和color属性设置下拉菜单外描边样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct SelectExample {
   @State text: string = "TTTTT";
   @State index: number = -1;
   @State arrowPosition: ArrowPosition = ArrowPosition.END;
-
   build() {
     Column() {
       Select([{ value: 'aaa' },
@@ -1489,4 +1473,4 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/rPc1xVEtSzaUVyKGYBOM5g/zh-cn_image_0000002562025893.png?HW-CC-KV=V1&HW-CC-Date=20260323T023558Z&HW-CC-Expire=86400&HW-CC-Sign=9792A65C271872A8D01714050C32A6FC68B7F79692310552326376C7CC99CB86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/HapWt4kAQ2qZozVno-pDTA/zh-cn_image_0000002562555667.png?HW-CC-KV=V1&HW-CC-Date=20260324T022754Z&HW-CC-Expire=86400&HW-CC-Sign=05048D0C97C0272A44797EB701D37A464982C5670853A8ED847C9F0C621EC6B5)

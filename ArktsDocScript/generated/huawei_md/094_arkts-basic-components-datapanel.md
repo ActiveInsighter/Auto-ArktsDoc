@@ -1,4 +1,4 @@
-# DataPanel-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datapanel
 
 数据面板组件，用于将多个数据占比情况使用占比图进行展示。
@@ -270,7 +270,7 @@ struct DataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/jRif-EEiTtiOgqxhkPokSA/zh-cn_image_0000002531226070.png?HW-CC-KV=V1&HW-CC-Date=20260323T023636Z&HW-CC-Expire=86400&HW-CC-Sign=F818C4287ACF2402B0C06B41B177E079C0F12138F759FB4555B70641AFBB95F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/JQ-ZapBsTOuxXMCRsk9l8w/zh-cn_image_0000002531795862.png?HW-CC-KV=V1&HW-CC-Date=20260324T022833Z&HW-CC-Expire=86400&HW-CC-Sign=74259472322D3B56881C30E5284BE2DC0D75C8F4B1BB6B602184FD163E4D4E92)
 
 ### 示例2（设置渐变色和阴影）
 
@@ -328,7 +328,7 @@ struct LinearGradientDataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/3uxaq9eASJ2gpnr-dw7g4g/zh-cn_image_0000002562026053.png?HW-CC-KV=V1&HW-CC-Date=20260323T023636Z&HW-CC-Expire=86400&HW-CC-Sign=5DD1B48D5B22A44180CA2A47586E9B8040C5D4A92E85960D696A8BA9DFE57C3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/92JzebCpTOKPhwVoeVVlSw/zh-cn_image_0000002562555827.png?HW-CC-KV=V1&HW-CC-Date=20260324T022833Z&HW-CC-Expire=86400&HW-CC-Sign=0811016470317288782CA95EB2F4B6D00FAA6644C5472D71019416488CAD0678)
 
 ### 示例3（设置关闭动画和阴影）
 
@@ -381,7 +381,7 @@ struct LinearGradientDataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/5hpMI8fxTjagPSQ8oP2pVQ/zh-cn_image_0000002562146039.png?HW-CC-KV=V1&HW-CC-Date=20260323T023636Z&HW-CC-Expire=86400&HW-CC-Sign=0A1A51780FADDB517B130BF63E7F98D01525E4C810F16290F0F6284BDF2AD216)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/f8YCObvqRpqm4bWG5w8eJw/zh-cn_image_0000002562715799.png?HW-CC-KV=V1&HW-CC-Date=20260324T022833Z&HW-CC-Expire=86400&HW-CC-Sign=FDCC5977377B4B2D7C66EFF99EC2963DE4488E1AA93400E0D1D1DEE4AED9E629)
 
 ### 示例4（设置定制内容区）
 
@@ -466,4 +466,4 @@ struct ChildItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Y8jdzGKvTvy3UNsX6buqcQ/zh-cn_image_0000002531106138.jpg?HW-CC-KV=V1&HW-CC-Date=20260323T023636Z&HW-CC-Expire=86400&HW-CC-Sign=1DB7FC49FCC2F444C79F31552BB58215A92BFE0636158A674326DCA1E6174047)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/axb2TwCmSgujyjYhUtPNAQ/zh-cn_image_0000002531635928.jpg?HW-CC-KV=V1&HW-CC-Date=20260324T022833Z&HW-CC-Expire=86400&HW-CC-Sign=9B69CC7BCB1BF68794A8B42CCE2CD0402075E79B74C0B69DB992CF1C2C4606E3)

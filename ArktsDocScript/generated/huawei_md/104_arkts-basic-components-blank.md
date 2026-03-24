@@ -1,4 +1,4 @@
-# 文档中心
+# Blank-空白与分隔-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-blank
 
 空白填充组件，在容器主轴方向上，空白填充组件具有自动填充容器空余部分的能力。仅当父组件为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)/[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)/[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时生效。
@@ -84,11 +84,11 @@ struct BlankExample {
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Fj5-UmvCT2e39NpEidVk0w/zh-cn_image_0000002531106156.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023648Z&HW-CC-Expire=86400&HW-CC-Sign=9B412E109D5E7CC30A293774C71AD7F5E68832C7E7D5B80711DFA40809FE50CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/YR789Gq5SQqtvf-UdxGZCg/zh-cn_image_0000002531635946.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022842Z&HW-CC-Expire=86400&HW-CC-Sign=0D7C8667E851E17D7F80E8FB135B27069ACE5997D9CEE69DC45D6656980C97AF)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ZtnexK0DTca9n9KTdvLWOg/zh-cn_image_0000002531226090.gif?HW-CC-KV=V1&HW-CC-Date=20260323T023648Z&HW-CC-Expire=86400&HW-CC-Sign=B935950D8ABA381D6246F55A575DC84BAD87702A7C36E74FFB48BD17538FC948)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/eXNUpZZWQYm0_CDSMhL9AA/zh-cn_image_0000002531795882.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022842Z&HW-CC-Expire=86400&HW-CC-Sign=265F1DB20690A690874628D4A6ABC9D51D78FF43D1D6040B0807967CC18CE54B)
 
 ### 示例2（填充固定宽度）
 
@@ -121,4 +121,4 @@ struct BlankExample {
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/NJWmXxI3T76QQkapgtwjwA/zh-cn_image_0000002562026073.png?HW-CC-KV=V1&HW-CC-Date=20260323T023648Z&HW-CC-Expire=86400&HW-CC-Sign=248F9CC112269074723403B9B24C6957D4180B511382F115D307787185714085)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/OVfStTjuSIGEPX4brUFsqg/zh-cn_image_0000002562555847.png?HW-CC-KV=V1&HW-CC-Date=20260324T022842Z&HW-CC-Expire=86400&HW-CC-Sign=1B2394C751B03D21C587427EAE4F467B8C15E9F8DE95032EA909DF3EADAE66F3)
