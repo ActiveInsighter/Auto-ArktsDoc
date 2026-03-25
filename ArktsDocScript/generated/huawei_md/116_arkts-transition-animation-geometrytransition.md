@@ -1,4 +1,4 @@
-# 文档中心
+# 组件内隐式共享元素转场 (geometryTransition)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-geometrytransition
 
 在视图切换过程中提供丝滑的上下文传承过渡。通用transition机制提供了opacity、scale等转场效果，geometryTransition通过安排绑定的in/out组件（in指新视图、out指旧视图）的frame、position使得原本独立的transition动画在空间位置上发生联系，将视觉焦点由旧视图位置引导到新视图位置。
@@ -111,4 +111,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/GbhsRb6cRBeK6me5ciMLYA/zh-cn_image_0000002531795986.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022854Z&HW-CC-Expire=86400&HW-CC-Sign=752B11E4D222E9742CAD2C6FA08BAF40ABC78EABA909689EF6D12134E1A2B8C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/GbhsRb6cRBeK6me5ciMLYA/zh-cn_image_0000002531795986.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023100Z&HW-CC-Expire=86400&HW-CC-Sign=B2C1DC4A43E2B6863214113105AF3EB5C518A8A3ED69A59EE204748D15671E50)

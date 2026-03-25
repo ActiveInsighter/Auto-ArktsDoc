@@ -1,4 +1,4 @@
-# 文档中心
+# 图像类型定义-图片与视频-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-image-common
 
 > **说明**

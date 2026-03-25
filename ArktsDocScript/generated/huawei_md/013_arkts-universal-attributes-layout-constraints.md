@@ -1,4 +1,4 @@
-# 文档中心
+# 布局约束-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-layout-constraints
 
 通过组件的宽高比和显示优先级约束组件显示效果。
@@ -119,11 +119,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/i8RlSKWERJ6ypil3KDdwBA/zh-cn_image_0000002562715411.png?HW-CC-KV=V1&HW-CC-Date=20260324T022652Z&HW-CC-Expire=86400&HW-CC-Sign=3F676AB10407483F81255A98D3AE2B8782FF0976FBC72A844CB72A3EDA2A2B6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/i8RlSKWERJ6ypil3KDdwBA/zh-cn_image_0000002562715411.png?HW-CC-KV=V1&HW-CC-Date=20260325T022955Z&HW-CC-Expire=86400&HW-CC-Sign=85CC91387537F834B593CCBB1AFA8DD191B1678FD18D3B3B997F7DF44DD5C9CF)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/uqJ-kX6JTreFPhizm2dtrA/zh-cn_image_0000002531635540.png?HW-CC-KV=V1&HW-CC-Date=20260324T022652Z&HW-CC-Expire=86400&HW-CC-Sign=B24C0876554417870D8B9FB08A208251608E6EDDECB52C76DC0C0527D73B3BEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/uqJ-kX6JTreFPhizm2dtrA/zh-cn_image_0000002531635540.png?HW-CC-KV=V1&HW-CC-Date=20260325T022955Z&HW-CC-Expire=86400&HW-CC-Sign=7CAECEA59890797A728FFF27216D8693ADDCFC680E19D2583ECFBF2B9DC5CE6F)
 
 ### 示例2（设置组件显示优先级）
 
@@ -187,4 +187,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/UE-8sx-dR7yBXFDB77qJEQ/zh-cn_image_0000002531795476.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022652Z&HW-CC-Expire=86400&HW-CC-Sign=CB8741FB5EFD37AEC37243E0AA177E79B02BE620266357C29FB1EC7A1A1F9A33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/UE-8sx-dR7yBXFDB77qJEQ/zh-cn_image_0000002531795476.gif?HW-CC-KV=V1&HW-CC-Date=20260325T022955Z&HW-CC-Expire=86400&HW-CC-Sign=93801FF2D177274C995812B01BE9BFD1DC2E95B6E0D672CAB07E8A334974F82A)

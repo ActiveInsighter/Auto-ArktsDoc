@@ -727,7 +727,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/scTa75XJSAOdEPnAi6Jd_A/zh-cn_image_0000002531635870.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022821Z&HW-CC-Expire=86400&HW-CC-Sign=D2C5BFB02BFB2F0D983F26621A4BAB482FB3CCF8D99F93147D9DF862600273FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/scTa75XJSAOdEPnAi6Jd_A/zh-cn_image_0000002531635870.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023323Z&HW-CC-Expire=86400&HW-CC-Sign=F595CCF3BA503F1B001A4C26263EBA48119480AE277933A50B27315ADA14F676)
 
 ### 示例2（图像分析功能）
 
@@ -881,7 +881,7 @@ struct VideoObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/2OzrfswLS2CGCL0vrknXpw/zh-cn_image_0000002531795806.png?HW-CC-KV=V1&HW-CC-Date=20260324T022821Z&HW-CC-Expire=86400&HW-CC-Sign=10B3C6BD886BE17425FDE21DB85E8F4499C017A3ECA68A801CCC1BCD0E742119)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/2OzrfswLS2CGCL0vrknXpw/zh-cn_image_0000002531795806.png?HW-CC-KV=V1&HW-CC-Date=20260325T023323Z&HW-CC-Expire=86400&HW-CC-Sign=C67ADB4DB4E941FF0341C352A8A52052E263FC04CDBACD9813F83054285DB310)
 
 ### 示例5（onError事件上报错误码）
 
@@ -924,7 +924,7 @@ struct VideoErrorComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/0igBO6H-Tli9t1tF2bGiRQ/zh-cn_image_0000002562555771.png?HW-CC-KV=V1&HW-CC-Date=20260324T022821Z&HW-CC-Expire=86400&HW-CC-Sign=D280C6CA5864E08C4457FDA93F51E6F4C346C65ABBECB4D5DB8D25E8E30D2A21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/0igBO6H-Tli9t1tF2bGiRQ/zh-cn_image_0000002562555771.png?HW-CC-KV=V1&HW-CC-Date=20260325T023323Z&HW-CC-Expire=86400&HW-CC-Sign=45F88330C7E23BC343C54608E666F630213B36F5985E9EF3F8CC4D2617BE4C1D)
 
 ### 示例6（使用attributeModifier动态设置Video组件的属性及方法）
 
@@ -1045,4 +1045,4 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/qGMJ22JHSVGt5aSv1dUTzQ/zh-cn_image_0000002562715743.png?HW-CC-KV=V1&HW-CC-Date=20260324T022821Z&HW-CC-Expire=86400&HW-CC-Sign=569EA5B0218C72698AA2A4E1F7B9BA94105CCE04960DC7CCE080CDAC29D2A456)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/qGMJ22JHSVGt5aSv1dUTzQ/zh-cn_image_0000002562715743.png?HW-CC-KV=V1&HW-CC-Date=20260325T023323Z&HW-CC-Expire=86400&HW-CC-Sign=15BD2096A0C2A3ED6CF1AEEFF1CE5F7EDDE4D4739ADF149AF21406E7359C0F55)

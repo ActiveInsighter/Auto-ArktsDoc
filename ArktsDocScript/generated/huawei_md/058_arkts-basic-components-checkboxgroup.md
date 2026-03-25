@@ -1,4 +1,4 @@
-# 文档中心
+# CheckboxGroup-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup
 
 多选框群组，用于控制多选框全选或者不全选状态。
@@ -411,7 +411,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/RgTf8gOkQV-GEBE-lmSM3g/zh-cn_image_0000002562715613.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022745Z&HW-CC-Expire=86400&HW-CC-Sign=02B727300D68711CB56715B336715C0EFB32639E93BA325FA37C008F57A35982)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/RgTf8gOkQV-GEBE-lmSM3g/zh-cn_image_0000002562715613.gif?HW-CC-KV=V1&HW-CC-Date=20260325T022939Z&HW-CC-Expire=86400&HW-CC-Sign=74971E8479236C9D08A21658EFF68CD088FD89178A793620579EAA8AAD771902)
 
 ### 示例2（自定义勾选样式）
 
@@ -489,7 +489,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/YYlfnKAbSUqWcCjTM7fs1w/zh-cn_image_0000002531635742.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022745Z&HW-CC-Expire=86400&HW-CC-Sign=B864CA9591F2EC5C30704860227728A459D029A67E1FE5065C5FAFAC70A1EEE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/YYlfnKAbSUqWcCjTM7fs1w/zh-cn_image_0000002531635742.gif?HW-CC-KV=V1&HW-CC-Date=20260325T022939Z&HW-CC-Expire=86400&HW-CC-Sign=071C0E290F07D3C1091104381FF5F868CE72C7218166F3F75A36E60AE1CF8156)
 
 ### 示例3（自定义多选框样式）
 
@@ -608,7 +608,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/qQ0r1qCtTAK_8jncs9Jycg/zh-cn_image_0000002531795678.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022745Z&HW-CC-Expire=86400&HW-CC-Sign=FAB55796824059AA87BF14D2A67F8B61E8E82A94E4E1AA94D618499FA55899D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/qQ0r1qCtTAK_8jncs9Jycg/zh-cn_image_0000002531795678.gif?HW-CC-KV=V1&HW-CC-Date=20260325T022939Z&HW-CC-Expire=86400&HW-CC-Sign=80D91097A8E36495491B87B03D9A10667F9BF409FEF8D534BC0F393C909B7D88)
 
 ### 示例4（设置全选）
 
@@ -765,4 +765,4 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/fPzwE2OoTd2-75DTGRSqOQ/zh-cn_image_0000002562555643.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022745Z&HW-CC-Expire=86400&HW-CC-Sign=9C25E628104907D718A2FF7030D2D4C72D094687370E34535E543EEFC5C6158D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/fPzwE2OoTd2-75DTGRSqOQ/zh-cn_image_0000002562555643.gif?HW-CC-KV=V1&HW-CC-Date=20260325T022939Z&HW-CC-Expire=86400&HW-CC-Sign=3BF09EB63088AA8BC9C37DA8306D4C07DDD46C384502A3E3FAD33C1F0378A455)

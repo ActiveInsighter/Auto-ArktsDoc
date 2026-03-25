@@ -1,4 +1,4 @@
-# 文档中心
+# 共享元素转场 (sharedTransition)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-shared-elements
 
 可以通过设置组件的sharedTransition属性将该元素标记为共享元素并设置对应的共享元素转场动效。sharedTransition仅发生在[@ohos.router (页面路由)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-router)跳转时。
@@ -97,4 +97,4 @@ struct PageBExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/lOekW9H3TZ2GMI6CZewGRw/zh-cn_image_0000002531636050.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022853Z&HW-CC-Expire=86400&HW-CC-Sign=364FF22B50E6F07812D89E52BDF193033330D19F326729C53A441C10802E0A2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/lOekW9H3TZ2GMI6CZewGRw/zh-cn_image_0000002531636050.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023359Z&HW-CC-Expire=86400&HW-CC-Sign=382FB1A9EC5A0AA49F37805818AE7CA4CB1C6D65FFA5C92ECF936C9367F197DB)

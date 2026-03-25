@@ -1,4 +1,4 @@
-# 文档中心
+# Hyperlink-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-hyperlink
 
 超链接组件，组件宽高范围内点击实现跳转。
@@ -79,4 +79,4 @@ struct HyperlinkExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/iduzQPqLRBGE7A8-HYNg-Q/zh-cn_image_0000002562555743.png?HW-CC-KV=V1&HW-CC-Date=20260324T022814Z&HW-CC-Expire=86400&HW-CC-Sign=6CBEB52C1CBE01F49AF5C876307FF60A31D9A959D01A4AA0FE08EAF35AF5400A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/iduzQPqLRBGE7A8-HYNg-Q/zh-cn_image_0000002562555743.png?HW-CC-KV=V1&HW-CC-Date=20260325T023313Z&HW-CC-Expire=86400&HW-CC-Sign=65ABF4201A6E3919A86C2C40A9097463EE74524EF701DFFDB085A2B7D39CE78F)

@@ -1,4 +1,4 @@
-# 文档中心
+# Badge-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge
 
 信息标记组件，可以附加在单个组件上用于信息提醒的容器组件。
@@ -302,7 +302,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lduzQy7JRimioD1WyIjKbw/zh-cn_image_0000002531795860.png?HW-CC-KV=V1&HW-CC-Date=20260324T022828Z&HW-CC-Expire=86400&HW-CC-Sign=4EB7D607AA4A91569D836F5EF05186B8D728151C0693078C29A030588F7C08DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lduzQy7JRimioD1WyIjKbw/zh-cn_image_0000002531795860.png?HW-CC-KV=V1&HW-CC-Date=20260325T023333Z&HW-CC-Expire=86400&HW-CC-Sign=8E4EAE1725574BD7937D8D6FD016DB4E2B68AB2FC37A65279B3DE1BD0376A66C)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -339,7 +339,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/UnTuId2lQBWE97aOJ9wgWg/zh-cn_image_0000002562555825.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022828Z&HW-CC-Expire=86400&HW-CC-Sign=6F21FA12D0E4424D32C98BFE5F4BBB170BEADACB8C2F6AF616032D031B0A01E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/UnTuId2lQBWE97aOJ9wgWg/zh-cn_image_0000002562555825.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023333Z&HW-CC-Expire=86400&HW-CC-Sign=C4B8FE3C3C6501F06E092A31A36DA7F068D389F20F06E6852FEDCFE261668629)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -388,4 +388,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/jDhDmP47RuuwynHNjnY25w/zh-cn_image_0000002562715797.png?HW-CC-KV=V1&HW-CC-Date=20260324T022828Z&HW-CC-Expire=86400&HW-CC-Sign=CE1F4AB932350D8D42F2C831BFA1E6E609DA1F047BBD70B0047FC63A99149FC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/jDhDmP47RuuwynHNjnY25w/zh-cn_image_0000002562715797.png?HW-CC-KV=V1&HW-CC-Date=20260325T023333Z&HW-CC-Expire=86400&HW-CC-Sign=0EED15348319BB8BE595289E076C4D0495384264B2EAED503918E011B998F381)

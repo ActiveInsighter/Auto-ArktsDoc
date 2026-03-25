@@ -1,4 +1,4 @@
-# 文档中心
+# Stack-行列与堆叠-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-stack
 
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
@@ -88,4 +88,4 @@ struct StackExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/w6_zbaMJTUOrpyl3-dqEuQ/zh-cn_image_0000002562715511.png?HW-CC-KV=V1&HW-CC-Date=20260324T022705Z&HW-CC-Expire=86400&HW-CC-Sign=F314DD9AE2E694BF3BAB5FA3A835058323A1FA854A0EEC13C8A192AC9A6CAA66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/w6_zbaMJTUOrpyl3-dqEuQ/zh-cn_image_0000002562715511.png?HW-CC-KV=V1&HW-CC-Date=20260325T023158Z&HW-CC-Expire=86400&HW-CC-Sign=A1D30AD78CCB6170885A6E3246DBD34172D15F60FFDFF44E5959A306909860D6)

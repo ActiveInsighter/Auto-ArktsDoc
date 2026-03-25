@@ -1,4 +1,4 @@
-# 文档中心
+# ToolBarItem-导航与切换-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toolbaritem
 
 通过[toolbar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-toolbar#toolbar)通用属性为窗口标题栏添加工具栏项。

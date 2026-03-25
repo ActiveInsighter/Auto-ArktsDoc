@@ -1,4 +1,4 @@
-# 文档中心
+# SVG标签说明-图片与视频-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-svg
 
 SVG（Scalable Vector Graphics）是可缩放矢量图形，它是一种基于XML（可扩展标记语言）的图形格式，用于描述二维图形和图像。[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)组件支持的SVG范围，为SVG1.1规范的部分功能。支持的标签以及属性如下：
@@ -107,7 +107,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/_43M4E7ET5argVWVxT2yLg/zh-cn_image_0000002531635872.png?HW-CC-KV=V1&HW-CC-Date=20260324T022826Z&HW-CC-Expire=86400&HW-CC-Sign=384D91A5BB2BC028E9ACAB20739B5BF3FEF51AF71FBBA4AF3D748AC39333A8D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/_43M4E7ET5argVWVxT2yLg/zh-cn_image_0000002531635872.png?HW-CC-KV=V1&HW-CC-Date=20260325T023329Z&HW-CC-Expire=86400&HW-CC-Sign=0FA4B437C6A77863E00D523E1FB1221FEA111C7B11669BD8834B97D7EA546264)
 
 ## 图形效果
 

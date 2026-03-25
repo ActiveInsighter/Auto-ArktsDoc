@@ -746,12 +746,11 @@ type TextPickerEnterSelectedAreaCallback = (value: string | string[], index: num
 从API version 18开始，新增了[TextPickerOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#textpickeroptions对象说明)的columnWidths属性。
 
 ```typescript
+// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
-
 class Bottom {
   bottom: number = 50;
 }
-
 let bott: Bottom = new Bottom();
 @Entry
 @Component
@@ -781,13 +780,11 @@ struct TextPickerExample {
   private singleColumnWidths: LengthMetrics[] = [
     LengthMetrics.percent(50)
   ];
-
   private multipleColumnWidths: LengthMetrics[] = [
     LengthMetrics.vp(100),
     LengthMetrics.vp(200),
     LengthMetrics.vp(100)
   ];
-
   private cascadeColumnWidths: LengthMetrics[] = [
     LengthMetrics.percent(20),
     LengthMetrics.percent(30),
@@ -795,7 +792,6 @@ struct TextPickerExample {
   ];
   build() {
     Column() {
-
       TextPicker({ range: this.apfruits, selected: this.select, columnWidths: this.singleColumnWidths })
         .onChange((value: string | string[], index: number | number[]) => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index);
@@ -806,7 +802,6 @@ struct TextPickerExample {
         .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
           console.info('Picker item enter selected area, value: ' + value + ', index: ' + index);
         })
-
       TextPicker({ range: this.multi, columnWidths: this.multipleColumnWidths })
         .onChange((value: string | string[], index: number | number[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
@@ -817,7 +812,6 @@ struct TextPickerExample {
         .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
           console.info('TextPicker 多列:onEnterSelectedArea ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
         })
-
       TextPicker({ range: this.cascade, columnWidths: this.cascadeColumnWidths })
         .onChange((value: string | string[], index: number | number[]) => {
           console.info('TextPicker 多列联动:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
@@ -833,19 +827,19 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/3VcOZtRYTAeSEhUdSx5wjA/zh-cn_image_0000002562555651.png?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=D52C4646ECE20A98A3C75CF6FDE0959E7F19C4AE3914D6A8B9376DFC44A78E8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/3VcOZtRYTAeSEhUdSx5wjA/zh-cn_image_0000002562555651.png?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=A59DA733B4830FAF51BF1138AAF500BC176C01A569259823A63B9546290EBE0C)
 
 ### 示例2（设置文本样式）
 
 该示例使用[disappearTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#disappeartextstyle10)、[textStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#textstyle10)、[selectedTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#selectedtextstyle10)设置文本选择器中的文本样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   private select: number = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-
   build() {
     Column() {
       TextPicker({
@@ -870,19 +864,19 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/OgqpKU3ITYqMw4NFqDz-ig/zh-cn_image_0000002562715623.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=CA8F801039A1877CA241E3CEB92257AEE47B1571FEDDF7C9189BE0A0A647F1AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/OgqpKU3ITYqMw4NFqDz-ig/zh-cn_image_0000002562715623.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=97A37E6A1CA9E7B3265CCF670BD4CC2B30FD9DE8DDDC1AA82D089B68DD98F8B3)
 
 ### 示例3（设置无分割线样式）
 
 该示例通过配置[divider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#divider12)为null实现无分割线样式的文本选择器。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   private select: number = 0;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-
   build() {
     Column() {
       TextPicker({ range: this.fruits, selected: this.select })
@@ -901,19 +895,19 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/TDTwOJ_0RuGClNo3qtZczw/zh-cn_image_0000002531635752.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=31A4A9067CCF6A631EE1FCB10C30653D694A86B57AE8D36FBFAFE6D2AB7098D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/TDTwOJ_0RuGClNo3qtZczw/zh-cn_image_0000002531635752.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=374916E428DD5BF655EAA354860563EF1BFC6BFB75C588C39FD0EBFF084B9225)
 
 ### 示例4（设置分割线样式）
 
 该示例通过配置divider的DividerOptions设置文本选择器的分割线样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   private select: number = 1;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-
   build() {
     Column() {
       TextPicker({ range: this.fruits, selected: this.select })
@@ -937,19 +931,19 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/SfDOvTcTQiGdMG1XE5_bow/zh-cn_image_0000002531795688.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=0AEAD4BCD8B1CD5FD71572A58DAA048423E7A5A60A94824DB92B22CB295D1ED7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/SfDOvTcTQiGdMG1XE5_bow/zh-cn_image_0000002531795688.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=ED93B575F67732CD5FD7ADEEDFAC3D836EF62F25CF5EB234EDD62CC55350E6D0)
 
 ### 示例5（设置渐隐效果）
 
 该示例通过配置[gradientHeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#gradientheight12)设置文本选择器的渐隐效果高度。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   private select: number = 1;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-
   build() {
     Column() {
       TextPicker({ range: this.fruits, selected: this.select })
@@ -968,19 +962,19 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/z6g4A0LIQbaQ5gSjtpesBg/zh-cn_image_0000002562555653.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=009D52A3BBC588443A68CC51C518BF815E3DD804229F2011C9449F69FFDCA89D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/z6g4A0LIQbaQ5gSjtpesBg/zh-cn_image_0000002562555653.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=D67D7664D35263E0A1EF8E41C0E62C5FD5D4F20021DD410821D6DB61C96EC7C0)
 
 ### 示例6（设置选择项高度）
 
 该示例通过配置[defaultPickerItemHeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#defaultpickeritemheight)设置选择项的高度。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   private select: number = 1;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-
   build() {
     Column() {
       TextPicker({ range: this.fruits, selected: this.select })
@@ -996,20 +990,20 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/OdTONwXjQrStoriK8HE6xw/zh-cn_image_0000002562715625.png?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=62F9277C5EF55D1B2CADDEA85919FAE5456A41D1A9C163A21CDAC77847990778)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/OdTONwXjQrStoriK8HE6xw/zh-cn_image_0000002562715625.png?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=ABF6F50A3C83412A28E7E8EF4CEB8C4939E1D99EE16CBE9CB6EF81966D7179B2)
 
 ### 示例7（设置循环滚动）
 
 该示例通过配置[canLoop](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#canloop10)设置文本选择器是否循环滚动。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   @State isLoop: boolean = false;
   private select: number = 1;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-
   build() {
     Column() {
       TextPicker({ range: this.fruits, selected: this.select })
@@ -1020,33 +1014,30 @@ struct TextPickerExample {
           console.info('Picker scroll stopped, value: ' + value + ', index: ' + index);
         })
         .canLoop(this.isLoop)
-
       Row() {
         Text('循环滚动').fontSize(20)
-
         Toggle({ type: ToggleType.Switch, isOn: false })
           .onChange((isOn: boolean) => {
             this.isLoop = isOn;
           })
       }.position({ x: '60%', y: '40%' })
-
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bhK2xSljQ4estp7ryUdfdQ/zh-cn_image_0000002531635754.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=863E52882583C7FE86BDD606369221E28A4093E55DB157A1940BC3F2FB9A64B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bhK2xSljQ4estp7ryUdfdQ/zh-cn_image_0000002531635754.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=35664B8969817916783C8ECE8FFFF954E390EBED1E8A8D84056B8B20B16B005B)
 
 ### 示例8（设置选中项索引值）
 
 该示例通过配置[selectedIndex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textpicker#selectedindex10)设置默认选中项的索引值。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4'];
-
   build() {
     Column() {
       TextPicker({ range: this.fruits, selected: 1 })
@@ -1062,7 +1053,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/fc9wi8mpRMmbiRyh1BEhBQ/zh-cn_image_0000002531795690.png?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=CFDA644A33DDA5D545087A3B451150573DD3F382B12F44A1B2E0D91D2821DA05)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/fc9wi8mpRMmbiRyh1BEhBQ/zh-cn_image_0000002531795690.png?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=12FA9948355B751AA9569EC4248E184FAB0C93CBBD565C4122CE1FC9FC8C062B)
 
 ### 示例9（设置关闭文本样式变化动效与对应文本样式）
 
@@ -1071,12 +1062,12 @@ struct TextPickerExample {
 从API version 15开始，新增disableTextStyleAnimation、defaultTextStyle接口。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   private select: number = 1;
   private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE'];
-
   build() {
     Column() {
       TextPicker({
@@ -1098,7 +1089,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/hZ26PjbbRc-y9TyKd-Pz5A/zh-cn_image_0000002562555655.jpeg?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=C70ADA0438E42AE3954F55F11D469DFA672AA4E193B71DFD1E8197E995D54C96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/hZ26PjbbRc-y9TyKd-Pz5A/zh-cn_image_0000002562555655.jpeg?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=9D36C4210FA154DF4165C78FF51514453DFBC4624C0A8CDE21E45636D78D6C64)
 
 ### 示例10（设置选中项背景样式）
 
@@ -1106,7 +1097,7 @@ struct TextPickerExample {
 
 ```typescript
 import { LengthUnit } from '@kit.ArkUI';
-
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
@@ -1117,7 +1108,6 @@ struct TextPickerExample {
       ['Text2', 'Text2', 'Text2', 'Text2'],
       ['Text3', 'Text3', 'Text3', 'Text3']
   ]
-
   build() {
     Column() {
       Row() {
@@ -1139,7 +1129,6 @@ struct TextPickerExample {
             }
           })
       }
-
       Row()
         .height('10%')
       Row() {
@@ -1159,7 +1148,7 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/wADq6y1WRhO-xK943mD2yw/zh-cn_image_0000002562715627.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=A0F6EC1CAEC4DBBCC19D310CBBF517F6096A5E0DF24BC5001BEE81AA8AD91E57)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/wADq6y1WRhO-xK943mD2yw/zh-cn_image_0000002562715627.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=5DDFB91C644153A2382153F879D01B1133813A6B9EFE11E23D7A071B4BA39C49)
 
 ### 示例11（设置文本的最大字号、最小字号、超长文本截断方式）
 
@@ -1168,11 +1157,11 @@ struct TextPickerExample {
 从API version 20开始，新增disappearTextStyle、textStyle和selectedTextStyle接口。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TextPickerExample {
   private rangeValue: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEEEEEEEEEEEEEE'];
-
   build() {
     RelativeContainer() {
       TextPicker({
@@ -1180,7 +1169,7 @@ struct TextPickerExample {
       })
         .disappearTextStyle({
           color: '#fff52769',
-
+          // 设置minFontSize与maxFontSize时，font中的size属性将被忽略。
           font: { size: 50 },
           minFontSize: 12,
           maxFontSize: 18,
@@ -1206,4 +1195,4 @@ struct TextPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/4UU3nY3VSiSJh6BzQ_LCyA/zh-cn_image_0000002531635756.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022711Z&HW-CC-Expire=86400&HW-CC-Sign=04300BFA8314532C92499D8605521A7355CDE8D1F35BA3B6148A18F7FC8F4B4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/4UU3nY3VSiSJh6BzQ_LCyA/zh-cn_image_0000002531635756.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023246Z&HW-CC-Expire=86400&HW-CC-Sign=6EDFED940982B1D98B6E341FBA031A508417B6131DD54A5E4AC84EA5F9C5E594)

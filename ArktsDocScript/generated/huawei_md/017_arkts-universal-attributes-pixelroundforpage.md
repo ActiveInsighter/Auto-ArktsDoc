@@ -1,4 +1,4 @@
-# 页面级像素取整-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-pixelroundforpage
 
 页面级像素取整的目标是将像素取整模式设为页面的上下文属性，以便在页面层面设置像素取整模式。

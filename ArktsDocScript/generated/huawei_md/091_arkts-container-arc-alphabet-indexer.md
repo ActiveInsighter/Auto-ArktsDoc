@@ -1,4 +1,4 @@
-# 文档中心
+# ArcAlphabetIndexer-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arc-alphabet-indexer
 
 弧形索引条是一种弧形的、可按字母顺序排序进行快速定位的组件，可以与容器组件联动，按逻辑结构快速定位至容器显示区域。
@@ -411,4 +411,4 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/8OsG-KZuRf2tZV7dY5Vf0A/zh-cn_image_0000002531635924.gif?HW-CC-KV=V1&HW-CC-Date=20260324T022828Z&HW-CC-Expire=86400&HW-CC-Sign=D5F13C50B04312D406A22914BB1081901FF659CE865C6564572515A8C5EBBA01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/8OsG-KZuRf2tZV7dY5Vf0A/zh-cn_image_0000002531635924.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023332Z&HW-CC-Expire=86400&HW-CC-Sign=F7D6244AB88AD73A6514C4CB0ADF4AC517140776D6118DE0035C2FD2857A7723)
