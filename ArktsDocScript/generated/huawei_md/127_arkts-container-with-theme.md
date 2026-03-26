@@ -1,4 +1,4 @@
-# WithTheme-主题-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-theme
 
 WithTheme组件用于设置应用局部页面自定义主题风格，可设置子组件深浅色模式和自定义配色。
@@ -69,7 +69,7 @@ type CustomTheme = CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/q5OvWUDGRWyh9AF5rMmSlA/zh-cn_image_0000002562555999.png?HW-CC-KV=V1&HW-CC-Date=20260325T023416Z&HW-CC-Expire=86400&HW-CC-Sign=AD1D6BD79AD683F12CD1B03C98386853EA76824EDF7A62A708CF63DBE7C9E9FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/2qJqVZiwQE2MFr6irMIR_Q/zh-cn_image_0000002532087562.png?HW-CC-KV=V1&HW-CC-Date=20260326T024112Z&HW-CC-Expire=86400&HW-CC-Sign=4530EC641323210643D3D5E37F75102D9438D60E198543BAACD558EAD45E8538)
 
 dark.json数据示例：
 
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/4A0Codv3SLaj1J7-7htGiw/zh-cn_image_0000002562715971.png?HW-CC-KV=V1&HW-CC-Date=20260325T023416Z&HW-CC-Expire=86400&HW-CC-Sign=0C64BA20639935A59485F3CA524B679AB65B2889E66A62C77A6FA0B4BCBDCAD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/KozdfRO_QxW5G2xYQRFPng/zh-cn_image_0000002532247498.png?HW-CC-KV=V1&HW-CC-Date=20260326T024112Z&HW-CC-Expire=86400&HW-CC-Sign=C45CB5F5E31E4B7328AD2858DBA1A1262A440A3BEED80D1F4916524FCEC9FC07)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -223,4 +223,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/KOBmUq_3ThewZw_lPxD89g/zh-cn_image_0000002531636100.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023416Z&HW-CC-Expire=86400&HW-CC-Sign=155AFD25429E65265BD7DCD58321241978637F705F5E6714794111A12C110DA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/fPy_qA9sTgSdl7FEuoQjbw/zh-cn_image_0000002563127441.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024112Z&HW-CC-Expire=86400&HW-CC-Sign=AEEC66280E75F614412DA32998DEC3CC82AEE8F9A38A2B67097D62E4703658CB)

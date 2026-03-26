@@ -86,7 +86,7 @@ position(value: Position | Edges | LocalizedEdges): T
 
 > **说明**
 > - position对位置的影响作用在组件的尺寸测量完成之后。
-> - 当父组件为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)或[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时，设置position的子组件不占位。
+> - 当父组件为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)、[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)或[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时，设置position的子组件不占位。在上述场景中，如果父组件包含的所有子组件均设置了position，此时父组件尺寸无法通过其他子组件确定，将基于尺寸(0, 0)进行布局测算。
 > - Position类型基于父组件内容区左上角确定位置；Edges类型基于父组件内容区四边确定位置，top/left/right/bottom分别为组件各边距离父组件内容区相应边的边距，通过边距来确定组件相对于父组件内容区的位置；LocalizedEdges类型基于父组件内容区四边确定位置，支持镜像模式。
 > - 本属性适用于置顶显示、悬浮按钮等组件在父组件中位置固定的场景。
 > - 本属性不支持在宽高为零的布局组件上设置。
@@ -406,7 +406,7 @@ struct PositionExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/d-oIaBMcRfOrLySFL8dAeA/zh-cn_image_0000002531635536.png?HW-CC-KV=V1&HW-CC-Date=20260325T022832Z&HW-CC-Expire=86400&HW-CC-Sign=D351E39FFFDD98BA32715E43B4C7C85E98D4D56FFDECB1F61FF14F285EECB195)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/_0k_r6lyTfi7IsowqcnT8A/zh-cn_image_0000002563126877.png?HW-CC-KV=V1&HW-CC-Date=20260326T023844Z&HW-CC-Expire=86400&HW-CC-Sign=57BCE48A43DF72C45EB2E85AA2A019E95C4571884977270FBDEF97ADC72B2B2F)
 
 ### 示例2（位置偏移）
 
@@ -491,7 +491,7 @@ struct PositionExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/DlzmVndfRa-QermKlF0-OA/zh-cn_image_0000002531795472.png?HW-CC-KV=V1&HW-CC-Date=20260325T022832Z&HW-CC-Expire=86400&HW-CC-Sign=7ED598E64FFEA3955BD67E410D3B765597E6EDCF0A67352D487D7795B6DF9DD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/2t5rsuk0QJ-FhEkBnu-Ehw/zh-cn_image_0000002563206899.png?HW-CC-KV=V1&HW-CC-Date=20260326T023844Z&HW-CC-Expire=86400&HW-CC-Sign=B85CCD0FA9F92E67039CC1C9F17AC019C96632DBCCA237E1717A49B20FA76BAA)
 
 ### 示例3（绝对定位和相对偏移）
 
@@ -569,7 +569,7 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/7qplr7PyTgKLBuAWHGINpw/zh-cn_image_0000002562555437.jpeg?HW-CC-KV=V1&HW-CC-Date=20260325T022832Z&HW-CC-Expire=86400&HW-CC-Sign=90B58BE5D824753EF1F29FEC6D83A840A5E0DC96C6E6ED78693EDFC1A0DB1A7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/KnzkBLUGRgCAzhH9gCrYHA/zh-cn_image_0000002532087000.jpeg?HW-CC-KV=V1&HW-CC-Date=20260326T023844Z&HW-CC-Expire=86400&HW-CC-Sign=B7A9FEB958BB778D527D793C3B597C93EBEA24CAA6A198A1F8E51155FA897FEE)
 
 ### 示例4（镜像效果）
 
@@ -670,11 +670,11 @@ struct Example4 {
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5jJ2SeW1TVCyNy-1cWlnvA/zh-cn_image_0000002562715409.png?HW-CC-KV=V1&HW-CC-Date=20260325T022832Z&HW-CC-Expire=86400&HW-CC-Sign=EBF1085628A5E55CC9E926E9B7D3258FCF66F4FB017B510B071FA30D2C5C9CA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/6Hiu93fVRAydXcsAgWL2bQ/zh-cn_image_0000002532246936.png?HW-CC-KV=V1&HW-CC-Date=20260326T023844Z&HW-CC-Expire=86400&HW-CC-Sign=9EC3DB1C9B1F080CA1ED146EFC5F184CA7D7FE166C5A57045E55C7AC9243ED12)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ghAbSsd9SIG4x7r4AOGikg/zh-cn_image_0000002531635538.png?HW-CC-KV=V1&HW-CC-Date=20260325T022832Z&HW-CC-Expire=86400&HW-CC-Sign=A9B838570575AFD7CB5F955B3E725FD68D001528441FE97DAB3F458DD6EEBE02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/d5u0O1AeREOrmzgli67ZrQ/zh-cn_image_0000002563126879.png?HW-CC-KV=V1&HW-CC-Date=20260326T023844Z&HW-CC-Expire=86400&HW-CC-Sign=45CE095C829AE1FEF7F5E4408EECDB1FEBB2A0F9966531DD5C2AAFFB367EA4DC)
 
 ### 示例5（align属性适配镜像特性）
 
@@ -742,7 +742,7 @@ struct buttonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/OGNa1dqBRSKM4q1JHuxKDg/zh-cn_image_0000002531795474.gif?HW-CC-KV=V1&HW-CC-Date=20260325T022832Z&HW-CC-Expire=86400&HW-CC-Sign=F70EE4E9AA41B417763EB0F45D3770707C2E6171AED70BAD332DB4D4ACE5309E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/o-yETgonRlG6nfPgsbj5_A/zh-cn_image_0000002563206901.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023844Z&HW-CC-Expire=86400&HW-CC-Sign=DAC0F79DB15518A0037D8CDB421ACC47913AA94E5D1E1198698E18F0B6994335)
 
 ### 示例6（layoutGravity属性单独设置Stack组件中子组件的对齐规则）
 
@@ -803,4 +803,4 @@ struct Index5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/htsR3uTWTOuJjFjwt5E2ng/zh-cn_image_0000002562555439.gif?HW-CC-KV=V1&HW-CC-Date=20260325T022832Z&HW-CC-Expire=86400&HW-CC-Sign=A89F609C9684429B06D374A1CC0CE66874DC1AF369F06559911720F16FA76755)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/yladA5lyTnCRHwLFYTPpig/zh-cn_image_0000002532087002.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023844Z&HW-CC-Expire=86400&HW-CC-Sign=185C5655EC21E406E22D190178E13CD547493E71C522FE3797D5C744D1423BF7)

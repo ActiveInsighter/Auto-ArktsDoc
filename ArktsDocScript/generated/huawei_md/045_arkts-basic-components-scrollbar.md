@@ -1,4 +1,4 @@
-# ScrollBar-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-scrollbar
 
 滚动条组件ScrollBar，用于配合可滚动组件使用，如[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)。
@@ -150,7 +150,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/q8atoSKnTKCgxVyPpHtBGQ/zh-cn_image_0000002531795630.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023223Z&HW-CC-Expire=86400&HW-CC-Sign=A64F1D60C93988134FD39839893481BB723D207E6632795289504E4EE7EE59AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/muwsFYZbTKeHNU58PzuT3w/zh-cn_image_0000002563207057.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023927Z&HW-CC-Expire=86400&HW-CC-Sign=A31AC03980ABB424C6CBB8BCCA66F6561ACDAFBF2825A711B3220482D65B7A47)
 
 ## 示例2（不设置子节点）
 
@@ -197,7 +197,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/OTFbF7_eTlijZRgCZjCU2A/zh-cn_image_0000002562555595.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023223Z&HW-CC-Expire=86400&HW-CC-Sign=DCE51F87B8CE981F64A8FACF70D5E2519809EB6D452FCE0B3A96C52A902A247D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/bqWrOzxgRDi55_TvH-9V2w/zh-cn_image_0000002532087158.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023927Z&HW-CC-Expire=86400&HW-CC-Sign=17453F4B661D4427ABE410299814C737BAF1E046689546D20512E82B07BE5782)
 
 ## 示例3（支持嵌套滚动）
 
@@ -269,4 +269,4 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/2ucZcSrVROSE5UUzite_Ug/zh-cn_image_0000002562715567.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023223Z&HW-CC-Expire=86400&HW-CC-Sign=46CB0836687D7853259A2819F6C4B2A6B36FE8BBD46004F0C72C8F8E6B3EA24C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/h_szQ_tFQYivCZW5Hc7CuQ/zh-cn_image_0000002532247094.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023927Z&HW-CC-Expire=86400&HW-CC-Sign=EBA837CB1FB3375BF69129DA60231F9699ECA64C49CD1FC841EA7421AF952E50)

@@ -1,4 +1,4 @@
-# ArcScrollBar-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-arcscrollbar
 
 弧形滚动条组件ArcScrollBar，用于配合可滚动组件使用，如[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)。
@@ -85,4 +85,4 @@ struct ArcScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/VNZxgbFMTlO5_fl1fROPtQ/zh-cn_image_0000002531795636.png?HW-CC-KV=V1&HW-CC-Date=20260325T023225Z&HW-CC-Expire=86400&HW-CC-Sign=09D47EE28AAF58E983F24624C0601A60A85E86DA3D1A0DBBA1F682FBA0D03C40)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/YugR1ZW5QF67X-WPFk1M0A/zh-cn_image_0000002563207063.png?HW-CC-KV=V1&HW-CC-Date=20260326T023930Z&HW-CC-Expire=86400&HW-CC-Sign=EC17EEC5ED71306D2973FE07B8F4669DD3A10FDDF356784037E48E45442A8883)

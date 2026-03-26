@@ -1,4 +1,4 @@
-# SaveButton-安全-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton
 
 安全控件的保存控件。应用集成保存控件后，用户首次使用保存控件展示弹窗，在点击允许后自动授权，应用会在短时间内获取访问媒体库特权接口的授权。后续使用无需弹窗授权。在API version 19及之前的版本中，授权持续时间为10秒；在API version 20及之后的版本中，授权持续时间为1分钟。
@@ -263,10 +263,10 @@ onClick(event: SaveButtonCallback)
 ## 示例1
 
 ```typescript
-// xxx.ets
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+
 @Entry
 @Component
 struct Index {
@@ -277,11 +277,11 @@ struct Index {
           const context = this.getUIContext().getHostContext();
           let helper = photoAccessHelper.getPhotoAccessHelper(context);
           let uri = await helper.createAsset(photoAccessHelper.PhotoType.IMAGE, 'png');
-          // 使用uri打开文件，可以持续写入内容，写入过程不受时间限制。
+
           let file = await fileIo.open(uri, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-          // 写入文件
+
           await fileIo.write(file.fd, "context");
-          // 关闭文件
+
           await fileIo.close(file.fd);
         } catch (error) {
           console.error(`errCode: ${error.code}, errMessage: ${error.message}`);
@@ -294,27 +294,28 @@ struct Index {
         console.error("errMessage: " + error?.message);
       }
     };
+
   build() {
     Row() {
       Column({ space: 10 }) {
-        // 默认参数下，图标、文字、背景都存在。
+
         SaveButton().onClick((this.handleSaveButtonClick))
-        // 传入参数即表示元素存在，不传入的参数表示元素不存在，如果不传入buttonType，会默认添加ButtonType.Capsule配置，显示图标+背景。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED })
-        // 只显示图标+背景，如果设置背景色高八位的α值低于0x1a，则会被系统强制调整为0xff。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, buttonType: ButtonType.Capsule })
           .backgroundColor(0x10007dff)
-        // 图标、文字、背景都存在，如果设置背景色高八位的α值低于0x1a，则会被系统强制调整为0xff。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
-        // 图标、文字、背景都存在，如果设置宽度小于当前属性组合下允许的最小宽度时，宽度仍为设置值，此时按钮文本信息会自动换行，以保证安全控件显示的完整性。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
           .fontSize(16)
           .width(30)
-        // 图标、文字、背景都存在，如果设置宽度小于当前属性组合下允许的最小宽度时，宽度仍为设置值，此时按钮文本信息会自动换行，以保证安全控件显示的完整性。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
           .fontSize(16)
           .size({ width: 30, height: 30 })
-        // 图标、文字、背景都存在，如果设置宽度小于当前属性组合下允许的最小宽度时，宽度仍为设置值，此时按钮文本信息会自动换行，以保证安全控件显示的完整性。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD, buttonType: ButtonType.Capsule })
           .fontSize(16)
           .constraintSize({
@@ -323,7 +324,7 @@ struct Index {
             minHeight: 0,
             maxHeight: 30
           })
-        // 设置保存控件接收用户取消授权事件。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .onClick((this.handleSaveButtonClick))
           .userCancelEvent(true)
@@ -333,57 +334,56 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/1YCjM_mIQMmrOtKzL10t-Q/zh-cn_image_0000002531636098.png?HW-CC-KV=V1&HW-CC-Date=20260325T023416Z&HW-CC-Expire=86400&HW-CC-Sign=3AD41EBB58F1E4C65A88FD69BE040B9495E15CCFE63AA6EFD53B6FC9A743FF52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/MxJ69zafQfeuuVNYfRTO0Q/zh-cn_image_0000002563127439.png?HW-CC-KV=V1&HW-CC-Date=20260326T024112Z&HW-CC-Expire=86400&HW-CC-Sign=DE3502B1B1718099B07E8E8004BDA078F177DD4E181D951D7ACF180698B86054)
 
 ## 示例2
 
 应用需要申请权限：ohos.permission.CUSTOMIZE_SAVE_BUTTON
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SetIcon {
   build() {
     Row() {
       Column({ space: 10 }) {
-        // 设置图标为resource类型，有权限时显示设置的图标。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setIcon($r('app.media.startIcon'))
-        // 设置文本为string类型，有权限时显示设置的文本。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setText("保存控件设置文本")
-        // 设置文本为resource类型，有权限时显示设置的资源文本。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setText($r('app.string.app_name'))
-        // 设置保存控件图标大小，入参为Dimension类型。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .iconSize(28)
-        // 设置保存控件的默认图标大小，入参为SizeOptions类型。将默认图标设置为宽高中的较小值。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .iconSize({ width: 20, height: 40 })
-        // 设置保存控件的自定义图标大小，入参为SizeOptions类型。图片按设置的宽高显示。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setIcon($r('app.media.startIcon'))
           .iconSize({ width: 30, height: 40 })
-        // 设置保存控件的自定义图标大小，入参为SizeOptions类型且只设置一个值。图片宽高均显示为设置值。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .setIcon($r('app.media.startIcon'))
           .iconSize({ width: 40 })
-        // 设置保存控件的图标圆角，入参为Dimension类型。图片四个圆角的半径均为入参大小。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .backgroundColor(Color.Orange)
           .setIcon($r('app.media.background'))
           .iconSize(30)
           .iconBorderRadius(6)
-        // 设置正方形图标圆角大于边长一半时图标显示为圆形。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, buttonType: ButtonType.Circle })
           .backgroundColor(Color.Orange)
           .setIcon($r('app.media.foreground'))
           .iconSize(30)
           .iconBorderRadius(30)
           .padding(0)
-        // 自定义图标通过iconBorderRadius设置为圆形，背托设置为透明色并设置边框。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, buttonType:ButtonType.Circle })
           .setIcon($r('app.media.background'))
           .backgroundColor(Color.Transparent)
@@ -393,13 +393,13 @@ struct SetIcon {
           .borderColor(Color.Black)
           .borderStyle(BorderStyle.Solid)
           .padding(10)
-        // 设置保存控件的图标圆角，入参为BorderRadiuses类型。图片四个圆角的半径分别为对应入参大小，未设置的无圆角。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .backgroundColor(Color.Orange)
           .setIcon($r('app.media.background'))
           .iconSize(30)
           .iconBorderRadius({ topLeft: 10, topRight: 16, bottomRight: 20 })
-        // 设置保存控件的按压特效为无按压特效。
+
         SaveButton({ icon: SaveIconStyle.FULL_FILLED, text: SaveDescription.DOWNLOAD })
           .stateEffect(false)
       }.width('100%')
@@ -408,4 +408,4 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/GU0GHZ4PRPKAb_TDhiFsvQ/zh-cn_image_0000002531796034.png?HW-CC-KV=V1&HW-CC-Date=20260325T023416Z&HW-CC-Expire=86400&HW-CC-Sign=D2183159138B94888A72CE5F26264337FB9AC2CD766C2F5F7E62F648972C198B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/puB7SoiKQraA2fgj0rar8g/zh-cn_image_0000002563207461.png?HW-CC-KV=V1&HW-CC-Date=20260326T024112Z&HW-CC-Expire=86400&HW-CC-Sign=119B70C8CA674EF6FB5C688971960A91BD72361AFED2E0A4B52CF94786CB4938)

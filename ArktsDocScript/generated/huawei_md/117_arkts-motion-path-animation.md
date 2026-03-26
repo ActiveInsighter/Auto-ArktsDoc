@@ -1,4 +1,4 @@
-# 文档中心
+# 路径动画 (motionPath)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-motion-path-animation
 
 设置组件进行位移动画时的运动路径。
@@ -72,4 +72,4 @@ struct MotionPathExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/yhPTjJcTTta4LKXsthWswg/zh-cn_image_0000002562555951.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023403Z&HW-CC-Expire=86400&HW-CC-Sign=45268C311C409212DC5154BDDDDADA47212FA08C4542853AC216E99071644B67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/v4ITnaK_T9-ZoKjk4K6MMg/zh-cn_image_0000002532087514.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024059Z&HW-CC-Expire=86400&HW-CC-Sign=C944B303320764C754533591935178940F202A5BD86EF1FD846ED77922C1035F)

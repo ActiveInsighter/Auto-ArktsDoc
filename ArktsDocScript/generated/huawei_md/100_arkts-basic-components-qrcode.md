@@ -1,4 +1,4 @@
-# QRCode-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode
 
 用于显示单个二维码的组件。
@@ -120,7 +120,7 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Ef6my61XQ1G8HQVoeZXzKQ/zh-cn_image_0000002531635940.png?HW-CC-KV=V1&HW-CC-Date=20260325T023035Z&HW-CC-Expire=86400&HW-CC-Sign=174B0B5372E57188565CE62FD90BC7A95D858EC56FF82C2802F8B0B7B69ECCCD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/WsNJE0ueRaaNbwLV1yzTdQ/zh-cn_image_0000002563127281.png?HW-CC-KV=V1&HW-CC-Date=20260326T024040Z&HW-CC-Expire=86400&HW-CC-Sign=6D86596553BB962F422EE20D88D3C509DC13930251D27C2F38A135C4588C2C53)
 
 ### 示例2（设置背景颜色为透明）
 
@@ -145,4 +145,4 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/J0ax0XOaTOeZPCZ53oJ_ug/zh-cn_image_0000002531795876.png?HW-CC-KV=V1&HW-CC-Date=20260325T023035Z&HW-CC-Expire=86400&HW-CC-Sign=96B4EF98294EA6330F624B41E89CDFAD1208B58F75DD1AF024193B2F4AC165C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Ihc4OFjiSMCsfFyZ1Ubl0Q/zh-cn_image_0000002563207303.png?HW-CC-KV=V1&HW-CC-Date=20260326T024040Z&HW-CC-Expire=86400&HW-CC-Sign=4C440554213E67D35EDDA8EE85DBA5A26A075C4E0501C37FDD838566ED2A4FCA)

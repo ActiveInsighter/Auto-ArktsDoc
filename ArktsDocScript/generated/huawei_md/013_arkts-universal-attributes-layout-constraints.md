@@ -1,4 +1,4 @@
-# 布局约束-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-layout-constraints
 
 通过组件的宽高比和显示优先级约束组件显示效果。
@@ -119,11 +119,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/i8RlSKWERJ6ypil3KDdwBA/zh-cn_image_0000002562715411.png?HW-CC-KV=V1&HW-CC-Date=20260325T022955Z&HW-CC-Expire=86400&HW-CC-Sign=85CC91387537F834B593CCBB1AFA8DD191B1678FD18D3B3B997F7DF44DD5C9CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/pKl2b8XPRm2yUbNxKzCnow/zh-cn_image_0000002532246938.png?HW-CC-KV=V1&HW-CC-Date=20260326T023824Z&HW-CC-Expire=86400&HW-CC-Sign=8F26E1494B600CB5B9B5AA3DB4D329F4BF3E6A46C9FE92D8CB4526BF98E27DA8)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/uqJ-kX6JTreFPhizm2dtrA/zh-cn_image_0000002531635540.png?HW-CC-KV=V1&HW-CC-Date=20260325T022955Z&HW-CC-Expire=86400&HW-CC-Sign=7CAECEA59890797A728FFF27216D8693ADDCFC680E19D2583ECFBF2B9DC5CE6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/aMHWS9E0Tn2Whkps3_4JqA/zh-cn_image_0000002563126881.png?HW-CC-KV=V1&HW-CC-Date=20260326T023824Z&HW-CC-Expire=86400&HW-CC-Sign=B0A3E673350C8FF00B1D5B510303208FBFFE067EF008A6853ECCC2C4901AA163)
 
 ### 示例2（设置组件显示优先级）
 
@@ -187,4 +187,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/UE-8sx-dR7yBXFDB77qJEQ/zh-cn_image_0000002531795476.gif?HW-CC-KV=V1&HW-CC-Date=20260325T022955Z&HW-CC-Expire=86400&HW-CC-Sign=93801FF2D177274C995812B01BE9BFD1DC2E95B6E0D672CAB07E8A334974F82A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/BqGG19XxSXW_J8fvBKZI-g/zh-cn_image_0000002563206903.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023824Z&HW-CC-Expire=86400&HW-CC-Sign=D15B31514EFF1A1CEFD1411F63E2D68A06758A4A6D5A52195AB9C09D891FF166)

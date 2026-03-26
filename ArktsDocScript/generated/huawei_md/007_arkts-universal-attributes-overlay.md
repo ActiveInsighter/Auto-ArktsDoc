@@ -1,4 +1,4 @@
-# 浮层-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay
 
 设置组件的浮层。
@@ -116,7 +116,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/lEcU2QN3RS--zjjIuJ3-ig/zh-cn_image_0000002562715399.png?HW-CC-KV=V1&HW-CC-Date=20260325T023138Z&HW-CC-Expire=86400&HW-CC-Sign=A90E4AB6A3BE8A00F71816FD00395800E40137A126D0C48B54C243F2331257D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/LfDbcAUXTLSuwXvZVHr-FQ/zh-cn_image_0000002532246926.png?HW-CC-KV=V1&HW-CC-Date=20260326T023840Z&HW-CC-Expire=86400&HW-CC-Sign=9ECC920A082BDE5EDCE9E59E465D7D457B83263551561503B5E7D923E9A56875)
 
 ### 示例2（通过builder设置浮层）
 
@@ -151,7 +151,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/-tIiXdtZTny2eaQ-0P2Zog/zh-cn_image_0000002531635528.png?HW-CC-KV=V1&HW-CC-Date=20260325T023138Z&HW-CC-Expire=86400&HW-CC-Sign=31DEDB2C6B57354ADDEBC958B1E701FA65AF3F39BC9227A1B7DEC55172F05B9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/PFCiFKxKQc2wvea-2wyzwQ/zh-cn_image_0000002563126869.png?HW-CC-KV=V1&HW-CC-Date=20260326T023840Z&HW-CC-Expire=86400&HW-CC-Sign=D827B9B0AF3F825D5C603B4D2640383FBF167F457AF6E17DE3F2DB67AAF5C7E1)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -209,4 +209,4 @@ struct Page_4040 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/jeUHiyw3TPq0sVm3H1pEow/zh-cn_image_0000002531795464.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023138Z&HW-CC-Expire=86400&HW-CC-Sign=E419C3F5DA896BDC004BA0FF14B6A430EA67CEE15B5C437BC1EA046E3A598E5D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/x44TGUuITpa-X2nV9-vrkA/zh-cn_image_0000002563206891.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023840Z&HW-CC-Expire=86400&HW-CC-Sign=692973E2D82DA62959D88A21168A628EB5305CF7EC7ABA69F17769009905F496)

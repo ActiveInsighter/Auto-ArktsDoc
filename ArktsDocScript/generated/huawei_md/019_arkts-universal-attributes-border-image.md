@@ -1,4 +1,4 @@
-# 文档中心
+# 图片边框设置-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image
 
 设置组件的图片边框样式。
@@ -111,7 +111,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Fi92BBhcTEaabmJnX43m1A/zh-cn_image_0000002531635550.png?HW-CC-KV=V1&HW-CC-Date=20260325T023151Z&HW-CC-Expire=86400&HW-CC-Sign=A5D1B0FA35AC4D8FED1A645104784AEC979A62A8B965008E69363A5560EA8063)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/YkSnLoP3SuGwvj0bZV6J8w/zh-cn_image_0000002563126891.png?HW-CC-KV=V1&HW-CC-Date=20260326T023852Z&HW-CC-Expire=86400&HW-CC-Sign=CC5E2B27E18B77C3DD6D2319ED9C20248CAF0BECA4BB188231FCD671DD8BF5B1)
 
 ### 示例2（动态调整属性值）
 
@@ -210,7 +210,7 @@ struct BorderImage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Jtc_K9QVTxyoTokaMkFJfw/zh-cn_image_0000002531795486.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023151Z&HW-CC-Expire=86400&HW-CC-Sign=FE2A63DC1742E0EFA764ADE6D30534145BE38498D9756B58EEC92E705210AA7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/TM-wy4v6Q2aboZsXN7taJQ/zh-cn_image_0000002563206913.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023852Z&HW-CC-Expire=86400&HW-CC-Sign=E855A883C15C6EBE36908FD90595735D45F4D5679ADB5797264BA624D3E5253A)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
@@ -369,4 +369,4 @@ struct BorderImage {
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/gx9iHTWVQXSHPhW_2zH2xg/zh-cn_image_0000002562555451.png?HW-CC-KV=V1&HW-CC-Date=20260325T023151Z&HW-CC-Expire=86400&HW-CC-Sign=2CB07DB36A6492AE9CE490F357A06A0A139934040232E58019868DD0D793E971)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/PvkviDDtTWaGmqqgIHtBSg/zh-cn_image_0000002532087014.png?HW-CC-KV=V1&HW-CC-Date=20260326T023852Z&HW-CC-Expire=86400&HW-CC-Sign=C73B627AFC9C6F30C630C5C6CE1AAA48DC48273C46A1E078F0BB24D0464E17AE)

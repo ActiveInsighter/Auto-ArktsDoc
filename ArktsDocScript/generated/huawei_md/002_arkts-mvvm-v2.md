@@ -22,6 +22,7 @@
 **示例1**
 
 ```typescript
+// src/main/ets/pages/BasicPage.ets
 @Entry
 @ComponentV2
 struct TodoList {
@@ -47,18 +48,18 @@ struct TodoList {
 **示例2**
 
 ```typescript
+// src/main/ets/pages/LocalPage.ets
 @Entry
 @ComponentV2
 struct TodoList {
   @Local isFinish: boolean = false;
-
   build() {
     Column() {
       Text('To do')
         .fontSize(40)
         .margin({ bottom: 10 })
       Row() {
-
+        // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
         Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
           .width(28)
           .height(28)
@@ -80,14 +81,14 @@ struct TodoList {
 **示例3**
 
 ```typescript
+// src/main/ets/pages/ParamPage.ets
 @ComponentV2
 struct TaskItem {
   @Param taskName: string = '';
   @Param @Once isFinish: boolean = false;
-
   build() {
     Row() {
-
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
       Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
         .width(28)
         .height(28)
@@ -97,7 +98,6 @@ struct TaskItem {
     .onClick(() => this.isFinish = !this.isFinish)
   }
 }
-
 @Entry
 @ComponentV2
 struct TodoList {
@@ -123,15 +123,15 @@ struct TodoList {
 **示例4**
 
 ```typescript
+// src/main/ets/pages/EventPage.ets
 @ComponentV2
 struct TaskItem {
   @Param taskName: string = '';
   @Param @Once isFinish: boolean = false;
   @Event deleteTask: () => void = () => {};
-
   build() {
     Row() {
-
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
       Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
         .width(28)
         .height(28)
@@ -147,13 +147,11 @@ struct TaskItem {
     })
   }
 }
-
 @Entry
 @ComponentV2
 struct TodoList {
   @Local tasks: string[] = ['task1', 'task2', 'task3'];
   @Local newTaskName: string = '';
-
   build() {
     Column() {
       Text('To do')
@@ -199,15 +197,15 @@ Repeat支持两种场景：懒加载场景和非懒加载场景。
 **示例5**
 
 ```typescript
+// src/main/ets/pages/RepeatPage.ets
 @ComponentV2
 struct TaskItem {
   @Param taskName: string = '';
   @Param @Once isFinish: boolean = false;
   @Event deleteTask: () => void = () => {};
-
   build() {
     Row() {
-
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
       Image(this.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
         .width(28)
         .height(28)
@@ -223,13 +221,11 @@ struct TaskItem {
     })
   }
 }
-
 @Entry
 @ComponentV2
 struct TodoList {
   @Local tasks: string[] = ['task1', 'task2', 'task3'];
   @Local newTaskName: string = '';
-
   build() {
     Column() {
       Text('To do')
@@ -271,25 +267,23 @@ struct TodoList {
 **示例6**
 
 ```typescript
+// src/main/ets/pages/ObservedV2TracePage.ets
 @ObservedV2
 class Task {
   public taskName: string = '';
   @Trace public isFinish: boolean = false;
-
   constructor(taskName: string, isFinish: boolean) {
     this.taskName = taskName;
     this.isFinish = isFinish;
   }
 }
-
 @ComponentV2
 struct TaskItem {
   @Param task: Task = new Task('', false);
   @Event deleteTask: () => void = () => {};
-
   build() {
     Row() {
-
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
       Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
         .width(28)
         .height(28)
@@ -305,7 +299,6 @@ struct TaskItem {
     })
   }
 }
-
 @Entry
 @ComponentV2
 struct TodoList {
@@ -315,13 +308,11 @@ struct TodoList {
     new Task('task3', false),
   ];
   @Local newTaskName: string = '';
-
   finishAll(ifFinish: boolean) {
     for (let task of this.tasks) {
       task.isFinish = ifFinish;
     }
   }
-
   build() {
     Column() {
       Text('To do')
@@ -372,32 +363,28 @@ struct TodoList {
 **示例7**
 
 ```typescript
+// src/main/ets/pages/MonitorComputedPage.ets
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 @ObservedV2
 class Task {
   public taskName: string = '';
   @Trace public isFinish: boolean = false;
-
   constructor(taskName: string, isFinish: boolean) {
     this.taskName = taskName;
     this.isFinish = isFinish;
   }
 }
-
 @ComponentV2
 struct TaskItem {
   @Param task: Task = new Task('', false);
   @Event deleteTask: () => void = () => {};
-
   @Monitor('task.isFinish')
   onTaskFinished(mon: IMonitor) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'task' + this.task.taskName + 'The completion status of the' + mon.value()?.before + 'has become' + mon.value()?.now);
   }
-
   build() {
     Row() {
-
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
       Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
         .width(28)
         .height(28)
@@ -413,7 +400,6 @@ struct TaskItem {
     })
   }
 }
-
 @Entry
 @ComponentV2
 struct TodoList {
@@ -423,18 +409,15 @@ struct TodoList {
     new Task('task3', false),
   ];
   @Local newTaskName: string = '';
-
   finishAll(ifFinish: boolean) {
     for (let task of this.tasks) {
       task.isFinish = ifFinish;
     }
   }
-
   @Computed
   get tasksUnfinished(): number {
     return this.tasks.filter(task => !task.isFinish).length;
   }
-
   build() {
     Column() {
       Text('To do')
@@ -486,35 +469,31 @@ struct TodoList {
 **示例8**
 
 ```typescript
+// src/main/ets/pages/AppStorageV2Page.ets
 import { AppStorageV2 } from '@kit.ArkUI';
 import { common, Want } from '@kit.AbilityKit';
 import { Setting } from './SettingPage';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 @ObservedV2
 class Task {
   public taskName: string = '';
   @Trace public isFinish: boolean = false;
-
   constructor(taskName: string, isFinish: boolean) {
     this.taskName = taskName;
     this.isFinish = isFinish;
   }
 }
-
 @ComponentV2
 struct TaskItem {
   @Param task: Task = new Task('', false);
   @Event deleteTask: () => void = () => {};
-
   @Monitor('task.isFinish')
   onTaskFinished(mon: IMonitor) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'task' + this.task.taskName + 'The completion status of the' + mon.value()?.before + 'has become' + mon.value()?.now);
   }
-
   build() {
     Row() {
-
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
       Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
         .width(28)
         .height(28)
@@ -530,7 +509,6 @@ struct TaskItem {
     })
   }
 }
-
 @Entry
 @ComponentV2
 struct TodoList {
@@ -542,18 +520,15 @@ struct TodoList {
   @Local newTaskName: string = '';
   @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
   finishAll(ifFinish: boolean) {
     for (let task of this.tasks) {
       task.isFinish = ifFinish;
     }
   }
-
   @Computed
   get tasksUnfinished(): number {
     return this.tasks.filter(task => !task.isFinish).length;
   }
-
   build() {
     Column() {
       Text('To do')
@@ -581,8 +556,8 @@ struct TodoList {
         Button('Setting')
           .onClick(() => {
             let wantInfo: Want = {
-              deviceId: '',
-              bundleName: 'com.samples.statemgmtv2mvvm',
+              deviceId: '', // deviceId为空表示本设备。
+              bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
               abilityName: 'SettingAbility',
             };
             this.context.startAbility(wantInfo);
@@ -606,20 +581,18 @@ struct TodoList {
 ```
 
 ```typescript
+// src/main/ets/pages/SettingPage.ets
 import { AppStorageV2 } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
-
 @ObservedV2
 export class Setting {
   @Trace public showCompletedTask: boolean = true;
 }
-
 @Entry
 @ComponentV2
 struct SettingPage {
   @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
   build() {
     Column() {
       Text('Setting')
@@ -652,29 +625,26 @@ struct SettingPage {
 **示例9**
 
 ```typescript
+// src/main/ets/pages/PersistenceV2Page.ets
 import { AppStorageV2, PersistenceV2, Type } from '@kit.ArkUI';
 import { common, Want } from '@kit.AbilityKit';
 import { Setting } from './SettingPage';
 import { util } from '@kit.ArkTS';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 @ObservedV2
 class Task {
-
+  // 未实现构造函数，因为@Type当前不支持带参数的构造函数。
   @Trace public taskName: string = 'Todo';
   @Trace public isFinish: boolean = false;
 }
-
 @ObservedV2
 class TaskList {
-
+  // 对于复杂对象需要@Type修饰，确保序列化成功。
   @Type(Task)
   @Trace public tasks: Task[] = [];
-
   constructor(tasks: Task[]) {
     this.tasks = tasks;
   }
-
   async loadTasks(context: common.UIAbilityContext) {
     let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
     let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
@@ -688,20 +658,17 @@ class TaskList {
     });
   }
 }
-
 @ComponentV2
 struct TaskItem {
   @Param task: Task = new Task();
   @Event deleteTask: () => void = () => {};
-
   @Monitor('task.isFinish')
   onTaskFinished(mon: IMonitor) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'task' + this.task.taskName + 'The completion status of the' + mon.value()?.before + 'has become' + mon.value()?.now);
   }
-
   build() {
     Row() {
-
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
       Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
         .width(28)
         .height(28)
@@ -717,7 +684,6 @@ struct TaskItem {
     })
   }
 }
-
 @Entry
 @ComponentV2
 struct TodoList {
@@ -725,25 +691,21 @@ struct TodoList {
   @Local newTaskName: string = '';
   @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
   async aboutToAppear() {
     this.taskList = PersistenceV2.connect(TaskList, 'TaskList', () => new TaskList([]))!;
     if (this.taskList.tasks.length === 0) {
       await this.taskList.loadTasks(this.context);
     }
   }
-
   finishAll(ifFinish: boolean) {
     for (let task of this.taskList.tasks) {
       task.isFinish = ifFinish;
     }
   }
-
   @Computed
   get tasksUnfinished(): number {
     return this.taskList.tasks.filter(task => !task.isFinish).length;
   }
-
   build() {
     Column() {
       Text('To do')
@@ -771,8 +733,8 @@ struct TodoList {
         Button('Setting')
           .onClick(() => {
             let wantInfo: Want = {
-              deviceId: '',
-              bundleName: 'com.samples.statemgmtv2mvvm',
+              deviceId: '', // deviceId为空表示本设备。
+              bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
               abilityName: 'SettingAbility',
             };
             this.context.startAbility(wantInfo);
@@ -818,19 +780,18 @@ JSON文件存放在src/main/resources/rawfile/defaultTasks.json路径下。
 **示例10**
 
 ```typescript
+// src/main/ets/pages/BuilderPage.ets
 import { AppStorageV2, PersistenceV2, Type } from '@kit.ArkUI';
 import { common, Want } from '@kit.AbilityKit';
 import { Setting } from './SettingPage';
 import { util } from '@kit.ArkTS';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 @ObservedV2
 class Task {
-
+  // 未实现构造函数，因为@Type当前不支持带参数的构造函数。
   @Trace public taskName: string = 'Todo';
   @Trace public isFinish: boolean = false;
 }
-
 @Builder
 function actionButton(text: string | Resource, onClick: () => void) {
   Button(text, { buttonStyle: ButtonStyleMode.NORMAL })
@@ -842,17 +803,14 @@ function actionButton(text: string | Resource, onClick: () => void) {
       bottom: 5
     })
 }
-
 @ObservedV2
 class TaskList {
-
+  // 对于复杂对象需要@Type修饰，确保序列化成功。
   @Type(Task)
   @Trace public tasks: Task[] = [];
-
   constructor(tasks: Task[]) {
     this.tasks = tasks;
   }
-
   async loadTasks(context: common.UIAbilityContext) {
     let getJson = await context.resourceManager.getRawFileContent('defaultTasks.json');
     let textDecoderOptions: util.TextDecoderOptions = { ignoreBOM: true };
@@ -866,20 +824,17 @@ class TaskList {
     });
   }
 }
-
 @ComponentV2
 struct TaskItem {
   @Param task: Task = new Task();
   @Event deleteTask: () => void = () => {};
-
   @Monitor('task.isFinish')
   onTaskFinished(mon: IMonitor) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'task' + this.task.taskName + 'The completion status of the' + mon.value()?.before + 'has become' + mon.value()?.now);
   }
-
   build() {
     Row() {
-
+      // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。
       Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))
         .width(28)
         .height(28)
@@ -900,7 +855,6 @@ struct TaskItem {
     })
   }
 }
-
 @Entry
 @ComponentV2
 struct TodoList {
@@ -908,24 +862,20 @@ struct TodoList {
   @Local newTaskName: string = '';
   @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
   async aboutToAppear() {
     if (this.taskList.tasks.length === 0) {
       await this.taskList.loadTasks(this.context);
     }
   }
-
   finishAll(ifFinish: boolean) {
     for (let task of this.taskList.tasks) {
       task.isFinish = ifFinish;
     }
   }
-
   @Computed
   get tasksUnfinished(): number {
     return this.taskList.tasks.filter(task => !task.isFinish).length;
   }
-
   build() {
     Column() {
       Text('To do')
@@ -948,8 +898,8 @@ struct TodoList {
         actionButton('All Not Completed', (): void => this.finishAll(false))
         actionButton('Setting', (): void => {
           let wantInfo: Want = {
-            deviceId: '',
-            bundleName: 'com.samples.statemgmtv2mvvm',
+            deviceId: '', // deviceId为空表示本设备。
+            bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。
             abilityName: 'SettingAbility',
           };
           this.context.startAbility(wantInfo);
@@ -980,7 +930,7 @@ struct TodoList {
 
 ### 效果图展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/PfeUV8hXQtiIxqNRFtJmrw/zh-cn_image_0000002562714345.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023132Z&HW-CC-Expire=86400&HW-CC-Sign=D9F2FC636F9C1AD096D03EECE531C33EB4AC80B02A252A62F6E5B9115E46AC27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/pKRHKh5dT-KJenALbf3MDg/zh-cn_image_0000002532245874.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023836Z&HW-CC-Expire=86400&HW-CC-Sign=DA2E69B298F665555370BC69133463594D0DF011E6F45E88F25F1022F60A9438)
 
 ## 重构代码以符合MVVM架构
 
@@ -1023,18 +973,18 @@ Model层负责管理应用的数据及其业务逻辑，通常与后端或数据
 
 ViewModel层管理UI状态和业务逻辑，连接Model和View。通过监控Model数据变化，处理应用逻辑，将数据同步到View层，从而实现UI的自动更新。使用ViewModel实现数据与视图解耦，提高代码可读性和可维护性。
 
-- TaskViewModel：封装单个任务的数据和状态变更逻辑，通过状态装饰器监控数据的变化。 ```typescript import TaskModel from '../model/TaskModel'; @ObservedV2 export default class TaskViewModel {  @Trace public taskName: string = 'Todo';  @Trace public isFinish: boolean = false;  updateTask(task: TaskModel) {  this.taskName = task.taskName;  this.isFinish = task.isFinish;  }  updateIsFinish(): void {  this.isFinish = !this.isFinish;  } } ```
-- TaskListViewModel：封装了任务列表以及管理功能，包括加载任务、批量更新任务状态，以及添加和删除任务。 ```typescript import { common } from '@kit.AbilityKit'; import { Type } from '@kit.ArkUI'; import TaskListModel from '../model/TaskListModel'; import TaskViewModel from './TaskViewModel'; @ObservedV2 export default class TaskListViewModel {  @Type(TaskViewModel)  @Trace public tasks: TaskViewModel[] = [];  async loadTasks(context: common.UIAbilityContext) {  let taskList = new TaskListModel([]);  await taskList.loadTasks(context);  for (let task of taskList.tasks) {  let taskViewModel = new TaskViewModel();  taskViewModel.updateTask(task);  this.tasks.push(taskViewModel);  }  }  finishAll(ifFinish: boolean): void {  for (let task of this.tasks) {  task.isFinish = ifFinish;  }  }  addTask(newTask: TaskViewModel): void {  this.tasks.push(newTask);  }  removeTask(removedTask: TaskViewModel): void {  this.tasks.splice(this.tasks.indexOf(removedTask), 1);  } } ```
+- TaskViewModel：封装单个任务的数据和状态变更逻辑，通过状态装饰器监控数据的变化。 ```typescript // src/main/ets/viewmodel/TaskViewModel.ets import TaskModel from '../model/TaskModel'; @ObservedV2 export default class TaskViewModel {  @Trace public taskName: string = 'Todo';  @Trace public isFinish: boolean = false;  updateTask(task: TaskModel) {  this.taskName = task.taskName;  this.isFinish = task.isFinish;  }  updateIsFinish(): void {  this.isFinish = !this.isFinish;  } } ```
+- TaskListViewModel：封装了任务列表以及管理功能，包括加载任务、批量更新任务状态，以及添加和删除任务。 ```typescript // src/main/ets/viewmodel/TaskListViewModel.ets import { common } from '@kit.AbilityKit'; import { Type } from '@kit.ArkUI'; import TaskListModel from '../model/TaskListModel'; import TaskViewModel from './TaskViewModel'; @ObservedV2 export default class TaskListViewModel {  @Type(TaskViewModel)  @Trace public tasks: TaskViewModel[] = [];  async loadTasks(context: common.UIAbilityContext) {  let taskList = new TaskListModel([]);  await taskList.loadTasks(context);  for (let task of taskList.tasks) {  let taskViewModel = new TaskViewModel();  taskViewModel.updateTask(task);  this.tasks.push(taskViewModel);  }  }  finishAll(ifFinish: boolean): void {  for (let task of this.tasks) {  task.isFinish = ifFinish;  }  }  addTask(newTask: TaskViewModel): void {  this.tasks.push(newTask);  }  removeTask(removedTask: TaskViewModel): void {  this.tasks.splice(this.tasks.indexOf(removedTask), 1);  } } ```
 
 ### View层
 
 View层负责应用程序的UI展示和与用户的交互。它只关注如何渲染用户界面和展示数据，不包含业务逻辑。所有的数据状态和逻辑都来自ViewModel层，View层通过接收ViewModel传递的状态数据进行渲染，确保视图和数据分离。
 
-- TitleView：负责展示应用的标题和未完成任务的统计信息。 ```typescript @ComponentV2 export default struct TitleView {  @Param tasksUnfinished: number = 0;  build() {  Column() {  Text('To do')  .fontSize(40)  .margin(10)  Text(`All Not Completed：${this.tasksUnfinished}`)  .margin({ left: 10, bottom: 10 })  }  } } ```
-- ListView：负责展示任务列表，并根据Setting中的设置筛选是否显示已完成的任务。它依赖于TaskListViewModel来获取任务数据，并通过TaskItem组件进行渲染，包括任务的名称、完成状态以及删除按钮。通过TaskViewModel和TaskListViewModel实现用户的交互，如切换任务完成状态和删除任务。 ```typescript import TaskViewModel from '../viewmodel/TaskViewModel'; import TaskListViewModel from '../viewmodel/TaskListViewModel'; import { Setting } from '../pages/SettingPage'; import { ActionButton } from './BottomView'; import { hilog } from '@kit.PerformanceAnalysisKit'; @ComponentV2 struct TaskItem {  @Param task: TaskViewModel = new TaskViewModel();  @Event deleteTask: () => void = () => {};  @Monitor('task.isFinish')  onTaskFinished(mon: IMonitor) {  hilog.info(0x0000, 'testTag', '%{public}s', 'task' + this.task.taskName + 'The completion status of the' + mon.value()?.before + 'has become' + mon.value()?.now);  }  build() {  Row() {  Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))  .width(28)  .height(28)  .margin({ left: 15, right: 10 })  Text(this.task.taskName)  .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })  .fontSize(18)  ActionButton('Delete', () => this.deleteTask());  }  .height('7%')  .width('90%')  .backgroundColor('#90f1f3f5')  .borderRadius(25)  .onClick(() => this.task.updateIsFinish())  } } @ComponentV2 export default struct ListView {  @Param taskList: TaskListViewModel = new TaskListViewModel();  @Param setting: Setting = new Setting();  build() {  Repeat<TaskViewModel>(this.taskList.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))  .each((obj: RepeatItem<TaskViewModel>) => {  TaskItem({  task: obj.item,  deleteTask: () => this.taskList.removeTask(obj.item)  }).margin(5)  })  } } ```
-- BottomView：负责提供与任务操作相关的按钮和输入框，如"全部完成"、"全部未完成"，"设置"三个按钮，以及添加新任务的输入框。点击"全部完成"和"全部未完成"时，通过TaskListViewModel更改所有任务的状态。点击"设置"按钮时，会导航到SettingAbility的设置页面。添加新任务时，通过TaskListViewModel新增任务到任务列表中。 ```typescript import { common, Want } from '@kit.AbilityKit'; import TaskViewModel from '../viewmodel/TaskViewModel'; import TaskListViewModel from '../viewmodel/TaskListViewModel'; @Builder export function ActionButton(text: string | Resource, onClick: () => void) {  Button(text, { buttonStyle: ButtonStyleMode.NORMAL })  .onClick(onClick)  .margin({  left: 10,  right: 10,  top: 5,  bottom: 5  }) } @ComponentV2 export default struct BottomView {  @Param taskList: TaskListViewModel = new TaskListViewModel();  @Local newTaskName: string = '';  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;  build() {  Column() {  Row() {  ActionButton('All Completed', (): void => this.taskList.finishAll(true))  ActionButton('All Not Completed', (): void => this.taskList.finishAll(false))  }  .margin({ top: 10 })  Row() {  ActionButton('Setting', (): void => {  let wantInfo: Want = {  deviceId: '',  bundleName: 'com.samples.statemgmtv2mvvm',  abilityName: 'SettingAbility',  };  this.context.startAbility(wantInfo);  })  }  .margin({ bottom: 5 })  Row() {  TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })  .onChange((value) => this.newTaskName = value)  .width('70%')  ActionButton('+', (): void => {  let newTask = new TaskViewModel();  newTask.taskName = this.newTaskName;  this.taskList.addTask(newTask);  this.newTaskName = '';  })  }  }  } } ```
-- TodoListPage：todolist的主页面，包含以上的三个View组件（TitleView、ListView、BottomView），用于统一展示待办事项的各个部分，管理任务列表和用户设置。TodoListPage负责从ViewModel中获取数据，并将数据传递给各个子View组件进行渲染，通过PersistenceV2持久化任务数据，确保数据在应用重启后仍能保持一致。 ```typescript import TaskListViewModel from '../viewmodel/TaskListViewModel'; import { common } from '@kit.AbilityKit'; import { AppStorageV2, PersistenceV2 } from '@kit.ArkUI'; import { Setting } from '../pages/SettingPage'; import TitleView from '../view/TitleView'; import ListView from '../view/ListView'; import BottomView from '../view/BottomView'; @Entry @ComponentV2 struct TodoList {  @Local taskList: TaskListViewModel = PersistenceV2.connect(TaskListViewModel, 'TaskList', () => new TaskListViewModel())!;  @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;  async aboutToAppear() {  if (this.taskList.tasks.length === 0) {  await this.taskList.loadTasks(this.context);  }  }  @Computed  get tasksUnfinished(): number {  return this.taskList.tasks.filter(task => !task.isFinish).length;  }  build() {  Column() {  TitleView({ tasksUnfinished: this.tasksUnfinished })  ListView({ taskList: this.taskList, setting: this.setting });  BottomView({ taskList: this.taskList });  }  .height('100%')  .width('100%')  .alignItems(HorizontalAlign.Start)  .margin({ left: 15 })  } } ```
-- SettingPage：设置页面，负责管理是否显示已完成任务的设置。通过AppStorageV2应用全局存储用户的设置，用户通过Toggle开关切换showCompletedTask状态。 ```typescript import { AppStorageV2 } from '@kit.ArkUI'; import { common } from '@kit.AbilityKit'; @ObservedV2 export class Setting {  @Trace public showCompletedTask: boolean = true; } @Entry @ComponentV2 struct SettingPage {  @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;  build(){  Column(){  Text('Setting')  .fontSize(40)  .margin({ bottom: 10 })  Row() {  Text('Show completed tasks')  Toggle({ type: ToggleType.Switch, isOn:this.setting.showCompletedTask })  .onChange((isOn) => {  this.setting.showCompletedTask = isOn;  })  }  Button('Back to To do')  .onClick(()=>this.context.terminateSelf())  .margin({ top: 10 })  }  .alignItems(HorizontalAlign.Start)  } } ```
+- TitleView：负责展示应用的标题和未完成任务的统计信息。 ```typescript // src/main/ets/view/TitleView.ets @ComponentV2 export default struct TitleView {  @Param tasksUnfinished: number = 0;  build() {  Column() {  Text('To do')  .fontSize(40)  .margin(10)  Text(`All Not Completed：${this.tasksUnfinished}`)  .margin({ left: 10, bottom: 10 })  }  } } ```
+- ListView：负责展示任务列表，并根据Setting中的设置筛选是否显示已完成的任务。它依赖于TaskListViewModel来获取任务数据，并通过TaskItem组件进行渲染，包括任务的名称、完成状态以及删除按钮。通过TaskViewModel和TaskListViewModel实现用户的交互，如切换任务完成状态和删除任务。 ```typescript // src/main/ets/view/ListView.ets import TaskViewModel from '../viewmodel/TaskViewModel'; import TaskListViewModel from '../viewmodel/TaskListViewModel'; import { Setting } from '../pages/SettingPage'; import { ActionButton } from './BottomView'; import { hilog } from '@kit.PerformanceAnalysisKit'; @ComponentV2 struct TaskItem {  @Param task: TaskViewModel = new TaskViewModel();  @Event deleteTask: () => void = () => {};  @Monitor('task.isFinish')  onTaskFinished(mon: IMonitor) {  hilog.info(0x0000, 'testTag', '%{public}s', 'task' + this.task.taskName + 'The completion status of the' + mon.value()?.before + 'has become' + mon.value()?.now);  }  build() {  Row() {  // 请开发者自行在src/main/resources/base/media路径下添加finished.png和unfinished.png两张图片，否则运行时会因资源缺失而报错。  Image(this.task.isFinish ? $r('app.media.finished') : $r('app.media.unfinished'))  .width(28)  .height(28)  .margin({ left: 15, right: 10 })  Text(this.task.taskName)  .decoration({ type: this.task.isFinish ? TextDecorationType.LineThrough : TextDecorationType.None })  .fontSize(18)  ActionButton('Delete', () => this.deleteTask());  }  .height('7%')  .width('90%')  .backgroundColor('#90f1f3f5')  .borderRadius(25)  .onClick(() => this.task.updateIsFinish())  } } @ComponentV2 export default struct ListView {  @Param taskList: TaskListViewModel = new TaskListViewModel();  @Param setting: Setting = new Setting();  build() {  Repeat<TaskViewModel>(this.taskList.tasks.filter(task => this.setting.showCompletedTask || !task.isFinish))  .each((obj: RepeatItem<TaskViewModel>) => {  TaskItem({  task: obj.item,  deleteTask: () => this.taskList.removeTask(obj.item)  }).margin(5)  })  } } ```
+- BottomView：负责提供与任务操作相关的按钮和输入框，如"全部完成"、"全部未完成"，"设置"三个按钮，以及添加新任务的输入框。点击"全部完成"和"全部未完成"时，通过TaskListViewModel更改所有任务的状态。点击"设置"按钮时，会导航到SettingAbility的设置页面。添加新任务时，通过TaskListViewModel新增任务到任务列表中。 ```typescript // src/main/ets/view/BottomView.ets import { common, Want } from '@kit.AbilityKit'; import TaskViewModel from '../viewmodel/TaskViewModel'; import TaskListViewModel from '../viewmodel/TaskListViewModel'; @Builder export function ActionButton(text: string | Resource, onClick: () => void) {  Button(text, { buttonStyle: ButtonStyleMode.NORMAL })  .onClick(onClick)  .margin({  left: 10,  right: 10,  top: 5,  bottom: 5  }) } @ComponentV2 export default struct BottomView {  @Param taskList: TaskListViewModel = new TaskListViewModel();  @Local newTaskName: string = '';  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;  build() {  Column() {  Row() {  ActionButton('All Completed', (): void => this.taskList.finishAll(true))  ActionButton('All Not Completed', (): void => this.taskList.finishAll(false))  }  .margin({ top: 10 })  Row() {  ActionButton('Setting', (): void => {  let wantInfo: Want = {  deviceId: '', // deviceId为空表示本设备。  bundleName: 'com.samples.statemgmtv2mvvm', // 替换成AppScope/app.json5里的bundleName。  abilityName: 'SettingAbility',  };  this.context.startAbility(wantInfo);  })  }  .margin({ bottom: 5 })  Row() {  TextInput({ placeholder: 'Add new tasks', text: this.newTaskName })  .onChange((value) => this.newTaskName = value)  .width('70%')  ActionButton('+', (): void => {  let newTask = new TaskViewModel();  newTask.taskName = this.newTaskName;  this.taskList.addTask(newTask);  this.newTaskName = '';  })  }  }  } } ```
+- TodoListPage：todolist的主页面，包含以上的三个View组件（TitleView、ListView、BottomView），用于统一展示待办事项的各个部分，管理任务列表和用户设置。TodoListPage负责从ViewModel中获取数据，并将数据传递给各个子View组件进行渲染，通过PersistenceV2持久化任务数据，确保数据在应用重启后仍能保持一致。 ```typescript // src/main/ets/pages/TodoListPage.ets import TaskListViewModel from '../viewmodel/TaskListViewModel'; import { common } from '@kit.AbilityKit'; import { AppStorageV2, PersistenceV2 } from '@kit.ArkUI'; import { Setting } from '../pages/SettingPage'; import TitleView from '../view/TitleView'; import ListView from '../view/ListView'; import BottomView from '../view/BottomView'; @Entry @ComponentV2 struct TodoList {  @Local taskList: TaskListViewModel = PersistenceV2.connect(TaskListViewModel, 'TaskList', () => new TaskListViewModel())!;  @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;  async aboutToAppear() {  if (this.taskList.tasks.length === 0) {  await this.taskList.loadTasks(this.context);  }  }  @Computed  get tasksUnfinished(): number {  return this.taskList.tasks.filter(task => !task.isFinish).length;  }  build() {  Column() {  TitleView({ tasksUnfinished: this.tasksUnfinished })  ListView({ taskList: this.taskList, setting: this.setting });  BottomView({ taskList: this.taskList });  }  .height('100%')  .width('100%')  .alignItems(HorizontalAlign.Start)  .margin({ left: 15 })  } } ```
+- SettingPage：设置页面，负责管理是否显示已完成任务的设置。通过AppStorageV2应用全局存储用户的设置，用户通过Toggle开关切换showCompletedTask状态。 ```typescript // src/main/ets/pages/SettingPage.ets import { AppStorageV2 } from '@kit.ArkUI'; import { common } from '@kit.AbilityKit'; @ObservedV2 export class Setting {  @Trace public showCompletedTask: boolean = true; } @Entry @ComponentV2 struct SettingPage {  @Local setting: Setting = AppStorageV2.connect(Setting, 'Setting', () => new Setting())!;  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;  build(){  Column(){  Text('Setting')  .fontSize(40)  .margin({ bottom: 10 })  Row() {  Text('Show completed tasks')  Toggle({ type: ToggleType.Switch, isOn:this.setting.showCompletedTask })  .onChange((isOn) => {  this.setting.showCompletedTask = isOn;  })  }  Button('Back to To do')  .onClick(()=>this.context.terminateSelf())  .margin({ top: 10 })  }  .alignItems(HorizontalAlign.Start)  } } ```
 
 ## 总结
 

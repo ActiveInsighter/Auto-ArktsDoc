@@ -1,4 +1,4 @@
-# 显式动画立即下发 (animateToImmediately)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animatetoimmediately
 
 animateToImmediately接口用来提供[显式动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation)立即下发功能。同时加载多个属性动画的情况下，使用该接口可以立即执行闭包代码中状态变化导致的过渡动效。
@@ -90,4 +90,4 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Z-3CmmUARxWUIDVA3hS4Ew/zh-cn_image_0000002562715927.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023405Z&HW-CC-Expire=86400&HW-CC-Sign=0B516823B0BDAFB6659A8BD7BC59210D29F37431ED53BC91F9CA4E0B4BE8A0AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/q2YqFxh1SN2Lw4liovqDpA/zh-cn_image_0000002532247454.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024103Z&HW-CC-Expire=86400&HW-CC-Sign=0A49ACCBF43705948BE6E13CAF05B6599AB55844F4FA2064F4267D694E834EC7)

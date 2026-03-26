@@ -1,4 +1,4 @@
-# 文档中心
+# Toggle-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle
 
 组件提供勾选框样式、状态按钮样式和开关样式。
@@ -252,7 +252,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/hMd8Ez0UQOOUKcqTiiz87Q/zh-cn_image_0000002562555637.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023239Z&HW-CC-Expire=86400&HW-CC-Sign=486CF499E003687E843D6B17B74008A652DD3533392365690AB05A6697618D9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/rRV9Q8REQQq4sa7ADSScVQ/zh-cn_image_0000002532087200.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=8C81397C1AF53CCF2803E64EAFBABCBF00FE3045294F92F8320831610890801D)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/MRq6nbxjStqslnM-oz5dQg/zh-cn_image_0000002562715609.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023239Z&HW-CC-Expire=86400&HW-CC-Sign=05BC7F2D174C682B9CD4384EA31808781B506BA4FAEE0900478ADDD0E383FD47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/wWm29ye0TK-DnXlObR-V_Q/zh-cn_image_0000002532247136.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=4BF18593AC69EF3DF17D9838838DF8C06647E0CCADEB4A7D981047D93AC517F5)
 
 ### 示例3（自定义Toggle样式）
 
@@ -348,4 +348,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/-kz2peP1SjuEdLUAu2JkFA/zh-cn_image_0000002531635738.gif?HW-CC-KV=V1&HW-CC-Date=20260325T023239Z&HW-CC-Expire=86400&HW-CC-Sign=0BE6539BDD63F9B78A9E2132AF6653ADA81A2BA67577CC895B1F0A4F2D6DC3BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/URpe2-a1S7W1eATd95Wd7g/zh-cn_image_0000002563127079.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=901C286E726091243DDFAFE3216F58131CEC4D33D1CA0920FB55E6695CF96FFC)

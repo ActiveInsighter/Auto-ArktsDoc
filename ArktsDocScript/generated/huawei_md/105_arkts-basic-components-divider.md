@@ -1,4 +1,4 @@
-# Divider-空白与分隔-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-divider
 
 提供分割线组件，分割不同内容块/内容元素。
@@ -178,7 +178,7 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cWYixWUfRi6dFvE3aPaVvw/zh-cn_image_0000002562715819.png?HW-CC-KV=V1&HW-CC-Date=20260325T023349Z&HW-CC-Expire=86400&HW-CC-Sign=26FAFC2CB6F989D40B5964ECDA7B26FEC642BBECD66EF585C9925708CA8C68B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/zHgw2G4cSA-U21gLMtuJGA/zh-cn_image_0000002532247346.png?HW-CC-KV=V1&HW-CC-Date=20260326T024046Z&HW-CC-Expire=86400&HW-CC-Sign=428D7D39DED1DEAF53F3C0077248B020A4DEC540D1B55C3357B791A62B879385)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -216,4 +216,4 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/yR157vjASgKf15vn4R3CyQ/zh-cn_image_0000002531635948.png?HW-CC-KV=V1&HW-CC-Date=20260325T023349Z&HW-CC-Expire=86400&HW-CC-Sign=640B6CF400CA9719249581C26F22670B5464B616324D1FC8AEA1CD91B4570520)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/qX8XrJz5Sv2dAU3DvGQ_UQ/zh-cn_image_0000002563127289.png?HW-CC-KV=V1&HW-CC-Date=20260326T024046Z&HW-CC-Expire=86400&HW-CC-Sign=61E581A2F8AA4CFC3DB87EE913403F75FD89692275F8AD0351C5378C3901AC2A)
