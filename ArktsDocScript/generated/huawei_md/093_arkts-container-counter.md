@@ -1,4 +1,4 @@
-# Counter-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-counter
 
 计数器组件，提供相应的增加或者减少的计数操作。
@@ -138,4 +138,4 @@ struct CounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/KnybR--ATYuJgruwcxyyCA/zh-cn_image_0000002563127267.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024032Z&HW-CC-Expire=86400&HW-CC-Sign=A15F5CC35B9C860B0E53908E2C24FEBF52176EB4305496F3A3B591967DB21746)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/KnybR--ATYuJgruwcxyyCA/zh-cn_image_0000002563127267.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024224Z&HW-CC-Expire=86400&HW-CC-Sign=2E71FFCB1283EE7B7C06843EC6439BD99BCC09EBDB2ADC67F0F56F63F2A3E254)

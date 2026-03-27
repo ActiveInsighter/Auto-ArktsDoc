@@ -67,23 +67,23 @@ displayPriority(value: number): T
 通过aspectRatio设置不同的宽高比。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct AspectRatioExample {
   private children: string[] = ['1', '2', '3', '4', '5', '6']
-
   build() {
     Column({ space: 20 }) {
       Text('using container: row').fontSize(14).fontColor(0xCCCCCC).width('100%')
       Row({ space: 10 }) {
         ForEach(this.children, (item:string) => {
-
+          // 组件宽度 = 组件高度*1.5 = 90
           Text(item)
             .backgroundColor(0xbbb2cb)
             .fontSize(20)
             .aspectRatio(1.5)
             .height(60)
-
+          // 组件高度 = 组件宽度/1.5 = 60/1.5 = 40
           Text(item)
             .backgroundColor(0xbbb2cb)
             .fontSize(20)
@@ -94,7 +94,7 @@ struct AspectRatioExample {
       .size({ width: "100%", height: 100 })
       .backgroundColor(0xd2cab3)
       .clip(true)
-
+      // grid子元素width/height=3/2
       Text('using container: grid').fontSize(14).fontColor(0xCCCCCC).width('100%')
       Grid() {
         ForEach(this.children, (item:string) => {
@@ -119,11 +119,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/pKl2b8XPRm2yUbNxKzCnow/zh-cn_image_0000002532246938.png?HW-CC-KV=V1&HW-CC-Date=20260326T023824Z&HW-CC-Expire=86400&HW-CC-Sign=8F26E1494B600CB5B9B5AA3DB4D329F4BF3E6A46C9FE92D8CB4526BF98E27DA8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/pKl2b8XPRm2yUbNxKzCnow/zh-cn_image_0000002532246938.png?HW-CC-KV=V1&HW-CC-Date=20260327T024037Z&HW-CC-Expire=86400&HW-CC-Sign=AC8DD13A94978CFF5F59B4269DAA803092E5B6367126C3EA9D395FF64DBB047B)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/aMHWS9E0Tn2Whkps3_4JqA/zh-cn_image_0000002563126881.png?HW-CC-KV=V1&HW-CC-Date=20260326T023824Z&HW-CC-Expire=86400&HW-CC-Sign=B0A3E673350C8FF00B1D5B510303208FBFFE067EF008A6853ECCC2C4901AA163)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/aMHWS9E0Tn2Whkps3_4JqA/zh-cn_image_0000002563126881.png?HW-CC-KV=V1&HW-CC-Date=20260327T024037Z&HW-CC-Expire=86400&HW-CC-Sign=EE79910CF9D0407543BAC37713A6780E652C3F26535842478F9D1F416D633EC9)
 
 ### 示例2（设置组件显示优先级）
 
@@ -134,16 +134,14 @@ class ContainerInfo {
   label: string = '';
   size: string = '';
 }
-
 class ChildInfo {
   text: string = '';
   priority: number = 0;
 }
-
 @Entry
 @Component
 struct DisplayPriorityExample {
-
+  // 显示容器大小
   private container: ContainerInfo[] = [
     { label: 'Big container', size: '90%' },
     { label: 'Middle container', size: '50%' },
@@ -157,18 +155,17 @@ struct DisplayPriorityExample {
     { text: '5\n(priority:2)', priority: 2 }
   ]
   @State currentIndex: number = 0;
-
   build() {
     Column({ space: 10 }) {
-
+      // 切换父级容器大小
       Button(this.container[this.currentIndex].label).backgroundColor(0x317aff)
         .onClick(() => {
           this.currentIndex = (this.currentIndex + 1) % this.container.length;
         })
-
+      // 通过变量设置Flex父容器宽度
       Flex({ justifyContent: FlexAlign.SpaceBetween }) {
         ForEach(this.children, (item:ChildInfo) => {
-
+          // 使用displayPriority给子组件绑定显示优先级
           Text(item.text)
             .width(120)
             .height(60)
@@ -187,4 +184,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/BqGG19XxSXW_J8fvBKZI-g/zh-cn_image_0000002563206903.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023824Z&HW-CC-Expire=86400&HW-CC-Sign=D15B31514EFF1A1CEFD1411F63E2D68A06758A4A6D5A52195AB9C09D891FF166)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/BqGG19XxSXW_J8fvBKZI-g/zh-cn_image_0000002563206903.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024037Z&HW-CC-Expire=86400&HW-CC-Sign=B1C0AAC5D779EC9B840E18A2FCCE83C72E292FE8DDCA406C7711E2D15D9235DC)

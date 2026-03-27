@@ -359,7 +359,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vU1JcHAASPWrnavg4H5zVA/zh-cn_image_0000002563207101.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=6994914917B12CC328C825F063512B05DCCA8143AC6862FE4FC6C983C999DED7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/vU1JcHAASPWrnavg4H5zVA/zh-cn_image_0000002563207101.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024133Z&HW-CC-Expire=86400&HW-CC-Sign=2BDD9A4D872F00C83BA370F06104391A9F5B47C65F62BBE6454F08A951359F15)
 
 ### 示例2（设置多选框颜色）
 
@@ -409,7 +409,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/gQYGkypPQa6Ddez-MMcMkA/zh-cn_image_0000002532087202.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=22D6671B0538F8425599B89CEDC5E5D8BCCA0D91F65EB37B3364EB6E9F651902)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/gQYGkypPQa6Ddez-MMcMkA/zh-cn_image_0000002532087202.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024133Z&HW-CC-Expire=86400&HW-CC-Sign=236367ACAECDBAFDECDEFC153ACD0CF089BEDE8684935369FCF0BD5E3D640E80)
 
 ### 示例3（自定义多选框样式）
 
@@ -499,7 +499,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ekoFG5vKRZm1jxECWZ-Zcg/zh-cn_image_0000002532247138.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=A76991B015CBF53DBDD75E04040947786C40C0CFC3AC6C67B56D8810CCC42056)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ekoFG5vKRZm1jxECWZ-Zcg/zh-cn_image_0000002532247138.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024133Z&HW-CC-Expire=86400&HW-CC-Sign=65B0D944E80C2477F15C8C8C745DC5DDB85D112C89DA2FE6B85B6CC0AAFE289C)
 
 ### 示例4（设置文本多选框样式）
 
@@ -555,7 +555,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/cVajWKKdSamY-H-U2EOvjQ/zh-cn_image_0000002563127081.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=C608127B160657AE37D925290709319FF89D0B15622BD787C8EA8AE84FF00AFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/cVajWKKdSamY-H-U2EOvjQ/zh-cn_image_0000002563127081.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024133Z&HW-CC-Expire=86400&HW-CC-Sign=9B645477A61E0372B06B705DA656D24A8AAAA2B63FD407804DE7C84EC9EC820A)
 
 ### 示例5（获取多选框选中信息）
 
@@ -709,7 +709,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/SooTZT_RTpKHI3A1Itwd1w/zh-cn_image_0000002563207103.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=E09BEBBA55696E4AC6636BBDEA9EBE3461A3C1B892C176B67DD6C6DFFA8B16D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/SooTZT_RTpKHI3A1Itwd1w/zh-cn_image_0000002563207103.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024133Z&HW-CC-Expire=86400&HW-CC-Sign=83CA8D18D6AEBCE1C2F25E1C660C986920740EDA8E3E55FE866C80B133195E91)
 
 ### 示例6（设置滑动多选）
 
@@ -923,4 +923,4 @@ enum SelectedState {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Nw5VdxCMSf2mfiMdtIJYSA/zh-cn_image_0000002532087204.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023942Z&HW-CC-Expire=86400&HW-CC-Sign=82503AA30C6702A8E38E05AB76E123539FBF2DA99662D6A297ED0504411AB610)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Nw5VdxCMSf2mfiMdtIJYSA/zh-cn_image_0000002532087204.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024133Z&HW-CC-Expire=86400&HW-CC-Sign=6A3B32DE3DD50B7FC632892C0CE1C01A4932F88575BF7B1601329E20E8FDEBB0)

@@ -1,4 +1,4 @@
-# Blank-空白与分隔-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-blank
 
 空白填充组件，在容器主轴方向上，空白填充组件具有自动填充容器空余部分的能力。仅当父组件为[Row](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-row)/[Column](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column)/[Flex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex)时生效。
@@ -84,11 +84,11 @@ struct BlankExample {
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/cgJhURpdStCxErS4BrtH8Q/zh-cn_image_0000002563127287.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024045Z&HW-CC-Expire=86400&HW-CC-Sign=E4A175423AC7213A46021BC5CEFD1DD5F8D7BA451B2F3A25FADFDBE601D92D73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/cgJhURpdStCxErS4BrtH8Q/zh-cn_image_0000002563127287.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024042Z&HW-CC-Expire=86400&HW-CC-Sign=07B4B3907123C1BED0A270C9B0A349658EE3636CA3BA2D272A6C63FF847D8EA3)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/CbCV38UcTYKC-7PAHLpwgA/zh-cn_image_0000002563207309.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024045Z&HW-CC-Expire=86400&HW-CC-Sign=6274AD3B1338FDBBAD0D2ABF55ADB6F377D69678CA21C2AA37345D19D45EA56A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/CbCV38UcTYKC-7PAHLpwgA/zh-cn_image_0000002563207309.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024042Z&HW-CC-Expire=86400&HW-CC-Sign=7BE0A4D9586F8EDC352FEDB56719024A068BC4318717406C5626321482F64F28)
 
 ### 示例2（填充固定宽度）
 
@@ -121,4 +121,4 @@ struct BlankExample {
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/V1AmkGNBQCy3R9dXnW8B-g/zh-cn_image_0000002532087410.png?HW-CC-KV=V1&HW-CC-Date=20260326T024045Z&HW-CC-Expire=86400&HW-CC-Sign=05824ACB5719D27CD8D0F8B4B8CC29758D05AC58ED0C9B0F4AAAE8F9481F63EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/V1AmkGNBQCy3R9dXnW8B-g/zh-cn_image_0000002532087410.png?HW-CC-KV=V1&HW-CC-Date=20260327T024042Z&HW-CC-Expire=86400&HW-CC-Sign=CBB612EE37941193B9F5FC2001283BD4C5D5CC001BE1355C376289B5C4449489)

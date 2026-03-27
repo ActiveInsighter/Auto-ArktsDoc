@@ -1,4 +1,4 @@
-# 多态样式-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-polymorphic-style
 
 设置组件不同状态下的样式。
@@ -166,7 +166,7 @@ struct StyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Pn-b7E1hRIKAZQyt8njrvA/zh-cn_image_0000002563206953.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023852Z&HW-CC-Expire=86400&HW-CC-Sign=8937B5444ED08617C3C4B54C9C50CDF0B5AFC17855C405FAFAB980418C512895)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Pn-b7E1hRIKAZQyt8njrvA/zh-cn_image_0000002563206953.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024044Z&HW-CC-Expire=86400&HW-CC-Sign=CEEECFB7E9214B92ED290714747C4519C17104A3D8184567FB26435ED79959EE)
 
 ### 示例2（设置Radio多态样式）
 
@@ -231,7 +231,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/VY4MnO_EQsWF6epHS8QrgA/zh-cn_image_0000002532087054.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023852Z&HW-CC-Expire=86400&HW-CC-Sign=5DC36069CD1A9C4B408853522BFB57F79A3D65353E0D7781F9F94052880476E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/VY4MnO_EQsWF6epHS8QrgA/zh-cn_image_0000002532087054.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024044Z&HW-CC-Expire=86400&HW-CC-Sign=515EC42F96F01105D4C73188F2251D74668C9584DBF383465F3341512D3EA4C7)
 
 ### 示例3（设置Builder多态样式）
 
@@ -292,4 +292,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/3imFkaBjRgmaeiEEtBBaWA/zh-cn_image_0000002532246990.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023852Z&HW-CC-Expire=86400&HW-CC-Sign=557CC1AE52C9947FDD9FF6ED364797402756FBD67C330301F1E5542AEDA8C47E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/3imFkaBjRgmaeiEEtBBaWA/zh-cn_image_0000002532246990.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024044Z&HW-CC-Expire=86400&HW-CC-Sign=0B9ECD1E7AE99DA7541B7840CA0AE3CF5ECE6FC3A48C780E83AB368300F75443)

@@ -1,4 +1,4 @@
-# 组件内转场 (transition)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component
 
 组件内转场主要通过transition属性配置转场参数，在组件插入和删除时显示过渡动效，主要用于容器组件中的子组件插入和删除时，提升用户体验。
@@ -402,7 +402,7 @@ struct TransitionEffectExample1 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/09cd8Kq3ToCMw9wLWmAHBw/zh-cn_image_0000002563207411.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024055Z&HW-CC-Expire=86400&HW-CC-Sign=564D2A1870401F7A9587C8A586FA538D4FF82EC12537F459868E476407F98B48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/09cd8Kq3ToCMw9wLWmAHBw/zh-cn_image_0000002563207411.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024249Z&HW-CC-Expire=86400&HW-CC-Sign=24921D6A068F59918A5D7F4CFC9FF06BBDFBD3AFF5D36F3D745C721548CBCE9B)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
@@ -458,7 +458,7 @@ struct TransitionEffectExample2 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/_KqRRKBHTY6CZsmwJ0KerA/zh-cn_image_0000002532087512.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024055Z&HW-CC-Expire=86400&HW-CC-Sign=3A2EF61387E2A0797E57EA151C394106E26F8931C23FBB934FE5A981E8242FE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/_KqRRKBHTY6CZsmwJ0KerA/zh-cn_image_0000002532087512.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024249Z&HW-CC-Expire=86400&HW-CC-Sign=195A55BE9B7B8C3EFB56491AE6A5C0F2F9290151774C427D200FD06ABDB868CD)
 
 ### 示例3（设置父子组件为transition）
 
@@ -515,4 +515,4 @@ struct TransitionEffectExample3 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/R--1tR8wQsC39Ef6ama3MQ/zh-cn_image_0000002532247448.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024055Z&HW-CC-Expire=86400&HW-CC-Sign=8309879CEFF116D732B21A55FECAD376632E43B70629326DFD2D1E71B572BAB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/R--1tR8wQsC39Ef6ama3MQ/zh-cn_image_0000002532247448.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024249Z&HW-CC-Expire=86400&HW-CC-Sign=D0975AB9922967781E356E367F2A01259B13D37EEB71BF175F6CB1776DAC7E47)

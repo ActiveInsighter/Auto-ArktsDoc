@@ -1,4 +1,4 @@
-# Radio-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio
 
 单选框，提供相应的用户交互选择项。
@@ -292,7 +292,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/kUE8qfsFRRiNPT1X1uorVQ/zh-cn_image_0000002563127101.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023952Z&HW-CC-Expire=86400&HW-CC-Sign=78807CFBB66143EC14122FC8CD64AF01AA8A1A5029BFE01081BD7EAD59FA6EA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/kUE8qfsFRRiNPT1X1uorVQ/zh-cn_image_0000002563127101.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024143Z&HW-CC-Expire=86400&HW-CC-Sign=22339F466879041796972BDA1A7D675BDD93FC93DE448BE3A59B44C13D432DF0)
 
 ### 示例2 （设置选中样式）
 
@@ -348,7 +348,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/d_D2FVBXSziVI8MjTvHFcA/zh-cn_image_0000002563207123.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023952Z&HW-CC-Expire=86400&HW-CC-Sign=8314441C68B99D418E45DBC0DBCC3C70724416A69C78885807986AB6A60B0C7B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/d_D2FVBXSziVI8MjTvHFcA/zh-cn_image_0000002563207123.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024143Z&HW-CC-Expire=86400&HW-CC-Sign=B93B68DD8D68524AE6B3E49D7CDC6311244C5A7401C4CF7EA099AEE2A46EE1BD)
 
 ### 示例3（设置自定义样式）
 
@@ -414,4 +414,4 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/4MDNMxajSFCKHxH1TkbPvg/zh-cn_image_0000002532087224.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023952Z&HW-CC-Expire=86400&HW-CC-Sign=73FFD254A66D5E1A2673355E000EC9D0006A2E307FF91B58D5FC2A3AF5B8713C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/4MDNMxajSFCKHxH1TkbPvg/zh-cn_image_0000002532087224.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024143Z&HW-CC-Expire=86400&HW-CC-Sign=90C5BCA1CC0D93FC46217E6C587B7775ECC4E0B24237850ACB0128EBEB696EFA)

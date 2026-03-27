@@ -1,4 +1,4 @@
-# 隐私遮罩-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-obscured
 
 用于对组件内容进行隐私遮罩处理。
@@ -71,4 +71,4 @@ struct ObscuredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/DayP8fUrSAWyjGeRvhJgmQ/zh-cn_image_0000002563126873.png?HW-CC-KV=V1&HW-CC-Date=20260326T023842Z&HW-CC-Expire=86400&HW-CC-Sign=2EFEC45613A28CAFFE6EE6616FFF5202907845A482EB44EC2DD0231DE77DF169)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/DayP8fUrSAWyjGeRvhJgmQ/zh-cn_image_0000002563126873.png?HW-CC-KV=V1&HW-CC-Date=20260327T024035Z&HW-CC-Expire=86400&HW-CC-Sign=3A33951C96838357107A2231799139AD55912D89E5C7861CC221FC257B47F4D5)

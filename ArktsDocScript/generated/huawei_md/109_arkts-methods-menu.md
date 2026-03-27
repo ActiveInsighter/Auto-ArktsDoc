@@ -1,4 +1,4 @@
-# 文档中心
+# ContextMenu-菜单-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-menu
 
 在页面范围内关闭通过[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu12)属性绑定的菜单。
@@ -66,4 +66,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/oZIRTl2oRHCy2AsJ2_eK3A/zh-cn_image_0000002563127385.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024051Z&HW-CC-Expire=86400&HW-CC-Sign=1F736D2773FF27D6802A546BCD7F853E1F0E7287DC32089E121E220C398123A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/oZIRTl2oRHCy2AsJ2_eK3A/zh-cn_image_0000002563127385.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024243Z&HW-CC-Expire=86400&HW-CC-Sign=E9915BF0CC39171064ADCD251EFBDF67B925BE6B836A55470C03E785E9773957)

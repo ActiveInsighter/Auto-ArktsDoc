@@ -1,4 +1,4 @@
-# 文档中心
+# SymbolSpan-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolspan
 
 作为Text组件的子组件，用于显示图标小符号的组件。
@@ -123,7 +123,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/fIDPcW8-QOSLacGEImveWA/zh-cn_image_0000002563127181.png?HW-CC-KV=V1&HW-CC-Date=20260326T024011Z&HW-CC-Expire=86400&HW-CC-Sign=C95AFB3B177491A1C2469B2BE0D140082086AFC364FA2C3FC4E1A418461F639A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/fIDPcW8-QOSLacGEImveWA/zh-cn_image_0000002563127181.png?HW-CC-KV=V1&HW-CC-Date=20260327T024204Z&HW-CC-Expire=86400&HW-CC-Sign=A77D63FB1F7171857B3C091B7AD8B0CBDC7DC3BE1E7F02D8A846E9BE34710BAE)
 
 ### effectStrategy
 
@@ -272,7 +272,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/NPBJAtV9SZeWxPflzzpIfA/zh-cn_image_0000002563207203.gif?HW-CC-KV=V1&HW-CC-Date=20260326T024011Z&HW-CC-Expire=86400&HW-CC-Sign=233B2D58BF957F82231ABE4A071320E981E5F25C7040DE267504C29B9AB56B3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/NPBJAtV9SZeWxPflzzpIfA/zh-cn_image_0000002563207203.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024204Z&HW-CC-Expire=86400&HW-CC-Sign=81F360149A961C3B0892B9EEBC12F78F02B80F011CC66A5AC75668943438056F)
 
 ### 示例2（设置动态属性）
 
@@ -301,4 +301,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/x1RltCHjTw-p8yLHal7SJA/zh-cn_image_0000002532087304.png?HW-CC-KV=V1&HW-CC-Date=20260326T024011Z&HW-CC-Expire=86400&HW-CC-Sign=07A306FA248D3CCCCFAD975BD7F62EEBEC35649003B79CEC218E1E86B50D7A68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/x1RltCHjTw-p8yLHal7SJA/zh-cn_image_0000002532087304.png?HW-CC-KV=V1&HW-CC-Date=20260327T024204Z&HW-CC-Expire=86400&HW-CC-Sign=027C33199AE125330EC0E04370F07BE16ED5780F29E17B5A8BDA948D88639B67)

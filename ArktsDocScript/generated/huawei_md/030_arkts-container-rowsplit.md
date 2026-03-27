@@ -1,4 +1,4 @@
-# RowSplit-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-rowsplit
 
 将子组件横向布局，并在每个子组件之间插入纵向分割线。
@@ -79,4 +79,4 @@ struct RowSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/fifWM1NYRJKRIZ7F6_EdfA/zh-cn_image_0000002532247046.gif?HW-CC-KV=V1&HW-CC-Date=20260326T023905Z&HW-CC-Expire=86400&HW-CC-Sign=1EE5362E622BEE231CF84E47399D23643D1711F12A813F41A7C8DEB19AAEF946)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/fifWM1NYRJKRIZ7F6_EdfA/zh-cn_image_0000002532247046.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024057Z&HW-CC-Expire=86400&HW-CC-Sign=62379C9C73D334C5F2399308B821EFDC2F657E085A7F4979E397FC5A9B429740)
