@@ -29,6 +29,7 @@ from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from playwright.async_api import async_playwright
 
 
+SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_TARGETS_FILE = "./huawei_targets.txt"
 DEFAULT_OUTPUT_DIR = "./huawei_docs"
 DEFAULT_USER_AGENT = (
@@ -196,6 +197,13 @@ def load_target_urls(targets_file: Path) -> list[str]:
 		seen.add(normalized)
 		target_urls.append(normalized)
 	return target_urls
+
+
+def resolve_path(path_value: str) -> Path:
+	path = Path(path_value).expanduser()
+	if path.is_absolute():
+		return path.resolve()
+	return (SCRIPT_DIR / path).resolve()
 
 
 async def install_render_watchers(page) -> None:
@@ -475,8 +483,8 @@ async def crawl_docs(
 
 def main() -> int:
 	args = parse_args()
-	targets_file = Path(args.targets_file).expanduser().resolve()
-	output_dir = Path(args.output_dir).expanduser().resolve()
+	targets_file = resolve_path(args.targets_file)
+	output_dir = resolve_path(args.output_dir)
 	output_dir.mkdir(parents=True, exist_ok=True)
 
 	asyncio.run(

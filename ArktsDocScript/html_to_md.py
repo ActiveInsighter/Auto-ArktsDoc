@@ -30,6 +30,7 @@ from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 
+SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_INPUT_DIR = Path("./huawei_docs/pages")
 DEFAULT_OUTPUT_DIR = Path("./huawei_md")
 TOC_FILENAME = "目录.md"
@@ -132,6 +133,12 @@ def parse_args() -> argparse.Namespace:
         help="Keep links as Markdown links instead of plain text.",
     )
     return parser.parse_args()
+
+
+def resolve_path(path_value: Path) -> Path:
+    if path_value.is_absolute():
+        return path_value.expanduser().resolve()
+    return (SCRIPT_DIR / path_value.expanduser()).resolve()
 
 
 def prepare_output_dir(output_dir: Path) -> None:
@@ -486,10 +493,31 @@ def build_toc_markdown(results: list[ConvertResult]) -> str:
     return "\n".join(lines).strip() + "\n"
 
 
+def extract_better_title(soup: BeautifulSoup, fallback: str) -> str:
+    selectors = [
+        "h1",
+        ".doc-title",
+        ".document-title",
+        "article h1",
+        "main h1",
+    ]
+    for selector in selectors:
+        el = soup.select_one(selector)
+        if el:
+            text = normalize_whitespace(el.get_text(" ", strip=True))
+            if text and text != "文档中心":
+                return text
+    if soup.title:
+        text = normalize_whitespace(soup.title.get_text(" ", strip=True))
+        if text and text != "文档中心":
+            return text
+    return fallback
+
+
 def write_markdown(html_path: Path, output_dir: Path, preserve_links: bool) -> ConvertResult:
     raw_html = html_path.read_text(encoding="utf-8", errors="replace")
     soup = BeautifulSoup(raw_html, "lxml")
-    title = normalize_whitespace(soup.title.get_text(" ", strip=True)) if soup.title else html_path.stem
+    title = extract_better_title(soup, html_path.stem)
     canonical = soup.select_one('link[rel="canonical"]')
     base_url = canonical.get("href") if canonical else None
     container = extract_main_container(soup)
@@ -524,11 +552,13 @@ def iter_html_files(input_dir: Path, single: Path | None) -> Iterable[Path]:
 
 def main() -> int:
     args = parse_args()
-    input_dir = args.input_dir.expanduser().resolve()
-    output_dir = args.output_dir.expanduser().resolve()
+    input_dir = resolve_path(args.input_dir)
+    output_dir = resolve_path(args.output_dir)
     prepare_output_dir(output_dir)
 
-    html_files = list(iter_html_files(input_dir, args.single))
+    single = resolve_path(args.single) if args.single is not None else None
+
+    html_files = list(iter_html_files(input_dir, single))
     if not html_files:
         raise FileNotFoundError(f"No HTML files found in {input_dir}")
 
