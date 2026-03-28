@@ -1,4 +1,4 @@
-# 文档中心
+# 关键帧动画 (keyframeAnimateTo)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-keyframeanimateto
 
 在[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中提供keyframeAnimateTo接口来指定若干个关键帧状态，实现分段的动画。同属性动画，布局类改变宽高的动画，内容都是直接到终点状态，例如文字、[Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)的内容等，如果要内容跟随宽高变化，可以使用[renderFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-renderfit)属性配置。
@@ -111,4 +111,4 @@ struct KeyframeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cGHb-WMWQjuKDM0wqZib3w/zh-cn_image_0000002563867149.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023243Z&HW-CC-Expire=86400&HW-CC-Sign=7DB2EAA92BB692A7C9C098EBE543D39E165999B7A0F230F76A537F8035380000)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cGHb-WMWQjuKDM0wqZib3w/zh-cn_image_0000002563867149.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073427Z&HW-CC-Expire=86400&HW-CC-Sign=24BA6273B3F838F48C3CAD60A2A265B44D04E4C6AE4D55C177BB64CBF56E6B8F)

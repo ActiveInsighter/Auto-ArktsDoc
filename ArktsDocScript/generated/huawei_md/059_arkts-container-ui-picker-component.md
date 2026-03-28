@@ -1,4 +1,4 @@
-# UIPickerComponent-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# UIPickerComponent
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-ui-picker-component
 
 UIPickerComponent容器是用于实现用户选择操作的组件。它支持从一组有限的选项中让用户进行单选，可应用于时间选择、日期选择、地区选择、状态选择等多种场景。UIPickerComponent容器的显示效果为立体滚轮样式，支持选项按需定制，包括文本类型、图片类型和图文组合类型。
@@ -285,7 +285,7 @@ struct UIPickerComponentAttrsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Pd80CeWiQvaTh69UQLtT7A/zh-cn_image_0000002533066944.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=3CD739C6AF230C9F3C9946C2E02901F57FFC4601C6C78AEB521DD9EDB050E251)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Pd80CeWiQvaTh69UQLtT7A/zh-cn_image_0000002533066944.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=7910DACC037A30F356051D332FCE0DE300515E53024C9A3B08B5CF1FC4A426DE)
 
 ### 示例2（设置事件回调）
 
@@ -330,7 +330,7 @@ struct UIPickerComponentEventsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/CUPbiIo4TwqbakgbpoOafg/zh-cn_image_0000002563866847.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=7C6D144AA904436035239F8BBDF3460CE0450BE8EA17A74584031C3D759AAD45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/CUPbiIo4TwqbakgbpoOafg/zh-cn_image_0000002563866847.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=BCC9FFE22930D592CEFB42B0604AA0578AFD6495A63198DE9321F71A07721DBF)
 
 ### 示例3（设置选中项索引值）
 
@@ -380,7 +380,7 @@ struct UIPickerComponentSelectedIndexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/hqeO1m8mQ7--NnmnpJn5Hg/zh-cn_image_0000002563786893.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=5A1FEB5389164E6BDB9C8EDCFBC141184E2C91779F591ED50444D844593C7F9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/hqeO1m8mQ7--NnmnpJn5Hg/zh-cn_image_0000002563786893.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=D68A53A711F154A46E9214D269AC443F28020C2EF539E0F4177267689E55ECE8)
 
 ### 示例4（设置选中项指示器）
 
@@ -678,7 +678,7 @@ struct UIPickerComponentIndicatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/339p9Q4KRD2NIbQ4KEpe-Q/zh-cn_image_0000002532906998.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=E3F3C57998C96D0192B059F3A334042EBB69B09A38647B6B2F5CA3120167D13D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/339p9Q4KRD2NIbQ4KEpe-Q/zh-cn_image_0000002532906998.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=56EE4B2E6FC54B8C987EA5F5CB1F875344FF5A973551F0E808DB8AAF97651A55)
 
 ### 示例5（自定义月份选择器）
 
@@ -729,7 +729,7 @@ struct MonthUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/zAJWbCpHTP23np1A5GtuYQ/zh-cn_image_0000002533066946.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=A05B693869527CE0BB83DE6703BC50C9B98D67CD5A1DCE08F472AD86CED58B80)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/zAJWbCpHTP23np1A5GtuYQ/zh-cn_image_0000002533066946.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=097CE53D4EEEC9BA8406D1E0186338EACA893E07607A7844E4E6396A388071D3)
 
 ### 示例6（自定义地区选择器）
 
@@ -843,7 +843,7 @@ struct RegionUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/P4JQkZ6uSiSWEiThOSp2jA/zh-cn_image_0000002563866849.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=5862DF159470F3A12F994F737EE96FA5A783E888F551AF0064F4CCBE4DF6A36A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/P4JQkZ6uSiSWEiThOSp2jA/zh-cn_image_0000002563866849.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=9D6495B6878A33F70F44E38AC458B92719545850F5DD0F1A3DCF8D3A7B3653A8)
 
 ### 示例7（自定义选项类型）
 
@@ -939,7 +939,7 @@ struct UIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/YI7FREAHR_Ow8sFefTJeLw/zh-cn_image_0000002563786895.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=BC81E2D34B08289690B85E95F5FADA47BD70EB0A729DC078584E4881A5ADA099)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/YI7FREAHR_Ow8sFefTJeLw/zh-cn_image_0000002563786895.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=B9A77048F809A8EBE9A7859EA63F8E7090B8A0BE4FC06C1D1F88FF3AE795BFA6)
 
 ### 示例8（自定义时间选择器）
 
@@ -1341,4 +1341,4 @@ struct TimeUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6U55RE9zTWu6E7wsEAAJFQ/zh-cn_image_0000002532907000.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=0BAABE54AF53C734C48402E8D97AB1C1041700DDF73CB97EE4AF1B952E54FC8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6U55RE9zTWu6E7wsEAAJFQ/zh-cn_image_0000002532907000.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=7E7A84A9849BB244E62FCD4EE5CC94A2713E8A33BA28B271DA2FF6F60C167B90)

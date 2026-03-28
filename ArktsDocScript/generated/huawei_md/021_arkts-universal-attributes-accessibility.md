@@ -1,4 +1,4 @@
-# 无障碍属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 无障碍属性
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-accessibility
 
 设置组件的无障碍属性和事件，以充分利用无障碍功能。
@@ -854,4 +854,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/LEHgATd5RqahewvGlWpfsw/zh-cn_image_0000002563786755.png?HW-CC-KV=V1&HW-CC-Date=20260328T023045Z&HW-CC-Expire=86400&HW-CC-Sign=4858685E59C85A57E5DEBD737D8AF49A7653FB3E23AEC202857D7D090CAB7EAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/LEHgATd5RqahewvGlWpfsw/zh-cn_image_0000002563786755.png?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=64735E1A7C47E0201F5676978540FDB19EB095DEA1597CA9187F145AB5884E08)

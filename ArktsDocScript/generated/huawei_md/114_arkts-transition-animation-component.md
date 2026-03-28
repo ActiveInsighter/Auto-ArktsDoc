@@ -1,4 +1,4 @@
-# 组件内转场 (transition)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 组件内转场 (transition)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component
 
 组件内转场主要通过transition属性配置转场参数，在组件插入和删除时显示过渡动效，主要用于容器组件中的子组件插入和删除时，提升用户体验。
@@ -402,7 +402,7 @@ struct TransitionEffectExample1 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/LiLTiNDUQjKIrOoMoow0Rw/zh-cn_image_0000002563787197.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023246Z&HW-CC-Expire=86400&HW-CC-Sign=D7DDC0DDDDE78325BCDFD275643054BD0DB52BCA7D4886823826909B097258E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/LiLTiNDUQjKIrOoMoow0Rw/zh-cn_image_0000002563787197.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073323Z&HW-CC-Expire=86400&HW-CC-Sign=CEDA9D5C150A90D2D62BF43EB0F4EFA8523F6298CDD9DE624BE6135C1065FB9E)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
@@ -458,7 +458,7 @@ struct TransitionEffectExample2 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/q6TbYlMZQvyUjcl7fD1oLQ/zh-cn_image_0000002532907302.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023246Z&HW-CC-Expire=86400&HW-CC-Sign=0D55F2043D6A309BE50D58C17F49D81C667C10DD26E966C4FF492299340D83B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/q6TbYlMZQvyUjcl7fD1oLQ/zh-cn_image_0000002532907302.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073323Z&HW-CC-Expire=86400&HW-CC-Sign=29E7EE95646B1B0AF9BC9787F8F5D3133167EBAEA219DFA7F53AF8F5E0F1D4D4)
 
 ### 示例3（设置父子组件为transition）
 
@@ -515,4 +515,4 @@ struct TransitionEffectExample3 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/r7-vqnEpT0SzPaciaPO9Kw/zh-cn_image_0000002533067250.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023246Z&HW-CC-Expire=86400&HW-CC-Sign=D8216B630D3B916955BA1517C2D6B24E652B80CFF86CF62B11A417F3F8415ECC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/r7-vqnEpT0SzPaciaPO9Kw/zh-cn_image_0000002533067250.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073323Z&HW-CC-Expire=86400&HW-CC-Sign=34F470C2A952E5DB3D975150D26D72CA473A96312474C2242DFF8C9EA21ECDE5)

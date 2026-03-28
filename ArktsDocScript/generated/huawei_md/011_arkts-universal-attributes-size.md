@@ -1,4 +1,4 @@
-# 尺寸设置-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 尺寸设置
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size
 
 设置组件的宽高、边距。
@@ -405,7 +405,7 @@ struct SizeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/xAHkuOnvTfylMAFcIxYPlQ/zh-cn_image_0000002532906786.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=243AAAE04C17FB3604FB65FDE1668C4962CD1CB6CF5F34FC6FBC08E4BB1B88D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/xAHkuOnvTfylMAFcIxYPlQ/zh-cn_image_0000002532906786.png?HW-CC-KV=V1&HW-CC-Date=20260328T073216Z&HW-CC-Expire=86400&HW-CC-Sign=5C0A2A81A025713D394D5FDC4F6C8A95CCC8BAC010F90F361E4870DC332AEBCD)
 
 ### 示例2（LocalizedPadding和LocalizedMargin类型的使用）
 
@@ -456,11 +456,11 @@ struct SizeExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/gSwSqTrUT0OUdjMEVDz7wg/zh-cn_image_0000002533066734.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=795B933EB6EA02024866D08097A1F49969BBFE7E4A7B9389E30F959F5ACB4203)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/gSwSqTrUT0OUdjMEVDz7wg/zh-cn_image_0000002533066734.png?HW-CC-KV=V1&HW-CC-Date=20260328T073216Z&HW-CC-Expire=86400&HW-CC-Sign=0D6784077F138A82B5BFFF7A97DCB5E0C4CCEE56A31B69F9AE2B9A189AA43035)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/aVRs6LdgRDOb6VbxoiqJ_g/zh-cn_image_0000002563866637.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=9CDE3035AFFE9460DF55931558D72C6D218024CA2F93CE76BBE1350591E47B92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/aVRs6LdgRDOb6VbxoiqJ_g/zh-cn_image_0000002563866637.png?HW-CC-KV=V1&HW-CC-Date=20260328T073216Z&HW-CC-Expire=86400&HW-CC-Sign=E33175AFAA167525E3BD703DC4FD6A73FD2355026203B5E79B3C66DA0200BAE2)
 
 ### 示例3（设置组件级安全区）
 
@@ -493,7 +493,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/CHFYIcFER5SRqupMcAWWtQ/zh-cn_image_0000002563786683.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=BCCF316D70A86921FB63D346D45428590F976C3BAF5121FEAAD60A8761510CD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/CHFYIcFER5SRqupMcAWWtQ/zh-cn_image_0000002563786683.png?HW-CC-KV=V1&HW-CC-Date=20260328T073216Z&HW-CC-Expire=86400&HW-CC-Sign=EB9BBAFD504CD7B5AA3C12837CD8A732C3E59B394AA47D2FAED5748E88075F80)
 
 ### 示例4（使用attributeModifier动态设置安全区）
 
@@ -537,7 +537,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/sBU-iEc6SwOEqGG_STrrDg/zh-cn_image_0000002532906788.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=75B5B02849F6C6FFB4D058319CEC22FAF8C487C273E569C7005956E728E70464)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/sBU-iEc6SwOEqGG_STrrDg/zh-cn_image_0000002532906788.png?HW-CC-KV=V1&HW-CC-Date=20260328T073216Z&HW-CC-Expire=86400&HW-CC-Sign=4FA9D59426AD29924FE3DCD7C1678C77A2D05AFFF11022E1C6E21F3846D6C9C8)
 
 ### 示例5（设置布局策略）
 
@@ -591,4 +591,4 @@ struct LayoutPolicyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/QFe24ZB1Tzmgtqo-qZYZTg/zh-cn_image_0000002533066736.jpg?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=8E469C6DE2AB6D02FA745C989F51163FB12FEE5624B60A745359062FEF9AF3A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/QFe24ZB1Tzmgtqo-qZYZTg/zh-cn_image_0000002533066736.jpg?HW-CC-KV=V1&HW-CC-Date=20260328T073216Z&HW-CC-Expire=86400&HW-CC-Sign=7447A0E17274184AC208BFE66BD9C36E7732E4BD1234B284D4836DD13A2582AD)

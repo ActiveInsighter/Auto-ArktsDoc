@@ -1,4 +1,4 @@
-# 文档中心
+# SVG标签说明
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-svg
 
 SVG（Scalable Vector Graphics）是可缩放矢量图形，它是一种基于XML（可扩展标记语言）的图形格式，用于描述二维图形和图像。[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)组件支持的SVG范围，为SVG1.1规范的部分功能。支持的标签以及属性如下：
@@ -107,7 +107,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/gpXlKiBOQLSAgVFYlqtSsg/zh-cn_image_0000002563866975.png?HW-CC-KV=V1&HW-CC-Date=20260328T023218Z&HW-CC-Expire=86400&HW-CC-Sign=777E118A177AB26AC51F7E4EBCEFAA0EE1678F7D5D00D791CF77507A4FDB75A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/gpXlKiBOQLSAgVFYlqtSsg/zh-cn_image_0000002563866975.png?HW-CC-KV=V1&HW-CC-Date=20260328T073400Z&HW-CC-Expire=86400&HW-CC-Sign=6458AD744E72405C3BA1F7389E9EB6630C263165399C0CB72CF95555AED23AA4)
 
 ## 图形效果
 

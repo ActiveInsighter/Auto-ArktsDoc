@@ -1,4 +1,4 @@
-# 文档中心
+# ArcScrollBar
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-arcscrollbar
 
 弧形滚动条组件ArcScrollBar，用于配合可滚动组件使用，如[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)。
@@ -85,4 +85,4 @@ struct ArcScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Er2RFM7mRaKer7RyM5i9KA/zh-cn_image_0000002563786849.png?HW-CC-KV=V1&HW-CC-Date=20260328T023118Z&HW-CC-Expire=86400&HW-CC-Sign=B38F33BCF2F506CA84F842D74C46E0A02C37560E21F638329730FF265C0F558B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Er2RFM7mRaKer7RyM5i9KA/zh-cn_image_0000002563786849.png?HW-CC-KV=V1&HW-CC-Date=20260328T073259Z&HW-CC-Expire=86400&HW-CC-Sign=33B017D1A48663497F26F681EFBB301991F03F1EF63A26504361B9C5DF53E01A)

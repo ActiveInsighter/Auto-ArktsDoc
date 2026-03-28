@@ -1,4 +1,4 @@
-# CalendarPicker-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# CalendarPicker
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker
 
 日历选择器组件，提供下拉日历弹窗，可以让用户选择日期。
@@ -217,11 +217,11 @@ onChange(callback: Optional<Callback<Date>>)
 该示例通过calendarPicker实现了日历选择器组件，提供下拉日历弹窗。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct CalendarPickerExample {
   private selectedDate: Date = new Date('2024-03-05');
+
   build() {
     Column() {
       Column() {
@@ -233,13 +233,14 @@ struct CalendarPickerExample {
             console.info(`CalendarPicker onChange: ${value.toString()}`);
           })
       }.alignItems(HorizontalAlign.End).width("100%")
+
       Text('日历日期选择器').fontSize(30)
     }.width('100%').margin({ top: 350 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/PSQafxFNT0CeNfrto2yNjQ/zh-cn_image_0000002533066948.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=21DB25720DD78F5B58FF6170BCFF4A66C43085B07CED79AD24775687133D36A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/PSQafxFNT0CeNfrto2yNjQ/zh-cn_image_0000002533066948.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=42AF56EFAD2AC18334F978C0359D081157C917D1101855CAED90A0F6C8BC5AE5)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -248,13 +249,13 @@ struct CalendarPickerExample {
 从API version 18开始，[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)中新增了start、end属性。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct CalendarPickerExample {
   private selectedDate: Date = new Date('2025-01-15');
   private startDate: Date = new Date('2025-01-05');
   private endDate: Date = new Date('2025-01-25');
+
   build() {
     Column() {
       Column() {
@@ -271,7 +272,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/67yhTYqZQHKhjLkk9nvuJg/zh-cn_image_0000002563866851.png?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=79D8CA94C752C5B715077B03DCCA10A6630B6A8E79FF4D22FB696E638D03F16A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/67yhTYqZQHKhjLkk9nvuJg/zh-cn_image_0000002563866851.png?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=CC668A33404EACF1D338F2DBF5EEFDE314E7AAF6063CCD6D927E7819DCEEA83F)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -280,7 +281,6 @@ struct CalendarPickerExample {
 从API version 19开始，新增了[markToday](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#marktoday19)接口，[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)中新增了disabledDateRange属性。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct CalendarPickerExample {
@@ -291,6 +291,7 @@ struct CalendarPickerExample {
     { start: new Date('2025-01-19'), end: new Date('2025-01-19') },
     { start: new Date('2025-01-22'), end: new Date('2025-01-25') }
   ];
+
   build() {
     Column() {
       CalendarPicker({ disabledDateRange: this.disabledDateRange })
@@ -304,4 +305,4 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/zNYcggFUQnqBCn6fnAhwXg/zh-cn_image_0000002563786897.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023135Z&HW-CC-Expire=86400&HW-CC-Sign=3935172F45AF1A5D0C3A9BEC037E3168EC250DC0AA7DA0B2C5A2C80C63D3E9D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/zNYcggFUQnqBCn6fnAhwXg/zh-cn_image_0000002563786897.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073317Z&HW-CC-Expire=86400&HW-CC-Sign=226E175FE4BA68292F03AC66E527ADB413922FC50027B0A116FB04732807735E)

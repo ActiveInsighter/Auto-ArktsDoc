@@ -1,4 +1,4 @@
-# 文档中心
+# Divider
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-divider
 
 提供分割线组件，分割不同内容块/内容元素。
@@ -184,7 +184,7 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0jdWmVBwQJqKL5YXJPQVOA/zh-cn_image_0000002533067148.png?HW-CC-KV=V1&HW-CC-Date=20260328T023236Z&HW-CC-Expire=86400&HW-CC-Sign=77FC45C8F3D529148AE1A95933002132C5E1479BE7F47FF87781D09DEE57E67C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0jdWmVBwQJqKL5YXJPQVOA/zh-cn_image_0000002533067148.png?HW-CC-KV=V1&HW-CC-Date=20260328T073419Z&HW-CC-Expire=86400&HW-CC-Sign=E6ED2780AC5EB4785A4B09891C08E7DEC451D4E7FAB4AC9EF6039E3A2DBE1C64)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -222,4 +222,4 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/sZOh9T0FT3KGGTFXTDxuNA/zh-cn_image_0000002563867051.png?HW-CC-KV=V1&HW-CC-Date=20260328T023236Z&HW-CC-Expire=86400&HW-CC-Sign=B7D4EB8FB95681CC2277B190212ABCA3117FD8CBE325EAA348A1FF403FAA4748)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/sZOh9T0FT3KGGTFXTDxuNA/zh-cn_image_0000002563867051.png?HW-CC-KV=V1&HW-CC-Date=20260328T073419Z&HW-CC-Expire=86400&HW-CC-Sign=0F61AEB07ED6989E214B6D11267290E5A363C1AE6619AE8727E3AB10BA8CE2F2)

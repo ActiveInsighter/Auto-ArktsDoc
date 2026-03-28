@@ -1,4 +1,4 @@
-# 文档中心
+# ScrollBar
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-scrollbar
 
 滚动条组件ScrollBar，用于配合可滚动组件使用，如[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)。
@@ -108,12 +108,12 @@ scrollBarColor(color: Optional<ColorMetrics>)
 该示例为ScrollBar组件有子节点时的滚动条样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ScrollBarExample {
   private scroller: Scroller = new Scroller();
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
   build() {
     Column() {
       Stack({ alignContent: Alignment.End }) {
@@ -136,7 +136,6 @@ struct ScrollBarExample {
         .width('90%')
         .scrollBar(BarState.Off)
         .scrollable(ScrollDirection.Vertical)
-
         ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto }) {
           Text()
             .width(20)
@@ -150,7 +149,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/TNNTTb04SXOgMqgJf0oxjQ/zh-cn_image_0000002563786843.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023117Z&HW-CC-Expire=86400&HW-CC-Sign=FF0238BF38B68C467469E231FDCECAA36C609FF1AA631AED518E5B740607633C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/TNNTTb04SXOgMqgJf0oxjQ/zh-cn_image_0000002563786843.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073257Z&HW-CC-Expire=86400&HW-CC-Sign=5601B6CCC94311305EEFE16A443DCC11A4878EACCF0106753F987A731C74544C)
 
 ## 示例2（不设置子节点）
 
@@ -158,14 +157,12 @@ struct ScrollBarExample {
 
 ```typescript
 import { ColorMetrics } from '@kit.ArkUI'
-
 @Entry
 @Component
 struct ScrollBarExample {
   private scroller: Scroller = new Scroller();
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   @State scrollBarColor: ColorMetrics = ColorMetrics.rgba(24, 35, 48, 0.4);
-
   build() {
     Column() {
       Stack({ alignContent: Alignment.End }) {
@@ -188,7 +185,6 @@ struct ScrollBarExample {
         .width('90%')
         .scrollBar(BarState.Off)
         .scrollable(ScrollDirection.Vertical)
-
         ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto })
           .scrollBarColor(this.scrollBarColor)
       }
@@ -197,7 +193,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/2VZ9dSElQsit9540Ztn0cg/zh-cn_image_0000002532906948.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023117Z&HW-CC-Expire=86400&HW-CC-Sign=469072119D796B478DA318452BBCB96294E1C7D8FE2A19A0F4DEF276F115610E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/2VZ9dSElQsit9540Ztn0cg/zh-cn_image_0000002532906948.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073257Z&HW-CC-Expire=86400&HW-CC-Sign=829A06D812094EAB135B4A7AC35CA77003F6BF80449B818AA520006A32F1BCD1)
 
 ## 示例3（支持嵌套滚动）
 
@@ -205,14 +201,12 @@ struct ScrollBarExample {
 
 ```typescript
 import { ColorMetrics } from '@kit.ArkUI'
-
 @Entry
 @Component
 struct StickyNestedScroll {
   listScroller: Scroller = new Scroller();
   @State array: number[] = [];
   @State scrollBarColor: ColorMetrics = ColorMetrics.rgba(24, 35, 48, 0.4);
-
   @Styles
   listCard() {
     .backgroundColor(Color.White)
@@ -220,7 +214,6 @@ struct StickyNestedScroll {
     .width('100%')
     .borderRadius(12)
   }
-
   build() {
     Stack() {
       Scroll() {
@@ -253,14 +246,12 @@ struct StickyNestedScroll {
       .scrollBar(BarState.Off)
       .width('100%')
       .height('100%')
-
       ScrollBar({ scroller: this.listScroller })
         .position({ right: 0 })
         .enableNestedScroll(true)
         .scrollBarColor(this.scrollBarColor)
     }
   }
-
   aboutToAppear() {
     for (let i = 0; i < 15; i++) {
       this.array.push(i);
@@ -269,4 +260,4 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/6IPH-56oQU2oRTV1m8KITw/zh-cn_image_0000002533066896.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023117Z&HW-CC-Expire=86400&HW-CC-Sign=46E0B22EB82E73B187F070255E9CB845E70ADB411766C43C106D3C4D070714D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/6IPH-56oQU2oRTV1m8KITw/zh-cn_image_0000002533066896.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073257Z&HW-CC-Expire=86400&HW-CC-Sign=B2662254C72E9F5728E1A8442010E3F2C761AFDE258A6D7EB4DE18D40782E497)

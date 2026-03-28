@@ -1,4 +1,4 @@
-# 显式动画 (animateTo)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 显式动画 (animateTo)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation
 
 提供全局animateTo显式动画接口来指定由于闭包代码导致的状态变化插入过渡动效。同属性动画，对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-components-canvas-canvas)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-renderfit#renderfit)属性进行配置。
@@ -127,7 +127,6 @@ animateTo(value: AnimateParam, event: () => void): void
 该示例通过在onAppear方法中创建组件出现时的动画效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AnimateToExample {
@@ -135,6 +134,7 @@ struct AnimateToExample {
   @State heightSize: number = 100;
   @State rotateAngle: number = 0;
   private flag: boolean = true;
+
   build() {
     Column() {
       Button('change size')
@@ -143,7 +143,7 @@ struct AnimateToExample {
         .margin(30)
         .onClick(() => {
           if (this.flag) {
-            // 建议使用this.getUIContext()?.animateTo()
+
             animateTo({
               duration: 2000,
               curve: Curve.EaseOut,
@@ -157,7 +157,7 @@ struct AnimateToExample {
               this.heightSize = 60;
             })
           } else {
-            // 建议使用this.getUIContext()?.animateTo()
+
             animateTo({}, () => {
               this.widthSize = 250;
               this.heightSize = 100;
@@ -169,13 +169,12 @@ struct AnimateToExample {
         .margin(50)
         .rotate({ x: 0, y: 0, z: 1, angle: this.rotateAngle })
         .onAppear(() => {
-          // 组件出现时开始做动画
-          // 建议使用this.getUIContext()?.animateTo()
+
           animateTo({
             duration: 1200,
             curve: Curve.Friction,
             delay: 500,
-            iterations: -1, // 设置-1表示动画无限循环
+            iterations: -1,
             playMode: PlayMode.Alternate,
             expectedFrameRateRange: {
               min: 10,
@@ -187,9 +186,9 @@ struct AnimateToExample {
           })
         })
         .onClick(() => {
-          // 建议使用this.getUIContext()?.animateTo()
+
           animateTo({ duration: 0 }, () => {
-            // this.rotateAngle之前为90，在duration为0的动画中修改属性，可以停止该属性之前的动画，按新设置的属性显示
+
             this.rotateAngle = 0;
           })
         })
@@ -198,21 +197,21 @@ struct AnimateToExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/kIhum14_Sm6jZTadPpP9-Q/zh-cn_image_0000002532907298.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023242Z&HW-CC-Expire=86400&HW-CC-Sign=A6573F3DD10F3FC63CCEF26FD31CB17B85333A67871240BD543B8AE05DDEAE3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/kIhum14_Sm6jZTadPpP9-Q/zh-cn_image_0000002532907298.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073426Z&HW-CC-Expire=86400&HW-CC-Sign=E995F380C10108278973DC7F0BA7CFAD21F9ECD7620E1BA888F1FEBBC28B565C)
 
 ### 示例2（动画执行结束后组件消失）
 
 该示例主要演示如何实现在动画执行结束后组件消失。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AttrAnimationExample {
   @State heightSize: number = 100;
   @State isShow: boolean= true;
   @State count: number= 0;
-  private isToBottom: boolean = true; // 向下
+  private isToBottom: boolean = true;
+
   build() {
     Column() {
       if (this.isShow) {
@@ -221,7 +220,7 @@ struct AttrAnimationExample {
           .height(this.heightSize)
           .backgroundColor('blue')
           .onClick(() => {
-            // 建议使用this.getUIContext()?.animateTo()
+
             animateTo({
               duration: 2000,
               curve: Curve.EaseOut,
@@ -229,7 +228,7 @@ struct AttrAnimationExample {
               playMode: PlayMode.Normal,
               onFinish: () => {
                 this.count--;
-                if (this.count == 0 && !this.isToBottom) { // 组件只有在向下做完动画才会消失
+                if (this.count == 0 && !this.isToBottom) {
                   this.isShow = false;
                 }
               }
@@ -250,4 +249,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/CnUQBUafRr-ZI4WS8cWhYQ/zh-cn_image_0000002533067246.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023242Z&HW-CC-Expire=86400&HW-CC-Sign=8F4187B4DD1BFF3BFB0219614FB5F13DCD92C16295C4ED44DCA28E4255A9FFE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/CnUQBUafRr-ZI4WS8cWhYQ/zh-cn_image_0000002533067246.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073426Z&HW-CC-Expire=86400&HW-CC-Sign=EA0F311BBAD2475876B3D6A1F1424C07F7A1F9155DA734D260581A7CB029E5F8)

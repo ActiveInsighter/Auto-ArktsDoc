@@ -1,4 +1,4 @@
-# GridCol-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# GridCol
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol
 
 栅格子组件，必须作为栅格容器组件([GridRow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow))的子组件使用。
@@ -110,8 +110,8 @@ order(value: number | GridColColumnOption)
 
 用于自定义指定在不同宽度设备类型上，栅格子组件占据的栅格数量单位。
 
-- API version 20之前，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取默认值1。 ```typescript span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8} span: {md:4, lg:8} // 等于配置 span: {xs:1, sm:1, md:4, lg:8, xl:8, xxl:8} ```
-- API version 20及以后，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取已配置的更大断点的列数补全未配置的列数。 ```typescript span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8} span: {md:4, lg:8} // 等于配置 span: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8} ```
+- API version 20之前，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取默认值1。 ```typescript span: {xs:2, md:4, lg:8} span: {md:4, lg:8} ```
+- API version 20及以后，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取已配置的更大断点的列数补全未配置的列数。 ```typescript span: {xs:2, md:4, lg:8} span: {md:4, lg:8} ```
 - 建议手动配置不同断点下GridCol组件所占列数，避免默认补全列数的布局效果不符合预期。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
@@ -138,13 +138,13 @@ order(value: number | GridColColumnOption)
 GridCol的基本用法示例。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct GridColExample {
   @State bgColors: Color[] =
     [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
   @State currentBp: string = 'unknown'
+
   build() {
     Column() {
       GridRow({
@@ -175,4 +175,4 @@ struct GridColExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iPmiuDwpSLeXaakFNo9KcQ/zh-cn_image_0000002533066846.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=B75FE735761D614B0F36A90F8EE4AFB49C413CF87DA39C334E59059764BED364)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iPmiuDwpSLeXaakFNo9KcQ/zh-cn_image_0000002533066846.png?HW-CC-KV=V1&HW-CC-Date=20260328T073234Z&HW-CC-Expire=86400&HW-CC-Sign=85DF4F456F193BDAC08F96D150457C880A159FBD708F2ACCF3EAAC50DDC6016E)

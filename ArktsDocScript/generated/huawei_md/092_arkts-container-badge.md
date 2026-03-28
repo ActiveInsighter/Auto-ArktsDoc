@@ -1,4 +1,4 @@
-# Badge-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Badge
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-badge
 
 信息标记组件，可以附加在单个组件上用于信息提醒的容器组件。
@@ -302,7 +302,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/l5pyLIkzT3SMzUn07bxaUw/zh-cn_image_0000002563787073.png?HW-CC-KV=V1&HW-CC-Date=20260328T023220Z&HW-CC-Expire=86400&HW-CC-Sign=FDF1338583CBBA9EA823B74BA828CEF40579680EA5CDA07B13CA53A5EFB2CC6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/l5pyLIkzT3SMzUn07bxaUw/zh-cn_image_0000002563787073.png?HW-CC-KV=V1&HW-CC-Date=20260328T073403Z&HW-CC-Expire=86400&HW-CC-Sign=C1DD8C9000AF893BDC0B00D18F1B67B6044E75B7829727AF030342198189B823)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -339,7 +339,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/96z7WjfBRUifokVK2WVrqg/zh-cn_image_0000002532907178.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023220Z&HW-CC-Expire=86400&HW-CC-Sign=20D7D792B2D1429FC2CF1AD4279130574ED6F7E4FDDF6B23BB0D4F74448A5CAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/96z7WjfBRUifokVK2WVrqg/zh-cn_image_0000002532907178.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073403Z&HW-CC-Expire=86400&HW-CC-Sign=F2089763A64545D9DB0B74C3C0A72727478BC0C0DBA3CE7EF122237C1FD5714F)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -388,4 +388,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/xoAz_sStRkCLIbugXLTZCQ/zh-cn_image_0000002533067126.png?HW-CC-KV=V1&HW-CC-Date=20260328T023220Z&HW-CC-Expire=86400&HW-CC-Sign=C800DBF5D6BE366EF4A9473811C67787ED41CADA1A0E28EFC376EF5700AED1EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/xoAz_sStRkCLIbugXLTZCQ/zh-cn_image_0000002533067126.png?HW-CC-KV=V1&HW-CC-Date=20260328T073403Z&HW-CC-Expire=86400&HW-CC-Sign=A64826058AB1746A1F6E1F55B073E2F2C6C425A8F05E261CF1E3E064DE704BA0)

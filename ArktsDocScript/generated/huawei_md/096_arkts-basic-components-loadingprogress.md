@@ -1,4 +1,4 @@
-# 文档中心
+# LoadingProgress
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress
 
 用于显示加载动效的组件。
@@ -134,7 +134,7 @@ struct LoadingProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/O4bMkbIFTn2jGo5gYqfokQ/zh-cn_image_0000002533067134.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023227Z&HW-CC-Expire=86400&HW-CC-Sign=8944DE44675038B532020E6BE86248CD1158AF64F4DE089DE333A611F11E3156)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/O4bMkbIFTn2jGo5gYqfokQ/zh-cn_image_0000002533067134.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073409Z&HW-CC-Expire=86400&HW-CC-Sign=97D968ACA9F7DAF8DD30B7872009394F1D1E9535385AD1DE1438337E27C177F2)
 
 ### 示例2（设置定制内容区）
 
@@ -284,4 +284,4 @@ struct LoadingProgressDemoExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/6k_r3iq1R0mh_IKUlHU3zQ/zh-cn_image_0000002563867037.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023227Z&HW-CC-Expire=86400&HW-CC-Sign=EFCE61661C9092AA265123C7017F53B12487389B415A5233809D96397B831BFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/6k_r3iq1R0mh_IKUlHU3zQ/zh-cn_image_0000002563867037.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073409Z&HW-CC-Expire=86400&HW-CC-Sign=EAE479235C90EC2B1A9F22DE830E2CA0C45F073154D8DF4B02022658788B6E15)

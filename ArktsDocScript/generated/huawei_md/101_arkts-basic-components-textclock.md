@@ -1,4 +1,4 @@
-# TextClock-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# TextClock
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textclock
 
 TextClock组件通过文本将当前系统时间显示在设备上。支持不同时区的时间显示，最高精度到秒级。
@@ -446,7 +446,7 @@ struct Second {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/M0qFp6jkSoOC2UuaWsgnkw/zh-cn_image_0000002532907194.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=4728959296044A69FCC6B58DC1887383F95D1B60640EFAB168644DED068B2FD8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/M0qFp6jkSoOC2UuaWsgnkw/zh-cn_image_0000002532907194.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=30435C82A02BD7D7F2CEDB78F98E57859FFF60C625FCF1E5FE06F78A1DAAC04F)
 
 ### 示例2（设定文本阴影样式）
 
@@ -491,7 +491,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/TVIDUBTPQjec1xto4P3-Mg/zh-cn_image_0000002533067142.png?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=745598E38CFF73FF529452805F31E14097C3EAE88E8E4F71F6FB5B3A465F7579)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/TVIDUBTPQjec1xto4P3-Mg/zh-cn_image_0000002533067142.png?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=274D1A3DEF571F44110BA7752E5CDE71AB4D47312696AA466FF8EF563F41FF3E)
 
 ### 示例3（设定自定义内容区）
 
@@ -575,7 +575,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/vPJtfCCoRyKNH_EOxxxPdg/zh-cn_image_0000002563867045.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=EAF0EB5BC4091B04E5AA6D2C5E546D193850557912214EE74F5BB74006EE16B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/vPJtfCCoRyKNH_EOxxxPdg/zh-cn_image_0000002563867045.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=B0E93C0ACBBB72F185D59A253124C3B9445DC56C55C30E143A673C1C22AF860A)
 
 ### 示例4（设置前导零）
 
@@ -610,7 +610,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Lm9BWdauQF-u6GhklXCOLw/zh-cn_image_0000002563787091.png?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=3907E2AF2EB6E7DACEB61044F22F8B229A0C6B43B2002CDB4CED5CC9226D2C39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Lm9BWdauQF-u6GhklXCOLw/zh-cn_image_0000002563787091.png?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=A82D9483BA38C940E09E2F3443F62C4C086A4ED249C6495FC25DF2F0E4718296)
 
 ### 示例5（设置文字显示样式）
 
@@ -664,4 +664,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/xujOD2LHTLGEtmF205T5hw/zh-cn_image_0000002532907196.png?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=64D90A1CBA4FB0AB608257F6AF80E1CB38FE3ADDDDC19B2CC07A6CCAE04DD756)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/xujOD2LHTLGEtmF205T5hw/zh-cn_image_0000002532907196.png?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=BA4DDCAAA36F39E501A0C275463F7C7F00554441539CD131681A3DE147F95EBF)

@@ -1,4 +1,4 @@
-# 文档中心
+# 禁用反色能力
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-allow-force-dark
 
 设置组件是否使用反色能力，反色能力是在深浅色切换时自动对颜色值进行反色或变换，开发者可以通过主动设置不启用反色算法，以保持在深浅色切换时的原有逻辑。
@@ -67,4 +67,4 @@ struct ComponentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-m0_-3yDSaucPD_VORyfcw/zh-cn_image_0000002563786681.png?HW-CC-KV=V1&HW-CC-Date=20260328T023033Z&HW-CC-Expire=86400&HW-CC-Sign=63AB4C79DECC2D771303D31C37389B28673227C98F6D7D58EC8EEEE91C65E4D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-m0_-3yDSaucPD_VORyfcw/zh-cn_image_0000002563786681.png?HW-CC-KV=V1&HW-CC-Date=20260328T073215Z&HW-CC-Expire=86400&HW-CC-Sign=14A1357E95A6A20E47CD8ED7A4A210A470224435BD171FC9F236CE8667A00198)

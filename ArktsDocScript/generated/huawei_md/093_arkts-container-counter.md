@@ -1,4 +1,4 @@
-# 文档中心
+# Counter
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-counter
 
 计数器组件，提供相应的增加或者减少的计数操作。
@@ -138,4 +138,4 @@ struct CounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/NFXPj590T1uTg65F0D7bGw/zh-cn_image_0000002563867029.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023221Z&HW-CC-Expire=86400&HW-CC-Sign=DF0B5456471C9D661BEF026FC7467779DAA01D486A53466E185533E0A8AE0FBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/NFXPj590T1uTg65F0D7bGw/zh-cn_image_0000002563867029.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073405Z&HW-CC-Expire=86400&HW-CC-Sign=19C99020575A1765E6C70A371F3364BDB561090EFCC14FD0DAD5C0C31D9EE16C)

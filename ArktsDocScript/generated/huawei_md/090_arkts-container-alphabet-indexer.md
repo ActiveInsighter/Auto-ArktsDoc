@@ -1,4 +1,4 @@
-# AlphabetIndexer-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# AlphabetIndexer
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -680,7 +680,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/zSb55uJ8T5-4s7_aU4g5Tg/zh-cn_image_0000002563787071.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023219Z&HW-CC-Expire=86400&HW-CC-Sign=EA2E47C100232A2D030DC31493AC7F2F4DCD91AABA4B7934816447001DC24463)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/zSb55uJ8T5-4s7_aU4g5Tg/zh-cn_image_0000002563787071.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073402Z&HW-CC-Expire=86400&HW-CC-Sign=C67B4EEF9770B8E578FC4F486A88422D95DD94EEEB9DD1DD76E62C87FC24ADA2)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -820,7 +820,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/YAjpAGrJQLSLr9ESKxYUJA/zh-cn_image_0000002532907176.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023219Z&HW-CC-Expire=86400&HW-CC-Sign=23938731185308DE57E006E59818D93F2D98DFB47B1E89E7F020ECE50D913207)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/YAjpAGrJQLSLr9ESKxYUJA/zh-cn_image_0000002532907176.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073402Z&HW-CC-Expire=86400&HW-CC-Sign=9A739DAF2AFEE8F44E655E2A080AFFB4F929F55BE5316981293737373B0D9947)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -949,4 +949,4 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/T4KQaXF3S22fF1Qk0hdUrQ/zh-cn_image_0000002533067124.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023219Z&HW-CC-Expire=86400&HW-CC-Sign=BDC9097E342B7B2FBAB1BB35A1B5E99B543BB4B9D0D31996281BAF6CD3FB3461)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/T4KQaXF3S22fF1Qk0hdUrQ/zh-cn_image_0000002533067124.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073402Z&HW-CC-Expire=86400&HW-CC-Sign=1D71BDC26FE60AFAABD078234BC8E8600D9EAC39C489E71DA8C16961DF437BF3)

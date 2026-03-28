@@ -1,4 +1,4 @@
-# TextTimer-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# TextTimer
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer
 
 通过文本显示计时信息并控制其计时器状态的组件。
@@ -331,7 +331,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/PZPDcyMeQzeXJ9xrnLHE3Q/zh-cn_image_0000002533067144.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=E515AAD6568D1765C2BA17446C9CA4BB60C96B5D99C71639E925E3A54F656037)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/PZPDcyMeQzeXJ9xrnLHE3Q/zh-cn_image_0000002533067144.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=100F377FF2DC67263417FC992E18D085B7E9FB37BED8198A5F6C1CFA94DA4E7E)
 
 ### 示例2（设定文本阴影样式）
 
@@ -376,7 +376,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9X14FZL1QlalWXnAWrFM6w/zh-cn_image_0000002563867047.png?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=8722876931D60835F7705E1D504A4B3F3B53B203796764F523AC690F38B1468E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9X14FZL1QlalWXnAWrFM6w/zh-cn_image_0000002563867047.png?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=93E70C2849673A0B049F8DD25E9B10B18A3EC72E3D1A250E2ACDEA0018377341)
 
 ### 示例3（设定自定义内容区）
 
@@ -454,7 +454,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/sahC0ifjQyWPq2H_J6rp7A/zh-cn_image_0000002563787093.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=4A47AC52DA7D39EF3DF80A9B6888E4FD26708F98ECCA2ECD35F8A267F277F376)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/sahC0ifjQyWPq2H_J6rp7A/zh-cn_image_0000002563787093.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=DD4FE99F80FAF300AA20576CC992A1BAC6A94DF1DCBE027BCDFCAB0F3E43D81B)
 
 ### 示例4（创建之后立即执行计时）
 
@@ -489,7 +489,7 @@ struct TextTimerStart {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/OQXVnmoyRWuiOX6I6UOsQQ/zh-cn_image_0000002532907198.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=396EE100F5FFA1CDD935EB23771B77F68237B03BE267CB0E4709568C5FFC35E3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/OQXVnmoyRWuiOX6I6UOsQQ/zh-cn_image_0000002532907198.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=55C967D9398D015A44A424691EAF186AE94222530BD00B0D2F520C6055867C89)
 
 ### 示例5（设置文本样式）
 
@@ -542,4 +542,4 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Abvx8Yr9QLaA6r2f2cMicg/zh-cn_image_0000002533067146.png?HW-CC-KV=V1&HW-CC-Date=20260328T023234Z&HW-CC-Expire=86400&HW-CC-Sign=FCADA2DF587C78BF56BC7F46413CF89F01226DCA473BC131A247765F928C6159)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Abvx8Yr9QLaA6r2f2cMicg/zh-cn_image_0000002533067146.png?HW-CC-KV=V1&HW-CC-Date=20260328T073416Z&HW-CC-Expire=86400&HW-CC-Sign=356BBF2BE918B4298F5C4C8DB0501AF7C9A76C4CD8C9332F1C7BD85ED78BB43D)

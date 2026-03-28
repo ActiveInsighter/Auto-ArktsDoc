@@ -1,4 +1,4 @@
-# 文档中心
+# ColumnSplit
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-columnsplit
 
 将子组件纵向布局，并在每个子组件之间插入横向分割线。
@@ -113,7 +113,7 @@ struct ColumnSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/0zO6vdnIS3-brIqZYBIonA/zh-cn_image_0000002563786795.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023053Z&HW-CC-Expire=86400&HW-CC-Sign=84628B431E47D83E2895EA224AC08597204959747245D1FBF00A89E80490969A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/0zO6vdnIS3-brIqZYBIonA/zh-cn_image_0000002563786795.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073234Z&HW-CC-Expire=86400&HW-CC-Sign=0D0151B9C84DD790F9A8BEE8D7FD5FAA9E26C3883B856C65FC642D5441F49A76)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
@@ -142,4 +142,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/8eeKNba3RJS1AnLa_b2mnw/zh-cn_image_0000002532906900.png?HW-CC-KV=V1&HW-CC-Date=20260328T023053Z&HW-CC-Expire=86400&HW-CC-Sign=E3F03F1302215D1DBA4AEF53D3EFDBADD3491F414B77E50C0E0450E5E7B50568)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/8eeKNba3RJS1AnLa_b2mnw/zh-cn_image_0000002532906900.png?HW-CC-KV=V1&HW-CC-Date=20260328T073234Z&HW-CC-Expire=86400&HW-CC-Sign=6B97BC3174DDFB3088D1D6420904A4CBACC5493B98EAA83555E9D25F3147D1E1)

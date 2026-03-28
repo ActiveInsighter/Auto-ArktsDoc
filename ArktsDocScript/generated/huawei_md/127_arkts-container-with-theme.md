@@ -1,4 +1,4 @@
-# 文档中心
+# WithTheme
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-theme
 
 WithTheme组件用于设置应用局部页面自定义主题风格，可设置子组件深浅色模式和自定义配色。
@@ -69,7 +69,7 @@ type CustomTheme = CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/AXNFVaB2T7SS95IhypTNTQ/zh-cn_image_0000002532907352.png?HW-CC-KV=V1&HW-CC-Date=20260328T023302Z&HW-CC-Expire=86400&HW-CC-Sign=7180ED5B69AE0BD47C657A156FFE119F23E0AB9962CDA410DCB679F32976DB16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/AXNFVaB2T7SS95IhypTNTQ/zh-cn_image_0000002532907352.png?HW-CC-KV=V1&HW-CC-Date=20260328T073446Z&HW-CC-Expire=86400&HW-CC-Sign=545F595B035CDBD95299608620BC7DE46EF3463E320A58BB86D28F756235819C)
 
 dark.json数据示例：
 
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/SHdZRnxjRzaDx0LSWyR26Q/zh-cn_image_0000002533067300.png?HW-CC-KV=V1&HW-CC-Date=20260328T023302Z&HW-CC-Expire=86400&HW-CC-Sign=92AD140E0B16BF75F84E125905280F670015AE0D546869AC088CA9015060E89C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/SHdZRnxjRzaDx0LSWyR26Q/zh-cn_image_0000002533067300.png?HW-CC-KV=V1&HW-CC-Date=20260328T073446Z&HW-CC-Expire=86400&HW-CC-Sign=6CD0EDF6BCF5F26E4841E3BC9CF12960B9B57AA61A98888175E1A312535B7135)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -223,4 +223,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/OXwdoPYjTleLdPi3-Fkh6Q/zh-cn_image_0000002563867203.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023302Z&HW-CC-Expire=86400&HW-CC-Sign=D461DBC39B58325D8F24EFBE8F9531E39D90FBEE2DEED3FA4219105574B24EE4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/OXwdoPYjTleLdPi3-Fkh6Q/zh-cn_image_0000002563867203.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073446Z&HW-CC-Expire=86400&HW-CC-Sign=021468A1A04C9D0C0BC3CDA8D2D6282280530D19D60C728428B9CF03E60B8545)

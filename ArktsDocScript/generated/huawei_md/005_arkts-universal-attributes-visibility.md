@@ -1,4 +1,4 @@
-# 文档中心
+# 显隐控制
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-visibility
 
 控制组件是否可见。
@@ -56,4 +56,4 @@ struct VisibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/gHckkUFpQti0aPryktkdqw/zh-cn_image_0000002533066722.png?HW-CC-KV=V1&HW-CC-Date=20260328T023026Z&HW-CC-Expire=86400&HW-CC-Sign=6DC1040C042C582A179E1BBDD5FA139F97E70B75915758E42801B488FA55DE51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/gHckkUFpQti0aPryktkdqw/zh-cn_image_0000002533066722.png?HW-CC-KV=V1&HW-CC-Date=20260328T073207Z&HW-CC-Expire=86400&HW-CC-Sign=C2282D1474ABB22F31E06520042649BD7B6DB510086AA573B205803AE82E50D9)

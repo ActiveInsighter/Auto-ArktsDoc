@@ -1,4 +1,4 @@
-# ArcList-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# ArcList
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist
 
 弧形列表包含一系列列表项。适合连续、多行呈现同类数据，例如图片和文本。
@@ -490,4 +490,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ItUmzXyuT7G1DaR49hhR8A/zh-cn_image_0000002563866765.png?HW-CC-KV=V1&HW-CC-Date=20260328T023100Z&HW-CC-Expire=86400&HW-CC-Sign=4E53560A8D2B7DCF34800296A9153037601DBADCD601A5639FA05A112E64A4B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ItUmzXyuT7G1DaR49hhR8A/zh-cn_image_0000002563866765.png?HW-CC-KV=V1&HW-CC-Date=20260328T073241Z&HW-CC-Expire=86400&HW-CC-Sign=4A9C842A52B15F707F5EE7E0287032C91AD45FDE5D5E1914E758BD106BA364AC)

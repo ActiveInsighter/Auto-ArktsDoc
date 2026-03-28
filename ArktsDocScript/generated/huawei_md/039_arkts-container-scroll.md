@@ -1,4 +1,4 @@
-# Scroll-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Scroll
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll
 
 可滚动的容器组件，当子组件的布局尺寸超过父组件的尺寸时，内容可以滚动。
@@ -1306,7 +1306,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/bz7vqpGJTyC3_JaUCwi64A/zh-cn_image_0000002563866779.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=8A6D210E2F63956AA4665FB9AC9784FA702E7F3F484E14854A95057553C7004F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/bz7vqpGJTyC3_JaUCwi64A/zh-cn_image_0000002563866779.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=D4FA927396D91905929EABFE4B25C8382BA7394BF170BF64BA4A36420996366D)
 
 ### 示例2（嵌套滚动实现方式一）
 
@@ -1383,7 +1383,7 @@ struct NestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/R41sr61ZTGmBfhgrOLEimw/zh-cn_image_0000002563786825.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=D9C1563AC1B0A40F7A3E449333841FF8F482D028F62864F15D059246678F70C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/R41sr61ZTGmBfhgrOLEimw/zh-cn_image_0000002563786825.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=7D19253660A6FDEDBF796BB8313AF194DE8B9B837E658D8B9D757C04F8FB9807)
 
 ### 示例3（嵌套滚动实现方式二）
 
@@ -1451,7 +1451,7 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/z87DCKB1T2eWqcnL-TZpIQ/zh-cn_image_0000002532906930.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=E828CF7F8D1EC8398A4A19E789532AEBED91560BA6D8568C2D08CFEBC9B6EE94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/z87DCKB1T2eWqcnL-TZpIQ/zh-cn_image_0000002532906930.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=9C49220BC8BF530E24E41D8788F9B5E00A8E5A0E66A0AFB97EDA59799E3FD5F7)
 
 ### 示例4（嵌套滚动父组件向子组件传递滚动）
 
@@ -1546,7 +1546,7 @@ struct NestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/n1KHsawORauOqnIh108zvA/zh-cn_image_0000002533066878.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=D1923A85B7920593D66B947FF1DC608FCBBADC55ABA3D6AE5F673C98496A5E81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/n1KHsawORauOqnIh108zvA/zh-cn_image_0000002533066878.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=CFC629EAAC1634FE0248B83E433D135959A9641A95426B29E580C276D01AE5EB)
 
 ### 示例5（设置限位滚动）
 
@@ -1582,7 +1582,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Tpd9-xSmRFqvDcs_DIuSlQ/zh-cn_image_0000002563866781.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=A4D9CF36AC2071702034F06BACE83C9D6D8EB64CC2B990D0AEC1A9BBC020D348)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Tpd9-xSmRFqvDcs_DIuSlQ/zh-cn_image_0000002563866781.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=8C4C11F9087BCAE602229CC7C4F1AC859C5CAC4D249425EBB5D37A12103D5C15)
 
 ### 示例6（获取子组件索引）
 
@@ -1651,7 +1651,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/FoFj_cV-SAuNZJXSdJAsWQ/zh-cn_image_0000002563786827.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=C89A4EA460505413836F95B95533160543D98E2147977082719B9B766478899A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/FoFj_cV-SAuNZJXSdJAsWQ/zh-cn_image_0000002563786827.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=2FA458565CB3CE1E6E690E640E3E3DB5ED6E9C7141E89A46E54408FF0633D4FE)
 
 ### 示例7（设置边缘渐隐）
 
@@ -1688,7 +1688,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/eA5UJoE9SWWr6xdpGZyYEQ/zh-cn_image_0000002532906932.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=1A1FFEDB5E275D120BC235C3397C0B4ED1C42D2CF6B689AECEFED613B44EF7CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/eA5UJoE9SWWr6xdpGZyYEQ/zh-cn_image_0000002532906932.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=E0ED43D6E9381F109901CDF92147DF0672239A847C7EEF467A0F428A6B4F92AF)
 
 ### 示例8（单边边缘效果）
 
@@ -1723,7 +1723,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/nn9xqv5bSX6iVdQy_uUHiw/zh-cn_image_0000002533066880.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=F397866ED9F5AF3ABBD79044A3ACF57E0C139228EB43CC4D65F13DE7ED3313CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/nn9xqv5bSX6iVdQy_uUHiw/zh-cn_image_0000002533066880.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=3BEA8D9B68E5A0DA5AC3B3D875CFB9D19EAA9A6F361F6F9EFBADF51447AF97D8)
 
 ### 示例9（划动翻页效果）
 
@@ -1756,7 +1756,7 @@ struct EnablePagingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/goALYn7MQT6f9ivnayZpPg/zh-cn_image_0000002563866783.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=1F3DA0FF8AF6B29073F4108A717FD5913EFA8ED1618642838251C9E531726684)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/goALYn7MQT6f9ivnayZpPg/zh-cn_image_0000002563866783.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=6AEAB5490F1BD6214D50A97E90B36B366C45F51124AB80DABFED2689882E75AA)
 
 ### 示例10（设置过界停留）
 
@@ -1818,7 +1818,7 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/4Qt4vdUbQru8XvHS7WeMqg/zh-cn_image_0000002563786829.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=4F16ECE2562686C47B001C98FE7084ED05F2A56CD5FB211FBC7759ECE45338FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/4Qt4vdUbQru8XvHS7WeMqg/zh-cn_image_0000002563786829.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=CA29CF98B5AC3CBE838F3F456EB26CA6877AC335D491A1B609B0D860ACBC513F)
 
 ### 示例11（自由滚动和缩放）
 
@@ -1854,7 +1854,7 @@ struct ScrollZoomExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/IKIeor7MRXWks6UmTKvxGA/zh-cn_image_0000002532906934.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=F5AFEFB74F6F633A6D0D88999E747F89854828B1B47DDC602314A354D18DF718)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/IKIeor7MRXWks6UmTKvxGA/zh-cn_image_0000002532906934.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=4E48AD75B86561B3E5D354EFDD068FF066214ABADDBEFBF5845FB0C7F96B0ADF)
 
 ### 示例12（获取内容总大小）
 
@@ -1929,7 +1929,7 @@ struct ScrollExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/YoqujwkRR_yTIGkMw0ON_A/zh-cn_image_0000002533066882.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023107Z&HW-CC-Expire=86400&HW-CC-Sign=4C50B51A3CAEC064CFAD83E3C3102002FB83A48655D1D95C1185AC7850A3EB0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/YoqujwkRR_yTIGkMw0ON_A/zh-cn_image_0000002533066882.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073248Z&HW-CC-Expire=86400&HW-CC-Sign=69BEBE2A7FC0D9F856C3BFC907320DABEB9954B3C66975F2C25CC38BFF322EEA)
 
 ### 示例13（设置滚动事件）
 

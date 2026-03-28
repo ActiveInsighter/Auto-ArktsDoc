@@ -1,4 +1,4 @@
-# 文档中心
+# Flex
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flex
 
 Flex是以弹性方式布局子组件的容器组件，能够高效地排列、对齐子元素并分配剩余空间。
@@ -136,7 +136,7 @@ struct FlexExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ba59WjJ7SZGpImpWG-L6Wg/zh-cn_image_0000002563866737.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=9EC618C69824F8152B13CB2444FA9126A57255554697940AA653D9A63A370265)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ba59WjJ7SZGpImpWG-L6Wg/zh-cn_image_0000002563866737.png?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=174C4EF2DA4718739AE864296517212F1B396332DD72DA40B290AA05434649BC)
 
 ### 示例2（子组件单/多行排列）
 
@@ -185,7 +185,7 @@ struct FlexExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/5ooaCpi0Rwa2HAL1YdZHaw/zh-cn_image_0000002563786783.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=7448CA58772510D6BBFC6745D84570E01210BBE183E26A2F70EEE0BBB0E244D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/5ooaCpi0Rwa2HAL1YdZHaw/zh-cn_image_0000002563786783.png?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=0CF103961BDD4B619C72C9A2AF7BF64740D74529AEF46D9E1B5738CE1471970B)
 
 ### 示例3（子组件在主轴上的对齐格式）
 
@@ -237,7 +237,7 @@ struct FlexExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/57NLOY-wSZ67Qbn-qvmUyQ/zh-cn_image_0000002532906888.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=E4F3869E40B3F2C687795265845FFC2C5BED0303CA9DD2B0C7472D4BCAC06EEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/57NLOY-wSZ67Qbn-qvmUyQ/zh-cn_image_0000002532906888.png?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=64A22DCE5472C4EEFBEAE2772ACCF65FEE6B724B1F02FC5CFAC01FD704DE39AC)
 
 ### 示例4（子组件在交叉轴上的对齐方式）
 
@@ -289,7 +289,7 @@ struct FlexExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/LrafpbubRBSpM6o4qcd0Rw/zh-cn_image_0000002533066836.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=0CAD67AD4A1640CA63943F83C449AFDC64BDE458E00E6780B5651BF3BFE5687B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/LrafpbubRBSpM6o4qcd0Rw/zh-cn_image_0000002533066836.png?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=C4542A7C02E565B427AB83AB297EFBD58B33F3191C4F5C8A02E5D416550448E2)
 
 ### 示例5（多行内容的对齐方式）
 
@@ -353,7 +353,7 @@ struct FlexExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/TCQUmRBRSb6v7cjG-sgsAg/zh-cn_image_0000002563866739.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=152D0CD73A834E3E75EFE56CF522F1C712513BDD09A5E698DAA7A34DC206FC96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/TCQUmRBRSb6v7cjG-sgsAg/zh-cn_image_0000002563866739.png?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=CE96D4F7BE48F1FDF8F7CB5DBC0EBEFFA05D010C6D7DEB38B7623B9715E92333)
 
 ### 示例6（子组件单/多行排列时的主/交叉轴间距）
 
@@ -404,7 +404,7 @@ struct FlexExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/BISUAId6Qb6Ic0xLGXAhnQ/zh-cn_image_0000002563786785.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=09BDD3DDEEFA7C372F23665AB548E554F73F47F35DBC8F7150B3DA51A2A9DB5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/BISUAId6Qb6Ic0xLGXAhnQ/zh-cn_image_0000002563786785.png?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=3CA312FD39ADB9161CF4226A3DAF7F427F270AF649FCBFA09FDE792C21FB6776)
 
 ### 示例7（宽度自适应的Flex容器）
 
@@ -460,4 +460,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/cpJJYYSGQ7eqXcqHj4FsIA/zh-cn_image_0000002532906890.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=58A3E832CDBF593A60F472260F5136124356FAE1479073B965BECBB465606DAE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/cpJJYYSGQ7eqXcqHj4FsIA/zh-cn_image_0000002532906890.png?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=1851959D5B9F5385D8547055604C2771B628369E41EEEF0CE4C59251FD0A1ABC)

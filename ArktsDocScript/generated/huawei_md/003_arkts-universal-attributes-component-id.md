@@ -1,4 +1,4 @@
-# 组件标识-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 组件标识
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id
 
 id为组件的唯一标识，在整个应用内唯一。本模块提供组件标识相关接口，可以获取指定id组件的属性，也提供向指定id组件发送事件的功能。
@@ -266,25 +266,25 @@ sendMouseEvent(event: MouseEvent): boolean
 该示例主要展示如何通过组件标识接口，获取特定id组件的属性，以及如何向该id的组件触发事件。
 
 ```typescript
+// xxx.ets
 import { IntentionCode } from '@kit.InputKit';
-
 class Utils {
   static rect_left: number;
   static rect_top: number;
   static rect_right: number;
   static rect_bottom: number;
   static rect_value: Record<string, number>;
-
+  // 获取组件所占矩形区域坐标
   static getComponentRect(key: string): Record<string, number> {
     let strJson = getInspectorByKey(key);
     let obj: Record<string, string> = JSON.parse(strJson);
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: string[] = JSON.parse('[' + obj.$rect + ']');
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    Utils.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0];
-    Utils.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1];
-    Utils.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0];
-    Utils.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1];
+    Utils.rect_left = JSON.parse('[' + rectInfo[0] + ']')[0]; // 相对于组件左上角的水平方向坐标
+    Utils.rect_top = JSON.parse('[' + rectInfo[0] + ']')[1]; // 相对于组件左上角的垂直方向坐标
+    Utils.rect_right = JSON.parse('[' + rectInfo[1] + ']')[0]; // 相对于组件右下角的水平方向坐标
+    Utils.rect_bottom = JSON.parse('[' + rectInfo[1] + ']')[1]; // 相对于组件右下角的垂直方向坐标
     return Utils.rect_value = {
       "left": Utils.rect_left,
       "top": Utils.rect_top,
@@ -293,22 +293,18 @@ class Utils {
     };
   };
 }
-
 @Entry
 @Component
 struct IdExample {
   @State text: string = '';
-
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-
       Button() {
         Text('onKeyTab').fontSize(25).fontWeight(FontWeight.Bold)
       }.margin({ top: 20 }).backgroundColor('#0D9FFB')
       .onKeyEvent(() => {
         this.text = "onKeyTab";
       })
-
       Button() {
         Text('click to start').fontSize(25).fontWeight(FontWeight.Bold)
       }.margin({ top: 20 })
@@ -317,10 +313,9 @@ struct IdExample {
         console.info(JSON.stringify(getInspectorTree()));
         this.text = "Button 'click to start' is clicked";
         setTimeout(() => {
-          sendEventByKey("longClick", 11, "");
+          sendEventByKey("longClick", 11, ""); // 向id为"longClick"的组件发送长按事件
         }, 2000)
       }).id('click')
-
       Button() {
         Text('longClick').fontSize(25).fontWeight(FontWeight.Bold)
       }.margin({ top: 20 }).backgroundColor('#0D9FFB')
@@ -329,25 +324,24 @@ struct IdExample {
           console.info('long clicked');
           this.text = "Button 'longClick' is longclicked";
           setTimeout(() => {
-            let rect = Utils.getComponentRect('onTouch');
+            let rect = Utils.getComponentRect('onTouch'); // 获取id为"onTouch"组件的矩形区域坐标
             let touchPoint: TouchObject = {
               id: 1,
               type: TouchType.Down,
-              x: rect.left + (rect.right - rect.left) / 2,
-              y: rect.top + (rect.bottom - rect.top) / 2,
-              screenX: rect.left + (rect.right - rect.left) / 2,
-              screenY: rect.top + (rect.bottom - rect.top) / 2,
-              windowX: rect.left + (rect.right - rect.left) / 2,
-              windowY: rect.top + (rect.bottom - rect.top),
-              displayX: rect.left + (rect.right - rect.left) / 2,
-              displayY: rect.top + (rect.bottom - rect.top) / 2,
+              x: rect.left + (rect.right - rect.left) / 2, // 相对于组件左上角的水平方向坐标
+              y: rect.top + (rect.bottom - rect.top) / 2, // 相对于组件左上角的垂直方向坐标
+              screenX: rect.left + (rect.right - rect.left) / 2, // 相对于应用窗口左上角的水平方向坐标，API10已废弃，采用windowX替代
+              screenY: rect.top + (rect.bottom - rect.top) / 2, // 相对于应用窗口左上角的垂直方向坐标，API10已废弃，采用windowY替代
+              windowX: rect.left + (rect.right - rect.left) / 2, // 相对于应用窗口左上角的水平方向坐标
+              windowY: rect.top + (rect.bottom - rect.top), // 相对于应用窗口左上角的垂直方向坐标
+              displayX: rect.left + (rect.right - rect.left) / 2, // 相对于设备屏幕左上角的水平方向坐标
+              displayY: rect.top + (rect.bottom - rect.top) / 2, // 相对于设备屏幕左上角的垂直方向坐标
             };
-            sendTouchEvent(touchPoint);
+            sendTouchEvent(touchPoint); // 发送触摸事件
             touchPoint.type = TouchType.Up;
-            sendTouchEvent(touchPoint);
+            sendTouchEvent(touchPoint); // 发送触摸事件
           }, 2000)
         })).id('longClick')
-
       Button() {
         Text('onTouch').fontSize(25).fontWeight(FontWeight.Bold)
       }.type(ButtonType.Capsule).margin({ top: 20 })
@@ -355,18 +349,18 @@ struct IdExample {
         console.info('onTouch is clicked');
         this.text = "Button 'onTouch' is clicked";
         setTimeout(() => {
-          let rect = Utils.getComponentRect('onMouse');
+          let rect = Utils.getComponentRect('onMouse'); // 获取id为"onMouse"组件的矩形区域坐标
           let mouseEvent: MouseEvent = {
             button: MouseButton.Left,
             action: MouseAction.Press,
-            x: rect.left + (rect.right - rect.left) / 2,
-            y: rect.top + (rect.bottom - rect.top) / 2,
-            screenX: rect.left + (rect.right - rect.left) / 2,
-            screenY: rect.left + (rect.right - rect.left) / 2,
-            windowX: rect.left + (rect.right - rect.left) / 2,
-            windowY: rect.left + (rect.right - rect.left) / 2,
-            displayX: rect.left + (rect.right - rect.left) / 2,
-            displayY: rect.left + (rect.right - rect.left) / 2,
+            x: rect.left + (rect.right - rect.left) / 2, // 相对于组件左上角的水平方向坐标
+            y: rect.top + (rect.bottom - rect.top) / 2, // 相对于组件左上角的垂直方向坐标
+            screenX: rect.left + (rect.right - rect.left) / 2, // 相对于应用窗口左上角的水平方向坐标，API10已废弃，采用windowX替代
+            screenY: rect.left + (rect.right - rect.left) / 2, // 相对于应用窗口左上角的垂直方向坐标，API10已废弃，采用windowY替代
+            windowX: rect.left + (rect.right - rect.left) / 2, // 相对于应用窗口左上角的水平方向坐标
+            windowY: rect.left + (rect.right - rect.left) / 2, // 相对于应用窗口左上角的垂直方向坐标
+            displayX: rect.left + (rect.right - rect.left) / 2, // 相对于设备屏幕左上角的水平方向坐标
+            displayY: rect.left + (rect.right - rect.left) / 2, // 相对于设备屏幕左上角的垂直方向坐标
             stopPropagation: () => {
             },
             timestamp: 1,
@@ -390,10 +384,9 @@ struct IdExample {
             tiltY: 1,
             sourceTool: SourceTool.Unknown
           };
-          sendMouseEvent(mouseEvent);
+          sendMouseEvent(mouseEvent); // 发送鼠标事件
         }, 2000)
       }).id('onTouch')
-
       Button() {
         Text('onMouse').fontSize(25).fontWeight(FontWeight.Bold)
       }.margin({ top: 20 }).backgroundColor('#0D9FFB')
@@ -413,10 +406,9 @@ struct IdExample {
             },
             intentionCode: IntentionCode.INTENTION_DOWN
           };
-          sendKeyEvent(keyEvent);
+          sendKeyEvent(keyEvent); // 发送按键事件
         }, 2000)
       }).id('onMouse')
-
       Text(this.text).fontSize(25).padding(15)
     }
     .width('100%').height('100%')

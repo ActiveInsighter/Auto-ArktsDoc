@@ -1,4 +1,4 @@
-# 文档中心
+# RichText
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richtext
 
 富文本组件，解析并显示HTML格式文本。
@@ -131,7 +131,7 @@ struct RichTextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/TRbMCapCS-qUxIFaoI8twg/zh-cn_image_0000002533067044.png?HW-CC-KV=V1&HW-CC-Date=20260328T023207Z&HW-CC-Expire=86400&HW-CC-Sign=530191AD5C6E44CB0015BFEA47A913A663897D89E8173C6F464B4157E687AB8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/TRbMCapCS-qUxIFaoI8twg/zh-cn_image_0000002533067044.png?HW-CC-KV=V1&HW-CC-Date=20260328T073347Z&HW-CC-Expire=86400&HW-CC-Sign=605B2134CC6C8D545BA957FE5A76C61B40F873AB60609035AAB8C4D15E19F340)
 
 加载本地资源文件。
 

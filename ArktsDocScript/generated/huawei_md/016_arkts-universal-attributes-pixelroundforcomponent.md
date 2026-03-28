@@ -1,4 +1,4 @@
-# 文档中心
+# 组件级像素取整
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-pixelroundforcomponent
 
 组件级像素取整的目标是将像素取整功能作为组件的属性，从而在组件层面实现系统像素取整的开启或关闭。
@@ -76,6 +76,7 @@ pixelRound(value: PixelRoundPolicy): T
 @Component
 struct PixelRoundExample {
     @State curWidth : number = 300;
+
     build() {
         Column() {
             Button() {
@@ -87,7 +88,9 @@ struct PixelRoundExample {
             .height(200)
             .width(200)
             .backgroundColor('rgb(213, 213, 213)')
+
             Blank().height(20)
+
             Row() {
                 Row() {
                 }
@@ -118,8 +121,8 @@ struct PixelRoundExample {
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/3V8NC2WMSra2mNmPcKGtNA/zh-cn_image_0000002563786695.png?HW-CC-KV=V1&HW-CC-Date=20260328T023039Z&HW-CC-Expire=86400&HW-CC-Sign=710F3A072A8D271FFE32C33D89E43A82FC48A63E06C7F4FE2F99462234EEDA21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/3V8NC2WMSra2mNmPcKGtNA/zh-cn_image_0000002563786695.png?HW-CC-KV=V1&HW-CC-Date=20260328T073220Z&HW-CC-Expire=86400&HW-CC-Sign=9E7FA036B508C4F900EB765003750E969615450140B304838E3C60DD2F628888)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/CoZI2WAVQQ6nqJz_5gjKyg/zh-cn_image_0000002532906800.png?HW-CC-KV=V1&HW-CC-Date=20260328T023039Z&HW-CC-Expire=86400&HW-CC-Sign=97CA00BD02E3E6472138450A1658147618A87FF8CEA27037047A3A6C6EF52B6D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/CoZI2WAVQQ6nqJz_5gjKyg/zh-cn_image_0000002532906800.png?HW-CC-KV=V1&HW-CC-Date=20260328T073220Z&HW-CC-Expire=86400&HW-CC-Sign=1040E4CF4DDDF95F7F193C0454D4C3D39D9E9F58CFE681C8884F272A87115C30)

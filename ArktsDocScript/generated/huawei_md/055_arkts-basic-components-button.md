@@ -1,4 +1,4 @@
-# Button-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Button
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button
 
 按钮组件，可快速创建不同样式的按钮。
@@ -513,7 +513,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/77VGkvzzQnuB0bZoD33baQ/zh-cn_image_0000002533066934.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023128Z&HW-CC-Expire=86400&HW-CC-Sign=473B43F0C62FBCCAEEFB91946318A48C613ACBB953E60BC5CE91D07A84E87BAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/77VGkvzzQnuB0bZoD33baQ/zh-cn_image_0000002533066934.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073310Z&HW-CC-Expire=86400&HW-CC-Sign=5C925750AE55807D6AA8482B2F37F74E05D3CDAE810788B2F8C0B1BEE42FC187)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -544,7 +544,7 @@ struct SwipeGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/PXGFwWi7Q0OtGHldnfXpsA/zh-cn_image_0000002563866837.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023128Z&HW-CC-Expire=86400&HW-CC-Sign=810D462D663142CD569197A4F924FAC76F81F98763CB9381EC5E65FA1E12FBEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/PXGFwWi7Q0OtGHldnfXpsA/zh-cn_image_0000002563866837.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073310Z&HW-CC-Expire=86400&HW-CC-Sign=101604062ACE66867C4E13B5B0E908A2CDF12DA75F6EDF8CFD19C39CC7D40453)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -585,7 +585,7 @@ struct ButtonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/O_BRSyclToSw7S45p9H9NQ/zh-cn_image_0000002563786883.png?HW-CC-KV=V1&HW-CC-Date=20260328T023128Z&HW-CC-Expire=86400&HW-CC-Sign=F55ABB871507A0496EEEA702937AA5B2B57828D0B191FE1962056FD58AE6476B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/O_BRSyclToSw7S45p9H9NQ/zh-cn_image_0000002563786883.png?HW-CC-KV=V1&HW-CC-Date=20260328T073310Z&HW-CC-Expire=86400&HW-CC-Sign=E82D320E877B2E7A039F7E7BAFD5AB82A933F28DB3335F6456DF2DF27A7E3ECD)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -623,7 +623,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/qiaLyqq2SW-JdGOhWQgnYQ/zh-cn_image_0000002532906988.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T023128Z&HW-CC-Expire=86400&HW-CC-Sign=4302851B47A775055ED3840053FC79176B41F10A368B743B13E61EFC9E8A435D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/qiaLyqq2SW-JdGOhWQgnYQ/zh-cn_image_0000002532906988.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T073310Z&HW-CC-Expire=86400&HW-CC-Sign=027040673A200709F1F7098DA4DE4D7FFD4B18782A3B54C0AC5E50CFA6E0753C)
 
 ### 示例5（设置按钮的角色）
 
@@ -652,7 +652,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2eluEsOiSyeFbFI8ub7hrg/zh-cn_image_0000002533066936.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T023128Z&HW-CC-Expire=86400&HW-CC-Sign=F3EEB428A9580BC79A0870FF7E21053B1438FCF2124D8DA220CDA38DCFDC79E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2eluEsOiSyeFbFI8ub7hrg/zh-cn_image_0000002533066936.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T073310Z&HW-CC-Expire=86400&HW-CC-Sign=7B2D0F557B14922F24B4F6EC4FC46EDD4A2831D42F64C11FD85223813B25C06F)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -723,7 +723,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/9kM1VG4HRx-M1-BkgCpjgg/zh-cn_image_0000002563866839.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023128Z&HW-CC-Expire=86400&HW-CC-Sign=831BD2BE4D7DC7527B468E2015842A2A57DC937CB7E64AA401674C4C9DDE8218)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/9kM1VG4HRx-M1-BkgCpjgg/zh-cn_image_0000002563866839.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073310Z&HW-CC-Expire=86400&HW-CC-Sign=BE99948F9352CDA2A868A4A38BFD9F3151402984B1A1D14E8AB2CC1B1B4126BF)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -765,4 +765,4 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/bZt0Mq5gSfKtj1CoXjIkGw/zh-cn_image_0000002563786885.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T023128Z&HW-CC-Expire=86400&HW-CC-Sign=A5DE2B21F93A99CCAFA66CA50DD50DBBCF36BACD6903D730339DA7C0E47C6A38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/bZt0Mq5gSfKtj1CoXjIkGw/zh-cn_image_0000002563786885.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T073310Z&HW-CC-Expire=86400&HW-CC-Sign=3580FA61D5F08CFC44F3FB5BCF1B6A014C279729D86F06628046C09D508602E5)

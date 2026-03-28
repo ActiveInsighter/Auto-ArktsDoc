@@ -1,4 +1,4 @@
-# 文档中心
+# 浮层
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay
 
 设置组件的浮层。
@@ -116,7 +116,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/U0Uw5bqbRXeLmVDL-SaraQ/zh-cn_image_0000002533066728.png?HW-CC-KV=V1&HW-CC-Date=20260328T023031Z&HW-CC-Expire=86400&HW-CC-Sign=31F41C72BC3FB09186D85837CD5623B21ECD094543837797005636282316ACD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/U0Uw5bqbRXeLmVDL-SaraQ/zh-cn_image_0000002533066728.png?HW-CC-KV=V1&HW-CC-Date=20260328T073212Z&HW-CC-Expire=86400&HW-CC-Sign=79C229555AC43615DF8F9657530EC434574A2628B07DAB1EFA1CC7FF1B6B98AB)
 
 ### 示例2（通过builder设置浮层）
 
@@ -151,7 +151,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/_Uect5icSr-5BnHS4755uA/zh-cn_image_0000002563866631.png?HW-CC-KV=V1&HW-CC-Date=20260328T023031Z&HW-CC-Expire=86400&HW-CC-Sign=4612AC00D9B906EFC51C4994ECD94A7CB369F96C3F950A8A83CD7A0662418A2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/_Uect5icSr-5BnHS4755uA/zh-cn_image_0000002563866631.png?HW-CC-KV=V1&HW-CC-Date=20260328T073212Z&HW-CC-Expire=86400&HW-CC-Sign=FF036A4744F723E2A984515F3E5F0CE98C642AFF72B95C066BDBBA62CC116375)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -209,4 +209,4 @@ struct Page_4040 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/A_oaSLWWSSSEupPdSvMzyg/zh-cn_image_0000002563786677.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023031Z&HW-CC-Expire=86400&HW-CC-Sign=124A31B99E7EE7FBAEBB4B364F1529AE629348719D4BB960E73737FD3E9A669E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/A_oaSLWWSSSEupPdSvMzyg/zh-cn_image_0000002563786677.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073212Z&HW-CC-Expire=86400&HW-CC-Sign=D3DF565D27A838FE1AC5FAE432ECA8D7E09F46CD976A42A1A015F66F2AD60B32)

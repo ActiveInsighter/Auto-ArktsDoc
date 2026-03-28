@@ -1,4 +1,4 @@
-# SideBarContainer-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# SideBarContainer
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-sidebarcontainer
 
 提供侧边栏可以显示和隐藏的容器，通过子组件定义侧边栏和内容区，第一个子组件表示侧边栏，第二个子组件表示内容区。
@@ -446,4 +446,4 @@ struct SideBarContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/ZN_Q7f_bQC6x6TX6zTYIYQ/zh-cn_image_0000002563866751.png?HW-CC-KV=V1&HW-CC-Date=20260328T023058Z&HW-CC-Expire=86400&HW-CC-Sign=F8E49115D4FB32E0317F1FCDDC0006EEC9DD9658E055D0E7DA6B77A44781C4DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/ZN_Q7f_bQC6x6TX6zTYIYQ/zh-cn_image_0000002563866751.png?HW-CC-KV=V1&HW-CC-Date=20260328T073239Z&HW-CC-Expire=86400&HW-CC-Sign=7C8836339E88D815535747A56636781CADA15A62F4B07263F01042AE7848ACFF)

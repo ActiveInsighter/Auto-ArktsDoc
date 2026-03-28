@@ -1,4 +1,4 @@
-# 文档中心
+# RowSplit
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-rowsplit
 
 将子组件横向布局，并在每个子组件之间插入纵向分割线。
@@ -79,4 +79,4 @@ struct RowSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/nn4DUgJpSfG7PMpegcqGGw/zh-cn_image_0000002533066848.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023057Z&HW-CC-Expire=86400&HW-CC-Sign=500E5088DB8091F4430BBE76BD9F4453CAADDC811AAE89E885CFD7B51A40E95B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/nn4DUgJpSfG7PMpegcqGGw/zh-cn_image_0000002533066848.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073239Z&HW-CC-Expire=86400&HW-CC-Sign=20AA19FC99DA74B805FA84AC382E86AE54BF99B7A2192DA0E6CC968313F8A3EC)

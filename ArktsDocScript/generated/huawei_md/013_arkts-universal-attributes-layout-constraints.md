@@ -1,4 +1,4 @@
-# 文档中心
+# 布局约束
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-layout-constraints
 
 通过组件的宽高比和显示优先级约束组件显示效果。
@@ -119,11 +119,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/2VqbaFDmQ_iYou9bk_V-Jg/zh-cn_image_0000002533066740.png?HW-CC-KV=V1&HW-CC-Date=20260328T023037Z&HW-CC-Expire=86400&HW-CC-Sign=457131847E5ACF56D4CD097FEAD2CD29DE7FEEC0825EAC9EB1C76A565023ABFA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/2VqbaFDmQ_iYou9bk_V-Jg/zh-cn_image_0000002533066740.png?HW-CC-KV=V1&HW-CC-Date=20260328T073218Z&HW-CC-Expire=86400&HW-CC-Sign=7B27AFE29C34ADF6E99FA73433041544118426F37A5FB2EBFB1126103731B563)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/16erIB7WRCG5sG9bFor8IQ/zh-cn_image_0000002563866643.png?HW-CC-KV=V1&HW-CC-Date=20260328T023037Z&HW-CC-Expire=86400&HW-CC-Sign=AA8F19130603CFEBD074915C340143C9F7BB2332DC36EF1AEB0A793C2FF0D36F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/16erIB7WRCG5sG9bFor8IQ/zh-cn_image_0000002563866643.png?HW-CC-KV=V1&HW-CC-Date=20260328T073218Z&HW-CC-Expire=86400&HW-CC-Sign=4203CCB8EB3C4143D0C8F4ACF92271242D0457DE0AADDE8E16AEBF184B86C927)
 
 ### 示例2（设置组件显示优先级）
 
@@ -187,4 +187,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/_Bw1cv5_T4mCyP1aR32-kw/zh-cn_image_0000002563786689.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023037Z&HW-CC-Expire=86400&HW-CC-Sign=CA1BBA9A5369707AAF61C93CF3468A72D190B93E8ED24EBCFA134DE834AB54AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/_Bw1cv5_T4mCyP1aR32-kw/zh-cn_image_0000002563786689.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073218Z&HW-CC-Expire=86400&HW-CC-Sign=176E96CA49FD317440F60EB7D03CA442418A10BFB46DC77CE0F53FFEAC935B42)

@@ -1,4 +1,4 @@
-# PatternLock-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# PatternLock
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-patternlock
 
 图案密码锁组件，以九宫格图案的方式输入密码，用于密码验证场景。手指在PatternLock组件区域按下时开始进入输入状态，手指离开屏幕时结束输入状态完成密码输入。
@@ -362,7 +362,7 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Y6tWsN1fSY6M4SaEEWNB6g/zh-cn_image_0000002532907188.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023228Z&HW-CC-Expire=86400&HW-CC-Sign=F35BAE050682D8E09A9D9B7301FD9DA1060B3261FC4E5A8E514F77D7958304D8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Y6tWsN1fSY6M4SaEEWNB6g/zh-cn_image_0000002532907188.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073411Z&HW-CC-Expire=86400&HW-CC-Sign=2B2A9593150533D5996A145C5701BFCE030F0636F32DA5ABAE2C4A203E99DBF3)
 
 ### 示例2（判断密码是否正确）
 
@@ -436,4 +436,4 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/W09fEYYXSyyY0rEd68WHkw/zh-cn_image_0000002533067136.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023228Z&HW-CC-Expire=86400&HW-CC-Sign=4FD8F87D80B8201FBB8269178152FA854C9A875BFB57F764939725FF8E9B6C63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/W09fEYYXSyyY0rEd68WHkw/zh-cn_image_0000002533067136.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073411Z&HW-CC-Expire=86400&HW-CC-Sign=438F1596FA30A8ABFF1320E36F8E6F9DC2431AD73BDEC038291E6C96D0FFF47B)

@@ -1,4 +1,4 @@
-# Marquee-信息展示-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Marquee
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-marquee
 
 跑马灯组件，用于滚动展示一段单行文本。仅当文本内容宽度大于等于跑马灯组件宽度时滚动，当文本内容宽度小于跑马灯组件宽度时不滚动。
@@ -300,4 +300,4 @@ struct MarqueeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/tfhF1-WTRm-0I4qavEUtcw/zh-cn_image_0000002563787083.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023228Z&HW-CC-Expire=86400&HW-CC-Sign=8AC2FFAED7149ADE246217265CA90EA511AC4E0939978822148C779DEAA4B5C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/tfhF1-WTRm-0I4qavEUtcw/zh-cn_image_0000002563787083.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073410Z&HW-CC-Expire=86400&HW-CC-Sign=C249332060219142346873DD266651C483EC36CCE5F66B3DAB0C4B35447BFCA5)

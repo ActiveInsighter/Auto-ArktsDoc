@@ -1,4 +1,4 @@
-# 文档中心
+# ContainerSpan
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-containerspan
 
 [Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件的子组件，用于统一管理多个[Span](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span)、[ImageSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan)的背景色及圆角弧度。
@@ -97,7 +97,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/qmtbpXBTRN24AD9mtUF6-w/zh-cn_image_0000002532907092.png?HW-CC-KV=V1&HW-CC-Date=20260328T023203Z&HW-CC-Expire=86400&HW-CC-Sign=69F68D59E15A1AE5BB952203FA4E189B07A0BD6267775582850F262ACA0292B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/qmtbpXBTRN24AD9mtUF6-w/zh-cn_image_0000002532907092.png?HW-CC-KV=V1&HW-CC-Date=20260328T073342Z&HW-CC-Expire=86400&HW-CC-Sign=52A61B8F9E645787A7C6CAB955C2B54102788A2589A77161F1FA4FB6A311D3BA)
 
 ### 示例2（通过attributeModifier设置背景样式）
 
@@ -135,4 +135,4 @@ struct ContainerSpanModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/rxgHyTFlRjCkL_HwgxqtmA/zh-cn_image_0000002533067040.png?HW-CC-KV=V1&HW-CC-Date=20260328T023203Z&HW-CC-Expire=86400&HW-CC-Sign=A6438B4D1DF5EC557EA33123A52146B9F0A2E05F7189E1332ABA2856565303B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/rxgHyTFlRjCkL_HwgxqtmA/zh-cn_image_0000002533067040.png?HW-CC-KV=V1&HW-CC-Date=20260328T073342Z&HW-CC-Expire=86400&HW-CC-Sign=381324C53D0F71A6B39625AD852BA34AE2023CC0E53FD9E2E72F9DC00562EDFC)

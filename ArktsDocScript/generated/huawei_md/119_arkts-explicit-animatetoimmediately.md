@@ -1,4 +1,4 @@
-# 文档中心
+# 显式动画立即下发 (animateToImmediately)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animatetoimmediately
 
 animateToImmediately接口用来提供[显式动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation)立即下发功能。同时加载多个属性动画的情况下，使用该接口可以立即执行闭包代码中状态变化导致的过渡动效。
@@ -90,4 +90,4 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/opdgVjMSTu-7UaFalDIwcg/zh-cn_image_0000002533067256.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023251Z&HW-CC-Expire=86400&HW-CC-Sign=9C9C58B8118D4719FC8E71798B4252EC176DF3A14066F0FCAAD0758A6534F96B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/opdgVjMSTu-7UaFalDIwcg/zh-cn_image_0000002533067256.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073436Z&HW-CC-Expire=86400&HW-CC-Sign=24146F5154D60C47232FB6DD7C9B504ECBCCFF465B9378DA7A6FF8683CBE4787)

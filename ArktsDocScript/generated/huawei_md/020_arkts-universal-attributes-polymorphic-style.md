@@ -1,4 +1,4 @@
-# 多态样式-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 多态样式
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-polymorphic-style
 
 设置组件不同状态下的样式。
@@ -166,7 +166,7 @@ struct StyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/eLOQvSDWTIKFeEDQ1BHk1A/zh-cn_image_0000002563786739.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023044Z&HW-CC-Expire=86400&HW-CC-Sign=38051BD6BA8A4B33D838C3813550DBF74148B63F637B33EE6A4B9D4828C237C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/eLOQvSDWTIKFeEDQ1BHk1A/zh-cn_image_0000002563786739.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=337208BF3C600584BE6490F4ECAADA879D5EF327D7F5A1E51F765A515EA95F53)
 
 ### 示例2（设置Radio多态样式）
 
@@ -231,7 +231,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vdn9FJ3hR4ulo5E4OaVDFw/zh-cn_image_0000002532906844.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023044Z&HW-CC-Expire=86400&HW-CC-Sign=35918CD67010677D018040D2FF19CC80E1572DB7D8CA308D08E0D9317656086C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vdn9FJ3hR4ulo5E4OaVDFw/zh-cn_image_0000002532906844.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=AE275B59F5937FF2E15FD79DD70B8395082BD6983B9DFF59CC313AC3928AB3D1)
 
 ### 示例3（设置Builder多态样式）
 
@@ -292,4 +292,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7UlN8yFjSmS6aXUiA4CobA/zh-cn_image_0000002533066792.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023044Z&HW-CC-Expire=86400&HW-CC-Sign=4B07670ED33D93D5054E0892CA692A31BB63F772A466865805DB49FB6561359D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7UlN8yFjSmS6aXUiA4CobA/zh-cn_image_0000002533066792.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073226Z&HW-CC-Expire=86400&HW-CC-Sign=C16743738588CF8C8AFFEF43B336AC2C41BE3105C85BA916091F13563C7F15AB)

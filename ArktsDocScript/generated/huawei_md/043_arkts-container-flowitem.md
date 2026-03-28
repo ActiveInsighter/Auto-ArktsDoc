@@ -1,4 +1,4 @@
-# 文档中心
+# FlowItem
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem
 
 [瀑布流组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)的子组件，用来展示瀑布流具体item。

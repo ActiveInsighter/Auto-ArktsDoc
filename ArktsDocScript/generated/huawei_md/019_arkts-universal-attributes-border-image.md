@@ -1,4 +1,4 @@
-# 图片边框设置-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 图片边框设置
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image
 
 设置组件的图片边框样式。
@@ -111,7 +111,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/LA1Il_WeQDuRnHK_K2CBzQ/zh-cn_image_0000002563866653.png?HW-CC-KV=V1&HW-CC-Date=20260328T023044Z&HW-CC-Expire=86400&HW-CC-Sign=6946232162FAA60B298AD3797E743999F59B79ED40DF1A53397EDE7F8AC43F14)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/LA1Il_WeQDuRnHK_K2CBzQ/zh-cn_image_0000002563866653.png?HW-CC-KV=V1&HW-CC-Date=20260328T073224Z&HW-CC-Expire=86400&HW-CC-Sign=54430B85D133088CA6DF40CD56EADEAEA2E79614C89EEF15DBADA807A8BF00AB)
 
 ### 示例2（动态调整属性值）
 
@@ -210,7 +210,7 @@ struct BorderImage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/su9qXpdRSu203oBtQIrCGQ/zh-cn_image_0000002563786699.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023044Z&HW-CC-Expire=86400&HW-CC-Sign=61225DA949C07E8B3DF1426EA13E77B3E84055D664B8676C15C08066C1CA33DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/su9qXpdRSu203oBtQIrCGQ/zh-cn_image_0000002563786699.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073224Z&HW-CC-Expire=86400&HW-CC-Sign=5C370A3EA86AF564231D48EF5189D47E0F2F729AB0E7DD66D9FEECB006EE1298)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
@@ -369,4 +369,4 @@ struct BorderImage {
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/mE39NPWuT6m8AXPKp0dTyQ/zh-cn_image_0000002532906804.png?HW-CC-KV=V1&HW-CC-Date=20260328T023044Z&HW-CC-Expire=86400&HW-CC-Sign=12E52D2B05CFD1D83C9E3B6F4D95D3B7208607F9392D584C4A875D378ED5EDF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/mE39NPWuT6m8AXPKp0dTyQ/zh-cn_image_0000002532906804.png?HW-CC-KV=V1&HW-CC-Date=20260328T073224Z&HW-CC-Expire=86400&HW-CC-Sign=6EEC42DE00606958CD7925182314E03D1196B351DAF34D9FB5249B33B97FC262)

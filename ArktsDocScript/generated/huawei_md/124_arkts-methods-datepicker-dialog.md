@@ -1,4 +1,4 @@
-# 文档中心
+# 日期滑动选择器弹窗 (DatePickerDialog)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-datepicker-dialog
 
 根据指定的日期范围创建日期滑动选择器并展示在弹窗上。
@@ -105,11 +105,11 @@ static show(options?: DatePickerDialogOptions)
 该示例通过showTime、useMilitaryTime、dateTimeOptions设置显示时间。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-01-01');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -123,7 +123,7 @@ struct DatePickerDialogExample {
             useMilitaryTime: false,
             dateTimeOptions: { hour: "numeric", minute: "2-digit" },
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             },
@@ -152,18 +152,18 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/i8Nn5T3XT86by_GhmLjt6A/zh-cn_image_0000002563867177.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=1C160962DB7DAFD53227029F1C3695E3B68B223DFCC10C71024A7A9100355B8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/i8Nn5T3XT86by_GhmLjt6A/zh-cn_image_0000002563867177.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=A0BFF6DD393C96034A230F44F1206114B5168DB1ABDDB4A69AAD1F1AFE8161B2)
 
 ### 示例2（自定义样式）
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-01-01');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -201,7 +201,7 @@ struct DatePickerDialogExample {
               borderRadius: 10
             },
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             },
@@ -230,7 +230,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/cTsdZMYPSm62vr-op61Fxg/zh-cn_image_0000002563787223.png?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=2276A24A08548044C9BF6703A166833A9B687940B008F587536EC5844F81D11D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/cTsdZMYPSm62vr-op61Fxg/zh-cn_image_0000002563787223.png?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=19EB40EFCD031A542C2B6335329DB3B53D802DCF959CB95028CA4F2F3F31EED9)
 
 > **说明**
 > 如需完全自定义实现日期滑动选择器弹窗，可以通过先使用[自定义弹窗 (CustomDialog)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box)，然后使用[DatePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker)组件来实现。
@@ -244,6 +244,7 @@ struct DatePickerDialogExample {
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-01-01');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -259,7 +260,7 @@ struct DatePickerDialogExample {
             textStyle: { color: '#ff00ff00', font: { size: '18fp', weight: FontWeight.Normal }},
             selectedTextStyle: { color: '#ff182431', font: { size: '14fp', weight: FontWeight.Regular }},
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             },
@@ -290,18 +291,18 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/4bPfSA8IS3Wp4WN1gyX1aQ/zh-cn_image_0000002532907328.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=489BF7F8957F65C1E384D70D9CDF6E311F3778077714AB5F9E9724CC27A0FC42)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/4bPfSA8IS3Wp4WN1gyX1aQ/zh-cn_image_0000002532907328.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=640993840E2BC0446C3EAFC228186A60EB10203CD965E7FF80C30E74797B188E)
 
 ### 示例4（设置弹窗位置）
 
 该示例通过alignment、offset设置弹窗的位置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-01-01');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -314,7 +315,7 @@ struct DatePickerDialogExample {
             alignment: DialogAlignment.Center,
             offset: { dx: 20, dy: 0 },
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             }
@@ -325,18 +326,18 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/caoMCpvaTty14McKigqbQA/zh-cn_image_0000002533067276.png?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=76A6C17FB81105DA6D284E55E22BEBD9BC297056FA61DE7EBE27A8E3DB6A342D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/caoMCpvaTty14McKigqbQA/zh-cn_image_0000002533067276.png?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=B57F74D6398AE9B8BAD199CA937D6221B0783257F10F6E8EC95E2D23F7980239)
 
 ### 示例5（设置遮蔽区）
 
 该示例通过maskRect设置遮蔽区。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-01-01');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -353,7 +354,7 @@ struct DatePickerDialogExample {
               height: '60%'
             },
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             }
@@ -364,18 +365,18 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/77hurZwXQfm8RRVRR97jVg/zh-cn_image_0000002563867179.png?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=6158A1BF29AFC472EE5FAA65E1D38F87990E4C2F6186E9F4CBDF8ED5971E38B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/77hurZwXQfm8RRVRR97jVg/zh-cn_image_0000002563867179.png?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=4D5983578002AA931DC22BC033BB36045F743154E785530258BD86BAFAF98574)
 
 ### 示例6（设置弹窗背板）
 
 该示例通过backgroundColor、backgroundBlurStyle、shadow设置弹窗背板。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-01-01');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -389,7 +390,7 @@ struct DatePickerDialogExample {
             backgroundBlurStyle: BlurStyle.NONE,
             shadow: ShadowStyle.OUTER_FLOATING_SM,
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             }
@@ -400,18 +401,18 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/LHW2tbSYSNypC_G1XHuHwA/zh-cn_image_0000002563787225.png?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=BA2F69204FDB318BBCBF1CE9B0AC4778719E61975680EC245D978DD97A333537)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/LHW2tbSYSNypC_G1XHuHwA/zh-cn_image_0000002563787225.png?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=40F29748C0F32E4FC913F7E5B7066CC40BC9F2B062C2F812D66D8D35BEC4FD79)
 
 ### 示例7（设置公历农历）
 
 该示例通过lunar、lunarSwitch设置弹窗显示公历或农历。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-11-09');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -423,12 +424,13 @@ struct DatePickerDialogExample {
             selected: this.selectedDate,
             lunar: false,
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             }
           });
         })
+
       Button('Lunar DatePickerDialog')
         .margin(20)
         .onClick(() => {
@@ -449,18 +451,18 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/2DeXOC1SQ7i_dfhelzrcgQ/zh-cn_image_0000002532907330.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=D502D86770FF0A944B0F5D6758C21805A49182C28ED57DD6B1E48A02215F2D66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/2DeXOC1SQ7i_dfhelzrcgQ/zh-cn_image_0000002532907330.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=30ECEEA0716C7AD3FBA86ECD1E71EC5DFD6ECB44A1AA95F8FACC604D2AD20597)
 
 ### 示例8（设置显示月、日列）
 
 该示例通过配置mode参数实现显示月、日两列。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-10-13');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -472,7 +474,7 @@ struct DatePickerDialogExample {
             selected: this.selectedDate,
             mode: DatePickerMode.MONTH_AND_DAY,
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             }
@@ -483,19 +485,19 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/RxRRC7boQoKkEz2NsGyCHQ/zh-cn_image_0000002533067278.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=D4610CC76F6BA3DDB8C3B6BE7C381DDC3DA6416037B6C541482C91F33B48672B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/RxRRC7boQoKkEz2NsGyCHQ/zh-cn_image_0000002533067278.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=34A62C3C1C5E6C5850A0EC9C67F227B7747AC20B8F3EC975FE98A03F685533E7)
 
 ### 示例9（设置循环滚动）
 
 从API version 20开始，可以通过配置canLoop参数设置是否循环滚动。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DatePickerDialogExample {
   @State isLoop: boolean = true;
   selectedDate: Date = new Date('2009-12-31');
+
   build() {
     Column() {
       Button('DatePickerDialog')
@@ -507,12 +509,13 @@ struct DatePickerDialogExample {
             selected: this.selectedDate,
             canLoop: this.isLoop,
             onDateAccept: (value: Date) => {
-              // 保存按下确定按钮时的日期，这样当弹窗再次弹出时显示选中的是上一次确定的日期
+
               this.selectedDate = value;
               console.info('DatePickerDialog:onDateAccept()' + value.toString());
             }
           });
         })
+
       Row() {
         Text('循环滚动').fontSize(20)
         Toggle({ type: ToggleType.Switch, isOn: true })
@@ -525,7 +528,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/HKv4f63NRimRyW2hYKDPFA/zh-cn_image_0000002563867181.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=7D92A0A497E4935302F40C709C9729206D10CA5D789F72B48417553603F9A09E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/HKv4f63NRimRyW2hYKDPFA/zh-cn_image_0000002563867181.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=B7A45FC48D18D3B6326B85319970DB74CBFDA688DAF08FBB5AA82232B57AA93C)
 
 ### 示例10（自定义背景模糊效果参数）
 
@@ -536,6 +539,7 @@ struct DatePickerDialogExample {
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-01-01');
+
   build() {
     Stack({ alignContent: Alignment.Top }) {
       Image($r('app.media.bg'))
@@ -563,7 +567,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/uSPRRJW5TpWqzVAjDV3LDA/zh-cn_image_0000002563787227.png?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=04AEC75035E1CF0F8B24F9A7D086345856DA1A60A54E650AB78C613BD2D3FB98)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/uSPRRJW5TpWqzVAjDV3LDA/zh-cn_image_0000002563787227.png?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=EA077D92C6743D85477141FEDDBCC6C8F84429704C0A3A26C0834C0C401811F6)
 
 ### 示例11（自定义背景效果参数）
 
@@ -574,9 +578,10 @@ struct DatePickerDialogExample {
 @Component
 struct DatePickerDialogExample {
   selectedDate: Date = new Date('2010-01-01');
+
   build() {
     Stack({ alignContent: Alignment.Top }) {
-      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
+
       Image($r('app.media.bg'))
       Column() {
         Button('DatePickerDialog')
@@ -603,4 +608,4 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/nw6YZFBZSKaibZELQe6FDQ/zh-cn_image_0000002532907332.png?HW-CC-KV=V1&HW-CC-Date=20260328T023258Z&HW-CC-Expire=86400&HW-CC-Sign=F28FA96221B02B174CE9805D3C3F092E2C05B33736CADD778A343BF037FA50FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/nw6YZFBZSKaibZELQe6FDQ/zh-cn_image_0000002532907332.png?HW-CC-KV=V1&HW-CC-Date=20260328T073441Z&HW-CC-Expire=86400&HW-CC-Sign=48E829FA55D55BD8337F980C41CB60376A301B5296843C56E332254FE87483B7)

@@ -1,4 +1,4 @@
-# 页面间转场 (pageTransition)-动画-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 页面间转场 (pageTransition)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation
 
 当路由([router](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-router))进行切换时，可以通过在[pageTransition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#pagetransition9)函数中自定义页面入场和页面退场的转场动效。详细指导请参考[页面转场动画](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-transition-animation)。
@@ -349,7 +349,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/3yOWY5AISnqTDfiZQhDkyw/zh-cn_image_0000002563787195.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023244Z&HW-CC-Expire=86400&HW-CC-Sign=5C071FF03D18EEE42771C384E3D1C25651FE3F23B2567407D6098D8E233F4CDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/3yOWY5AISnqTDfiZQhDkyw/zh-cn_image_0000002563787195.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073428Z&HW-CC-Expire=86400&HW-CC-Sign=C2B0B6480E3C91256455D9C5C6A5FE16D0C413BC90147418E0A01E79B6C6A3FA)
 
 自定义方式2：配置了当前页面的入场动画为从左侧滑入，退场为平移加透明度变化。
 
@@ -405,7 +405,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/B22aQoSHSZ2xRRbLqJapKg/zh-cn_image_0000002532907300.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023244Z&HW-CC-Expire=86400&HW-CC-Sign=B212D4FC3AFF22CF67A3B8578D9D941D60F392FFFB50DB4A042F0EC7BA7A4E15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/B22aQoSHSZ2xRRbLqJapKg/zh-cn_image_0000002532907300.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073428Z&HW-CC-Expire=86400&HW-CC-Sign=1A28B9847385D71EC8478FA73747E5F9EA0AA28F54C4EDD6D08F7E0B369AB91A)
 
 ### 示例2（设置退入场平移效果）
 
@@ -487,7 +487,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MUaCxBGxR5uryk0uIvp7KQ/zh-cn_image_0000002533067248.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023244Z&HW-CC-Expire=86400&HW-CC-Sign=D3442B7245C1570D4E43AE1DBDE3498924BB15156AC4E284B3680C37778445DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MUaCxBGxR5uryk0uIvp7KQ/zh-cn_image_0000002533067248.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073428Z&HW-CC-Expire=86400&HW-CC-Sign=A3722A5FA4C0EBC492D84F6A810BA6B722C69D524F024FBCE262D7903C3A5B7E)
 
 自定义方式2：使用系统默认的退入场效果，将系统语言排版模式改为RTL。
 
@@ -545,4 +545,4 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/L7k8eeopTp6jVEGKuhPq2w/zh-cn_image_0000002563867151.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023244Z&HW-CC-Expire=86400&HW-CC-Sign=44F06283A7332F33C3CA62EDE2C803EC23C1C2B5E29C92C96ED90F35C9DBFB7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/L7k8eeopTp6jVEGKuhPq2w/zh-cn_image_0000002563867151.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073428Z&HW-CC-Expire=86400&HW-CC-Sign=044B497FFEA31FD46F4AA08DB38AB6B78B7D9A6A40BBDD304FA93AE4FD0669A8)

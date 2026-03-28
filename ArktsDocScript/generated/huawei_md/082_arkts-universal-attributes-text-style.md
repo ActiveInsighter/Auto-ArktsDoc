@@ -1,4 +1,4 @@
-# 输入框类组件通用接口-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 输入框类组件通用接口
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style
 
 为[TextInput](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput)、[TextArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textarea)组件提供获取文本和光标信息、插入和删除文本、设置计数器以及文本装饰线的能力。

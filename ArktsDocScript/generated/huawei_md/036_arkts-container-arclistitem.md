@@ -1,4 +1,4 @@
-# 文档中心
+# ArcListItem
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem
 
 用来展示列表具体子组件，必须配合[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)来使用。
@@ -133,4 +133,4 @@ struct ArcListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/03gVhChoTIusfRCbgWXmWQ/zh-cn_image_0000002563786811.png?HW-CC-KV=V1&HW-CC-Date=20260328T023103Z&HW-CC-Expire=86400&HW-CC-Sign=42D57686110A43C470D08222558A754B90EC788C712B528C198B2B6825813F9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/03gVhChoTIusfRCbgWXmWQ/zh-cn_image_0000002563786811.png?HW-CC-KV=V1&HW-CC-Date=20260328T073245Z&HW-CC-Expire=86400&HW-CC-Sign=EB4F3458451287AF89D725A7055A4DAC50971E9CB7C270B67FA0A3D29707E7FC)

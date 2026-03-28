@@ -1,4 +1,4 @@
-# Checkbox-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Checkbox
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkbox
 
 提供多选框组件，通常用于某选项的打开或关闭。
@@ -359,7 +359,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/kO0qwKJ2RK-3uZo6LOSTXA/zh-cn_image_0000002563786887.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023133Z&HW-CC-Expire=86400&HW-CC-Sign=4258A076BC4729032F78EF5CC091F72F152075FC043D1DEC62403AE3B6B629F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/kO0qwKJ2RK-3uZo6LOSTXA/zh-cn_image_0000002563786887.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073313Z&HW-CC-Expire=86400&HW-CC-Sign=EDA4A722839E3340BE7A6F6E0020A9AFE5AF0BEAB5DCED2CC40C3338E965C41B)
 
 ### 示例2（设置多选框颜色）
 
@@ -409,7 +409,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/1Oa5F8SYTrGs19kuE8ozKQ/zh-cn_image_0000002532906992.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023133Z&HW-CC-Expire=86400&HW-CC-Sign=9C55A3894404A93D990BC9861547857B2AB50EB8443F018526A27F51FA1C4460)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/1Oa5F8SYTrGs19kuE8ozKQ/zh-cn_image_0000002532906992.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073313Z&HW-CC-Expire=86400&HW-CC-Sign=07B86B7BB328D19569CC718F8A9CB008E63AE590D5A4DBDF160E740FCD5D0364)
 
 ### 示例3（自定义多选框样式）
 
@@ -499,7 +499,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/yNnSKS9iT3GwwTUm1moZ6w/zh-cn_image_0000002533066940.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023133Z&HW-CC-Expire=86400&HW-CC-Sign=41E2EC5E6A7C9B764C3A36003DB7925AAE831D50B7C8D059A56C904FB750650A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/yNnSKS9iT3GwwTUm1moZ6w/zh-cn_image_0000002533066940.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073313Z&HW-CC-Expire=86400&HW-CC-Sign=2FB5AF894C3752593F4BD83BFA85C6B1B65383E46248B2D0876D78AD45FF2355)
 
 ### 示例4（设置文本多选框样式）
 
@@ -555,7 +555,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/xPwWeP2nS82yiOtXoquxOw/zh-cn_image_0000002563866843.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023133Z&HW-CC-Expire=86400&HW-CC-Sign=29EEFA37F2551A5D079AEFE7F23E32BF62FAF67C3291842B1A78EB5915CBCE5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/xPwWeP2nS82yiOtXoquxOw/zh-cn_image_0000002563866843.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073313Z&HW-CC-Expire=86400&HW-CC-Sign=9921FDE49DD38DD2BC56CC1FD8B5D16B2639F5D8092389E38FB3F24F27F8EE98)
 
 ### 示例5（获取多选框选中信息）
 
@@ -709,7 +709,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/8Qbm5pEESEWgFb76Kme_FA/zh-cn_image_0000002563786889.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023133Z&HW-CC-Expire=86400&HW-CC-Sign=42FAD6A1BBDB8A65C846596A492DBD8EE0E3830E0589F05BC37F33CF32246D64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/8Qbm5pEESEWgFb76Kme_FA/zh-cn_image_0000002563786889.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073313Z&HW-CC-Expire=86400&HW-CC-Sign=A0BCF0C3B4202787F7350CBAD8B51B20D407728BCDE64AA85AC703AF12CDD810)
 
 ### 示例6（设置滑动多选）
 
@@ -923,4 +923,4 @@ enum SelectedState {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/EQNRm8SwQvyGNJVOGRqVRA/zh-cn_image_0000002532906994.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023133Z&HW-CC-Expire=86400&HW-CC-Sign=C58DE0B0FECB9A832AD2B40884B657D00E57BBA57B29CF89C04DB8F092C66BEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/EQNRm8SwQvyGNJVOGRqVRA/zh-cn_image_0000002532906994.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073313Z&HW-CC-Expire=86400&HW-CC-Sign=8219ABE6D11791CEBAAAB8A584753D59176AE6044722F38486D55ACE10989EA3)

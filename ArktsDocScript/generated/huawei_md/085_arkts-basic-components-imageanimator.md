@@ -1,4 +1,4 @@
-# 文档中心
+# ImageAnimator
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -377,7 +377,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/MVx4q80IQUOHs8yGsGNp2Q/zh-cn_image_0000002563787017.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023005Z&HW-CC-Expire=86400&HW-CC-Sign=9042EA30B541FD656B4791CC3ACEB7D608A6F21F7BF94ED63F1B94A6EC2AC503)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/MVx4q80IQUOHs8yGsGNp2Q/zh-cn_image_0000002563787017.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073355Z&HW-CC-Expire=86400&HW-CC-Sign=BD291902D0F195912E06DB9DBE5C3D3A4E4CF9F7E1CD10B900DA57B81074D115)
 
 ### 示例2（播放PixelMap动画）
 
@@ -476,7 +476,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/6Zl445tKSv-rlMQqpDCkHQ/zh-cn_image_0000002532907122.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023005Z&HW-CC-Expire=86400&HW-CC-Sign=6E077B85BD6DAE4C547FF1133345531176D4B3AACC3AF9F89947F8F1A1F9FE5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/6Zl445tKSv-rlMQqpDCkHQ/zh-cn_image_0000002532907122.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073355Z&HW-CC-Expire=86400&HW-CC-Sign=98C2E8CD3B10672F245B703C8B3ED6F291C7608B5305B75AF8688455DB8F0F9D)
 
 ### 示例3（设置不可见自动停播）
 
@@ -579,4 +579,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/c6bvuWkETdy6VdMGgrY7Yw/zh-cn_image_0000002533067070.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023005Z&HW-CC-Expire=86400&HW-CC-Sign=8E8AC919A5F302EA811CFA9391C36A18DC46BCE79C3508CCA0408C316486333D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/c6bvuWkETdy6VdMGgrY7Yw/zh-cn_image_0000002533067070.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073355Z&HW-CC-Expire=86400&HW-CC-Sign=0CE9E7F7347D5BA080476B8DEECBB86776D5B104208DF172D33A46672551D2FD)

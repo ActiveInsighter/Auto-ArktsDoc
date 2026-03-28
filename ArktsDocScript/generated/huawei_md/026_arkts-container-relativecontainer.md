@@ -1,4 +1,4 @@
-# RelativeContainer-行列与堆叠-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# RelativeContainer
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer
 
 相对布局组件，用于复杂场景中元素对齐的布局。
@@ -252,7 +252,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mu9heXBtSVaV_fAnfKleSA/zh-cn_image_0000002563866743.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=CAD50DDFE4100041F766448CDBE54B1D095B771649561594DD3A190B570EFA5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mu9heXBtSVaV_fAnfKleSA/zh-cn_image_0000002563866743.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=8A3923363D533AC7C51107F67AA62D515D986C4074C639014CDDAAE1EB94ADD0)
 
 ### 示例2（子组件设置外边距）
 
@@ -328,7 +328,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/taoaIGt7TbaPpGGe9xxZzw/zh-cn_image_0000002563786789.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=53C9A19CEC77996FC9973DB95BF8799A781D3532F2E3833E19ED8DCD318F8136)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/taoaIGt7TbaPpGGe9xxZzw/zh-cn_image_0000002563786789.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=2C37F225C206CB41F3415D07E3DC55F8E91D0F673A71412EA537679288240664)
 
 ### 示例3（设置容器大小自适应内容）
 
@@ -398,7 +398,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/t-3xX1LcSU6tkmqsPmwMSQ/zh-cn_image_0000002532906894.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=3D41DA37C26113AE314F2FEC48751384C5B83804FAA2A244F5E82CAD1324D5CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/t-3xX1LcSU6tkmqsPmwMSQ/zh-cn_image_0000002532906894.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=85C0E03D27ED12BFF47573C075C76729EDB463BAE54F3737778F43754537B19D)
 
 ### 示例4（设置偏移）
 
@@ -433,7 +433,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/l_cKoidLRDa-zgQvJjwXNA/zh-cn_image_0000002533066842.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=206EBA753E687DFB717DC4DF7E2A6E3F03082D683346B7BC5041F35274887C34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/l_cKoidLRDa-zgQvJjwXNA/zh-cn_image_0000002533066842.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=76B731F7C5EEBEAA82179B0E87D81D20DC0904B35FCE66230BCCFD02A2241297)
 
 ### 示例5（设置辅助线）
 
@@ -468,7 +468,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/bPpR5bl1T-2mjxs7-D6OJw/zh-cn_image_0000002563866745.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=C17AD36854E2D9856B96498C522C92C49E49A501A603DB191F56F611C45E4461)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/bPpR5bl1T-2mjxs7-D6OJw/zh-cn_image_0000002563866745.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=51FC30E8E19F33E27078DA509FB7BF494DE304852AA994EC6169B8ED5F604D46)
 
 ### 示例6（设置屏障）
 
@@ -541,7 +541,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cHP55KPmSnmC-7MU4H7Lyg/zh-cn_image_0000002563786791.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=66CCB6BD452400C057BB37BBB5D88108884169343B146D04B775D6978F1B95B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cHP55KPmSnmC-7MU4H7Lyg/zh-cn_image_0000002563786791.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=4614F9495C6915E435162C2E172FEAF3C8650680E818A463DD9C9247F94DFD4B)
 
 ### 示例7（设置链）
 
@@ -692,7 +692,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CNURKWXDTKqYvCkoYdn1cw/zh-cn_image_0000002532906896.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=B51971FCA2D47E0E3E01BFE4737FB78F0213AD62F3DCA679DCDF4D394DB9D0BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CNURKWXDTKqYvCkoYdn1cw/zh-cn_image_0000002532906896.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=A9FF9C70A9DF48631A42F85CF3E81F7007730E3B1F109E5C77591DB3E03ACF24)
 
 ### 示例8（链中设置偏移）
 
@@ -758,7 +758,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1sEu21ASQ9Krg7KQgFUcxA/zh-cn_image_0000002533066844.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=B52DF5BF6CF7FF97DCEC50BE698164EC152379D4199E5F4746F495163DF4689D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1sEu21ASQ9Krg7KQgFUcxA/zh-cn_image_0000002533066844.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=0AF9990612C06049F9C8852966B6DC2D900448E3CCAD9555774D007BE81179FE)
 
 ### 示例9（设置镜像模式）
 
@@ -832,7 +832,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6c1tgIghSzO3ih3Hq8D7HQ/zh-cn_image_0000002563866747.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=17162ABE16CB60DFBE73634B5B46E80B86F8F8B41E8DF344EEB9323C7672A154)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6c1tgIghSzO3ih3Hq8D7HQ/zh-cn_image_0000002563866747.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=3EA3906E833A2B90D9A4B4789E572FDB83E6D8252BD8DEAF9F9ACD7CEBB0239E)
 
 ### 示例10（设置链中节点权重）
 
@@ -899,4 +899,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/VoNjJTuiQKiBOFFeqzYuWg/zh-cn_image_0000002563786793.png?HW-CC-KV=V1&HW-CC-Date=20260328T023051Z&HW-CC-Expire=86400&HW-CC-Sign=E9AA0CD840143541366CE5153CD09A0C9C02036A7F11C94AEA3C681A9603930B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/VoNjJTuiQKiBOFFeqzYuWg/zh-cn_image_0000002563786793.png?HW-CC-KV=V1&HW-CC-Date=20260328T073233Z&HW-CC-Expire=86400&HW-CC-Sign=6C47CBE2BA1F3F13FF6BBA1C9B0C93942B1E32DA7CB3EF2ADB892D984063C5C7)

@@ -1,4 +1,4 @@
-# Rating-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Rating
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-rating
 
 提供在给定范围内选择评分的组件。
@@ -361,7 +361,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/UUd2lsTgRSGzasZXIxoF-Q/zh-cn_image_0000002533066962.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023142Z&HW-CC-Expire=86400&HW-CC-Sign=0A8752D86924FEC2C13E6895FAA56AE0887A20E7D2C5AE7E7D9737C02867263A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/UUd2lsTgRSGzasZXIxoF-Q/zh-cn_image_0000002533066962.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073325Z&HW-CC-Expire=86400&HW-CC-Sign=0F28F305CD2187905D990F129D589E2E211E7C05141B39B2F0E6E066992AC78A)
 
 ### 示例2（自定义评分条）
 
@@ -565,7 +565,7 @@ struct ratingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/h-MGY9jqSIC5amzfF7Wyow/zh-cn_image_0000002563866865.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023142Z&HW-CC-Expire=86400&HW-CC-Sign=D7BE2F29A12D28AEEF626D976B1742F0DE092F61EBD0D9A316BCFCF1A614E66A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/h-MGY9jqSIC5amzfF7Wyow/zh-cn_image_0000002563866865.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073325Z&HW-CC-Expire=86400&HW-CC-Sign=14053E749AB302DCD8EC97846402385CB5D2A12011F2215EEE39D3AAC0FAC1E0)
 
 ### 示例3（通过Resource资源设置评分的样式）
 
@@ -601,7 +601,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tbAeboD3Ssqa2UobAdpAxg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023142Z&HW-CC-Expire=86400&HW-CC-Sign=FE300F8FC822DF54657554FDEF0CA764A7E234FFF6D09E9356CB881CA12FD308)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tbAeboD3Ssqa2UobAdpAxg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073325Z&HW-CC-Expire=86400&HW-CC-Sign=3DF6631E67BB7E00EE5E40B49ABA5B5E91C231754C17EB808F81357CF552CC9B)
 
 ### 示例4（设置评分的样式）
 
@@ -639,4 +639,4 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vQURvBWSRS2k0IKDxPCLLg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023142Z&HW-CC-Expire=86400&HW-CC-Sign=A3B1B67263E62BABBC76D1A76829CBA94B72DEA8032E60A35D34B46A778F080A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vQURvBWSRS2k0IKDxPCLLg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073325Z&HW-CC-Expire=86400&HW-CC-Sign=814D1FE8ED4CF01C2D68A80CE18AD34F2E77532D927E1F6B56A2A1E20A7804A1)

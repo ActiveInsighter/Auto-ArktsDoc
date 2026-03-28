@@ -1,4 +1,4 @@
-# 文档中心
+# MenuItemGroup
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitemgroup
 
 该组件用来展示菜单MenuItem的分组。

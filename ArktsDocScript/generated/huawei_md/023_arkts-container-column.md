@@ -1,4 +1,4 @@
-# 文档中心
+# Column
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column
 
 沿垂直方向布局的容器。
@@ -244,7 +244,7 @@ struct ColumnExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/-aW76tqNQU2GbmnqsSDA4A/zh-cn_image_0000002533066838.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=1EE3798085593EFAAABF0AD9E07C44599E9EEB18EC96BA16FE9E6E99BCA535C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/-aW76tqNQU2GbmnqsSDA4A/zh-cn_image_0000002533066838.png?HW-CC-KV=V1&HW-CC-Date=20260328T073229Z&HW-CC-Expire=86400&HW-CC-Sign=F6524758D74FAE9128A3A2567CE6FB04DE5FB22E7133BF38ED5DD3972E550B9A)
 
 ### 示例2（设置反转属性）
 
@@ -274,4 +274,4 @@ struct ColumnReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QVbyRPouR3OheRvcYRAonw/zh-cn_image_0000002563866741.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=29B6CEF4FDD880F4A564FCAB4BD33FE7A8EB89FBD8DDC641DF92961FDF0B37DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QVbyRPouR3OheRvcYRAonw/zh-cn_image_0000002563866741.png?HW-CC-KV=V1&HW-CC-Date=20260328T073229Z&HW-CC-Expire=86400&HW-CC-Sign=6F55D702F9D81C4AAC4ABCF1EE2D36F2A9FF6D0097686A59ED210B331CD268BC)

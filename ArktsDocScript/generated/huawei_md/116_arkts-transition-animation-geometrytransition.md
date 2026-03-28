@@ -1,4 +1,4 @@
-# 文档中心
+# 组件内隐式共享元素转场 (geometryTransition)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-geometrytransition
 
 在视图切换过程中提供丝滑的上下文传承过渡。通用transition机制提供了opacity、scale等转场效果，geometryTransition通过安排绑定的in/out组件（in指新视图、out指旧视图）的frame、position使得原本独立的transition动画在空间位置上发生联系，将视觉焦点由旧视图位置引导到新视图位置。
@@ -111,4 +111,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/_Ae84c1oRUC2vu_0dy6_GA/zh-cn_image_0000002563787199.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023248Z&HW-CC-Expire=86400&HW-CC-Sign=0FAA96765D216588CFC2CF848BD943EC53BF11DF33CD35418610CE091A5556FB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/_Ae84c1oRUC2vu_0dy6_GA/zh-cn_image_0000002563787199.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073432Z&HW-CC-Expire=86400&HW-CC-Sign=1CD12BD8B9E053C19733120FC03C297091DB92DCB10DDC7B95765F863CB5EBA8)

@@ -1,4 +1,4 @@
-# Radio-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Radio
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio
 
 单选框，提供相应的用户交互选择项。
@@ -292,7 +292,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5GgLkl9FSKOophdjtoXjbg/zh-cn_image_0000002563866863.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023142Z&HW-CC-Expire=86400&HW-CC-Sign=1D907DFEE2278603DB3BFAF98A5F9F77748FA3B4E46987207A3F577CE607454D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/5GgLkl9FSKOophdjtoXjbg/zh-cn_image_0000002563866863.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073324Z&HW-CC-Expire=86400&HW-CC-Sign=D629839D6D6026E6D811A0B22BC769F97D6D518C6AC665BA46F0A34A0AD46959)
 
 ### 示例2 （设置选中样式）
 
@@ -348,7 +348,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ah_3xvL7TpaO5QkYzoSySA/zh-cn_image_0000002563786909.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023142Z&HW-CC-Expire=86400&HW-CC-Sign=B235ABDDBCDF8598921AD6BFF1097FCFCD5142D4966147C2C68F22DDDDEF6803)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ah_3xvL7TpaO5QkYzoSySA/zh-cn_image_0000002563786909.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073324Z&HW-CC-Expire=86400&HW-CC-Sign=6CB173C5010C7E84FBDD44CC12EA1FEB82A1A35FBBC748F0871FF3A9E6DB309B)
 
 ### 示例3（设置自定义样式）
 
@@ -414,4 +414,4 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/6B3bUAPfRcmuj3JYABI7_Q/zh-cn_image_0000002532907014.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023142Z&HW-CC-Expire=86400&HW-CC-Sign=450B915E511937A5A1DA127C15D682F8F61CDE199F3877B8CD407446BEE5EF1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/6B3bUAPfRcmuj3JYABI7_Q/zh-cn_image_0000002532907014.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073324Z&HW-CC-Expire=86400&HW-CC-Sign=120F123F908C6F48E193175AB72090F8641AA9A87DC1849AF1A907017D4FEFF3)

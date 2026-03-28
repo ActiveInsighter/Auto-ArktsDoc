@@ -1,4 +1,4 @@
-# ListItem-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# ListItem
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem
 
 用来展示列表具体item，必须配合List来使用。
@@ -402,7 +402,7 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/kgbjXc5IQo2fSAEU1KANwA/zh-cn_image_0000002533066858.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023058Z&HW-CC-Expire=86400&HW-CC-Sign=9C613A1B552CADEABF8C68A0C03554A55B51BD1665E614DE8ECA4E4FB98A16CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/kgbjXc5IQo2fSAEU1KANwA/zh-cn_image_0000002533066858.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073241Z&HW-CC-Expire=86400&HW-CC-Sign=EF975FC41EFA95AA2DDEFD976909D2E939F772B96FB67FF38C9C0A81BC44DAEC)
 
 ### 示例2（设置划出组件）
 
@@ -477,7 +477,7 @@ struct ListItemExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/oGNvU99hTKKetDS7Yszjkw/zh-cn_image_0000002563866761.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023058Z&HW-CC-Expire=86400&HW-CC-Sign=C4595D1B8A497B0466D7BD38E7253EC2F4B1841A1808DEDA9246488F38B6D818)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/oGNvU99hTKKetDS7Yszjkw/zh-cn_image_0000002563866761.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073241Z&HW-CC-Expire=86400&HW-CC-Sign=D7B5F54E5788A8CA14537CE903FF24804F348A7556B5C32B4E4F5D8C9277D188)
 
 ### 示例3（设置卡片样式）
 
@@ -518,7 +518,7 @@ struct ListItemExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/rbY5tIaPTP-yq6u4FySIaw/zh-cn_image_0000002563786807.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T023058Z&HW-CC-Expire=86400&HW-CC-Sign=EA98517644496D3986C8AE00684DE12155D481ED395382ACE8F8925DD58B542E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/rbY5tIaPTP-yq6u4FySIaw/zh-cn_image_0000002563786807.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T073241Z&HW-CC-Expire=86400&HW-CC-Sign=042234D77CE910BCF10A2452A923903AF740B961DCD274D8877A8C9BD7FE3B02)
 
 ### 示例4（通过ComponentContent设置划出组件）
 
@@ -632,7 +632,7 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/-xM9fwfySjO9_vytZBSIkw/zh-cn_image_0000002532906912.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023058Z&HW-CC-Expire=86400&HW-CC-Sign=7D9BD005392D32AEC02ACA15388335CA133764DEB8D77480610AA943E1498EA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/-xM9fwfySjO9_vytZBSIkw/zh-cn_image_0000002532906912.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073241Z&HW-CC-Expire=86400&HW-CC-Sign=8A870DCBDD621E4DCC829A08D5B39A341E06821CFE149E01F3013D1F8A12A755)
 
 ### 示例5（通过ListItemSwipeActionManager管理划出菜单）
 
@@ -720,4 +720,4 @@ struct ListItemExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/AVFDs_DJRu-gOyd2qRn_Sg/zh-cn_image_0000002533066860.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023058Z&HW-CC-Expire=86400&HW-CC-Sign=4CA4A9DF43F9278CFBACACAB22B2C4D272CA02FACBFB51C0494F940A94DBD4D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/AVFDs_DJRu-gOyd2qRn_Sg/zh-cn_image_0000002533066860.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073241Z&HW-CC-Expire=86400&HW-CC-Sign=2CEC4438ADE58A22AF0EFCDDF9D324697795F90E4ABBEC00895D1C6C62A71A33)
