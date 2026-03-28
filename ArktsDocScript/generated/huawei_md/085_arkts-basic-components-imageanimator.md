@@ -1,4 +1,4 @@
-# ImageAnimator-图片与视频-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imageanimator
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -377,7 +377,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/on24L0HOQyKR3H7FzypUag/zh-cn_image_0000002563207231.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024213Z&HW-CC-Expire=86400&HW-CC-Sign=C2AA195D1AB5089BFDE6D665F22A6E45578B7B56BB390FE3E3BAC2C66E04C73A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/MVx4q80IQUOHs8yGsGNp2Q/zh-cn_image_0000002563787017.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023005Z&HW-CC-Expire=86400&HW-CC-Sign=9042EA30B541FD656B4791CC3ACEB7D608A6F21F7BF94ED63F1B94A6EC2AC503)
 
 ### 示例2（播放PixelMap动画）
 
@@ -476,7 +476,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/JDYNIqmqQN-eGKhm1rHofg/zh-cn_image_0000002532087332.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024213Z&HW-CC-Expire=86400&HW-CC-Sign=D8592EAEE26EE8F1B4C2AC1A7E7A320DBB019A9BD604C506C25F682C22617125)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/6Zl445tKSv-rlMQqpDCkHQ/zh-cn_image_0000002532907122.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023005Z&HW-CC-Expire=86400&HW-CC-Sign=6E077B85BD6DAE4C547FF1133345531176D4B3AACC3AF9F89947F8F1A1F9FE5C)
 
 ### 示例3（设置不可见自动停播）
 
@@ -579,4 +579,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/eM8zXpK8SUOgEuNNm6kKnA/zh-cn_image_0000002532247268.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024213Z&HW-CC-Expire=86400&HW-CC-Sign=82724B2A296C769E06810DBB527A2AEFB0E700B863D4A4CBB900CADEC427D41F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/c6bvuWkETdy6VdMGgrY7Yw/zh-cn_image_0000002533067070.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023005Z&HW-CC-Expire=86400&HW-CC-Sign=8E8AC919A5F302EA811CFA9391C36A18DC46BCE79C3508CCA0408C316486333D)

@@ -1,4 +1,4 @@
-# Toggle-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle
 
 组件提供勾选框样式、状态按钮样式和开关样式。
@@ -252,7 +252,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/rRV9Q8REQQq4sa7ADSScVQ/zh-cn_image_0000002532087200.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024131Z&HW-CC-Expire=86400&HW-CC-Sign=152C10FD33B172D85275E02D5F850014E114DE3DE6E6191A7785EF121950F2BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/yFOuz5gkSPCYDfn90WnBsA/zh-cn_image_0000002532906990.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023132Z&HW-CC-Expire=86400&HW-CC-Sign=2611219A9B5E9DAE1C7CE66509F3BDC602A548889EEF86EF69B196FE45ED5325)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/wWm29ye0TK-DnXlObR-V_Q/zh-cn_image_0000002532247136.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024131Z&HW-CC-Expire=86400&HW-CC-Sign=36D99EB1AD6743705BCF701CDFD3530A7022A642907A6CE935C69D85598FFC6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Kb020t_QSVmKM_7TfRf5Iw/zh-cn_image_0000002533066938.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023132Z&HW-CC-Expire=86400&HW-CC-Sign=CD491721DC7503BBAF3F10501062A257ADF26AC86C7BAD39C113E6AA5C4B1E44)
 
 ### 示例3（自定义Toggle样式）
 
@@ -348,4 +348,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/URpe2-a1S7W1eATd95Wd7g/zh-cn_image_0000002563127079.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024131Z&HW-CC-Expire=86400&HW-CC-Sign=094962DBB5EF11FD834902850C8A23F10A80B17AEC6180DD6CF4C5B45877B1BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/RF74OkEzTxqabkbq0KHyQQ/zh-cn_image_0000002563866841.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023132Z&HW-CC-Expire=86400&HW-CC-Sign=7676E3A3DD66A135ADDD7C5A475F34BE2D58BFD475513C34681CD705570A3FA5)

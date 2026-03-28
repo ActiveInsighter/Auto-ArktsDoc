@@ -1,4 +1,4 @@
-# 文档中心
+# SaveButton-安全-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton
 
 安全控件的保存控件。应用集成保存控件后，用户首次使用保存控件展示弹窗，在点击允许后自动授权，应用会在短时间内获取访问媒体库特权接口的授权。后续使用无需弹窗授权。在API version 19及之前的版本中，授权持续时间为10秒；在API version 20及之后的版本中，授权持续时间为1分钟。
@@ -334,7 +334,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/MxJ69zafQfeuuVNYfRTO0Q/zh-cn_image_0000002563127439.png?HW-CC-KV=V1&HW-CC-Date=20260327T024238Z&HW-CC-Expire=86400&HW-CC-Sign=DE858FDA4C4ECAE9FA1BCDE40D5C44FBD0667D46CE7856A1DE76ED7A06164F1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/lGITbdUESVqLW7iZ7Hz_NA/zh-cn_image_0000002563867201.png?HW-CC-KV=V1&HW-CC-Date=20260328T023302Z&HW-CC-Expire=86400&HW-CC-Sign=BFE17C938FEE2C4DFF54ED84A49D5D88F341AEE20EC7F1CF27DC7C2EC1ED2AE0)
 
 ## 示例2
 
@@ -408,4 +408,4 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/puB7SoiKQraA2fgj0rar8g/zh-cn_image_0000002563207461.png?HW-CC-KV=V1&HW-CC-Date=20260327T024238Z&HW-CC-Expire=86400&HW-CC-Sign=86A00AAD06E9C0468F3697CAF8929F6EC56E8E7AAA12EDB47BF441EC2733FD09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/mGUz6LdGRKqLcpLGlMmpog/zh-cn_image_0000002563787247.png?HW-CC-KV=V1&HW-CC-Date=20260328T023302Z&HW-CC-Expire=86400&HW-CC-Sign=E11551C2CF6CAE4D8DBD1DA4652F06D2AA4047F216CF94EDF9AC1B29164F0A88)

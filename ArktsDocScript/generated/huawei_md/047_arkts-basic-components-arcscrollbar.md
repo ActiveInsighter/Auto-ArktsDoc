@@ -5,7 +5,7 @@
 
 > **说明**
 > - 该组件从API version 18开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
-> - ArcScrollBar不设置宽高时，采用父组件[布局约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#layoutconstraint12)中的maxSize作为宽高。如果ArcScrollBar的父组件存在可滚动组件，如[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)，建议设置ArcScrollBar宽高，否则ArcScrollBar的宽高可能为无穷大。
+> - ArcScrollBar不设置宽高时，采用父组件[LayoutConstraint](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#layoutconstraint12)中的maxSize作为宽高。如果ArcScrollBar的父组件存在可滚动组件，如[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)、[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)，建议设置ArcScrollBar宽高，否则ArcScrollBar的宽高可能为无穷大。
 
 ## 子组件
 
@@ -85,4 +85,4 @@ struct ArcScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/YugR1ZW5QF67X-WPFk1M0A/zh-cn_image_0000002563207063.png?HW-CC-KV=V1&HW-CC-Date=20260327T024120Z&HW-CC-Expire=86400&HW-CC-Sign=1DEE2B14995BB2148F20D5C0EBAC6709FA224BEC3431A7936DD13C9ACD7C5F5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Er2RFM7mRaKer7RyM5i9KA/zh-cn_image_0000002563786849.png?HW-CC-KV=V1&HW-CC-Date=20260328T023118Z&HW-CC-Expire=86400&HW-CC-Sign=B38F33BCF2F506CA84F842D74C46E0A02C37560E21F638329730FF265C0F558B)

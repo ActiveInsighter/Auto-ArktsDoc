@@ -1,4 +1,4 @@
-# Divider-空白与分隔-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-divider
 
 提供分割线组件，分割不同内容块/内容元素。
@@ -70,6 +70,12 @@ strokeWidth(value: number | string)
 
 设置分割线的宽度，支持[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)动态设置属性方法。
 
+> **说明**
+> - 分割线的宽度不支持百分比设置。
+> - 使用水平分割线时，strokeWidth控制高度，优先级低于通用属性[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)；使用垂直分割线时，strokeWidth控制宽度，优先级低于通用属性[width](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#width)。
+> - 超过通用属性设置大小时，按照通用属性进行裁切。
+> - 如果设备硬件存在1像素取整后分割线不显示问题，建议使用2像素。
+
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -80,7 +86,7 @@ strokeWidth(value: number | string)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | number | string | 是 | 分割线宽度。 默认值：1px。 非法值：按默认值处理 单位：vp **说明：** 分割线的宽度不支持百分比设置。优先级低于[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)，超过通用属性设置大小时，按照通用属性进行裁切。部分设备硬件中存在1像素取整后分割线不显示问题，建议使用2像素。 |
+| value | number | string | 是 | 分割线宽度。 默认值：1px。 非法值：按默认值处理。 单位：vp |
 
 ### lineCap
 
@@ -178,7 +184,7 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/zHgw2G4cSA-U21gLMtuJGA/zh-cn_image_0000002532247346.png?HW-CC-KV=V1&HW-CC-Date=20260327T024239Z&HW-CC-Expire=86400&HW-CC-Sign=9E58E1FC335A02155635EEDA2FE3C0401FAB60D65453CDD3E525A06984FA5174)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0jdWmVBwQJqKL5YXJPQVOA/zh-cn_image_0000002533067148.png?HW-CC-KV=V1&HW-CC-Date=20260328T023236Z&HW-CC-Expire=86400&HW-CC-Sign=77FC45C8F3D529148AE1A95933002132C5E1479BE7F47FF87781D09DEE57E67C)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -216,4 +222,4 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/qX8XrJz5Sv2dAU3DvGQ_UQ/zh-cn_image_0000002563127289.png?HW-CC-KV=V1&HW-CC-Date=20260327T024239Z&HW-CC-Expire=86400&HW-CC-Sign=3CBA981A81EAD7B04356A38EFC17164334D543669E8655562B0A60A345FA28D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/sZOh9T0FT3KGGTFXTDxuNA/zh-cn_image_0000002563867051.png?HW-CC-KV=V1&HW-CC-Date=20260328T023236Z&HW-CC-Expire=86400&HW-CC-Sign=B7D4EB8FB95681CC2277B190212ABCA3117FD8CBE325EAA348A1FF403FAA4748)

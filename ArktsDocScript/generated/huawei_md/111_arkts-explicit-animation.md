@@ -127,6 +127,7 @@ animateTo(value: AnimateParam, event: () => void): void
 该示例通过在onAppear方法中创建组件出现时的动画效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct AnimateToExample {
@@ -134,7 +135,6 @@ struct AnimateToExample {
   @State heightSize: number = 100;
   @State rotateAngle: number = 0;
   private flag: boolean = true;
-
   build() {
     Column() {
       Button('change size')
@@ -143,7 +143,7 @@ struct AnimateToExample {
         .margin(30)
         .onClick(() => {
           if (this.flag) {
-
+            // 建议使用this.getUIContext()?.animateTo()
             animateTo({
               duration: 2000,
               curve: Curve.EaseOut,
@@ -157,7 +157,7 @@ struct AnimateToExample {
               this.heightSize = 60;
             })
           } else {
-
+            // 建议使用this.getUIContext()?.animateTo()
             animateTo({}, () => {
               this.widthSize = 250;
               this.heightSize = 100;
@@ -169,12 +169,13 @@ struct AnimateToExample {
         .margin(50)
         .rotate({ x: 0, y: 0, z: 1, angle: this.rotateAngle })
         .onAppear(() => {
-
+          // 组件出现时开始做动画
+          // 建议使用this.getUIContext()?.animateTo()
           animateTo({
             duration: 1200,
             curve: Curve.Friction,
             delay: 500,
-            iterations: -1,
+            iterations: -1, // 设置-1表示动画无限循环
             playMode: PlayMode.Alternate,
             expectedFrameRateRange: {
               min: 10,
@@ -186,9 +187,9 @@ struct AnimateToExample {
           })
         })
         .onClick(() => {
-
+          // 建议使用this.getUIContext()?.animateTo()
           animateTo({ duration: 0 }, () => {
-
+            // this.rotateAngle之前为90，在duration为0的动画中修改属性，可以停止该属性之前的动画，按新设置的属性显示
             this.rotateAngle = 0;
           })
         })
@@ -197,21 +198,21 @@ struct AnimateToExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/egVuC_BHTEq_GFTE9EQ5gA/zh-cn_image_0000002532087508.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024244Z&HW-CC-Expire=86400&HW-CC-Sign=26624F26DAF053A474B4CD53C9293D1E976269EDC74A9D4B8C7FD606048E6DFC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/kIhum14_Sm6jZTadPpP9-Q/zh-cn_image_0000002532907298.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023242Z&HW-CC-Expire=86400&HW-CC-Sign=A6573F3DD10F3FC63CCEF26FD31CB17B85333A67871240BD543B8AE05DDEAE3B)
 
 ### 示例2（动画执行结束后组件消失）
 
 该示例主要演示如何实现在动画执行结束后组件消失。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct AttrAnimationExample {
   @State heightSize: number = 100;
   @State isShow: boolean= true;
   @State count: number= 0;
-  private isToBottom: boolean = true;
-
+  private isToBottom: boolean = true; // 向下
   build() {
     Column() {
       if (this.isShow) {
@@ -220,7 +221,7 @@ struct AttrAnimationExample {
           .height(this.heightSize)
           .backgroundColor('blue')
           .onClick(() => {
-
+            // 建议使用this.getUIContext()?.animateTo()
             animateTo({
               duration: 2000,
               curve: Curve.EaseOut,
@@ -228,7 +229,7 @@ struct AttrAnimationExample {
               playMode: PlayMode.Normal,
               onFinish: () => {
                 this.count--;
-                if (this.count == 0 && !this.isToBottom) {
+                if (this.count == 0 && !this.isToBottom) { // 组件只有在向下做完动画才会消失
                   this.isShow = false;
                 }
               }
@@ -249,4 +250,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/GrRQzt_UQTOdOe_M6ER90w/zh-cn_image_0000002532247444.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024244Z&HW-CC-Expire=86400&HW-CC-Sign=30311940CFB082417E21F7A8C92E90C50B9DAF3B6D2E255F997032CCDEC8589C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/CnUQBUafRr-ZI4WS8cWhYQ/zh-cn_image_0000002533067246.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023242Z&HW-CC-Expire=86400&HW-CC-Sign=8F4187B4DD1BFF3BFB0219614FB5F13DCD92C16295C4ED44DCA28E4255A9FFE7)

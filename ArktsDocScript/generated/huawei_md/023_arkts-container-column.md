@@ -1,4 +1,4 @@
-# Column-行列与堆叠-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column
 
 沿垂直方向布局的容器。
@@ -244,7 +244,7 @@ struct ColumnExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/W8BxFKhJSqybA0q18DbNPg/zh-cn_image_0000002532247036.png?HW-CC-KV=V1&HW-CC-Date=20260327T024049Z&HW-CC-Expire=86400&HW-CC-Sign=C756F3CDFADD083F8819F7DED6DB85C14A7AC394AC95CE73BBD7B08C90F3A818)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/-aW76tqNQU2GbmnqsSDA4A/zh-cn_image_0000002533066838.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=1EE3798085593EFAAABF0AD9E07C44599E9EEB18EC96BA16FE9E6E99BCA535C1)
 
 ### 示例2（设置反转属性）
 
@@ -274,4 +274,4 @@ struct ColumnReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/DdWBxFhOTa-4aWmv9HPN8g/zh-cn_image_0000002563126979.png?HW-CC-KV=V1&HW-CC-Date=20260327T024049Z&HW-CC-Expire=86400&HW-CC-Sign=128883B22974A5FC2537882347AF4CF95C192A059EF334F1CF2F5B62DDDF7B7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QVbyRPouR3OheRvcYRAonw/zh-cn_image_0000002563866741.png?HW-CC-KV=V1&HW-CC-Date=20260328T023047Z&HW-CC-Expire=86400&HW-CC-Sign=29B6CEF4FDD880F4A564FCAB4BD33FE7A8EB89FBD8DDC641DF92961FDF0B37DA)

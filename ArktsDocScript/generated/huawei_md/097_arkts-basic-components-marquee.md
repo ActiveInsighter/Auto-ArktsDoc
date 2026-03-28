@@ -228,7 +228,6 @@ onFinish(event: () => void)
 该示例通过设置[MarqueeOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-marquee#marqueeoptions18对象说明)的start、step、loop、fromStart、src、spacing属性和[marqueeUpdateStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-marquee#marqueeupdatestrategy12)展示了跑马灯内容动态更新时运行的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct MarqueeExample {
@@ -239,6 +238,7 @@ struct MarqueeExample {
   private step: number = 10;
   private loop: number = Number.POSITIVE_INFINITY;
   controller: TextClockController = new TextClockController();
+
   convert2time(value: number): string {
     let date = new Date(Number(value + '000'));
     let hours = date.getHours().toString().padStart(2, '0');
@@ -246,6 +246,7 @@ struct MarqueeExample {
     let seconds = date.getSeconds().toString().padStart(2, '0');
     return hours + ":" + minutes + ":" + seconds;
   }
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Marquee({
@@ -260,9 +261,9 @@ struct MarqueeExample {
         .height('80vp')
         .fontColor('#FFFFFF')
         .fontSize('48fp')
-        .allowScale(true) // 当fontSize为‘fp’单位且想要Marquee组件文本跟随系统字体大小缩放，可以设置该属性为true
+        .allowScale(true)
         .fontWeight(700)
-        .fontFamily('HarmonyOS Sans') // 不想跟随主题字体可设置该属性为默认字体'HarmonyOS Sans'
+        .fontFamily('HarmonyOS Sans')
         .backgroundColor('#182431')
         .margin({ bottom: '40vp' })
         .onStart(() => {
@@ -277,7 +278,7 @@ struct MarqueeExample {
       Button('Start')
         .onClick(() => {
           this.start = true
-          // 启动文本时钟
+
           this.controller.start();
         })
         .width('120vp')
@@ -299,4 +300,4 @@ struct MarqueeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/s_jASP30S7i5f_K3vUx3Ng/zh-cn_image_0000002563207297.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024230Z&HW-CC-Expire=86400&HW-CC-Sign=4B9244AC1D59C08CEBF87E7BE5BBF170C3676AE8FD536039C526DAE608F218A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/tfhF1-WTRm-0I4qavEUtcw/zh-cn_image_0000002563787083.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023228Z&HW-CC-Expire=86400&HW-CC-Sign=8AC2FFAED7149ADE246217265CA90EA511AC4E0939978822148C779DEAA4B5C7)

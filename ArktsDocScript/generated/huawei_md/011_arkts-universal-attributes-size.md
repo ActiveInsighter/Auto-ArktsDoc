@@ -315,7 +315,6 @@ constraintSize(value: ConstraintSizeOptions): T
 设置组件的宽度、高度、内边距及外边距。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SizeExample {
@@ -323,7 +322,7 @@ struct SizeExample {
     Column({ space: 10 }) {
       Text('margin and padding:').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Row() {
-        // 宽度80 ,高度80 ,外边距20(蓝色区域），上下左右的内边距分别为5、15、10、20（白色区域）
+
         Row() {
           Row()
             .size({ width: '100%', height: '100%' })
@@ -340,6 +339,7 @@ struct SizeExample {
         .margin(20)
         .backgroundColor(Color.White)
       }.backgroundColor(Color.Blue)
+
       Text('constraintSize')
         .fontSize(12)
         .fontColor(0xCCCCCC)
@@ -347,27 +347,28 @@ struct SizeExample {
       Text('this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text.this is a Text')
         .width('90%')
         .constraintSize({ maxWidth: 200 })
+
       Text('layoutWeight')
         .fontSize(12)
         .fontColor(0xCCCCCC)
         .width('90%')
-      // 父容器尺寸确定时，设置了layoutWeight的子元素在主轴布局尺寸按照权重进行分配，忽略本身尺寸设置。
+
       Row() {
-        // 权重1，占主轴剩余空间1/3
+
         Text('layoutWeight(1)')
           .size({ width: '30%', height: 110 }).backgroundColor(0xFFEFD5).textAlign(TextAlign.Center)
           .layoutWeight(1)
-        // 权重2，占主轴剩余空间2/3
+
         Text('layoutWeight(2)')
           .size({ width: '30%', height: 110 }).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
           .layoutWeight(2)
-        // 未设置layoutWeight属性，组件按照自身尺寸渲染
+
         Text('no layoutWeight')
           .size({ width: '30%', height: 110 }).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
       }
       .size({ width: '90%', height: 140 })
       .backgroundColor(0xAFEEEE)
-      // calc计算特性
+
       Text('calc:')
         .fontSize(12)
         .fontColor(0xCCCCCC)
@@ -387,6 +388,7 @@ struct SizeExample {
         }
         .width('100%')
         .justifyContent(FlexAlign.Center)
+
         Text('width:calc(50% + 50vp), height:calc(50%)')
           .fontSize(14)
           .borderWidth(1)
@@ -394,7 +396,7 @@ struct SizeExample {
           .backgroundColor(0xFFFAF0)
           .textAlign(TextAlign.Center)
           .size({ width: 'calc(50% + 50vp)', height: 'calc(50%)' })
-          // width和height设置百分比时，以父容器的width和height作为基础值。calc的宽度计算结果与上方的两个text宽度之和相等。
+
       }.width('100%').height(100)
     }
     .width('100%')
@@ -403,15 +405,15 @@ struct SizeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/jemLtaptS3OG-yMtxNlWMw/zh-cn_image_0000002532086996.png?HW-CC-KV=V1&HW-CC-Date=20260327T024035Z&HW-CC-Expire=86400&HW-CC-Sign=772060524E9BB5DBBE2F29A203120FB2645CB59DE1F9F327568FA5BEBA3302B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/xAHkuOnvTfylMAFcIxYPlQ/zh-cn_image_0000002532906786.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=243AAAE04C17FB3604FB65FDE1668C4962CD1CB6CF5F34FC6FBC08E4BB1B88D2)
 
 ### 示例2（LocalizedPadding和LocalizedMargin类型的使用）
 
 使用LocalizedPadding类型和LocalizedMargin类型定义padding和margin属性。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct SizeExample {
@@ -422,7 +424,7 @@ struct SizeExample {
         .fontColor(0xCCCCCC)
         .width('90%')
       Row() {
-        // 宽度80 ,高度80 ,上下开始结束的外边距40、20、30、10(蓝色区域），上下开始结束的内边距分别为5、15、10、20（白色区域）
+
         Row() {
           Row()
             .size({ width: '100%', height: '100%' })
@@ -454,19 +456,19 @@ struct SizeExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/GjNZvEN0TCyx_JtqASMXJg/zh-cn_image_0000002532246932.png?HW-CC-KV=V1&HW-CC-Date=20260327T024035Z&HW-CC-Expire=86400&HW-CC-Sign=47129C3DBFE2948BA56027A609095D1DDF86E04C533E05C0173606EF045EBDC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/gSwSqTrUT0OUdjMEVDz7wg/zh-cn_image_0000002533066734.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=795B933EB6EA02024866D08097A1F49969BBFE7E4A7B9389E30F959F5ACB4203)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/9w0YFP-XT4qrwOblvBV2aA/zh-cn_image_0000002563126875.png?HW-CC-KV=V1&HW-CC-Date=20260327T024035Z&HW-CC-Expire=86400&HW-CC-Sign=D2AB4C8081CC9F6BAEC7546EBA5FA3A969BB1A8D7D61A6792BA737DAB6BB3FC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/aVRs6LdgRDOb6VbxoiqJ_g/zh-cn_image_0000002563866637.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=9CDE3035AFFE9460DF55931558D72C6D218024CA2F93CE76BBE1350591E47B92)
 
 ### 示例3（设置组件级安全区）
 
 对容器设置组件级安全区。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct SafeAreaPaddingExample {
@@ -491,14 +493,13 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/A5BSqvJBSzGUBV2fkosECg/zh-cn_image_0000002563206897.png?HW-CC-KV=V1&HW-CC-Date=20260327T024035Z&HW-CC-Expire=86400&HW-CC-Sign=DA2BC8C97470177960D9A1B5CEA4AF726A2EFEB66AABC71ACED91A98A1FB4E20)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/CHFYIcFER5SRqupMcAWWtQ/zh-cn_image_0000002563786683.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=BCCF316D70A86921FB63D346D45428590F976C3BAF5121FEAAD60A8761510CD6)
 
 ### 示例4（使用attributeModifier动态设置安全区）
 
 使用attributeModifier对容器设置组件级安全区。
 
 ```typescript
-// xxx.ets
 class MyModifier implements AttributeModifier<CommonAttribute> {
   applyNormalAttribute(instance: CommonAttribute): void {
     instance.safeAreaPadding({
@@ -509,10 +510,12 @@ class MyModifier implements AttributeModifier<CommonAttribute> {
     })
   }
 }
+
 @Entry
 @Component
 struct SafeAreaPaddingExample {
   @State modifier: MyModifier = new MyModifier()
+
   build() {
     Column() {
       Column() {
@@ -534,28 +537,27 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Y2S50sKYQ-G3yO0lxGl13g/zh-cn_image_0000002532086998.png?HW-CC-KV=V1&HW-CC-Date=20260327T024035Z&HW-CC-Expire=86400&HW-CC-Sign=0D41E0C5666F1492EFA9777EC2B5189A15A6177632934B1C0B0B7D040461792D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/sBU-iEc6SwOEqGG_STrrDg/zh-cn_image_0000002532906788.png?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=75B5B02849F6C6FFB4D058319CEC22FAF8C487C273E569C7005956E728E70464)
 
 ### 示例5（设置布局策略）
 
 对容器大小设置布局策略。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct LayoutPolicyExample {
   build() {
     Column() {
       Column() {
-        // matchParent生效时，当前组件会与其父组件内容区大小（180vp * 180vp）相等，同时依旧受自身constraintSize（150vp * 150vp）约束，因此当前组件大小为150vp * 150vp
+
         Text('matchParent')
         Flex()
           .backgroundColor('rgb(0, 74, 175)')
           .width(LayoutPolicy.matchParent)
           .height(LayoutPolicy.matchParent)
           .constraintSize({ maxWidth: 150, maxHeight: 150 })
-        // wrapContent生效时，当前组件会与其子组件大小（300vp * 300vp）相等，但不能超过父组件内容大小（180vp * 180vp）且会受自身constraintSize（250vp * 250vp）约束，因此当前组件大小为180vp * 180vp
+
         Text('wrapContent')
         Row() {
           Flex()
@@ -566,8 +568,9 @@ struct LayoutPolicyExample {
         .width(LayoutPolicy.wrapContent)
         .height(LayoutPolicy.wrapContent)
         .constraintSize({ maxWidth: 250, maxHeight: 250 })
-        // 从API version 20开始，layoutPolicy支持wrapContent和fixAtIdealSize。fixAtIdealSize生效时，当前组件会与其子组件大小（300vp * 300vp）相等，可以超过父组件内容大小（180vp * 180vp）但会受自身constraintSize（250vp * 250vp）约束，因此当前组件大小为250vp * 250vp
+
         Text('fixAtIdealSize')
+
         Row() {
           Flex()
             .width(300)
@@ -588,4 +591,4 @@ struct LayoutPolicyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/3hAgPRvOTWKBH2NtK1sYdg/zh-cn_image_0000002532246934.jpg?HW-CC-KV=V1&HW-CC-Date=20260327T024035Z&HW-CC-Expire=86400&HW-CC-Sign=0294C5B74FEE5F483F150D05B988D1A9375E85E7A912957A0D30B2425E605FFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/QFe24ZB1Tzmgtqo-qZYZTg/zh-cn_image_0000002533066736.jpg?HW-CC-KV=V1&HW-CC-Date=20260328T023034Z&HW-CC-Expire=86400&HW-CC-Sign=8E469C6DE2AB6D02FA745C989F51163FB12FEE5624B60A745359062FEF9AF3A9)

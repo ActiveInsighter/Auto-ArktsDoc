@@ -78,7 +78,7 @@ scrollBarColor(color: Optional<ColorMetrics>)
 > - ScrollBar组件负责定义可滚动区域的行为样式，ScrollBar的子节点负责定义滚动条的行为样式。
 > - 滚动条组件与可滚动组件通过Scroller进行绑定，且只有当两者方向相同时，才能联动，ScrollBar与可滚动组件仅支持一对一绑定。
 > - 从API version 12开始，ScrollBar组件没有子节点时，支持显示默认样式的滚动条。
-> - ScrollBar组件的显隐是通过BarState设置，组件内部会自动根据BarState设置调整opacity来控制显影，因此ScrollBar组件设置[opacity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-opacity#opacity18)属性不生效。
+> - ScrollBar组件的显隐是通过BarState设置，组件内部会自动根据BarState设置调整opacity来控制显隐，因此ScrollBar组件设置[opacity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-opacity#opacity18)属性不生效。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -150,7 +150,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/muwsFYZbTKeHNU58PzuT3w/zh-cn_image_0000002563207057.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024117Z&HW-CC-Expire=86400&HW-CC-Sign=B0FAE1F5C98108F8DD40F07AB03CC4EE26DCB2885E7A6D17B569750D2E3C3102)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/TNNTTb04SXOgMqgJf0oxjQ/zh-cn_image_0000002563786843.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023117Z&HW-CC-Expire=86400&HW-CC-Sign=FF0238BF38B68C467469E231FDCECAA36C609FF1AA631AED518E5B740607633C)
 
 ## 示例2（不设置子节点）
 
@@ -197,7 +197,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/bqWrOzxgRDi55_TvH-9V2w/zh-cn_image_0000002532087158.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024117Z&HW-CC-Expire=86400&HW-CC-Sign=FC53D1962F83B9F74DB6D1F28FB9F3F70639D1C007E86AECB7EDA3E2137F8AA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/2VZ9dSElQsit9540Ztn0cg/zh-cn_image_0000002532906948.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023117Z&HW-CC-Expire=86400&HW-CC-Sign=469072119D796B478DA318452BBCB96294E1C7D8FE2A19A0F4DEF276F115610E)
 
 ## 示例3（支持嵌套滚动）
 
@@ -269,4 +269,4 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/h_szQ_tFQYivCZW5Hc7CuQ/zh-cn_image_0000002532247094.gif?HW-CC-KV=V1&HW-CC-Date=20260327T024117Z&HW-CC-Expire=86400&HW-CC-Sign=727CEEE55DA0A370FB4638CFE613DF365DA67F2CD8C1F2EA012B0F733AB53977)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/6IPH-56oQU2oRTV1m8KITw/zh-cn_image_0000002533066896.gif?HW-CC-KV=V1&HW-CC-Date=20260328T023117Z&HW-CC-Expire=86400&HW-CC-Sign=46E0B22EB82E73B187F070255E9CB845E70ADB411766C43C106D3C4D070714D0)
