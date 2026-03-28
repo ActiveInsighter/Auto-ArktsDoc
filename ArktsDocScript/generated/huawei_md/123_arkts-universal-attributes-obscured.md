@@ -1,0 +1,74 @@
+# 隐私遮罩
+来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-obscured
+
+用于对组件内容进行隐私遮罩处理。
+
+> **说明**
+> 从API version 10开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
+
+## obscured
+
+obscured(reasons: Array<ObscuredReasons>): T
+
+设置组件内容的遮罩类型。
+
+**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reasons | Array<[ObscuredReasons](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#obscuredreasons10)> | 是 | 设置组件内容的遮罩类型。 默认值：[] 仅支持[Image](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)组件、[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件的隐私遮罩处理。 **说明：** 如需在图片加载过程中显示隐私遮罩，需要设置Image组件的宽度和高度。 Text组件设置子组件或设置[属性字符串](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string)时，不支持隐私遮罩。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| T | 返回当前组件。 |
+
+## 示例
+
+该示例通过obscured对Text、Image组件实现了隐私遮罩效果。
+
+```typescript
+@Entry
+@Component
+struct ObscuredExample {
+  build() {
+    Row() {
+      Column() {
+        Text('Text not set obscured attribute').fontSize(10).fontColor(Color.Black)
+        Text('This is an example for text obscured attribute.')
+          .fontSize(30)
+          .width('600px')
+          .fontColor(Color.Black)
+          .border({ width: 1 })
+        Text('Image not set obscured attribute').fontSize(10).fontColor(Color.Black)
+
+        Image($r('app.media.icon'))
+          .width('200px')
+          .height('200px')
+        Text('Text set obscured attribute').fontSize(10).fontColor(Color.Black)
+        Text('This is an example for text obscured attribute.')
+          .fontSize(30)
+          .width('600px')
+          .fontColor(Color.Black)
+          .border({ width: 1 })
+          .obscured([ObscuredReasons.PLACEHOLDER])
+        Text('Image set obscured attribute').fontSize(10).fontColor(Color.Black)
+
+        Image($r('app.media.icon'))
+          .width('200px')
+          .height('200px')
+          .obscured([ObscuredReasons.PLACEHOLDER])
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jyMfIu4aTUS4C7vW8aQrOw/zh-cn_image_0000002563866635.png?HW-CC-KV=V1&HW-CC-Date=20260328T141049Z&HW-CC-Expire=86400&HW-CC-Sign=1510164DFF96C3D4916E8313A2EB1099A8B8AC17CF0E3BF9F28DDE7D58A182CE)

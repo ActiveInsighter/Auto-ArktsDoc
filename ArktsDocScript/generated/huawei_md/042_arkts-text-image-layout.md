@@ -1,0 +1,226 @@
+# 图文混排
+来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-image-layout
+
+图文混排是指图片与文字混合排列，文字可展示于图片四周。此排列方式能够直观呈现页面信息，增强视觉冲击力，使页面展示效果更加多样化。
+
+## 使用Span和ImageSpan实现图文混排
+
+通过设置[Text](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text)组件[textVerticalAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textverticalalign20)属性和设置[ImageSpan](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan)组件[verticalAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan#verticalalign)为ImageSpanAlignment.FOLLOW_PARAGRAPH，实现商品价格优惠信息展示的应用场景。
+
+```typescript
+Text() {
+
+  ImageSpan($r('app.media.hot_sale'))
+    .width(50)
+    .height(30)
+    .borderRadius(5)
+    .verticalAlign(ImageSpanAlignment.FOLLOW_PARAGRAPH)
+
+  Span($r('app.string.surprise_price'))
+    .fontSize(25)
+    .fontColor(Color.Red)
+  Span('1599')
+    .decoration({
+      type: TextDecorationType.LineThrough,
+      color: Color.Grey,
+      style: TextDecorationStyle.SOLID
+    })
+    .fontSize(16)
+}.textVerticalAlign(TextVerticalAlign.CENTER)
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/JkQUHk1WRs62rYnPug4KTg/zh-cn_image_0000002563785865.png?HW-CC-KV=V1&HW-CC-Date=20260328T140923Z&HW-CC-Expire=86400&HW-CC-Sign=CB4485D5384A16D487449EAD2368A22166A66CAC0E6A96400E42D583B0C68956)
+
+## 使用属性字符串实现图文混排
+
+通过[ImageAttachment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#imageattachment)添加图片，[TextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#textstyle)设置多种文本样式，实现商品详情信息展示的应用场景。
+
+```typescript
+import resourceGetString from '../../common/resource';
+import { image } from '@kit.ImageKit';
+import { LengthMetrics } from '@kit.ArkUI';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG = '[Sample_Textcomponent]';
+const DOMAIN = 0xF811;
+const BUNDLE = 'Textcomponent_';
+
+@Entry
+@Component
+struct styled_string_demo {
+  @State message: string = 'Hello World';
+  imagePixelMap: image.PixelMap | undefined = undefined;
+  @State imagePixelMap3: image.PixelMap | undefined = undefined;
+  mutableStr: MutableStyledString = new MutableStyledString('123');
+  controller: TextController = new TextController();
+  mutableStr2: MutableStyledString = new MutableStyledString('This is set decoration line style to the mutableStr2', [{
+    start: 0,
+    length: 15,
+    styledKey: StyledStringKey.DECORATION,
+    styledValue: new DecorationStyle({
+      type: TextDecorationType.Overline,
+      color: Color.Orange,
+      style: TextDecorationStyle.DOUBLE
+    })
+  }]);
+
+  async aboutToAppear() {
+    hilog.info(DOMAIN, TAG, BUNDLE + 'aboutToAppear initial imagePixelMap');
+
+    this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.sky'));
+  }
+
+  private async getPixmapFromMedia(resource: Resource) {
+    let unit8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
+    let imageSource = image.createImageSource(unit8Array?.buffer?.slice(0, unit8Array?.buffer?.byteLength));
+    let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
+      desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+    });
+    await imageSource.release();
+    return createPixelMap;
+  }
+
+  leadingMarginValue: ParagraphStyle = new ParagraphStyle({
+    leadingMargin: LengthMetrics.vp(5),
+    maxLines: 2,
+    overflow: TextOverflow.Ellipsis,
+    textVerticalAlign: TextVerticalAlign.BASELINE
+  });
+
+  lineHeightStyle1: LineHeightStyle = new LineHeightStyle(new LengthMetrics(24));
+
+  boldTextStyle: TextStyle = new TextStyle({ fontWeight: FontWeight.Bold });
+
+  paragraphStyledString1: MutableStyledString =
+
+    new MutableStyledString(resourceGetString.resourceToString($r('app.string.print_photo')), [
+      {
+        start: 0,
+        length: 28,
+        styledKey: StyledStringKey.PARAGRAPH_STYLE,
+        styledValue: this.leadingMarginValue
+      },
+      {
+        start: 11,
+        length: 4,
+        styledKey: StyledStringKey.LINE_HEIGHT,
+        styledValue: this.lineHeightStyle1
+      }
+    ]);
+
+  paragraphStyledString2: MutableStyledString = new MutableStyledString(resourceGetString.resourceToString($r('app.string.limited_time_discount')), [
+    {
+      start: 0,
+      length: 5,
+      styledKey: StyledStringKey.PARAGRAPH_STYLE,
+      styledValue: this.leadingMarginValue
+    },
+    {
+      start: 0,
+      length: 4,
+      styledKey: StyledStringKey.LINE_HEIGHT,
+      styledValue: new LineHeightStyle(new LengthMetrics(40))
+    },
+    {
+      start: 0,
+      length: 9,
+      styledKey: StyledStringKey.FONT,
+      styledValue: this.boldTextStyle
+    },
+    {
+      start: 1,
+      length: 9,
+      styledKey: StyledStringKey.FONT,
+      styledValue: new TextStyle({ fontSize: LengthMetrics.vp(20), fontColor: Color.Red })
+    },
+    {
+      start: 11,
+      length: 4,
+      styledKey: StyledStringKey.FONT,
+      styledValue: new TextStyle({ fontColor: Color.Grey, fontSize: LengthMetrics.vp(14) })
+    }
+  ]);
+
+  paragraphStyledString3: MutableStyledString = new MutableStyledString(resourceGetString.resourceToString($r('app.string.sales_volume')), [
+    {
+      start: 0,
+      length: 15,
+      styledKey: StyledStringKey.PARAGRAPH_STYLE,
+      styledValue: this.leadingMarginValue
+    },
+    {
+      start: 0,
+      length: 7,
+      styledKey: StyledStringKey.LINE_HEIGHT,
+      styledValue: new LineHeightStyle(new LengthMetrics(40))
+    },
+    {
+      start: 0,
+      length: 7,
+      styledKey: StyledStringKey.FONT,
+      styledValue: this.boldTextStyle
+    },
+    {
+      start: 1,
+      length: 1,
+      styledKey: StyledStringKey.FONT,
+      styledValue: new TextStyle({ fontSize: LengthMetrics.vp(18), fontColor: Color.Red })
+    },
+    {
+      start: 2,
+      length: 2,
+      styledKey: StyledStringKey.FONT,
+      styledValue: new TextStyle({ fontSize: LengthMetrics.vp(36), fontColor: Color.Red })
+    },
+    {
+      start: 4,
+      length: 3,
+      styledKey: StyledStringKey.FONT,
+      styledValue: new TextStyle({ fontSize: LengthMetrics.vp(20), fontColor: Color.Red })
+    },
+    {
+      start: 7,
+      length: 9,
+      styledKey: StyledStringKey.FONT,
+      styledValue: new TextStyle({ fontColor: Color.Grey, fontSize: LengthMetrics.vp(14) })
+    }
+  ]);
+
+  build() {
+    Row() {
+      Column({ space: 10 }) {
+        Text(undefined, { controller: this.controller })
+          .copyOption(CopyOptions.InApp)
+          .draggable(true)
+          .backgroundColor('#FFFFFF')
+          .borderRadius(5)
+          .width(210)
+
+        Button($r('app.string.textImageMixedLayout_content'))
+          .onClick(() => {
+            if (this.imagePixelMap !== undefined) {
+              this.mutableStr = new MutableStyledString(new ImageAttachment({
+                value: this.imagePixelMap,
+                size: { width: 210, height: 190 },
+                verticalAlign: ImageSpanAlignment.BASELINE,
+                objectFit: ImageFit.Fill,
+                layoutStyle: {
+                  borderRadius: LengthMetrics.vp(5)
+                }
+              }));
+              this.paragraphStyledString1.appendStyledString(this.paragraphStyledString2);
+              this.paragraphStyledString1.appendStyledString(this.paragraphStyledString3);
+              this.mutableStr.appendStyledString(this.paragraphStyledString1);
+              this.controller.setStyledString(this.mutableStr);
+            }
+          })
+      }
+      .width('100%')
+    }
+    .height('100%')
+    .backgroundColor('#F8F8FF')
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/KXXitDOyTceCu8GxKVuXfA/zh-cn_image_0000002532905970.png?HW-CC-KV=V1&HW-CC-Date=20260328T140923Z&HW-CC-Expire=86400&HW-CC-Sign=32EFAE57D031FC1071449A12475DA7676DC8027FADCC04F01F000D9811BE8E0C)

@@ -1,0 +1,543 @@
+# 气泡提示（Popup）
+来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-popup
+
+Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、交互逻辑和显示状态。主要用于屏幕录制、信息弹出提醒等显示状态。
+
+气泡分为两种类型，一种是系统提供的气泡[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)，一种是开发者可以自定义的气泡[CustomPopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#custompopupoptions8类型说明)。其中，PopupOptions通过配置primaryButton和secondaryButton来设置带按钮的气泡；CustomPopupOptions通过配置[builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)来设置自定义的气泡。其中系统提供的气泡PopupOptions，字体的最大放大倍数为2。
+
+气泡可以通过配置[mask](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)来实现模态和非模态窗口，mask为true或者颜色值的时候，气泡为模态窗口，mask为false时，气泡为非模态窗口。
+
+多个气泡同时弹出时，子窗内显示的气泡比主窗内显示的气泡层级高，所处窗口相同时，后面弹出的气泡层级比先弹出的气泡层级高。
+
+## 文本提示气泡
+
+文本提示气泡常用于展示带有文本的信息提示，适用于无交互的场景。Popup属性需绑定组件，当bindPopup属性的参数show为true时，会弹出气泡提示。
+
+在Button组件上绑定Popup属性，每次点击Button按钮时，handlePopup会切换布尔值。当值为true时，触发bindPopup弹出气泡。
+
+```typescript
+@Entry
+@Component
+export struct TextPopupExample {
+  @State handlePopup: boolean = false;
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('PopupOptions')
+          .id('PopupOptions')
+          .margin({ top: 300 })
+          .onClick(() => {
+            this.handlePopup = !this.handlePopup;
+          })
+          .bindPopup(this.handlePopup, {
+            message: 'This is a popup with PopupOptions',
+          })
+      }.width('100%').padding({ top: 5 })
+    }
+
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Xkq91nmfSLuhCcDj-RsPUA/zh-cn_image_0000002563865887.png?HW-CC-KV=V1&HW-CC-Date=20260328T140959Z&HW-CC-Expire=86400&HW-CC-Sign=93605B6FCAEC6AFEC607FA244361B971C0AE5D7132ED564DDF6DF10E3602AFB4)
+
+## 添加气泡状态变化的事件
+
+通过[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)中的onStateChange属性为气泡添加状态变化的事件回调，可以判断气泡的当前显示状态。
+
+```typescript
+@Entry
+@Component
+export struct StatePopupExample {
+  @State handlePopup: boolean = false;
+
+  build() {
+    NavDestination() {
+        Column() {
+          Button('PopupOptions')
+            .id('PopupOptions')
+            .margin({ top: 300 })
+            .onClick(() => {
+              this.handlePopup = !this.handlePopup;
+            })
+            .bindPopup(this.handlePopup, {
+              message: 'This is a popup with PopupOptions',
+              onStateChange: (e)=> {
+                if (!e.isVisible) {
+                  this.handlePopup = false;
+                }
+              }
+            })
+        }.width('100%').padding({ top: 5 })
+    }
+
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/ok9bXUnsT_uJb_WpX2ulGg/zh-cn_image_0000002563785933.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140959Z&HW-CC-Expire=86400&HW-CC-Sign=D0D5059BD99C85B721B4E494A67E4DAAA15502FDBE0AD6BD8A57C8ED35E92C9F)
+
+## 带按钮的提示气泡
+
+通过[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)中的primaryButton、secondaryButton属性为气泡最多设置两个Button按钮，通过此按钮进行简单的交互，开发者可以通过配置action参数来设置想要触发的操作。
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+@Entry
+@Component
+export struct ButtonPopupExample {
+  @State handlePopup: boolean = false;
+
+  build() {
+    NavDestination() {
+        Column() {
+          Button('PopupOptions').margin({ top: 300 })
+            .id('PopupOptions')
+            .onClick(() => {
+              this.handlePopup = !this.handlePopup;
+            })
+            .bindPopup(this.handlePopup, {
+              message: 'This is a popup with PopupOptions',
+              primaryButton: {
+                value: 'Confirm',
+                action: () => {
+                  this.handlePopup = !this.handlePopup;
+                  hilog.info(0xFF00, 'DialogProject', 'confirm Button click');
+                }
+              },
+              secondaryButton: {
+                value: 'Cancel',
+                action: () => {
+                  this.handlePopup = !this.handlePopup;
+                }
+              },
+              onStateChange: (e) => {
+                if (!e.isVisible) {
+                  this.handlePopup = false;
+                }
+              }
+            })
+        }.width('100%').padding({ top: 5 })
+    }
+
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/_gQVr1jkR5eHCWi2x0j4pg/zh-cn_image_0000002532906038.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T140959Z&HW-CC-Expire=86400&HW-CC-Sign=BB40B30205ED4F094328A8B3C60866944906D1E2230889AEF85709B2CD698617)
+
+## 气泡的动画
+
+通过[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)或[CustomPopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#custompopupoptions8类型说明)中的transition属性，可以控制气泡的进场和出场动画效果。
+
+```typescript
+@Entry
+@Component
+export struct AnimationPopupExample {
+  @State handlePopup: boolean = false;
+  @State customPopup: boolean = false;
+
+  @Builder
+  popupBuilder() {
+    Row() {
+      Text('Custom Popup with transitionEffect').fontSize(10)
+    }.height(50).padding(5)
+  }
+
+  build() {
+    NavDestination() {
+      Flex({ direction: FlexDirection.Column }) {
+
+        Button('PopupOptions')
+          .id('PopupOptions')
+          .onClick(() => {
+            this.handlePopup = !this.handlePopup;
+          })
+          .bindPopup(this.handlePopup, {
+            message: 'This is a popup with transitionEffect',
+            placement: Placement.Top,
+            showInSubWindow: false,
+            onStateChange: (e) => {
+              if (!e.isVisible) {
+                this.handlePopup = false;
+              }
+            },
+
+            transition: TransitionEffect.asymmetric(
+              TransitionEffect.OPACITY.animation({ duration: 1000, curve: Curve.Ease }).combine(
+                TransitionEffect.translate({ x: 50, y: 50 })),
+              TransitionEffect.IDENTITY)
+          })
+          .position({ x: 100, y: 150 })
+
+        Button('CustomPopupOptions')
+          .id('CustomPopupOptions')
+          .onClick(() => {
+            this.customPopup = !this.customPopup;
+          })
+          .bindPopup(this.customPopup, {
+            builder: this.popupBuilder,
+            placement: Placement.Top,
+            showInSubWindow: false,
+            onStateChange: (e) => {
+              if (!e.isVisible) {
+                this.customPopup = false;
+              }
+            },
+
+            transition: TransitionEffect.scale({ x: 1, y: 0 }).animation({ duration: 500, curve: Curve.Ease })
+          })
+          .position({ x: 80, y: 300 })
+      }.width('100%').padding({ top: 5 })
+    }
+
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/bQo1kQ9kTxW95v4SSoHPUA/zh-cn_image_0000002533065986.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140959Z&HW-CC-Expire=86400&HW-CC-Sign=491605C3F7F1A12A96C739AE3E6D35F8B09F4B8816AF5F30CE325487DBFE85CD)
+
+## 自定义气泡
+
+开发者可以使用[CustomPopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#custompopupoptions8类型说明)的builder创建自定义气泡，@Builder中可以放自定义的内容。除此之外，还可以通过popupColor等参数控制气泡样式。
+
+```typescript
+@Entry
+@Component
+export struct CustomPopupExample {
+  @State customPopup: boolean = false;
+
+  @Builder
+  popupBuilder() {
+    Row({ space: 2 }) {
+      Image($r('app.media.app_icon')).width(24).height(24).margin({ left: 5 })
+      Text('This is Custom Popup').fontSize(15)
+    }.width(200).height(50).padding(5)
+  }
+
+  build() {
+    NavDestination() {
+        Column() {
+          Button('CustomPopupOptions')
+            .id('CustomPopupOptions')
+            .margin({ top: 300 })
+            .onClick(() => {
+              this.customPopup = !this.customPopup;
+            })
+            .bindPopup(this.customPopup, {
+              builder: this.popupBuilder,
+              placement: Placement.Bottom,
+              popupColor: Color.Pink,
+              onStateChange: (e) => {
+                if (!e.isVisible) {
+                  this.customPopup = false
+                }
+              }
+            })
+        }
+        .height('100%')
+    }
+
+  }
+}
+```
+
+使用者通过配置placement参数将弹出的气泡放到需要提示的位置。弹窗构造器会触发弹出提示信息，来引导使用者完成操作，也让使用者有更好的UI体验。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/sPsE5LRpQJO2GeIoiYDWNA/zh-cn_image_0000002563865889.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T140959Z&HW-CC-Expire=86400&HW-CC-Sign=C59968F6C4A0DE9B9382B73561D9AE8D3FCD5B610383C98D949AEDBCCBE3F959)
+
+## 气泡样式
+
+气泡除了可以通过builder实现自定义气泡，还可以通过接口设置气泡的样式和显示效果。
+
+背景颜色：气泡的背景色默认为透明，但是会有一个默认的模糊效果，手机上为COMPONENT_ULTRA_THICK。
+
+蒙层样式：气泡默认有蒙层，且蒙层的颜色为透明。
+
+显示大小：气泡大小由内部的builder大小或者message的长度决定的。
+
+显示位置：气泡默认显示在宿主组件的下方，可以通过[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)中的Placement属性来配置其显示位置以及对齐方向。
+
+以下示例通过设置[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)中的popupColor（背景颜色）、mask（蒙层样式）、width（气泡宽度）、placement（显示位置）实现气泡的样式。
+
+```typescript
+@Entry
+@Component
+export struct StylePopupExample {
+  @State handlePopup: boolean = false;
+
+  build() {
+    NavDestination() {
+      Column({ space: 100 }) {
+        Button('PopupOptions')
+          .onClick(() => {
+            this.handlePopup = !this.handlePopup;
+          })
+          .bindPopup(this.handlePopup, {
+            width: 200,
+            message: 'This is a popup.',
+            popupColor: Color.Red,
+            mask: {
+              color: '#33d9d9d9'
+            },
+            placement: Placement.Top,
+            backgroundBlurStyle: BlurStyle.NONE
+          })
+      }
+      .width('100%')
+    }
+
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/dstONsYsT6-11kO32jYBUA/zh-cn_image_0000002563785935.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140959Z&HW-CC-Expire=86400&HW-CC-Sign=4DBB1CFAD138B11226D89A0A7915F2D49865B54E780B1CD947139A22619A0E69)
+
+## 气泡避让软键盘
+
+当软键盘弹出时，气泡默认不会对其避让，可能导致气泡被软键盘覆盖，从API version 15开始，可以设置[CustomPopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#custompopupoptions8类型说明)中keyboardAvoidMode属性的值为KeyboardAvoidMode.DEFAULT，来使气泡避让键盘。这时如果当前没有位置放下气泡时，气泡会从预设位置平移覆盖宿主组件。
+
+```typescript
+@Entry
+@Component
+export struct AvoidSoftKeyboardPopupExample {
+  @State handlePopup: boolean = false;
+
+  @Builder
+  popupBuilder() {
+    Column({ space: 2 }) {
+      Text('Custom Popup').fontSize(20)
+        .borderWidth(2)
+      TextInput()
+    }.width(200).padding(5)
+  }
+
+  build() {
+    NavDestination() {
+      Column({ space: 100 }) {
+        TextInput()
+        Button('PopupOptions')
+          .id('PopupOptions')
+          .onClick(() => {
+            this.handlePopup = !this.handlePopup;
+          })
+          .bindPopup(this.handlePopup!!, {
+            width: 200,
+            builder: this.popupBuilder(),
+            placement: Placement.Bottom,
+            mask: false,
+            autoCancel: false,
+            keyboardAvoidMode: KeyboardAvoidMode.DEFAULT
+          })
+          .position({ x: 100, y: 300 })
+      }
+      .width('100%')
+    }
+
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/_hkBziXRTkmh0lnn8GI4pw/zh-cn_image_0000002532906040.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140959Z&HW-CC-Expire=86400&HW-CC-Sign=8A00C0F41FEF903965B8528407439342B03C6724012BF1A75CD526C1871C5D94)
+
+## 设置气泡内的多态效果
+
+目前使用@Builder自定义气泡内容时，默认不支持多态样式，可以使用@Component新建一个组件实现按下气泡中的内容时背景变色。
+
+```typescript
+@Entry
+@Component
+export struct PolymorphicEffectPopupExample {
+
+  @State scan: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Scan_title') as string;
+  @State createGroupChat: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Create_group_chat') as string;
+  @State electronicWorkCard: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Electronic_work_card') as string;
+  private menus: Array<string> = [this.scan, this.createGroupChat, this.electronicWorkCard];
+
+  @Builder
+  popupItemBuilder(name: string, action: string) {
+    PopupItemChild({ childName: name, childAction: action })
+  }
+
+  @Builder
+  popupBuilder() {
+    Column() {
+      ForEach(
+        this.menus,
+        (item: string, index) => {
+          this.popupItemBuilder(item, String(index))
+        },
+        (item: string, index) => {
+          return item
+        })
+    }
+    .padding(8)
+  }
+
+  @State customPopup: boolean = false;
+
+  build() {
+    NavDestination() {
+      Column() {
+        Button('click me')
+          .id('click me')
+          .onClick(() => {
+            this.customPopup = !this.customPopup
+          })
+          .bindPopup(
+            this.customPopup,
+            {
+              builder: this.popupBuilder,
+              placement: Placement.Bottom,
+              popupColor: Color.White,
+              onStateChange: (event) => {
+                if (!event.isVisible) {
+                  this.customPopup = false
+                }
+              }
+            })
+      }
+      .width('100%')
+      .justifyContent(FlexAlign.Center)
+    }
+
+  }
+}
+
+@Component
+struct PopupItemChild {
+  @Prop childName: string = '';
+  @Prop childAction: string = '';
+  @State selected: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Selected') as string;
+
+  build() {
+    Row({ space: 8 }) {
+      Image($r('app.media.startIcon'))
+        .width(24)
+        .height(24)
+      Text(this.childName)
+        .fontSize(16)
+    }
+    .width(130)
+    .height(50)
+    .padding(8)
+    .onClick(() => {
+      this.getUIContext().getPromptAction().showToast({ message: this.selected + this.childName })
+    })
+    .stateStyles({
+      normal: {
+        .backgroundColor(Color.White)
+      },
+      pressed: {
+        .backgroundColor('#d4f1ff')
+      }
+    })
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/t6Xm7BP2RyGLR4GyPULfxA/zh-cn_image_0000002533065988.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140959Z&HW-CC-Expire=86400&HW-CC-Sign=AE7897FF46F3EA24C300460F2033200CDD08811558AF652BFB2957A41CFD60C5)
+
+## 气泡支持避让中轴
+
+从API version 18起，气泡支持中轴避让功能。从API version 20开始，在2in1设备上默认启用（仅在窗口处于瀑布模式时产生避让）。开发者可通过[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)中的enableHoverMode属性，控制气泡是否启用中轴避让。
+
+> **说明**
+> - 如果气泡的点击位置在中轴区域，则气泡不会避让。
+> - 2in1设备上需同时满足窗口处于瀑布模式才会产生避让。
+
+```typescript
+@Entry
+@Component
+export struct SupportedAvoidAxisPopupExample {
+
+  @State upScreen: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Upper_half_screen') as string;
+  @State middleAxle: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Middle_axle') as string;
+  @State lowerScreen: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Lower_half_screen') as string;
+  @State subwindowDisplay: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Subwindow_display') as string;
+  @State subwindow: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Subwindow') as string;
+  @State nonSubwindow: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Non_Subwindow') as string;
+  @State zone: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('zone') as string;
+  @State hoverModeStart: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('hoverMode_start') as string;
+
+  @State message: string = 'Hello World';
+  @State index: number = 0;
+  @State arrayStr: Array<string> = [this.upScreen, this.middleAxle, this.lowerScreen];
+  @State enableHoverMode: boolean | undefined = true;
+  @State showInSubwindow: boolean = false;
+  @State placement: Placement | undefined = undefined;
+  @State isShow: boolean = false;
+
+  build() {
+    NavDestination() {
+      RelativeContainer() {
+        Column() {
+          Button(this.zone + this.arrayStr[this.index])
+            .onClick(() => {
+              if (this.index < 2) {
+                this.index++
+              } else {
+                this.index = 0
+              }
+            })
+
+          Button(this.subwindowDisplay + (this.showInSubwindow ? this.subwindow : this.nonSubwindow))
+            .onClick(() => {
+              this.showInSubwindow = !this.showInSubwindow
+            })
+
+          Button(this.hoverModeStart + this.enableHoverMode)
+            .onClick(() => {
+              if (this.enableHoverMode === undefined) {
+                this.enableHoverMode = true
+              } else if (this.enableHoverMode === true) {
+                this.enableHoverMode = false
+              } else {
+                this.enableHoverMode = undefined
+              }
+            })
+        }
+
+        Row() {
+          Button('Popup')
+            .id('Popup')
+            .fontWeight(FontWeight.Bold)
+            .bindPopup(this.isShow, {
+              message: 'popup',
+              enableHoverMode: this.enableHoverMode,
+              showInSubWindow: this.showInSubwindow,
+            })
+            .onClick(() => {
+              this.isShow = !this.isShow
+            })
+        }
+        .alignRules({
+          center: { anchor: '__container__', align: VerticalAlign.Center },
+          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+        })
+        .margin({
+          top: this.index === 2 ? 330 : this.index === 1 ? 50 : 0,
+          bottom: this.index === 0 ? 330 : 0
+        })
+      }
+      .height('100%')
+      .width('100%')
+    }
+
+  }
+}
+```

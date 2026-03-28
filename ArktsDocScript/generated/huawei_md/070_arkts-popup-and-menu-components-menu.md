@@ -1,0 +1,326 @@
+# 菜单控制（Menu）
+来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-menu
+
+Menu是菜单接口，一般用于鼠标右键弹窗、点击弹窗等。具体用法请参考[菜单控制](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu)。
+
+使用[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu12)并设置预览图，菜单弹出时有蒙层，此时为模态。
+
+使用[bindMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindmenu11)或bindContextMenu未设置预览图时，菜单弹出无蒙层，此时为非模态。
+
+## 创建默认样式的菜单
+
+菜单需要调用[bindMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindmenu)接口来实现。bindMenu响应绑定组件的点击事件，绑定组件后手势点击对应组件后即可弹出。
+
+```typescript
+Button('click for Menu')
+  .bindMenu([
+    {
+      value: 'Menu1',
+      action: () => {
+        hilog.info(0xFF00, 'DialogProject', 'handle Menu1 select');
+      }
+    }
+  ])
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/swTRQkIZTgSLfbXH1yuR0Q/zh-cn_image_0000002532906034.png?HW-CC-KV=V1&HW-CC-Date=20260328T140955Z&HW-CC-Expire=86400&HW-CC-Sign=E76C2400F2DCAAB46C4C49EB6DD04EE0AB51EA142C37F5F18ABC6293148C9062)
+
+## 创建自定义样式的菜单
+
+当默认样式不满足开发需求时，可使用[@Builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder)自定义菜单内容，通过bindMenu接口进行菜单的自定义。
+
+### 使用@Builder自定义菜单内容
+
+```typescript
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+class Tmp {
+
+  public iconStr2: ResourceStr = $r('app.media.view_list_filled');
+
+  set(val: Resource) {
+    this.iconStr2 = val;
+  }
+}
+
+@Entry
+@Component
+export struct BuilderCustomMenuExample {
+  @State select: boolean = true;
+
+  private iconStr: ResourceStr = $r('app.media.view_list_filled');
+  private iconStr2: ResourceStr = $r('app.media.view_list_filled');
+
+  private copy: ResourceStr = $r('app.string.copy');
+
+  private paste: ResourceStr = $r('app.string.paste');
+
+  @Builder
+  SubMenu() {
+    Menu() {
+      MenuItem({ content: this.copy, labelInfo: 'Ctrl+C' })
+      MenuItem({ content: this.paste, labelInfo: 'Ctrl+V' })
+    }
+  }
+
+  @Builder
+  MyMenu() {
+    Menu() {
+
+      MenuItem({ startIcon: $r('app.media.icon'), content: $r('app.string.menu_selection') })
+      MenuItem({ startIcon: $r('app.media.icon'), content: $r('app.string.menu_selection') }).enabled(false)
+      MenuItem({
+        startIcon: this.iconStr,
+        content: $r('app.string.menu_selection'),
+        endIcon: $r('app.media.arrow_right_filled'),
+
+        builder: this.SubMenu
+      })
+
+      MenuItemGroup({ header: $r('app.string.menu_subtitle') }) {
+
+        MenuItem({ content: $r('app.string.menu_selection') })
+          .selectIcon(true)
+          .selected(this.select)
+          .onChange((selected) => {
+            hilog.info(0xFF00, 'DialogProject', 'menuItem select' + selected);
+            let str: Tmp = new Tmp();
+            str.set($r('app.media.icon'));
+          })
+
+        MenuItem({
+          startIcon: $r('app.media.view_list_filled'),
+          content: $r('app.string.menu_selection'),
+          endIcon: $r('app.media.arrow_right_filled'),
+          builder: this.SubMenu
+        })
+      }
+
+      MenuItem({
+        startIcon: this.iconStr2,
+        content: $r('app.string.menu_selection'),
+        endIcon: $r('app.media.arrow_right_filled')
+      })
+    }
+  }
+
+  build() {
+
+  }
+}
+```
+
+### 使用bindMenu属性绑定组件
+
+```typescript
+Button('click for Menu')
+  .bindMenu(this.MyMenu)
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/iER4IlaqQ5OejsCnscnVHg/zh-cn_image_0000002533065982.png?HW-CC-KV=V1&HW-CC-Date=20260328T140955Z&HW-CC-Expire=86400&HW-CC-Sign=1BB6859A6050BE609D78099333F9E0B8B422CA714D1A2D8995B5B9D2A25EC9B2)
+
+## 创建支持右键或长按的菜单
+
+通过[bindContextMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#bindcontextmenu8)接口自定义菜单，设置菜单弹出的触发方式，触发方式为右键或长按。使用bindContextMenu弹出的菜单项是在独立子窗口内的，可显示在应用窗口外部。
+
+- 使用@Builder自定义菜单内容，与上文写法相同。
+- 确认菜单的弹出方式，并使用bindContextMenu属性绑定组件。示例中为右键弹出菜单。 ```typescript Button('Right-click for Menu')  .bindContextMenu(this.MyMenu, ResponseType.RightClick) ```
+
+## 菜单弹出时振动效果
+
+菜单从API version 18开始支持振动效果。菜单弹出时，默认不振动。若希望菜单弹出时有振动效果，可以通过[ContextMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)的hapticFeedbackMode属性，设置菜单弹出时的振动模式。
+
+- 只有一级菜单可配置弹出时振动效果。
+- 仅当应用具备ohos.permission.VIBRATE权限，且用户启用了触感反馈时才会生效。开启触控反馈时，需要在工程的module.json5中配置[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)的requestPermissions字段开启振动权限，配置如下： ```typescript "requestPermissions": [  {  "name": "ohos.permission.VIBRATE",  } ], ```
+
+```typescript
+Button('click for Menu')
+  .id('click for Menu')
+  .bindMenu(this.MyMenu, { hapticFeedbackMode: HapticFeedbackMode.ENABLED})
+```
+
+## 菜单支持避让中轴
+
+从API version 18起，菜单支持中轴避让功能。从API version 20开始，在2in1设备上默认启用（仅在窗口处于瀑布模式时产生避让）。开发者可通过[ContextMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)中的enableHoverMode属性，控制菜单是否启用中轴避让。
+
+> **说明**
+> - 如果菜单的点击位置在中轴区域，则菜单不会避让。
+> - 2in1设备上需同时满足窗口处于瀑布模式才会产生避让。
+
+```typescript
+@Entry
+@Component
+export struct SupportAvoidCentralAxisMenuExample {
+  @State message: string = 'Hello World';
+
+  @State upScreen: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Upper_half_screen') as string;
+  @State middleAxle: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Middle_axle') as string;
+  @State lowerScreen: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Lower_half_screen') as string;
+  @State zone: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('zone') as string;
+  @State hoverModeStart: string =
+    this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('hoverMode_start') as string;
+
+  private iconStr: Resource = $r('app.media.startIcon');
+  @State index: number = 0;
+  @State arrayStr: Array<string> = [this.upScreen, this.middleAxle, this.lowerScreen];
+  @State enableHoverMode: boolean | undefined = true;
+  @State showInSubwindow: boolean = false;
+
+  @Builder
+  MyMenu1() {
+    Menu() {
+
+      MenuItem({ startIcon: this.iconStr, content: $r('app.string.menu_selection') })
+      MenuItem({ startIcon: this.iconStr, content: $r('app.string.menu_selection') })
+      MenuItem({ startIcon: this.iconStr, content: $r('app.string.menu_selection') })
+      MenuItem({ startIcon: this.iconStr, content: $r('app.string.menu_selection') })
+    }
+  }
+
+  @State isShow: boolean = false;
+
+  build() {
+    NavDestination() {
+      Column({ space: 5 }) {
+        Button(this.zone + this.arrayStr[this.index])
+          .onClick(() => {
+            if (this.index < 2) {
+              this.index++
+            } else {
+              this.index = 0
+            }
+          })
+
+        Button(this.hoverModeStart + this.enableHoverMode)
+          .id('hoverMode_start')
+          .onClick(() => {
+            if (this.enableHoverMode === undefined) {
+              this.enableHoverMode = true
+            } else if (this.enableHoverMode === true) {
+              this.enableHoverMode = false
+            } else {
+              this.enableHoverMode = undefined
+            }
+          })
+        Button('Menu')
+          .fontWeight(FontWeight.Bold)
+          .bindMenu(this.MyMenu1(), {
+            enableHoverMode: this.enableHoverMode,
+            showInSubWindow: this.showInSubwindow
+          })
+      }
+      .height('100%')
+      .width('100%')
+    }
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/6k2xayk1TMmg1Ca86Vl9iQ/zh-cn_image_0000002563865885.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140955Z&HW-CC-Expire=86400&HW-CC-Sign=7F20CBAF999CF3626356BBEE841F6C4C8E089C5BDF1E910594C368F078405D92)
+
+## 控制子窗菜单的事件透传
+
+当菜单在子窗口中弹出时，默认情况下，菜单周围的事件会传递至所在窗口。从API version 20开始，开发者可通过[ContextMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)的modalMode属性设置子菜单弹出时的模态模式，以控制菜单周围事件是否传递。将modalMode设置为ModalMode.TARGET_WINDOW时，菜单周围的事件将不再传递，菜单下方的控件也不会响应事件。
+
+```typescript
+@Entry
+@Component
+export struct EventTransSubWindowMenuExample {
+  build() {
+    NavDestination() {
+      Column() {
+      }
+      .id('click')
+      .bindContextMenu(this.contextMenuBuilder, ResponseType.RightClick, {
+        modalMode: ModalMode.TARGET_WINDOW
+      })
+      .onClick(() => {
+        this.getUIContext().getPromptAction().showToast({
+          message: 'Clicked!'
+        })
+      })
+      .width('100%')
+      .height('100%')
+    }
+
+  }
+
+  @Builder
+  bindMenuBuilder() {
+    Menu() {
+      MenuItem({ content: 'bindMenu item' }) {
+
+      }
+    }
+  }
+
+  @Builder
+  contextMenuBuilder() {
+    Menu() {
+      MenuItem({ content: 'contextMenu item' }) {
+
+      }
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/AOA7WKYbSU6Cpjt_pwLHMA/zh-cn_image_0000002563785931.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140955Z&HW-CC-Expire=86400&HW-CC-Sign=9C6F2544E8B7EADF903D4B3EEE8AD2EC1856C192E8B786956B5EE1EE4E9B9659)
+
+## 基于绑定组件指定位置弹出菜单
+
+菜单从API version 20开始支持基于绑定组件在指定位置弹出。通过设置水平与垂直偏移量，控制菜单相对于绑定组件左上角的弹出位置。与单独使用offset接口不同，此方法可使菜单覆盖显示在绑定组件上。需要指定弹出位置时，可使用[ContextMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)的anchorPosition属性进行设置。
+
+> **说明**
+> - 当菜单处于预览状态时，设定的定位偏移量将无法生效。
+> - 预设的[placement](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)对齐参数将不再生效。
+> - 叠加[offset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-menu#contextmenuoptions10)参数的偏移量，最终确定菜单的精确显示位置。
+> - 当水平与垂直偏移量均设为负值时，菜单以绑定组件左下角为基准点进行显示。
+> - 当水平或垂直偏移量存在负值时，组件将以绑定组件的左上角为定位基准点，通过叠加偏移量参数实现反向偏移。
+
+```typescript
+@Entry
+@Component
+export struct BindComponentMenuExample {
+  @Builder
+  MenuBuilder() {
+    Column() {
+      Menu() {
+        MenuItemGroup() {
+
+          MenuItem({ startIcon: $r('app.media.app_icon'), content: 'Select Mixed Menu 1', labelInfo: '' })
+          MenuItem({ startIcon: $r('app.media.app_icon'), content: 'Select Mixed Menu 2', labelInfo: '' })
+          MenuItem({ startIcon: $r('app.media.app_icon'), content: 'Select Mixed Menu 3', labelInfo: '' })
+        }
+      }
+    }
+  }
+
+  build() {
+    NavDestination() {
+      Column() {
+        Text()
+          .borderRadius(10)
+          .width(200)
+          .height(150)
+          .borderWidth(1)
+          .backgroundColor(Color.White)
+          .borderColor(Color.Red)
+          .margin({ top: 200, left: 125 })
+          .bindContextMenu(this.MenuBuilder, ResponseType.RightClick, {
+            anchorPosition: { x: 45, y: 50 },
+          })
+      }
+      .alignItems(HorizontalAlign.Start)
+      .width('100%')
+      .height('100%')
+      .backgroundColor('#F5F5F5')
+    }
+
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/l8nt_W1KQIypy8KZomXuXA/zh-cn_image_0000002532906036.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140955Z&HW-CC-Expire=86400&HW-CC-Sign=7714AC06D55B37B31B5A340B21ED9D90B1783443C2C49689AB73F9B82965D747)
