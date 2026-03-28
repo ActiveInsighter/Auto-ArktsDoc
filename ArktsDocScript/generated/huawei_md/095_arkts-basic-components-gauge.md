@@ -340,7 +340,7 @@ struct Gauge1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/AcLNyHYtSBaogsQ69iAGaw/zh-cn_image_0000002563787077.png?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=79E53E28164F013E1B4364A64988B345848EE2BE051DE8E91348B30C30EF8585)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/AcLNyHYtSBaogsQ69iAGaw/zh-cn_image_0000002563787077.png?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=B2A73290A707DC852EE37577EED666674775F1EA6580E6CD89CA87FAE56E50F0)
 
 ### 示例2（设置单色量规图）
 
@@ -384,7 +384,7 @@ struct Gauge2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/9LtKAJHxRCSzoBc159_6zA/zh-cn_image_0000002532907182.png?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=BD90E7352D73238A3AB8DD5C0998DD193FAD4BBF53895CC3E503E64F2DA8CDB6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/9LtKAJHxRCSzoBc159_6zA/zh-cn_image_0000002532907182.png?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=F6496A137C398ADD49935B43598AF988BB916C6C9B8BF097693F633A4C07DC04)
 
 ### 示例3（设置定制说明区）
 
@@ -446,7 +446,7 @@ struct Gauge2 {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/OCkd-y9jT3qzS8QP-iswPA/zh-cn_image_0000002533067130.png?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=52B2965441110C53F399E8E78E9C16FFAC5FA17BF84FFB8692F2E8348C05D5BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/OCkd-y9jT3qzS8QP-iswPA/zh-cn_image_0000002533067130.png?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=FD32F2396540C72AD46560B6D931F88191DC25B8F3CFD7C756CE85A149DDBDB5)
 
 ### 示例4（设置辅助区）
 
@@ -501,7 +501,7 @@ struct Gauge4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/FyZQ3hkrT6KG2rhm5_VWEQ/zh-cn_image_0000002563867033.png?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=14E8909F3AB84067E553ABBA0810D1E2C7B33AE4BA879C022D3778EBEB4D484C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/FyZQ3hkrT6KG2rhm5_VWEQ/zh-cn_image_0000002563867033.png?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=735FBB6D1292C484E048D5D762C0C5D8210DF538C2508100B03394D1C69EBA02)
 
 ### 示例5（设置最大最小值）
 
@@ -543,7 +543,7 @@ struct Gauge5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/gdJoShthTiCHjUv-vbFfOA/zh-cn_image_0000002563787079.png?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=18E2ECDC5548C7E87B7BF70DC4DD7696CBB249CEC1D4B68057CD3CBB4D4573C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/gdJoShthTiCHjUv-vbFfOA/zh-cn_image_0000002563787079.png?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=57DA8BF60CF5E9968B137F49358EA691F7E594F913F145A1A8774BD732AD7F33)
 
 ### 示例6（设置指针）
 
@@ -591,7 +591,7 @@ struct Gauge6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9Fo7uQywRyiCZWAAxVPmng/zh-cn_image_0000002532907184.png?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=7FDB8483ABA93B514E42B189893C672130680B7BC63FAF14E567E9EDE3A8DBB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9Fo7uQywRyiCZWAAxVPmng/zh-cn_image_0000002532907184.png?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=E6DB053F04D6E0147D45C9C72322C37518963BF79D193EE176F8FD65163EC52D)
 
 ### 示例7（设置起止角度）
 
@@ -631,7 +631,7 @@ struct Gauge7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/r3biGpC6Rhm3IEOoCLaobw/zh-cn_image_0000002533067132.png?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=461F4B1DE78ED5CD5CD399796BE56F709694FD2749F1A7D9CF079AC6A849FA55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/r3biGpC6Rhm3IEOoCLaobw/zh-cn_image_0000002533067132.png?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=20113E76B6B8E249E5B67645BEBAE8F8835E9862627D602ADA77B767DE73DAAA)
 
 ### 示例8（设置定制内容区）
 
@@ -712,7 +712,7 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ZTijJGcTT1Ci0aNiQHPnEg/zh-cn_image_0000002563867035.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=6296C30AE48D42A4E44E7F2EB0DBBBD72C1034613FD98D157BB742714A513641)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ZTijJGcTT1Ci0aNiQHPnEg/zh-cn_image_0000002563867035.gif?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=FACBE0E609D7C74BF5D127D2419722D1FB050B7D0936ADF1B19C3D5D66A5583C)
 
 ### 示例9（设置隐私隐藏）
 
@@ -743,7 +743,7 @@ struct GaugeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/8av1gsLnRXydCmrIcLAViA/zh-cn_image_0000002563787081.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=C8BA61C38E9E709BEA6B899321F319261A9CBA6A35C8FD809F37457994C46938)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/8av1gsLnRXydCmrIcLAViA/zh-cn_image_0000002563787081.gif?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=1E07840E5B1E4DC31577DC45531EFAE5667AC4ABF5993B7064F335CD6E87F20F)
 
 ### 示例10（设置自定义指针）
 
@@ -778,4 +778,4 @@ struct Gauge2 {
 </svg>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/amgxh6elSeGG8RtToHLH1A/zh-cn_image_0000002532907186.png?HW-CC-KV=V1&HW-CC-Date=20260328T073408Z&HW-CC-Expire=86400&HW-CC-Sign=1E75B5AF7EC7B0D379668FD235398EB51D099A60479DDCCD45DFC5810F1645B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/amgxh6elSeGG8RtToHLH1A/zh-cn_image_0000002532907186.png?HW-CC-KV=V1&HW-CC-Date=20260328T075133Z&HW-CC-Expire=86400&HW-CC-Sign=1D16FE8EFD3510B6B417BA05F79BFCA81C30EE542F6705471969A0E1FEE506A3)

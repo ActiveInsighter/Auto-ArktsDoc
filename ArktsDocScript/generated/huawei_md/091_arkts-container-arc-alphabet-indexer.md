@@ -316,7 +316,6 @@ type OnSelectCallback = (index: number) => void
 该示例实现了弧形索引条和弧形列表联动控制和定位。
 
 ```typescript
-// xxx.ets
 import {
   LengthMetrics,
   ColorMetrics,
@@ -327,7 +326,7 @@ import {
   ArcAlphabetIndexer,
   ArcAlphabetIndexerAttribute
 } from '@kit.ArkUI';
-// 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
+
 @Entry
 @Component
 struct ArcListAndIndexer {
@@ -340,10 +339,13 @@ struct ArcListAndIndexer {
     '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38',
     '39','40', '41','42',
   ];
+
   private scrollerForList: Scroller = new Scroller();
   @State indexerIndex: number = 0;
-  private watchSize: string = '466px'; // 手表默认宽高：233*233
-  private itemSize: number = 24;  // 索引项默认大小：24
+
+  private watchSize: string = '466px';
+  private itemSize: number = 24;
+
   build() {
     Column() {
       Row() {
@@ -370,6 +372,7 @@ struct ArcListAndIndexer {
           .height(this.watchSize)
           .borderRadius(this.watchSize)
           .space(LengthMetrics.px(4))
+
           ArcAlphabetIndexer({ arrayValue: this.fullValue, selected: 0 })
             .autoCollapse(true)
             .width(this.watchSize)
@@ -400,6 +403,7 @@ struct ArcListAndIndexer {
               weight:500,
               family:'HarmonyOS Sans'
             })
+
         }.width('100%').height('100%')
       }.width('100%').height('100%')
     }
@@ -407,4 +411,4 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/3Ig7hye5TxiGvyT10Haclw/zh-cn_image_0000002563867027.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073402Z&HW-CC-Expire=86400&HW-CC-Sign=1717BECDD52B2E871F045DF5805949A26DAAF2A0ED77DBAE04144DFE7B530D30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/3Ig7hye5TxiGvyT10Haclw/zh-cn_image_0000002563867027.gif?HW-CC-KV=V1&HW-CC-Date=20260328T075128Z&HW-CC-Expire=86400&HW-CC-Sign=3B29056C3D765B0F75597CBBDEB9C9431AA066D93B0967C9E5F64827D030E173)

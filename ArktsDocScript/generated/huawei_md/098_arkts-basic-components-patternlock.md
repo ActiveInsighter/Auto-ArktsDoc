@@ -362,7 +362,7 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Y6tWsN1fSY6M4SaEEWNB6g/zh-cn_image_0000002532907188.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073411Z&HW-CC-Expire=86400&HW-CC-Sign=2B2A9593150533D5996A145C5701BFCE030F0636F32DA5ABAE2C4A203E99DBF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Y6tWsN1fSY6M4SaEEWNB6g/zh-cn_image_0000002532907188.gif?HW-CC-KV=V1&HW-CC-Date=20260328T075135Z&HW-CC-Expire=86400&HW-CC-Sign=BA1C30F57E949BBC230957DA831F8AC56DF76EB4BD58A102770C1C1A3037583B)
 
 ### 示例2（判断密码是否正确）
 
@@ -436,4 +436,4 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/W09fEYYXSyyY0rEd68WHkw/zh-cn_image_0000002533067136.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073411Z&HW-CC-Expire=86400&HW-CC-Sign=438F1596FA30A8ABFF1320E36F8E6F9DC2431AD73BDEC038291E6C96D0FFF47B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/W09fEYYXSyyY0rEd68WHkw/zh-cn_image_0000002533067136.gif?HW-CC-KV=V1&HW-CC-Date=20260328T075135Z&HW-CC-Expire=86400&HW-CC-Sign=30563D5A4597C28176C7CC61116583875CC6F4D8C2B0EE2E1D19A0D2EB12AC7C)

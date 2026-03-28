@@ -90,7 +90,7 @@ colorFilter(filter: ColorFilter | DrawingColorFilter)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| filter | [ColorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#colorfilter9) | [DrawingColorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#drawingcolorfilter12) | 是 | 1. 给图像设置颜色滤镜效果，入参为一个4x5的RGBA转换矩阵。 矩阵第一行表示R（红色）的向量值，第二行表示G（绿色）的向量值，第三行表示B（蓝色）的向量值，第四行表示A（透明度）的向量值，4行分别代表不同的RGBA的向量值。 当矩阵对角线值为1，其余值为0时，保持图片原有色彩。 **计算规则：** 如果输入的滤镜矩阵为： ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ecU8q7Q4Qf-7-IV7-Y-yzw/zh-cn_image_0000002533067036.png?HW-CC-KV=V1&HW-CC-Date=20260328T073341Z&HW-CC-Expire=86400&HW-CC-Sign=00EF68BA77B4ECC50451E4EDB87AFCEA2BDB8804C0302222262FA907569130ED) 像素点为[R, G, B, A]，色值的范围[0, 255] 则过滤后的颜色为 [R’, G’, B’, A’] ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/du1cdTeZSk-LDd0pnTSKSg/zh-cn_image_0000002563866939.png?HW-CC-KV=V1&HW-CC-Date=20260328T073341Z&HW-CC-Expire=86400&HW-CC-Sign=91CFF3D7C5973AC794AB18DE808F983BA796A09059DCDD0DCFB7E85851BEDB14) 2. 支持@ohos.graphics.drawing的ColorFilter类型作为入参。 **说明：** 该接口中的DrawingColorFilter类型支持在元服务中使用。其中，svg类型的图源只对stroke属性生效。 |
+| filter | [ColorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#colorfilter9) | [DrawingColorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#drawingcolorfilter12) | 是 | 1. 给图像设置颜色滤镜效果，入参为一个4x5的RGBA转换矩阵。 矩阵第一行表示R（红色）的向量值，第二行表示G（绿色）的向量值，第三行表示B（蓝色）的向量值，第四行表示A（透明度）的向量值，4行分别代表不同的RGBA的向量值。 当矩阵对角线值为1，其余值为0时，保持图片原有色彩。 **计算规则：** 如果输入的滤镜矩阵为： ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ecU8q7Q4Qf-7-IV7-Y-yzw/zh-cn_image_0000002533067036.png?HW-CC-KV=V1&HW-CC-Date=20260328T075110Z&HW-CC-Expire=86400&HW-CC-Sign=AB93A194B660D21B45B4246CDD8C2A85736DBEFCB7AEFF01CE14AF6AEBA573D2) 像素点为[R, G, B, A]，色值的范围[0, 255] 则过滤后的颜色为 [R’, G’, B’, A’] ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/du1cdTeZSk-LDd0pnTSKSg/zh-cn_image_0000002563866939.png?HW-CC-KV=V1&HW-CC-Date=20260328T075110Z&HW-CC-Expire=86400&HW-CC-Sign=22335337F83306DE86191FBDCB1F3BCB356CF7ACA5236247D98E199167B3BAA8) 2. 支持@ohos.graphics.drawing的ColorFilter类型作为入参。 **说明：** 该接口中的DrawingColorFilter类型支持在元服务中使用。其中，svg类型的图源只对stroke属性生效。 |
 
 ### supportSvg222+
 
@@ -233,7 +233,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/64qPIs7UStG20NxWlTYikA/zh-cn_image_0000002563786985.png?HW-CC-KV=V1&HW-CC-Date=20260328T073341Z&HW-CC-Expire=86400&HW-CC-Sign=9FD4412C09BC967AB130E4EA55661499B6A6810754BE88CDB5E6FF3E2A4F9525)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/64qPIs7UStG20NxWlTYikA/zh-cn_image_0000002563786985.png?HW-CC-KV=V1&HW-CC-Date=20260328T075110Z&HW-CC-Expire=86400&HW-CC-Sign=412F07D69605C58D84AE8A0E6FFE8F195A2970FA09B68B45209063E55219B680)
 
 ### 示例2（设置背景样式）
 
@@ -261,7 +261,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/SoRZ7nEFSIqGow2fc6NvcQ/zh-cn_image_0000002532907090.png?HW-CC-KV=V1&HW-CC-Date=20260328T073341Z&HW-CC-Expire=86400&HW-CC-Sign=5966F10235114EF4984958E62557FFECC6028A43501F81ED315EF2F5A1028D84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/SoRZ7nEFSIqGow2fc6NvcQ/zh-cn_image_0000002532907090.png?HW-CC-KV=V1&HW-CC-Date=20260328T075110Z&HW-CC-Expire=86400&HW-CC-Sign=08CF6C09AC29DC05CBDBF5DB77DCF7FBCD9B8335B1D0BED0E9CA50B5280AF1F2)
 
 ### 示例3（为图片添加事件）
 
@@ -334,7 +334,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/5st5pJpXQLW4caxARHw4AQ/zh-cn_image_0000002533067038.png?HW-CC-KV=V1&HW-CC-Date=20260328T073341Z&HW-CC-Expire=86400&HW-CC-Sign=8AC960503E71CCE28DDD194AE23F9675F7B436DD84F536D75DB0BD9F830F3678)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/5st5pJpXQLW4caxARHw4AQ/zh-cn_image_0000002533067038.png?HW-CC-KV=V1&HW-CC-Date=20260328T075110Z&HW-CC-Expire=86400&HW-CC-Sign=A4DBC67BC938D934AB3B292BDAB47C334C08DB19B37AEC2971D57C265523D680)
 
 ### 示例5（设置加载占位图）
 
@@ -400,7 +400,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/qgLOdkLwQqGnL_pxKUZ9Ag/zh-cn_image_0000002563866941.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073341Z&HW-CC-Expire=86400&HW-CC-Sign=6BE7C5DF3F1846C9F1E8419DDD93CE4C0E077BEB95629AB257CAAC3E89910D1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/qgLOdkLwQqGnL_pxKUZ9Ag/zh-cn_image_0000002563866941.gif?HW-CC-KV=V1&HW-CC-Date=20260328T075110Z&HW-CC-Expire=86400&HW-CC-Sign=B954C29F5419490DCD494278C8F8A08AB51EA314400578571F0B2DE48480BFCF)
 
 ### 示例6（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -441,4 +441,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/V36LSIZvT36Lbucwe_lKwA/zh-cn_image_0000002563786987.png?HW-CC-KV=V1&HW-CC-Date=20260328T073341Z&HW-CC-Expire=86400&HW-CC-Sign=56E423874FA04BC54092679A6EEC93DB3BA27CE207677FCFA8C2E1390CC47A92)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/V36LSIZvT36Lbucwe_lKwA/zh-cn_image_0000002563786987.png?HW-CC-KV=V1&HW-CC-Date=20260328T075110Z&HW-CC-Expire=86400&HW-CC-Sign=5E188F7D26D8695554961434BDB77B56497AB3B2817626C4B3F36B6B2791BEE3)

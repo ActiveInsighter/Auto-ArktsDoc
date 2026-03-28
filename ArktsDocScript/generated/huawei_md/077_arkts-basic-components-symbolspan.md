@@ -123,7 +123,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DCw0UnWZT_S6QnwiPuJHsw/zh-cn_image_0000002563866943.png?HW-CC-KV=V1&HW-CC-Date=20260328T073343Z&HW-CC-Expire=86400&HW-CC-Sign=BE83AB25D20AD4F17C10AF87E8C29F5B93210AF089C28694B73DFDDC4899C6EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DCw0UnWZT_S6QnwiPuJHsw/zh-cn_image_0000002563866943.png?HW-CC-KV=V1&HW-CC-Date=20260328T075111Z&HW-CC-Expire=86400&HW-CC-Sign=E2427308B0DB00B4DE3AED6130B4138FEC137B18227E2B859F5481EA9D658181)
 
 ### effectStrategy
 
@@ -173,7 +173,6 @@ attributeModifier(modifier: AttributeModifier<SymbolSpanAttribute>)
 从API version 11开始，该示例通过[renderingStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolspan#renderingstrategy)、[effectStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolspan#effectstrategy)属性展示了不同的渲染和动效策略。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
@@ -188,6 +187,7 @@ struct Index {
               .fontSize(96)
           }
         }
+
         Column() {
           Text("Normal")
           Text() {
@@ -196,6 +196,7 @@ struct Index {
               .fontSize(96)
           }
         }
+
         Column() {
           Text("Bold")
           Text() {
@@ -205,6 +206,7 @@ struct Index {
           }
         }
       }
+
       Row() {
         Column() {
           Text("单色")
@@ -215,6 +217,7 @@ struct Index {
               .fontColor([Color.Black, Color.Green, Color.White])
           }
         }
+
         Column() {
           Text("多色")
           Text() {
@@ -224,6 +227,7 @@ struct Index {
               .fontColor([Color.Black, Color.Green, Color.White])
           }
         }
+
         Column() {
           Text("分层")
           Text() {
@@ -234,6 +238,7 @@ struct Index {
           }
         }
       }
+
       Row() {
         Column() {
           Text("无动效")
@@ -243,6 +248,7 @@ struct Index {
               .effectStrategy(SymbolEffectStrategy.NONE)
           }
         }
+
         Column() {
           Text("整体缩放动效")
           Text() {
@@ -251,6 +257,7 @@ struct Index {
               .effectStrategy(SymbolEffectStrategy.SCALE)
           }
         }
+
         Column() {
           Text("层级动效")
           Text() {
@@ -265,7 +272,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CZ-TkdA5SvOHnkNMTwhmng/zh-cn_image_0000002563786989.gif?HW-CC-KV=V1&HW-CC-Date=20260328T073343Z&HW-CC-Expire=86400&HW-CC-Sign=576D10AB68723A36F11123ED84FCC5578AA698DB016F2B87EB21202ECF77CB00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CZ-TkdA5SvOHnkNMTwhmng/zh-cn_image_0000002563786989.gif?HW-CC-KV=V1&HW-CC-Date=20260328T075111Z&HW-CC-Expire=86400&HW-CC-Sign=D305BEC5E9C08E4059A263553F86ECF170BF7A2F831259E02E9F0CBC30321C05)
 
 ### 示例2（设置动态属性）
 
@@ -273,11 +280,13 @@ struct Index {
 
 ```typescript
 import { SymbolSpanModifier } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Index {
   @State modifier: SymbolSpanModifier =
     new SymbolSpanModifier($r("sys.symbol.ohos_wifi")).fontColor([Color.Blue]).fontSize(100);
+
   build() {
     Row() {
       Column() {
@@ -292,4 +301,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/FClECQw1Qzy8-jhDSYPO2A/zh-cn_image_0000002532907094.png?HW-CC-KV=V1&HW-CC-Date=20260328T073343Z&HW-CC-Expire=86400&HW-CC-Sign=B32B50F63F5218B931C9479561F6F0A2F64685CC6A18392BF8FDEBC7D33B9470)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/FClECQw1Qzy8-jhDSYPO2A/zh-cn_image_0000002532907094.png?HW-CC-KV=V1&HW-CC-Date=20260328T075111Z&HW-CC-Expire=86400&HW-CC-Sign=8AB2A2BD2D5D3AF7A8C9884982873D991FB347C11E557F15EC530DDC38EE0188)
