@@ -42,7 +42,7 @@ jobs:
           python ArktsDocScript/fetch-html.py \
             --targets-file ArktsDocScript/huawei_targets.txt \
             --output-dir ArktsDocScript/build/huawei_docs \
-            --max-pages 200 \
+            --max-pages 1000 \
             --concurrency 5 \
             --page-timeout-ms 20000 \
             --scroll-passes 4 \
