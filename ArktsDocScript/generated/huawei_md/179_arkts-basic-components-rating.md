@@ -361,7 +361,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/UUd2lsTgRSGzasZXIxoF-Q/zh-cn_image_0000002533066962.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141159Z&HW-CC-Expire=86400&HW-CC-Sign=F8BCF163D652282D7F8586F5275DA4B98FBE5B968A48242999AB0A21CDF14E71)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/UUd2lsTgRSGzasZXIxoF-Q/zh-cn_image_0000002533066962.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143558Z&HW-CC-Expire=86400&HW-CC-Sign=6DA0154691E2AAD6895CD3130F158E5100B4083426A284BA629422D55F8CF0F4)
 
 ### 示例2（自定义评分条）
 
@@ -565,7 +565,7 @@ struct ratingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/h-MGY9jqSIC5amzfF7Wyow/zh-cn_image_0000002563866865.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141159Z&HW-CC-Expire=86400&HW-CC-Sign=7BFB6AB6166A30497EA1929B2FFDB31A074462C8398D7FB9FFB7AD24CEBA7D66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/h-MGY9jqSIC5amzfF7Wyow/zh-cn_image_0000002563866865.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143558Z&HW-CC-Expire=86400&HW-CC-Sign=68036B3022AC39E4B20951DAADC118059C6909D67F2304FB6EC5B3183E12CDE4)
 
 ### 示例3（通过Resource资源设置评分的样式）
 
@@ -601,7 +601,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tbAeboD3Ssqa2UobAdpAxg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141159Z&HW-CC-Expire=86400&HW-CC-Sign=5EC858DCFE74F2954801B8CF5B3A1DA3B801180A2502C1AEFE33207D848C1E32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tbAeboD3Ssqa2UobAdpAxg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143558Z&HW-CC-Expire=86400&HW-CC-Sign=E9A2C7F3ECCD696A1A5BF292D18424A6D419B9836EC7A25B396C6F4927408B54)
 
 ### 示例4（设置评分的样式）
 
@@ -639,4 +639,4 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vQURvBWSRS2k0IKDxPCLLg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141159Z&HW-CC-Expire=86400&HW-CC-Sign=9BE6E6C13078ECF7D5D6C1C7E9C6105FB09AEA30ECBC8037F53B4CB15D58AA0A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vQURvBWSRS2k0IKDxPCLLg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143558Z&HW-CC-Expire=86400&HW-CC-Sign=1F7BDAF494A7A0BA9CD96F201BCA5771A7F3366B746DAE3327F70903C6BF67B4)

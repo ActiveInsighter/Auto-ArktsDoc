@@ -402,7 +402,7 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/kgbjXc5IQo2fSAEU1KANwA/zh-cn_image_0000002533066858.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141116Z&HW-CC-Expire=86400&HW-CC-Sign=57A1947ABC375EF623A9B96F6AB9EA0DEBB880D13D8FE03BB009107CC7552D38)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/kgbjXc5IQo2fSAEU1KANwA/zh-cn_image_0000002533066858.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143513Z&HW-CC-Expire=86400&HW-CC-Sign=5645C34C7237DF361D448E71F6B16319DE070D400F919B19A75F7001D5B766F1)
 
 ### 示例2（设置划出组件）
 
@@ -477,7 +477,7 @@ struct ListItemExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/oGNvU99hTKKetDS7Yszjkw/zh-cn_image_0000002563866761.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141116Z&HW-CC-Expire=86400&HW-CC-Sign=4B6B4A1D1A953E922F89EF2256A584ACF934B3ED35A5EFC94C23FA9919F31B22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/oGNvU99hTKKetDS7Yszjkw/zh-cn_image_0000002563866761.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143513Z&HW-CC-Expire=86400&HW-CC-Sign=A8066543E3E9F0CCA9A4D8044F2D559E9DCDBF1B011AA5CF91B9ADB33F0C8EEA)
 
 ### 示例3（设置卡片样式）
 
@@ -518,7 +518,7 @@ struct ListItemExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/rbY5tIaPTP-yq6u4FySIaw/zh-cn_image_0000002563786807.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T141116Z&HW-CC-Expire=86400&HW-CC-Sign=1C21D338C6D9A8A9FFB81EC397D9365C53BE15BCCF0366C64859031C86726C07)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/rbY5tIaPTP-yq6u4FySIaw/zh-cn_image_0000002563786807.jpeg?HW-CC-KV=V1&HW-CC-Date=20260328T143513Z&HW-CC-Expire=86400&HW-CC-Sign=C9FEE155104493FDC0D7C5802E1F34E53CDC5E35A60DFADEDCB504CA8A8BE8DE)
 
 ### 示例4（通过ComponentContent设置划出组件）
 
@@ -632,7 +632,7 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/-xM9fwfySjO9_vytZBSIkw/zh-cn_image_0000002532906912.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141116Z&HW-CC-Expire=86400&HW-CC-Sign=6EEBF5AE84ABBD773C1154B6EC93979F5373F5A0A9B736C1DAEFE3FEA9D40898)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/-xM9fwfySjO9_vytZBSIkw/zh-cn_image_0000002532906912.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143513Z&HW-CC-Expire=86400&HW-CC-Sign=94E30EACC91B0272882D8849CAB6C040C6A0E3121B20B545965F871958BAC7BC)
 
 ### 示例5（通过ListItemSwipeActionManager管理划出菜单）
 
@@ -720,4 +720,4 @@ struct ListItemExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/AVFDs_DJRu-gOyd2qRn_Sg/zh-cn_image_0000002533066860.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141116Z&HW-CC-Expire=86400&HW-CC-Sign=7F590B29340A81B219AB18898ECF4B88FF33460E71114C45374EBEA9161CA001)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/AVFDs_DJRu-gOyd2qRn_Sg/zh-cn_image_0000002533066860.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143513Z&HW-CC-Expire=86400&HW-CC-Sign=2DAC5A6C02CD04B32F000D1BF801FD4ADDC02C020B69B505F6905E96004307A0)

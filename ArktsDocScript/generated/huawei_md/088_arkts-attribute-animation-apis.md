@@ -29,14 +29,14 @@ import { curves } from '@kit.ArkUI';
 @Component
 struct attrAnimateToDemo2 {
   @State animate: boolean = false;
-  // 第一步: 声明相关状态变量
-  @State rotateValue: number = 0; // 组件一旋转角度
-  @State translateX: number = 0; // 组件二偏移量
-  @State opacityValue: number = 1; // 组件二透明度
-  // 第二步：将状态变量设置到相关可动画属性接口
+
+  @State rotateValue: number = 0;
+  @State translateX: number = 0;
+  @State opacityValue: number = 1;
+
   build() {
     Row() {
-      // 组件一
+
       Column() {
       }
       .rotate({ angle: this.rotateValue })
@@ -48,17 +48,15 @@ struct attrAnimateToDemo2 {
       .onClick(() => {
         this.getUIContext()?.animateTo({ curve: curves.springMotion() }, () => {
           this.animate = !this.animate;
-          // 第三步：闭包内通过状态变量改变UI界面
-          // 这里可以写任何能改变UI的逻辑比如数组添加，显隐控制，系统会检测改变后的UI界面与之前的UI界面的差异，对有差异的部分添加动画
-          // 组件一的rotate属性发生变化，所以会给组件一添加rotate旋转动画
+
           this.rotateValue = this.animate ? 90 : 0;
-          // 组件二的透明度发生变化，所以会给组件二添加透明度的动画
+
           this.opacityValue = this.animate ? 0.6 : 1;
-          // 组件二的translate属性发生变化，所以会给组件二添加translate偏移动画
+
           this.translateX = this.animate ? 50 : 0;
         })
       })
-      // 组件二
+
       Column() {
       }
       .justifyContent(FlexAlign.Center)
@@ -76,7 +74,7 @@ struct attrAnimateToDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/kugCczVcRH2XBILhQS_Zqw/zh-cn_image_0000002533066046.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141013Z&HW-CC-Expire=86400&HW-CC-Sign=A686D9C31F8B095D01BEA58566D0199EFAC004AB7DBABD6CD13D39F340980433)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/kugCczVcRH2XBILhQS_Zqw/zh-cn_image_0000002533066046.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143412Z&HW-CC-Expire=86400&HW-CC-Sign=89BD5C8776FED23BD2C13EA6B555DE927054972B629B48836E1F884F3AF63460)
 
 ## 使用animation产生属性动画
 
@@ -88,19 +86,19 @@ import { curves } from '@kit.ArkUI';
 @Component
 struct attrAnimationDemo3 {
   @State animate: boolean = false;
-  // 第一步: 声明相关状态变量
-  @State rotateValue: number = 0; // 组件一旋转角度
-  @State translateX: number = 0; // 组件二偏移量
-  @State opacityValue: number = 1; // 组件二透明度
-  // 第二步：将状态变量设置到相关可动画属性接口
+
+  @State rotateValue: number = 0;
+  @State translateX: number = 0;
+  @State opacityValue: number = 1;
+
   build() {
     Row() {
-      // 组件一
+
       Column() {
       }
       .opacity(this.opacityValue)
       .rotate({ angle: this.rotateValue })
-      // 第三步：通过属性动画接口开启属性动画
+
       .animation({ curve: curves.springMotion() })
       .backgroundColor('#317AF7')
       .justifyContent(FlexAlign.Center)
@@ -109,16 +107,14 @@ struct attrAnimationDemo3 {
       .borderRadius(30)
       .onClick(() => {
         this.animate = !this.animate;
-        // 第四步：闭包内通过状态变量改变UI界面
-        // 这里可以写任何能改变UI的逻辑比如数组添加，显隐控制，系统会检测改变后的UI界面与之前的UI界面的差异，对有差异的部分添加动画
-        // 组件一的rotate属性发生变化，所以会给组件一添加rotate旋转动画
+
         this.rotateValue = this.animate ? 90 : 0;
-        // 组件二的translate属性发生变化，所以会给组件二添加translate偏移动画
+
         this.translateX = this.animate ? 50 : 0;
-        // 父组件column的opacity属性有变化，会导致其子节点的透明度也变化，所以这里会给column和其子节点的透明度属性都添加动画
+
         this.opacityValue = this.animate ? 0.6 : 1;
       })
-      // 组件二
+
       Column() {
       }
       .justifyContent(FlexAlign.Center)
@@ -137,7 +133,7 @@ struct attrAnimationDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Y3xwAft_QMKSWSTMpH0xxw/zh-cn_image_0000002563865949.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141013Z&HW-CC-Expire=86400&HW-CC-Sign=FB720B5E23F41C12C8B9E04613B69C08D7F5E4EE3AC2B4182376A1E67F845DEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Y3xwAft_QMKSWSTMpH0xxw/zh-cn_image_0000002563865949.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143412Z&HW-CC-Expire=86400&HW-CC-Sign=756F522983AC0B5B63D858DD6AF26073C781FD98B23B2657E7D8D9F90811239F)
 
 ## 使用keyframeAnimateTo产生属性动画
 
@@ -155,14 +151,14 @@ keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array<KeyframeState>):
 @Entry
 @Component
 struct KeyframeAnimateToDemo {
-  // 第一步: 声明相关状态变量
-  @State rotateValue: number = 0; // 组件一旋转角度
-  @State translateX: number = 0; // 组件二偏移量
-  @State opacityValue: number = 1; // 组件二透明度
-  // 第二步：将状态变量设置到相关可动画属性接口
+
+  @State rotateValue: number = 0;
+  @State translateX: number = 0;
+  @State opacityValue: number = 1;
+
   build() {
     Row() {
-      // 组件一
+
       Column() {
       }
       .rotate({ angle: this.rotateValue })
@@ -172,12 +168,12 @@ struct KeyframeAnimateToDemo {
       .height(100)
       .borderRadius(30)
       .onClick(() => {
-        // 第三步：调用keyframeAnimateTo接口
+
         this.getUIContext()?.keyframeAnimateTo({
           iterations: 1
         }, [
           {
-            // 第一段关键帧动画时长为800ms，组件一顺时针旋转90度，组件二的透明度变从1变为0.6，组件二的translate从0位移到50
+
             duration: 800,
             event: () => {
               this.rotateValue = 90;
@@ -186,7 +182,7 @@ struct KeyframeAnimateToDemo {
             }
           },
           {
-            // 第二段关键帧动画时长为500ms，组件一逆时针旋转90度恢复至0度，组件二的透明度变从0.6变为1，组件二的translate从50位移到0
+
             duration: 500,
             event: () => {
               this.rotateValue = 0;
@@ -196,7 +192,7 @@ struct KeyframeAnimateToDemo {
           }
         ]);
       })
-      // 组件二
+
       Column() {
       }
       .justifyContent(FlexAlign.Center)
@@ -214,7 +210,7 @@ struct KeyframeAnimateToDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/yTipZiURTcibfCW48MPpLw/zh-cn_image_0000002563785995.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141013Z&HW-CC-Expire=86400&HW-CC-Sign=E05C8A1353EBCFD69DFAC7A117E1FDAE8AB38683D6027220098051381AC4181C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/yTipZiURTcibfCW48MPpLw/zh-cn_image_0000002563785995.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143412Z&HW-CC-Expire=86400&HW-CC-Sign=B5FC9C0F5DF2CDF8C002E9B73A10D6C8A03E2232E944765852DDA191D13101E8)
 
 > **说明**
 > - 在对组件位置大小变化做动画的时候，由于布局属性的改变会触发测量布局，性能开销大。而[scale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#scale)属性的改变不会触发测量布局，性能开销小。因此，在组件位置大小持续发生变化的场景，如跟手触发组件大小变化的场景，推荐使用scale。

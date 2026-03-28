@@ -6,7 +6,7 @@
 典型应用全屏窗口UI元素包括顶部[状态栏](https://developer.huawei.com/consumer/cn/doc/design-guides/status-bar-0000001776775568)、应用界面和底部导航区域（根据用户设置可表现为[导航条](https://developer.huawei.com/consumer/cn/doc/design-guides/navigation-0000001957075737)或三键导航），其中状态栏和导航区域，通常在沉浸式布局下称为避让区；避让区之外的区域称为安全区。开发应用沉浸式效果主要指通过调整状态栏、应用界面和底部导航区域的显示效果来减少状态栏、导航条或三键导航等系统界面的突兀感，从而使用户获得最佳的UI体验。
 
 **图1**界面元素示意图（此处以导航区域表现为导航条为例给出示意）
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/eaac5GHJTLC9sPZkUnv2-g/zh-cn_image_0000002497902246.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=5A5F9C291B430F71562FA37B81D57DCCB6B90C10CEC7935936ABB0B4E1084BC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/eaac5GHJTLC9sPZkUnv2-g/zh-cn_image_0000002497902246.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=B28D24A91CD3D70E56EC9C56DC38204FE2054BB7B31EFCFBA16DA42BC5A380B4)
 
 开发应用沉浸式效果主要要考虑如下几个设计要素：
 
@@ -26,21 +26,21 @@
 
 可以通过调用窗口强制全屏布局接口[setWindowLayoutFullScreen()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setwindowlayoutfullscreen9)实现界面元素延伸到状态栏和导航区域；然后通过接口[getWindowAvoidArea()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#getwindowavoidarea9)和[on('avoidAreaChange')](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#onavoidareachange9)获取并动态监听避让区域的变更信息，页面布局根据避让区域信息进行动态调整；设置状态栏或导航区域的颜色或显隐等属性与界面元素进行匹配。
 
-1. 调用setWindowLayoutFullScreen()接口设置窗口全屏。```typescript // EntryAbility.ets import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit'; import { window } from '@kit.ArkUI'; import { BusinessError } from '@kit.BasicServicesKit'; export default class EntryAbility extends UIAbility {  // ...  onWindowStageCreate(windowStage: window.WindowStage): void {  windowStage.loadContent('pages/Index', (err, data) => {  if (err.code) {  return;  }  let windowClass: window.Window = windowStage.getMainWindowSync(); // 获取应用主窗口  // 1. 设置窗口全屏  let isLayoutFullScreen = true;  windowClass.setWindowLayoutFullScreen(isLayoutFullScreen).then(() => {  console.info('Succeeded in setting the window layout to full-screen mode.');  }).catch((err: BusinessError) => {  console.error(`Failed to set the window layout to full-screen mode. Code is ${err.code}, message is ${err.message}`);  });  // 进行后续步骤2-3中的操作  });  } } ```
-2. 使用[getWindowAvoidArea()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#getwindowavoidarea9)接口获取当前布局遮挡区域（此处以状态栏、导航区域为例）。```typescript // EntryAbility.ets // 2. 获取布局避让遮挡的区域 let type = window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR; // 此处以导航条避让为例 let avoidArea = windowClass.getWindowAvoidArea(type); let bottomRectHeight = avoidArea.bottomRect.height; // 获取到导航区域的高度 AppStorage.setOrCreate('bottomRectHeight', bottomRectHeight); type = window.AvoidAreaType.TYPE_SYSTEM; // 以状态栏避让为例 avoidArea = windowClass.getWindowAvoidArea(type); let topRectHeight = avoidArea.topRect.height; // 获取状态栏区域高度 AppStorage.setOrCreate('topRectHeight', topRectHeight); ```
-3. 注册监听函数，动态获取避让区域的实时数据。常见的触发避让区回调的场景如下：应用窗口在全屏模式、悬浮模式、分屏模式之间的切换；应用窗口旋转；多折叠设备在屏幕折叠态和展开态之间的切换；应用窗口在多设备之间的流转。```typescript // EntryAbility.ets // 3. 注册监听函数，动态获取避让区域数据 windowClass.on('avoidAreaChange', (data) => {  if (data.type === window.AvoidAreaType.TYPE_SYSTEM) {  let topRectHeight = data.area.topRect.height;  AppStorage.setOrCreate('topRectHeight', topRectHeight);  } else if (data.type == window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {  let bottomRectHeight = data.area.bottomRect.height;  AppStorage.setOrCreate('bottomRectHeight', bottomRectHeight);  } }); ```
-4. 布局中的UI元素需要避让状态栏和导航区域，否则可能产生UI元素重叠等情况。> **说明** > 避让区域存在大小为0的情况，当获取到的避让区域为0时，开发者需注意针对性处理适配此时的页面区域和布局，避免贴边、内容裁剪等问题，影响应用界面正常显示或美观性。 如下例子中，对控件顶部设置padding（具体数值与状态栏高度一致），实现对状态栏的避让；对底部设置padding（具体数值与底部导航区域高度一致），实现对导航条的避让。如果去掉顶部和底部的padding设置，即不避让状态栏和导航条，UI元素就会发生重叠。具体可见下文步骤中图2和图3的效果对比。 ```typescript // Index.ets @Entry @Component struct Index {  @StorageProp('bottomRectHeight')  bottomRectHeight: number = 0;  @StorageProp('topRectHeight')  topRectHeight: number = 0;  build() {  Column() {  Row() {  Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#2786d9')  Row() {  Text('Display Content 2').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 3').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 4').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 5').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#96dffa')  }  .width('100%')  .height('100%')  .alignItems(HorizontalAlign.Center)  .backgroundColor('#d5d5d5')  .justifyContent(FlexAlign.SpaceBetween)  // top数值与状态栏区域高度保持一致；bottom数值与导航区域高度保持一致  .padding({  top: this.getUIContext().px2vp(this.topRectHeight),  bottom: this.getUIContext().px2vp(this.bottomRectHeight)  })  } } ```
-5. 根据实际的UI界面显示或相关UI元素背景颜色等，还可以按需设置状态栏的文字颜色、背景色或设置导航区域的显示或隐藏，以使UI界面效果呈现和谐。状态栏和导航区域默认是透明的，透传的是应用界面的背景色。此例中UI颜色主要有两种，比较简单，故未对状态栏文字颜色、背景色进行设置，未对导航区域进行隐藏。 **图2**布局避让状态栏和导航区域（此处以导航区域表现为导航条为例给出示意） ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/xvUdZvH4QFOVKYG-y_Vb4g/zh-cn_image_0000002529582247.jpg?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=2CE7BA3F1BD8A8F21AAB0204F6954DF64976AA1E1F921643789E4D81E4663ED4) **图3**布局未避让状态栏和导航区域，UI元素重叠（此处以导航区域表现为导航条为例给出示意） ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/zYb8Z9I3RnOOjF8fLfLtfg/zh-cn_image_0000002497902248.jpg?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=37EF333A157610666382E43746337780782E7A033F69836DF59DFC59A99FA080)
+1. 调用setWindowLayoutFullScreen()接口设置窗口全屏。```typescript import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit'; import { window } from '@kit.ArkUI'; import { BusinessError } from '@kit.BasicServicesKit'; export default class EntryAbility extends UIAbility {  onWindowStageCreate(windowStage: window.WindowStage): void {  windowStage.loadContent('pages/Index', (err, data) => {  if (err.code) {  return;  }  let windowClass: window.Window = windowStage.getMainWindowSync();  let isLayoutFullScreen = true;  windowClass.setWindowLayoutFullScreen(isLayoutFullScreen).then(() => {  console.info('Succeeded in setting the window layout to full-screen mode.');  }).catch((err: BusinessError) => {  console.error(`Failed to set the window layout to full-screen mode. Code is ${err.code}, message is ${err.message}`);  });  });  } } ```
+2. 使用[getWindowAvoidArea()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#getwindowavoidarea9)接口获取当前布局遮挡区域（此处以状态栏、导航区域为例）。```typescript let type = window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR; let avoidArea = windowClass.getWindowAvoidArea(type); let bottomRectHeight = avoidArea.bottomRect.height; AppStorage.setOrCreate('bottomRectHeight', bottomRectHeight); type = window.AvoidAreaType.TYPE_SYSTEM; avoidArea = windowClass.getWindowAvoidArea(type); let topRectHeight = avoidArea.topRect.height; AppStorage.setOrCreate('topRectHeight', topRectHeight); ```
+3. 注册监听函数，动态获取避让区域的实时数据。常见的触发避让区回调的场景如下：应用窗口在全屏模式、悬浮模式、分屏模式之间的切换；应用窗口旋转；多折叠设备在屏幕折叠态和展开态之间的切换；应用窗口在多设备之间的流转。```typescript windowClass.on('avoidAreaChange', (data) => {  if (data.type === window.AvoidAreaType.TYPE_SYSTEM) {  let topRectHeight = data.area.topRect.height;  AppStorage.setOrCreate('topRectHeight', topRectHeight);  } else if (data.type == window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {  let bottomRectHeight = data.area.bottomRect.height;  AppStorage.setOrCreate('bottomRectHeight', bottomRectHeight);  } }); ```
+4. 布局中的UI元素需要避让状态栏和导航区域，否则可能产生UI元素重叠等情况。> **说明** > 避让区域存在大小为0的情况，当获取到的避让区域为0时，开发者需注意针对性处理适配此时的页面区域和布局，避免贴边、内容裁剪等问题，影响应用界面正常显示或美观性。 如下例子中，对控件顶部设置padding（具体数值与状态栏高度一致），实现对状态栏的避让；对底部设置padding（具体数值与底部导航区域高度一致），实现对导航条的避让。如果去掉顶部和底部的padding设置，即不避让状态栏和导航条，UI元素就会发生重叠。具体可见下文步骤中图2和图3的效果对比。 ```typescript @Entry @Component struct Index {  @StorageProp('bottomRectHeight')  bottomRectHeight: number = 0;  @StorageProp('topRectHeight')  topRectHeight: number = 0;  build() {  Column() {  Row() {  Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#2786d9')  Row() {  Text('Display Content 2').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 3').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 4').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 5').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#96dffa')  }  .width('100%')  .height('100%')  .alignItems(HorizontalAlign.Center)  .backgroundColor('#d5d5d5')  .justifyContent(FlexAlign.SpaceBetween)  .padding({  top: this.getUIContext().px2vp(this.topRectHeight),  bottom: this.getUIContext().px2vp(this.bottomRectHeight)  })  } } ```
+5. 根据实际的UI界面显示或相关UI元素背景颜色等，还可以按需设置状态栏的文字颜色、背景色或设置导航区域的显示或隐藏，以使UI界面效果呈现和谐。状态栏和导航区域默认是透明的，透传的是应用界面的背景色。此例中UI颜色主要有两种，比较简单，故未对状态栏文字颜色、背景色进行设置，未对导航区域进行隐藏。 **图2**布局避让状态栏和导航区域（此处以导航区域表现为导航条为例给出示意） ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/xvUdZvH4QFOVKYG-y_Vb4g/zh-cn_image_0000002529582247.jpg?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=94E3674F39F10121DD80F871FF86C023D8C12179A21934D57AF042A45116168A) **图3**布局未避让状态栏和导航区域，UI元素重叠（此处以导航区域表现为导航条为例给出示意） ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/zYb8Z9I3RnOOjF8fLfLtfg/zh-cn_image_0000002497902248.jpg?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=A56D6CF73501DEF8F6DCA73534817AA12C5019BDE907EB2B082DC19E8386A450)
 
 ### 应用扩展布局，隐藏避让区
 
 此场景下状态栏和导航区域需要隐藏，适用于游戏、电影等应用场景。用户可以通过从底部上滑唤出导航条或三键导航。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/rnBnBewyQhiMkIp1hReaqA/zh-cn_image_0000002529702207.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=FEAD464D96CFA16D04DA892F897A9116867AFF3C7E7A70C67B1DD412F9E58725)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/rnBnBewyQhiMkIp1hReaqA/zh-cn_image_0000002529702207.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=1A2D16BC898BCC86F83F1F0BB48444C318D8040F813C71F869A649C8254B42F4)
 
-1. 调用setWindowLayoutFullScreen()接口设置窗口全屏。```typescript // EntryAbility.ets import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit'; import { window } from '@kit.ArkUI'; import { BusinessError } from '@kit.BasicServicesKit'; export default class EntryAbility extends UIAbility {  // ...  onWindowStageCreate(windowStage: window.WindowStage): void {  windowStage.loadContent('pages/Index', (err, data) => {  if (err.code) {  return;  }  let windowClass: window.Window = windowStage.getMainWindowSync(); // 获取应用主窗口  // 1. 设置窗口全屏  let isLayoutFullScreen = true;  windowClass.setWindowLayoutFullScreen(isLayoutFullScreen).then(() => {  console.info('Succeeded in setting the window layout to full-screen mode.');  }).catch((err: BusinessError) => {  console.error(`Failed to set the window layout to full-screen mode. Code is ${err.code}, message is ${err.message}`);  });  // 进行后续步骤2中的状态栏和导航区域的隐藏操作  });  } } ```
-2. 调用[setSpecificSystemBarEnabled()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setspecificsystembarenabled11)接口设置状态栏和导航区域的具体显隐状态，此场景下将其设置为隐藏。```typescript // EntryAbility.ets // 2. 设置状态栏隐藏 windowClass.setSpecificSystemBarEnabled('status', false).then(() => {  console.info('Succeeded in setting the status bar to be invisible.'); }).catch((err: BusinessError) => {  console.error(`Failed to set the status bar to be invisible. Code is ${err.code}, message is ${err.message}`); }); // 2. 设置导航区域隐藏 windowClass.setSpecificSystemBarEnabled('navigationIndicator', false).then(() => {  console.info('Succeeded in setting the navigation indicator to be invisible.'); }).catch((err: BusinessError) => {  console.error(`Failed to set the navigation indicator to be invisible. Code is ${err.code}, message is ${err.message}`); }); ```
-3. 在界面中无需进行导航区域避让操作。```typescript // Index.ets @Entry() @Component struct Index {  build() {  Row() {  Column() {  Row() {  Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#2786d9')  Row() {  Text('Display Content 2').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 3').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 4').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 5').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#96dffa')  }  .width('100%')  .height('100%')  .alignItems(HorizontalAlign.Center)  .justifyContent(FlexAlign.SpaceBetween)  .backgroundColor('#d5d5d5')  }  } } ```
+1. 调用setWindowLayoutFullScreen()接口设置窗口全屏。```typescript import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit'; import { window } from '@kit.ArkUI'; import { BusinessError } from '@kit.BasicServicesKit'; export default class EntryAbility extends UIAbility {  onWindowStageCreate(windowStage: window.WindowStage): void {  windowStage.loadContent('pages/Index', (err, data) => {  if (err.code) {  return;  }  let windowClass: window.Window = windowStage.getMainWindowSync();  let isLayoutFullScreen = true;  windowClass.setWindowLayoutFullScreen(isLayoutFullScreen).then(() => {  console.info('Succeeded in setting the window layout to full-screen mode.');  }).catch((err: BusinessError) => {  console.error(`Failed to set the window layout to full-screen mode. Code is ${err.code}, message is ${err.message}`);  });  });  } } ```
+2. 调用[setSpecificSystemBarEnabled()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setspecificsystembarenabled11)接口设置状态栏和导航区域的具体显隐状态，此场景下将其设置为隐藏。```typescript windowClass.setSpecificSystemBarEnabled('status', false).then(() => {  console.info('Succeeded in setting the status bar to be invisible.'); }).catch((err: BusinessError) => {  console.error(`Failed to set the status bar to be invisible. Code is ${err.code}, message is ${err.message}`); }); windowClass.setSpecificSystemBarEnabled('navigationIndicator', false).then(() => {  console.info('Succeeded in setting the navigation indicator to be invisible.'); }).catch((err: BusinessError) => {  console.error(`Failed to set the navigation indicator to be invisible. Code is ${err.code}, message is ${err.message}`); }); ```
+3. 在界面中无需进行导航区域避让操作。```typescript @Entry() @Component struct Index {  build() {  Row() {  Column() {  Row() {  Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#2786d9')  Row() {  Text('Display Content 2').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 3').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 4').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 5').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#96dffa')  }  .width('100%')  .height('100%')  .alignItems(HorizontalAlign.Center)  .justifyContent(FlexAlign.SpaceBetween)  .backgroundColor('#d5d5d5')  }  } } ```
 
 ## 组件安全区方案
 
@@ -49,12 +49,12 @@
 应用在默认情况下窗口背景绘制范围是全屏，但UI元素被限制在安全区内（自动排除状态栏和导航区域）进行布局，来避免界面元素被状态栏和导航区域遮盖。
 
 **图4**界面元素自动避让状态栏和导航区域示意图
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/pN1BeGqXTJ-pLYnA7ZHMUA/zh-cn_image_0000002497742260.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=7761C4FF068431C26C0B0B7271A3920617161C24E15E446F5E8E0703E871DFEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/pN1BeGqXTJ-pLYnA7ZHMUA/zh-cn_image_0000002497742260.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=D9C17A358035D16BA43FAB85D7426E2FE14814A59FF7B323E81B8A6883BEE07B)
 
 针对状态栏和导航区域颜色与界面元素颜色不匹配问题，可以通过如下两种方式实现沉浸式效果：
 
-- 状态栏和导航区域颜色相同场景，可以通过设置窗口的背景色来实现沉浸式效果。窗口背景色可通过[setWindowBackgroundColor()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setwindowbackgroundcolor9)进行设置。```typescript import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit'; import { window } from '@kit.ArkUI'; export default class EntryAbility extends UIAbility {  //...  onWindowStageCreate(windowStage: window.WindowStage): void {  windowStage.loadContent('pages/Index', (err) => {  if (err.code) {  return;  }  // 设置全窗颜色和应用元素颜色一致  windowStage.getMainWindowSync().setWindowBackgroundColor('#d5d5d5');  });  } } ``` 界面状态栏和导航区域颜色相同场景。 ```typescript // xxx.ets @Entry @Component struct Example {  build() {  Column() {  Row() {  Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#2786d9')  Row() {  Text('Display Content 2').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 3').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 4').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 5').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#96dffa')  }  .width('100%').height('100%')  .alignItems(HorizontalAlign.Center)  .backgroundColor('#d5d5d5')  .justifyContent(FlexAlign.SpaceBetween)  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/171X6Fv4SumR4IjCfEnYyg/zh-cn_image_0000002497742254.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=C9E70EC7F6A4EB3B9EF781182C15EB552229B129A30CE976C1B64211E82FF443)
-- 状态栏和导航区域颜色不同时，可以使用[expandSafeArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#expandsafearea)属性扩展安全区域属性进行调整。```typescript // xxx.ets @Entry @Component struct Example {  build() {  Column() {  Row() {  Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#2786d9')  // 设置顶部绘制延伸到状态栏  .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP])  Row() {  Text('Display Content 2').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 3').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 4').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 5').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#96dffa')  // 设置底部绘制延伸到导航区域  .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])  }  .width('100%').height('100%')  .alignItems(HorizontalAlign.Center)  .backgroundColor('#d5d5d5')  .justifyContent(FlexAlign.SpaceBetween)  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/TkHM6kSzRJKRJT2OljV2Uw/zh-cn_image_0000002497902250.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=CA53E5B90D81F83CDCA79B5E39D405E17B3638DB4941C26F0018C0AA42A41CA3)
+- 状态栏和导航区域颜色相同场景，可以通过设置窗口的背景色来实现沉浸式效果。窗口背景色可通过[setWindowBackgroundColor()](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setwindowbackgroundcolor9)进行设置。```typescript import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit'; import { window } from '@kit.ArkUI'; export default class EntryAbility extends UIAbility {  onWindowStageCreate(windowStage: window.WindowStage): void {  windowStage.loadContent('pages/Index', (err) => {  if (err.code) {  return;  }  windowStage.getMainWindowSync().setWindowBackgroundColor('#d5d5d5');  });  } } ``` 界面状态栏和导航区域颜色相同场景。 ```typescript @Entry @Component struct Example {  build() {  Column() {  Row() {  Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#2786d9')  Row() {  Text('Display Content 2').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 3').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 4').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 5').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#96dffa')  }  .width('100%').height('100%')  .alignItems(HorizontalAlign.Center)  .backgroundColor('#d5d5d5')  .justifyContent(FlexAlign.SpaceBetween)  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/171X6Fv4SumR4IjCfEnYyg/zh-cn_image_0000002497742254.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=99D27F7853ABB6162F9B0F86FC7042B7F7F48FD09950FA3955EF6492183A4536)
+- 状态栏和导航区域颜色不同时，可以使用[expandSafeArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#expandsafearea)属性扩展安全区域属性进行调整。```typescript @Entry @Component struct Example {  build() {  Column() {  Row() {  Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#2786d9')  .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP])  Row() {  Text('Display Content 2').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 3').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 4').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Display Content 5').fontSize(30)  }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')  Row() {  Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')  }.backgroundColor('#96dffa')  .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])  }  .width('100%').height('100%')  .alignItems(HorizontalAlign.Center)  .backgroundColor('#d5d5d5')  .justifyContent(FlexAlign.SpaceBetween)  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/TkHM6kSzRJKRJT2OljV2Uw/zh-cn_image_0000002497902250.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=4D5CFFED58BA490E244314D57A950B22A15F1CC7288004B4B570A2C773C4AC51)
 
 ### 扩展安全区域属性原理
 
@@ -64,7 +64,7 @@
 - 上述过程仅改变组件自身绘制大小，不进行二次布局，不影响子节点和兄弟节点的大小和位置。
 - 子节点可以单独设置该属性，只需要自身边界和安全区域重合就可以延伸自身大小至非安全区域内，需要确保父组件未设置clip等裁剪属性。
 - 配置expandSafeArea属性组件进行绘制扩展时，需要关注组件不能配置固定宽高尺寸，百分比除外。
-- 组件可以设置通用属性safeAreaPadding，给自身添加组件级安全区域。该属性作为一种特殊边距，在提供布局约束的同时作为安全区可以被一些系统组件利用。- safeAreaPadding位于原有的padding内侧。容器自外向内各层分别为border、padding、safeAreaPadding、内容区。当border和padding确定后，若容器可用空间不足以满足safeAreaPadding的设置，则优先分配给左侧和上侧safeAreaPadding、其次分配给右侧和下侧safeAreaPadding。safeAreaPadding实际尺寸确定后，余下空间为内容区。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/YcnyHW-3RJWU-t0AdxBJQQ/zh-cn_image_0000002529582245.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=73BFD68603BDB97FA47F855E6180B5E10AD948997CBEE3F66B5AA9E260B915CE) - 系统组件如Navigation、List、Scroll、Tabs等可以利用外层或容器自身safeAreaPadding实现扩大裁剪范围等能力。
+- 组件可以设置通用属性safeAreaPadding，给自身添加组件级安全区域。该属性作为一种特殊边距，在提供布局约束的同时作为安全区可以被一些系统组件利用。- safeAreaPadding位于原有的padding内侧。容器自外向内各层分别为border、padding、safeAreaPadding、内容区。当border和padding确定后，若容器可用空间不足以满足safeAreaPadding的设置，则优先分配给左侧和上侧safeAreaPadding、其次分配给右侧和下侧safeAreaPadding。safeAreaPadding实际尺寸确定后，余下空间为内容区。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/YcnyHW-3RJWU-t0AdxBJQQ/zh-cn_image_0000002529582245.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=22EAB19EEEEB9819BB3266317230444B55AAF67CCB1480F9EB07F75904210D1F) - 系统组件如Navigation、List、Scroll、Tabs等可以利用外层或容器自身safeAreaPadding实现扩大裁剪范围等能力。
 
 ### 背景图和视频场景
 
@@ -74,7 +74,6 @@
 > Video组件在使用expandSafeArea扩展到安全区域时，组件视频显示内容区域不支持扩展。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SafeAreaExample1 {
@@ -82,29 +81,29 @@ struct SafeAreaExample1 {
     Stack() {
       Image($r('app.media.bg'))
         .height('100%').width('100%')
-        .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM]) // 图片组件的绘制区域扩展至状态栏和导航区域。
+        .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
     }.height('100%').width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/bEplye7_T1u4mJFa7ZLW9g/zh-cn_image_0000002529702211.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=94054332411F63029D5F01A31F89734FA4FF023BB1D7111BA95A5AE8DB9C0D09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/bEplye7_T1u4mJFa7ZLW9g/zh-cn_image_0000002529702211.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=E5114E9553AF37AC0DCFBA682C021B59142658E5A0018858077567EC92775DCD)
 
 ### 滚动类场景
 
 滚动容器设置expandSafeArea属性生效，但当父组件是滚动容器时，子组件设置expandSafeArea属性不生效。对于滚动容器的子组件，有两种方法实现沉浸式效果：
 
-1. 设置父组件滚动容器和子组件相同的背景色，给父组件设置expandSafeArea属性扩展安全区。```typescript // xxx.ets @Entry @Component struct ScrollExample {  scroller: Scroller = new Scroller()  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]  build() {  Stack({ alignContent: Alignment.TopStart }) {  Scroll(this.scroller) {  Column() {  ForEach(this.arr, (item: number) => {  Stack() {  Text('Display Content ' + item.toString()).fontSize(30)  }  .width('80%').padding(20).borderRadius(15).backgroundColor(Color.White).margin({ top:30, bottom:30 })  }, (item: string) => item)  }.width('100%').backgroundColor('rgb(213,213,213)')  }.backgroundColor('rgb(213,213,213)')  .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])  }.width('100%').height('100%')  .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])  } } ``` **图5**滚动类容器设置expandSafeArea属性实现沉浸式效果 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/jo7K5UgyT3mNDdQGVby8yQ/zh-cn_image_0000002497742256.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=0243DF97CA40DE9D4CD01CB6E1B32644FEAF775A1775F384259F2FD7C6DFDE9E)
-2. 设置父组件滚动容器和子组件相同的背景色，设置滚动容器的内容裁剪属性clipContent(ContentClipMode.SAFE_AREA)，将内容层裁剪区域扩展至避让区。```typescript // xxx.ets @Entry @Component struct ScrollExample {  scroller: Scroller = new Scroller()  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]  build() {  Stack({ alignContent: Alignment.TopStart }) {  Scroll(this.scroller) {  Column() {  ForEach(this.arr, (item: number) => {  Stack() {  Text('Display Content ' + item.toString()).fontSize(30)  }  .width('80%').padding(20).borderRadius(15).backgroundColor(Color.White).margin({ top:30, bottom:30 })  }, (item: string) => item)  }.width('100%').backgroundColor('rgb(213,213,213)')  }.backgroundColor('rgb(213,213,213)')  .clipContent(ContentClipMode.SAFE_AREA)  }.width('100%').height('100%')  } } ```
+1. 设置父组件滚动容器和子组件相同的背景色，给父组件设置expandSafeArea属性扩展安全区。```typescript @Entry @Component struct ScrollExample {  scroller: Scroller = new Scroller()  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]  build() {  Stack({ alignContent: Alignment.TopStart }) {  Scroll(this.scroller) {  Column() {  ForEach(this.arr, (item: number) => {  Stack() {  Text('Display Content ' + item.toString()).fontSize(30)  }  .width('80%').padding(20).borderRadius(15).backgroundColor(Color.White).margin({ top:30, bottom:30 })  }, (item: string) => item)  }.width('100%').backgroundColor('rgb(213,213,213)')  }.backgroundColor('rgb(213,213,213)')  .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])  }.width('100%').height('100%')  .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])  } } ``` **图5**滚动类容器设置expandSafeArea属性实现沉浸式效果 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/jo7K5UgyT3mNDdQGVby8yQ/zh-cn_image_0000002497742256.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=41365201C769D6FA09BC4FB85432CFEFE0A44BEBA378B0745E9C9C92E014C8F0)
+2. 设置父组件滚动容器和子组件相同的背景色，设置滚动容器的内容裁剪属性clipContent(ContentClipMode.SAFE_AREA)，将内容层裁剪区域扩展至避让区。```typescript @Entry @Component struct ScrollExample {  scroller: Scroller = new Scroller()  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]  build() {  Stack({ alignContent: Alignment.TopStart }) {  Scroll(this.scroller) {  Column() {  ForEach(this.arr, (item: number) => {  Stack() {  Text('Display Content ' + item.toString()).fontSize(30)  }  .width('80%').padding(20).borderRadius(15).backgroundColor(Color.White).margin({ top:30, bottom:30 })  }, (item: string) => item)  }.width('100%').backgroundColor('rgb(213,213,213)')  }.backgroundColor('rgb(213,213,213)')  .clipContent(ContentClipMode.SAFE_AREA)  }.width('100%').height('100%')  } } ```
 
 **图6**滚动类容器设置clipContent属性实现沉浸式效果
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/aikIhlvySei7-EI3PanMdQ/zh-cn_image_0000002529702209.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=C0444A080C7615EE2DC3D464077DC694B851E12ACC58E5B2EAD0DE42889AAA21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/aikIhlvySei7-EI3PanMdQ/zh-cn_image_0000002529702209.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=29E13AD4064D6C2918FE03206D973CA384034643585ECBA25119F0ECD87DA911)
 
 ### 底部页签场景
 
 要求页签背景色能够延伸到导航区域（此处以导航区域表现为导航条为例给出示意），但页签内部可操作元素需要在导航区域之上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/4kSJq5GxRE-McXZZqaDx0w/zh-cn_image_0000002497742262.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=4AEE1E50C2677E7B665C9843FB290DFA8623B0054546652379C6592949FDF3D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/4kSJq5GxRE-McXZZqaDx0w/zh-cn_image_0000002497742262.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=D453F8E2419E2F928A71363EC1A642EE6BD7A835C165273F74AF40BA7F734514)
 
 针对底部的页签部分，Navigation组件和Tabs组件默认实现了页签的延伸处理，开发者只需要保证Navigation和Tabs组件的底部边界和底部导航区域重合即可。若开发者显式调用expandSafeArea接口，则安全区效果由expandSafeArea参数指定。
 
@@ -112,10 +111,9 @@ struct SafeAreaExample1 {
 
 **图7**顶部和底部UI元素未设置和设置expandSafeArea属性效果对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Zyoy7q2CRUeQC9F4Mo1byg/zh-cn_image_0000002529582239.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=F4B43E8B3CCF8958FFF070E66C7D7A4346491840D8E64414CCCC4C7B1CD31E0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Zyoy7q2CRUeQC9F4Mo1byg/zh-cn_image_0000002529582239.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=17C233BE268B742BD7C3CB040AA30CB98C30513547D2A586E4D2F5CFCBB14D14)
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Example {
@@ -124,24 +122,29 @@ struct Example {
       Row() {
         Text('Top Content').fontSize(40).textAlign(TextAlign.Center).width('100%')
       }.backgroundColor('#2786d9')
-      // 设置顶部绘制延伸到状态栏
+
       .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP])
+
       Row() {
         Text('Display Content 2').fontSize(30)
       }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')
+
       Row() {
         Text('Display Content 3').fontSize(30)
       }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')
+
       Row() {
         Text('Display Content 4').fontSize(30)
       }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')
+
       Row() {
         Text('Display Content 5').fontSize(30)
       }.backgroundColor(Color.White).padding(20).borderRadius(15).width('80%')
+
       Row() {
         Text('Bottom Content').fontSize(40).textAlign(TextAlign.Center).width('100%')
       }.backgroundColor('#96dffa')
-      // 设置底部绘制延伸到导航区域
+
       .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
     }
     .width('100%').height('100%')
@@ -156,7 +159,7 @@ struct Example {
 
 当状态栏元素和底部导航区域元素不同时，无法单纯通过窗口背景色或者背景图组件延伸实现，此时需要对顶部元素和底部元素分别配置expandSafeArea属性，顶部元素配置expandSafeArea([SafeAreaType.SYSTEM],[SafeAreaEdge.TOP])，底部元素配置expandSafeArea([SafeAreaType.SYSTEM],[SafeAreaEdge.BOTTOM])。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/EyipQfnsT3e5RP0jwnaeOA/zh-cn_image_0000002529582241.png?HW-CC-KV=V1&HW-CC-Date=20260328T140911Z&HW-CC-Expire=86400&HW-CC-Sign=597175A20F043ABCE9DA82FDC64AD051088E402AEAD97774D6ACFFFF0D0D50B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/EyipQfnsT3e5RP0jwnaeOA/zh-cn_image_0000002529582241.png?HW-CC-KV=V1&HW-CC-Date=20260328T143316Z&HW-CC-Expire=86400&HW-CC-Sign=24E63A359C08D47B6F7D563932F4BDB4406B0A4391EA1757BB646171D7E6E7A5)
 
 ```typescript
 @Entry
@@ -167,7 +170,7 @@ struct Index {
       Column() {
         Image($r('app.media.start'))
           .height('50%').width('100%')
-          // 设置图片延伸到状态栏
+
           .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP])
         Column() {
           Text('HarmonyOS 第一课')
@@ -177,13 +180,13 @@ struct Index {
             .fontSize(20).margin(20)
         }.height('50%').width('100%')
         .backgroundColor(Color.White)
-        // 设置文本内容区背景延伸到导航栏
+
         .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.BOTTOM])
       }
     }
     .width('100%')
     .height('100%')
-    // 关闭Swiper组件默认的裁剪效果以便子节点可以绘制在Swiper外。
+
     .clip(false)
   }
 }

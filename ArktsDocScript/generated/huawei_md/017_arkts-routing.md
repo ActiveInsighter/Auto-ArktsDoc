@@ -12,7 +12,7 @@
 
 **图1** 页面跳转
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/zhuANbnyTuCV4LJRVY7ldw/zh-cn_image_0000002533065764.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140859Z&HW-CC-Expire=86400&HW-CC-Sign=812F927D3312B9C729BB5A143B35962DEDFEAB2A09C02010A0C5A38226A269A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/zhuANbnyTuCV4LJRVY7ldw/zh-cn_image_0000002533065764.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143303Z&HW-CC-Expire=86400&HW-CC-Sign=0BC02AD94CC7CAA0A5903026865D670E170E835156C6CC255D784AD3D5D32D2D)
 
 Router模块提供了两种跳转模式，分别是[pushUrl](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#pushurl)和[replaceUrl](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#replaceurl)。这两种模式决定了目标页面是否会替换当前页。
 
@@ -27,10 +27,10 @@ Router模块提供了两种跳转模式，分别是[pushUrl](https://developer.h
 
 - Standard：多实例模式，也是默认情况下的跳转模式。目标页面会被添加到页面栈顶，无论栈中是否存在相同url的页面。
 - Single：单实例模式。如果目标页面的url已经存在于页面栈中，则会将离栈顶最近的同url页面移动到栈顶，该页面成为新建页。如果目标页面的url在页面栈中不存在同url页面，则按照默认的多实例模式进行跳转。
-- 场景一：有一个主页（Home）和一个详情页（Detail），希望从主页点击一个商品，跳转到详情页。同时，需要保留主页在页面栈中，以便返回时恢复状态。这种场景下，可以使用pushUrl方法，并且使用Standard实例模式（或者省略）。 ```typescript import { router } from '@kit.ArkUI'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0xF811; const TAG = '[Sample_ArkTSRouter]'; @Entry @Component struct Index {  onJumpClick(): void {  this.getUIContext().getRouter().pushUrl({  url: 'pages/pageRouter/jumpPage/Detail'  }, router.RouterMode.Standard, (err) => {  if (err) {  hilog.error(DOMAIN, TAG,`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);  return;  }  hilog.info(DOMAIN, TAG,'Invoke pushUrl succeeded.');  });  }  build() {  } } ``` > **说明** > 多实例模式下，router.RouterMode.Standard参数可以省略。
-- 场景二：有一个登录页（Login）和一个个人中心页（Profile），希望从登录页成功登录后，跳转到个人中心页。同时，销毁登录页，在返回时直接退出应用。这种场景下，可以使用replaceUrl方法，并且使用Standard实例模式（或者省略）。 ```typescript import { router } from '@kit.ArkUI'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0xF811; const TAG = '[Sample_ArkTSRouter]'; @Entry @Component struct Login {  onJumpClick(): void {  this.getUIContext().getRouter().replaceUrl({  url: 'pages/pageRouter/jumpPage/Profile'  }, router.RouterMode.Standard, (err) => {  if (err) {  hilog.error(DOMAIN, TAG,`Invoke replaceUrl failed, code is ${err.code}, message is ${err.message}`);  return;  }  hilog.error(DOMAIN, TAG,'Invoke replaceUrl succeeded.');  })  }  build() {  } } ``` > **说明** > 多实例模式下，router.RouterMode.Standard参数可以省略。
-- 场景三：有一个设置页（Setting）和一个主题切换页（Theme），希望从设置页点击主题选项，跳转到主题切换页。同时，需要保证每次只有一个主题切换页存在于页面栈中，在返回时直接回到设置页。这种场景下，可以使用pushUrl方法，并且使用Single实例模式。 ```typescript import { router } from '@kit.ArkUI'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0xF811; const TAG = '[Sample_ArkTSRouter]'; @Entry @Component struct Login {  onJumpClick(): void {  this.getUIContext().getRouter().pushUrl({  url: 'pages/pageRouter/jumpPage/SetTheme'  }, router.RouterMode.Single, (err) => {  if (err) {  hilog.error(DOMAIN, TAG, `Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);  return;  }  hilog.error(DOMAIN, TAG, 'Invoke replaceUrl succeeded.');  });  }  build() { } ```
-- 场景四：有一个搜索结果列表页（SearchResult）和一个搜索结果详情页（SearchDetail），希望从搜索结果列表页点击某一项结果，跳转到搜索结果详情页。同时，如果该结果已经被查看过，则不需要再新建一个详情页，而是直接跳转到已经存在的详情页。这种场景下，可以使用replaceUrl方法，并且使用Single实例模式。 ```typescript import { router } from '@kit.ArkUI'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0xF811; const TAG = '[Sample_ArkTSRouter]'; @Entry @Component struct SearchResult {  onJumpClick(): void {  this.getUIContext().getRouter().replaceUrl({  url: 'pages/pageRouter/jumpPage/SearchDetail'  }, router.RouterMode.Single, (err) => {  if (err) {  hilog.error(DOMAIN, TAG, `Invoke replaceUrl failed, code is ${err.code}, message is ${err.message}`);  return;  }  hilog.error(DOMAIN, TAG, 'Invoke replaceUrl succeeded.');  })  }  build() { } ```
+- 场景一：有一个主页（Home）和一个详情页（Detail），希望从主页点击一个商品，跳转到详情页。同时，需要保留主页在页面栈中，以便返回时恢复状态。这种场景下，可以使用pushUrl方法，并且使用Standard实例模式（或者省略）。 ```typescript import { router } from '@kit.ArkUI'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0xF811; const TAG = '[Sample_ArkTSRouter]'; @Entry @Component struct Index {  // 在Home页面中  onJumpClick(): void {  this.getUIContext().getRouter().pushUrl({  url: 'pages/pageRouter/jumpPage/Detail' // 目标url  }, router.RouterMode.Standard, (err) => {  if (err) {  hilog.error(DOMAIN, TAG,`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);  return;  }  hilog.info(DOMAIN, TAG,'Invoke pushUrl succeeded.');  });  }  build() {  // ···  } } ``` > **说明** > 多实例模式下，router.RouterMode.Standard参数可以省略。
+- 场景二：有一个登录页（Login）和一个个人中心页（Profile），希望从登录页成功登录后，跳转到个人中心页。同时，销毁登录页，在返回时直接退出应用。这种场景下，可以使用replaceUrl方法，并且使用Standard实例模式（或者省略）。 ```typescript import { router } from '@kit.ArkUI'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0xF811; const TAG = '[Sample_ArkTSRouter]'; @Entry @Component struct Login {  // 在Login页面中  onJumpClick(): void {  this.getUIContext().getRouter().replaceUrl({  url: 'pages/pageRouter/jumpPage/Profile' // 目标url  }, router.RouterMode.Standard, (err) => {  if (err) {  hilog.error(DOMAIN, TAG,`Invoke replaceUrl failed, code is ${err.code}, message is ${err.message}`);  return;  }  hilog.error(DOMAIN, TAG,'Invoke replaceUrl succeeded.');  })  }  build() {  // ···  } } ``` > **说明** > 多实例模式下，router.RouterMode.Standard参数可以省略。
+- 场景三：有一个设置页（Setting）和一个主题切换页（Theme），希望从设置页点击主题选项，跳转到主题切换页。同时，需要保证每次只有一个主题切换页存在于页面栈中，在返回时直接回到设置页。这种场景下，可以使用pushUrl方法，并且使用Single实例模式。 ```typescript import { router } from '@kit.ArkUI'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0xF811; const TAG = '[Sample_ArkTSRouter]'; @Entry @Component struct Login {  // 在Setting页面中  onJumpClick(): void {  this.getUIContext().getRouter().pushUrl({  url: 'pages/pageRouter/jumpPage/SetTheme' // 目标url  }, router.RouterMode.Single, (err) => {  if (err) {  hilog.error(DOMAIN, TAG, `Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);  return;  }  hilog.error(DOMAIN, TAG, 'Invoke replaceUrl succeeded.');  });  }  build() {  // ··· } ```
+- 场景四：有一个搜索结果列表页（SearchResult）和一个搜索结果详情页（SearchDetail），希望从搜索结果列表页点击某一项结果，跳转到搜索结果详情页。同时，如果该结果已经被查看过，则不需要再新建一个详情页，而是直接跳转到已经存在的详情页。这种场景下，可以使用replaceUrl方法，并且使用Single实例模式。 ```typescript import { router } from '@kit.ArkUI'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0xF811; const TAG = '[Sample_ArkTSRouter]'; @Entry @Component struct SearchResult {  // 在SearchResult页面中  onJumpClick(): void {  this.getUIContext().getRouter().replaceUrl({  url: 'pages/pageRouter/jumpPage/SearchDetail' // 目标url  }, router.RouterMode.Single, (err) => {  if (err) {  hilog.error(DOMAIN, TAG, `Invoke replaceUrl failed, code is ${err.code}, message is ${err.message}`);  return;  }  hilog.error(DOMAIN, TAG, 'Invoke replaceUrl succeeded.');  })  }  build() {  // ··· } ```
 
 以上是不带参数传递的场景。
 
@@ -40,7 +40,6 @@ Router模块提供了两种跳转模式，分别是[pushUrl](https://developer.h
 class DataModelInfo {
   public age: number = 0;
 }
-
 class DataModel {
   public id: number = 0;
   public info: DataModelInfo | null = null;
@@ -49,17 +48,16 @@ class DataModel {
 
 ```typescript
 onJumpClick(): void {
-
+  // 在Home页面中
   let paramsInfo: DataModel = {
     id: 123,
     info: {
       age: 20
     }
   };
-
   this.getUIContext().getRouter().pushUrl({
-    url: 'pages/pageRouter/jumpPage/DetailPara',
-    params: paramsInfo
+    url: 'pages/pageRouter/jumpPage/DetailPara', // 目标url
+    params: paramsInfo // 添加params属性，传递自定义参数
   }, (err) => {
     if (err) {
       hilog.error(DOMAIN, TAG,`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -76,18 +74,18 @@ onJumpClick(): void {
 class InfoTmp {
   public age: number = 0;
 }
-
 class RouTmp {
-
+  // id: object = () => {
+  // };
   public id: number = 0;
   public info: InfoTmp = new InfoTmp();
 }
 ```
 
 ```typescript
-private params: RouTmp = (this.getUIContext().getRouter().getParams()) as RouTmp;
-
-private age: number = this.params.info.age;
+private params: RouTmp = (this.getUIContext().getRouter().getParams()) as RouTmp; // 获取传递过来的参数对象
+// private id: number = this.params.id; // 获取id属性的值
+private age: number = this.params.info.age; // 获取age属性的值
 ```
 
 ## 页面返回
@@ -96,7 +94,7 @@ private age: number = this.params.info.age;
 
 **图2** 页面返回
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/nm4LAglLSn2EKwSknM06GQ/zh-cn_image_0000002563865667.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140859Z&HW-CC-Expire=86400&HW-CC-Sign=B086CFF00B630C86BEEB0B2384CBB4484F265C96149EAE09372073A0D16F70DB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/nm4LAglLSn2EKwSknM06GQ/zh-cn_image_0000002563865667.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143303Z&HW-CC-Expire=86400&HW-CC-Sign=39650164D78B8F21AEC47B5982EDA9BF79D8C356F5633877CC18C46A581B29DA)
 
 直接使用router可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例，并使用[getRouter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getrouter)获取绑定实例的router。
 
@@ -110,8 +108,8 @@ this.getUIContext().getRouter().back();
 
 这种方式会返回到上一个页面，即上一个页面在页面栈中的位置。但是，上一个页面必须存在于页面栈中才能够返回，否则该方法将无效。
 
-- 方式二：返回到指定页面。 返回普通页面。 ```typescript this.getUIContext().getRouter().back({  url: 'pages/pageRouter/jumpPage/BackHome' }); ``` 返回命名路由页面。 ```typescript this.getUIContext().getRouter().back({  url: 'myPage' }); ``` 这种方式可以返回到指定页面，需要指定目标页面的路径。目标页面必须存在于页面栈中才能够返回。
-- 方式三：返回到指定页面，并传递自定义参数信息。 返回到普通页面。 ```typescript this.getUIContext().getRouter().back({  url: 'pages/pageRouter/jumpPage/BackHome',  params: {  info: $r('app.string.pageRouter_jump_text7_fromHome')  } }); ``` 返回命名路由页面。 ```typescript this.getUIContext().getRouter().back({  url: 'myPage',  params: {  info: $r('app.string.pageRouter_jump_text7_fromHome')  } }); ``` 这种方式不仅可以返回到指定页面，还可以在返回的同时传递自定义参数信息。这些参数信息可以在目标页面中通过调用[getParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#getparams)方法进行获取和解析。
+- 方式二：返回到指定页面。 返回普通页面。 ```typescript this.getUIContext().getRouter().back({  url: 'pages/pageRouter/jumpPage/BackHome' }); ``` 返回命名路由页面。 ```typescript this.getUIContext().getRouter().back({  url: 'myPage' // myPage为返回的命名路由页面别名 }); ``` 这种方式可以返回到指定页面，需要指定目标页面的路径。目标页面必须存在于页面栈中才能够返回。
+- 方式三：返回到指定页面，并传递自定义参数信息。 返回到普通页面。 ```typescript this.getUIContext().getRouter().back({  url: 'pages/pageRouter/jumpPage/BackHome',  params: {  // 请将$r('app.string.pageRouter_jump_text7_fromHome')替换为实际资源文件，在本示例中该资源文件的value值为"来自Home页"  info: $r('app.string.pageRouter_jump_text7_fromHome')  } }); ``` 返回命名路由页面。 ```typescript this.getUIContext().getRouter().back({  url: 'myPage', // myPage为返回的命名路由页面别名  params: {  // 请将$r('app.string.pageRouter_jump_text7_fromHome')替换为实际资源文件，在本示例中该资源文件的value值为"来自Home页"  info: $r('app.string.pageRouter_jump_text7_fromHome')  } }); ``` 这种方式不仅可以返回到指定页面，还可以在返回的同时传递自定义参数信息。这些参数信息可以在目标页面中通过调用[getParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#getparams)方法进行获取和解析。
 
 在目标页面中，在需要获取参数的位置调用[getParams](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#getparams)方法即可，例如在[onPageShow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom-component-lifecycle#onpageshow)生命周期回调中：
 
@@ -123,14 +121,13 @@ this.getUIContext().getRouter().back();
 @Component
 struct Home {
   @State message: string = 'Hello World';
-
   onPageShow() {
-    const params = this.getUIContext().getRouter().getParams() as Record<string, string>;
+    const params = this.getUIContext().getRouter().getParams() as Record<string, string>; // 获取传递过来的参数对象
     if (params) {
-      const info: string = params.info as string;
+      const info: string = params.info as string; // 获取info属性的值
     }
   }
-
+// ···
 }
 ```
 
@@ -151,28 +148,27 @@ struct Home {
 import { hilog } from '@kit.PerformanceAnalysisKit';
 const DOMAIN = 0xF811;
 const TAG = '[Sample_ArkTSRouter]';
-
+// Index.ets
 @Entry
 @Component
 struct MyComponent {
-
+  // 只有被@Entry装饰的组件才可以调用页面的生命周期
   onPageShow() {
     hilog.info(DOMAIN, TAG, 'Index onPageShow');
   }
-
+  // 只有被@Entry装饰的组件才可以调用页面的生命周期
   onPageHide() {
     hilog.info(DOMAIN, TAG, 'Index onPageHide');
   }
-
+  // 只有被@Entry装饰的组件才可以调用页面的生命周期
   onBackPress() {
     hilog.info(DOMAIN, TAG, 'Index onBackPress');
-
+    // 返回true表示页面自己处理返回逻辑，不进行页面路由；返回false表示使用默认的路由返回逻辑，不设置返回值按照false处理
     return true;
   }
-
   build() {
     Column() {
-
+      // push到Page页面，执行onPageHide
       Button('push to next page')
         .onClick(() => {
           this.getUIContext().getRouter().pushUrl({ url: 'pages/pageRouter/lifeCycle/Page' });
@@ -183,27 +179,27 @@ struct MyComponent {
 ```
 
 ```typescript
+// Page.ets
 @Entry
 @Component
 struct Page {
   @State textColor: Color = Color.Black;
   @State num: number = 0;
-
+  // 只有被@Entry装饰的组件才可以调用页面的生命周期
   onPageShow() {
     console.info('Page onPageShow');
     this.num = 5;
   }
-
+  // 只有被@Entry装饰的组件才可以调用页面的生命周期
   onPageHide() {
     console.info('Page onPageHide');
   }
-
-  onBackPress() {
+  // 只有被@Entry装饰的组件才可以调用页面的生命周期
+  onBackPress() { // 不设置返回值按照false处理
     console.info('Page onBackPress');
     this.textColor = Color.Grey;
     this.num = 0;
   }
-
   build() {
     Column() {
       Text(`num is：${this.num}`)
@@ -224,7 +220,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/nEpA98DFRamaKCW1EmmMGw/zh-cn_image_0000002563785713.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140859Z&HW-CC-Expire=86400&HW-CC-Sign=C1376AF575AF79A9D1276193E46D49D4A1599F09C94DD7091601A949593917DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/nEpA98DFRamaKCW1EmmMGw/zh-cn_image_0000002563785713.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143303Z&HW-CC-Expire=86400&HW-CC-Sign=CCC4E2BEA6016347E32D04E2671216706852261CA151CA1143E60998BA0479B3)
 
 ## 自定义转场
 
@@ -238,7 +234,7 @@ router自定义转场可以通过[pageTransition](https://developer.huawei.com/c
 
 **图3** 页面返回前增加一个询问框
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/KAiKocQhTl6s2X0w7aL1TQ/zh-cn_image_0000002532905818.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140859Z&HW-CC-Expire=86400&HW-CC-Sign=3CE4D641CE862736A1CD3C19C4599ECF649F84427E4C01D0EB71AE8A7416BC28)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/KAiKocQhTl6s2X0w7aL1TQ/zh-cn_image_0000002532905818.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143303Z&HW-CC-Expire=86400&HW-CC-Sign=2087E482818BAEE131CA9F5504AE7B46684F75DE48D3562E23881416AA99A1DD)
 
 ### 系统默认询问框
 
@@ -256,19 +252,20 @@ const TAG = '[Sample_ArkTSRouter]';
 ```
 
 ```typescript
+// 定义一个返回按钮的点击事件处理函数
 onBackClick(): void {
-
+  // 调用this.getUIContext().getRouter().showAlertBeforeBackPage方法，设置返回询问框的信息
   try {
     this.getUIContext().getRouter().showAlertBeforeBackPage({
-
-      message: this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('pageRouter_dialog_context') as string,
+      // 请在resources\base\element\string.json文件中配置name为'pageRouter_dialog_context'，value为非空字符串的资源
+      message: this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('pageRouter_dialog_context') as string, // 设置询问框的内容
     });
   } catch (err) {
     let message = (err as BusinessError).message;
     let code = (err as BusinessError).code;
     hilog.error(DOMAIN, TAG,`Invoke showAlertBeforeBackPage failed, code is ${code}, message is ${message}`);
   }
-
+  // 调用this.getUIContext().getRouter().back()方法，返回上一个页面
   this.getUIContext().getRouter().back();
 }
 ```
@@ -299,30 +296,31 @@ const TAG = '[Sample_ArkTSRouter]';
 
 ```typescript
 onBackClick() {
-
+  // 弹出自定义的询问框
   this.getUIContext().getPromptAction().showDialog({
-
+    // 您还没有完成支付，确定要返回吗？
+    // 请将$r('app.string.pageRouter_dialog_context')替换为实际资源文件，在本示例中该资源文件的value值为"您还没有完成支付，确定要返回吗？"
     message: $r('app.string.pageRouter_dialog_context'),
     buttons: [
       {
-
+        // 请将$r('app.string.pageRouter_dialog_canceled')替换为实际资源文件，在本示例中该资源文件的value值为"取消"
         text: $r('app.string.pageRouter_dialog_canceled'),
         color: '#FF0000'
       },
       {
-
+        // 请将$r('app.string.pageRouter_dialog_confirmed')替换为实际资源文件，在本示例中该资源文件的value值为"确认"
         text: $r('app.string.pageRouter_dialog_confirmed'),
         color: '#0099FF'
       }
     ]
   }).then((result: promptAction.ShowDialogSuccessResponse) => {
     if (result.index === 0) {
-
+      // 用户点击了“取消”按钮
       hilog.info(DOMAIN, TAG, 'User canceled the operation.');
     } else if (result.index === 1) {
-
+      // 用户点击了“确认”按钮
       hilog.info(DOMAIN, TAG, 'User confirmed the operation.');
-
+      // 调用this.getUIContext().getRouter().back()方法，返回上一个页面
       this.getUIContext().getRouter().back();
     }
   }).catch((err: Error) => {
@@ -341,11 +339,13 @@ onBackClick() {
 
 **图4** 命名路由跳转
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/0WmJ9k9iTZy3fX8zkXzrKQ/zh-cn_image_0000002533065766.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140859Z&HW-CC-Expire=86400&HW-CC-Sign=A3C916D3F381567537F011D4BA8EF56299BD3FA83C07D28CE2A266A65349CF12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/0WmJ9k9iTZy3fX8zkXzrKQ/zh-cn_image_0000002533065766.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143303Z&HW-CC-Expire=86400&HW-CC-Sign=365400EFCCDDA1D695E132DB398B785D26DF0446E60AF758C8A465EF0EE277E4)
 
 在想要跳转到的共享包[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)或者[HSP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)页面里，给[@Entry](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#entry)修饰的自定义组件EntryOptions命名：
 
 ```typescript
+// library/src/main/ets/pages/Index.ets
+// library为新建共享包自定义的名字
 @Entry({ routeName: 'myPage' })
 @Component
 export struct MyComponent {
@@ -371,17 +371,16 @@ export struct MyComponent {
 > ```typescript
 > "dependencies": {
 >    "library": "file:../library",
->
+>    // ...
 > }
 > ```
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
-import 'library/src/main/ets/pages/Index';
+import 'library/src/main/ets/pages/Index'; // 引入共享包中的命名路由页面
 import { hilog } from '@kit.PerformanceAnalysisKit';
 const DOMAIN = 0xF811;
 const TAG = '[Sample_ArkTSRouter]';
-
 @Entry
 @Component
 struct Index {
@@ -392,7 +391,7 @@ struct Index {
         .fontWeight(FontWeight.Bold)
         .margin({ top: 20 })
         .backgroundColor('#ccc')
-        .onClick(() => {
+        .onClick(() => { // 点击跳转到其他共享包中的页面
           try {
             this.getUIContext().getRouter().pushNamedRoute({
               name: 'myPage',

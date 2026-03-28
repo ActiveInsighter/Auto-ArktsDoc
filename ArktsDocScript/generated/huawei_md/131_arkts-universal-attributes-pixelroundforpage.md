@@ -28,9 +28,9 @@ setPixelRoundMode(mode: PixelRoundMode): void
 **示例：**
 
 ```typescript
+// EntryAbility.ets
 import { UIContext } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 onWindowStageCreate(windowStage: window.WindowStage) {
    windowStage.loadContent('pages/Index', (err, data) => {
       let uiContext :UIContext = windowStage.getMainWindowSync().getUIContext();
@@ -63,9 +63,9 @@ getPixelRoundMode(): PixelRoundMode
 **示例：**
 
 ```typescript
+// EntryAbility.ets
 import { UIContext } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 onWindowStageCreate(windowStage: window.WindowStage) {
     windowStage.loadContent('pages/Index', (err, data) => {
       let uiContext: UIContext = windowStage.getMainWindowSync().getUIContext();

@@ -240,7 +240,6 @@ struct DotIndicatorDemo {
       this.list.push(i);
     }
   }
-
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -265,7 +264,6 @@ struct DotIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(
@@ -287,7 +285,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/CEPnowbVRjaVkjQjgJeM-A/zh-cn_image_0000002563786851.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141136Z&HW-CC-Expire=86400&HW-CC-Sign=DB508ABD27692858B2849C5A750A6A76DB41826DA65ED30B7145E6D1DD8C7C82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/CEPnowbVRjaVkjQjgJeM-A/zh-cn_image_0000002563786851.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143236Z&HW-CC-Expire=86400&HW-CC-Sign=194F9AFB7A443843FC0704351EBAB10C5A809FD456645AAD1F92515D7A2A5C37)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -305,7 +303,6 @@ struct DigitIndicatorDemo {
       this.list.push(i);
     }
   }
-
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -330,7 +327,6 @@ struct DigitIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(Indicator.digit()
@@ -349,4 +345,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/J0CPcyjZTe6aw3ajd6n5oQ/zh-cn_image_0000002532906956.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141136Z&HW-CC-Expire=86400&HW-CC-Sign=1BF34EE105F40247D999F1AF63165B66EA73DA87C79726BEAAAF0C5A52AA5ECD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/J0CPcyjZTe6aw3ajd6n5oQ/zh-cn_image_0000002532906956.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143236Z&HW-CC-Expire=86400&HW-CC-Sign=B8FCE7965441DBD59359472119B03C2790F15DF2A3349D85E26C69D003B5EDC4)

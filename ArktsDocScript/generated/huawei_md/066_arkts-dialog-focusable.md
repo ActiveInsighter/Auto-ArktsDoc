@@ -17,7 +17,7 @@ ArkUI的弹出框焦点策略可以设定是否中断用户当前操作，并聚
 > **说明**
 > 详细变量定义请参考[完整示例](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-focusable#完整示例)。
 
-1. 初始化一个弹出框内容区域，内含一个Text组件。 ```typescript @State dialogIdIndex: number = 0; // 请在resources\base\element\string.json文件中配置name为'dialog_message'，value为非空字符串的资源 private message: string =  this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('dialog_message') as string; @Builder customDialogComponent() {  Column({ space: 5 }) {  Text(this.message + this.dialogIdIndex)  .fontSize(30)  }  .height(200)  .padding(5)  .justifyContent(FlexAlign.SpaceBetween) } ```
+1. 初始化一个弹出框内容区域，内含一个Text组件。 ```typescript @State dialogIdIndex: number = 0; private message: string =  this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('dialog_message') as string; @Builder customDialogComponent() {  Column({ space: 5 }) {  Text(this.message + this.dialogIdIndex)  .fontSize(30)  }  .height(200)  .padding(5)  .justifyContent(FlexAlign.SpaceBetween) } ```
 2. 创建一个TextInput组件，在onChange事件函数中通过调用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getPromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getpromptaction)方法获取[PromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction)对象，再通过该对象调用[openCustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#opencustomdialog12)接口，并设置[focusable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#basedialogoptions11)参数为false，以创建弹出框。 ```typescript TextInput()  .onChange(() => {  this.dialogIdIndex++;  this.getUIContext().getPromptAction().openCustomDialog({  builder: () => {  this.customDialogComponent();  },  focusable: false  }).then((dialogId: number) => {  setTimeout(() => {  this.getUIContext().getPromptAction().closeCustomDialog(dialogId);  }, 3000);  });  }) ```
 
 ## 完整示例
@@ -29,9 +29,10 @@ ArkUI的弹出框焦点策略可以设定是否中断用户当前操作，并聚
 @Component
 export struct Index {
   @State dialogIdIndex: number = 0;
-  // 请在resources\base\element\string.json文件中配置name为'dialog_message'，value为非空字符串的资源
+
   private message: string =
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('dialog_message') as string;
+
   @Builder
   customDialogComponent() {
     Column({ space: 5 }) {
@@ -42,6 +43,7 @@ export struct Index {
     .padding(5)
     .justifyContent(FlexAlign.SpaceBetween)
   }
+
   build() {
     NavDestination() {
       Column({ space: 5 }) {
@@ -65,4 +67,4 @@ export struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/gbmmbPF_SL2PlRt5m1fz6g/zh-cn_image_0000002563785925.gif?HW-CC-KV=V1&HW-CC-Date=20260328T140952Z&HW-CC-Expire=86400&HW-CC-Sign=72949BA035D7E03029ED1C4B1F0CD5BB6659179F902A5D279FAD3C4E06D895A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/gbmmbPF_SL2PlRt5m1fz6g/zh-cn_image_0000002563785925.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143048Z&HW-CC-Expire=86400&HW-CC-Sign=0584F8D77AF58E1077D285C540FCB391A33B00F835E79BDD7CF6701B8C340177)

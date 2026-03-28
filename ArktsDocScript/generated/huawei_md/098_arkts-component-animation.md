@@ -33,7 +33,7 @@ struct ComponentDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/EwQIBMt-RjWUNjF5l5y0eg/zh-cn_image_0000002563786009.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141022Z&HW-CC-Expire=86400&HW-CC-Sign=1801A9C992FA53963848BDB9F5A157E49571B9E8061B761393A65D83F103CBC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/EwQIBMt-RjWUNjF5l5y0eg/zh-cn_image_0000002563786009.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143421Z&HW-CC-Expire=86400&HW-CC-Sign=8794E9B0B32460AA5538D1AF64905165871F718F7E0C06FDE4878ACEDE2782B7)
 
 ## 打造组件定制化动效
 
@@ -310,7 +310,7 @@ export struct TaskSwitchMainPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/WssuKIloQ9e8HoGE2r0inA/zh-cn_image_0000002532906114.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141022Z&HW-CC-Expire=86400&HW-CC-Sign=6DAEAB375D11B5F296BA3E6D019C1DBC736DF9736C4F613D62930AD270D2C07F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/WssuKIloQ9e8HoGE2r0inA/zh-cn_image_0000002532906114.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143421Z&HW-CC-Expire=86400&HW-CC-Sign=034996ED7ED364FB8AD155BB3B1A478B28DFC27D98389D0ACB5634CCE5C73C51)
 
 通过animateTo可以实现将List中指定的Item替换到首位，List中其余Item依次向下排列。定制List组件动态替换动效的示例代码和效果如下。
 
@@ -485,7 +485,7 @@ struct ListAutoSortExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BrnSnEhfQ0O9cqfVPZYSnQ/zh-cn_image_0000002533066062.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141022Z&HW-CC-Expire=86400&HW-CC-Sign=56473032B4070E43E0CE37A4A787B4EDC1140FC0700C148C01F2A6455A80B727)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BrnSnEhfQ0O9cqfVPZYSnQ/zh-cn_image_0000002533066062.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143421Z&HW-CC-Expire=86400&HW-CC-Sign=81D08FC0E11A41BC51FDA4FDEFC5A6A6AE20BDD25555C1FFFA3020AF6EFDF0CF)
 
 ## 示例代码
 

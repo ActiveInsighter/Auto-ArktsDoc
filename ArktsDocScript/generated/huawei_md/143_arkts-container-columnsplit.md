@@ -113,7 +113,7 @@ struct ColumnSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/0zO6vdnIS3-brIqZYBIonA/zh-cn_image_0000002563786795.gif?HW-CC-KV=V1&HW-CC-Date=20260328T141110Z&HW-CC-Expire=86400&HW-CC-Sign=29561258A744A69F5208D8119A14F4E9D285274AA31E6D6AD678A77814D18B0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/0zO6vdnIS3-brIqZYBIonA/zh-cn_image_0000002563786795.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143507Z&HW-CC-Expire=86400&HW-CC-Sign=65164070BBBC8C275F5D7148775A48A608F2E895B5A2A40E5367314B1233009A)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
@@ -142,4 +142,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/8eeKNba3RJS1AnLa_b2mnw/zh-cn_image_0000002532906900.png?HW-CC-KV=V1&HW-CC-Date=20260328T141110Z&HW-CC-Expire=86400&HW-CC-Sign=E014F0AE1A06F4FD57A4E29CD328C87495657B0192C25C5644C5CE9A357BFE8C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/8eeKNba3RJS1AnLa_b2mnw/zh-cn_image_0000002532906900.png?HW-CC-KV=V1&HW-CC-Date=20260328T143507Z&HW-CC-Expire=86400&HW-CC-Sign=9C43811A88E48B4670DA9F81546F1D2D12CB0D1B83BBBB20AAF084A779E09095)
