@@ -135,10 +135,13 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def resolve_path(path_value: Path) -> Path:
-    if path_value.is_absolute():
-        return path_value.expanduser().resolve()
-    return (SCRIPT_DIR / path_value.expanduser()).resolve()
+def resolve_path(path_value: Path, use_script_dir_for_relative: bool = False) -> Path:
+    path = path_value.expanduser()
+    if path.is_absolute():
+        return path.resolve()
+    if use_script_dir_for_relative:
+        return (SCRIPT_DIR / path).resolve()
+    return path.resolve()
 
 
 def prepare_output_dir(output_dir: Path) -> None:
@@ -552,8 +555,14 @@ def iter_html_files(input_dir: Path, single: Path | None) -> Iterable[Path]:
 
 def main() -> int:
     args = parse_args()
-    input_dir = resolve_path(args.input_dir)
-    output_dir = resolve_path(args.output_dir)
+    input_dir = resolve_path(
+        args.input_dir,
+        use_script_dir_for_relative=(args.input_dir == DEFAULT_INPUT_DIR),
+    )
+    output_dir = resolve_path(
+        args.output_dir,
+        use_script_dir_for_relative=(args.output_dir == DEFAULT_OUTPUT_DIR),
+    )
     prepare_output_dir(output_dir)
 
     single = resolve_path(args.single) if args.single is not None else None
