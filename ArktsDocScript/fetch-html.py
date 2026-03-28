@@ -199,11 +199,13 @@ def load_target_urls(targets_file: Path) -> list[str]:
 	return target_urls
 
 
-def resolve_path(path_value: str) -> Path:
+def resolve_path(path_value: str, use_script_dir_for_relative: bool = False) -> Path:
 	path = Path(path_value).expanduser()
 	if path.is_absolute():
 		return path.resolve()
-	return (SCRIPT_DIR / path).resolve()
+	if use_script_dir_for_relative:
+		return (SCRIPT_DIR / path).resolve()
+	return path.resolve()
 
 
 async def install_render_watchers(page) -> None:
@@ -483,8 +485,14 @@ async def crawl_docs(
 
 def main() -> int:
 	args = parse_args()
-	targets_file = resolve_path(args.targets_file)
-	output_dir = resolve_path(args.output_dir)
+	targets_file = resolve_path(
+		args.targets_file,
+		use_script_dir_for_relative=(args.targets_file == DEFAULT_TARGETS_FILE),
+	)
+	output_dir = resolve_path(
+		args.output_dir,
+		use_script_dir_for_relative=(args.output_dir == DEFAULT_OUTPUT_DIR),
+	)
 	output_dir.mkdir(parents=True, exist_ok=True)
 
 	asyncio.run(
