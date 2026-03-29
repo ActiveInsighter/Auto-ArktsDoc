@@ -119,11 +119,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/2VqbaFDmQ_iYou9bk_V-Jg/zh-cn_image_0000002533066740.png?HW-CC-KV=V1&HW-CC-Date=20260328T143451Z&HW-CC-Expire=86400&HW-CC-Sign=9031A68A2A9D7A0CCF73B37D1868C1E029152D74600122D1F5A9A257E7ECCB99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/2VqbaFDmQ_iYou9bk_V-Jg/zh-cn_image_0000002533066740.png?HW-CC-KV=V1&HW-CC-Date=20260329T024621Z&HW-CC-Expire=86400&HW-CC-Sign=4283F98AED8682EB1696037CCC917B99A8815FD8415725F1F07CA896199857D8)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/16erIB7WRCG5sG9bFor8IQ/zh-cn_image_0000002563866643.png?HW-CC-KV=V1&HW-CC-Date=20260328T143451Z&HW-CC-Expire=86400&HW-CC-Sign=DF55B4AA55F706515D84BFC78E9CF8800C13BA974BF56DF9A431A766F27FDFF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/16erIB7WRCG5sG9bFor8IQ/zh-cn_image_0000002563866643.png?HW-CC-KV=V1&HW-CC-Date=20260329T024621Z&HW-CC-Expire=86400&HW-CC-Sign=5135E71CF36FB1781BDEFB2F02942566395E584638725748F3E62CB43C18E2A2)
 
 ### 示例2（设置组件显示优先级）
 
@@ -187,4 +187,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/_Bw1cv5_T4mCyP1aR32-kw/zh-cn_image_0000002563786689.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143451Z&HW-CC-Expire=86400&HW-CC-Sign=A4F3D30E6E37B7B441A620A82E3F3CDFA0BA40CAC94BE2A34B33FF39694120EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/_Bw1cv5_T4mCyP1aR32-kw/zh-cn_image_0000002563786689.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024621Z&HW-CC-Expire=86400&HW-CC-Sign=604C5EE2CC6A11E1C2FE51647F06F41236EDCA47CB4FB92C36148E98F4EF0D31)

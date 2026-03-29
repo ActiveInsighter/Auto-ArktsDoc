@@ -331,7 +331,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/PZPDcyMeQzeXJ9xrnLHE3Q/zh-cn_image_0000002533067144.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143646Z&HW-CC-Expire=86400&HW-CC-Sign=5AEB0983E5FBB79C92D73D5E20FEC757B85452D4C9463874DF7D7F023CC4C1AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/PZPDcyMeQzeXJ9xrnLHE3Q/zh-cn_image_0000002533067144.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024826Z&HW-CC-Expire=86400&HW-CC-Sign=C4CAF96BA58EE2CE0D0F42FD80D6A4E03FDF210D718CBB1D4362FAB5DD83689B)
 
 ### 示例2（设定文本阴影样式）
 
@@ -376,7 +376,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9X14FZL1QlalWXnAWrFM6w/zh-cn_image_0000002563867047.png?HW-CC-KV=V1&HW-CC-Date=20260328T143646Z&HW-CC-Expire=86400&HW-CC-Sign=28558B13437469539C4840127114B4403E1489DA64749BEA7444F78F0FCB5D0F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9X14FZL1QlalWXnAWrFM6w/zh-cn_image_0000002563867047.png?HW-CC-KV=V1&HW-CC-Date=20260329T024826Z&HW-CC-Expire=86400&HW-CC-Sign=B0DBAFEA6E68BDCE5F735C9760B07328C4DE841CB1C26A81F1028EB842BC733D)
 
 ### 示例3（设定自定义内容区）
 
@@ -454,7 +454,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/sahC0ifjQyWPq2H_J6rp7A/zh-cn_image_0000002563787093.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143646Z&HW-CC-Expire=86400&HW-CC-Sign=5420A03B875691112965BF2101B39E08534625183FC715D201650A86A00D54ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/sahC0ifjQyWPq2H_J6rp7A/zh-cn_image_0000002563787093.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024826Z&HW-CC-Expire=86400&HW-CC-Sign=37E4360DD1AEE80FA687A15C973EE96CDD666AA28976E45E8030727AC29B7759)
 
 ### 示例4（创建之后立即执行计时）
 
@@ -489,7 +489,7 @@ struct TextTimerStart {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/OQXVnmoyRWuiOX6I6UOsQQ/zh-cn_image_0000002532907198.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143646Z&HW-CC-Expire=86400&HW-CC-Sign=E5AC59943F773B9C0C5005287B6656657C404BC1AE14CC490590B56B54D14699)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/OQXVnmoyRWuiOX6I6UOsQQ/zh-cn_image_0000002532907198.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024826Z&HW-CC-Expire=86400&HW-CC-Sign=998920B43AB0474C56A666B1CD6A72273C28DE399CC2A97163857F65AF9CE4DE)
 
 ### 示例5（设置文本样式）
 
@@ -542,4 +542,4 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Abvx8Yr9QLaA6r2f2cMicg/zh-cn_image_0000002533067146.png?HW-CC-KV=V1&HW-CC-Date=20260328T143646Z&HW-CC-Expire=86400&HW-CC-Sign=595E9CE98F31FE94299C6505918D0A32818BC49BF4457AD0176AD379F6D79FE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/Abvx8Yr9QLaA6r2f2cMicg/zh-cn_image_0000002533067146.png?HW-CC-KV=V1&HW-CC-Date=20260329T024826Z&HW-CC-Expire=86400&HW-CC-Sign=995FF9E9AFFA3F345E338B697AF93DEC0BEA0FB0097FD02FCDB86FAF034F5D9C)

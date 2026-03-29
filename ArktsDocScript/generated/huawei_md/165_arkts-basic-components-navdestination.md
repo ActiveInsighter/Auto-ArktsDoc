@@ -1022,7 +1022,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/iyLclCWLSg20ntC0jvEgpQ/zh-cn_image_0000002563786861.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143537Z&HW-CC-Expire=86400&HW-CC-Sign=B442DC7BA3456E0C00D7585789B758D8F4710D77C93A192375C604028DF0B088)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/iyLclCWLSg20ntC0jvEgpQ/zh-cn_image_0000002563786861.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024711Z&HW-CC-Expire=86400&HW-CC-Sign=62FBC58060745DBA9D346C99C1A3133561BF81D72518937418B125FE28091583)
 
 ### 示例2（设置NavDestination自定义转场）
 
@@ -1164,7 +1164,7 @@ struct NavDest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/_lPGFmF2S42cPFW2WPwttg/zh-cn_image_0000002532906966.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143537Z&HW-CC-Expire=86400&HW-CC-Sign=433C521CD35CA230B4E74F768F6EC2C78C59051D9F7166EBC877CFB2C3E8E018)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/_lPGFmF2S42cPFW2WPwttg/zh-cn_image_0000002532906966.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024711Z&HW-CC-Expire=86400&HW-CC-Sign=6F9F27D9EFFA0F25E0BD0DCA30BBE1376A7CC200F27CD747900A4C90DBE60BB7)
 
 ### 示例3（设置指定的NavDestination系统转场）
 
@@ -1412,13 +1412,13 @@ struct HomeBody {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/6V-jkI9XS2qwjOhicox7vw/zh-cn_image_0000002533066914.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143537Z&HW-CC-Expire=86400&HW-CC-Sign=F7B8B7F0A84B6829327F2A7995CE1086F334DB579A7754D6316B79A78B6C51F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/6V-jkI9XS2qwjOhicox7vw/zh-cn_image_0000002533066914.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024711Z&HW-CC-Expire=86400&HW-CC-Sign=B1AD1DDE960E2CF989BF9C941698B383F8CA8D4D156066841CE8520795EA7D07)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/F0Ai1tYGR3m9v6AYrTCeUQ/zh-cn_image_0000002563866817.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143537Z&HW-CC-Expire=86400&HW-CC-Sign=1939707C3FB4033BBB172B006C7AD28F0E8C53787BFC54246051F04D559B0BA9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/F0Ai1tYGR3m9v6AYrTCeUQ/zh-cn_image_0000002563866817.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024711Z&HW-CC-Expire=86400&HW-CC-Sign=EDB532E917754EFE0A8C79F6E6CBFCD7E22C9D89FB7A71054B74ED2822931BBB)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/RcngZUDwTNmCziYqZReIFQ/zh-cn_image_0000002563786863.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143537Z&HW-CC-Expire=86400&HW-CC-Sign=34BF6D976D8BF8BEBABFA3B74B107075D26D30F6354E34EF1C468D12251D0088)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/RcngZUDwTNmCziYqZReIFQ/zh-cn_image_0000002563786863.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024711Z&HW-CC-Expire=86400&HW-CC-Sign=1D56AF058D24DA76F036DAF8CBC118D5E7AD640D9FF390F9A37D5FB6D4B6A612)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/eqcshcWQSU6MeKTQyKvTQw/zh-cn_image_0000002532906968.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143537Z&HW-CC-Expire=86400&HW-CC-Sign=3441E71CB40370DC5976D288393CCC632D2F90103832D8A3EF53EB3CD71FC5B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/eqcshcWQSU6MeKTQyKvTQw/zh-cn_image_0000002532906968.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024711Z&HW-CC-Expire=86400&HW-CC-Sign=397459549EFB066DA6157B84C1E3242AE8F6CAA70D16AEEC29956ED0569FDDEA)
 
 ### 示例4（NavDestination配置页面方向和对应状态栏、导航条显隐）
 
@@ -1507,7 +1507,7 @@ struct ExamplePage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/a5kQSnYeQKyYUlscACPwbw/zh-cn_image_0000002533066916.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143537Z&HW-CC-Expire=86400&HW-CC-Sign=7E5136A7B6466118D23493991FA71F3BF8C87B923899DE59D343405D6028604C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/a5kQSnYeQKyYUlscACPwbw/zh-cn_image_0000002533066916.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024711Z&HW-CC-Expire=86400&HW-CC-Sign=29EBBD3906CB48E1DA2615FC9E5D43DC4DC397A954B49ADC164F074436E7DF8D)
 
 ### 示例5（NavDestination的onActive与onInActive生命周期）
 
@@ -1724,6 +1724,6 @@ struct NavBody {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/YEAqIfc3RHe1vMEsIsw4hQ/zh-cn_image_0000002563866819.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143537Z&HW-CC-Expire=86400&HW-CC-Sign=BDE7F7A5A38108C12AC29485E5E568C683F48924B12DA7B7A9AA6E63956A48D7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/YEAqIfc3RHe1vMEsIsw4hQ/zh-cn_image_0000002563866819.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024711Z&HW-CC-Expire=86400&HW-CC-Sign=D88838B1A98E1D0344404118F7275968CA5875E5A707485DB2A1A9D7D8CBE959)
 
 NavDestination其他用法可参考[Navigation示例](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#示例)。

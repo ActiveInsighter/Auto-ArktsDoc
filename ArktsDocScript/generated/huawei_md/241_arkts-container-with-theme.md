@@ -69,7 +69,7 @@ type CustomTheme = CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/AXNFVaB2T7SS95IhypTNTQ/zh-cn_image_0000002532907352.png?HW-CC-KV=V1&HW-CC-Date=20260328T143713Z&HW-CC-Expire=86400&HW-CC-Sign=71C40596FFE7A3C9184313588BC4B19AF143E6F111C022CA20F2F0B21CCDF829)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/AXNFVaB2T7SS95IhypTNTQ/zh-cn_image_0000002532907352.png?HW-CC-KV=V1&HW-CC-Date=20260329T024856Z&HW-CC-Expire=86400&HW-CC-Sign=37AC173E7B91C44E53F74151E9F33B299E6F232E45960028E8C05FE2A3F5BF92)
 
 dark.json数据示例：
 
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/SHdZRnxjRzaDx0LSWyR26Q/zh-cn_image_0000002533067300.png?HW-CC-KV=V1&HW-CC-Date=20260328T143713Z&HW-CC-Expire=86400&HW-CC-Sign=9E9D4EE04AE542F218B05BA4328CC3B1C81C8C462CEAA44EB5E3F8B7BF6815A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/SHdZRnxjRzaDx0LSWyR26Q/zh-cn_image_0000002533067300.png?HW-CC-KV=V1&HW-CC-Date=20260329T024856Z&HW-CC-Expire=86400&HW-CC-Sign=7E7B1F722EF6421B911AB1229C0CE0A428A64512A720188AC533AE63EA159ABA)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -223,4 +223,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/OXwdoPYjTleLdPi3-Fkh6Q/zh-cn_image_0000002563867203.gif?HW-CC-KV=V1&HW-CC-Date=20260328T143713Z&HW-CC-Expire=86400&HW-CC-Sign=3975A1315E33D11406D0DBD348A9E2D6A65E7A77E7CFCAF8F2B0DD63FB1D42A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/OXwdoPYjTleLdPi3-Fkh6Q/zh-cn_image_0000002563867203.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024856Z&HW-CC-Expire=86400&HW-CC-Sign=F01E1641533DA7E232CA3BBFD01647CAD4927728844F50072E70520AA4270D3D)
