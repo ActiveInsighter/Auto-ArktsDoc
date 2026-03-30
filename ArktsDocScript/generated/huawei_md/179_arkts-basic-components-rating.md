@@ -1,4 +1,4 @@
-# Rating
+# Rating-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-rating
 
 提供在给定范围内选择评分的组件。
@@ -311,11 +311,11 @@ type OnRatingChangeCallback = (rating: number) => void
 以下示例展示了如何创建默认星型评分样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RatingExample {
   @State rating: number = 3.5;
-
   build() {
     Column() {
       Column() {
@@ -331,7 +331,6 @@ struct RatingExample {
           .fontColor('rgba(24,36,49,0.60)')
           .margin({ top: 16 })
       }.width(360).height(113).backgroundColor('#FFFFFF').margin({ top: 68 })
-
       Row() {
         Image('common/testImage.jpg')
           .width(40)
@@ -350,7 +349,6 @@ struct RatingExample {
               .fontColor('#182431')
           }
         }.margin({ left: 12 }).alignItems(HorizontalAlign.Start)
-
         Text('1st Floor')
           .fontSize(10)
           .fontColor('#182431')
@@ -361,27 +359,25 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/UUd2lsTgRSGzasZXIxoF-Q/zh-cn_image_0000002533066962.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025017Z&HW-CC-Expire=86400&HW-CC-Sign=742158CCA61715D9CA535D68557E39B1FB8F8F81F833B247847A147FC9917619)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/UUd2lsTgRSGzasZXIxoF-Q/zh-cn_image_0000002533066962.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094716Z&HW-CC-Expire=86400&HW-CC-Sign=9858E485900C2B2297B6A540C013390A9D4FC6BF9224F8B115E28251264CDC62)
 
 ### 示例2（自定义评分条）
 
 以下示例实现了自定义评分条的功能，其中每个圆圈表示0.5分。当ratingIndicator为true时，评分条作为指示器使用，不可改变评分；当为false时，可进行评分。ratingStars用于设置评分总数，ratingStepsize用于设置评分步长。
 
 ```typescript
+// xxx.ets
 class MyRatingStyle implements ContentModifier<RatingConfiguration> {
   name: string = "";
   style: number = 0;
-
   constructor(value1: string, value2: number) {
     this.name = value1;
     this.style = value2;
   }
-
   applyContent(): WrappedBuilder<[RatingConfiguration]> {
     return wrapBuilder(buildRating);
   }
 }
-
 @Builder
 function buildRating(config: RatingConfiguration) {
   Column() {
@@ -492,11 +488,9 @@ function buildRating(config: RatingConfiguration) {
           }
         }).visibility(config.stars >= 5 ? Visibility.Visible : Visibility.Hidden)
     }
-
     Text("分值：" + config.rating)
   }
 }
-
 @Entry
 @Component
 struct ratingExample {
@@ -505,7 +499,6 @@ struct ratingExample {
   @State ratingStars: number = 0;
   @State ratingStepSize: number = 0.5;
   @State ratingEnabled: boolean = true;
-
   build() {
     Row() {
       Column() {
@@ -531,14 +524,12 @@ struct ratingExample {
               this.ratingIndicator = true;
             }
           }).margin({ top: 5 })
-
         Button(this.ratingStars < 5 ? "ratingStars + 1, ratingStars =" + this.ratingStars : "ratingStars最大值为5")
           .onClick((event) => {
             if (this.ratingStars < 5) {
               this.ratingStars += 1;
             }
           }).margin({ top: 5 })
-
         Button(this.ratingStars > 0 ? "ratingStars - 1, ratingStars =" + this.ratingStars :
           "ratingStars小于等于0时默认等于5")
           .onClick((event) => {
@@ -546,7 +537,6 @@ struct ratingExample {
               this.ratingStars -= 1;
             }
           }).margin({ top: 5 })
-
         Button(this.ratingStepSize == 0.5 ? "ratingStepSize : 0.5" : "ratingStepSize : 1")
           .onClick((event) => {
             if (this.ratingStepSize == 0.5) {
@@ -565,25 +555,25 @@ struct ratingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/h-MGY9jqSIC5amzfF7Wyow/zh-cn_image_0000002563866865.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025017Z&HW-CC-Expire=86400&HW-CC-Sign=186E65C212FB535980FC540E3B0BD7987175E1EF944E0D32348DE1C07FDD5557)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/h-MGY9jqSIC5amzfF7Wyow/zh-cn_image_0000002563866865.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094716Z&HW-CC-Expire=86400&HW-CC-Sign=F71801EAC3EADD09ED25CA968F7FB27BEF411AEC0F7BED31B0D5348A04B3A201)
 
 ### 示例3（通过Resource资源设置评分的样式）
 
 该示例通过Resource资源配置starStyle，实现自定义星级图片链接，API version 20之后推荐使用该方法设置样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RatingExample {
   @State rating: number = 3.5;
-
   build() {
     Column() {
       Rating({ rating: this.rating, indicator: false })
         .stars(5)
         .stepSize(0.5)
         .starStyle({
-
+          // $r('app.media.xxx')需要替换为开发者所需的图像资源文件。
           backgroundUri: $r('app.media.imag1'),
           foregroundUri: $r('app.media.imag2'),
           secondaryUri: $r('app.media.imag3')
@@ -601,7 +591,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tbAeboD3Ssqa2UobAdpAxg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025017Z&HW-CC-Expire=86400&HW-CC-Sign=B0B64A213FC427D33CF98CF00152ABE84A7F43EAE6102DD8E6AF8EB6A8865775)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/tbAeboD3Ssqa2UobAdpAxg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094716Z&HW-CC-Expire=86400&HW-CC-Sign=0B6A74839C36FEC0A393A094640896D531207F8B386143935678300A0B826EC0)
 
 ### 示例4（设置评分的样式）
 
@@ -611,18 +601,18 @@ struct RatingExample {
 > 此示例的资源不在src > main > resource目录下，从DevEco Studio 6.0.0 Beta2开始，新建工程或者模块时，默认创建的模块不会对非resources目录下的资源进行打包，需使能相关开关：模块的build-profile.json5中buildOptions > resOptions > copyCodeResource > enable设置为true，详见[resOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile#table1476161719356)中相关介绍。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RatingExample {
   @State rating: number = 3.5;
-
   build() {
     Column() {
       Rating({ rating: this.rating, indicator: false })
         .stars(5)
         .stepSize(0.5)
         .starStyle({
-          backgroundUri: '/common/image1.png',
+          backgroundUri: '/common/image1.png', // common目录与pages同级
           foregroundUri: '/common/image2.png',
           secondaryUri: '/common/image3.png'
         })
@@ -639,4 +629,4 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vQURvBWSRS2k0IKDxPCLLg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025017Z&HW-CC-Expire=86400&HW-CC-Sign=59282ADB6A8EF06E118A68187802D132357AE34AE4C4401FE7D65EF94ADE8FB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vQURvBWSRS2k0IKDxPCLLg/zh-cn_image_0000002563786911.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094716Z&HW-CC-Expire=86400&HW-CC-Sign=2F986439C58C55519AFAABCAB5DB5A207535511F0D6D5D9697F41C07354457D0)

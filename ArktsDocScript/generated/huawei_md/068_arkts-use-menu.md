@@ -1,4 +1,4 @@
-# 菜单
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-menu
 
 - **[菜单概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-menu-overview)**

@@ -1,4 +1,4 @@
-# 不依赖UI组件的全局气泡提示 (openPopup)
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-uicontext-popup
 
 [气泡提示（Popup）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-popup)在使用时依赖绑定UI组件，否则无法使用。从API version 18开始，可以通过使用全局接口[openPopup](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#openpopup18)的方式，在无UI组件的场景下直接或封装使用，例如在事件回调中使用或封装后对外提供能力。
@@ -281,4 +281,4 @@ export struct OpenPopup {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/RTcS1dQVSxeUk2hyYjIQeg/zh-cn_image_0000002563865891.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024816Z&HW-CC-Expire=86400&HW-CC-Sign=79ECB284AAF4CF7BD1634C7AAB95E9837E44B94B55F4A7F9E32EADA56E71617C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/RTcS1dQVSxeUk2hyYjIQeg/zh-cn_image_0000002563865891.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094534Z&HW-CC-Expire=86400&HW-CC-Sign=C838861F1C410F44F514E3D0D164200E39AC2AA30A0312BC402E930DA48B7704)

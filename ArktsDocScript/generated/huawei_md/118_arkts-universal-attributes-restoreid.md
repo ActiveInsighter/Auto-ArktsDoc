@@ -1,4 +1,4 @@
-# 分布式迁移标识
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-restoreid
 
 组件的分布式迁移标识，指明了该组件在分布式迁移场景下可以将特定状态恢复到对端设备。
@@ -42,6 +42,7 @@ restoreId(value: number): T
 该示例通过restoreId设置了List组件的分布式迁移标识。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RestoreIdExample {

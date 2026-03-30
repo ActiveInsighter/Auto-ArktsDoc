@@ -1,4 +1,4 @@
-# 组件级像素取整
+# 组件级像素取整-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-pixelroundforcomponent
 
 组件级像素取整的目标是将像素取整功能作为组件的属性，从而在组件层面实现系统像素取整的开启或关闭。
@@ -121,8 +121,8 @@ struct PixelRoundExample {
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/3V8NC2WMSra2mNmPcKGtNA/zh-cn_image_0000002563786695.png?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=89F22BE9AF64AFD958683CDD5FA75B15E8BBB050D9F380139A942EA07664C288)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/3V8NC2WMSra2mNmPcKGtNA/zh-cn_image_0000002563786695.png?HW-CC-KV=V1&HW-CC-Date=20260330T094625Z&HW-CC-Expire=86400&HW-CC-Sign=8ED10D7300DC9540520A2ADA5668268685DC3021B3AB98981A40F4E801A183BC)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/CoZI2WAVQQ6nqJz_5gjKyg/zh-cn_image_0000002532906800.png?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=8704CF8B45454ED636FBBBC9F42F43BCB1499853C8CBB8210C194CB89696409A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/CoZI2WAVQQ6nqJz_5gjKyg/zh-cn_image_0000002532906800.png?HW-CC-KV=V1&HW-CC-Date=20260330T094625Z&HW-CC-Expire=86400&HW-CC-Sign=9DCA7FD30859C0A82D45B4FDCA0632F2FF7A219EDC2B940D6AC64F66110065D7)

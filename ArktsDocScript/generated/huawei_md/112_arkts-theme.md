@@ -1,4 +1,4 @@
-# 主题设置
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-theme
 
 - **[应用深浅色适配](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-dark-light-color-adaptation)**

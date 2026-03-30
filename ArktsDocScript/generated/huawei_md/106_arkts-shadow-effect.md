@@ -1,4 +1,4 @@
-# 阴影
+# 阴影-动画效果-使用动画-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-shadow-effect
 
 阴影接口[shadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#shadow)可以为当前组件添加阴影效果，该接口支持两种类型参数，开发者可配置[ShadowOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#shadowoptions对象说明)自定义阴影效果。ShadowOptions模式下，当radius = 0或者color的透明度为0时，无阴影效果。
@@ -46,4 +46,4 @@ struct ShadowOptionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/2NTRIVkyQvmSiYCil_BloQ/zh-cn_image_0000002563786015.png?HW-CC-KV=V1&HW-CC-Date=20260330T024845Z&HW-CC-Expire=86400&HW-CC-Sign=09DC8478626E5B2C63E9829A5675192D71F36E2BA03D2788043E221AE3BCEBF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/2NTRIVkyQvmSiYCil_BloQ/zh-cn_image_0000002563786015.png?HW-CC-KV=V1&HW-CC-Date=20260330T094600Z&HW-CC-Expire=86400&HW-CC-Sign=522DDE49E6493CAA404FBAACE4469D2D7257B939190EBF0B6C794A9788913405)

@@ -1,4 +1,4 @@
-# Tabs
+# Tabs-导航与切换-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs
 
 通过页签进行内容视图切换的容器组件，每个页签对应一个内容视图。
@@ -1043,12 +1043,12 @@ setTabBarOpacity(opacity: number): void
 本示例通过barMode分别实现了页签均分布局和以实际长度布局，且展示了当页签布局长度之和超过了TabBar总长度后可滑动的效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample {
   @State text: string = '文本';
   @State barMode: BarMode = BarMode.Fixed;
-
   build() {
     Column() {
       Row() {
@@ -1059,7 +1059,6 @@ struct TabsExample {
             this.text += '文本增加';
           })
           .margin({ right: '6%', bottom: '12vp' })
-
         Button('文本重置')
           .width('47%')
           .height(50)
@@ -1068,7 +1067,6 @@ struct TabsExample {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('BarMode.Fixed')
           .width('47%')
@@ -1077,7 +1075,6 @@ struct TabsExample {
             this.barMode = BarMode.Fixed;
           })
           .margin({ right: '6%', bottom: '12vp' })
-
         Button('BarMode.Scrollable')
           .width('47%')
           .height(50)
@@ -1086,16 +1083,13 @@ struct TabsExample {
           })
           .margin({ bottom: '12vp' })
       }
-
       Tabs() {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
         }.tabBar(SubTabBarStyle.of(this.text))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar(SubTabBarStyle.of(this.text))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Blue)
         }.tabBar(SubTabBarStyle.of(this.text))
@@ -1111,13 +1105,14 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/PoV5bZBMT0O7OmC9FpTl6w/zh-cn_image_0000002563866821.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=E9FA72183C5031047367D12A52ACB7C993128F138BB557C1CC868251196A1846)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/PoV5bZBMT0O7OmC9FpTl6w/zh-cn_image_0000002563866821.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=016324B14CF192AFE3E6ABD5C83E50CEDC1E000954ECED129AE408B171A442F5)
 
 ### 示例2（设置Scrollable模式下的TabBar的布局样式）
 
 本示例实现了barMode的ScrollableBarModeOptions参数，该参数仅在Scrollable模式下有效。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample6 {
@@ -1125,7 +1120,6 @@ struct TabsExample6 {
   @State scrollMargin: number = 0;
   @State layoutStyle: LayoutStyle = LayoutStyle.ALWAYS_CENTER;
   @State text: string = '文本';
-
   build() {
     Column() {
       Row() {
@@ -1146,7 +1140,6 @@ struct TabsExample6 {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('文本增加 ')
           .width('47%')
@@ -1165,7 +1158,6 @@ struct TabsExample6 {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('layoutStyle.ALWAYS_CENTER')
           .width('100%')
@@ -1177,7 +1169,6 @@ struct TabsExample6 {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('layoutStyle.ALWAYS_AVERAGE_SPLIT')
           .width('100%')
@@ -1189,7 +1180,6 @@ struct TabsExample6 {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('layoutStyle.SPACE_BETWEEN_OR_CENTER')
           .width('100%')
@@ -1201,16 +1191,13 @@ struct TabsExample6 {
           })
           .margin({ bottom: '12vp' })
       }
-
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
         }.tabBar(SubTabBarStyle.of(this.text))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar(SubTabBarStyle.of(this.text))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Blue)
         }.tabBar(SubTabBarStyle.of(this.text))
@@ -1228,13 +1215,14 @@ struct TabsExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/4vrQN6DyRJKY0iq47TvUkA/zh-cn_image_0000002563786867.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=1BC7AF8F796F0277BF40374C6A4996762E4FF93EC07251105291075FE19352CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/4vrQN6DyRJKY0iq47TvUkA/zh-cn_image_0000002563786867.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=2ECAF183E2222FBE1C54B9C5C379A3191451D5931ABFCE04528C0600ADFA812C)
 
 ### 示例3（自定义页签切换联动）
 
 本示例通过onAnimationStart、onChange实现切换时自定义tabBar和TabContent的联动。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample {
@@ -1243,7 +1231,6 @@ struct TabsExample {
   @State currentIndex: number = 0;
   @State selectedIndex: number = 0;
   private controller: TabsController = new TabsController();
-
   @Builder tabBuilder(index: number, name: string) {
     Column() {
       Text(name)
@@ -1258,22 +1245,18 @@ struct TabsExample {
         .opacity(this.selectedIndex === index ? 1 : 0)
     }.width('100%')
   }
-
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar(this.tabBuilder(0, 'green'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF')
         }.tabBar(this.tabBuilder(1, 'blue'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00')
         }.tabBar(this.tabBuilder(2, 'yellow'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#E67C92')
         }.tabBar(this.tabBuilder(3, 'pink'))
@@ -1284,7 +1267,7 @@ struct TabsExample {
       .barHeight(56)
       .animationDuration(400)
       .onChange((index: number) => {
-
+        // currentIndex控制TabContent显示页签
         this.currentIndex = index;
         this.selectedIndex = index;
       })
@@ -1292,7 +1275,7 @@ struct TabsExample {
         if (index === targetIndex) {
           return;
         }
-
+        // selectedIndex控制自定义TabBar内Image和Text颜色切换
         this.selectedIndex = targetIndex;
       })
       .width(360)
@@ -1304,13 +1287,14 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/MhHKLyKtQmmG2ieFQBuZYg/zh-cn_image_0000002532906972.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=95391214412D919C8F0F77AD85A129C83EE816F3CD002EAA54EC73BDD8A18F73)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/MhHKLyKtQmmG2ieFQBuZYg/zh-cn_image_0000002532906972.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=3B2E755C9A1F847E3D3ADADEA02EE3E521640C2675DFA9BC7674D2B5DA0D1C76)
 
 ### 示例4（分割线基本属性）
 
 本示例通过divider实现了分割线各种属性的展示。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsDivider1 {
@@ -1320,26 +1304,21 @@ struct TabsDivider1 {
   @State startMargin: number = 0;
   @State endMargin: number = 0;
   @State nullFlag: boolean = false;
-
   build() {
     Column() {
       Tabs({ controller: this.controller1 }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
         }.tabBar('pink')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Yellow)
         }.tabBar('yellow')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Blue)
         }.tabBar('blue')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Red)
         }.tabBar('red')
@@ -1361,7 +1340,6 @@ struct TabsDivider1 {
         startMargin: this.startMargin,
         endMargin: this.endMargin
       })
-
       Button('常规Divider').width('100%').margin({ bottom: '12vp' })
         .onClick(() => {
           this.nullFlag = false;
@@ -1413,13 +1391,14 @@ struct TabsDivider1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/0quTeZRrR6m0Nim2m22wVg/zh-cn_image_0000002533066920.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=446BB4E4AA4F13913E9A345235A407904F2E76A7732A6050DF10D7D92D2AC893)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/0quTeZRrR6m0Nim2m22wVg/zh-cn_image_0000002533066920.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=2109AD40A1B8376859C71DBA9CB4E6C1B00F999CD331043F4FFE0AEAD2127115)
 
 ### 示例5（设置TabBar渐隐）
 
 本示例通过fadingEdge实现了切换子页签渐隐和不渐隐。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsOpaque {
@@ -1427,7 +1406,6 @@ struct TabsOpaque {
   private controller: TabsController = new TabsController();
   private controller1: TabsController = new TabsController();
   @State selfFadingFade: boolean = true;
-
   build() {
     Column() {
       Button('子页签设置渐隐').width('100%').margin({ bottom: '12vp' })
@@ -1442,31 +1420,24 @@ struct TabsOpaque {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
         }.tabBar('pink')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Yellow)
         }.tabBar('yellow')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Blue)
         }.tabBar('blue')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
@@ -1482,28 +1453,22 @@ struct TabsOpaque {
       .fadingEdge(this.selfFadingFade)
       .height('30%')
       .width('100%')
-
       Tabs({ barPosition: BarPosition.Start, controller: this.controller1 }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
         }.tabBar('pink')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Yellow)
         }.tabBar('yellow')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Blue)
         }.tabBar('blue')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar('green')
@@ -1526,19 +1491,19 @@ struct TabsOpaque {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xyM9GRU8TPeOhJKO7SolcQ/zh-cn_image_0000002563866823.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=9B5BBB1C630EC0105FE86D6146C906923B2DFF6545A2A6BA5A6B9E32FB667E89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/xyM9GRU8TPeOhJKO7SolcQ/zh-cn_image_0000002563866823.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=961522BB45602B70D0413AB0292A1469EB2B59CBFE7AE3F6752E8694B43B38F7)
 
 ### 示例6（设置TabBar叠加在TabContent内容上）
 
 本示例通过barOverlap实现了TabBar是否背后变模糊并叠加在TabContent之上。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct barHeightTest {
   @State arr: number[] = [0, 1, 2, 3];
   @State barOverlap: boolean = true;
-
   build() {
     Column() {
       Text(`barOverlap ${this.barOverlap}`).fontSize(16)
@@ -1550,7 +1515,6 @@ struct barHeightTest {
             this.barOverlap = true;
           }
         })
-
       Tabs({ barPosition: BarPosition.End }) {
         TabContent() {
           Column() {
@@ -1577,13 +1541,14 @@ struct barHeightTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/uihu4wPiS9-oJMXQzMkF3g/zh-cn_image_0000002563786869.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=4CD1FE632436262D2989BB40B667771431E2E21996523FC91ED8EEA215F50BF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/uihu4wPiS9-oJMXQzMkF3g/zh-cn_image_0000002563786869.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=ACF03F524372A5D2BD8EDE53B0C3AAF0C81A24D61A61381217DC9CC43A124A40)
 
 ### 示例7（设置TabBar栅格化可见区域）
 
 本示例通过barGridAlign实现了以栅格化方式设置TabBar的可见区域。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample5 {
@@ -1592,7 +1557,6 @@ struct TabsExample5 {
   @State gridGutter: number = 10;
   @State sm: number = -2;
   @State clickedContent: string = '';
-
   build() {
     Column() {
       Row() {
@@ -1613,7 +1577,6 @@ struct TabsExample5 {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('gridGutter+10 ' + this.gridGutter)
           .width('47%')
@@ -1632,7 +1595,6 @@ struct TabsExample5 {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('sm+2 ' + this.sm)
           .width('47%')
@@ -1647,18 +1609,14 @@ struct TabsExample5 {
             this.sm -= 2;
           })
       }
-
       Text('点击内容:' + this.clickedContent).width('100%').height(200).margin({ top: 5 })
-
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
         }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '1'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '2'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Blue)
         }.tabBar(BottomTabBarStyle.of($r('sys.media.ohos_app_icon'), '3'))
@@ -1680,18 +1638,18 @@ struct TabsExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/ryKVcpeBR8yf-SRAp9vH8A/zh-cn_image_0000002532906974.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=E0C260A67AC2FBC8B4776819A28BAD2E5AE06ACC55764AA3E84BF8ED421BAA86)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/ryKVcpeBR8yf-SRAp9vH8A/zh-cn_image_0000002532906974.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=FCB9587D5E01D787EA4FE37F78CAA616D057C2B22F1E4B83237472CD271D8F8E)
 
 ### 示例8（自定义Tabs页面切换动画）
 
 本示例通过customContentTransition实现了自定义Tabs页面的切换动画。
 
 ```typescript
+// xxx.ets
 interface itemType {
   text: string,
   backgroundColor: Color
 }
-
 @Entry
 @Component
 struct TabsCustomAnimationExample {
@@ -1710,7 +1668,6 @@ struct TabsCustomAnimationExample {
     }];
   @State opacityList: number[] = [];
   @State scaleList: number[] = [];
-
   private durationList: number[] = [];
   private timeoutList: number[] = [];
   private customContentTransition: (from: number, to: number) => TabContentAnimatedTransition = (from: number, to: number) => {
@@ -1736,7 +1693,6 @@ struct TabsCustomAnimationExample {
     } as TabContentAnimatedTransition;
     return tabContentAnimatedTransition;
   };
-
   aboutToAppear(): void {
     let duration = 1000;
     let timeout = 1000;
@@ -1747,7 +1703,6 @@ struct TabsCustomAnimationExample {
       this.timeoutList.push(timeout * i);
     }
   }
-
   build() {
     Column() {
       Tabs() {
@@ -1755,7 +1710,7 @@ struct TabsCustomAnimationExample {
           TabContent() {}
           .tabBar(item.text)
           .backgroundColor(item.backgroundColor)
-
+          // 自定义动画变化透明度、缩放页面等
           .opacity(this.opacityList[index])
           .scale({ x: this.scaleList[index], y: this.scaleList[index] })
         })
@@ -1769,23 +1724,24 @@ struct TabsCustomAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BzxpOH6JQBCSKcS8wfR5mg/zh-cn_image_0000002533066922.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=628502E0610BAAAC1F7E9B22801F6C816B8066D5238233252AF3F6F15AF08C45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BzxpOH6JQBCSKcS8wfR5mg/zh-cn_image_0000002533066922.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=074F54C8D5DBEA14498D70EB7C10C801FA9B0BB07EA186810E1D439CBCAB2B5F)
 
 ### 示例9（页面切换拦截）
 
 本示例通过onContentWillChange实现了自定义页面手势滑动切换拦截。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample {
   @State selectedIndex: number = 2;
   @State currentIndex: number = 2;
   private controller: TabsController = new TabsController();
-
   @Builder tabBuilder(title: string,targetIndex: number) {
     Column(){
-
+      // $r('app.media.star_fill')需要替换为开发者所需的图像资源文件
+      // $r('app.media.star')需要替换为开发者所需的图像资源文件
       Image(this.selectedIndex === targetIndex ? $r('app.media.star_fill') : $r('app.media.star'))
         .width(24)
         .height(24)
@@ -1796,7 +1752,6 @@ struct TabsExample {
     .height(50)
     .justifyContent(FlexAlign.Center)
   }
-
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, index: this.currentIndex, controller: this.controller }) {
@@ -1805,19 +1760,16 @@ struct TabsExample {
             Text('首页的内容')
           }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center)
         }.tabBar(this.tabBuilder('首页',0))
-
         TabContent() {
           Column(){
             Text('发现的内容')
           }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center)
         }.tabBar(this.tabBuilder('发现',1))
-
         TabContent() {
           Column(){
             Text('推荐的内容')
           }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center)
         }.tabBar(this.tabBuilder('推荐',2))
-
         TabContent() {
           Column(){
             Text('我的内容')
@@ -1843,12 +1795,10 @@ struct TabsExample {
         }
         return true;
       })
-
       Button('动态修改index').width('50%').margin({ top: 20 })
         .onClick(()=>{
           this.currentIndex = (this.currentIndex + 1) % 4;
         })
-
       Button('changeIndex').width('50%').margin({ top: 20 })
         .onClick(()=>{
           this.currentIndex = (this.currentIndex + 1) % 4;
@@ -1859,20 +1809,20 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/neDzUQeITn2HD1BoDBQHaw/zh-cn_image_0000002563866825.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=B98A3C61895FF37B293A8F27F5A9747BF440E341EB63BF35C80C2FD632D501CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/neDzUQeITn2HD1BoDBQHaw/zh-cn_image_0000002563866825.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=D424F32ACB68D8CA5BA173B567FD7A6CC0825F7C956BAE39307C4772A5FD86BF)
 
 ### 示例10（自定义TabBar切换动画）
 
 本示例通过onChange、onAnimationStart、onAnimationEnd、onGestureSwipe等接口实现了自定义TabBar的切换动画。
 
 ```typescript
+// EntryAbility.ets
 import { Configuration, UIAbility } from '@kit.AbilityKit';
 import { i18n } from '@kit.LocalizationKit';
 import { CommonUtil } from '../common/CommonUtil';
-
 export default class EntryAbility extends UIAbility {
   onConfigurationUpdate(newConfig: Configuration): void {
-
+    // 监听系统配置变化
     if (newConfig.language) {
       CommonUtil.setIsRTL(i18n.isRTL(newConfig.language));
     }
@@ -1881,13 +1831,12 @@ export default class EntryAbility extends UIAbility {
 ```
 
 ```typescript
+// CommonUtil.ets
 export class CommonUtil {
   private static isRTL: boolean = false;
-
   public static setIsRTL(isRTL: boolean): void {
     CommonUtil.isRTL = isRTL;
   }
-
   public static getIsRTL(): boolean {
     return CommonUtil.isRTL;
   }
@@ -1895,9 +1844,9 @@ export class CommonUtil {
 ```
 
 ```typescript
+// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
 import { CommonUtil } from '../common/CommonUtil';
-
 @Entry
 @Component
 struct TabsExample {
@@ -1910,13 +1859,11 @@ struct TabsExample {
   private tabsWidth: number = 0;
   private textInfos: [number, number][] = [];
   private isStartAnimateTo: boolean = false;
-
   aboutToAppear():void {
     for (let i = 0; i < this.colorArray.length; i++) {
       this.textInfos.push([0, 0]);
     }
   }
-
   @Builder
   tabBuilder(index: number, name: string) {
     Column() {
@@ -1933,7 +1880,6 @@ struct TabsExample {
         })
     }.width('100%')
   }
-
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
       Tabs({ barPosition: BarPosition.Start }) {
@@ -1956,25 +1902,24 @@ struct TabsExample {
       .backgroundColor('#F1F3F5')
       .animationDuration(this.animationDuration)
       .onChange((index: number) => {
-        this.currentIndex = index;
+        this.currentIndex = index; // 监听索引index的变化，实现页签内容的切换。
       })
       .onAnimationStart((index: number, targetIndex: number, event: TabsAnimationEvent) => {
-
+        // 切换动画开始时触发该回调。下划线跟着页面一起滑动，同时宽度渐变。
         this.currentIndex = targetIndex;
         this.startAnimateTo(this.animationDuration, this.textInfos[targetIndex][0], this.textInfos[targetIndex][1]);
       })
       .onAnimationEnd((index: number, event: TabsAnimationEvent) => {
-
+        // 切换动画结束时触发该回调。下划线动画停止。
         let currentIndicatorInfo = this.getCurrentIndicatorInfo(index, event);
         this.startAnimateTo(0, currentIndicatorInfo.left, currentIndicatorInfo.width);
       })
       .onGestureSwipe((index: number, event: TabsAnimationEvent) => {
-
+        // 在页面跟手滑动过程中，逐帧触发该回调。
         let currentIndicatorInfo = this.getCurrentIndicatorInfo(index, event);
         this.currentIndex = currentIndicatorInfo.index;
         this.setIndicatorAttr(currentIndicatorInfo.left, currentIndicatorInfo.width);
       })
-
       Column()
         .height(2)
         .width(this.indicatorWidth)
@@ -1982,7 +1927,6 @@ struct TabsExample {
         .backgroundColor('#007DFF')
     }.width('100%')
   }
-
   private getCurrentIndicatorInfo(index: number, event: TabsAnimationEvent): Record<string, number> {
     let nextIndex = index;
     if (index > 0 && (CommonUtil.getIsRTL() ? event.currentOffset < 0 : event.currentOffset > 0)) {
@@ -1994,19 +1938,18 @@ struct TabsExample {
     let indexInfo = this.textInfos[index];
     let nextIndexInfo = this.textInfos[nextIndex];
     let swipeRatio = Math.abs(event.currentOffset / this.tabsWidth);
-    let currentIndex = swipeRatio > 0.5 ? nextIndex : index;
+    let currentIndex = swipeRatio > 0.5 ? nextIndex : index; // 页面滑动超过一半，tabBar切换到下一页。
     let currentLeft = indexInfo[0] + (nextIndexInfo[0] - indexInfo[0]) * swipeRatio;
     let currentWidth = indexInfo[1] + (nextIndexInfo[1] - indexInfo[1]) * swipeRatio;
     return { 'index': currentIndex, 'left': currentLeft, 'width': currentWidth };
   }
-
   private startAnimateTo(duration: number, leftMargin: number, width: number) {
     this.isStartAnimateTo = true;
     this.getUIContext()?.animateTo({
-      duration: duration,
-      curve: Curve.Linear,
-      iterations: 1,
-      playMode: PlayMode.Normal,
+      duration: duration, // 动画时长
+      curve: Curve.Linear, // 动画曲线
+      iterations: 1, // 播放次数
+      playMode: PlayMode.Normal, // 动画模式
       onFinish: () => {
         this.isStartAnimateTo = false;
         console.info('play end');
@@ -2015,7 +1958,6 @@ struct TabsExample {
       this.setIndicatorAttr(leftMargin, width);
     });
   }
-
   private setIndicatorAttr(leftMargin: number, width: number) {
     this.indicatorWidth = width;
     if (CommonUtil.getIsRTL()) {
@@ -2027,36 +1969,32 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/QTZCGLMJTBSZdrVVTWaTqA/zh-cn_image_0000002563786871.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=D8EDB69DEA68EDC4E6451794D21D825536CD31FACB559A8F09DD8EF3A3C1F8ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/QTZCGLMJTBSZdrVVTWaTqA/zh-cn_image_0000002563786871.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=A8391E2AD4FCE98D427F7A52472C49C67B98B741DE21D8C8A583A8C08DE6BA09)
 
 ### 示例11（预加载子节点）
 
 本示例通过preloadItems接口实现了预加载指定子节点。
 
 ```typescript
+// xxx.ets
 import { BusinessError } from '@kit.BasicServicesKit';
-
 @Entry
 @Component
 struct TabsPreloadItems {
   @State currentIndex: number = 1;
   private tabsController: TabsController = new TabsController();
-
   build() {
     Column() {
       Tabs({ index: this.currentIndex, controller: this.tabsController }) {
         TabContent() {
           MyComponent({ color: '#00CB87' })
         }.tabBar(SubTabBarStyle.of('green'))
-
         TabContent() {
           MyComponent({ color: '#007DFF' })
         }.tabBar(SubTabBarStyle.of('blue'))
-
         TabContent() {
           MyComponent({ color: '#FFBF00' })
         }.tabBar(SubTabBarStyle.of('yellow'))
-
         TabContent() {
           MyComponent({ color: '#E67C92' })
         }.tabBar(SubTabBarStyle.of('pink'))
@@ -2067,11 +2005,10 @@ struct TabsPreloadItems {
       .onChange((index: number) => {
         this.currentIndex = index;
       })
-
       Button('preload items: [0, 2, 3]')
         .margin(5)
         .onClick(() => {
-
+          // 预加载第0、2、3个子节点，提高滑动或点击切换至这些节点时的性能
           this.tabsController.preloadItems([0, 2, 3])
             .then(() => {
               console.info('preloadItems success.');
@@ -2083,19 +2020,15 @@ struct TabsPreloadItems {
     }
   }
 }
-
 @Component
 struct MyComponent {
   private color: string = '';
-
   aboutToAppear(): void {
     console.info('aboutToAppear backgroundColor:' + this.color);
   }
-
   aboutToDisappear(): void {
     console.info('aboutToDisappear backgroundColor:' + this.color);
   }
-
   build() {
     Column()
       .width('100%')
@@ -2110,36 +2043,31 @@ struct MyComponent {
 本示例通过setTabBarTranslate、setTabBarOpacity等接口设置了TabBar的平移距离和不透明度。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample {
   private controller: TabsController = new TabsController();
-
   build() {
     Column() {
       Button('设置TabBar的平移距离').margin({ top: 20 })
         .onClick(() => {
           this.controller.setTabBarTranslate({ x: -20, y: -20 });
         })
-
       Button('设置TabBar的透明度').margin({ top: 20 })
         .onClick(() => {
           this.controller.setTabBarOpacity(0.5);
         })
-
       Tabs({ barPosition: BarPosition.End, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'green'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF')
         }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'blue'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00')
         }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'yellow'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#E67C92')
         }.tabBar(BottomTabBarStyle.of($r('app.media.startIcon'), 'pink'))
@@ -2154,35 +2082,30 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/vEfWsuvqQZCjHDr9Mhvd3Q/zh-cn_image_0000002532906976.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=91BDAE31FA15BA7FCB69C404B8CDDF241EF96DDC8220956275C09817508E0DB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/vEfWsuvqQZCjHDr9Mhvd3Q/zh-cn_image_0000002532906976.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=FEC67DF130D58E07E3AE361A9427749865929983958992EBF87AA267D411D9F9)
 
 ### 示例13（页面懒加载和释放）
 
 本示例通过使用自定义TabBar与Swiper配合LazyForEach实现页面懒加载和释放。
 
 ```typescript
+// xxx.ets
 class MyDataSource implements IDataSource {
   private list: number[] = [];
-
   constructor(list: number[]) {
     this.list = list;
   }
-
   totalCount(): number {
     return this.list.length;
   }
-
   getData(index: number): number {
     return this.list[index];
   }
-
   registerDataChangeListener(listener: DataChangeListener): void {
   }
-
   unregisterDataChangeListener() {
   }
 }
-
 @Entry
 @Component
 struct TabsSwiperExample {
@@ -2193,14 +2116,12 @@ struct TabsSwiperExample {
   private tabsController: TabsController = new TabsController();
   private swiperController: SwiperController = new SwiperController();
   private swiperData: MyDataSource = new MyDataSource([]);
-
   aboutToAppear(): void {
     for (let i = 0; i <= 9; i++) {
       this.list.push(i);
     }
     this.swiperData = new MyDataSource(this.list);
   }
-
   @Builder tabBuilder(index: number, name: string) {
     Column() {
       Text(name)
@@ -2215,7 +2136,6 @@ struct TabsSwiperExample {
         .opacity(this.currentIndex === index ? 1 : 0)
     }.width('20%')
   }
-
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
@@ -2231,7 +2151,6 @@ struct TabsSwiperExample {
       .backgroundColor('#F1F3F5')
       .height(56)
       .width('100%')
-
       Swiper(this.swiperController) {
         LazyForEach(this.swiperData, (item: string) => {
           Text(item.toString())
@@ -2261,13 +2180,14 @@ struct TabsSwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/hnnw-W6STna1pTDGEOy0Og/zh-cn_image_0000002533066924.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=411FD3EA69639FC8A43CE310C956DC1B07F230A13781191C172FAC50C60611CA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/hnnw-W6STna1pTDGEOy0Og/zh-cn_image_0000002533066924.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=542A6AE517593475016CC831890F36E1EBB47A79728933C6ADA74E2D1B2866E4)
 
 ### 示例14（设置翻页动效）
 
 本示例通过设置animationMode属性，实现了翻页的动效。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample {
@@ -2275,13 +2195,11 @@ struct TabsExample {
   @State currentAnimationMode: AnimationMode = AnimationMode.CONTENT_FIRST;
   private controller: TabsController = new TabsController();
   private data: number[] = [];
-
   aboutToAppear(): void {
     for (let i = 0; i < 10; i++) {
       this.data.push(i);
     }
   }
-
   @Builder
   tabBuilder(title: string,targetIndex: number) {
     Column(){
@@ -2290,7 +2208,6 @@ struct TabsExample {
     .height(50)
     .justifyContent(FlexAlign.Center)
   }
-
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.controller, index: this.currentIndex }) {
@@ -2312,9 +2229,7 @@ struct TabsExample {
       .width(360)
       .height(120)
       .backgroundColor('#F1F3F5')
-
       Text('AnimationMode:' + AnimationMode[this.currentAnimationMode])
-
       Button('AnimationMode').width('50%').margin({ top: 1 }).height(25)
         .onClick(()=>{
           if (this.currentAnimationMode === AnimationMode.CONTENT_FIRST) {
@@ -2334,7 +2249,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xcM-hJLGTJGDRMQX3hzPDg/zh-cn_image_0000002563866827.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=ABB609574B47406791D471BB3E6B5141B27A6EA3722786AB91E703E05062251F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xcM-hJLGTJGDRMQX3hzPDg/zh-cn_image_0000002563866827.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=A109AD122323795FF0B8E05C42760BAE808B179DE9AF6EEC464A791A3CE9C83F)
 
 ### 示例15（页签超出TabBar区域显示）
 
@@ -2343,8 +2258,8 @@ struct TabsExample {
 从API version 15开始，在TabsOptions中新增了barModifier接口。
 
 ```typescript
+// xxx.ets
 import { CommonModifier } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct TabsBarModifierExample {
@@ -2353,11 +2268,9 @@ struct TabsBarModifierExample {
   @State isClip: boolean = false;
   @State tabBarModifier: CommonModifier = new CommonModifier();
   private controller: TabsController = new TabsController();
-
   aboutToAppear(): void {
     this.tabBarModifier.clip(this.isClip);
   }
-
   @Builder
   tabBuilder(title: string, targetIndex: number) {
     Column() {
@@ -2368,7 +2281,6 @@ struct TabsBarModifierExample {
     .justifyContent(FlexAlign.Center)
     .offset({ y: this.selectedIndex === targetIndex ? -15 : 0 })
   }
-
   build() {
     Column() {
       Tabs({
@@ -2382,19 +2294,16 @@ struct TabsBarModifierExample {
             Text('首页的内容')
           }.width('100%').height('100%').backgroundColor('#00CB87').justifyContent(FlexAlign.Center)
         }.tabBar(this.tabBuilder('首页', 0))
-
         TabContent() {
           Column() {
             Text('发现的内容')
           }.width('100%').height('100%').backgroundColor('#007DFF').justifyContent(FlexAlign.Center)
         }.tabBar(this.tabBuilder('发现', 1))
-
         TabContent() {
           Column() {
             Text('推荐的内容')
           }.width('100%').height('100%').backgroundColor('#FFBF00').justifyContent(FlexAlign.Center)
         }.tabBar(this.tabBuilder('推荐', 2))
-
         TabContent() {
           Column() {
             Text('我的内容')
@@ -2413,7 +2322,6 @@ struct TabsBarModifierExample {
       .height(400)
       .backgroundColor('#F1F3F5')
       .scrollable(true)
-
       Button('isClip: ' + this.isClip)
         .margin({ top: 30 })
         .onClick(() => {
@@ -2425,7 +2333,7 @@ struct TabsBarModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/f5Q9gbSbQZquLIl_rRIH1Q/zh-cn_image_0000002563786873.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=EF53FD347824D4751F7E879746083F5805A9899E2E3759974935809D97F52BC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/f5Q9gbSbQZquLIl_rRIH1Q/zh-cn_image_0000002563786873.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=F8AC1C7A83903572C073CD894AB91C9530A3559DAEAA4109D3152EF91430A58C)
 
 ### 示例16（页签对齐布局）
 
@@ -2434,8 +2342,8 @@ struct TabsBarModifierExample {
 从API version 15开始，在TabsOptions中新增了barModifier接口。
 
 ```typescript
+// xxx.ets
 import { CommonModifier } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct TabsBarModifierExample {
@@ -2443,7 +2351,6 @@ struct TabsBarModifierExample {
   @State text: string = '文本';
   @State isVertical: boolean = false;
   @State tabBarModifier: CommonModifier = new CommonModifier();
-
   build() {
     Column() {
       Row() {
@@ -2464,7 +2371,6 @@ struct TabsBarModifierExample {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('Alignment.Center')
           .width('47%')
@@ -2483,7 +2389,6 @@ struct TabsBarModifierExample {
           })
           .margin({ bottom: '12vp' })
       }
-
       Row() {
         Button('Alignment.Top')
           .width('47%')
@@ -2502,16 +2407,13 @@ struct TabsBarModifierExample {
           })
           .margin({ bottom: '12vp' })
       }
-
       Tabs({ barPosition: BarPosition.End, controller: this.controller, barModifier: this.tabBarModifier }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Pink)
         }.tabBar(SubTabBarStyle.of(this.text))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Green)
         }.tabBar(SubTabBarStyle.of(this.text))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor(Color.Blue)
         }.tabBar(SubTabBarStyle.of(this.text))
@@ -2529,7 +2431,7 @@ struct TabsBarModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/oxu4QmtTRnezQvQ77envqQ/zh-cn_image_0000002532906978.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=5DE4C31B0927654E189A82FBD6243F010E6FB58CF2A5AD986F9B0898720E45E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/oxu4QmtTRnezQvQ77envqQ/zh-cn_image_0000002532906978.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=9ED49FEF39C55232D5501402657B013BD94D208D57E3C5A8F99FD0A33A774A61)
 
 ### 示例17（Tabs与TabBar同步切换）
 
@@ -2538,6 +2440,7 @@ struct TabsBarModifierExample {
 从API version 18开始，新增了onSelected接口。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample {
@@ -2546,7 +2449,6 @@ struct TabsExample {
   @State currentIndex: number = 0;
   @State selectedIndex: number = 0;
   private controller: TabsController = new TabsController();
-
   @Builder tabBuilder(index: number, name: string) {
     Column() {
       Text(name)
@@ -2561,22 +2463,18 @@ struct TabsExample {
         .opacity(this.selectedIndex === index ? 1 : 0)
     }.width('100%')
   }
-
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar(this.tabBuilder(0, 'green'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF')
         }.tabBar(this.tabBuilder(1, 'blue'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00')
         }.tabBar(this.tabBuilder(2, 'yellow'))
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#E67C92')
         }.tabBar(this.tabBuilder(3, 'pink'))
@@ -2606,7 +2504,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/8a5w4pspQYqz9gw4ni9GiQ/zh-cn_image_0000002533066926.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=3E7CA9BC6B40B1812C5BBF65F91403AEF1F45EE63FA893B5AE7A1E74F5BA62FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/8a5w4pspQYqz9gw4ni9GiQ/zh-cn_image_0000002533066926.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=EA67E4DF9C3C8ED2000AAC64A5E9554165A277B2445786CCF82FD415AED694E2)
 
 ### 示例18（释放Tabs子组件）
 
@@ -2623,15 +2521,12 @@ struct TabsExample {
       TabContent() {
         MyComponent({ color: '#00CB87' })
       }.tabBar(SubTabBarStyle.of('green'))
-
       TabContent() {
         MyComponent({ color: '#007DFF' })
       }.tabBar(SubTabBarStyle.of('blue'))
-
       TabContent() {
         MyComponent({ color: '#FFBF00' })
       }.tabBar(SubTabBarStyle.of('yellow'))
-
       TabContent() {
         MyComponent({ color: '#E67C92' })
       }.tabBar(SubTabBarStyle.of('pink'))
@@ -2642,19 +2537,15 @@ struct TabsExample {
     .cachedMaxCount(1, TabsCacheMode.CACHE_BOTH_SIDE)
   }
 }
-
 @Component
 struct MyComponent {
   private color: string = '';
-
   aboutToAppear(): void {
     console.info('aboutToAppear backgroundColor:' + this.color);
   }
-
   aboutToDisappear(): void {
     console.info('aboutToDisappear backgroundColor:' + this.color);
   }
-
   build() {
     Column()
       .width('100%')
@@ -2671,27 +2562,25 @@ struct MyComponent {
 从API version 18开始，新增了barBackgroundBlurStyle和barBackgroundEffect接口。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample {
   build() {
     Column() {
-
+      // barBackgroundBlurStyle 可以通过枚举值的方式设置模糊参数
       Stack() {
         Image($r('app.media.startIcon'))
         Tabs() {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#00CB87')
           }.tabBar('green')
-
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#007DFF')
           }.tabBar('blue')
-
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#FFBF00')
           }.tabBar('yellow')
-
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#E67C92')
           }.tabBar('pink')
@@ -2702,22 +2591,19 @@ struct TabsExample {
       .width(300)
       .height(300)
       .margin(10)
-
+      // barBackgroundEffect 可以自定义设置tabBar页签栏的模糊半径、亮度、饱和度等参数
       Stack() {
         Image($r('app.media.startIcon'))
         Tabs() {
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#00CB87')
           }.tabBar('green')
-
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#007DFF')
           }.tabBar('blue')
-
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#FFBF00')
           }.tabBar('yellow')
-
           TabContent() {
             Column().width('100%').height('100%').backgroundColor('#E67C92')
           }.tabBar('pink')
@@ -2732,33 +2618,30 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VDH6yd6oSiicSnEM9UilXg/zh-cn_image_0000002563866829.png?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=1D1D52B6834CDAC20864099C374D4C253DEA94173C7CF6F876A3BEE8C89374DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/VDH6yd6oSiicSnEM9UilXg/zh-cn_image_0000002563866829.png?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=A787F740193C9B1944EC59151B5256DADAFC478D9BB9779342CB9230E1A7C648)
 
 ### 示例20（设置边缘滑动效果）
 
 该示例通过[edgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-tabs#edgeeffect12)实现了不同的边缘回弹效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TabsExample {
   @State edgeEffect: EdgeEffect = EdgeEffect.Spring;
-
   build() {
     Column() {
       Tabs() {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar('green')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF')
         }.tabBar('blue')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00')
         }.tabBar('yellow')
-
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#E67C92')
         }.tabBar('pink')
@@ -2768,17 +2651,14 @@ struct TabsExample {
       .margin({ top: 52 })
       .backgroundColor('#F1F3F5')
       .edgeEffect(this.edgeEffect)
-
       Button('EdgeEffect.Spring').width('50%').margin({ top: 20 })
         .onClick(() => {
           this.edgeEffect = EdgeEffect.Spring;
         })
-
       Button('EdgeEffect.Fade').width('50%').margin({ top: 20 })
         .onClick(() => {
           this.edgeEffect = EdgeEffect.Fade;
         })
-
       Button('EdgeEffect.None').width('50%').margin({ top: 20 })
         .onClick(() => {
           this.edgeEffect = EdgeEffect.None;
@@ -2788,7 +2668,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/CCWqkHqRR3yTCARq6_7i1A/zh-cn_image_0000002563786875.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=F8A5ABE0E79B18BA569705479B14765DED07FB4FCB3825047E9CE36D27DE63B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/CCWqkHqRR3yTCARq6_7i1A/zh-cn_image_0000002563786875.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=F2190946B4E624B395A29347F15A4631F024F7F93BC3D871F1FD0B2C09825691)
 
 ### 示例21（Tabs设置翻页动画曲线）
 
@@ -2798,12 +2678,10 @@ struct TabsExample {
 
 ```typescript
 import { curves } from '@kit.ArkUI';
-
 interface TabsItemType {
   text: string,
   backgroundColor: ResourceColor
 }
-
 @Entry
 @Component
 struct TabsExample {
@@ -2827,7 +2705,6 @@ struct TabsExample {
     { text: '5', backgroundColor: '#F7F7F7' },
   ];
   @State duration: number = 0;
-
   build() {
     Column({ space: 2 }) {
       Tabs({ controller: this.tabsController }) {
@@ -2843,11 +2720,10 @@ struct TabsExample {
       .height(500)
       .animationCurve(this.curves[this.curveIndex])
       .animationDuration(this.duration)
-
       Column({ space: 2 }) {
         Text('Curve:' + this.curveNames[this.curveIndex])
         Row({ space: 2 }) {
-
+          // 切换动效曲线
           Button('++').onClick(() => {
             this.curveIndex = (this.curveIndex + 1) % this.curves.length;
           })
@@ -2858,10 +2734,9 @@ struct TabsExample {
       }
       .margin({ left: '10vp' })
       .width('100%')
-
       Row({ space: 2 }) {
         Text('Duration:' + this.duration)
-
+        // 增加动效时长
         Button('+100').onClick(() => {
           this.duration = (this.duration + 100) % 10000;
         })
@@ -2880,4 +2755,4 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/jRfleaY2S36DOGTBWcQxAQ/zh-cn_image_0000002532906980.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024648Z&HW-CC-Expire=86400&HW-CC-Sign=EB5392D959BBE105FB32581ED11329AA65CDB66C6218C69148C9985560BA0B62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/jRfleaY2S36DOGTBWcQxAQ/zh-cn_image_0000002532906980.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094701Z&HW-CC-Expire=86400&HW-CC-Sign=546CD07866BF1F063B35530AC1EBECAEE77437722BD367E9FB4AF255A795CADE)

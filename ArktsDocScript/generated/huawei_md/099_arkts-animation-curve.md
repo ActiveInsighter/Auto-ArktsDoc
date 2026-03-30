@@ -1,4 +1,4 @@
-# 动画曲线
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animation-curve
 
 - **[动画曲线概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-curve-overview)**

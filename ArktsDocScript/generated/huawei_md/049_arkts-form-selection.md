@@ -1,4 +1,4 @@
-# 表单选择
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-form-selection
 
 - **[表单与选择组件概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-forms-overview)**

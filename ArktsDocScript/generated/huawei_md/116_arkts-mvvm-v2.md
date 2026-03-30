@@ -1,4 +1,4 @@
-# MVVM模式（V2）
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm-v2
 
 ## 概述
@@ -930,7 +930,7 @@ struct TodoList {
 
 ### 效果图展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/2mxmbQ3xQhSWmey9FMHCfw/zh-cn_image_0000002533065676.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024625Z&HW-CC-Expire=86400&HW-CC-Sign=D678726015A6CC66B1CDBF7E185FAE201DFD4DB9AF02C49DC252E030E026F984)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/2mxmbQ3xQhSWmey9FMHCfw/zh-cn_image_0000002533065676.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094429Z&HW-CC-Expire=86400&HW-CC-Sign=C390464BD53EC8E85DFAD2616E5BFCAA5B42A51A00E07B2613F5E0F0B82DFFFD)
 
 ## 重构代码以符合MVVM架构
 

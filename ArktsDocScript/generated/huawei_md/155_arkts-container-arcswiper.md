@@ -1,4 +1,4 @@
-# ArcSwiper
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper
 
 弧形滑块视图容器，提供子组件滑动轮播显示的能力。
@@ -606,6 +606,7 @@ finishTransition(): void
 该示例通过设置arcSwiper的基本属性，展示了组件的基本功能。
 
 ```typescript
+// xxx.ets
 import {
   CircleShape,
   ArcSwiper,
@@ -614,29 +615,23 @@ import {
   ArcDirection,
   ArcSwiperController
 } from '@kit.ArkUI';
-
+// 从API version 22开始，无需手动导入ArcSwiperAttribute。具体请参考ArcSwiper的导入模块说明
 class MyDataSource implements IDataSource {
   private list: Color[] = [];
-
   constructor(list: Color[]) {
     this.list = list;
   }
-
   totalCount(): number {
     return this.list.length;
   }
-
   getData(index: number): Color {
     return this.list[index];
   }
-
   registerDataChangeListener(listener: DataChangeListener): void {
   }
-
   unregisterDataChangeListener() {
   }
 }
-
 @Entry
 @Component
 struct TestNewInterface {
@@ -648,7 +643,6 @@ struct TestNewInterface {
   @State backgroundColors: Color[] =
     [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.White, Color.Gray, Color.Orange, Color.Transparent];
   innerSelectedIndex: number = 0;
-
   aboutToAppear(): void {
     let list: Color[] = [];
     for (let i = 1; i <= 6; i++) {
@@ -656,7 +650,6 @@ struct TestNewInterface {
     }
     this.data = new MyDataSource(this.backgroundColors);
   }
-
   build() {
     Column() {
       Row() {
@@ -695,11 +688,11 @@ struct TestNewInterface {
           console.info("velocity: " + extraInfo.velocity);
         })
         .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-          others: Array<GestureRecognizer>): GestureJudgeResult => {
+          others: Array<GestureRecognizer>): GestureJudgeResult => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
           if (current) {
             let target = current.getEventTargetInfo();
             if (target && current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
-
+              // 此处判断swiperTarget.isBegin()或innerSelectedIndex === 0，表明ArcSwiper滑动到开头
               let swiperTarget = target as ScrollableTargetInfo
               if (swiperTarget instanceof ScrollableTargetInfo &&
                 (swiperTarget.isBegin() || this.innerSelectedIndex === 0)) {
@@ -723,7 +716,7 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/GIqPSmpfQfm8FP8w714Npg/zh-cn_image_0000002532906940.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024941Z&HW-CC-Expire=86400&HW-CC-Sign=B9680D0EA272926CBBAC240B02EEA2C0F39207574659D941F1550F7E4F3D8A4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/GIqPSmpfQfm8FP8w714Npg/zh-cn_image_0000002532906940.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094650Z&HW-CC-Expire=86400&HW-CC-Sign=1EE3F34463807CD26E7AADD35AB62AB915450BD7783D38D8AD0C7EB022E66DBD)
 
 ### 示例2（设置ArcSwiper自定义页面切换动画）
 
@@ -732,20 +725,18 @@ struct TestNewInterface {
 ```typescript
 import { Decimal } from '@kit.ArkTS';
 import { CircleShape, ArcSwiper, ArcSwiperAttribute } from '@kit.ArkUI';
-
+// 从API version 22开始，无需手动导入ArcSwiperAttribute。具体请参考ArcSwiper的导入模块说明
 @Entry
 @Component
 struct TestNewInterface {
   private backgroundColors: Color[] =
     [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.White, Color.Gray, Color.Orange];
   @State scaleList: number[] = [];
-
   aboutToAppear(): void {
     for (let i = 0; i < this.backgroundColors.length; i++) {
       this.scaleList.push(1.0);
     }
   }
-
   build() {
     Column() {
       Row() {
@@ -766,12 +757,12 @@ struct TestNewInterface {
           console.info('onChange:' + index.toString());
         })
         .customContentTransition({
-
+          // 页面移除视窗时超时1000ms下渲染树
           timeout: 1000,
-
+          // 对视窗内所有页面逐帧回调transition，在回调中修改opacity属性值，实现自定义动画
           transition: (proxy: SwiperContentTransitionProxy) => {
             if (proxy.position <= -1 || proxy.position >= 1) {
-
+              // 页面完全滑出视窗外时，重置属性值
               this.scaleList[proxy.index] = 1.0;
             } else {
               let position: number = Decimal.abs(proxy.position).toNumber();
@@ -786,4 +777,4 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/XuR8FD8YRc2UcBVPTmpwng/zh-cn_image_0000002533066888.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024941Z&HW-CC-Expire=86400&HW-CC-Sign=BF006236BA2C37FB0E5AD8BAA4BDB0D8EA22A18BB60FC887F694EAEF49A9A96A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/XuR8FD8YRc2UcBVPTmpwng/zh-cn_image_0000002533066888.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094650Z&HW-CC-Expire=86400&HW-CC-Sign=342EDC9B70E34E076BFA6518AFE747DC2CEFECEBA322DD7ADE9A9754EEE4FD18)

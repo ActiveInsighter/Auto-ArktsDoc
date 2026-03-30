@@ -1,4 +1,4 @@
-# Column
+# Column-行列与堆叠-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-column
 
 沿垂直方向布局的容器。
@@ -179,6 +179,7 @@ reverse(isReversed: Optional<boolean>)
 本示例展示设置Column组件的布局属性，如间距、对齐方式等属性后的效果。
 
 ```typescript
+// resources/base/element/string.json
 {
   "string": [
     {
@@ -190,49 +191,47 @@ reverse(isReversed: Optional<boolean>)
 ```
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ColumnExample {
   build() {
     Scroll() {
       Column({ space: 5 }) {
-
+        // 设置子元素垂直方向间距为5
         Text('space').width('90%')
         Column({ space: 5 }) {
           Column().width('100%').height(30).backgroundColor(0xAFEEEE)
           Column().width('100%').height(30).backgroundColor(0x00FFFF)
         }.width('90%').height(100).border({ width: 1 })
-
+        // 通过资源引用方式设置子元素垂直方向间距
         Text('Resource space').width('90%')
         Column({ space: $r('app.string.stringSpace') }) {
           Column().width('100%').height(30).backgroundColor(0xAFEEEE)
           Column().width('100%').height(30).backgroundColor(0x00FFFF)
         }.width('90%').height(100).border({ width: 1 })
-
+        // 设置子元素水平方向对齐方式
         Text('alignItems(Start)').width('90%')
         Column() {
           Column().width('50%').height(30).backgroundColor(0xAFEEEE)
           Column().width('50%').height(30).backgroundColor(0x00FFFF)
         }.alignItems(HorizontalAlign.Start).width('90%').border({ width: 1 })
-
         Text('alignItems(End)').width('90%')
         Column() {
           Column().width('50%').height(30).backgroundColor(0xAFEEEE)
           Column().width('50%').height(30).backgroundColor(0x00FFFF)
         }.alignItems(HorizontalAlign.End).width('90%').border({ width: 1 })
-
         Text('alignItems(Center)').width('90%')
         Column() {
           Column().width('50%').height(30).backgroundColor(0xAFEEEE)
           Column().width('50%').height(30).backgroundColor(0x00FFFF)
         }.alignItems(HorizontalAlign.Center).width('90%').border({ width: 1 })
-
+        // 设置子元素垂直方向的对齐方式
         Text('justifyContent(Center)').width('90%')
         Column() {
           Column().width('90%').height(30).backgroundColor(0xAFEEEE)
           Column().width('90%').height(30).backgroundColor(0x00FFFF)
         }.height(100).border({ width: 1 }).justifyContent(FlexAlign.Center)
-
         Text('justifyContent(End)').width('90%')
         Column() {
           Column().width('90%').height(30).backgroundColor(0xAFEEEE)
@@ -244,7 +243,7 @@ struct ColumnExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/-aW76tqNQU2GbmnqsSDA4A/zh-cn_image_0000002533066838.png?HW-CC-KV=V1&HW-CC-Date=20260330T024918Z&HW-CC-Expire=86400&HW-CC-Sign=B830D69C32ED2DB2CBBB64DF8A6740DEC5693DB70C176A57EEC27BCFF59A88DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/-aW76tqNQU2GbmnqsSDA4A/zh-cn_image_0000002533066838.png?HW-CC-KV=V1&HW-CC-Date=20260330T094633Z&HW-CC-Expire=86400&HW-CC-Sign=1655CFCAF1812182BF9CADA9DD4451F510B81B3017E258D09A7D47709F2D2EC5)
 
 ### 示例2（设置反转属性）
 
@@ -260,7 +259,6 @@ struct ColumnReverseSample {
         .width(50)
         .height(100)
         .backgroundColor(0xAFEEEE)
-
       Text("2")
         .width(50)
         .height(100)
@@ -274,4 +272,4 @@ struct ColumnReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QVbyRPouR3OheRvcYRAonw/zh-cn_image_0000002563866741.png?HW-CC-KV=V1&HW-CC-Date=20260330T024918Z&HW-CC-Expire=86400&HW-CC-Sign=AB57BBF33C6343BBCA0D9B1B679B182B3C6C6EFF57CB888177259B8327260D8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/QVbyRPouR3OheRvcYRAonw/zh-cn_image_0000002563866741.png?HW-CC-KV=V1&HW-CC-Date=20260330T094633Z&HW-CC-Expire=86400&HW-CC-Sign=C6CA04954CB1185AE9D42805252519E68E8F1D82C77D8D27E729B905EC90FD6A)

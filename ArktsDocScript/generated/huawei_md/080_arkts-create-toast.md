@@ -1,4 +1,4 @@
-# 即时反馈（Toast）
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-toast
 
 即时反馈（Toast）是一种临时性的消息提示框，用于向用户显示简短的操作反馈或状态信息。​它通常在屏幕的底部或顶部短暂弹出，随后在一段时间后自动消失。即时反馈的主要目的是提供简洁、不打扰的信息反馈，避免干扰用户当前的操作流程。
@@ -31,12 +31,11 @@
 
 ```typescript
 import {promptAction} from '@kit.ArkUI';
-
 @Entry
 @Component
 export struct DefaultAndTopToastExample {
   build() {
-
+    // ···
       Column({ space: 10 }) {
         TextInput()
         Button('Toast of the DEFAULT type')
@@ -50,7 +49,6 @@ export struct DefaultAndTopToastExample {
             bottom: 80
           });
         })
-
         Button('Toast of the TOPMOST type')
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
@@ -63,12 +61,12 @@ export struct DefaultAndTopToastExample {
           });
         })
       }
-
+    // ···
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/l8g0UFZAQlqIfIXqga4MnQ/zh-cn_image_0000002533065992.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024819Z&HW-CC-Expire=86400&HW-CC-Sign=FE5EEC7C650A0060BAB2E7A113FCEC10BE20D2A09788F1103382C30F81A86ACF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/l8g0UFZAQlqIfIXqga4MnQ/zh-cn_image_0000002533065992.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094536Z&HW-CC-Expire=86400&HW-CC-Sign=CD2BB04CD985034940BB306C901FDF7FEAAE54DCA375294DD4F7E0E57F954004)
 
 ## 创建即时反馈
 
@@ -78,17 +76,15 @@ export struct DefaultAndTopToastExample {
 import { PromptAction } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 const TAG: string = '[Sample_dialogproject]';
 const DOMAIN: number = 0xFF00;
-
 @Entry
 @Component
 export struct CreateToastExample {
   private uiContext: UIContext = this.getUIContext();
   private promptAction: PromptAction = this.uiContext.getPromptAction();
   build() {
-
+    // ...
       Column() {
         Button('Show toast').fontSize(20)
           .onClick(() => {
@@ -104,12 +100,12 @@ export struct CreateToastExample {
             }
           })
       }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-
+      // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/hV5uNdD0T_auqf9JJHwzdg/zh-cn_image_0000002563865895.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024819Z&HW-CC-Expire=86400&HW-CC-Sign=4E7AB09A68EE9B56B2ED34A47BBEC98449713C8628EDAA962ABB025A6430DC55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/hV5uNdD0T_auqf9JJHwzdg/zh-cn_image_0000002563865895.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094536Z&HW-CC-Expire=86400&HW-CC-Sign=9E974AF0664A7415F1F06F025ECA2C5F8FFDAABE99D0F9CCC8043E8B8595D5F8)
 
 ## 显示和关闭即时反馈
 
@@ -119,19 +115,16 @@ export struct CreateToastExample {
 import { PromptAction } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 const TAG: string = '[Sample_dialogproject]';
 const DOMAIN: number = 0xFF00;
-
 @Entry
 @Component
 export struct OpenCloseToastExample {
   @State toastId: number = 0;
   private uiContext: UIContext = this.getUIContext();
   private promptAction: PromptAction = this.uiContext.getPromptAction();
-
   build() {
-
+    // ...
       Column() {
         Button('Open Toast')
           .height(100)
@@ -164,9 +157,9 @@ export struct OpenCloseToastExample {
             }
           })
       }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-
+      // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/XtC-6oISQ_-W69BExWSN4Q/zh-cn_image_0000002563785941.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024819Z&HW-CC-Expire=86400&HW-CC-Sign=7431128E70C9FDC20CDE5214C8BE6A0CBBECCC7A9CC003298B09ADE984EC261F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/XtC-6oISQ_-W69BExWSN4Q/zh-cn_image_0000002563785941.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094536Z&HW-CC-Expire=86400&HW-CC-Sign=EF4EE9E34C687721AF167D2C41DBA145E4A787D4BACC0CAF9E631668DF00226C)

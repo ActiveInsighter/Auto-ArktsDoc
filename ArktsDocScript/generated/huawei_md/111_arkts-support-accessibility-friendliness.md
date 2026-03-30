@@ -1,4 +1,4 @@
-# 无障碍与适老化
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-support-accessibility-friendliness
 
 - **[无障碍开发指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-universal-attributes-accessibility)**

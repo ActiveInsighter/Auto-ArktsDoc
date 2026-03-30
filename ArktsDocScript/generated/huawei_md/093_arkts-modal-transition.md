@@ -1,4 +1,4 @@
-# 模态转场
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-transition
 
 模态转场是新的界面覆盖在旧的界面上，旧的界面不消失的一种转场方式。
@@ -19,20 +19,18 @@
 [bindContentCover](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-modal-transition#bindcontentcover)接口用于为组件绑定全屏模态页面，在组件出现和消失时可通过设置转场参数ModalTransition添加过渡动效。
 
 1. 定义全屏模态转场效果[bindContentCover](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-modal-transition#bindcontentcover)。
-2. 定义模态展示界面。 ```typescript @Builder MyBuilder() {  Column() {  Text('my model view')  }  .transition(TransitionEffect.translate({ y: 1000 }).animation({ curve: curves.springMotion(0.6, 0.8) })) } ```
-3. 通过模态接口调起模态展示界面，通过转场动画或者共享元素动画去实现对应的动画效果。 ```typescript @State isPresent: boolean = false; Button('Click to present model view')  .bindContentCover(this.isPresent, this.MyBuilder(), {  modalTransition: ModalTransition.NONE,  onDisappear: () => {  if (this.isPresent) {  this.isPresent = !this.isPresent;  }  }  })  .onClick(() => {  this.isPresent = !this.isPresent;  }) ```
+2. 定义模态展示界面。 ```typescript // 通过@Builder构建模态展示界面 @Builder MyBuilder() {  Column() {  Text('my model view')  }  // 通过转场动画实现出现消失转场动画效果，transition需要加在builder下的第一个组件  .transition(TransitionEffect.translate({ y: 1000 }).animation({ curve: curves.springMotion(0.6, 0.8) })) } ```
+3. 通过模态接口调起模态展示界面，通过转场动画或者共享元素动画去实现对应的动画效果。 ```typescript // 模态转场控制变量 @State isPresent: boolean = false; Button('Click to present model view')  // 通过选定的模态接口，绑定模态展示界面，ModalTransition是内置的ContentCover转场动画类型，这里选择None代表系统不加默认动画，通过onDisappear控制状态变量变换  .bindContentCover(this.isPresent, this.MyBuilder(), {  modalTransition: ModalTransition.NONE,  onDisappear: () => {  if (this.isPresent) {  this.isPresent = !this.isPresent;  }  }  })  .onClick(() => {  // 改变状态变量，显示模态界面  this.isPresent = !this.isPresent;  }) ```
 
 完整示例代码和效果如下。
 
 ```typescript
 import { curves } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
-
 interface PersonList {
   name: string,
   cardNum: string
 }
-
 @Entry
 @Component
 struct BindContentCoverDemo {
@@ -43,9 +41,11 @@ struct BindContentCoverDemo {
     { name: this.context.resourceManager.getStringByNameSync('modal_transition_text3'), cardNum: '3456***********789' },
     { name: this.context.resourceManager.getStringByNameSync('modal_transition_text4'), cardNum: '4567***********789' }
   ];
-
+  // 第一步：定义全屏模态转场效果bindContentCover
+  // 模态转场控制变量
   @State isPresent: boolean = false;
-
+  // 第二步：定义模态展示界面
+  // 通过@Builder构建模态展示界面
   @Builder
   MyBuilder() {
     Column() {
@@ -58,7 +58,6 @@ struct BindContentCoverDemo {
           .padding({ top: 30, bottom: 15 })
       }
       .backgroundColor(0x007dfe)
-
       Row() {
         Text(this.context.resourceManager.getStringByNameSync('modal_transition_text6'))
           .fontSize(16)
@@ -70,7 +69,6 @@ struct BindContentCoverDemo {
           .textAlign(TextAlign.Center)
           .backgroundColor(Color.White)
       }
-
       Column() {
         ForEach(this.personList, (item: PersonList, index: number) => {
           Row() {
@@ -89,7 +87,6 @@ struct BindContentCoverDemo {
               }
             }
             .width('20%')
-
             Column() {
               Text(item.name)
                 .fontColor(0x333333)
@@ -100,7 +97,6 @@ struct BindContentCoverDemo {
             }
             .width('60%')
             .alignItems(HorizontalAlign.Start)
-
             Column() {
               Text(this.context.resourceManager.getStringByNameSync('modal_transition_text7'))
                 .fontColor(0x007dfe)
@@ -115,7 +111,6 @@ struct BindContentCoverDemo {
         })
       }
       .padding({ top: 20, bottom: 20 })
-
       Text(this.context.resourceManager.getStringByNameSync('modal_transition_text8'))
         .width('90%')
         .height(40)
@@ -129,10 +124,9 @@ struct BindContentCoverDemo {
     }
     .size({ width: '100%', height: '100%' })
     .backgroundColor(0xf5f5f5)
-
+    // 通过转场动画实现出现消失转场动画效果
     .transition(TransitionEffect.translate({ y: 1000 }).animation({ curve: curves.springMotion(0.6, 0.8) }))
   }
-
   build() {
     Column() {
       Row() {
@@ -144,7 +138,6 @@ struct BindContentCoverDemo {
           .padding({ top: 30, bottom: 60 })
       }
       .backgroundColor(0x007dfe)
-
       Column() {
         Row() {
           Column() {
@@ -152,13 +145,11 @@ struct BindContentCoverDemo {
             Text(this.context.resourceManager.getStringByNameSync('modal_transition_text10'))
           }
           .width('30%')
-
           Column() {
             Text('G1234')
             Text(this.context.resourceManager.getStringByNameSync('modal_transition_text11'))
           }
           .width('30%')
-
           Column() {
             Text('08:26')
             Text(this.context.resourceManager.getStringByNameSync('modal_transition_text12'))
@@ -172,7 +163,6 @@ struct BindContentCoverDemo {
       .backgroundColor(Color.White)
       .shadow({ radius: 30, color: '#aaaaaa' })
       .borderRadius(10)
-
       Column() {
         Text(this.context.resourceManager.getStringByNameSync('modal_transition_text13'))
           .fontSize(18)
@@ -182,7 +172,8 @@ struct BindContentCoverDemo {
           .width('60%')
           .textAlign(TextAlign.Center)
           .borderRadius(15)
-
+          // 通过选定的模态接口，绑定模态展示界面，ModalTransition是内置的ContentCover转场动画类型，
+          // 这里选择DEFAULT代表设置上下切换动画效果，通过onDisappear控制状态变量变换。
           .bindContentCover(this.isPresent, this.MyBuilder(), {
             modalTransition: ModalTransition.DEFAULT,
             onDisappear: () => {
@@ -192,7 +183,8 @@ struct BindContentCoverDemo {
             }
           })
           .onClick(() => {
-
+            // 第三步：通过模态接口调起模态展示界面，通过转场动画或者共享元素动画去实现对应的动画效果
+            // 改变状态变量，显示模态界面
             this.isPresent = !this.isPresent;
           })
       }
@@ -202,7 +194,7 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/WVcum3gwQWuof5jmpQzekQ/zh-cn_image_0000002532906102.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024833Z&HW-CC-Expire=86400&HW-CC-Sign=469811938BD857BD7113E10CFEB9D9B583377D8DCD6C114CDB8E15AE22A7096A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/WVcum3gwQWuof5jmpQzekQ/zh-cn_image_0000002532906102.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094547Z&HW-CC-Expire=86400&HW-CC-Sign=7DFF6E0E56295186685B7E81D4B26178C700BBC7EA78095D4260AF66C2519E44)
 
 ## 使用bindSheet构建半模态转场效果
 
@@ -212,12 +204,11 @@ struct BindContentCoverDemo {
 
 ```typescript
 import { common } from '@kit.AbilityKit';
-
 @Entry
 @Component
 struct BindSheetDemo {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
+  // 半模态转场显示隐藏控制
   @State isShowSheet: boolean = false;
   private menuList: string[] = [this.context.resourceManager.getStringByNameSync('modal_transition_text14'),
     this.context.resourceManager.getStringByNameSync('modal_transition_text15'),
@@ -226,7 +217,7 @@ struct BindSheetDemo {
     this.context.resourceManager.getStringByNameSync('modal_transition_text18'),
     this.context.resourceManager.getStringByNameSync('modal_transition_text19'),
     this.context.resourceManager.getStringByNameSync('modal_transition_text20')];
-
+  // 通过@Builder构建半模态展示界面
   @Builder
   mySheet() {
     Column() {
@@ -247,7 +238,6 @@ struct BindSheetDemo {
     .height('100%')
     .backgroundColor(Color.White)
   }
-
   build() {
     Column() {
       Text(this.context.resourceManager.getStringByNameSync('modal_transition_text21'))
@@ -261,16 +251,13 @@ struct BindSheetDemo {
             .backgroundColor('#a8a8a8')
             .margin({ right: 12 })
             .borderRadius(20)
-
           Column() {
             Text(this.context.resourceManager.getStringByNameSync('modal_transition_text22'))
               .fontSize(16)
               .fontWeight(FontWeight.Medium)
           }
           .alignItems(HorizontalAlign.Start)
-
           Blank()
-
           Row()
             .width(12)
             .height(12)
@@ -287,7 +274,8 @@ struct BindSheetDemo {
         .alignItems(VerticalAlign.Center)
         .padding({ left: 15, top: 15, bottom: 15 })
         .backgroundColor(Color.White)
-
+        // 通过选定的半模态接口，绑定模态展示界面，style中包含两个参数，一个是设置半模态的高度，不设置时默认高度是Large，
+        // 一个是是否显示控制条DragBar，默认是true显示控制条，通过onDisappear控制状态变量变换。
         .bindSheet(this.isShowSheet, this.mySheet(), {
           height: 300,
           dragBar: false,
@@ -308,7 +296,7 @@ struct BindSheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/E1l0EsnET3Sxx01rFuSOWw/zh-cn_image_0000002533066050.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024833Z&HW-CC-Expire=86400&HW-CC-Sign=B8B9509C96315288796227979D99ED1D4175F273FECB0D6AEBB7A488C1567783)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/E1l0EsnET3Sxx01rFuSOWw/zh-cn_image_0000002533066050.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094547Z&HW-CC-Expire=86400&HW-CC-Sign=193A3AE645534DCFF82635FDE8828C559723A839521BCA623430C07F8149252A)
 
 ## 使用bindMenu实现菜单弹出效果
 
@@ -317,21 +305,18 @@ struct BindSheetDemo {
 ```typescript
 import { common } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 const DOMAIN = 0xF811;
 const TAG = '[Sample_Animation]';
-
 class BMD {
   public value: ResourceStr = '';
   public action: () => void = () => {
   };
 }
-
 @Entry
 @Component
 struct BindMenuDemo {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
+  // 第一步: 定义一组数据用来表示菜单按钮项
   @State items: BMD[] = [
     {
       value: this.context.resourceManager.getStringByNameSync('modal_transition_text23'),
@@ -346,12 +331,11 @@ struct BindMenuDemo {
       }
     },
   ]
-
   build() {
     Column() {
       Button('click')
         .backgroundColor(0x409eff)
-
+        // 第二步: 通过bindMenu接口将菜单数据绑定给元素
         .bindMenu(this.items)
     }
     .justifyContent(FlexAlign.Center)
@@ -361,7 +345,7 @@ struct BindMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/swFHIZzHRxuf3-qfbWJ3QQ/zh-cn_image_0000002563865953.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024833Z&HW-CC-Expire=86400&HW-CC-Sign=39F70142BE39C3D82789B8BA2D2B40C7D44841DBF017617444EBB36AD20E69B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/swFHIZzHRxuf3-qfbWJ3QQ/zh-cn_image_0000002563865953.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094547Z&HW-CC-Expire=86400&HW-CC-Sign=D185C3FAA1481A1494BFEC4552BB9A25E7C9D002826A864EA0197EBEED42A02D)
 
 ## 使用bindContextMenu实现菜单弹出效果
 
@@ -371,7 +355,6 @@ struct BindMenuDemo {
 
 ```typescript
 import { common } from '@kit.AbilityKit';
-
 @Entry
 @Component
 struct BindContextMenuDemo {
@@ -379,9 +362,9 @@ struct BindContextMenuDemo {
   private menu: string[] = [this.context.resourceManager.getStringByNameSync('modal_transition_text25'),
     this.context.resourceManager.getStringByNameSync('modal_transition_text26'),
     this.context.resourceManager.getStringByNameSync('modal_transition_text27')];
-
+  // $r('app.media.xxx')需要替换为开发者所需的图像资源文件。
   private pics: Resource[] = [$r('app.media.icon_1'), $r('app.media.icon_2')];
-
+  // 通过@Builder构建自定义菜单项
   @Builder
   myMenu() {
     Column() {
@@ -401,7 +384,6 @@ struct BindContextMenuDemo {
     .shadow({ radius: 15, color: 0xf1f1f1 })
     .backgroundColor(0xf1f1f1)
   }
-
   build() {
     Column() {
       Row() {
@@ -413,7 +395,6 @@ struct BindContextMenuDemo {
           .padding({ top: 20, bottom: 20 })
       }
       .backgroundColor(0x007dfe)
-
       Column() {
         ForEach(this.pics, (item: Resource) => {
           Row() {
@@ -437,7 +418,7 @@ struct BindContextMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/YfS8mrj_Rj-HJonb-9GQdg/zh-cn_image_0000002563785999.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024833Z&HW-CC-Expire=86400&HW-CC-Sign=CCFD5BCB407AF71883F0B19CC11F86E69E2773FA9015005A1C0E996E35CF05ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/YfS8mrj_Rj-HJonb-9GQdg/zh-cn_image_0000002563785999.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094547Z&HW-CC-Expire=86400&HW-CC-Sign=588F6DAE66CA08120FE2EB86AF819A5C86D69C3EDDBF4564A1F589BF724A0C2C)
 
 ## 使用bindPopup实现气泡弹窗效果
 
@@ -449,9 +430,9 @@ struct BindContextMenuDemo {
 @Entry
 @Component
 struct BindPopupDemo {
-
+  // 第一步：定义变量控制弹窗显示
   @State customPopup: boolean = false;
-
+  // 第二步：popup构造器定义弹框内容
   @Builder
   popupBuilder() {
     Column({ space: 2 }) {
@@ -467,17 +448,15 @@ struct BindPopupDemo {
     .height(100)
     .padding(5)
   }
-
   build() {
     Column() {
-
       Button('click')
-
+      // 第四步：创建点击事件，控制弹窗显隐
         .onClick(() => {
           this.customPopup = !this.customPopup;
         })
         .backgroundColor(0xf56c6c)
-
+        // 第三步：使用bindPopup接口将弹窗内容绑定给元素
         .bindPopup(this.customPopup, {
           builder: this.popupBuilder,
           placement: Placement.Top,
@@ -498,7 +477,7 @@ struct BindPopupDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/tY5xotEmSheciQPND7ZwsA/zh-cn_image_0000002532906104.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024833Z&HW-CC-Expire=86400&HW-CC-Sign=C53C12A15D674A77D0B69A2BDB6237D2D65397444C50556E87EC33D81670C629)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/tY5xotEmSheciQPND7ZwsA/zh-cn_image_0000002532906104.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094547Z&HW-CC-Expire=86400&HW-CC-Sign=9DEFDE6E153DC56B13275D184FC7D25F6D04AF2CC234C212F2FE5B51D6B0707B)
 
 ## 使用if实现模态转场
 
@@ -508,38 +487,35 @@ struct BindPopupDemo {
 
 ```typescript
 import { common } from '@kit.AbilityKit';
-
 @Entry
 @Component
 struct ModalTransitionWithIf {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-
+  // 请在resources\base\element\string.json文件中配置name为'modal_transition_text29'，value为非空字符串的资源
   private listArr: ResourceStr[] = ['WLAN', this.context.resourceManager.getStringByNameSync('modal_transition_text29'),
-
+    // 请在resources\base\element\string.json文件中配置name为'modal_transition_text30'，value为非空字符串的资源
     this.context.resourceManager.getStringByNameSync('modal_transition_text30'),
-
+    // 请在resources\base\element\string.json文件中配置name为'modal_transition_text31'，value为非空字符串的资源
     this.context.resourceManager.getStringByNameSync('modal_transition_text31')];
-
+  // 请在resources\base\element\string.json文件中配置name为'modal_transition_text32'，value为非空字符串的资源
   private shareArr: ResourceStr[] = [this.context.resourceManager.getStringByNameSync('modal_transition_text32'),
-
+    // 请在resources\base\element\string.json文件中配置name为'modal_transition_text33'，value为非空字符串的资源
     this.context.resourceManager.getStringByNameSync('modal_transition_text33'), 'VPN',
-
+    // 请在resources\base\element\string.json文件中配置name为'modal_transition_text34'，value为非空字符串的资源
     this.context.resourceManager.getStringByNameSync('modal_transition_text34'), 'NFC'];
-
+  // 第一步：定义状态变量控制页面显示
   @State isShowShare: boolean = false;
-
   private shareFunc(): void {
     this.getUIContext()?.animateTo({ duration: 500 }, () => {
       this.isShowShare = !this.isShowShare;
     })
   }
-
   build() {
-
+    // 第二步：定义Stack布局显示当前页面和模态页面
     Stack() {
       Column() {
         Column() {
-
+          // 请将$r('app.string.modal_transition_text35')替换为实际资源文件，在本示例中该资源文件的value值为“设置”
           Text($r('app.string.modal_transition_text35'))
             .fontSize(28)
             .fontColor(0x333333)
@@ -547,13 +523,12 @@ struct ModalTransitionWithIf {
         .width('90%')
         .padding({ top: 30, bottom: 15 })
         .alignItems(HorizontalAlign.Start)
-
+        // 请将$r('app.string.modal_transition_text36')替换为实际资源文件，在本示例中该资源文件的value值为“输入关键字搜索”
         TextInput({ placeholder: $r('app.string.modal_transition_text36') })
           .width('90%')
           .height(40)
           .margin({ bottom: 10 })
           .focusable(false)
-
         List({ space: 12, initialIndex: 0 }) {
           ForEach(this.listArr, (item: string, index: number) => {
             ListItem() {
@@ -570,16 +545,13 @@ struct ModalTransitionWithIf {
                 .margin({ right: 12 })
                 .borderRadius(20)
                 .justifyContent(FlexAlign.Center)
-
                 Column() {
                   Text(item)
                     .fontSize(16)
                     .fontWeight(FontWeight.Medium)
                 }
                 .alignItems(HorizontalAlign.Start)
-
                 Blank()
-
                 Row()
                   .width(12)
                   .height(12)
@@ -599,7 +571,8 @@ struct ModalTransitionWithIf {
             }
             .width('100%')
             .onClick(() => {
-
+              // 第五步：改变状态变量，显示模态页面
+              // 请在resources\base\element\string.json文件中配置name为'modal_transition_text37'，value为非空字符串的资源
               if (item.slice(-2) === this.context.resourceManager.getStringByNameSync('modal_transition_text37')) {
                 this.shareFunc();
               }
@@ -611,7 +584,7 @@ struct ModalTransitionWithIf {
       .width('100%')
       .height('100%')
       .backgroundColor(0xfefefe)
-
+      // 第三步：在if中定义模态页面，显示在最上层，通过if控制模态页面出现消失
       if (this.isShowShare) {
         Column() {
           Column() {
@@ -630,7 +603,7 @@ struct ModalTransitionWithIf {
               .onClick(() => {
                 this.shareFunc();
               })
-
+              // 请将$r('app.string.modal_transition_text31')替换为实际资源文件，在本示例中该资源文件的value值为“连接与共享”
               Text($r('app.string.modal_transition_text31'))
                 .fontSize(28)
                 .fontColor(0x333333)
@@ -640,7 +613,6 @@ struct ModalTransitionWithIf {
           .width('90%')
           .padding({ bottom: 15 })
           .alignItems(HorizontalAlign.Start)
-
           List({ space: 12, initialIndex: 0 }) {
             ForEach(this.shareArr, (item: string) => {
               ListItem() {
@@ -657,16 +629,13 @@ struct ModalTransitionWithIf {
                   .margin({ right: 12 })
                   .borderRadius(20)
                   .justifyContent(FlexAlign.Center)
-
                   Column() {
                     Text(item)
                       .fontSize(16)
                       .fontWeight(FontWeight.Medium)
                   }
                   .alignItems(HorizontalAlign.Start)
-
                   Blank()
-
                   Row()
                     .width(12)
                     .height(12)
@@ -692,7 +661,7 @@ struct ModalTransitionWithIf {
         .width('100%')
         .height('100%')
         .backgroundColor(0xffffff)
-
+        // 第四步：定义模态页面出现消失转场方式
         .transition(TransitionEffect.OPACITY
           .combine(TransitionEffect.translate({ x: '100%' }))
           .combine(TransitionEffect.scale({ x: 0.95, y: 0.95 })))
@@ -702,4 +671,4 @@ struct ModalTransitionWithIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1-W20GLwTOmOKgCJOvHsBQ/zh-cn_image_0000002533066052.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024833Z&HW-CC-Expire=86400&HW-CC-Sign=08038168959529B2646F6228AB56D5EFC7BA187F2F2B1BE0CDB90FB67906C86D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1-W20GLwTOmOKgCJOvHsBQ/zh-cn_image_0000002533066052.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094547Z&HW-CC-Expire=86400&HW-CC-Sign=0BEAE2E1D73FC2D664946AABF811FCF41AFB6E9A3EFE2EF425E8FD5E6D68257E)

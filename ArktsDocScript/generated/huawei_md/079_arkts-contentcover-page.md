@@ -1,4 +1,4 @@
-# 绑定全模态页面（bindContentCover）
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-contentcover-page
 
 [全模态页面（bindContentCover）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-modal-transition#bindcontentcover)是全屏模态形式的弹窗交互页面，完全覆盖底层父视图。适用于查看大图，全屏查看文稿等场景。
@@ -29,37 +29,34 @@
 ```typescript
 import { curves } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
-
 interface PersonList {
   name: string,
   cardNum: string
 }
-
 @Entry
 @Component
 struct BindContentCoverDemo {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   private manager = this.context.resourceManager;
   private personList: Array<PersonList> = [
-
+    // 'Person_example1'资源文件中的value值为'王**'
     { name: this.manager.getStringByNameSync('Person_example1'), cardNum: '1234***********789' },
-
+    // 'Person_example2'资源文件中的value值为'宋*'
     { name: this.manager.getStringByNameSync('Person_example2'), cardNum: '2345***********789' },
-
+    // 'Person_example3'资源文件中的value值为'许**'
     { name: this.manager.getStringByNameSync('Person_example3'), cardNum: '3456***********789' },
-
+    // 'Person_example4'资源文件中的value值为'唐*'
     { name: this.manager.getStringByNameSync('Person_example4'), cardNum: '4567***********789' }
   ];
-
+  // 半模态转场控制变量
   @State isSheetShow: boolean = false;
-
+  // 全模态转场控制变量
   @State isPresent: boolean = false;
-
   @Builder
   MyContentCoverBuilder() {
     Column() {
       Row() {
-
+        // 请将$r('app.string.Text_choose_person')替换为实际资源文件，在本示例中该资源文件的value值为"选择乘车人"
         Text($r('app.string.Text_choose_person'))
           .fontSize(20)
           .fontColor(Color.White)
@@ -68,9 +65,8 @@ struct BindContentCoverDemo {
           .padding({ top: 30, bottom: 15 })
       }
       .backgroundColor(0x007dfe)
-
       Row() {
-
+        // 请将$r('app.string.Text_add_person')替换为实际资源文件，在本示例中该资源文件的value值为"+ 添加乘车人"
         Text($r('app.string.Text_add_person'))
           .fontSize(16)
           .fontColor(0x333333)
@@ -81,7 +77,6 @@ struct BindContentCoverDemo {
           .textAlign(TextAlign.Center)
           .backgroundColor(Color.White)
       }
-
       Column() {
         ForEach(this.personList, (item: PersonList, index: number) => {
           Row() {
@@ -100,7 +95,6 @@ struct BindContentCoverDemo {
               }
             }
             .width('20%')
-
             Column() {
               Text(item.name)
                 .fontColor(0x333333)
@@ -111,9 +105,8 @@ struct BindContentCoverDemo {
             }
             .width('60%')
             .alignItems(HorizontalAlign.Start)
-
             Column() {
-
+              // 请将$r('app.string.Text_edit')替换为实际资源文件，在本示例中该资源文件的value值为"编辑"
               Text($r('app.string.Text_edit'))
                 .fontColor(0x007dfe)
                 .fontSize(16)
@@ -127,7 +120,7 @@ struct BindContentCoverDemo {
         })
       }
       .padding({ top: 20, bottom: 20 })
-
+      // 请将$r('app.string.Text_confirm')替换为实际资源文件，在本示例中该资源文件的value值为"确认"
       Text($r('app.string.Text_confirm'))
         .width('90%')
         .height(40)
@@ -142,33 +135,31 @@ struct BindContentCoverDemo {
     .size({ width: '100%', height: '100%' })
     .backgroundColor(0xf5f5f5)
   }
-
   @Builder
   TripInfo() {
     Row() {
       Column() {
         Text('00:25')
-
+        // 请将$r('app.string.Label_origin_station')替换为实际资源文件，在本示例中该资源文件的value值为"始发站"
         Text($r('app.string.Label_origin_station'))
       }
       .width('25%')
-
       Column() {
         Text('G1234')
-
+        // 请将$r('app.string.Label_start_time')替换为实际资源文件，在本示例中该资源文件的value值为"8时1分"
         Text($r('app.string.Label_start_time'))
       }
       .width('25%')
-
       Column() {
         Text('08:26')
-
+        // 请将$r('app.string.Label_destination_station')替换为实际资源文件，在本示例中该资源文件的value值为"终点站"
         Text($r('app.string.Label_destination_station'))
       }
       .width('25%')
     }
   }
-
+  // 第二步：定义半模态展示界面
+  // 通过@Builder构建模态展示界面
   @Builder
   MySheetBuilder() {
     Column() {
@@ -180,9 +171,8 @@ struct BindContentCoverDemo {
       .backgroundColor(Color.White)
       .shadow({ radius: 30, color: '#aaaaaa' })
       .borderRadius(10)
-
       Column() {
-
+        // 请将$r('app.string.Sheet_choose_person')替换为实际资源文件，在本示例中该资源文件的value值为"+ 选择乘车人"
         Text($r('app.string.Sheet_choose_person'))
           .fontSize(18)
           .fontColor(Color.Orange)
@@ -192,10 +182,10 @@ struct BindContentCoverDemo {
           .textAlign(TextAlign.Center)
           .borderRadius(15)
           .onClick(() => {
-
+            // 第三步：通过全模态接口调起全模态展示界面，新拉起的模态面板默认显示在最上层
             this.isPresent = !this.isPresent;
           })
-
+          // 通过全模态接口，绑定模态展示界面MyContentCoverBuilder。transition属性支持自定义转场效果，此处定义了x轴横向入场
           .bindContentCover($$this.isPresent, this.MyContentCoverBuilder(), {
             transition: TransitionEffect.translate({ x: 500 }).animation({ curve: curves.springMotion(0.6, 0.8) })
           })
@@ -203,12 +193,11 @@ struct BindContentCoverDemo {
       .padding({ top: 60 })
     }
   }
-
   build() {
     Column() {
       Row() {
         this.TripInfo()
-
+        // 请将$r('app.string.Sheet_tickets_available')替换为实际资源文件，在本示例中该资源文件的value值为"有票"
         Text($r('app.string.Sheet_tickets_available'))
           .fontColor(Color.Blue)
           .width('25%')
@@ -220,10 +209,10 @@ struct BindContentCoverDemo {
       .onClick(()=>{
         this.isSheetShow = !this.isSheetShow;
       })
-
+      // 第一步：定义半模态转场效果
       .bindSheet($$this.isSheetShow, this.MySheetBuilder(), {
         height: SheetSize.MEDIUM,
-
+        // 请将$r('app.string.Text_confirm_order')替换为实际资源文件，在本示例中该资源文件的value值为"确认订单"
         title: {title: $r('app.string.Text_confirm_order')},
       })
     }
@@ -234,4 +223,4 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/nLmXmnlKQtSqkk9jtHZrtw/zh-cn_image_0000002532906044.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024821Z&HW-CC-Expire=86400&HW-CC-Sign=FD6FD0D3F59D6DF5707F419A3879D11A92CFBD64BF9563E1DD9969BB39F1EC45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/nLmXmnlKQtSqkk9jtHZrtw/zh-cn_image_0000002532906044.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094536Z&HW-CC-Expire=86400&HW-CC-Sign=D7F9E8C3D3EC7AFE3597ACDCA5EE8B1C5B45D9DF980468CCE71235E9A1373B29)

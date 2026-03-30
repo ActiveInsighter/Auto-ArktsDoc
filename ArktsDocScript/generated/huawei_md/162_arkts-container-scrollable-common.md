@@ -1,4 +1,4 @@
-# 滚动组件通用接口
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common
 
 滚动组件通用属性和事件目前只支持[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)和[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)组件。
@@ -766,7 +766,7 @@ onDidStopFling(handler: VoidCallback): T
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/SNSksPSLRbeL6xOzpTN9mg/zh-cn_image_0000002532906954.png?HW-CC-KV=V1&HW-CC-Date=20260330T024954Z&HW-CC-Expire=86400&HW-CC-Sign=91461F8E50E1AE7CF8E30026291A6F8A5FAE59D99774909193F913C811E8755B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/SNSksPSLRbeL6xOzpTN9mg/zh-cn_image_0000002532906954.png?HW-CC-KV=V1&HW-CC-Date=20260330T094657Z&HW-CC-Expire=86400&HW-CC-Sign=E0A48552D80B431C869D13C2BDA5CCCE62EBCBAEC8CD2C73F2D3E84B0D924865)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1098,13 +1098,12 @@ type OnDidStopDraggingCallback = (willFling: boolean) => void
 ListDataSource说明及完整代码参考[示例1添加滚动事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#示例1添加滚动事件)。
 
 ```typescript
+// xxx.ets
 import { ListDataSource } from './ListDataSource';
-
 @Entry
 @Component
 struct ListExample {
   private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-
   build() {
     Column() {
       List({ space: 20, initialIndex: 0 }) {
@@ -1121,7 +1120,7 @@ struct ListExample {
         }, (item: number) => item.toString())
       }
       .enableScrollInteraction(true)
-      .listDirection(Axis.Vertical)
+      .listDirection(Axis.Vertical) // 排列方向
       .scrollBar(BarState.Off)
       .friction(0.6)
       .divider({
@@ -1129,8 +1128,8 @@ struct ListExample {
         color: 0xFFFFFF,
         startMargin: 20,
         endMargin: 20
-      })
-      .edgeEffect(EdgeEffect.Spring)
+      }) // 每行之间的分界线
+      .edgeEffect(EdgeEffect.Spring) // 边缘效果设置为Spring
       .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
         console.info('first' + firstIndex);
         console.info('last' + lastIndex);
@@ -1157,7 +1156,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/e8cNbvTwS_OVnZshTNwHPQ/zh-cn_image_0000002563786797.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024954Z&HW-CC-Expire=86400&HW-CC-Sign=D9371144CAED7DDFA90B3F01496DB0F072B63042B29DD72B9C47A45FC59B2E6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/e8cNbvTwS_OVnZshTNwHPQ/zh-cn_image_0000002563786797.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094657Z&HW-CC-Expire=86400&HW-CC-Sign=642B4598528AC4A9BBE57DB5CB656F976388D868D776F24E50F16D73D5B97B25)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1166,18 +1165,16 @@ struct ListExample {
 ListDataSource说明及完整代码参考[示例1添加滚动事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#示例1添加滚动事件)。
 
 ```typescript
+// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
 import { ListDataSource } from './ListDataSource';
-
 @Entry
 @Component
 struct ListExample {
   private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
   scrollerForList: Scroller = new Scroller();
-
   build() {
     Column() {
-
       List({ space: 20, initialIndex: 0, scroller: this.scrollerForList }) {
         LazyForEach(this.arr, (item: number) => {
           ListItem() {
@@ -1201,22 +1198,21 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/KPVZ3DTKQ7u7aZpab8ngZw/zh-cn_image_0000002533066852.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024954Z&HW-CC-Expire=86400&HW-CC-Sign=37246E1C9CB4E01F2E4DE86EA0AE4B031BDBBC28D4A5D7244CFA127D9AC7271B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/KPVZ3DTKQ7u7aZpab8ngZw/zh-cn_image_0000002533066852.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094657Z&HW-CC-Expire=86400&HW-CC-Sign=175275248F56840B88AA18557757E1B1BCCE8C89249120164FA79EFABAA934D9)
 
 ### 示例3（设置裁剪区域）
 
 该示例通过设置[clipContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#clipcontent14)属性，改变组件的内容层裁剪区域。
 
 ```typescript
+// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct ScrollExample {
   scroller: Scroller = new Scroller();
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   @State clipContent: ContentClipMode | RectShape | undefined = undefined;
-
   build() {
     Column() {
       Scroll(this.scroller) {
@@ -1241,17 +1237,14 @@ struct ScrollExample {
       .safeAreaPadding(LengthMetrics.vp(10))
       .initialOffset({ yOffset: 80 })
       .margin({ top: 20 })
-
       Button('clipContent SAFE_AREA')
         .onClick(() => {
           this.clipContent = ContentClipMode.SAFE_AREA;
         }).margin({ top: 30 })
-
       Button('clipContent BOUNDARY')
         .onClick(() => {
           this.clipContent = ContentClipMode.BOUNDARY;
         }).margin({ top: 35 })
-
       Button('clipContent CONTENT_ONLY')
         .onClick(() => {
           this.clipContent = ContentClipMode.CONTENT_ONLY;
@@ -1261,7 +1254,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/6fee4w6QSr2huY95iocaJw/zh-cn_image_0000002533066902.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024954Z&HW-CC-Expire=86400&HW-CC-Sign=A9F2764EA76D55BFC2F69D835E16ACD5E03CF5E7A607F7C2DA81C44630CB2AD9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/6fee4w6QSr2huY95iocaJw/zh-cn_image_0000002533066902.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094657Z&HW-CC-Expire=86400&HW-CC-Sign=FC1CF9DF91A042D08DB0BD9F27C40F51DD3063FA6857346A91B2002B34A5D546)
 
 ### 示例4（设置滚动条边距）
 
@@ -1270,15 +1263,14 @@ struct ScrollExample {
 ListDataSource说明及完整代码参考[示例1添加滚动事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#示例1添加滚动事件)。
 
 ```typescript
+// xxx.ets
 import { ListDataSource } from './ListDataSource';
 import { LengthMetrics } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct ListExample {
   arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   @State scrollBarMargin: ScrollBarMargin = { start: LengthMetrics.vp(0), end: LengthMetrics.vp(0) };
-
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
       Column() {
@@ -1302,12 +1294,10 @@ struct ListExample {
         .scrollBar(BarState.On)
         .scrollBarMargin(this.scrollBarMargin)
       }.width('100%')
-
       Button('scrollBarMargin')
         .onClick(() => {
           this.scrollBarMargin = { start: LengthMetrics.vp(45), end: LengthMetrics.vp(70) };
         }).margin({ top: 5, left: 20 })
-
       Button('scrollBarMargin2')
         .onClick(() => {
           this.scrollBarMargin = { start: LengthMetrics.vp(15), end: LengthMetrics.vp(100) };
@@ -1317,4 +1307,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/urju59dzSuu70y-QcQP8Tw/zh-cn_image_0000002563866805.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024954Z&HW-CC-Expire=86400&HW-CC-Sign=05C1F9B45724D12B3D0EA93FB4A314E4B7810309B219FA13E9AB53F97608089A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/urju59dzSuu70y-QcQP8Tw/zh-cn_image_0000002563866805.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094657Z&HW-CC-Expire=86400&HW-CC-Sign=E395CFD3FB1C5FB5C6BE440395117844EC0E31D67765970CCFA59D49FED3439C)

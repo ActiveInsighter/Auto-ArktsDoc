@@ -1,4 +1,4 @@
-# 出现/消失转场
+# 出现/消失转场-转场动画-使用动画-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-enter-exit-transition
 
 [transition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component)是基础的组件转场接口，用于实现一个组件出现或者消失时的动画效果。可以通过[TransitionEffect对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component#transitioneffect10对象说明)的组合使用，定义出各式效果。
@@ -18,34 +18,32 @@
 | combine | 组合其他TransitionEffect。 | 组合其他TransitionEffect，一起生效。 |
 | animation | 定义转场效果的动画参数： - 如果不定义会跟随[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation)的动画参数。 - 不支持通过控件的animation接口配置动画参数。 - TransitionEffect中animation的onFinish不生效。 | 调用顺序是从上往下，上面TransitionEffect的animation也会作用到下面TransitionEffect。 |
 
-1. 创建TransitionEffect。 ```typescript private effect: object =  TransitionEffect.OPACITY  .combine(TransitionEffect.scale({ x: 0, y: 0 }).animation({ curve: curves.springMotion(0.6, 1.2) }))  .combine(TransitionEffect.rotate({ angle: 90 }))  .combine(TransitionEffect.translate({ x: 150, y: 150 }))  .combine(TransitionEffect.move(TransitionEdge.END)).animation({curve: curves.springMotion()})  .combine(TransitionEffect.asymmetric(TransitionEffect.scale({  x: 0,  y: 0  }), TransitionEffect.rotate({ angle: 90 }))); ```
+1. 创建TransitionEffect。 ```typescript // 出现时会是所有转场效果的出现效果叠加，消失时会是所有消失转场效果的叠加 // 说明各个effect跟随的动画参数 private effect: object =  TransitionEffect.OPACITY // 创建了透明度转场效果，这里没有调用animation接口，会跟随animateTo的动画参数  // 通过combine方法，添加缩放转场效果，并指定了springMotion(0.6, 1.2)曲线  .combine(TransitionEffect.scale({ x: 0, y: 0 }).animation({ curve: curves.springMotion(0.6, 1.2) }))  // 添加旋转转场效果，这里的动画参数会跟随上面的TransitionEffect，也就是springMotion(0.6, 1.2)  .combine(TransitionEffect.rotate({ angle: 90 }))  // 添加平移转场效果，动画参数会跟随其之上带animation的TransitionEffect，也就是springMotion(0.6, 1.2)  .combine(TransitionEffect.translate({ x: 150, y: 150 }))  // 添加move转场效果，并指定了springMotion曲线  .combine(TransitionEffect.move(TransitionEdge.END)).animation({curve: curves.springMotion()})  // 添加非对称的转场效果，由于这里没有设置animation，会跟随上面的TransitionEffect的animation效果，也就是springMotion  .combine(TransitionEffect.asymmetric(TransitionEffect.scale({  x: 0,  y: 0  }), TransitionEffect.rotate({ angle: 90 }))); ```
 2. 将转场效果通过[transition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component)接口设置到组件。 ```typescript Text('test')  .transition(this.effect) ```
-3. 新增或者删除组件触发转场。 ```typescript @State isPresent: boolean = true; if (this.isPresent) {  Text('test')  .transition(this.effect) } this.getUIContext()?.animateTo({ curve: curves.springMotion() }, () => {  this.isPresent = false; }) this.isPresent = false; ```
+3. 新增或者删除组件触发转场。 ```typescript @State isPresent: boolean = true; // ... if (this.isPresent) {  Text('test')  .transition(this.effect) } // ... // 控制新增或者删除组件 // 方式一：将控制变量放到animateTo闭包内，未通过animation接口定义动画参数的TransitionEffect将跟随animateTo的动画参数 this.getUIContext()?.animateTo({ curve: curves.springMotion() }, () => {  this.isPresent = false; }) // 方式二：直接控制删除或者新增组件，动画参数由TransitionEffect的animation接口配置 this.isPresent = false; ```
 
 完整的示例代码和效果如下，示例中采用直接删除或新增组件的方式触发转场，也可以替换为在[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explicit-animation)闭包内改变控制变量触发转场。
 
 ```typescript
 import { curves } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct TransitionEffectDemo {
   @State isPresent: boolean = false;
-
+  // 第一步：创建TransitionEffect
   private effect: TransitionEffect =
-
+    // 创建默认透明度转场效果，并指定了springMotion(0.6, 0.8)曲线
     TransitionEffect.OPACITY.animation({
       curve: curves.springMotion(0.6, 0.8)
-    })
+    })// 通过combine方法，这里的动画参数会跟随上面的TransitionEffect，也就是springMotion(0.6, 0.8)
       .combine(TransitionEffect.scale({
         x: 0,
         y: 0
-      }))
-      .combine(TransitionEffect.rotate({ angle: 90 }))
+      }))// 添加旋转转场效果，这里的动画参数会跟随上面带animation的TransitionEffect，也就是springMotion(0.6, 0.8)
+      .combine(TransitionEffect.rotate({ angle: 90 }))// 添加平移转场效果，这里的动画参数使用指定的springMotion()
       .combine(TransitionEffect.translate({ y: 150 })
-        .animation({ curve: curves.springMotion() }))
+        .animation({ curve: curves.springMotion() }))// 添加move转场效果，这里的动画参数会跟随上面的TransitionEffect，也就是springMotion()
       .combine(TransitionEffect.move(TransitionEdge.END));
-
   build() {
     Stack() {
       if (this.isPresent) {
@@ -60,10 +58,10 @@ struct TransitionEffectDemo {
         .height(150)
         .borderRadius(10)
         .backgroundColor(0xf56c6c)
-
+        // 第二步：将转场效果通过transition接口设置到组件
         .transition(this.effect)
       }
-
+      // 边框
       Column()
         .width(155)
         .height(155)
@@ -72,7 +70,7 @@ struct TransitionEffectDemo {
           radius: 10,
           color: Color.Black
         })
-
+      // 第三步：新增或者删除组件触发转场，控制新增或者删除组件
       Button('Click')
         .margin({ top: 320 })
         .onClick(() => {
@@ -85,7 +83,7 @@ struct TransitionEffectDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/UFKqGrPyT4qZgqgFSoatww/zh-cn_image_0000002563865951.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024831Z&HW-CC-Expire=86400&HW-CC-Sign=C8B56097ECAB75C21500ABBB6AC70BCED3F35BCCD2E25C9BBBED51E32994EE4A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/UFKqGrPyT4qZgqgFSoatww/zh-cn_image_0000002563865951.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094546Z&HW-CC-Expire=86400&HW-CC-Sign=130E8B4EECD50B5E37C41D1B36BB7C2045C62ED0035BC611888C94A537C3E9B7)
 
 对多个组件添加转场效果时，可以在[animation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animatorproperty#animation)动画参数中配置不同的delay值，实现组件渐次出现消失的效果：
 
@@ -94,19 +92,16 @@ const ITEM_COUNTS = 9;
 const ITEM_COLOR = '#ED6F21';
 const INTERVAL = 30;
 const DURATION = 300;
-
 @Entry
 @Component
 struct Index1 {
   @State isGridShow: boolean = false;
   private dataArray: number[] = new Array(ITEM_COUNTS);
-
   aboutToAppear(): void {
     for (let i = 0; i < ITEM_COUNTS; i++) {
       this.dataArray[i] = i;
     }
   }
-
   build() {
     Stack() {
       if (this.isGridShow) {
@@ -119,11 +114,12 @@ struct Index1 {
               .size({ width: 50, height: 50 })
               .backgroundColor(ITEM_COLOR)
               .transition(TransitionEffect.OPACITY
-                .combine(TransitionEffect.scale({ x: 0.5, y: 0.5 }))
+                .combine(TransitionEffect.scale({ x: 0.5, y: 0.5 }))// 对每个方格的转场添加delay，实现组件的渐次出现消失效果
                 .animation({ duration: DURATION, curve: Curve.Friction, delay: INTERVAL * index }))
               .borderRadius(10)
             }
-
+            // 消失时，如果不对方格的所有父控件添加转场效果，则方格的消失转场不会生效
+            // 此处让方格的父控件在出现消失转场时一直以0.99的透明度显示，使得方格的转场效果不受影响
             .transition(TransitionEffect.opacity(0.99))
           }, (item: number) => item.toString())
         }
@@ -131,7 +127,8 @@ struct Index1 {
         .rowsGap(15)
         .columnsGap(15)
         .size({ width: 180, height: 180 })
-
+        // 消失时，如果不对方格的所有父控件添加转场效果，则方格的消失转场不会生效
+        // 此处让父控件在出现消失转场时一直以0.99的透明度显示，使得方格的转场效果不受影响
         .transition(TransitionEffect.opacity(0.99))
       }
     }
@@ -148,4 +145,4 @@ struct Index1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/CFYHotRiSVSANl5DbyQfTg/zh-cn_image_0000002563785997.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024831Z&HW-CC-Expire=86400&HW-CC-Sign=A64490BBE9587A50601720D2C0CCC5E1B7E416F4F532F4F4B5947FAD174FECF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/CFYHotRiSVSANl5DbyQfTg/zh-cn_image_0000002563785997.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094546Z&HW-CC-Expire=86400&HW-CC-Sign=4F6DCD88B411BB59AF9175B2F2FFBCAD79794769474613C59106AABEF181DFBE)

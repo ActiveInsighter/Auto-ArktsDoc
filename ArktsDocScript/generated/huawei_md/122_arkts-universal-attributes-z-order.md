@@ -1,4 +1,4 @@
-# Z序控制
+# Z序控制-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-z-order
 
 组件的Z序，设置同一容器中兄弟组件的堆叠顺序。
@@ -63,11 +63,11 @@ struct ZIndexExample {
 
 Stack容器内子组件不设置zIndex的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/TLqVI5BhRyex4UdgfxrNRA/zh-cn_image_0000002532906782.png?HW-CC-KV=V1&HW-CC-Date=20260330T024900Z&HW-CC-Expire=86400&HW-CC-Sign=73BF56647ED3512E3B94AABE6620630540D340559E5410333158196C126133A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/TLqVI5BhRyex4UdgfxrNRA/zh-cn_image_0000002532906782.png?HW-CC-KV=V1&HW-CC-Date=20260330T094616Z&HW-CC-Expire=86400&HW-CC-Sign=A5CFC8396CB3B6A5498E68A79516EA474D370F1D3788167F5C66439F8ADC959C)
 
 Stack容器子组件设置zIndex后的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bZCrexacSRSI0PhdqRRIjQ/zh-cn_image_0000002533066730.png?HW-CC-KV=V1&HW-CC-Date=20260330T024900Z&HW-CC-Expire=86400&HW-CC-Sign=40462CFBAECC2460FAB36AB92A3A9A90B090DF66C10AE93087FEF9FD67DDA7BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bZCrexacSRSI0PhdqRRIjQ/zh-cn_image_0000002533066730.png?HW-CC-KV=V1&HW-CC-Date=20260330T094616Z&HW-CC-Expire=86400&HW-CC-Sign=3A3ABFAB8C24587AF0353B5FD9BCA4C4ABD0E0F25DDE0715BF739AAF03B56386)
 
 ### 示例2（动态修改zIndex属性）
 
@@ -103,15 +103,15 @@ struct ZIndexExample {
 
 不点击Button修改zIndex值的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/YykxW3ooQxOMKyZZGtQdJQ/zh-cn_image_0000002563866633.png?HW-CC-KV=V1&HW-CC-Date=20260330T024900Z&HW-CC-Expire=86400&HW-CC-Sign=44F69415FE6BAB760422BA81E110258C733235858EC8A201ECA22B1E30D96310)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/YykxW3ooQxOMKyZZGtQdJQ/zh-cn_image_0000002563866633.png?HW-CC-KV=V1&HW-CC-Date=20260330T094616Z&HW-CC-Expire=86400&HW-CC-Sign=A04A756A2A67F8A5DA01AED4242E2F9BFB88D6A9DD26122F37F02F99E6559E9B)
 
 点击Button动态修改zIndex，使Text1和Text2的zIndex相等，因为在点击Button前的层级顺序上根据zIndex进行稳定排序，层级顺序不发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/VtPReHi4RvmIoqU7Qi6BDw/zh-cn_image_0000002563786679.png?HW-CC-KV=V1&HW-CC-Date=20260330T024900Z&HW-CC-Expire=86400&HW-CC-Sign=6F36C6344E7006F4E6DCFF4E371913F29473D5078E090B8F38FE526F5A90CBDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/VtPReHi4RvmIoqU7Qi6BDw/zh-cn_image_0000002563786679.png?HW-CC-KV=V1&HW-CC-Date=20260330T094616Z&HW-CC-Expire=86400&HW-CC-Sign=385E0E4F5175414B10E75E495439923269980DD94658DA22CCEA07B560812BB1)
 
 点击Button动态修改zIndex，使Text2的zIndex大于Text1，层级顺序发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/AjvCjKWvRkKA7MSaWl-0Og/zh-cn_image_0000002532906784.png?HW-CC-KV=V1&HW-CC-Date=20260330T024900Z&HW-CC-Expire=86400&HW-CC-Sign=8D1EE21BD61EC3459BCBC9D596ACCBEA2443699E1173C3253E9D03EDD07FD2E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/AjvCjKWvRkKA7MSaWl-0Og/zh-cn_image_0000002532906784.png?HW-CC-KV=V1&HW-CC-Date=20260330T094616Z&HW-CC-Expire=86400&HW-CC-Sign=C32279F05CF9FCB5556DDCB72E98D75D77403EAF6D87F0198E1A52482C3A817C)
 
 ### 示例3（设置不同容器内组件的zIndex属性）
 
@@ -145,4 +145,4 @@ struct ZIndexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/FWU-CqAWQbe6Bbh5rJTiQw/zh-cn_image_0000002533066732.png?HW-CC-KV=V1&HW-CC-Date=20260330T024900Z&HW-CC-Expire=86400&HW-CC-Sign=43064A7E3F9C4E793AFCA978E3560FE6408691A99E75C06654235F539353319D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/FWU-CqAWQbe6Bbh5rJTiQw/zh-cn_image_0000002533066732.png?HW-CC-KV=V1&HW-CC-Date=20260330T094616Z&HW-CC-Expire=86400&HW-CC-Sign=E51083C8970C99E68CFDF3B87191550539B9F1E013FFE50ACA1C47E262C13592)

@@ -1,4 +1,4 @@
-# RelativeContainer
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-relativecontainer
 
 相对布局组件，用于复杂场景中元素对齐的布局。
@@ -192,7 +192,6 @@ struct Index {
           left: { anchor: "__container__", align: HorizontalAlign.Start }
         })
         .id("row1")
-
         Row() {
           Text('row2')
         }
@@ -205,7 +204,6 @@ struct Index {
           right: { anchor: "__container__", align: HorizontalAlign.End }
         })
         .id("row2")
-
         Row() {
           Text('row3')
         }
@@ -218,7 +216,6 @@ struct Index {
           right: { anchor: "row2", align: HorizontalAlign.Start }
         })
         .id("row3")
-
         Row() {
           Text('row4')
         }.justifyContent(FlexAlign.Center)
@@ -230,7 +227,6 @@ struct Index {
           right: { anchor: "row1", align: HorizontalAlign.End }
         })
         .id("row4")
-
         Row() {
           Text('row5')
         }.justifyContent(FlexAlign.Center)
@@ -252,7 +248,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mu9heXBtSVaV_fAnfKleSA/zh-cn_image_0000002563866743.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=7A275EE932F26CE542F93F0D3AA905E31F5576213D6D9347075CAD04B1BBFA9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mu9heXBtSVaV_fAnfKleSA/zh-cn_image_0000002563866743.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=BD88B84350D57766505093BE2D18392CB64DEF37B4F35D45F31DB07F11BECE35)
 
 ### 示例2（子组件设置外边距）
 
@@ -278,7 +274,6 @@ struct Index {
         })
         .id("row1")
         .margin(10)
-
         Row() {
           Text('row2')
         }
@@ -291,7 +286,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Top }
         })
         .id("row2")
-
         Row() {
           Text('row3')
         }
@@ -304,7 +298,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Bottom }
         })
         .id("row3")
-
         Row() {
           Text('row4')
         }
@@ -328,7 +321,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/taoaIGt7TbaPpGGe9xxZzw/zh-cn_image_0000002563786789.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=92E095E0E293023AC9AEF680FE708AFE554B19493A48175C90CEC64F4ED5F01B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/taoaIGt7TbaPpGGe9xxZzw/zh-cn_image_0000002563786789.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=4167FA0AD3E446AB667464FCED4D62B1F435E5D5915C41B4ADA2C95A58E5A913)
 
 ### 示例3（设置容器大小自适应内容）
 
@@ -349,7 +342,6 @@ struct Index {
         .height(100)
         .backgroundColor('#a3cf62')
         .id("row1")
-
         Row() {
           Text('row2')
         }
@@ -362,7 +354,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Top }
         })
         .id("row2")
-
         Row() {
           Text('row3')
         }
@@ -375,7 +366,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Bottom }
         })
         .id("row3")
-
         Row() {
           Text('row4')
         }
@@ -398,7 +388,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/t-3xX1LcSU6tkmqsPmwMSQ/zh-cn_image_0000002532906894.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=BDD003CC299ECD401C50D75903251F0C37D84F3ADC8EFEFA52CAC095A211245B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/t-3xX1LcSU6tkmqsPmwMSQ/zh-cn_image_0000002532906894.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=215BD887E462BADEAAF3A2B3B6E50214FDC3CA8D15F8D3CECE3AD3A52296C0AF)
 
 ### 示例4（设置偏移）
 
@@ -433,7 +423,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/l_cKoidLRDa-zgQvJjwXNA/zh-cn_image_0000002533066842.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=BB6912B67B2CC1CC83CC235EA2F0220FC1C41A688FDB463753DB7FF35A55F1F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/l_cKoidLRDa-zgQvJjwXNA/zh-cn_image_0000002533066842.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=78B99C36108B2BDFD8F907B206FD12618DBAEB28EFD2D7CBB604288990175BE9)
 
 ### 示例5（设置辅助线）
 
@@ -468,7 +458,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/bPpR5bl1T-2mjxs7-D6OJw/zh-cn_image_0000002563866745.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=3E569D1BB73B06FEB2FDE4B02B07EC9B1802E187F417FEA4E82D2A0D6AB18791)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/bPpR5bl1T-2mjxs7-D6OJw/zh-cn_image_0000002563866745.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=C81D2A3E0185026F723097A6F0DE27A1554489F936B559017BBFEC199D8B597C)
 
 ### 示例6（设置屏障）
 
@@ -489,7 +479,6 @@ struct Index {
         .height(100)
         .backgroundColor('#a3cf62')
         .id("row1")
-
         Row() {
           Text('row2')
         }
@@ -502,7 +491,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Bottom }
         })
         .id("row2")
-
         Row() {
           Text('row3')
         }
@@ -515,7 +503,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Top }
         })
         .id("row3")
-
         Row() {
           Text('row4')
         }
@@ -541,7 +528,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cHP55KPmSnmC-7MU4H7Lyg/zh-cn_image_0000002563786791.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=AD87A695006AF88510100D849B96E2AE13A6932FC7E8F569597DEA35D4035D01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/cHP55KPmSnmC-7MU4H7Lyg/zh-cn_image_0000002563786791.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=24310FD212819CF40B2C0F3464168D61F5EA718CF9763446F23D986C4EC86352)
 
 ### 示例7（设置链）
 
@@ -568,7 +555,6 @@ struct Index {
         })
         .id("row1")
         .chainMode(Axis.Horizontal, ChainStyle.SPREAD)
-
         Row() {
           Text('row2')
         }
@@ -582,7 +568,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Top }
         })
         .id("row2")
-
         Row() {
           Text('row3')
         }
@@ -596,7 +581,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Top }
         })
         .id("row3")
-
         Row() {
           Text('row4')
         }
@@ -611,7 +595,6 @@ struct Index {
         })
         .id("row4")
         .chainMode(Axis.Horizontal, ChainStyle.SPREAD_INSIDE)
-
         Row() {
           Text('row5')
         }
@@ -625,7 +608,6 @@ struct Index {
           top: { anchor: "row4", align: VerticalAlign.Top }
         })
         .id("row5")
-
         Row() {
           Text('row6')
         }
@@ -639,7 +621,6 @@ struct Index {
           top: { anchor: "row4", align: VerticalAlign.Top }
         })
         .id("row6")
-
         Row() {
           Text('row7')
         }
@@ -654,7 +635,6 @@ struct Index {
         })
         .id("row7")
         .chainMode(Axis.Horizontal, ChainStyle.PACKED)
-
         Row() {
           Text('row8')
         }
@@ -668,7 +648,6 @@ struct Index {
           top: { anchor: "row7", align: VerticalAlign.Top }
         })
         .id("row8")
-
         Row() {
           Text('row9')
         }
@@ -692,7 +671,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CNURKWXDTKqYvCkoYdn1cw/zh-cn_image_0000002532906896.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=6AA40102EA639CD6FFF935968E6F7CA5B3DE6B7E740E6218116F50EF43AAFB1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/CNURKWXDTKqYvCkoYdn1cw/zh-cn_image_0000002532906896.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=8914C95E0CA2083D6E2436E1BC036BF9DE82DC032E975BAE1B777B8FA9571C58)
 
 ### 示例8（链中设置偏移）
 
@@ -720,7 +699,6 @@ struct Index {
         })
         .id("row1")
         .chainMode(Axis.Horizontal, ChainStyle.PACKED)
-
         Row() {
           Text('row2')
         }
@@ -734,7 +712,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Top }
         })
         .id("row2")
-
         Row() {
           Text('row3')
         }
@@ -758,7 +735,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1sEu21ASQ9Krg7KQgFUcxA/zh-cn_image_0000002533066844.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=0190CD88C613F3954CB5F746E5AF20BD061CB5BB69B99AB3E67722B6A1BD9808)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1sEu21ASQ9Krg7KQgFUcxA/zh-cn_image_0000002533066844.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=B77E30E69C97F82A3C872B63BC71EB9C9D20E393786ECC52EE1BFB69A96C0D72)
 
 ### 示例9（设置镜像模式）
 
@@ -779,7 +756,6 @@ struct Index {
         .height(100)
         .backgroundColor('#a3cf62')
         .id("row1")
-
         Row() {
           Text('row2')
         }
@@ -792,7 +768,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Bottom }
         })
         .id("row2")
-
         Row() {
           Text('row3')
         }
@@ -805,7 +780,6 @@ struct Index {
           top: { anchor: "row1", align: VerticalAlign.Top }
         })
         .id("row3")
-
         Row() {
           Text('row4')
         }
@@ -832,7 +806,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6c1tgIghSzO3ih3Hq8D7HQ/zh-cn_image_0000002563866747.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=98DFEDDEDED58D9D0D0C85371D3CF9A068B877213CDDD3881B400CFA3DA82AA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6c1tgIghSzO3ih3Hq8D7HQ/zh-cn_image_0000002563866747.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=C18F7CD6001784C8DD92CECDABF8C2ABB6850B1CA4856E0F2980826629CD435B)
 
 ### 示例10（设置链中节点权重）
 
@@ -859,7 +833,6 @@ struct Index {
         })
         .id("row1")
         .chainMode(Axis.Horizontal, ChainStyle.PACKED)
-
         Row() {
           Text('row2')
         }
@@ -874,7 +847,6 @@ struct Index {
         })
         .id("row2")
         .chainWeight({ horizontal: 1 })
-
         Row() {
           Text('row3')
         }
@@ -899,4 +871,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/VoNjJTuiQKiBOFFeqzYuWg/zh-cn_image_0000002563786793.png?HW-CC-KV=V1&HW-CC-Date=20260330T024849Z&HW-CC-Expire=86400&HW-CC-Sign=5EDEAB6696C93B561AA6A1801A41A6BA5FE0EDFD10A22C6089A399B98B89B3B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/VoNjJTuiQKiBOFFeqzYuWg/zh-cn_image_0000002563786793.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=23F1FE6BFAF358F786E09C74FECC4F0238B58C33C335C64343B76C1F0FD8D44E)

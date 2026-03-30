@@ -1,4 +1,4 @@
-# 安全区域
+# 安全区域-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area
 
 安全区域是指页面的显示区域，默认情况下开发者开发的界面都布局在安全区域内，不与系统设置的避让区比如状态栏、导航栏区域重叠。提供属性方法允许开发者设置组件绘制内容突破安全区域的限制，通过[expandSafeArea](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#expandsafearea)属性支持组件不改变布局情况下扩展其绘制区域至安全区外，通过设置[setKeyboardAvoidMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-expand-safe-area#setkeyboardavoidmode11)来配置虚拟键盘弹出时页面的避让模式。页面中有标题栏等文字不希望和避让区重叠时，建议对组件设置expandSafeArea属性实现沉浸式效果，也可以直接通过窗口接口[setWindowLayoutFullScreen](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-window-window#setwindowlayoutfullscreen9)设置全屏沉浸式。
@@ -212,7 +212,7 @@ struct SafeAreaExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/dPaunz1rR-yEe2_EB9WcLA/zh-cn_image_0000002533066742.png?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=F4F5B648815F134BEFE0441709C62CAF501E1EF5FFB1B25A584E1154C8263BF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/dPaunz1rR-yEe2_EB9WcLA/zh-cn_image_0000002533066742.png?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=9301704040A3365113D0781A8454E47F229A7A808023CBCA755A53F166B06B58)
 
 ### 示例2（同时设置固定宽高和expandSafeArea属性）
 
@@ -243,7 +243,7 @@ struct SafeAreaExample2 {
 
 如下图：Column组件扩展至了顶部状态栏[SafeAreaEdge.TOP]，未扩展至底部导航条[SafeAreaEdge.BOTTOM]，扩展后的组件高度与设置的高度一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/xdV2SPl6RJediZGN2Qn7rQ/zh-cn_image_0000002563866645.png?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=7590B01101718F68FF6DC8239F67F6F8B731BECA8D97EC9092A666F7FBD9972E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/xdV2SPl6RJediZGN2Qn7rQ/zh-cn_image_0000002563866645.png?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=8D001D0143210DD403A21EE29B3BE1289E05D2364948349D56A49A40C0DC0406)
 
 ### 示例3（键盘避让时固定背景图位置）
 
@@ -286,7 +286,7 @@ struct SafeAreaExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/KKhcD6c8RFKCWUEWes6lBg/zh-cn_image_0000002563786691.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=4163A11AED7B0F85189981FC79EA1AE650439D85F5FD107F52F2B2A6FFCC1C54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/KKhcD6c8RFKCWUEWes6lBg/zh-cn_image_0000002563786691.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=C4FC6D0B9B5F7141EA9F4D5B63378E1DDEF365E297C007B6B4B43D977BEAB85F)
 
 ### 示例4（设置键盘避让模式为压缩）
 
@@ -338,7 +338,7 @@ struct KeyboardAvoidExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/-b6zmtN3QUa2k0jTttyvjA/zh-cn_image_0000002532906796.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=931A7F0164C6991E30034D9EFF41093035C81DF2FB5BA7B370A530912D9867CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/-b6zmtN3QUa2k0jTttyvjA/zh-cn_image_0000002532906796.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=FBCB908DF35B1E70129784A4E9F2C2ECD66264E17A7B4213FA26BA726BC97971)
 
 ### 示例5（设置键盘避让模式为上抬）
 
@@ -390,7 +390,7 @@ struct KeyboardAvoidExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/POwA7s53RbGSekPl443KfA/zh-cn_image_0000002533066744.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=FAD454A4F3751CCD310AF0096B60930787EE2526F84966B6C10656541BE0C8E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/POwA7s53RbGSekPl443KfA/zh-cn_image_0000002533066744.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=5973B48349F7FFA6022B4223E8B98CC36E89A1770CDC6D65B788769A0673AB8B)
 
 ### 示例6（切换避让模式）
 
@@ -449,7 +449,7 @@ struct KeyboardAvoidExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Ak6vYxGxQ36hH0NZ9oHu5g/zh-cn_image_0000002563866647.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=0B0C610358F20E8D5BCDC1396B5E7CF129917A898B3C4D7B8538B1220304B40D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Ak6vYxGxQ36hH0NZ9oHu5g/zh-cn_image_0000002563866647.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=ED89B3008536260707E7D72FE6896C48C8EA2009F8B49C3C6909D45786358859)
 
 ### 示例7（滚动类容器扩展安全区）
 
@@ -515,7 +515,7 @@ struct ExpandSafeAreaTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/3fgZxiLzQju4e91Hj_VQ5A/zh-cn_image_0000002563786693.png?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=4C7F35D02995867372F865C9DFF350E75B23BE48CBE4432C809AAB7E3055C79A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/3fgZxiLzQju4e91Hj_VQ5A/zh-cn_image_0000002563786693.png?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=AE6F435618EE97FBBDD78248F52256D5422E543B3115A51C3D236BC2E2CA21E4)
 
 ### 示例8（ignoreLayoutSafeArea延伸组件布局范围）
 
@@ -556,7 +556,7 @@ struct IgnoreLayoutSafeAreaTest1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/IgYVeqcNSimQzJjBCn9ECg/zh-cn_image_0000002532906798.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=2DC80CDE7AD293B8B339614E022009956679CF6A7C4FA7A75A80CBBF4C6A63AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/IgYVeqcNSimQzJjBCn9ECg/zh-cn_image_0000002532906798.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=A5DB7D924CE30D4E4ABE177A1731D565A7AB20576BE84490E724937946F49410)
 
 ### 示例9（ignoreLayoutSafeArea配合LayoutPolicy.matchParent延伸组件布局范围）
 
@@ -595,7 +595,7 @@ struct IgnoreLayoutSafeAreaTest2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Iyf23s-ZQQuiP81mfsOXzQ/zh-cn_image_0000002533066746.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=88DAD03DC6512DE5E4DA8D26B7D1E56D18119BEE810279966BA9D5502D03F6B1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Iyf23s-ZQQuiP81mfsOXzQ/zh-cn_image_0000002533066746.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=DF799C18AA4A371EA9F9F09A745787AC754D1F40F6838FAF87ED33D5352E7A10)
 
 ### 示例10（expandSafeArea与ignoreLayoutSafeArea的区别）
 
@@ -669,4 +669,4 @@ struct IgnoreLayoutSafeAreaTest3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Iu_aGftMSOmTzF-Nrekh_g/zh-cn_image_0000002563866649.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T024910Z&HW-CC-Expire=86400&HW-CC-Sign=50479E74CEC9444FCA12631029C51A01C43BB3D65F2CF6C0918697818F0BF3D9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Iu_aGftMSOmTzF-Nrekh_g/zh-cn_image_0000002563866649.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T094623Z&HW-CC-Expire=86400&HW-CC-Sign=93230DA632ED902E3CFEFC015034E5AED399F6AA2F4D0185FE49EFBD0F703E14)

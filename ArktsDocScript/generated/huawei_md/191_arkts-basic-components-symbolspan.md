@@ -1,4 +1,4 @@
-# SymbolSpan
+# SymbolSpan-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolspan
 
 作为Text组件的子组件，用于显示图标小符号的组件。
@@ -123,7 +123,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DCw0UnWZT_S6QnwiPuJHsw/zh-cn_image_0000002563866943.png?HW-CC-KV=V1&HW-CC-Date=20260330T025038Z&HW-CC-Expire=86400&HW-CC-Sign=E6786C4252894269F8AE97323E41D4AD85028039164A84C0C98A7D53AA1C379A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DCw0UnWZT_S6QnwiPuJHsw/zh-cn_image_0000002563866943.png?HW-CC-KV=V1&HW-CC-Date=20260330T094725Z&HW-CC-Expire=86400&HW-CC-Sign=B131379D3F0EAB19AF8C1E5F91C452A04393E33B456AB1A61A00E950CFF5331B)
 
 ### effectStrategy
 
@@ -272,7 +272,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CZ-TkdA5SvOHnkNMTwhmng/zh-cn_image_0000002563786989.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025038Z&HW-CC-Expire=86400&HW-CC-Sign=5812ED6043C8ADB5D0D3388F61660382A921599B3439DD9E53200CCB3081E436)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CZ-TkdA5SvOHnkNMTwhmng/zh-cn_image_0000002563786989.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094725Z&HW-CC-Expire=86400&HW-CC-Sign=C2906FB3E5D59DB0996317FD103F75EEA6D0887BF3140BAD9A5F991B1568DD3F)
 
 ### 示例2（设置动态属性）
 
@@ -301,4 +301,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/FClECQw1Qzy8-jhDSYPO2A/zh-cn_image_0000002532907094.png?HW-CC-KV=V1&HW-CC-Date=20260330T025038Z&HW-CC-Expire=86400&HW-CC-Sign=96FB669FD4872AC106599BB82CF0335ADA9194E1458AF4EC87B1CE69388311E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/FClECQw1Qzy8-jhDSYPO2A/zh-cn_image_0000002532907094.png?HW-CC-KV=V1&HW-CC-Date=20260330T094725Z&HW-CC-Expire=86400&HW-CC-Sign=128650A10D6202DC3D25C5E376F2690AA0FF113F2D4FD05D411DB12CEB42E761)

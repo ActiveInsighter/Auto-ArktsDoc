@@ -1,4 +1,4 @@
-# GridItem
+# GridItem-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-griditem
 
 网格容器中单项内容容器。
@@ -269,7 +269,7 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/GIlR8R8FRIuZBalCxQDpUA/zh-cn_image_0000002532906928.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024939Z&HW-CC-Expire=86400&HW-CC-Sign=3F92ABEE8EDB9E2172A71955468738D81F5AD377CE09DFE6A08251E955A1FE5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/GIlR8R8FRIuZBalCxQDpUA/zh-cn_image_0000002532906928.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094647Z&HW-CC-Expire=86400&HW-CC-Sign=684F5166D0CF445FE046373CA318AD2EC9A14F290776E461DB4019DECCC46305)
 
 ### 示例2（设置GridItem样式）
 
@@ -335,4 +335,4 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/tLb49u2uQoeo6YDBU-R1fA/zh-cn_image_0000002533066876.png?HW-CC-KV=V1&HW-CC-Date=20260330T024939Z&HW-CC-Expire=86400&HW-CC-Sign=BE7DD9C914FAB2F73446A798AFF05BEF46B904B35EC7C16D1BA05A4D0BA23713)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/tLb49u2uQoeo6YDBU-R1fA/zh-cn_image_0000002533066876.png?HW-CC-KV=V1&HW-CC-Date=20260330T094647Z&HW-CC-Expire=86400&HW-CC-Sign=B78EA935612BA757FC1FA7D793DBDD1A109A3E55C83D5CDF5BE7ED24545B909A)

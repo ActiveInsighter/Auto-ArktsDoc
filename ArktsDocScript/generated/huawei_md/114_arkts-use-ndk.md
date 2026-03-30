@@ -1,4 +1,4 @@
-# UI开发 (基于NDK构建UI)
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-ndk
 
 - **[基于NDK构建UI概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-ui-overview)**

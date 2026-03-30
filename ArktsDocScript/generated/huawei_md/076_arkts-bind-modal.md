@@ -1,4 +1,4 @@
-# 绑定模态页面
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-bind-modal
 
 - **[绑定模态页面概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-overview)**

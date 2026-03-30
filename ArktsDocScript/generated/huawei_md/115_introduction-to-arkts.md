@@ -1,4 +1,4 @@
-# ArkTS语言介绍
+# ArkTS语言介绍-学习ArkTS语言-基础入门 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts
 
 ArkTS是一种设计用于构建高性能应用的编程语言。它在继承TypeScript语法的基础上进行了优化，以提供更高的性能和开发效率。

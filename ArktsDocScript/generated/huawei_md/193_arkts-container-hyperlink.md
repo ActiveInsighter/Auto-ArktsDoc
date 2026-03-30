@@ -1,4 +1,4 @@
-# Hyperlink
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-hyperlink
 
 超链接组件，组件宽高范围内点击实现跳转。
@@ -79,4 +79,4 @@ struct HyperlinkExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/CfwqEnZ8TrGhaJkfymClQw/zh-cn_image_0000002532907096.png?HW-CC-KV=V1&HW-CC-Date=20260330T025040Z&HW-CC-Expire=86400&HW-CC-Sign=F9ACE7EB37466AD7AD7DE7330C3B56E9B02CB0AFF8E875D628A1FF928EB12418)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/CfwqEnZ8TrGhaJkfymClQw/zh-cn_image_0000002532907096.png?HW-CC-KV=V1&HW-CC-Date=20260330T094730Z&HW-CC-Expire=86400&HW-CC-Sign=0F4A741860FFBCE10138D2C263D3C567812AD4838ABA1A58F9514B4C39E199AA)

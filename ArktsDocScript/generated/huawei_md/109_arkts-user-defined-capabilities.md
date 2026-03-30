@@ -1,4 +1,4 @@
-# 使用自定义能力
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined-capabilities
 
 - **[自定义能力概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-defined)**

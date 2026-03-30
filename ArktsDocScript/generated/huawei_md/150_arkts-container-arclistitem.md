@@ -1,4 +1,4 @@
-# ArcListItem
+# ArcListItem-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem
 
 用来展示列表具体子组件，必须配合[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)来使用。
@@ -81,16 +81,17 @@ swipeAction(options: Optional<SwipeActionOptions>)
 该示例展示了子项关闭自动缩放和开启自动缩放后的对比效果。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics, CircleShape } from '@kit.ArkUI';
-// 从API version 22开始，无需手动导入ArcListAttribute和ArcListItemAttribute。具体请参考ArcList、ArcListItem的导入模块说明。
+
 import { ArcList, ArcListItem, ArcListAttribute, ArcListItemAttribute } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct ArcListItemExample {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  private watchSize: string = '466px'; // 手表默认宽高：466*466
-  private itemSize: string = '414px'; // item宽度
+  private watchSize: string = '466px';
+  private itemSize: string = '414px';
+
   @Builder
   buildList() {
     Stack() {
@@ -100,6 +101,7 @@ struct ArcListItemExample {
       .height(this.watchSize)
       .clipShape(new CircleShape({ width: '100%', height: '100%' }))
       .backgroundColor(0x707070)
+
       ArcList({ initialIndex: 3}) {
         ForEach(this.arr, (item: number) => {
           ArcListItem() {
@@ -118,6 +120,7 @@ struct ArcListItemExample {
     .width(this.watchSize)
     .height(this.watchSize)
   }
+
   build() {
     Column() {
       this.buildList();
@@ -130,4 +133,4 @@ struct ArcListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/03gVhChoTIusfRCbgWXmWQ/zh-cn_image_0000002563786811.png?HW-CC-KV=V1&HW-CC-Date=20260330T024935Z&HW-CC-Expire=86400&HW-CC-Sign=FBB5D5B91A5D1EADD8188B5606112CDDB700A0976EC2B162F472BC629E71536D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/03gVhChoTIusfRCbgWXmWQ/zh-cn_image_0000002563786811.png?HW-CC-KV=V1&HW-CC-Date=20260330T094646Z&HW-CC-Expire=86400&HW-CC-Sign=D229867ED115326284847855A9FB6306398C1F60AA3DFB9F7B840F30C7F89F2D)

@@ -1,4 +1,4 @@
-# 组件动画
+# 组件动画-使用动画-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-component-animation
 
 ArkUI为组件提供了通用的属性动画和转场动画能力的同时，还为一些组件提供了默认的动画效果。例如，[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)的滑动动效、[Button](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button)的点击动效，是组件自带的默认动画效果。在组件默认动画效果的基础上，开发者还可以通过属性动画和转场动画对容器组件内的子组件动效进行定制。
@@ -33,7 +33,7 @@ struct ComponentDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/EwQIBMt-RjWUNjF5l5y0eg/zh-cn_image_0000002563786009.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024838Z&HW-CC-Expire=86400&HW-CC-Sign=225D85DEDAE9AAF8D521726C8CF2268F7A4BE88027FD9FADCA87B826EF41AA9A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/EwQIBMt-RjWUNjF5l5y0eg/zh-cn_image_0000002563786009.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094552Z&HW-CC-Expire=86400&HW-CC-Sign=C5D46E1AE6184097646A4281364ABD19D0D018B419DC7EE286975E5840059718)
 
 ## 打造组件定制化动效
 
@@ -310,7 +310,7 @@ export struct TaskSwitchMainPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/WssuKIloQ9e8HoGE2r0inA/zh-cn_image_0000002532906114.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024838Z&HW-CC-Expire=86400&HW-CC-Sign=9E97980DAC79D906EB75529074346E043D6A387B29DD92F27E7D7A90504EA9D0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/WssuKIloQ9e8HoGE2r0inA/zh-cn_image_0000002532906114.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094552Z&HW-CC-Expire=86400&HW-CC-Sign=77916A3555B9EDAEE301C4DF29C9CC9F9739EBBC3233910883D4B0C9EF1609ED)
 
 通过animateTo可以实现将List中指定的Item替换到首位，List中其余Item依次向下排列。定制List组件动态替换动效的示例代码和效果如下。
 
@@ -485,7 +485,7 @@ struct ListAutoSortExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BrnSnEhfQ0O9cqfVPZYSnQ/zh-cn_image_0000002533066062.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024838Z&HW-CC-Expire=86400&HW-CC-Sign=CB919093CDCA5674E143B1DAF4A96D7A485F2F78E6BF6768D96E102369FF93C3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BrnSnEhfQ0O9cqfVPZYSnQ/zh-cn_image_0000002533066062.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094552Z&HW-CC-Expire=86400&HW-CC-Sign=13C034C7102653CEA202DA10DD45A5D5080E7601402B5E78FE772B97798FFED3)
 
 ## 示例代码
 

@@ -1,4 +1,4 @@
-# 组件布局
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development
 
 - **[布局概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-overview)**

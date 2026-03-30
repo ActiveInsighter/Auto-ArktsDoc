@@ -1,4 +1,4 @@
-# LazyVGridLayout
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-lazyvgridlayout
 
 该组件用于实现支持懒加载的网格布局，其父组件仅限于[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)或[FlowItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem)，并支持使用自定义组件、[NodeContainer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-nodecontainer)组件封装后，在WaterFlow或FlowItem组件下应用。
@@ -110,7 +110,6 @@ MyDataSource实现了[LazyForEach](https://developer.huawei.com/consumer/cn/doc/
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI'
 import { MyDataSource } from './MyDataSource'
-
 @Entry
 @Component
 struct LazyVGridLayoutSample1 {
@@ -131,7 +130,6 @@ struct LazyVGridLayoutSample1 {
         }
         .columnsTemplate('1fr')
         .rowsGap(LengthMetrics.vp(10))
-
         LazyVGridLayout() {
           LazyForEach(this.arr2, (item:number)=>{
             Text('item' + item.toString())
@@ -151,7 +149,6 @@ struct LazyVGridLayoutSample1 {
     .width('100%').height('100%')
     .backgroundColor('#DCDCDC')
   }
-
   aboutToAppear(): void {
     for (let i = 0; i < 6; i++) {
       this.arr1.pushData(i);
@@ -164,25 +161,22 @@ struct LazyVGridLayoutSample1 {
 ```
 
 ```typescript
+// MyDataSource.ets
 export class BasicDataSource<T> implements IDataSource {
   private listeners: DataChangeListener[] = [];
   protected dataArray: T[] = [];
-
   public totalCount(): number {
     return this.dataArray.length;
   }
-
   public getData(index: number): T {
     return this.dataArray[index];
   }
-
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       console.info('add listener');
       this.listeners.push(listener);
     }
   }
-
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
@@ -190,44 +184,37 @@ export class BasicDataSource<T> implements IDataSource {
       this.listeners.splice(pos, 1);
     }
   }
-
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
     })
   }
-
   notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
     })
   }
-
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     })
   }
-
   notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
     })
   }
-
   notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);
     })
   }
-
   notifyDatasetChange(operations: DataOperation[]): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange(operations);
     })
   }
 }
-
 export class MyDataSource<T> extends BasicDataSource<T> {
   public shiftData(): void {
     this.dataArray.shift();
@@ -252,4 +239,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/P6xrbRvsQPWVTpTTgHgRMA/zh-cn_image_0000002563866797.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024949Z&HW-CC-Expire=86400&HW-CC-Sign=2CC0E7EA99666E172F8BC16ADB96E39B7E7C78E3AA36F57ADA98F9F2774F213F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/P6xrbRvsQPWVTpTTgHgRMA/zh-cn_image_0000002563866797.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094652Z&HW-CC-Expire=86400&HW-CC-Sign=54E1E90905D41057745E5F79AAEA88A750934CADF7FB677EE668D6D1266219AA)

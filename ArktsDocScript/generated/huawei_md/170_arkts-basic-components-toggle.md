@@ -1,4 +1,4 @@
-# Toggle
+# Toggle-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toggle
 
 组件提供勾选框样式、状态按钮样式和开关样式。
@@ -252,7 +252,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/yFOuz5gkSPCYDfn90WnBsA/zh-cn_image_0000002532906990.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025006Z&HW-CC-Expire=86400&HW-CC-Sign=A52025A677EC5BCAC0E0D99CAD936AD2C6AEFFB03D597BF04C6D946DF316E606)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/yFOuz5gkSPCYDfn90WnBsA/zh-cn_image_0000002532906990.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094704Z&HW-CC-Expire=86400&HW-CC-Sign=7CAEC9FA61DCD3A469FC1C32BBA9D099C002FF8BCEEC0DB92A2B4C5B301B62E3)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -293,7 +293,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Kb020t_QSVmKM_7TfRf5Iw/zh-cn_image_0000002533066938.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025006Z&HW-CC-Expire=86400&HW-CC-Sign=3A915B409CDF2F71358E1C3D06AC0846ADC9728C8A40045A16A19CA2E465C727)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Kb020t_QSVmKM_7TfRf5Iw/zh-cn_image_0000002533066938.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094704Z&HW-CC-Expire=86400&HW-CC-Sign=CC5A7F19F07A3C56A63D364B4199D2954F78497721F6860F5CAD2CE6026FD411)
 
 ### 示例3（自定义Toggle样式）
 
@@ -348,4 +348,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/RF74OkEzTxqabkbq0KHyQQ/zh-cn_image_0000002563866841.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025006Z&HW-CC-Expire=86400&HW-CC-Sign=49AF7C6A929C00D069A2B417BE32268CAA5A24F3F62F3B385CB0B9F4E73A4BD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/RF74OkEzTxqabkbq0KHyQQ/zh-cn_image_0000002563866841.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094704Z&HW-CC-Expire=86400&HW-CC-Sign=6A2038E0E43109900C7FDB262A67E085970F1A7A325E60A09BD7EEA6C47F2EF3)

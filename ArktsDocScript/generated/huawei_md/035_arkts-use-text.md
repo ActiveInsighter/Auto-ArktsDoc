@@ -1,4 +1,4 @@
-# 使用文本
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-text
 
 - **[文本概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-introduction)**

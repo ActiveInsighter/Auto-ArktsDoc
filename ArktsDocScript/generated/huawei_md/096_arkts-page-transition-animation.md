@@ -1,4 +1,4 @@
-# 页面转场动画 (不推荐)
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-transition-animation
 
 为了实现更好的转场效果，推荐使用[组件导航(Navigation)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation)和[模态转场](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-transition)。
@@ -35,22 +35,24 @@ PageTransitionExit({ type?: RouteType, duration?: number, curve?: Curve | string
 type为RouteType.None表示对页面栈的push、pop操作均生效，type的默认值为RouteType.None。
 
 ```typescript
+// page A
 pageTransition() {
-
+  // 定义页面进入时的效果，从左侧滑入，时长为1200ms，无论页面栈发生push还是pop操作均可生效
   PageTransitionEnter({ type: RouteType.None, duration: 1200 })
     .slide(SlideEffect.Left)
-
+  // 定义页面退出时的效果，向左侧滑出，时长为1000ms，无论页面栈发生push还是pop操作均可生效
   PageTransitionExit({ type: RouteType.None, duration: 1000 })
     .slide(SlideEffect.Left)
 }
 ```
 
 ```typescript
+// page B
 pageTransition() {
-
+  // 定义页面进入时的效果，从右侧滑入，时长为1000ms，无论页面栈发生push还是pop操作均可生效
   PageTransitionEnter({ type: RouteType.None, duration: 1000 })
     .slide(SlideEffect.Right)
-
+  // 定义页面退出时的效果，向右侧滑出，时长为1200ms，无论页面栈发生push还是pop操作均可生效
   PageTransitionExit({ type: RouteType.None, duration: 1200 })
     .slide(SlideEffect.Right)
 }
@@ -72,34 +74,36 @@ pageTransition() {
 [type](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation#pagetransitionoptions对象说明)为[RouteType.Push](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-transition-animation#routetype枚举说明)表示仅对页面栈的push操作生效，type为RouteType.Pop表示仅对页面栈的pop操作生效。
 
 ```typescript
+// page A
 pageTransition() {
-
+  // 定义页面进入时的效果，从右侧滑入，时长为1200ms，页面栈发生push操作时该效果才生效
   PageTransitionEnter({ type: RouteType.Push, duration: 1200 })
     .slide(SlideEffect.Right)
-
+  // 定义页面进入时的效果，从左侧滑入，时长为1200ms，页面栈发生pop操作时该效果才生效
   PageTransitionEnter({ type: RouteType.Pop, duration: 1200 })
     .slide(SlideEffect.Left)
-
+  // 定义页面退出时的效果，向左侧滑出，时长为1000ms，页面栈发生push操作时该效果才生效
   PageTransitionExit({ type: RouteType.Push, duration: 1000 })
     .slide(SlideEffect.Left)
-
+  // 定义页面退出时的效果，向右侧滑出，时长为1000ms，页面栈发生pop操作时该效果才生效
   PageTransitionExit({ type: RouteType.Pop, duration: 1000 })
     .slide(SlideEffect.Right)
 }
 ```
 
 ```typescript
+// page B
 pageTransition() {
-
+  // 定义页面进入时的效果，从右侧滑入，时长为1000ms，页面栈发生push操作时该效果才生效
   PageTransitionEnter({ type: RouteType.Push, duration: 1000 })
     .slide(SlideEffect.Right)
-
+  // 定义页面进入时的效果，从左侧滑入，时长为1000ms，页面栈发生pop操作时该效果才生效
   PageTransitionEnter({ type: RouteType.Pop, duration: 1000 })
     .slide(SlideEffect.Left)
-
+  // 定义页面退出时的效果，向左侧滑出，时长为1200ms，页面栈发生push操作时该效果才生效
   PageTransitionExit({ type: RouteType.Push, duration: 1200 })
     .slide(SlideEffect.Left)
-
+  // 定义页面退出时的效果，向右侧滑出，时长为1200ms，页面栈发生pop操作时该效果才生效
   PageTransitionExit({ type: RouteType.Pop, duration: 1200 })
     .slide(SlideEffect.Right)
 }
@@ -134,28 +138,28 @@ pageTransition() {
 下面介绍了利用[pushUrl](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#pushurl)跳转能力定义了所有的四种页面转场样式的页面转场动画示例。
 
 ```typescript
+// PageTransitionSrc1
 @Entry
 @Component
 struct PageTransitionSrc1 {
   build() {
     Column() {
-
+      // 请将$r('app.media.mountain')替换为实际资源文件
       Image($r('app.media.mountain'))
         .width('90%')
         .height('80%')
         .objectFit(ImageFit.Fill)
-        .syncLoad(true)
+        .syncLoad(true) // 同步加载图片，使页面出现时图片已经加载完成
         .margin(30)
-
       Row({ space: 10 }) {
         Button("pushUrl")
           .onClick(() => {
-
+            // 路由到下一个页面，push操作
             this.getUIContext().getRouter().pushUrl({ url: 'pages/pageTransition/template3/pageTransitionDst1' });
           })
         Button("back")
           .onClick(() => {
-
+            // 返回到上一页面，相当于pop操作
             this.getUIContext().getRouter().back();
           })
       }.justifyContent(FlexAlign.Center)
@@ -163,18 +167,17 @@ struct PageTransitionSrc1 {
     .width('100%').height('100%')
     .alignItems(HorizontalAlign.Center)
   }
-
   pageTransition() {
-
+    // 定义页面进入时的效果，从右侧滑入，时长为1000ms，页面栈发生push操作时该效果才生效
     PageTransitionEnter({ type: RouteType.Push, duration: 1000 })
       .slide(SlideEffect.Right)
-
+    // 定义页面进入时的效果，从左侧滑入，时长为1000ms，页面栈发生pop操作时该效果才生效
     PageTransitionEnter({ type: RouteType.Pop, duration: 1000 })
       .slide(SlideEffect.Left)
-
+    // 定义页面退出时的效果，向左侧滑出，时长为1000ms，页面栈发生push操作时该效果才生效
     PageTransitionExit({ type: RouteType.Push, duration: 1000 })
       .slide(SlideEffect.Left)
-
+    // 定义页面退出时的效果，向右侧滑出，时长为1000ms，页面栈发生pop操作时该效果才生效
     PageTransitionExit({ type: RouteType.Pop, duration: 1000 })
       .slide(SlideEffect.Right)
   }
@@ -182,28 +185,28 @@ struct PageTransitionSrc1 {
 ```
 
 ```typescript
+// PageTransitionDst1
 @Entry
 @Component
 struct PageTransitionDst1 {
   build() {
     Column() {
-
+      // 请将$r('app.media.forest')替换为实际资源文件
       Image($r('app.media.forest'))
         .width('90%')
         .height('80%')
         .objectFit(ImageFit.Fill)
-        .syncLoad(true)
+        .syncLoad(true) // 同步加载图片，使页面出现时图片已经加载完成
         .margin(30)
-
       Row({ space: 10 }) {
         Button("pushUrl")
           .onClick(() => {
-
+            // 路由到下一页面，push操作
             this.getUIContext().getRouter().pushUrl({ url: 'pages/pageTransition/template3/pageTransitionSrc1' });
           })
         Button("back")
           .onClick(() => {
-
+            // 返回到上一页面，相当于pop操作
             this.getUIContext().getRouter().back();
           })
       }.justifyContent(FlexAlign.Center)
@@ -211,51 +214,50 @@ struct PageTransitionDst1 {
     .width('100%').height('100%')
     .alignItems(HorizontalAlign.Center)
   }
-
   pageTransition() {
-
+    // 定义页面进入时的效果，从右侧滑入，时长为1000ms，页面栈发生push操作时该效果才生效
     PageTransitionEnter({ type: RouteType.Push, duration: 1000 })
       .slide(SlideEffect.Right)
-
+    // 定义页面进入时的效果，从左侧滑入，时长为1000ms，页面栈发生pop操作时该效果才生效
     PageTransitionEnter({ type: RouteType.Pop, duration: 1000 })
       .slide(SlideEffect.Left)
-
+    // 定义页面退出时的效果，向左侧滑出，时长为1000ms，页面栈发生push操作时该效果才生效
     PageTransitionExit({ type: RouteType.Push, duration: 1000 })
       .slide(SlideEffect.Left)
-
+    // 定义页面退出时的效果，向右侧滑出，时长为1000ms，页面栈发生pop操作时该效果才生效
     PageTransitionExit({ type: RouteType.Pop, duration: 1000 })
       .slide(SlideEffect.Right)
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/eikBGNKKQQ67xhJUlhsFNA/zh-cn_image_0000002532906110.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024836Z&HW-CC-Expire=86400&HW-CC-Sign=D59332FE142C685B7A911C7005095B7E19C436406F9DBA57F7B8F1B9C56BC67C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/eikBGNKKQQ67xhJUlhsFNA/zh-cn_image_0000002532906110.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094551Z&HW-CC-Expire=86400&HW-CC-Sign=83C2A08C55843229C3CE5276FC1CC0429B1943D0471EFDCD0D80B4BE4D50AA2C)
 
 下面介绍使用了type为None的页面转场动画示例。
 
 ```typescript
+// PageTransitionSrc2
 @Entry
 @Component
 struct PageTransitionSrc2 {
   build() {
     Column() {
-
+      // 请将$r('app.media.mountain')替换为实际资源文件
       Image($r('app.media.mountain'))
         .width('90%')
         .height('80%')
         .objectFit(ImageFit.Fill)
-        .syncLoad(true)
+        .syncLoad(true) // 同步加载图片，使页面出现时图片已经加载完成
         .margin(30)
-
       Row({ space: 10 }) {
         Button("pushUrl")
           .onClick(() => {
-
+            // 路由到下一页面，push操作
             this.getUIContext().getRouter().pushUrl({ url: 'pages/pageTransition/template4/pageTransitionDst2' });
           })
         Button("back")
           .onClick(() => {
-
+            // 返回到上一页面，相当于pop操作
             this.getUIContext().getRouter().back();
           })
       }.justifyContent(FlexAlign.Center)
@@ -263,12 +265,11 @@ struct PageTransitionSrc2 {
     .width('100%').height('100%')
     .alignItems(HorizontalAlign.Center)
   }
-
   pageTransition() {
-
+    // 定义页面进入时的效果，从左侧滑入，时长为1000ms，无论页面栈发生push还是pop操作均可生效
     PageTransitionEnter({ duration: 1000 })
       .slide(SlideEffect.Left)
-
+    // 定义页面退出时的效果，相对于正常页面位置x方向平移100vp，y方向平移100vp，透明度变为0，时长为1200ms，无论页面栈发生push还是pop操作均可生效
     PageTransitionExit({ duration: 1200 })
       .translate({ x: 100.0, y: 100.0 })
       .opacity(0)
@@ -277,28 +278,28 @@ struct PageTransitionSrc2 {
 ```
 
 ```typescript
+// PageTransitionDst2
 @Entry
 @Component
 struct PageTransitionDst2 {
   build() {
     Column() {
-
+      // 请将$r('app.media.forest')替换为实际资源文件
       Image($r('app.media.forest'))
         .width('90%')
         .height('80%')
         .objectFit(ImageFit.Fill)
-        .syncLoad(true)
+        .syncLoad(true) // 同步加载图片，使页面出现时图片已经加载完成
         .margin(30)
-
       Row({ space: 10 }) {
         Button("pushUrl")
           .onClick(() => {
-
+            // 路由到下一页面，push操作
             this.getUIContext().getRouter().pushUrl({ url: 'pages/pageTransition/template4/pageTransitionSrc2' });
           })
         Button("back")
           .onClick(() => {
-
+            // 返回到上一页面，相当于pop操作
             this.getUIContext().getRouter().back();
           })
       }.justifyContent(FlexAlign.Center)
@@ -306,12 +307,11 @@ struct PageTransitionDst2 {
     .width('100%').height('100%')
     .alignItems(HorizontalAlign.Center)
   }
-
   pageTransition() {
-
+    // 定义页面进入时的效果，从左侧滑入，时长为1200ms，无论页面栈发生push还是pop操作均可生效
     PageTransitionEnter({ duration: 1200 })
       .slide(SlideEffect.Left)
-
+    // 定义页面退出时的效果，相对于正常页面位置x方向平移100vp，y方向平移100vp，透明度变为0，时长为1000ms，无论页面栈发生push还是pop操作均可生效
     PageTransitionExit({ duration: 1000 })
       .translate({ x: 100.0, y: 100.0 })
       .opacity(0)
@@ -319,4 +319,4 @@ struct PageTransitionDst2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/5VpShNKxQmGYQhtRSTUk5w/zh-cn_image_0000002533066058.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024836Z&HW-CC-Expire=86400&HW-CC-Sign=6A7AB7D0AF0F88BF32CA653FDEEFAF71294EE0E46D3C6E19783854B494AF5359)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/5VpShNKxQmGYQhtRSTUk5w/zh-cn_image_0000002533066058.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094551Z&HW-CC-Expire=86400&HW-CC-Sign=5BB85CB9AFE24ECEF07D3726E2B71EA262AE0E9FA2B254567317195ADF737C06)

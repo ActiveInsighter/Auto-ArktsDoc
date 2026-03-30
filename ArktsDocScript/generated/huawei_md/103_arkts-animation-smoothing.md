@@ -1,4 +1,4 @@
-# 动画衔接
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animation-smoothing
 
 UI界面除了运行动画之外，还承载着与用户进行实时交互的功能。当用户行为根据意图变化发生改变时，UI界面应做到即时响应。例如用户在应用启动过程中，上滑退出，那么启动动画应该立即过渡到退出动画，而不应该等启动动画完成后再退出，从而减少用户等待时间。对于桌面翻页类从跟手到离手触发动画的场景，离手后动画的初始速度应继承手势速度，避免由于速度不连续导致停顿感的产生。针对以上场景，系统已提供动画与动画、手势与动画之间的衔接能力，保证各类场景下动画平稳光滑地过渡的同时，尽可能降低开发难度。
@@ -9,21 +9,17 @@ UI界面除了运行动画之外，还承载着与用户进行实时交互的功
 
 ```typescript
 import { curves } from '@kit.ArkUI';
-
 class SetAnimationVariables {
   isAnimation: boolean = true
-
   set(): void {
     this.isAnimation = !this.isAnimation;
   }
 }
-
 @Entry
 @Component
 struct AnimationToAnimationDemo {
-
+  // 第一步：声明相关状态变量
   @State animationController: SetAnimationVariables = new SetAnimationVariables();
-
   build() {
     Column() {
       Text('ArkUI')
@@ -36,16 +32,15 @@ struct AnimationToAnimationDemo {
         .width(100)
         .height(100)
         .scale({
-
+          // 第二步：将状态变量设置到相关可动画属性接口
           x: this.animationController.isAnimation ? 2 : 1,
           y: this.animationController.isAnimation ? 2 : 1
         })
-        .animation({ curve: curves.springMotion(0.4, 0.8) })
-
+        .animation({ curve: curves.springMotion(0.4, 0.8) }) // 第四步：通过animation接口开启动画，动画终点值改变时，系统自动添加衔接动画
       Button('Click')
         .margin({ top: 200 })
         .onClick(() => {
-
+          // 第三步：通过点击事件改变状态变量值，影响可动画属性值
           this.animationController.set()
         })
     }
@@ -56,7 +51,7 @@ struct AnimationToAnimationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/j1xefKu1SoCQW2GsJaSwYA/zh-cn_image_0000002532906116.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024706Z&HW-CC-Expire=86400&HW-CC-Sign=9901D052E1D824896B13E41FF92C66DD105DDD9AD870958FCE7C17F1E7D728F4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/j1xefKu1SoCQW2GsJaSwYA/zh-cn_image_0000002532906116.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094558Z&HW-CC-Expire=86400&HW-CC-Sign=24B9C373F42873F7558F80826CBCE029CAC1E54F6D9C9B19ED84FC578D19F64D)
 
 ## 手势与动画的衔接
 
@@ -71,37 +66,34 @@ struct AnimationToAnimationDemo {
 ```typescript
 import { curves } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 const DOMAIN = 0x0000;
 const TAG: string = '[AnimatorTest]';
-
 @Entry
 @Component
 struct SpringMotionDemo {
-
+  // 第一步：声明相关状态变量
   @State positionX: number = 100;
   @State positionY: number = 100;
   diameter: number = 50;
-
   build() {
     Column() {
       Row() {
         Circle({ width: this.diameter, height: this.diameter })
           .fill(Color.Blue)
-          .position({ x: this.positionX, y: this.positionY })
+          .position({ x: this.positionX, y: this.positionY })// 第二步：将状态变量设置到相关可动画属性接口
           .onTouch((event?: TouchEvent) => {
-
+            // 第三步：在跟手过程改变状态变量值，并且采用responsiveSpringMotion动画运动到新的值
             if (event) {
               if (event.type === TouchType.Move) {
-
+                // 跟手过程，使用responsiveSpringMotion曲线
                 this.getUIContext()?.animateTo({ curve: curves.responsiveSpringMotion() }, () => {
-
+                  // 减去半径，以使球的中心运动到手指位置
                   this.positionX = event.touches[0].windowX - this.diameter / 2;
                   this.positionY = event.touches[0].windowY - this.diameter / 2;
                   hilog.info(DOMAIN, TAG, `move, animateTo x:${this.positionX}, y:${this.positionY}`);
                 })
               } else if (event.type === TouchType.Up) {
-
+                // 第四步：在离手过程设定状态变量终点值，并且用springMotion动画运动到新的值，springMotion动画将继承跟手阶段的动画速度
                 this.getUIContext()?.animateTo({ curve: curves.springMotion() }, () => {
                   this.positionX = 100;
                   this.positionY = 100;
@@ -112,17 +104,15 @@ struct SpringMotionDemo {
           })
       }
       .width('100%').height('80%')
-      .clip(true)
+      .clip(true) // 如果球超出父组件范围，使球不可见
       .backgroundColor(Color.Orange)
-
       Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Start, justifyContent: FlexAlign.Center }) {
-
+        // 请将$r('app.string.drag')替换为实际资源文件，在本示例中该资源文件的value值为"拖动小球"
         Text($r('app.string.drag')).fontSize(16)
       }
       .width('100%')
-
       Row() {
-
+        // 请将$r('app.string.location')替换为实际资源文件，在本示例中该资源文件的value值为"点击位置:"
         Text($r('app.string.location') + ' [x: ' + Math.round(this.positionX) + ', y:' + Math.round(this.positionY) + ']').fontSize(16)
       }
       .padding(10)
@@ -132,4 +122,4 @@ struct SpringMotionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/X1la6qT6QaChltCHXzJy3A/zh-cn_image_0000002533066064.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024706Z&HW-CC-Expire=86400&HW-CC-Sign=CE8B6F8694D97E349127EF9F7826405B222DA2DAA69EF5104696448C07A4381D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/X1la6qT6QaChltCHXzJy3A/zh-cn_image_0000002533066064.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094558Z&HW-CC-Expire=86400&HW-CC-Sign=44A8109E7253A0BD4744283C3312557DF35127C1D1B25698CDA9EA38718E4583)

@@ -1,4 +1,4 @@
-# 转场动画
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animation-transition
 
 - **[转场动画概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-transition-overview)**

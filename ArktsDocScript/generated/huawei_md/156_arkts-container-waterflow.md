@@ -1,4 +1,4 @@
-# WaterFlow
+# 文档中心
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow
 
 瀑布流容器，由“行”和“列”分割的单元格所组成，通过容器自身的排列规则，将不同大小的“项目”自上而下，如瀑布般紧密布局。
@@ -667,114 +667,115 @@ WaterFlow组件可见区域item变化事件的回调类型。
 WaterFlowDataSource实现了LazyForEach数据源接口[IDataSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach#idatasource)，用于通过LazyForEach给WaterFlow提供子组件。
 
 ```typescript
+// WaterFlowDataSource.ets
+// 实现IDataSource接口的对象，用于瀑布流组件加载数据
 export class WaterFlowDataSource implements IDataSource {
   private dataArray: number[] = [];
   private listeners: DataChangeListener[] = [];
-
   constructor() {
     for (let i = 0; i < 100; i++) {
       this.dataArray.push(i);
     }
   }
-
+  // 获取索引对应的数据
   public getData(index: number): number {
     return this.dataArray[index];
   }
-
+  // 通知控制器数据重新加载
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
     })
   }
-
+  // 通知控制器数据增加
   notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataAdd(index);
     })
   }
-
+  // 通知控制器数据变化
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     })
   }
-
+  // 通知控制器数据删除
   notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataDelete(index);
     })
   }
-
+  // 通知控制器数据位置变化
   notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
       listener.onDataMove(from, to);
     })
   }
-
+  // 通知控制器数据批量修改
   notifyDatasetChange(operations: DataOperation[]): void {
     this.listeners.forEach(listener => {
       listener.onDatasetChange(operations);
     })
   }
-
+  // 获取数据总数
   public totalCount(): number {
     return this.dataArray.length;
   }
-
+  // 注册改变数据的控制器
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener);
     }
   }
-
+  // 注销改变数据的控制器
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
       this.listeners.splice(pos, 1);
     }
   }
-
+  // 增加数据
   public add1stItem(): void {
     this.dataArray.splice(0, 0, this.dataArray.length);
     this.notifyDataAdd(0);
   }
-
+  // 在数据尾部增加一个元素
   public addLastItem(): void {
     this.dataArray.splice(this.dataArray.length, 0, this.dataArray.length);
     this.notifyDataAdd(this.dataArray.length - 1);
   }
-
+  // 在指定索引位置增加一个元素
   public addItem(index: number): void {
     this.dataArray.splice(index, 0, this.dataArray.length);
     this.notifyDataAdd(index);
   }
-
+  // 删除第一个元素
   public delete1stItem(): void {
     this.dataArray.splice(0, 1);
     this.notifyDataDelete(0);
   }
-
+  // 删除第二个元素
   public delete2ndItem(): void {
     this.dataArray.splice(1, 1);
     this.notifyDataDelete(1);
   }
-
+  // 删除最后一个元素
   public deleteLastItem(): void {
     this.dataArray.splice(-1, 1);
     this.notifyDataDelete(this.dataArray.length);
   }
-
+  // 在指定索引位置删除一个元素
   public deleteItem(index: number): void {
     this.dataArray.splice(index, 1);
     this.notifyDataDelete(index);
   }
-
+  // 重新加载数据
   public reload(): void {
     this.dataArray.splice(1, 1);
     this.dataArray.splice(3, 2);
     this.notifyDataReload();
   }
-
+  // 在数据尾部增加count个元素
   public addNewItems(count: number): void {
     let len = this.dataArray.length;
     for (let i = 0; i < count; i++) {
@@ -782,7 +783,7 @@ export class WaterFlowDataSource implements IDataSource {
       this.notifyDataAdd(this.dataArray.length - 1);
     }
   }
-
+  // 刷新所有元素
   public refreshItems(): void {
     let newDataArray: number[] = [];
     for (let i = 0; i < 100; i++) {
@@ -795,13 +796,12 @@ export class WaterFlowDataSource implements IDataSource {
 ```
 
 ```typescript
+// Index.ets
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-
 enum FooterState {
   Loading = 0,
   End = 1
 }
-
 @Entry
 @Component
 struct WaterFlowDemo {
@@ -813,26 +813,26 @@ struct WaterFlowDemo {
   dataSource: WaterFlowDataSource = new WaterFlowDataSource();
   private itemWidthArray: number[] = [];
   private itemHeightArray: number[] = [];
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem的宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：在组件即将出现时初始化尺寸数组
   aboutToAppear() {
     this.setItemSizeArray();
   }
-
   @Builder
   itemFoot() {
-
+    // 注意：不要直接用IfElse节点作为footer的根节点
+    // 必须在外面使用(Column/Row/Stack等)容器包裹，确保布局正确
     Column() {
       if (this.footerState == FooterState.Loading) {
         Text(`加载中...`)
@@ -861,7 +861,6 @@ struct WaterFlowDemo {
       }
     }
   }
-
   build() {
     Column({ space: 2 }) {
       WaterFlow({ footer: this.itemFoot() }) {
@@ -869,7 +868,7 @@ struct WaterFlowDemo {
           FlowItem() {
             Column() {
               Text('N' + item).fontSize(12).height('16')
-
+              // 注意：需要确保对应的jpg文件存在才会正常显示
               Image('res/waterFlowTest(' + item % 5 + ').jpg')
                 .objectFit(ImageFit.Fill)
                 .width('100%')
@@ -881,17 +880,17 @@ struct WaterFlowDemo {
           .backgroundColor(this.colors[item % this.colors.length])
         }, (item: string) => item)
       }
-      .columnsTemplate('1fr 1fr')
+      .columnsTemplate('1fr 1fr')    // 设置2列等宽布局
       .columnsGap(10)
       .rowsGap(5)
       .backgroundColor(0xFAEEE0)
       .width('100%')
       .height('100%')
       .itemConstraintSize({minWidth:80,maxWidth:180,minHeight:80,maxHeight:180})
-
+      // 触底加载数据：滚动到底部时触发分页加载
       .onReachEnd(() => {
         console.info('onReachEnd')
-
+        // 模拟分页加载：当数据超过200条时停止加载
         if (this.dataSource.totalCount() > 200) {
           this.footerState = FooterState.End;
           return;
@@ -903,28 +902,29 @@ struct WaterFlowDemo {
         }, 1000)
       })
       .onReachStart(() => {
-
+        // 滚动到顶部时触发
         console.info('waterFlow reach start');
       })
       .onScrollStart(() => {
-
+        // 开始滚动时触发
         console.info('waterFlow scroll start');
       })
       .onScrollStop(() => {
-
+        // 停止滚动时触发
         console.info('waterFlow scroll stop');
       })
       .onScrollFrameBegin((offset: number, state: ScrollState) => {
-
+        // 滚动帧开始时触发：可以控制滚动行为
+        // offset：滚动偏移量，state：滚动状态
         console.info('waterFlow scrollFrameBegin offset: ' + offset + ' state: ' + state.toString());
-        return { offsetRemain: offset };
+        return { offsetRemain: offset };  // 返回开发者期望的实际滚动偏移量
       })
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/ShHAKYsORWiD2zPUDPbNOA/zh-cn_image_0000002563866791.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=73C713F6CE2C181EF7D6710C96F24B988893BD39C39E86F8AE956CD42921F9B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/ShHAKYsORWiD2zPUDPbNOA/zh-cn_image_0000002563866791.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=3D5FE0B2822DAADD1382EA5CD69A1FD81A49362297B288B3E96B8ED67D6FA286)
 
 ### 示例2（自动计算列数）
 
@@ -933,8 +933,8 @@ struct WaterFlowDemo {
 WaterFlowDataSource说明及完整代码参考[示例1使用基本瀑布流](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例1使用基本瀑布流)。
 
 ```typescript
+// Index.ets
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-
 @Entry
 @Component
 struct WaterFlowDemo {
@@ -944,23 +944,22 @@ struct WaterFlowDemo {
   dataSource: WaterFlowDataSource = new WaterFlowDataSource();
   private itemWidthArray: number[] = [];
   private itemHeightArray: number[] = [];
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：在组件即将出现时初始化尺寸数组
   aboutToAppear() {
     this.setItemSizeArray();
   }
-
   build() {
     Column({ space: 2 }) {
       WaterFlow() {
@@ -968,7 +967,7 @@ struct WaterFlowDemo {
           FlowItem() {
             Column() {
               Text('N' + item).fontSize(12).height('16')
-
+              // 存在对应的jpg文件才会显示图片
               Image('res/waterFlowTest(' + item % 5 + ').jpg')
             }
           }
@@ -977,7 +976,9 @@ struct WaterFlowDemo {
           .backgroundColor(this.colors[item % this.colors.length])
         }, (item: string) => item)
       }
-
+      // auto-fill自动计算列数
+      // 'repeat(auto-fill,80)' 表示：根据容器宽度自动计算能放下多少个80px宽的列
+      // 例如：容器宽度400px，则自动计算为5列（400÷80=5）
       .columnsTemplate('repeat(auto-fill,80)')
       .columnsGap(10)
       .rowsGap(5)
@@ -990,7 +991,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/_5_wcDD0Rc-vmkB9gNd_dg/zh-cn_image_0000002563786837.png?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=8623A5C5E629A250F7E77E9B97531486AB6345159BF1CDBFC233E7928A34BC49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/_5_wcDD0Rc-vmkB9gNd_dg/zh-cn_image_0000002563786837.png?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=A8E6E13B859EC6566A924AB442219ACA31F8907223B83517F279A62485D9D88F)
 
 ### 示例3（使用分组）
 
@@ -1001,25 +1002,26 @@ struct WaterFlowDemo {
 WaterFlowDataSource说明及完整代码参考[示例1使用基本瀑布流](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例1使用基本瀑布流)。
 
 ```typescript
+// Index.ets
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-
+// 可复用组件：优化性能，减少组件创建销毁开销
 @Reusable
 @Component
 struct ReusableFlowItem {
   @State item: number = 0;
-
+  // 组件复用生命周期：从复用缓存中取出时调用
+  // 用于更新组件状态，显示新的内容
   aboutToReuse(params: Record<string, number>) {
     this.item = params.item;
     console.info('Reuse item:' + this.item);
   }
-
+  // 组件生命周期：初始化尺寸数组和分组配置
   aboutToAppear() {
     console.info('new item:' + this.item);
   }
-
   build() {
     Column() {
-
+      // 注意：需要确保对应的jpg文件存在才会正常显示
       Image('res/waterFlowTest(' + this.item % 5 + ').jpg')
         .overlay('N' + this.item, { align: Alignment.Top })
         .objectFit(ImageFit.Fill)
@@ -1028,7 +1030,6 @@ struct ReusableFlowItem {
     }
   }
 }
-
 @Entry
 @Component
 struct WaterFlowDemo {
@@ -1040,67 +1041,65 @@ struct WaterFlowDemo {
   dataCount: number = this.dataSource.totalCount();
   private itemWidthArray: number[] = [];
   private itemHeightArray: number[] = [];
-
+  // 分组管理：WaterFlow的核心特性，支持不同区域使用不同列数
   @State sections: WaterFlowSections = new WaterFlowSections();
-
+  // 分组边距配置：统一的外边距设置
   sectionMargin: Margin = { top: 10, left: 5, bottom: 10, right: 5 };
-
   oneColumnSection: SectionOptions = {
-    itemsCount: 4,
-    crossCount: 1,
+    itemsCount: 4,                     // 该分组包含4个FlowItem
+    crossCount: 1,                     // 使用1列布局
     columnsGap: '5vp',
     rowsGap: 10,
     margin: this.sectionMargin,
-
+    // 回调函数：动态设置每个item的高度
     onGetItemMainSizeByIndex: (index: number) => {
       return this.itemHeightArray[index % 100];
     }
   };
-
+  // 第二种分组：双列布局，适合展示列表内容
   twoColumnSection: SectionOptions = {
-    itemsCount: 2,
-    crossCount: 2,
-
+    itemsCount: 2,                     // 该分组包含2个FlowItem
+    crossCount: 2,                     // 使用2列布局
+    // 回调函数：固定高度100px
     onGetItemMainSizeByIndex: (index: number) => {
       return 100;
     }
   };
-
+  // 最后一个分组：用于处理剩余数据
   lastSection: SectionOptions = {
-    itemsCount: 20,
-    crossCount: 2,
-
+    itemsCount: 20,                    // 该分组包含20个FlowItem
+    crossCount: 2,                     // 使用2列布局
+    // 回调函数：使用随机高度
     onGetItemMainSizeByIndex: (index: number) => {
       return this.itemHeightArray[index % 100];
     }
   };
-
+  // 计算FlowItem高度
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem的高度数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：初始化数据和恢复上次的列数设置
   aboutToAppear() {
     this.setItemSizeArray();
-
+    // 初始化瀑布流分组信息：交替使用单列和双列布局
     let sectionOptions: SectionOptions[] = [];
-    let count = 0;
-    let oneOrTwo = 0;
-
+    let count = 0;                     // 已分配的FlowItem数量计数
+    let oneOrTwo = 0;                  // 用于交替选择分组类型
     while (count < this.dataCount) {
-
+      // 剩余数据不足20个时，使用最后一个分组处理
       if (this.dataCount - count < 20) {
         this.lastSection.itemsCount = this.dataCount - count;
         sectionOptions.push(this.lastSection);
         break;
       }
-
+      // 交替使用单列和双列布局
       if (oneOrTwo++ % 2 == 0) {
         sectionOptions.push(this.oneColumnSection);
         count += this.oneColumnSection.itemsCount;
@@ -1109,17 +1108,16 @@ struct WaterFlowDemo {
         count += this.twoColumnSection.itemsCount;
       }
     }
-
+    // 将配置好的分组添加到WaterFlow中
     this.sections.splice(0, 0, sectionOptions);
   }
-
   build() {
     Column({ space: 2 }) {
       Row() {
         Button('splice')
           .height('5%')
           .onClick(() => {
-
+            // 重要：必须保证LazyForEach中数据数量和新分组itemsCount累计总数保持一致
             let totalCount: number = this.dataSource.totalCount();
             let newSection: SectionOptions = {
               itemsCount: totalCount,
@@ -1129,49 +1127,48 @@ struct WaterFlowDemo {
               }
             };
             let oldLength: number = this.sections.length();
-            this.sections.splice(0, oldLength, [newSection]);
+            this.sections.splice(0, oldLength, [newSection]);  // 替换所有分组
           })
           .margin({ top: 10, left: 20 })
-
         Button('update')
           .height('5%')
           .onClick(() => {
-
+            // 在第一个分组中增加4个FlowItem
+            // 重要：必须保证数据源和分组itemsCount同步更新
             const sections: Array<SectionOptions> = this.sections.values();
             let newSection: SectionOptions = sections[0];
-
+            // 先在数据源中添加4个新数据
             this.dataSource.addItem(this.oneColumnSection.itemsCount);
             this.dataSource.addItem(this.oneColumnSection.itemsCount + 1);
             this.dataSource.addItem(this.oneColumnSection.itemsCount + 2);
             this.dataSource.addItem(this.oneColumnSection.itemsCount + 3);
-
+            // 然后更新分组的itemsCount
             newSection.itemsCount += 4;
             const result: boolean = this.sections.update(0, newSection);
             console.info('update:' + result);
           })
           .margin({ top: 10, left: 20 })
-
         Button('delete')
           .height('5%')
           .onClick(() => {
-
+            // 在第一个分组中减少4个FlowItem
+            // 重要：必须保证数据源和分组itemsCount同步更新
             const sections: Array<SectionOptions> = this.sections.values();
             let newSection: SectionOptions = sections[0];
-
+            // 检查是否有足够的item可以删除
             if (newSection.itemsCount < 4) {
               return;
             }
-
+            // 先从数据源中删除4条数据
             this.dataSource.deleteItem(this.oneColumnSection.itemsCount - 1);
             this.dataSource.deleteItem(this.oneColumnSection.itemsCount - 2);
             this.dataSource.deleteItem(this.oneColumnSection.itemsCount - 3);
             this.dataSource.deleteItem(this.oneColumnSection.itemsCount - 4);
-
+            // 更新分组的itemsCount
             newSection.itemsCount -= 4;
             this.sections.update(0, newSection);
           })
           .margin({ top: 10, left: 20 })
-
         Button('values')
           .height('5%')
           .onClick(() => {
@@ -1183,15 +1180,15 @@ struct WaterFlowDemo {
           })
           .margin({ top: 10, left: 20 })
       }.margin({ bottom: 20 })
-
       WaterFlow({ scroller: this.scroller, sections: this.sections }) {
         LazyForEach(this.dataSource, (item: number) => {
           FlowItem() {
-
+            // 使用可复用组件，提升性能
             ReusableFlowItem({ item: item })
           }
           .width('100%')
-
+          // 注意：同时设置onGetItemMainSizeByIndex和height属性时，
+          // 主轴大小以onGetItemMainSizeByIndex返回结果为准
           .height(this.itemHeightArray[item % 100])
           .backgroundColor(this.colors[item % this.colors.length])
         }, (item: string) => item)
@@ -1204,17 +1201,18 @@ struct WaterFlowDemo {
       .height('100%')
       .layoutWeight(1)
       .onScrollIndex((first: number, last: number) => {
-
+        // 滚动监听：即将触底时提前加载更多数据
         if (last + 20 >= this.dataSource.totalCount()) {
-
+          // 添加100个新数据到数据源
           for (let i = 0; i < 100; i++) {
             this.dataSource.addLastItem();
           }
-
+          // 重要：更新数据源后必须同步更新sections
+          // 修改最后一个section的FlowItem数量
           const sections: Array<SectionOptions> = this.sections.values();
           let newSection: SectionOptions = sections[this.sections.length() - 1];
           newSection.itemsCount += 100;
-          this.sections.update(-1, newSection);
+          this.sections.update(-1, newSection);  // -1表示最后一个分组
         }
       })
     }
@@ -1222,7 +1220,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/z7yBGpscTN-DjWUpouez4A/zh-cn_image_0000002532906942.png?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=2A62D32498F82F17F52907908B2C0BA1AA262D579F960A6961CAC0C259044644)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/z7yBGpscTN-DjWUpouez4A/zh-cn_image_0000002532906942.png?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=98B8D159BC1605BA0C9D1FDB897A2929AFD6A6B304B0ABC8E311C06E78C05AEB)
 
 ### 示例4（双指缩放改变列数）
 
@@ -1231,22 +1229,22 @@ struct WaterFlowDemo {
 WaterFlowDataSource说明及完整代码参考[示例1使用基本瀑布流](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例1使用基本瀑布流)。
 
 ```typescript
+// Index.ets
 import { WaterFlowDataSource } from './WaterFlowDataSource';
 import { image } from '@kit.ImageKit';
-
+// 可复用组件：优化性能，减少组件创建销毁开销
 @Reusable
 @Component
 struct ReusableFlowItem {
   @State item: number = 0;
-
+  // 从复用缓存中加入到组件树之前调用，可在此处更新组件的状态变量以展示正确的内容
   aboutToReuse(params: Record<string, number>) {
     this.item = params.item;
   }
-
   build() {
     Column() {
       Text('N' + this.item).fontSize(12).height('16')
-
+      // 注意：需要确保对应的jpg文件存在才会正常显示
       Image('res/waterFlow(' + this.item % 5 + ').jpg')
         .objectFit(ImageFit.Fill)
         .width('100%')
@@ -1254,7 +1252,6 @@ struct ReusableFlowItem {
     }
   }
 }
-
 @Entry
 @Component
 struct WaterFlowDemo {
@@ -1272,28 +1269,28 @@ struct WaterFlowDemo {
   private columnChanged: boolean = false;
   private oldColumn: number = this.columns;
   private pinchTime: number = 0;
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem的宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：初始化数据和恢复上次的列数设置
   aboutToAppear() {
-
+    // 读取上次最后切换到的列数
     let lastCount = AppStorage.get<number>('columnsCount');
     if (typeof lastCount != 'undefined') {
       this.columns = lastCount;
     }
     this.setItemSizeArray();
   }
-
+  // 根据缩放阈值改变列数，触发WaterFlow重新布局
   changeColumns(scale: number) {
     if (scale > (this.columns / (this.columns - 0.5)) && this.columns > 1) {
       this.columns--;
@@ -1303,7 +1300,6 @@ struct WaterFlowDemo {
       this.columnChanged = true;
     }
   }
-
   build() {
     Column({ space: 2 }) {
       Row() {
@@ -1311,9 +1307,8 @@ struct WaterFlowDemo {
           .height('5%')
           .margin({ top: 10, left: 20 })
       }
-
       Stack() {
-
+        // 用于展示缩放前的WaterFlow截图
         Image(this.waterFlowSnapshot)
           .width('100%')
           .height('100%')
@@ -1323,11 +1318,10 @@ struct WaterFlowDemo {
             centerX: 0,
             centerY: 0
           })
-
         WaterFlow() {
           LazyForEach(this.dataSource, (item: number) => {
             FlowItem() {
-
+              // 使用可复用组件，提升性能
               ReusableFlowItem({ item: item })
             }
             .width('100%')
@@ -1335,8 +1329,8 @@ struct WaterFlowDemo {
             .backgroundColor(this.colors[item % this.colors.length])
           }, (item: string) => item)
         }
-        .id('waterflow')
-        .columnsTemplate('1fr '.repeat(this.columns))
+        .id('waterflow') // 设置id用于截图
+        .columnsTemplate('1fr '.repeat(this.columns))  // 动态生成列模板，如：'1fr 1fr 1fr'表示3列等宽
         .backgroundColor(0xFAEEE0)
         .width('100%')
         .height('100%')
@@ -1351,7 +1345,7 @@ struct WaterFlowDemo {
         .priorityGesture(
           PinchGesture()
             .onActionStart((event: GestureEvent) => {
-
+              // 双指捏合手势识别成功时截图
               this.pinchTime = event.timestamp;
               this.columnChanged = false;
               this.oldColumn = this.columns;
@@ -1364,28 +1358,28 @@ struct WaterFlowDemo {
               })
             })
             .onActionUpdate((event: GestureEvent) => {
-
+              // 手势更新：处理缩放逻辑和视觉效果
+              // 边界限制：防止超出列数范围时继续缩放
               if ((this.oldColumn === 1 && event.scale > 1) || (this.oldColumn === 4 && event.scale < 1)) {
                 return;
               }
-
+              // 节流处理：避免过于频繁的更新，提升性能
               if (event.timestamp - this.pinchTime < 10000000) {
                 return;
               }
               this.pinchTime = event.timestamp;
-
               this.waterFlowScale = event.scale;
               this.imageScale = event.scale;
-
+              // 根据缩放比例设置WaterFlow透明度
               this.waterFlowOpacity = (this.waterFlowScale > 1) ? (this.waterFlowScale - 1) : (1 - this.waterFlowScale);
               this.waterFlowOpacity *= 3;
               if (!this.columnChanged) {
                 this.changeColumns(event.scale);
               }
-
+              // 列数改变后的缩放比例调整：避免出现空白区域
               if (this.columnChanged) {
                 this.waterFlowScale = this.imageScale * this.columns / this.oldColumn;
-
+                // 限制缩放范围，确保视觉效果自然
                 if (event.scale < 1) {
                   this.waterFlowScale = this.waterFlowScale > 1 ? this.waterFlowScale : 1;
                 } else {
@@ -1394,12 +1388,13 @@ struct WaterFlowDemo {
               }
             })
             .onActionEnd((event: GestureEvent) => {
-
+              // 手势结束：执行归位动画并保存状态
+              // 执行归位动画：平滑过渡到正常状态
               this.getUIContext()?.animateTo({ duration: 300 }, () => {
                 this.waterFlowScale = 1;
                 this.waterFlowOpacity = 1;
               })
-
+              // 持久化保存当前列数：下次启动时恢复
               AppStorage.setOrCreate<number>('columnsCount', this.columns);
             })
         )
@@ -1409,7 +1404,7 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/PL_6Qnb7Qv6d8E12yjvdIQ/zh-cn_image_0000002533066890.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=F0DEB867048DB4C67660235362F347B5ADEDAD945AE5704D94C9D6F450DE8024)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/PL_6Qnb7Qv6d8E12yjvdIQ/zh-cn_image_0000002533066890.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=0ABFA586481CAAC025831BB531FE2EE505800CFC9093C952DBDF06F27A34EF71)
 
 ### 示例5（设置边缘渐隐效果）
 
@@ -1418,9 +1413,9 @@ struct WaterFlowDemo {
 WaterFlowDataSource说明及完整代码参考[示例1使用基本瀑布流](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例1使用基本瀑布流)。
 
 ```typescript
+// Index.ets
 import { LengthMetrics } from '@kit.ArkUI';
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-
 @Entry
 @Component
 struct WaterFlowDemo {
@@ -1431,23 +1426,22 @@ struct WaterFlowDemo {
   scroller: Scroller = new Scroller();
   private itemWidthArray: number[] = [];
   private itemHeightArray: number[] = [];
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：在组件即将出现时初始化尺寸数组
   aboutToAppear() {
     this.setItemSizeArray();
   }
-
   build() {
     Column({ space: 2 }) {
       WaterFlow({ scroller: this.scroller }) {
@@ -1462,20 +1456,23 @@ struct WaterFlowDemo {
           .backgroundColor(this.colors[item % 5])
         }, (item: string) => item)
       }
-
+      // auto-fill自动计算列数：根据容器宽度自动计算能放下多少个80px宽的列
       .columnsTemplate('repeat(auto-fill,80)')
       .columnsGap(10)
       .rowsGap(5)
       .height('90%')
       .scrollBar(BarState.On)
-
+      // 边缘渐隐效果：在滚动边缘创建渐隐过渡效果
+      // true：启用渐隐效果
+      // fadingEdgeLength: LengthMetrics.vp(80)：渐隐区域长度为80vp
+      // 效果：在瀑布流顶部和底部边缘会有80vp的渐隐过渡区域
       .fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(80) })
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vIlsM_luRbmUGXBEKTeO7g/zh-cn_image_0000002563866793.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=25B3BD6CC780486D7FE7B7CDAADF1D986A48B730B2F0478D311F08112BBC0C1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vIlsM_luRbmUGXBEKTeO7g/zh-cn_image_0000002563866793.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=66004883F5D3CD08D90FA82C39A511A6169640C69FF9441EF4056E041FD2A106)
 
 ### 示例6（单边边缘效果）
 
@@ -1484,8 +1481,8 @@ struct WaterFlowDemo {
 WaterFlowDataSource说明及完整代码参考[示例1使用基本瀑布流](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例1使用基本瀑布流)。
 
 ```typescript
+// Index.ets
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-
 @Entry
 @Component
 struct WaterFlowDemo {
@@ -1496,23 +1493,22 @@ struct WaterFlowDemo {
   scroller: Scroller = new Scroller();
   private itemWidthArray: number[] = [];
   private itemHeightArray: number[] = [];
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：在组件即将出现时初始化尺寸数组
   aboutToAppear() {
     this.setItemSizeArray();
   }
-
   build() {
     Column({ space: 2 }) {
       WaterFlow({ scroller: this.scroller }) {
@@ -1527,20 +1523,23 @@ struct WaterFlowDemo {
           .backgroundColor(this.colors[item % 5])
         }, (item: number) => item.toString())
       }
-
+      // auto-fill自动计算列数：根据容器宽度自动计算能放下多少个80px宽的列
       .columnsTemplate('repeat(auto-fill,80)')
       .columnsGap(10)
       .rowsGap(5)
       .height('90%')
-
+      // 单边边缘效果：设置弹簧效果，仅在顶部生效
+      // EdgeEffect.Spring：弹簧回弹效果，滑动到边界时会有弹性回弹
+      // alwaysEnabled: true：始终启用边缘效果，即使内容不足以滚动
+      // effectEdge: EffectEdge.START：仅在起始边缘（顶部）生效
+      // 效果：只有向上滑动到顶部时才会有弹簧回弹效果，向下滑动到底部不会有效果
       .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true, effectEdge: EffectEdge.START })
-
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/DCmv_NTiQPGZFcuR4l-dqQ/zh-cn_image_0000002563786839.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=A4718AC63F45B7CC5B4209B614310F8C06F559D9D4893803EEDD724B95CE2DC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/DCmv_NTiQPGZFcuR4l-dqQ/zh-cn_image_0000002563786839.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=D2A7FE3AD91F4BFC3838E8B0160E221FA4484B32DCB612A3F84288839E3E1AC6)
 
 ### 示例7（WaterFlow组件设置和改变尾部组件）
 
@@ -1549,17 +1548,16 @@ struct WaterFlowDemo {
 WaterFlowDataSource说明及完整代码参考[示例1使用基本瀑布流](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例1使用基本瀑布流)。
 
 ```typescript
+// Index.ets
 import { ComponentContent, UIContext } from '@kit.ArkUI';
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-
 class Params {
   text: string = '';
-
   constructor(text: string) {
     this.text = text;
   }
 }
-
+// Builder函数：构建尾部组件的UI结构
 @Builder
 function buildText(params: Params) {
   Column() {
@@ -1569,7 +1567,6 @@ function buildText(params: Params) {
       .margin(20)
   }
 }
-
 @Entry
 @Component
 struct Index {
@@ -1578,41 +1575,43 @@ struct Index {
   @State colors: number[] = [0xD5D5D5, 0x7F7F7F, 0xF7F7F7];
   @State minSize: number = 80;
   @State maxSize: number = 180;
-
+  // UI上下文：用于创建ComponentContent
   context: UIContext = this.getUIContext();
-
+  // 动态尾部组件：使用ComponentContent创建可更新的尾部组件
+  // ComponentContent<Params>：泛型指定参数类型
+  // wrapBuilder<[Params]>(buildText)：包装Builder函数
+  // new Params(this.message1)：初始参数，显示'已经到底了'
   footerContent: ComponentContent<Params> = new ComponentContent<Params>(
     this.context,
     wrapBuilder<[Params]>(buildText),
     new Params(this.message1)
   );
-
   dataSource: WaterFlowDataSource = new WaterFlowDataSource();
   private itemWidthArray: number[] = [];
   private itemHeightArray: number[] = [];
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：在组件即将出现时初始化尺寸数组
   aboutToAppear() {
     this.setItemSizeArray();
   }
-
   build() {
     Row() {
       Column() {
         Button('更新footer').width('90%').margin(20)
           .onClick((event?: ClickEvent) => {
-
+            // 调用ComponentContent的update方法更新尾部组件
+            // 传入新的Params对象，文本内容从'已经到底了'变为'加载更多'
             this.footerContent.update(new Params(this.message2));
           })
         WaterFlow({ footerContent: this.footerContent }) {
@@ -1640,7 +1639,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/7Gf45esiT3-oUmK71iqdjw/zh-cn_image_0000002532906944.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=880AA571C1E5D999583EB9A90D84A36D11E93A5A2FB9501810AF201A123D7136)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/7Gf45esiT3-oUmK71iqdjw/zh-cn_image_0000002532906944.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=8EDB2A743450A51B9550D118BEF1BE62783DCE1A1138B56CD4C8F2F7F77FF6C1)
 
 ### 示例8（WaterFlow组件实现下拉刷新）
 
@@ -1649,8 +1648,8 @@ struct Index {
 WaterFlowDataSource说明及完整代码参考[示例1使用基本瀑布流](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例1使用基本瀑布流)。
 
 ```typescript
+// Index.ets
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-
 @Entry
 @Component
 struct WaterFlowDemo {
@@ -1662,26 +1661,25 @@ struct WaterFlowDemo {
   scroller: Scroller = new Scroller();
   private itemWidthArray: number[] = [];
   private itemHeightArray: number[] = [];
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：在组件即将出现时初始化尺寸数组
   aboutToAppear() {
     this.setItemSizeArray();
   }
-
   build() {
     Column({ space: 2 }) {
-
+      // refreshing: $$this.isRefreshing：双向绑定刷新状态
       Refresh({ refreshing: $$this.isRefreshing }) {
         WaterFlow({ scroller: this.scroller }) {
           LazyForEach(this.dataSource, (item: number) => {
@@ -1695,29 +1693,29 @@ struct WaterFlowDemo {
             .backgroundColor(this.colors[item % this.colors.length])
           }, (item: number) => item.toString())
         }
-
+        // auto-fill自动计算列数：根据容器宽度自动计算能放下多少个80px宽的列
         .columnsTemplate('repeat(auto-fill,80)')
         .columnsGap(10)
         .rowsGap(5)
         .height('90%')
-
+        // 边缘效果：弹簧回弹效果
         .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true })
         .onReachEnd(() => {
-
+          // 触底加载更多数据：滚动到底部时触发
           setTimeout(() => {
             this.dataSource.addNewItems(100);
           }, 1000)
         })
       }
       .onStateChange((refreshStatus: RefreshStatus) => {
-
+        // 刷新状态变化监听：处理不同的刷新状态
         if (refreshStatus === RefreshStatus.Done) {
-
+          // 刷新完成时：调用数据源的刷新方法，更新所有数据
           this.dataSource.refreshItems();
         }
       })
       .onRefreshing(() => {
-
+        // 正在刷新时的回调：模拟刷新过程
         setTimeout(() => {
           this.isRefreshing = false;
         }, 1000)
@@ -1727,15 +1725,15 @@ struct WaterFlowDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/AZCxDPsgRnythiS9uJEmTA/zh-cn_image_0000002533066892.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=68B43280B838B39B221944E31F678113A8751D6D470FF98ACF790C92015F11EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/AZCxDPsgRnythiS9uJEmTA/zh-cn_image_0000002533066892.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=6BC22E1EF480A9A7AD22F61A6803DC9CCDE765EC1D605D8784BC6E2FE140E81E)
 
 ### 示例9（WaterFlow组件基于断点配置列数）
 
 从API version 22开始，该示例展示了WaterFlow组件支持基于断点配置列数效果。
 
 ```typescript
+// Index.ets
 import { WaterFlowDataSource } from './WaterFlowDataSource';
-
 @Entry
 @Component
 struct WaterFlowDemo {
@@ -1744,22 +1742,21 @@ struct WaterFlowDemo {
   colors: number[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F];
   dataSource: WaterFlowDataSource = new WaterFlowDataSource();
   private itemHeightArray: number[] = [];
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem的宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：在组件即将出现时初始化尺寸数组
   aboutToAppear() {
     this.setItemSizeArray();
   }
-
   build() {
     Column({ space: 2 }) {
       WaterFlow() {
@@ -1767,7 +1764,7 @@ struct WaterFlowDemo {
           FlowItem() {
             Column() {
               Text('N' + item).fontSize(12).height('16')
-
+              // 注意：需要确保对应的jpg文件存在才会正常显示
               Image('res/waterFlowTest(' + item % 5 + ').jpg')
                 .objectFit(ImageFit.Fill)
                 .width('100%')
@@ -1780,7 +1777,7 @@ struct WaterFlowDemo {
         }, (item: string) => item)
       }
       .key('waterFlow')
-
+      // 设置WaterFlow按断点决定列数
       .columnsTemplate({fillType:PresetFillType.BREAKPOINT_SM2MD3LG5})
       .columnsGap(10)
       .rowsGap(5)
@@ -1795,15 +1792,15 @@ struct WaterFlowDemo {
 
 WaterFlow宽度属于sm及更小的断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Iw3NgvkXQ6eOvRAzy7hYdg/zh-cn_image_0000002563866795.png?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=7FB3D3FD75F0261FA5577B119F76C25C5061CE0B6DCB000F426F28EC326E605D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Iw3NgvkXQ6eOvRAzy7hYdg/zh-cn_image_0000002563866795.png?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=64105C054A3D416C3FBF8925389CADA60E25DA98285AE7241F35FC9929B34B4D)
 
 WaterFlow宽度属于md断点区间时显示3列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/zckmjcSUQ0ar2d70-g6AZw/zh-cn_image_0000002563786841.png?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=ED8FB9C9900B6676B0469339CFA2AC7D8BBEF7D1CCCEA1574110D44581CA8C0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/zckmjcSUQ0ar2d70-g6AZw/zh-cn_image_0000002563786841.png?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=7D8EF90426DAAD824DC550D354A4FD715D2BFB8FDC76606F7A23AD270776F1EC)
 
 WaterFlow宽度属于lg及更大的断点区间时显示5列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pWnmi4XhQW2CayY68mst8Q/zh-cn_image_0000002532906946.png?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=6E540C6221027978AD1096F3881ADDAAC346ECD298E71C3A6B3753582856DF5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/pWnmi4XhQW2CayY68mst8Q/zh-cn_image_0000002532906946.png?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=169E02A88CE4B2DCEA3E9FFDEB96D5B769C8161B4CF2F3F129C5A6DD27821662)
 
 ### 示例10（WaterFlow组件实现获取内容高度）
 
@@ -1812,9 +1809,9 @@ WaterFlow宽度属于lg及更大的断点区间时显示5列。
 WaterFlowDataSource说明及完整代码参考[示例1使用基本瀑布流](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#示例1使用基本瀑布流)。
 
 ```typescript
+// Index.ets
 import { WaterFlowDataSource } from './WaterFlowDataSource';
 import { BusinessError } from '@kit.BasicServicesKit';
-
 @Entry
 @Component
 struct WaterFlowContentSizeDemo {
@@ -1827,23 +1824,22 @@ struct WaterFlowContentSizeDemo {
   dataSource: WaterFlowDataSource = new WaterFlowDataSource();
   private itemWidthArray: number[] = [];
   private itemHeightArray: number[] = [];
-
+  // 计算FlowItem宽/高
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-
+  // 设置FlowItem的宽/高数组
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
-
+  // 组件生命周期：在组件即将出现时初始化尺寸数组
   aboutToAppear() {
     this.setItemSizeArray();
   }
-
   @Builder
   itemFoot() {
     Column() {
@@ -1856,31 +1852,29 @@ struct WaterFlowContentSizeDemo {
         .margin({ top: 2 })
     }
   }
-
   build() {
     Column({ space: 2 }) {
-
+      // 点击按钮来调用contentSize函数获取内容尺寸
       Button('GetContentSize')
         .onClick(() => {
-
+          // Scroller未绑定组件时会抛异常，需要加上try catch保护
           try {
-
+            // 通过调用contentSize函数获取内容尺寸的宽度值
             this.contentWidth = this.scroller.contentSize().width;
-
+            // 通过调用contentSize函数获取内容尺寸的高度值
             this.contentHeight = this.scroller.contentSize().height;
           } catch (error) {
             let err: BusinessError = error as BusinessError;
             console.error(`Failed to get contentSize of the grid, code=${err.code}, message=${err.message}`);
           }
         }).margin(5)
-
+      // 将获取到的内容尺寸信息通过文本进行呈现
       Text('Width:' + this.contentWidth)
         .fontColor(Color.Red)
         .height(30)
       Text('Height:' + this.contentHeight)
         .fontColor(Color.Red)
         .height(30)
-
       WaterFlow({ scroller: this.scroller, footer: this.itemFoot() }) {
         LazyForEach(this.dataSource, (item: number) => {
           FlowItem() {
@@ -1893,7 +1887,7 @@ struct WaterFlowContentSizeDemo {
           .backgroundColor(this.colors[item % this.colors.length])
         }, (item: string) => item)
       }
-      .columnsTemplate('1fr 1fr')
+      .columnsTemplate('1fr 1fr') // 设置2列等宽布局
       .columnsGap(10)
       .rowsGap(5)
       .backgroundColor(0xFAEEE0)
@@ -1904,7 +1898,7 @@ struct WaterFlowContentSizeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/fa39TdyRRB-JTCMbAw9zrg/zh-cn_image_0000002533066894.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024945Z&HW-CC-Expire=86400&HW-CC-Sign=8A7661D10683D3F43C0CAC06C0313A109F0ADF40EC61A4DA1F8EB6DF58694384)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/fa39TdyRRB-JTCMbAw9zrg/zh-cn_image_0000002533066894.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094651Z&HW-CC-Expire=86400&HW-CC-Sign=29FD62EF8574AEE2C6D33D89CEA1C7DFD5589B9EB6FBF287B7E04F4CE12C816D)
 
 ### 示例11（设置滚动事件）
 
@@ -1914,55 +1908,51 @@ struct WaterFlowContentSizeDemo {
 
 ```typescript
 import { NodeController, FrameNode, typeNode } from '@kit.ArkUI';
-
 class MyNodeController extends NodeController {
   public rootNode: FrameNode | null = null;
-
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);
     this.rootNode.commonAttribute.width(100);
     return this.rootNode;
   }
-
   addCommonEvent(frameNode: FrameNode) {
-
+    // 获取WaterFlow事件
     let waterFlowEvent: UIWaterFlowEvent | undefined = typeNode.getEvent(frameNode, 'WaterFlow');
-
+    // 设置OnWillScroll事件
     waterFlowEvent?.setOnWillScroll((scrollOffset: number, scrollState: ScrollState, scrollSource: ScrollSource) => {
       console.info('onWillScroll scrollOffset = ${scrollOffset}, scrollState = ${scrollState}, scrollSource = ${scrollSource}');
     });
-
+    // 设置OnDidScroll事件
     waterFlowEvent?.setOnDidScroll((scrollOffset: number, scrollState: ScrollState) => {
       console.info('onDidScroll scrollOffset = ${scrollOffset}, scrollState = ${scrollState}');
     });
-
+    // 设置OnReachStart事件
     waterFlowEvent?.setOnReachStart(() => {
       console.info('onReachStart');
     });
-
+    // 设置OnReachEnd事件
     waterFlowEvent?.setOnReachEnd(() => {
       console.info('onReachEnd');
     });
-
+    // 设置OnScrollStart事件
     waterFlowEvent?.setOnScrollStart(() => {
       console.info('onScrollStart');
     });
-
+    // 设置OnScrollStop事件
     waterFlowEvent?.setOnScrollStop(() => {
       console.info('onScrollStop');
     });
-
+    // 设置OnScrollFrameBegin事件
     waterFlowEvent?.setOnScrollFrameBegin((offset: number, state: ScrollState) => {
       console.info('onScrollFrameBegin offset = ${offset}, state = ${state}');
       return undefined;
     });
-
+    // 设置OnScrollIndex事件
     waterFlowEvent?.setOnScrollIndex((first: number, last: number) => {
       console.info('onScrollIndex start = ${first}, end = ${last}');
     });
   }
 }
-
 @Entry
 @Component
 struct Index {
@@ -1970,14 +1960,12 @@ struct Index {
   private myNodeController: MyNodeController = new MyNodeController();
   @State numbers: string[] = [];
   @State heights: number[] = [];
-
   aboutToAppear() {
     for (let i = 0; i < 30; i++) {
       this.numbers.push('${i+1}');
       this.heights.push(70 + Math.floor(Math.random() * 60));
     }
   }
-
   build() {
     Column() {
       Button('add CommonEvent to WaterFlow')

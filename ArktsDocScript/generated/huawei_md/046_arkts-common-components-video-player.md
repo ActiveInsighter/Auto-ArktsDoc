@@ -1,4 +1,4 @@
-# 视频播放 (Video)
+# 视频播放 (Video)-媒体展示-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-video-player
 
 Video组件用于播放视频文件并控制其播放状态，常用于短视频和应用内部视频的列表页面。当视频完整出现时会自动播放，用户点击视频区域则会暂停播放，同时显示播放进度条，通过拖动播放进度条指定视频播放到具体位置。具体用法请参考[Video](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-components-video)。
@@ -15,7 +15,7 @@ Video组件支持加载本地视频和网络视频。具体的数据源配置请
 
 ### 加载本地视频
 
-- 普通本地视频。 加载本地视频时，首先在本地rawfile目录指定对应的文件，如下图所示。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/2WRCXlVERACO14ZmbQwt6Q/zh-cn_image_0000002563865833.png?HW-CC-KV=V1&HW-CC-Date=20260330T024750Z&HW-CC-Expire=86400&HW-CC-Sign=38DAF7998275499ED08CC44164A37A42B341329AA91DA58E1AF65BE91E9B99D6) 再使用资源访问符$rawfile()引用视频资源。 ```typescript @Component export struct LocalVideo {  private controller: VideoController = new VideoController();  private previewUris: Resource = $r('app.media.preview');  private innerResource: Resource = $rawfile('videoTest.mp4');  build() {  Column() {  Video({  src: this.innerResource,  previewUri: this.previewUris,  controller: this.controller  })  }  } } ```
+- 普通本地视频。 加载本地视频时，首先在本地rawfile目录指定对应的文件，如下图所示。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/2WRCXlVERACO14ZmbQwt6Q/zh-cn_image_0000002563865833.png?HW-CC-KV=V1&HW-CC-Date=20260330T094508Z&HW-CC-Expire=86400&HW-CC-Sign=56FBE14DA3872179FFB53020BC483561404BFA8B9B0538F081E961ED5CCE1C89) 再使用资源访问符$rawfile()引用视频资源。 ```typescript @Component export struct LocalVideo {  private controller: VideoController = new VideoController();  private previewUris: Resource = $r('app.media.preview');  private innerResource: Resource = $rawfile('videoTest.mp4');  build() {  Column() {  Video({  src: this.innerResource,  previewUri: this.previewUris,  controller: this.controller  })  }  } } ```
 - [Data Ability](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataability-overview)提供的视频路径带有dataability://前缀，使用时确保对应视频资源存在。 ```typescript @Component export struct LocalVideoTwo {  private controller: VideoController = new VideoController();  private previewUris: Resource = $r('app.media.preview');  private videoSrc: string = 'dataability://device_id/com.domainname.dataability.videodata/video/10';  build() {  Column() {  Video({  src: this.videoSrc,  previewUri: this.previewUris,  controller: this.controller  })  }  } } ```
 
 ### 加载沙箱路径视频

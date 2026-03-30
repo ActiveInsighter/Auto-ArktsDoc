@@ -1,4 +1,4 @@
-# GridCol
+# GridCol-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridcol
 
 栅格子组件，必须作为栅格容器组件([GridRow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow))的子组件使用。
@@ -175,4 +175,4 @@ struct GridColExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iPmiuDwpSLeXaakFNo9KcQ/zh-cn_image_0000002533066846.png?HW-CC-KV=V1&HW-CC-Date=20260330T024924Z&HW-CC-Expire=86400&HW-CC-Sign=0857EF2A789033A827FF719B0011E5C75382771F255E89917DA0844897148E81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/iPmiuDwpSLeXaakFNo9KcQ/zh-cn_image_0000002533066846.png?HW-CC-KV=V1&HW-CC-Date=20260330T094638Z&HW-CC-Expire=86400&HW-CC-Sign=DB123EDE911CECE790914C9EA079236A256489DD42C8D725498D4F01FA26FB25)

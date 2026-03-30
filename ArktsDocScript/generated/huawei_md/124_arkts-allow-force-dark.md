@@ -1,4 +1,4 @@
-# 禁用反色能力
+# 禁用反色能力-基础属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-allow-force-dark
 
 设置组件是否使用反色能力，反色能力是在深浅色切换时自动对颜色值进行反色或变换，开发者可以通过主动设置不启用反色算法，以保持在深浅色切换时的原有逻辑。
@@ -67,4 +67,4 @@ struct ComponentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-m0_-3yDSaucPD_VORyfcw/zh-cn_image_0000002563786681.png?HW-CC-KV=V1&HW-CC-Date=20260330T024902Z&HW-CC-Expire=86400&HW-CC-Sign=F3F1569033D9F7DEA0B245624F6ADF01E76E4BCDC4BC2AE8292625E78EB87FA1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-m0_-3yDSaucPD_VORyfcw/zh-cn_image_0000002563786681.png?HW-CC-KV=V1&HW-CC-Date=20260330T094619Z&HW-CC-Expire=86400&HW-CC-Sign=A666875526E61C405B32A34C232A8D3149D80B685697FAF15D45DAE2233CD19E)
