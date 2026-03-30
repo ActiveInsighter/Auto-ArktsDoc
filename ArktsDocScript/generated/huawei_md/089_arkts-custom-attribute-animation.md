@@ -34,7 +34,7 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/5JWCmZ_7Tq6IQQprRlgUBw/zh-cn_image_0000002532906100.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024542Z&HW-CC-Expire=86400&HW-CC-Sign=C8B09046A1AE30BE09CCDD3C006322BC64FC94A857479D7A2804AD030665E3F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/5JWCmZ_7Tq6IQQprRlgUBw/zh-cn_image_0000002532906100.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024828Z&HW-CC-Expire=86400&HW-CC-Sign=4F8E1414BBD53F9E5E937AEB63604A740AB161BFA70DC16E97E71BC9E0D4A104)
 
 ## 使用自定义数据类型和@AnimatableExtend装饰器改变图形形状
 
@@ -171,4 +171,4 @@ struct AnimatedShape {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/e0SVuUtHS0mVwoGcrHNDgg/zh-cn_image_0000002533066048.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024542Z&HW-CC-Expire=86400&HW-CC-Sign=B72912A919B513AF76A1DEF5C5AC9D337C93CF7C799AFA0DCFA90CE4794679B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/e0SVuUtHS0mVwoGcrHNDgg/zh-cn_image_0000002533066048.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024828Z&HW-CC-Expire=86400&HW-CC-Sign=254CE708D78766A43AC5390BBD5BAE0E20E1C16289B164B1EC3CED412EE25867)

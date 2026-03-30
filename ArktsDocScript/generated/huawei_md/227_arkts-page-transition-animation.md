@@ -45,9 +45,9 @@ onEnter(event: PageTransitionCallback): PageTransitionEnterInterface
 ```typescript
   pageTransition() {
     PageTransitionEnter({ duration: 1200, curve: Curve.Linear })
-
+      // 转场动画时入场动画 type 为路由类型 ，progress为从0到1逐渐变大
       .onEnter((type: RouteType, progress: number) => {
-
+        // 业务逻辑代码
       })
   }
 ```
@@ -89,9 +89,9 @@ onExit(event: PageTransitionCallback): PageTransitionExitInterface
 ```typescript
   pageTransition() {
     PageTransitionExit({ duration: 1200, curve: Curve.Linear })
-
+      // 转场动画时出场动画 type 为路由类型 ，progress为从0到1逐渐变大
       .onExit((type: RouteType, progress: number) => {
-
+        // 业务逻辑代码
       })
   }
 ```
@@ -270,15 +270,15 @@ type PageTransitionCallback = (type: RouteType, progress: number) => void
 自定义方式1：通过不同的退入场类型配置不同的退场，入场动画。
 
 ```typescript
+// Index.ets
 @Entry
 @Component
 struct Index {
   @State scale1: number = 1;
   @State opacity1: number = 1;
-
   build() {
     Column() {
-
+      // $r("app.media.transition_image1")需要替换为开发者所需的图像资源文件。
       Image($r("app.media.transition_image1")).width('100%').height('100%')
     }
     .width('100%')
@@ -289,7 +289,6 @@ struct Index {
       this.getUIContext().getRouter().pushUrl({ url: 'pages/Page1' });
     })
   }
-
   pageTransition() {
     PageTransitionEnter({ duration: 1200, curve: Curve.Linear })
       .onEnter((type: RouteType, progress: number) => {
@@ -310,16 +309,16 @@ struct Index {
 ```
 
 ```typescript
+// Page1.ets
 @Entry
 @Component
 struct Page1 {
   @State scale2: number = 1;
   @State opacity2: number = 1;
-
   build() {
     Column() {
-
-      Image($r("app.media.transition_image2")).width('100%').height('100%')
+      // $r("app.media.transition_image2")需要替换为开发者所需的图像资源文件。
+      Image($r("app.media.transition_image2")).width('100%').height('100%') // 图片存放在media文件夹下
     }
     .width('100%')
     .height('100%')
@@ -329,7 +328,6 @@ struct Page1 {
       this.getUIContext().getRouter().pushUrl({ url: 'pages/Index' });
     })
   }
-
   pageTransition() {
     PageTransitionEnter({ duration: 1200, curve: Curve.Linear })
       .onEnter((type: RouteType, progress: number) => {
@@ -349,29 +347,30 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/3yOWY5AISnqTDfiZQhDkyw/zh-cn_image_0000002563787195.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024840Z&HW-CC-Expire=86400&HW-CC-Sign=D5BD66477C49A7EF5F999A96D8C96D8BF7E2CBDD69BB6CA3F2EF5B658EDBB5E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/3yOWY5AISnqTDfiZQhDkyw/zh-cn_image_0000002563787195.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025124Z&HW-CC-Expire=86400&HW-CC-Sign=ADC160A107D18CAAB5462207A398E38C634D5A8140D7D421F844FFF120E40651)
 
 自定义方式2：配置了当前页面的入场动画为从左侧滑入，退场为平移加透明度变化。
 
 ```typescript
+// Index.ets
 @Entry
 @Component
 struct Index {
   build() {
     Column() {
-
-      Image($r('app.media.bg1')).width('100%').height('100%')
+      // $r('app.media.bg1')需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.bg1')).width('100%').height('100%') // 图片存放在media文件夹下
     }
     .onClick(() => {
       this.getUIContext().getRouter().pushUrl({ url: 'pages/Page1' });
     })
   }
-
+  // 自定义方式2：使用系统提供的多种默认效果(平移、缩放、透明度等)
   pageTransition() {
-
+    // 该页面进入动画时长为1200ms，尽量与另一页面的退出动画时长匹配
     PageTransitionEnter({ duration: 1200 })
       .slide(SlideEffect.Left)
-
+    // 该页面退出动画时长为1000ms，尽量与另一页面的进入动画时长匹配
     PageTransitionExit({ duration: 1000 })
       .translate({ x: 100.0, y: 100.0 })
       .opacity(0)
@@ -380,24 +379,25 @@ struct Index {
 ```
 
 ```typescript
+// Page1.ets
 @Entry
 @Component
 struct Page1 {
   build() {
     Column() {
-
-      Image($r('app.media.bg2')).width('100%').height('100%')
+      // $r('app.media.bg2')需要替换为开发者所需的图像资源文件。
+      Image($r('app.media.bg2')).width('100%').height('100%') // 图片存放在media文件夹下
     }
     .onClick(() => {
       this.getUIContext().getRouter().pushUrl({ url: 'pages/Index' });
     })
   }
-
+  // 自定义方式2：使用系统提供的多种默认效果(平移、缩放、透明度等)
   pageTransition() {
-
+    // 该页面进入动画时长为1000ms，尽量与另一页面的退出动画时长匹配
     PageTransitionEnter({ duration: 1000 })
       .slide(SlideEffect.Left)
-
+    // 该页面退出动画时长为1200ms，尽量与另一页面的进入动画时长匹配
     PageTransitionExit({ duration: 1200 })
       .translate({ x: 100.0, y: 100.0 })
       .opacity(0)
@@ -405,19 +405,19 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/B22aQoSHSZ2xRRbLqJapKg/zh-cn_image_0000002532907300.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024840Z&HW-CC-Expire=86400&HW-CC-Sign=642D40669B04E7D24A6F4956B9EE18C015A51B64C158AF9113F0510654E1E49B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/B22aQoSHSZ2xRRbLqJapKg/zh-cn_image_0000002532907300.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025124Z&HW-CC-Expire=86400&HW-CC-Sign=450A3CE4997A0FBD77518380CEE2CF68884FF46A614E66E55238269CB76BEBE7)
 
 ### 示例2（设置退入场平移效果）
 
 自定义方式1：配置提供的不同退入场平移效果，将系统语言排版模式改为RTL。
 
 ```typescript
+// Index.ets
 @Entry
 @Component
 struct Index {
   @State scale1: number = 1;
   @State opacity1: number = 1;
-
   build() {
     Column() {
       Button("页面1").onClick(() => {
@@ -438,25 +438,25 @@ struct Index {
     .width("100%")
     .justifyContent(FlexAlign.Center)
   }
-
+  // 自定义方式2：使用系统提供的多种默认效果(平移、缩放、透明度等)
   pageTransition() {
-
+    //设置入场动效
     PageTransitionEnter({ duration: 200 })
       .slide(SlideEffect.START)
-
+    //设置退场动效
     PageTransitionExit({ delay: 100 })
-      .slide(SlideEffect.START)
+      .slide(SlideEffect.START) //Left
   }
 }
 ```
 
 ```typescript
+// Page1.ets
 @Entry
 @Component
 struct Page1 {
   @State scale1: number = 1;
   @State opacity1: number = 1;
-
   build() {
     Column() {
       Button("页面2").onClick(() => {
@@ -477,27 +477,27 @@ struct Page1 {
     .width("100%")
     .justifyContent(FlexAlign.Center)
   }
-
+  // 自定义方式2：使用系统提供的多种默认效果(平移、缩放、透明度等)
   pageTransition() {
     PageTransitionEnter({ duration: 200 })
-      .slide(SlideEffect.END)
+      .slide(SlideEffect.END) //Right
     PageTransitionExit({ delay: 100 })
-      .slide(SlideEffect.END)
+      .slide(SlideEffect.END) //Right
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MUaCxBGxR5uryk0uIvp7KQ/zh-cn_image_0000002533067248.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024840Z&HW-CC-Expire=86400&HW-CC-Sign=69B7CA7304B292DF593F11401C8F3DE3A4D4CFAD76BBD94578CFEC53BEDA8B60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MUaCxBGxR5uryk0uIvp7KQ/zh-cn_image_0000002533067248.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025124Z&HW-CC-Expire=86400&HW-CC-Sign=BAFCFCB18A2491159951D5BEA021A6A3937048E7D8FADF1EFA0B15C97AC37387)
 
 自定义方式2：使用系统默认的退入场效果，将系统语言排版模式改为RTL。
 
 ```typescript
+// Index.ets
 @Entry
 @Component
 struct Index {
   @State scale1: number = 1;
   @State opacity1: number = 1;
-
   build() {
     Column() {
       Button("页面1").onClick(() => {
@@ -519,12 +519,12 @@ struct Index {
 ```
 
 ```typescript
+// Page1.ets
 @Entry
 @Component
 struct Page1 {
   @State scale1: number = 1;
   @State opacity1: number = 1;
-
   build() {
     Column() {
       Button("页面2").onClick(() => {
@@ -545,4 +545,4 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/L7k8eeopTp6jVEGKuhPq2w/zh-cn_image_0000002563867151.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024840Z&HW-CC-Expire=86400&HW-CC-Sign=074F99F6C21521E41DEC9D2AB6EE47B2B78DD16EF9DE2E322CEFE45E2DFC6B16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/L7k8eeopTp6jVEGKuhPq2w/zh-cn_image_0000002563867151.gif?HW-CC-KV=V1&HW-CC-Date=20260330T025124Z&HW-CC-Expire=86400&HW-CC-Sign=FDAE85FFB409A293170F9A7557DFDEA8D3EB7D8570124CBE22FEDDE75626885B)

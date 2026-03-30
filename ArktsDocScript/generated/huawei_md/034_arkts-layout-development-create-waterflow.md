@@ -14,11 +14,11 @@ ArkUI提供了WaterFlow容器组件，用于构建瀑布流布局。WaterFlow组
 
 在瀑布流的纵向布局中，第一行的子节点按从左到右顺序排列，从第二行开始，每个子节点将放置在当前总高度最小的列。如果多个列的总高度相同，则按照从左到右的顺序填充。如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-RaMe8D6RfyJtRsLZ71P4Q/zh-cn_image_0000002532905884.png?HW-CC-KV=V1&HW-CC-Date=20260329T024448Z&HW-CC-Expire=86400&HW-CC-Sign=B287FB50DAB75CD755D5EEC95BEC1B2D388774CA3E3AC37813F252B66FD89ACB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-RaMe8D6RfyJtRsLZ71P4Q/zh-cn_image_0000002532905884.png?HW-CC-KV=V1&HW-CC-Date=20260330T024507Z&HW-CC-Expire=86400&HW-CC-Sign=321CCF9B3F9E9A43B03189674F26B0847159627E7F69F55FC754155160B09339)
 
 在瀑布流的横向布局中，每个子节点都会放置在当前总宽度最小的行。若多行总宽度相同，则按照从上到下的顺序进行填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-YtbQZsMS76p1OTcVwTvYg/zh-cn_image_0000002532905908.png?HW-CC-KV=V1&HW-CC-Date=20260329T024448Z&HW-CC-Expire=86400&HW-CC-Sign=DC88AEB2D486EBD879FD6E260441C56F5227DB7BFF0F8E48B9759D4713C492E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-YtbQZsMS76p1OTcVwTvYg/zh-cn_image_0000002532905908.png?HW-CC-KV=V1&HW-CC-Date=20260330T024507Z&HW-CC-Expire=86400&HW-CC-Sign=D8FB69091362CF04CE1269662A24D1471F3F367B7213451E73B57AAEEFBF4D55)
 
 ## 无限滚动
 
@@ -32,7 +32,7 @@ itemFoot() {
   Row() {
     LoadingProgress()
       .color(Color.Blue).height(50).aspectRatio(1).width('20%')
-    // 请将$r('app.string.waterFlow_text1')替换为实际资源文件，在本示例中该资源文件的value值为"正在加载 "
+
     Text($r('app.string.waterFlow_text1'))
       .fontSize(20)
       .width('30%')
@@ -41,10 +41,11 @@ itemFoot() {
       .margin({ top: 2 })
   }.width('100%').justifyContent(FlexAlign.Center)
 }
+
 build() {
   NavDestination() {
     Column({ space: 12 }) {
-      // ...
+
         WaterFlow({ footer: this.itemFoot(), layoutMode: WaterFlowLayoutMode.SLIDING_WINDOW }) {
           LazyForEach(this.dataSource, (item: number) => {
             FlowItem() {
@@ -60,17 +61,17 @@ build() {
         .width('100%')
         .height('100%')
         .layoutWeight(1)
-        // 触底加载数据
+
         .onReachEnd(() => {
           setTimeout(() => {
             this.dataSource.addNewItems(100);
           }, 1000)
         })
       }
-      // ...
+
   }
   .backgroundColor('#f1f2f3')
-  // 请将$r('app.string.WaterFlowInfiniteScrolling_title')替换为实际资源文件，在本示例中该资源文件的value值为"无限滚动（到达末尾时新增数据）"
+
   .title($r('app.string.WaterFlowInfiniteScrolling_title'))
 }
 ```
@@ -79,7 +80,7 @@ build() {
 
 由于在瀑布流布局中，各子节点的高度不一致，下面的节点位置依赖于上面的节点，所以重新加载所有数据会触发整个瀑布流重新计算布局，可能会导致卡顿。在数据末尾增加数据后，应使用[onDataAdd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach#ondataadd8)通知，以使瀑布流能够识别新增数据并继续加载，同时避免对已有数据进行重复处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/R0KsDvcvSayWlzD2pMm4Mg/zh-cn_image_0000002533065856.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024448Z&HW-CC-Expire=86400&HW-CC-Sign=528ACE79463D62ADF96A5F5678F6ACF8199C45E86D88975E51FEF83B13574FA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/R0KsDvcvSayWlzD2pMm4Mg/zh-cn_image_0000002533065856.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024507Z&HW-CC-Expire=86400&HW-CC-Sign=E7C4863B78F970DB017948D56BC9B6C26425B7A5DDF1B2F10454B56BE2C993D0)
 
 ### 提前新增数据
 
@@ -91,7 +92,7 @@ build() {
 build() {
   NavDestination() {
     Column({ space: 12 }) {
-      // ...
+
         WaterFlow({ layoutMode: WaterFlowLayoutMode.SLIDING_WINDOW }) {
           LazyForEach(this.dataSource, (item: number) => {
             FlowItem() {
@@ -107,7 +108,7 @@ build() {
         .width('100%')
         .height('100%')
         .layoutWeight(1)
-        // 即将触底时提前增加数据
+
         .onScrollIndex((first: number, last: number) => {
           if (last + 20 >= this.dataSource.totalCount()) {
             setTimeout(() => {
@@ -116,15 +117,15 @@ build() {
           }
         })
       }
-      // ...
+
   }
   .backgroundColor('#f1f2f3')
-  // 请将$r('app.string.WaterFlowInfiniteScrollingEarly_title')替换为实际资源文件，在本示例中该资源文件的value值为"无限滚动（提前新增数据）"
+
   .title($r('app.string.WaterFlowInfiniteScrollingEarly_title'))
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/btqfMId0Tru72ft_FQm48A/zh-cn_image_0000002563865759.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024448Z&HW-CC-Expire=86400&HW-CC-Sign=0B2FCA2EB2A1A5D9133285CA42538299E9CDA1A0EA8D6AF2A0416326B603497B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/btqfMId0Tru72ft_FQm48A/zh-cn_image_0000002563865759.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024507Z&HW-CC-Expire=86400&HW-CC-Sign=50ABAC30D5270935B5A60BF0518E115723C0CA0C7FE1877F120DF5F1E509445E)
 
 ## 动态切换列数
 
@@ -135,9 +136,11 @@ build() {
 @Component
 struct ReusableListItem {
   @State item: number = 0;
+
   aboutToReuse(params: Record<string, number>) {
     this.item = params.item;
   }
+
   build() {
     Row() {
       Image('res/waterFlow(' + this.item % 5 + ').JPG')
@@ -148,18 +151,19 @@ struct ReusableListItem {
     }
   }
 }
+
 @Entry
 @Component
 export struct WaterFlowDynamicSwitchover {
-  // 通过状态变量设置列数，可以按需修改触发布局更新
+
   @State columns: number = 2;
-  // ...
+
   build() {
     NavDestination() {
       Column({ space: 12 }) {
-        // ...
+
           Column({ space: 2 }) {
-            // 请将$r('app.string.waterFlow_text2')替换为实际资源文件，在本示例中该资源文件的value值为"切换列数 "
+
             Button($r('app.string.waterFlow_text2')).fontSize(20).onClick(() => {
               if (this.columns === 2) {
                 this.columns = 1;
@@ -186,7 +190,7 @@ export struct WaterFlowDynamicSwitchover {
             .width('100%')
             .height('100%')
             .layoutWeight(1)
-            // 即将触底时提前增加数据
+
             .onScrollIndex((first: number, last: number) => {
               if (last + 20 >= this.dataSource.totalCount()) {
                 setTimeout(() => {
@@ -194,25 +198,25 @@ export struct WaterFlowDynamicSwitchover {
                 }, 1000);
               }
             })
-            // ...
+
           }
         }
-        // ...
+
     }
     .backgroundColor('#f1f2f3')
-    // 请将$r('app.string.WaterFlowDynamicSwitchover_title')替换为实际资源文件，在本示例中该资源文件的value值为"动态切换列数"
+
     .title($r('app.string.WaterFlowDynamicSwitchover_title'))
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/UdAWQu-YQMmKDvhpBeFxOg/zh-cn_image_0000002563785805.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024448Z&HW-CC-Expire=86400&HW-CC-Sign=9E55A6CA1ACBD5B23D7987B07DFFFC9CDBA83E6A9F9D24211FEDC88525EF4747)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/UdAWQu-YQMmKDvhpBeFxOg/zh-cn_image_0000002563785805.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024507Z&HW-CC-Expire=86400&HW-CC-Sign=1E911361206EA83E9BA90EB083C9A2D02E511B3FFA0C27D8458708324B289B66)
 
 ## 分组混合布局
 
 许多应用界面在瀑布流上方包含其他内容，这类场景可通过在Scroll或List内部嵌套WaterFlow来实现。类似下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/QIR-34ZpTXGRr7wZmymUzw/zh-cn_image_0000002532905910.png?HW-CC-KV=V1&HW-CC-Date=20260329T024448Z&HW-CC-Expire=86400&HW-CC-Sign=AF672A7E7536B5B0853B4F7886DF2792D7BD43C39B0FA3298F425BD3BEB911A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/QIR-34ZpTXGRr7wZmymUzw/zh-cn_image_0000002532905910.png?HW-CC-KV=V1&HW-CC-Date=20260330T024507Z&HW-CC-Expire=86400&HW-CC-Sign=115E5CAD047E5E3BA93785EF64890234AFB00D30457BA14F90A0C87AA3F86625)
 
 如果能够将不同部分的子节点整合到一个数据源中，那么通过设置[WaterFlowSections](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#waterflowsections12)，可以在一个 WaterFlow 容器内实现混合布局。与嵌套滚动相比，这种方法可以简化滚动事件处理等应用逻辑。
 
@@ -247,35 +251,37 @@ export struct WaterFlowGroupingMixing {
     itemsCount: 98,
     crossCount: 2,
   };
-  // 使用分组瀑布流时无法通过footer设置尾部组件，可以保留一个固定的分组作为footer
+
   lastSection: SectionOptions = {
     itemsCount: 1,
     crossCount: 1,
   };
-  // 计算FlowItem宽/高
+
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
     return (ret > this.minSize ? ret : this.minSize);
   }
-  // 设置FlowItem的宽/高数组
+
   setItemSizeArray() {
     for (let i = 0; i < 100; i++) {
       this.itemWidthArray.push(this.getSize());
       this.itemHeightArray.push(this.getSize());
     }
   }
+
   aboutToAppear() {
     this.setItemSizeArray();
     for (let i = 0; i < 15; ++i) {
       this.gridItems.push(i);
     }
-    // 所有分组的itemCount之和需要和WaterFlow下数据源的子节点总数相等，否则无法正常布局
+
     let sectionOptions: SectionOptions[] = [this.oneColumnSection, this.twoColumnSection, this.lastSection];
     this.sections.splice(0, 0, sectionOptions);
   }
+
   build() {
     NavDestination() {
-      // ...
+
         WaterFlow({ layoutMode: WaterFlowLayoutMode.SLIDING_WINDOW, sections: this.sections }) {
           LazyForEach(this.dataSource, (item: number) => {
             FlowItem() {
@@ -303,12 +309,12 @@ export struct WaterFlowGroupingMixing {
         }
         .backgroundColor(0xFAEEE0)
         .height('100%')
-        // 即将触底时提前增加数据
+
         .onScrollIndex((first: number, last: number) => {
           if (last + 20 >= this.dataSource.totalCount()) {
             setTimeout(() => {
               this.dataSource.addNewItems(100);
-              // 增加数据后同步调整对应分组的itemCount
+
               this.twoColumnSection.itemsCount += 100;
               this.sections.update(1, this.twoColumnSection);
             }, 1000);
@@ -316,7 +322,7 @@ export struct WaterFlowGroupingMixing {
         })
         .margin(10)
       }
-      // ...
+
   }
 }
 ```

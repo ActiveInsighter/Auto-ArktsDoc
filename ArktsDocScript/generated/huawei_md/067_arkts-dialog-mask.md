@@ -83,7 +83,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/I9d0wBkARdCBAZbGGl-Qgg/zh-cn_image_0000002532906030.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024522Z&HW-CC-Expire=86400&HW-CC-Sign=D7F1CD063C7B511EAA802831252DC53439D9F09E237C90A83292A490BB3B8C34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/I9d0wBkARdCBAZbGGl-Qgg/zh-cn_image_0000002532906030.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024810Z&HW-CC-Expire=86400&HW-CC-Sign=821D927FF1D355AED2D0C5541925A0156AAD7681C3AB54C215E16556E9C81CCA)
 
 设置isModal为false，将默认的模态弹出框变为非模态弹出框。
 
@@ -113,7 +113,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Hl8Ns8rMTtquyIYM37MBhg/zh-cn_image_0000002533065978.png?HW-CC-KV=V1&HW-CC-Date=20260329T024522Z&HW-CC-Expire=86400&HW-CC-Sign=42393617C698604405122EB2B02691EE549B19ED050621CAEACB1B214B1DC29E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Hl8Ns8rMTtquyIYM37MBhg/zh-cn_image_0000002533065978.png?HW-CC-KV=V1&HW-CC-Date=20260330T024810Z&HW-CC-Expire=86400&HW-CC-Sign=CC2057B1AFA630BA3435A87E5FE3A07C11295B243EE311962B929BCB6D900D35)
 
 ## 弹出框蒙层样式控制
 
@@ -153,7 +153,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/3_esEEiaRZeNUb_3_hNZcg/zh-cn_image_0000002563865881.png?HW-CC-KV=V1&HW-CC-Date=20260329T024522Z&HW-CC-Expire=86400&HW-CC-Sign=DF7D5FEEA7E8FADB37AEB0CAD4084471045397798A6A1B77D1D61055E10E3894)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/3_esEEiaRZeNUb_3_hNZcg/zh-cn_image_0000002563865881.png?HW-CC-KV=V1&HW-CC-Date=20260330T024810Z&HW-CC-Expire=86400&HW-CC-Sign=14C2929C424F34109428A8EE8FFCA1C681F2912D8194CAFD2B981095496CFE03)
 
 在levelMode为LevelMode.EMBEDDED下，展示不同immersiveMode对蒙层在导航栏和状态栏的延伸效果。
 
@@ -186,7 +186,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ls561bkSQ8GxiW39OD0yvA/zh-cn_image_0000002563785927.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024522Z&HW-CC-Expire=86400&HW-CC-Sign=5265B1DC17F3E49474A11DCFED2B953F962C7C854026655AD2FD6FBE8CA71F68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/ls561bkSQ8GxiW39OD0yvA/zh-cn_image_0000002563785927.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024810Z&HW-CC-Expire=86400&HW-CC-Sign=E18049455D8276D4894440265D4C9BE5A7EE6EEADFE497D6165BAA68F4C861C4)
 
 ## 弹出框蒙层动画控制
 
@@ -220,7 +220,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/j3i7voznT5i7joJRt4yqYw/zh-cn_image_0000002532906032.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024522Z&HW-CC-Expire=86400&HW-CC-Sign=C9C3E12265CC2734F071C057D99467739FEED9C9D10A0DD08EDEAB72B52DB368)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/j3i7voznT5i7joJRt4yqYw/zh-cn_image_0000002532906032.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024810Z&HW-CC-Expire=86400&HW-CC-Sign=8BAF7A2E962B7294D0EEC5B467F40DBDFE03DD99EA8C462B4802B95EBDC5B888)
 
 设置maskTransition，实现弹出框中蒙层单独的动画定制能力。
 
@@ -239,7 +239,7 @@ Button('openCustomDialog maskTransition')
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/qZY1gkz8SBCI9aDNA09yDw/zh-cn_image_0000002533065980.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024522Z&HW-CC-Expire=86400&HW-CC-Sign=48043E4AE6E909FA0C41D8F79C64DE58EBEE1AEDAF0D41560043FB14595C9BC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/qZY1gkz8SBCI9aDNA09yDw/zh-cn_image_0000002533065980.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024810Z&HW-CC-Expire=86400&HW-CC-Sign=15547AD562D5A3B9172C6B0445ADA29848764345CCB2FCDE2641E661D3A48FAA)
 
 [CustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-custom-dialog)虽然不支持transition接口，但与之对应的openAnimation和closeAnimation接口在动画的打开和关闭时可进行定制，示例代码如下：
 
@@ -300,7 +300,7 @@ export struct CustomDialogAnimation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/uBRX9lp7Q86mGUJ4e13V5Q/zh-cn_image_0000002563865883.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024522Z&HW-CC-Expire=86400&HW-CC-Sign=202652427BFD458D5E9A606553F470C968043CAFF2976DA796728B62CD9C5E68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/uBRX9lp7Q86mGUJ4e13V5Q/zh-cn_image_0000002563865883.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024810Z&HW-CC-Expire=86400&HW-CC-Sign=36C9153873F758806FFA8B039A896310AFD87A191B43B206DD6D2305C4D323B6)
 
 ## 完整示例
 
@@ -421,4 +421,4 @@ export struct CustomDialogControl {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ZVjRC0NjQDO6Q23VoOGhmw/zh-cn_image_0000002563785929.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024522Z&HW-CC-Expire=86400&HW-CC-Sign=C5D7E675FD50D309E97275E3753A8A818F7E7BDA9DA03D98A307110EA60F6B84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ZVjRC0NjQDO6Q23VoOGhmw/zh-cn_image_0000002563785929.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024810Z&HW-CC-Expire=86400&HW-CC-Sign=53BFB20FFBFF0B63FB8EF16B2DCF5B20AEE3E537FFBA2D64D6EFAFE5C40FE3F8)

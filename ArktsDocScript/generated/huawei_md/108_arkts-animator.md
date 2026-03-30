@@ -12,9 +12,9 @@
 
 如图所示，帧动画在动画过程中即可实时响应，而属性动画按最终状态响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/qKZAlGvmRQOMweCHpAiKEQ/zh-cn_image_0000002563786017.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024602Z&HW-CC-Expire=86400&HW-CC-Sign=D74E11D2CB449AE21FDE6EE046315878AFEDCE599FE7338FD8FF882EECBD9FB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/qKZAlGvmRQOMweCHpAiKEQ/zh-cn_image_0000002563786017.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024846Z&HW-CC-Expire=86400&HW-CC-Sign=455DB33F83C1DF418182F8847A89B67A707E708E4A138070786BF8E932A297F6)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/E3wq0QzCT1mvpkEkob4SPQ/zh-cn_image_0000002532906122.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024602Z&HW-CC-Expire=86400&HW-CC-Sign=ED534373F8DBEDFE6E23B2181BF07959DB245D5B68AC3D72C319A464E844C05F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/E3wq0QzCT1mvpkEkob4SPQ/zh-cn_image_0000002532906122.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024846Z&HW-CC-Expire=86400&HW-CC-Sign=E2290178F308B4D8319772AB457D9BA7F6A53A96A48D68D85069CF13FFF568B7)
 
 ## 使用帧动画实现动画效果
 
@@ -134,4 +134,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/QydfJbfBQSWsGRCy929Frg/zh-cn_image_0000002533066070.gif?HW-CC-KV=V1&HW-CC-Date=20260329T024602Z&HW-CC-Expire=86400&HW-CC-Sign=BBFCB896234F3A935969CB68641552D1F3E8B8A26D2788A2036F04AABD5B0A6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/QydfJbfBQSWsGRCy929Frg/zh-cn_image_0000002533066070.gif?HW-CC-KV=V1&HW-CC-Date=20260330T024846Z&HW-CC-Expire=86400&HW-CC-Sign=D2001D57548BAE43A0427DD45E1E90134F9214BE47F02CA658164C5B9DCDF8D5)
