@@ -1,4 +1,4 @@
-# 实现属性动画-属性动画-使用动画-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 实现属性动画
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribute-animation-apis
 
 通过可动画属性改变引起UI上产生的连续视觉效果，即为属性动画。属性动画是最基础易懂的动画，ArkUI提供三种动画接口[animateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#animateto)、[animation](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animatorproperty)和[keyframeAnimateTo](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-keyframeanimateto)驱动组件属性按照动画曲线等动画参数进行连续的变化，产生属性动画。
@@ -74,7 +74,7 @@ struct attrAnimateToDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/kugCczVcRH2XBILhQS_Zqw/zh-cn_image_0000002533066046.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094544Z&HW-CC-Expire=86400&HW-CC-Sign=5132C7098599E3858A41F3F7A27DE593B6882AD4D8E1A0B81BFB63362DC803CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/kugCczVcRH2XBILhQS_Zqw/zh-cn_image_0000002533066046.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095230Z&HW-CC-Expire=86400&HW-CC-Sign=3CB92A42E2C784DC8520A6ED020117096AC385E2DACB5818F17099FF5D725BED)
 
 ## 使用animation产生属性动画
 
@@ -133,7 +133,7 @@ struct attrAnimationDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Y3xwAft_QMKSWSTMpH0xxw/zh-cn_image_0000002563865949.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094544Z&HW-CC-Expire=86400&HW-CC-Sign=E099A97C8F8958E7B7BB8B78ED8F123D4D702ADCA7F641D30EEDBAD093627E4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Y3xwAft_QMKSWSTMpH0xxw/zh-cn_image_0000002563865949.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095230Z&HW-CC-Expire=86400&HW-CC-Sign=7360645CC30AFDBF02688485C64C00D015645C3E59057A915BDE6796E71C4020)
 
 ## 使用keyframeAnimateTo产生属性动画
 
@@ -210,7 +210,7 @@ struct KeyframeAnimateToDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/yTipZiURTcibfCW48MPpLw/zh-cn_image_0000002563785995.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094544Z&HW-CC-Expire=86400&HW-CC-Sign=CE087E365F68972671787978344F58EF4EECE9ADA9974F7AE477B22AD01C3F84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/yTipZiURTcibfCW48MPpLw/zh-cn_image_0000002563785995.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095230Z&HW-CC-Expire=86400&HW-CC-Sign=8C068AB1882F6FF1E6534AB3E311B8985CB78A0B1FADBAC4662183F0B7A029B8)
 
 > **说明**
 > - 在对组件位置大小变化做动画的时候，由于布局属性的改变会触发测量布局，性能开销大。而[scale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#scale)属性的改变不会触发测量布局，性能开销小。因此，在组件位置大小持续发生变化的场景，如跟手触发组件大小变化的场景，推荐使用scale。

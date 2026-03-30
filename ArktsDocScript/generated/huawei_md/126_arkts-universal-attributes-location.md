@@ -1,4 +1,4 @@
-# 位置设置-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 位置设置
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location
 
 设置组件对齐方式、布局方向及显示位置。
@@ -363,14 +363,13 @@ chainWeight(chainWeight: ChainWeightOptions): T
 设置内容在元素内的对齐方式和子元素在父组件主轴方向上的布局。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct PositionExample1 {
   build() {
     Column() {
       Column({ space: 10 }) {
-        // 元素内容<元素宽高，设置内容在与元素内的对齐方式
+
         Text('align').fontSize(9).fontColor(0xCCCCCC).width('90%')
         Stack() {
           Text('First show in bottom end').height('65%').backgroundColor(0xD2B48C)
@@ -381,7 +380,7 @@ struct PositionExample1 {
           Text('top start')
         }.width('90%').height(50).margin({ top: 5 }).backgroundColor(0xFFE4C4)
         .align(Alignment.TopStart)
-        // 父组件设置direction为Direction.Ltr，子元素从左到右排列
+
         Text('direction').fontSize(9).fontColor(0xCCCCCC).width('90%')
         Row() {
           Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3)
@@ -391,7 +390,7 @@ struct PositionExample1 {
         }
         .width('90%')
         .direction(Direction.Ltr)
-        // 父组件设置direction为Direction.Rtl，子元素从右到左排列
+
         Row() {
           Text('1').height(50).width('25%').fontSize(16).backgroundColor(0xF5DEB3).textAlign(TextAlign.End)
           Text('2').height(50).width('25%').fontSize(16).backgroundColor(0xD2B48C).textAlign(TextAlign.End)
@@ -407,20 +406,19 @@ struct PositionExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/IQcInTuhQsOtkPbhhe8knQ/zh-cn_image_0000002563866639.png?HW-CC-KV=V1&HW-CC-Date=20260330T094620Z&HW-CC-Expire=86400&HW-CC-Sign=ED6D310D53EF892D5D129666E0FFFBCD34A56D37A4B8E027589050467D33EF25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/IQcInTuhQsOtkPbhhe8knQ/zh-cn_image_0000002563866639.png?HW-CC-KV=V1&HW-CC-Date=20260330T095035Z&HW-CC-Expire=86400&HW-CC-Sign=F3DB43E9FDE0383BB7A206301CEB3D657DDBA1C0C9370EF7443124BAED7984A7)
 
 ### 示例2（位置偏移）
 
 基于父组件、相对定位、锚点作出位置偏移。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct PositionExample2 {
   build() {
     Column({ space: 20 }) {
-      // 设置子组件左上角相对于父组件左上角的偏移位置
+
       Text('position').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Row() {
         Text('1').size({ width: '30%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
@@ -441,8 +439,7 @@ struct PositionExample2 {
           .fontSize(16)
           .position({ x: '50%', y: '70%' })
       }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
-      // 相对于起点偏移，其中x为最终定位点距离起点水平方向间距，x>0往左，反之向右。
-      // y为最终定位点距离起点垂直方向间距，y>0向上，反之向下
+
       Text('markAnchor').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Stack({ alignContent: Alignment.TopStart }) {
         Row()
@@ -467,7 +464,7 @@ struct PositionExample2 {
           .backgroundColor(Color.Green)
           .markAnchor({ x: 25, y: -25 })
       }.margin({ top: 25 }).border({ width: 1, style: BorderStyle.Dashed })
-      // 相对定位，x>0向右偏移，反之向左，y>0向下偏移，反之向上
+
       Text('offset').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Row() {
         Text('1').size({ width: '15%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(16)
@@ -494,14 +491,13 @@ struct PositionExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/cIbGq5sPTTWskORP-7YKPg/zh-cn_image_0000002563786685.png?HW-CC-KV=V1&HW-CC-Date=20260330T094620Z&HW-CC-Expire=86400&HW-CC-Sign=AECEEEE82C7EF18A1ADAC523F9A904AFB04AA0F1DFCC33847E5B033EBDA326A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/cIbGq5sPTTWskORP-7YKPg/zh-cn_image_0000002563786685.png?HW-CC-KV=V1&HW-CC-Date=20260330T095035Z&HW-CC-Expire=86400&HW-CC-Sign=98DB6DAF8D5BF05F6962AD93093736E5FD229E8080931F49A79EED3CB8044214)
 
 ### 示例3（绝对定位和相对偏移）
 
 使用position设置绝对定位，确定子组件相对父组件的位置。使用offset设置相对偏移，组件相对原本的布局位置进行偏移。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Example3 {
@@ -538,6 +534,7 @@ struct Example3 {
           .textAlign(TextAlign.Center)
           .position({ bottom: 0, left: 30 })
       }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
+
       Text('offset use Edges').fontSize(12).fontColor(0xCCCCCC).width('90%')
       Row() {
         Text('1')
@@ -572,19 +569,20 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/cRQKVLFZQmuKm_joN5fNuQ/zh-cn_image_0000002532906790.jpeg?HW-CC-KV=V1&HW-CC-Date=20260330T094620Z&HW-CC-Expire=86400&HW-CC-Sign=9D1BA2A8A77AC741B64E7E5A9B6A5E3A1FC0326F88017E64E949F3D39B635F95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/cRQKVLFZQmuKm_joN5fNuQ/zh-cn_image_0000002532906790.jpeg?HW-CC-KV=V1&HW-CC-Date=20260330T095035Z&HW-CC-Expire=86400&HW-CC-Sign=B64938F6A34C1866CA1230A21C5378AC879BAE2F66E44676F2E5BF5600AE91A4)
 
 ### 示例4（镜像效果）
 
 通用布局属性支持[使用镜像能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#使用镜像能力)。下述示例从上到下依次通过[position](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#position)、[offset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#offset)和[markAnchor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#markanchor)实现镜像效果，为对比镜像前后的差异，浅蓝色对应镜像前效果，深蓝色对应镜像后效果。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Example4 {
   private scroller: Scroller = new Scroller()
+
   build() {
     Column() {
       Stack({ alignContent: Alignment.End }) {
@@ -593,50 +591,55 @@ struct Example4 {
             RelativeContainer() {
               Row() {
               }
-              .position({ start: LengthMetrics.px(200), top: LengthMetrics.px(100) }) // position接口中的参数使用LocalizedEdges类型，支持镜像翻转效果
+              .position({ start: LengthMetrics.px(200), top: LengthMetrics.px(100) })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(0, 74, 175)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
-              .position({ left: '200px', top: '100px' }) // position接口中的参数使用Edges类型，不支持镜像翻转效果
+              .position({ left: '200px', top: '100px' })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(39, 135, 217)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
-              .offset({ start: LengthMetrics.vp(100), top: LengthMetrics.vp(200) }) // offset接口中的参数使用LocalizedEdges类型，支持镜像翻转效果
+              .offset({ start: LengthMetrics.vp(100), top: LengthMetrics.vp(200) })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(0, 74, 175)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
-              .offset({ left: 100, top: 200 }) // offset接口中的参数使用Edges类型，不支持镜像翻转效果
+              .offset({ left: 100, top: 200 })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(39, 135, 217)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
               .markAnchor({
                 start: LengthMetrics.fp(100),
                 top: LengthMetrics.fp(-350)
-              }) // markAnchor接口中的参数使用LocalizedPosition类型，支持镜像翻转效果
+              })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(0, 74, 175)')
               .padding(50)
               .margin(50)
+
               Row() {
               }
-              .markAnchor({ x: '100fp', y: '-350fp' }) // markAnchor接口中的参数使用Position类型，不支持镜像翻转效果
+              .markAnchor({ x: '100fp', y: '-350fp' })
               .width("30%")
               .height("20%")
               .backgroundColor('rgb(39, 135, 217)')
@@ -651,6 +654,7 @@ struct Example4 {
         .width('100%')
         .scrollBar(BarState.Off)
         .scrollable(ScrollDirection.Vertical)
+
         ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto }) {
           Text()
             .width(20)
@@ -666,18 +670,17 @@ struct Example4 {
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/A_b6wr_7TrGFsrtmBAJxig/zh-cn_image_0000002533066738.png?HW-CC-KV=V1&HW-CC-Date=20260330T094620Z&HW-CC-Expire=86400&HW-CC-Sign=4FE4597D6E770EB2FD4713DC59637C10623D6AD149CE29B71BA76F514BE013B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/A_b6wr_7TrGFsrtmBAJxig/zh-cn_image_0000002533066738.png?HW-CC-KV=V1&HW-CC-Date=20260330T095035Z&HW-CC-Expire=86400&HW-CC-Sign=2FC3A8C4F09838627D6728DFDC679E6E87F1AAA905635E2E4E907C27FF656C25)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/I6eeMBBoSwqVqs9IDpXwaQ/zh-cn_image_0000002563866641.png?HW-CC-KV=V1&HW-CC-Date=20260330T094620Z&HW-CC-Expire=86400&HW-CC-Sign=A0178F3C99C7CBF39982E2FB1619BC676014231C9F89A1680150CE123743D7FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/I6eeMBBoSwqVqs9IDpXwaQ/zh-cn_image_0000002563866641.png?HW-CC-KV=V1&HW-CC-Date=20260330T095035Z&HW-CC-Expire=86400&HW-CC-Sign=B6E985FB72152E63DA4E43D48551D97704F72A7CCC5080EAEBA8988853EA6AD8)
 
 ### 示例5（align属性适配镜像特性）
 
 设置内容在元素内的对齐方式和子元素在父组件主轴方向上的布局。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct buttonTestDemo {
@@ -688,9 +691,11 @@ struct buttonTestDemo {
   @State isLocalizedAlignmentIndex: number = 4
   @State isDirection: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto]
   @State isDirectionIndex: number = 0
+
   build() {
     Row() {
       Column() {
+
         Row({ space: 5 }) {
           Button('START')
             .onClick(() => {
@@ -705,6 +710,7 @@ struct buttonTestDemo {
               this.isLocalizedAlignmentIndex = 5
             })
         }.margin(20)
+
         Row({ space: 5 }) {
           Button('Ltr')
             .onClick(() => {
@@ -719,6 +725,7 @@ struct buttonTestDemo {
               this.isDirectionIndex = 2
             })
         }.margin(20)
+
         Row() {
           Button('OK', { type: ButtonType.Capsule, stateEffect: true })
             .backgroundColor(0x317aff)
@@ -735,14 +742,13 @@ struct buttonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/QGxKhtslQO6X1-XOZFxctQ/zh-cn_image_0000002563786687.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094620Z&HW-CC-Expire=86400&HW-CC-Sign=F982631F8A4EAD4D2207DB7B85D74D5374F718F224056B040845184E10266AB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/QGxKhtslQO6X1-XOZFxctQ/zh-cn_image_0000002563786687.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095035Z&HW-CC-Expire=86400&HW-CC-Sign=8B3F86DDE33EE6406CCF6E4DC4DB705F2F585987E14EDD85BF1662124436EE26)
 
 ### 示例6（layoutGravity属性单独设置Stack组件中子组件的对齐规则）
 
 更改Stack中Text的位置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index5 {
@@ -753,6 +759,7 @@ struct Index5 {
   @State layoutGravityIndex: number = 0;
   private directionArr: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto];
   @State directionIndex: number = 0;
+
   build() {
     Row() {
       Column() {
@@ -772,6 +779,7 @@ struct Index5 {
         .backgroundColor(Color.Grey)
         .margin({ top: 10, bottom: 10 })
         .direction(this.directionArr[this.directionIndex])
+
         Button("LayoutGravity: " + this.layoutGravityArr[this.layoutGravityIndex])
           .width(300)
           .fontSize(16)
@@ -779,6 +787,7 @@ struct Index5 {
             this.layoutGravityIndex = ++this.layoutGravityIndex % this.layoutGravityArr.length;
           })
           .margin({ bottom: 10 })
+
         Button("Direction: " + this.directionArr[this.directionIndex])
           .width(150)
           .fontSize(16)
@@ -794,4 +803,4 @@ struct Index5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/aIM_aHRcSlKEGNq9Tfih8g/zh-cn_image_0000002532906792.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094620Z&HW-CC-Expire=86400&HW-CC-Sign=3AC8428A88E1ADDF4F8DB571CCAA99B402E16210D08EE3262EE3B537ADD578A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/aIM_aHRcSlKEGNq9Tfih8g/zh-cn_image_0000002532906792.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095035Z&HW-CC-Expire=86400&HW-CC-Sign=107D88B387F28E3F14EB60C8D76C25F07C3083C2E045DC2A9BBE15D5BE1AD9A6)

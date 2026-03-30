@@ -1,4 +1,4 @@
-# 文档中心
+# Hyperlink
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-hyperlink
 
 超链接组件，组件宽高范围内点击实现跳转。
@@ -62,13 +62,12 @@ struct HyperlinkExample {
     Column() {
       Column() {
         Hyperlink('https://example.com/') {
-
+          // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
           Image($r('app.media.bg'))
             .width(200)
             .height(100)
         }
       }
-
       Column() {
         Hyperlink('https://example.com/', 'Go to the developer website') {
         }
@@ -79,4 +78,4 @@ struct HyperlinkExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/CfwqEnZ8TrGhaJkfymClQw/zh-cn_image_0000002532907096.png?HW-CC-KV=V1&HW-CC-Date=20260330T094730Z&HW-CC-Expire=86400&HW-CC-Sign=0F4A741860FFBCE10138D2C263D3C567812AD4838ABA1A58F9514B4C39E199AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/0auRRq3mSp2U200mlQ9dpw/zh-cn_image_0000002565291391.png?HW-CC-KV=V1&HW-CC-Date=20260330T095437Z&HW-CC-Expire=86400&HW-CC-Sign=B46539B0A3A6BD566E91D01D02C1AB4C761A62AEF2919C09C8AFA832643A5177)

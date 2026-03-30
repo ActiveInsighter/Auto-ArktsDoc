@@ -1,4 +1,4 @@
-# FlowItem-滚动与滑动-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# FlowItem
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-flowitem
 
 [瀑布流组件](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)的子组件，用来展示瀑布流具体item。

@@ -1,4 +1,4 @@
-# 文档中心
+# ContentSlot：混合开发
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rendering-control-contentslot
 
 用于渲染并管理Native层使用C-API创建的组件。

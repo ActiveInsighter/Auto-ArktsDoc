@@ -1,4 +1,4 @@
-# 文档中心
+# 属性动画
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animation-attribute
 
 - **[属性动画概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribute-animation-overview)**

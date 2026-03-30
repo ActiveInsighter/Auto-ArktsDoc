@@ -1,4 +1,4 @@
-# 不依赖UI组件的全局菜单 (openMenu)-菜单-使用弹窗-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 不依赖UI组件的全局菜单 (openMenu)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-uicontext-menu
 
 [菜单控制 (Menu)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-and-menu-components-menu)在使用时依赖绑定UI组件，否则无法使用。从API version 18开始，可以通过使用全局接口[openMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#openmenu18)的方式，在无UI组件的场景下直接或封装使用，例如在事件回调中使用或封装后对外提供能力。
@@ -20,7 +20,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/zgJeQ-wRRpmtwFsZ8Rl7jg/zh-cn_image_0000002533065984.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094528Z&HW-CC-Expire=86400&HW-CC-Sign=0B91B89E165ACC1A04F5E0468294841FB58AE77DCC91BC0BDD44BE84621714A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/zgJeQ-wRRpmtwFsZ8Rl7jg/zh-cn_image_0000002533065984.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095214Z&HW-CC-Expire=86400&HW-CC-Sign=B6FDDF024FA883285FBDD5E7A775AB4EDB3BDA791A581F33F9A8682D8D65D2CC)
 
 ### 创建ComponentContent
 
@@ -37,29 +37,29 @@ private contentNode: ComponentContent<Object> =
 @Builder
 export function buildText(params: Params) {
   Popup({
-    // 类型设置图标内容
+
     icon: {
-      // 请将$r('app.media.app_icon')替换为实际资源文件
+
       image: $r('app.media.app_icon'),
       width: 32,
       height: 32,
       fillColor: Color.White,
       borderRadius: 10
     } as PopupIconOptions,
-    // 设置文字内容
+
     title: {
       text: `This is a Popup title 1`,
       fontSize: 20,
       fontColor: Color.Black,
       fontWeight: FontWeight.Normal
     } as PopupTextOptions,
-    // 设置文字内容
+
     message: {
       text: `This is a Popup message 1`,
       fontSize: 15,
       fontColor: Color.Black
     } as PopupTextOptions,
-    // 设置按钮内容
+
     buttons: [{
       text: 'confirm',
       action: () => {
@@ -78,6 +78,7 @@ export function buildText(params: Params) {
       },] as [PopupButtonOptions?, PopupButtonOptions?]
   })
 }
+
 let contentNode: ComponentContent<Object> =
   new ComponentContent(uiContext, wrapBuilder(buildText), message, { nestingBuilderSupported: true });
 ```
@@ -116,7 +117,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Jn4ZAI_qRMqyYbC7CSCeMg/zh-cn_image_0000002533065984.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094528Z&HW-CC-Expire=86400&HW-CC-Sign=D2561E27E6AA6414F9E516AD641B4B4C9721792D4B18D4AFB86E6D9D5A0A24F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Jn4ZAI_qRMqyYbC7CSCeMg/zh-cn_image_0000002533065984.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095214Z&HW-CC-Expire=86400&HW-CC-Sign=6B0463D01EAB354F9E72B2BB4FEB64FE92ED2F8F7D59FDE2A1EF69E07D2CD1BE)
 
 ## 关闭菜单
 
@@ -133,7 +134,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/8vaxlCVDRKCyfMp0L81ePQ/zh-cn_image_0000002533065984.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094528Z&HW-CC-Expire=86400&HW-CC-Sign=10F429533A27A6C3C905117FB7D0D37F72472C440CA7B4AECD71FE6179BD6C1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/8vaxlCVDRKCyfMp0L81ePQ/zh-cn_image_0000002533065984.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095214Z&HW-CC-Expire=86400&HW-CC-Sign=8858C090B286503A17A745289E515145AD997F5F64E03EF88A59E8951D1C1426)
 
 > **说明**
 > 由于[updateMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#updatemenu18)和[closeMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#closemenu18)依赖content来更新或者关闭指定的菜单，开发者需自行维护传入的content。

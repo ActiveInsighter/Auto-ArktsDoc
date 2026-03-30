@@ -1,4 +1,4 @@
-# Indicator-导航与切换-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Indicator
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-swiper-components-indicator
 
 导航点组件，提供圆点导航点以及数字导航点两种导航点样式。
@@ -240,6 +240,7 @@ struct DotIndicatorDemo {
       this.list.push(i);
     }
   }
+
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -264,6 +265,7 @@ struct DotIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
+
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(
@@ -285,7 +287,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/CEPnowbVRjaVkjQjgJeM-A/zh-cn_image_0000002563786851.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094658Z&HW-CC-Expire=86400&HW-CC-Sign=9F253F740DD2D3B92CDA83F5736B6F24D8FEA1685AEC3881667DB0D379DE42F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Cx0SmZ7PRjuN_e1URHpPeg/zh-cn_image_0000002534411350.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095354Z&HW-CC-Expire=86400&HW-CC-Sign=DDA75329598EECF5D27268F076793093553F1E3B40FD9EFF6C1DEB5A80D39884)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -303,6 +305,7 @@ struct DigitIndicatorDemo {
       this.list.push(i);
     }
   }
+
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -327,6 +330,7 @@ struct DigitIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
+
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(Indicator.digit()
@@ -345,4 +349,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/J0CPcyjZTe6aw3ajd6n5oQ/zh-cn_image_0000002532906956.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094658Z&HW-CC-Expire=86400&HW-CC-Sign=5B4C49AE30CAC5B77990060AA726B88D8DC56AE537F4B5D3147B8FA4C0F5EE51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/RCKrUSTXR7eDwCAhYS5ZQQ/zh-cn_image_0000002565291251.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095354Z&HW-CC-Expire=86400&HW-CC-Sign=6A9A0EE59C4E5E845C20661920F6094CC98A30F8FA1C7E9729C4854AFC52275D)

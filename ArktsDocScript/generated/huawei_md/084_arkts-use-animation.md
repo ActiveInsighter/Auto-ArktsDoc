@@ -1,4 +1,4 @@
-# 文档中心
+# 使用动画
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-animation
 
 - **[动画概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animation)**

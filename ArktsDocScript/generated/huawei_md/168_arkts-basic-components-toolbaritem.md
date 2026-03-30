@@ -1,4 +1,4 @@
-# 文档中心
+# ToolBarItem
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-toolbaritem
 
 通过[toolbar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-toolbar#toolbar)通用属性为窗口标题栏添加工具栏项。

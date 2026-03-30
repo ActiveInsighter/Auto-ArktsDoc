@@ -1,4 +1,4 @@
-# 文档中心
+# 绑定半模态页面（bindSheet）
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sheet-page
 
 [半模态页面（bindSheet）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sheet-transition#bindsheet)默认是模态形式的非全屏弹窗式交互页面，允许部分底层父视图可见，帮助用户在与半模态交互时保留其父视图环境。
@@ -101,7 +101,7 @@ struct SheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/qqm8sENcQYKx5EE3lhOytA/zh-cn_image_0000002533065990.png?HW-CC-KV=V1&HW-CC-Date=20260330T094535Z&HW-CC-Expire=86400&HW-CC-Sign=F36A8F32A1D04E1318C7159C82D2CFE64951C17D5FF7193CAAA65F5D2413E04F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/qqm8sENcQYKx5EE3lhOytA/zh-cn_image_0000002533065990.png?HW-CC-KV=V1&HW-CC-Date=20260330T095129Z&HW-CC-Expire=86400&HW-CC-Sign=A8E52F6B1B91D438374EA7F6E1717734EC0CA3443EF15550996930D781CC4790)
 
 ## 二次确认能力
 
@@ -181,7 +181,7 @@ struct OnWillDismiss_Dismiss {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/G4ygwSBkR12TSVr3hi7Cng/zh-cn_image_0000002563865893.png?HW-CC-KV=V1&HW-CC-Date=20260330T094535Z&HW-CC-Expire=86400&HW-CC-Sign=316B322BFDD9AF5EFBF56687EAB226FDA7B506A4C1AE7663EA667039369ADDF1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/G4ygwSBkR12TSVr3hi7Cng/zh-cn_image_0000002563865893.png?HW-CC-KV=V1&HW-CC-Date=20260330T095129Z&HW-CC-Expire=86400&HW-CC-Sign=A49FBD241A98CE0EE42E1B07BB4FDC280D8EA547CBAACDA657F1EB14F31AB670)
 
 ## 屏蔽部分关闭行为
 
@@ -286,4 +286,4 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LEYPabQtSdmHtNUql7JGpQ/zh-cn_image_0000002563785939.png?HW-CC-KV=V1&HW-CC-Date=20260330T094535Z&HW-CC-Expire=86400&HW-CC-Sign=EA0AC7341EB055F4342110ABADF53715FB531B773CD84C1E8D82470649447C02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LEYPabQtSdmHtNUql7JGpQ/zh-cn_image_0000002563785939.png?HW-CC-KV=V1&HW-CC-Date=20260330T095129Z&HW-CC-Expire=86400&HW-CC-Sign=1D14AFE73F6A6E33A0C455733196AAB6C9619132B3E5F63021858C56A73E360B)

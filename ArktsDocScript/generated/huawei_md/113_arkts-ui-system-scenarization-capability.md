@@ -1,4 +1,4 @@
-# 文档中心
+# UI系统场景化能力
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-system-scenarization-capability
 
 - **[使用UI上下文接口操作界面（UIContext）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface)**

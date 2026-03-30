@@ -1,4 +1,4 @@
-# 无障碍属性-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 无障碍属性
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-accessibility
 
 设置组件的无障碍属性和事件，以充分利用无障碍功能。
@@ -612,10 +612,10 @@ accessibilityFocusDrawLevel(drawLevel: FocusDrawLevel):T
 该示例主要演示accessibilityText无障碍文本和accessibilityDescription无障碍说明的播报内容。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
+
   @Builder customAccessibilityNode() {
     Column() {
       Text(`virtual node`)
@@ -623,6 +623,7 @@ struct Index {
     .width(10)
     .height(10)
   }
+
   build() {
     Row() {
       Column() {
@@ -636,7 +637,7 @@ struct Index {
       .width('100%')
       .accessibilityGroup(true)
       .accessibilityLevel("yes")
-      .accessibilityText("分组") // 无障碍文本的内容，若组件既拥有文本属性又拥有无障碍文本属性，则组件被选中时，仅播报无障碍文本内容。
+      .accessibilityText("分组")
       .accessibilityDescription("Column组件可以被选中，播报的内容是“分组”")
       .accessibilityVirtualNode(this.customAccessibilityNode)
       .accessibilityChecked(true)
@@ -652,7 +653,6 @@ struct Index {
 该示例主要演示优先使用子组件的无障碍文本进行朗读。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Focus {
@@ -682,7 +682,6 @@ struct Focus {
 该示例主要演示accessibilityDefaultFocus屏幕朗读当前页默认首焦点和accessibilityNextFocusId走焦过程中组件的下一个焦点。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
@@ -696,7 +695,7 @@ struct Index {
         .id('text2')
         .fontSize(50)
         .accessibilityLevel('yes')
-        .accessibilityDefaultFocus(true)  // 设置该组件为屏幕朗读当前页默认首焦点
+        .accessibilityDefaultFocus(true)
         .accessibilityNextFocusId('text4')
       Text('Text Demo 3')
         .id('text3')
@@ -719,12 +718,12 @@ struct Index {
 该示例主要演示accessibilityRole无障碍组件类型和accessibilityTextHint供无障碍辅助应用查询的组件的文本提示信息。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
   @State isDownloading: boolean = false;
   @State hintStr: string = '点击开始下载';
+
   build() {
     Column({ space: 20 }) {
       Button(this.isDownloading ? '下载中' : '点击下载')
@@ -755,18 +754,19 @@ struct Index {
 该示例主要演示accessibilityScrollTriggerable设置无障碍节点是否支持屏幕朗读滚动、accessibilityFocusDrawLevel设置无障碍焦点绿框的绘制层级和accessibilityUseSamePage设置跨进程嵌入式显示的组件,如[EmbeddedComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-embedded-component)的accessibilityUseSamePage属性。
 
 ```typescript
-// xxx.ets
 import { Want } from '@kit.AbilityKit';
+
 @Entry
 @Component
 struct Index {
   @State message: string = 'Message: ';
   private want: Want = {
-    // EmbeddedComponent提供方的bunldename，根据实际情况配置。
+
     bundleName: 'com.example.embeddeddemo',
-    // EmbeddedComponent提供方的abilityName，根据实际情况配置。
+
     abilityName: 'ExampleEmbeddedAbility',
   }
+
   build() {
     Row() {
       List() {
@@ -793,6 +793,7 @@ struct Index {
                 .borderRadius(8)
                 .borderWidth(1)
                 .borderColor('#D9D9D9')
+
               Stack() {
                 Column() {
                   Text('文本1')
@@ -806,6 +807,7 @@ struct Index {
                     .accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
                 }
                 .padding({ top: 8, bottom: 8 })
+
                 Column() {
                   Text('文本2')
                     .fontSize(18)
@@ -852,4 +854,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/LEHgATd5RqahewvGlWpfsw/zh-cn_image_0000002563786755.png?HW-CC-KV=V1&HW-CC-Date=20260330T094631Z&HW-CC-Expire=86400&HW-CC-Sign=AB7B169E479A1637A4452D4623C82ED57D83AD90B36C26DEA9FE8F1B1D56B720)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/LEHgATd5RqahewvGlWpfsw/zh-cn_image_0000002563786755.png?HW-CC-KV=V1&HW-CC-Date=20260330T095319Z&HW-CC-Expire=86400&HW-CC-Sign=956BA6A1166A4A139FE99247457D75DDF3F8AE5016132876D1C9ADD9D8447E3F)

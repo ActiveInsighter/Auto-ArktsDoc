@@ -1,9 +1,9 @@
-# 文档中心
+# 动画概述
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animation
 
 UI（用户界面）是用户与设备进行交互的界面，包含各种可视化组件（如按钮、列表等）。属性作为接口，用于控制组件的行为，属性值的变化会引起UI的变化。动画可在UI发生改变时，添加流畅的过渡效果，使属性值从起始状态逐渐变化到终点状态，避免因瞬间变化造成的突兀感，保持用户的视觉焦点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/sDOqAZXIRqWMX3XmE3MjTQ/zh-cn_image_0000002532906098.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094542Z&HW-CC-Expire=86400&HW-CC-Sign=F31172EDA054C52BFCABD6E9D9FE50D0E943874276F855F79C17A1354EDA4EB4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/sDOqAZXIRqWMX3XmE3MjTQ/zh-cn_image_0000002532906098.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095227Z&HW-CC-Expire=86400&HW-CC-Sign=D872C6ED4DFBB5831AABB8C516A449CF13F58B60E7B48592FC55D3BC7EC65FD8)
 
 动画的目的包括：
 

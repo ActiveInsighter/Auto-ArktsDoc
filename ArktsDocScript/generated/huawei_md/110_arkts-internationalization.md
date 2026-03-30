@@ -1,4 +1,4 @@
-# UI国际化-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# UI国际化
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization
 
 本文介绍如何实现应用程序UI界面的国际化，包含资源配置和镜像布局，关于应用适配国际化的详细参考，请参考[Localization Kit（本地化开发服务）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-l10n)。
@@ -13,7 +13,7 @@
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/U1kedOlzTVm_MUc-7626UA/zh-cn_image_0000002563866001.png?HW-CC-KV=V1&HW-CC-Date=20260330T094221Z&HW-CC-Expire=86400&HW-CC-Sign=6F16A719B578D29E2E335A5C55117B68CC0EED58713468C167C2E5B2A76311DF) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Kwfflk6ITameLxeZd4OgQg/zh-cn_image_0000002563786047.png?HW-CC-KV=V1&HW-CC-Date=20260330T094221Z&HW-CC-Expire=86400&HW-CC-Sign=1584517FA997C0E220BD61D982F676C7B204D7A39DCDF9014C08737F42586C25) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/U1kedOlzTVm_MUc-7626UA/zh-cn_image_0000002563866001.png?HW-CC-KV=V1&HW-CC-Date=20260330T095250Z&HW-CC-Expire=86400&HW-CC-Sign=3DCC0220338DE22852E69BB15AB3E3D8EA740CD59709E941B35DA14BB1DAC6A4) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/Kwfflk6ITameLxeZd4OgQg/zh-cn_image_0000002563786047.png?HW-CC-KV=V1&HW-CC-Date=20260330T095250Z&HW-CC-Expire=86400&HW-CC-Sign=D29BA50B06E5F58849A27161CAF557414982EDED673693B9D4AF1AA34C0DE9CB) |
 
 当组件满足以下任意条件时，镜像能力生效：
 
@@ -153,7 +153,7 @@ struct CustomizeCanvasComponentDrawing {
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/fIqOjj_hSiyXQANTFvyu3Q/zh-cn_image_0000002532906152.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T094221Z&HW-CC-Expire=86400&HW-CC-Sign=1CC9BBE02F07993242DA8B5FD310E2BD516201315B9F13628B220D2804896B10) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/HfdfNMmySZyY3Jjiq5QY-w/zh-cn_image_0000002533066100.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T094221Z&HW-CC-Expire=86400&HW-CC-Sign=24D2996F3C4B90B9CC1601A523BB66E607D8910656766A1671783AE89E561C82) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/fIqOjj_hSiyXQANTFvyu3Q/zh-cn_image_0000002532906152.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T095250Z&HW-CC-Expire=86400&HW-CC-Sign=FC1E626856BE46319F07D9BEA090392D1BC0DA3F29F7F8313DC6315F1CE3EB6D) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/HfdfNMmySZyY3Jjiq5QY-w/zh-cn_image_0000002533066100.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T095250Z&HW-CC-Expire=86400&HW-CC-Sign=D09D1374556E6B76945CAC19540846D0204863BCD736DB0B3A1BF2CDFC006CEC) |
 
 ### 镜像状态字符对齐
 
@@ -163,7 +163,7 @@ struct CustomizeCanvasComponentDrawing {
 
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/64cVPRHNSgiQT8f3Mpxycg/zh-cn_image_0000002563866003.png?HW-CC-KV=V1&HW-CC-Date=20260330T094221Z&HW-CC-Expire=86400&HW-CC-Sign=7B9434653CD8364BE1A438550197F85C948BC47B895757918F326466E983E8C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/64cVPRHNSgiQT8f3Mpxycg/zh-cn_image_0000002563866003.png?HW-CC-KV=V1&HW-CC-Date=20260330T095250Z&HW-CC-Expire=86400&HW-CC-Sign=EDB9FB589C9ABBD7A45C4B64B9103D38ACACB0F62F8C67B8BB8CF2064C6DFBEB)
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
 
@@ -171,4 +171,4 @@ struct CustomizeCanvasComponentDrawing {
 2. 弱字符的方向性：弱字符不具备明确的方向性，这些字符不会影响其周围中性字符的方向。
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/x_yvCUtjQZqeZyoxiA0nRg/zh-cn_image_0000002563786049.png?HW-CC-KV=V1&HW-CC-Date=20260330T094221Z&HW-CC-Expire=86400&HW-CC-Sign=1B9D9123D768E9C74B6454066F696901E287362AF406F755A1364D94871946F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/x_yvCUtjQZqeZyoxiA0nRg/zh-cn_image_0000002563786049.png?HW-CC-KV=V1&HW-CC-Date=20260330T095250Z&HW-CC-Expire=86400&HW-CC-Sign=5B02EA7112A3BC5AA0C019E28658372C8795614410A136AA66D25028E606C24F)

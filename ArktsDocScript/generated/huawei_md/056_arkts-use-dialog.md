@@ -1,4 +1,4 @@
-# 文档中心
+# 使用弹窗
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-dialog
 
 - **[弹窗概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-overview)**

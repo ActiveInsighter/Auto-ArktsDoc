@@ -1,4 +1,4 @@
-# 文档中心
+# 媒体展示
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-media-display
 
 - **[显示图片 (Image)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-graphics-display)**

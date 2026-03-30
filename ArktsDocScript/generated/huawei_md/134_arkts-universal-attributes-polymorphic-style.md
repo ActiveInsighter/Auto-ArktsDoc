@@ -1,4 +1,4 @@
-# 多态样式-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 多态样式
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-polymorphic-style
 
 设置组件不同状态下的样式。
@@ -166,7 +166,7 @@ struct StyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/eLOQvSDWTIKFeEDQ1BHk1A/zh-cn_image_0000002563786739.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094630Z&HW-CC-Expire=86400&HW-CC-Sign=70268F36F833C307A17EA86AB6FA7CDA56472A28DFF551DDEC8AA4D4A46699BA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/eLOQvSDWTIKFeEDQ1BHk1A/zh-cn_image_0000002563786739.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095317Z&HW-CC-Expire=86400&HW-CC-Sign=1584E9D3E9689A979EA30554DB73E66D95C0C3F00FB16132B34D3A6E51EBB42A)
 
 ### 示例2（设置Radio多态样式）
 
@@ -231,7 +231,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vdn9FJ3hR4ulo5E4OaVDFw/zh-cn_image_0000002532906844.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094630Z&HW-CC-Expire=86400&HW-CC-Sign=7D9BB5B36E864B467A51E781E750AE5F689F175CF470ACB5F0B0C57F754644FA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vdn9FJ3hR4ulo5E4OaVDFw/zh-cn_image_0000002532906844.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095317Z&HW-CC-Expire=86400&HW-CC-Sign=B8AA9B4AE20ADE9452F1729878A1E8E2D6A1A455F321A62FE46A3A87775976CC)
 
 ### 示例3（设置Builder多态样式）
 
@@ -292,4 +292,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7UlN8yFjSmS6aXUiA4CobA/zh-cn_image_0000002533066792.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094630Z&HW-CC-Expire=86400&HW-CC-Sign=E321B0CB7DC87FFFBD8CADCBF2C95E6C36813E05AF24602CA489B9B54B01C219)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/7UlN8yFjSmS6aXUiA4CobA/zh-cn_image_0000002533066792.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095317Z&HW-CC-Expire=86400&HW-CC-Sign=12809FB48330FE7651E948053B541EEBC57D68F53C96B881B05DC7C51C2CA442)

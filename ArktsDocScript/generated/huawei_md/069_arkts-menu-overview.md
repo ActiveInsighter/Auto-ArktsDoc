@@ -1,4 +1,4 @@
-# 菜单概述-菜单-使用弹窗-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 菜单概述
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-menu-overview
 
 菜单是一种用于给用户提供可执行的操作的弹窗，一般用于鼠标右键弹窗、点击弹窗等。

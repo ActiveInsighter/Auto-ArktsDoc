@@ -1,4 +1,4 @@
-# SymbolGlyph-文本与输入-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# SymbolGlyph
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-symbolglyph
 
 显示图标小符号的组件。相关资源可参考[系统图标](https://developer.huawei.com/consumer/cn/doc/design-guides/system-icons-0000001929854962)。
@@ -123,7 +123,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/A7UekygSQcOHeLjH3Aj-ww/zh-cn_image_0000002563866943.png?HW-CC-KV=V1&HW-CC-Date=20260330T094726Z&HW-CC-Expire=86400&HW-CC-Sign=54BD5E71B71067AFCAE85A5101A462C45F12EEF29BA2D73DB5A01EFB58F16E21)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/bJUmWPxVT0CWou-K3_0oHQ/zh-cn_image_0000002534251542.png?HW-CC-KV=V1&HW-CC-Date=20260330T095437Z&HW-CC-Expire=86400&HW-CC-Sign=8DDE340C53A4980AE26D057C1ACC4EFE32689FC04BAFA9FB85E51481B5ED0952)
 
 ### effectStrategy
 
@@ -684,7 +684,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/YrmG-m-NTlO8aEF6MQcXOg/zh-cn_image_0000002533067042.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094726Z&HW-CC-Expire=86400&HW-CC-Sign=D9B2C1411D7920CD2817DC15AA0AA2AA3231D101A955DB6B5A12FF749457A816)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/PQKU9tUuTS2HsFwhbB0lRg/zh-cn_image_0000002565211367.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095437Z&HW-CC-Expire=86400&HW-CC-Sign=D0E7E4B4F005B6CCFAF7E0699FFAB971D52D5A90F3CAF247639A6F19B8C14B7E)
 
 ### 示例2（设置动效和阴影）
 
@@ -787,7 +787,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/hI4uBYsBSSqN-3H56Zwm9A/zh-cn_image_0000002563866945.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094726Z&HW-CC-Expire=86400&HW-CC-Sign=C9988706BE7A95D1113712046914623453E2EFFD1E7605C5C7BE79E5E81831B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/tkeL-U6YRbyuAz8_t2ZQYw/zh-cn_image_0000002534251544.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095437Z&HW-CC-Expire=86400&HW-CC-Sign=5EDA9EFA992A53BA5BEDCA582AC9D8E393077531F3B9BFCBF5EE89FCB7F20473)
 
 ### 示例3（设置颜色渐变）
 
@@ -928,4 +928,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Pa7vNqijTW28uNRa1_98zA/zh-cn_image_0000002563786991.jpeg?HW-CC-KV=V1&HW-CC-Date=20260330T094726Z&HW-CC-Expire=86400&HW-CC-Sign=2D925D46DE3C17F8117DA8781AC58534A7310E74517B29508E76103E686101EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/GmMSQVZaQoeTaQVJbrHYNw/zh-cn_image_0000002534411490.jpeg?HW-CC-KV=V1&HW-CC-Date=20260330T095437Z&HW-CC-Expire=86400&HW-CC-Sign=99A7734C4DCB1CFAAB7D1FD539FB31C61F75FB5DDD66CFE0634682C63101A4BB)

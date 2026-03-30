@@ -1,4 +1,4 @@
-# CalendarPicker-按钮与选择-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# CalendarPicker
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker
 
 日历选择器组件，提供下拉日历弹窗，可以让用户选择日期。
@@ -240,7 +240,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/PSQafxFNT0CeNfrto2yNjQ/zh-cn_image_0000002533066948.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094711Z&HW-CC-Expire=86400&HW-CC-Sign=79E80C683D3EEFF751735E9A465E7B67A3A5A80E315824AB6602AE115C80E7D5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/dq3YJWE3RUCmGKKI71fOgg/zh-cn_image_0000002565211273.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095411Z&HW-CC-Expire=86400&HW-CC-Sign=B4445EDBDA30AB1C43BD9AAB7A4EE32C5F9F8470C667B87020A514D16F4A19B6)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -272,7 +272,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/67yhTYqZQHKhjLkk9nvuJg/zh-cn_image_0000002563866851.png?HW-CC-KV=V1&HW-CC-Date=20260330T094711Z&HW-CC-Expire=86400&HW-CC-Sign=AD9CDE61EE63BAB6270EAF222A28740B97E0CB380B89AF19014C3A6276272FF7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/aP2qaTSrQA6WdCD9Y7wdeA/zh-cn_image_0000002534251450.png?HW-CC-KV=V1&HW-CC-Date=20260330T095411Z&HW-CC-Expire=86400&HW-CC-Sign=B9363F0C017786F0E6449699CF2F4A19A543D9A125D6F81280EF5531ECBF67D7)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -305,4 +305,4 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/zNYcggFUQnqBCn6fnAhwXg/zh-cn_image_0000002563786897.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094711Z&HW-CC-Expire=86400&HW-CC-Sign=6C4C757497E50B80FCD0A87C07527AEF7B5A10965A24F5293E69FE5DEB7DA1D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/8z3UXwIdQwSFnarZfGf3Rg/zh-cn_image_0000002534411396.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095411Z&HW-CC-Expire=86400&HW-CC-Sign=3396D8051A9D345314982B1ECF5BB6393E7968FE685DC20B776DA1DB1C6FCFCE)

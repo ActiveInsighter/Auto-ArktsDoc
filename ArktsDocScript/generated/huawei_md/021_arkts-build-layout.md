@@ -1,4 +1,4 @@
-# 文档中心
+# 构建布局
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-build-layout
 
 - **[线性布局 (Row/Column)](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-linear)**

@@ -1,4 +1,4 @@
-# 文档中心
+# 色彩
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-color-effect
 
 ## 色彩
@@ -100,7 +100,7 @@ struct LinearGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/PqnAhLG-RwqlwT--t5YFiA/zh-cn_image_0000002532906120.png?HW-CC-KV=V1&HW-CC-Date=20260330T094600Z&HW-CC-Expire=86400&HW-CC-Sign=02A774BE51E7BCEA9B5E36AB028E4246C80D7B6F0F5278194D30BEACE1F8C668)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/PqnAhLG-RwqlwT--t5YFiA/zh-cn_image_0000002532906120.png?HW-CC-KV=V1&HW-CC-Date=20260330T095136Z&HW-CC-Expire=86400&HW-CC-Sign=84F3BA742ADCFA1DD0F5C36B4F9B52AF546800AF72FE80EAC32B39AB07C19E0B)
 
 ## 为组件添加角度渐变效果
 
@@ -210,7 +210,7 @@ struct SweepGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/f9Wmaxw-TzqhKrcSYXiUSw/zh-cn_image_0000002533066068.png?HW-CC-KV=V1&HW-CC-Date=20260330T094600Z&HW-CC-Expire=86400&HW-CC-Sign=9A57D7F3093C998DD23CF46E7661BE871D30435C0B68445205DE0234E29A5447)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/f9Wmaxw-TzqhKrcSYXiUSw/zh-cn_image_0000002533066068.png?HW-CC-KV=V1&HW-CC-Date=20260330T095136Z&HW-CC-Expire=86400&HW-CC-Sign=AF9B4E2B1EACEA550ED84A4FD93020867AC039B9A6CBA51D94F7B45E6F9BDB93)
 
 ## 为组件添加径向渐变效果
 
@@ -315,4 +315,4 @@ struct RadialGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Bu9fWD08TbGvUA0p9A5Lxw/zh-cn_image_0000002563865971.png?HW-CC-KV=V1&HW-CC-Date=20260330T094600Z&HW-CC-Expire=86400&HW-CC-Sign=64A73D665440864B8DA9185C126D30553DE9C4C147326E2503F9920CD41668D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Bu9fWD08TbGvUA0p9A5Lxw/zh-cn_image_0000002563865971.png?HW-CC-KV=V1&HW-CC-Date=20260330T095136Z&HW-CC-Expire=86400&HW-CC-Sign=5621C54A614F44FCE12C8C90588068D7D6532CE00619ECA7B238CF0A3A9B73BF)

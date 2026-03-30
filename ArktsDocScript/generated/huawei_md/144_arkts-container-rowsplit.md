@@ -1,4 +1,4 @@
-# 文档中心
+# RowSplit
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-rowsplit
 
 将子组件横向布局，并在每个子组件之间插入纵向分割线。
@@ -59,7 +59,6 @@ resizeable(value: boolean)
 RowSplit的基本用法。设置可拖动的、横向布局的子组件。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct RowSplitExample {
@@ -73,11 +72,11 @@ struct RowSplitExample {
         Text('4').width('10%').height(100).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
         Text('5').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
-      .resizeable(true) // 可拖拽
+      .resizeable(true)
       .width('90%').height(100)
     }.width('100%').margin({ top: 5 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/nn4DUgJpSfG7PMpegcqGGw/zh-cn_image_0000002533066848.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094640Z&HW-CC-Expire=86400&HW-CC-Sign=7686EEAC7A091710F48318976493CB97E53BBC2F9EABE40583E59A7D078894F1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/GxVXFV5ETrah08mBjnayQA/zh-cn_image_0000002565211173.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095329Z&HW-CC-Expire=86400&HW-CC-Sign=105459AB0B14E86AA0B93E6709B4F8B0F1011CBEF580895BEFD10788A3233869)

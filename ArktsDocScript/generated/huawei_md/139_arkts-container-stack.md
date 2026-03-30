@@ -1,4 +1,4 @@
-# Stack-行列与堆叠-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# Stack
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-stack
 
 堆叠容器，子组件按照顺序依次入栈，后一个子组件覆盖前一个子组件。
@@ -16,7 +16,7 @@
 Stack(options?: StackOptions)
 
 > **说明**
-> 过多的嵌套组件数会导致性能劣化。在部分场景中，直接使用组件属性或借助系统API的能力可以替代层叠容器的效果，减少了嵌套组件数进而优化性能。最佳实践请参考[组件嵌套优化-优先使用组件属性代替嵌套组件](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-component-nesting-optimization#section78181114123811)。
+> 过多的组件嵌套会导致性能劣化。在部分场景中，直接使用组件属性或借助系统API的能力可以替代层叠容器的效果，减少了嵌套组件数进而优化性能。最佳实践请参考[组件嵌套优化-优先使用组件属性代替嵌套组件](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-component-nesting-optimization#section78181114123811)。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -88,4 +88,4 @@ struct StackExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NSFnenpZTpmKZawbZlmEig/zh-cn_image_0000002533066840.png?HW-CC-KV=V1&HW-CC-Date=20260330T094636Z&HW-CC-Expire=86400&HW-CC-Sign=A06A7CF0B848BCE0DE493B29487D53E77BC712011750A8C40659C469BF3463E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/TKbqgw05SduWJulIwkp6NA/zh-cn_image_0000002565211165.png?HW-CC-KV=V1&HW-CC-Date=20260330T095323Z&HW-CC-Expire=86400&HW-CC-Sign=3788D5C12C16CB554E82B7ADAC04EDEEE1355872227F65A77DCDC1D47BC7B65D)

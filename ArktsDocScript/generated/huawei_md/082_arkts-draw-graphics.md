@@ -1,4 +1,4 @@
-# 文档中心
+# 几何图形绘制
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-draw-graphics
 
 - **[几何图形绘制概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-shape-overview)**

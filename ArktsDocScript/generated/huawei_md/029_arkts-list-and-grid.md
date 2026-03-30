@@ -1,4 +1,4 @@
-# 文档中心
+# 列表与网格
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-list-and-grid
 
 - **[列表与网格概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-list-grid-development-overview)**

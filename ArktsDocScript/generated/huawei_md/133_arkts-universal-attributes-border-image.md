@@ -1,4 +1,4 @@
-# 文档中心
+# 图片边框设置
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image
 
 设置组件的图片边框样式。
@@ -84,7 +84,6 @@ borderImage(value: BorderImageOption): T
 通过[borderImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#borderimage)接口为组件设置渐变色边框。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
@@ -112,14 +111,13 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/LA1Il_WeQDuRnHK_K2CBzQ/zh-cn_image_0000002563866653.png?HW-CC-KV=V1&HW-CC-Date=20260330T094629Z&HW-CC-Expire=86400&HW-CC-Sign=31BFBA4980C57A9615317E1CF109B0D7CE696C5E036E1C54DABE1BBD43E391FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/LA1Il_WeQDuRnHK_K2CBzQ/zh-cn_image_0000002563866653.png?HW-CC-KV=V1&HW-CC-Date=20260330T095316Z&HW-CC-Expire=86400&HW-CC-Sign=1DB9AA866B8A7ABF28256610FCA3595AF628A687B6E828D40A020C8F075614DA)
 
 ### 示例2（动态调整属性值）
 
 通过[slider](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-components-basic-slider)接口动态调整[borderImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#borderimage)接口中属性值。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct BorderImage {
@@ -130,6 +128,7 @@ struct BorderImage {
   @State SelectIndex: number = 0
   @State SelectText: string = 'Repeat'
   @State FillValue: boolean = false
+
   build() {
     Row() {
       Column({ space: 20 }) {
@@ -144,6 +143,7 @@ struct BorderImage {
           repeat: this.RepeatValue[this.SelectIndex],
           fill: this.FillValue
         })
+
         Column() {
           Text(`borderImageSlice = ${this.SliceValue}px`)
           Slider({
@@ -156,6 +156,7 @@ struct BorderImage {
               this.SliceValue = value
             })
         }
+
         Column() {
           Text(`borderImageWidth = ${this.WidthValue}px`)
           Slider({
@@ -168,6 +169,7 @@ struct BorderImage {
               this.WidthValue = value
             })
         }
+
         Column() {
           Text(`borderImageOutSet = ${this.OutSetValue}px`)
           Slider({
@@ -180,6 +182,7 @@ struct BorderImage {
               this.OutSetValue = value
             })
         }
+
         Row() {
           Text('borderImageRepeat: ')
           Select([{ value: 'Repeat' }, { value: 'Stretch' }, { value: 'Round' }, { value: 'Space' }])
@@ -190,6 +193,7 @@ struct BorderImage {
               this.SelectText = value as string
             })
         }
+
         Row() {
           Text(`borderImageFill: ${this.FillValue} `)
           Toggle({ type: ToggleType.Switch, isOn: this.FillValue })
@@ -197,6 +201,7 @@ struct BorderImage {
               this.FillValue = isOn
             })
         }
+
       }
       .width('100%')
     }
@@ -205,15 +210,15 @@ struct BorderImage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/su9qXpdRSu203oBtQIrCGQ/zh-cn_image_0000002563786699.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094629Z&HW-CC-Expire=86400&HW-CC-Sign=8B6538950A18AB231C7A7A05EBB5556F0D689F8107C802BD0C568D0704245328)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/su9qXpdRSu203oBtQIrCGQ/zh-cn_image_0000002563786699.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095316Z&HW-CC-Expire=86400&HW-CC-Sign=144689909F3EAA3F94AEC37BDF640D581EDF12DB6B494213C61776DB3BD295C1)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
 通过[borderImage](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border-image#borderimage)接口中的slice、width和outset属性值使用[LocalizedEdgeWidths](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#localizededgewidths12)类型。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct BorderImage {
@@ -227,6 +232,7 @@ struct BorderImage {
   @State SelectIndex: number = 0
   @State SelectText: string = 'Repeat'
   @State FillValue: boolean = false
+
   build() {
     Row() {
       Column({ space: 20 }) {
@@ -255,6 +261,7 @@ struct BorderImage {
           repeat: this.RepeatValue[this.SelectIndex],
           fill: this.FillValue
         })
+
         Column() {
           Text(`borderImageSliceStart = ${this.SliceStartValue}px`)
           Slider({
@@ -267,6 +274,7 @@ struct BorderImage {
               this.SliceStartValue = value
             })
         }
+
         Column() {
           Text(`borderImageEndSliceStart = ${this.SliceEndValue}px`)
           Slider({
@@ -279,6 +287,7 @@ struct BorderImage {
               this.SliceEndValue = value
             })
         }
+
         Column() {
           Text(`borderImageWidthStart = ${this.WidthStartValue}px`)
           Slider({
@@ -291,6 +300,7 @@ struct BorderImage {
               this.WidthStartValue = value
             })
         }
+
         Column() {
           Text(`borderImageWidthEnd = ${this.WidthEndValue}px`)
           Slider({
@@ -303,6 +313,7 @@ struct BorderImage {
               this.WidthEndValue = value
             })
         }
+
         Column() {
           Text(`borderImageOutSetStart = ${this.OutSetStartValue}px`)
           Slider({
@@ -315,6 +326,7 @@ struct BorderImage {
               this.OutSetStartValue = value
             })
         }
+
         Column() {
           Text(`borderImageOutSetEnd = ${this.OutSetEndValue}px`)
           Slider({
@@ -327,6 +339,7 @@ struct BorderImage {
               this.OutSetEndValue = value
             })
         }
+
         Row() {
           Text('borderImageRepeat: ')
           Select([{ value: 'Repeat' }, { value: 'Stretch' }, { value: 'Round' }, { value: 'Space' }])
@@ -337,6 +350,7 @@ struct BorderImage {
               this.SelectText = value as string
             })
         }
+
         Row() {
           Text(`borderImageFill: ${this.FillValue} `)
           Toggle({ type: ToggleType.Switch, isOn: this.FillValue })
@@ -344,6 +358,7 @@ struct BorderImage {
               this.FillValue = isOn
             })
         }
+
       }
       .width('100%')
     }
@@ -354,4 +369,4 @@ struct BorderImage {
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/mE39NPWuT6m8AXPKp0dTyQ/zh-cn_image_0000002532906804.png?HW-CC-KV=V1&HW-CC-Date=20260330T094629Z&HW-CC-Expire=86400&HW-CC-Sign=E10AD466ECA4EB1750104878004A5EAFB35907536A0F07B7FEC759F41C1639D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/mE39NPWuT6m8AXPKp0dTyQ/zh-cn_image_0000002532906804.png?HW-CC-KV=V1&HW-CC-Date=20260330T095316Z&HW-CC-Expire=86400&HW-CC-Sign=77515A002109BB7C130F07AB6532CCEBD70716C77DEE6680E87EF3E4C164F6C9)

@@ -1,4 +1,4 @@
-# 文档中心
+# 弹出框 (Dialog)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-dialogs
 
 - **[弹出框概述](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-base-dialog-overview)**

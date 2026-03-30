@@ -1,4 +1,4 @@
-# 文档中心
+# 选择器（Picker）公共接口
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-picker-common
 
 选择器组件公共接口。

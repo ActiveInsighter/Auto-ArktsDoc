@@ -1,4 +1,4 @@
-# 文档中心
+# Search
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search
 
 搜索框组件，适用于浏览器的搜索内容输入框等应用场景。
@@ -1185,7 +1185,6 @@ type SearchSubmitCallback = (searchContent: string, event?: SubmitEvent) => void
 从API version 8开始，该示例通过[controller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#searchcontroller)实现了光标位置的设置与获取的功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
@@ -1193,6 +1192,7 @@ struct SearchExample {
   @State submitValue: string = '';
   @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 };
   controller: SearchController = new SearchController();
+
   build() {
     Column({space: 10}) {
       Text('onSubmit:' + this.submitValue).fontSize(18).margin(15)
@@ -1214,7 +1214,7 @@ struct SearchExample {
         .margin(20)
       Button('Set caretPosition 1')
         .onClick(() => {
-          // 设置光标位置到输入的第一个字符后
+
           this.controller.caretPosition(1);
         })
       Button('Get CaretOffset')
@@ -1226,19 +1226,19 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/XRQmHsViTmSw-PlIoqL5UA/zh-cn_image_0000002563866925.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=05D4F456261F0A5F407669F1F11584B2D12C9048C464810B6248E1957740B557)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/PLlKcYu8RXOmjWAEF2W4Mg/zh-cn_image_0000002534251524.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=9A3FCD87411C99D3C3A710980E2E8C990122D219758C03209EA53788D54AD657)
 
 ### 示例2（设置搜索和删除图标）
 
 该示例通过[searchButton](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#searchbutton)（从API version 8开始）、[searchIcon](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#searchicon10)（从API version 10开始）、[cancelButton](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#cancelbutton10)（从API version 10开始）属性展示了设置搜索和删除图标的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   @State changeValue: string = '';
   @State submitValue: string = '';
+
   build() {
     Column() {
       Text('onSubmit:' + this.submitValue).fontSize(18).margin(15)
@@ -1272,7 +1272,7 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/uDfj0bp1QtS3IHY_YksrtQ/zh-cn_image_0000002563786971.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=4439AE9806ADF1F17DCA6B254545353A2C38FE608A3A17BC7BD59910E4C26549)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5TiSSX6tSBaXbvna8P96eg/zh-cn_image_0000002534411470.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=34C42E04CACDAAAC429E708CF5BED76AE045A8B2B17E9E7745DCC968EC7BBE86)
 
 ### 示例3（设置自定义键盘）
 
@@ -1281,11 +1281,11 @@ struct SearchExample {
 从API version 22开始[customKeyboard](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#customkeyboard10)属性新增了入参类型[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#componentcontent-1)。
 
 ```typescript
-// xxx.ets
 import { ComponentContent } from '@kit.ArkUI';
 class BuilderParams {
   inputValue: string;
   controller: SearchController;
+
   constructor(inputValue: string, controller: SearchController) {
     this.inputValue = inputValue;
     this.controller = controller;
@@ -1296,10 +1296,11 @@ function CustomKeyboardBuilder(builderParams: BuilderParams) {
   Column() {
     Row() {
       Button('x').onClick(() => {
-        // 关闭自定义键盘
+
         builderParams.controller.stopEditing();
       }).margin(10)
     }
+
     Grid() {
       ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
         GridItem() {
@@ -1320,8 +1321,9 @@ struct SearchExample {
   @State componentContent ?: ComponentContent<BuilderParams> = undefined;
   @State builderParam: BuilderParams = new BuilderParams(this.inputValue, this.controller);
   @State supportAvoidance: boolean = true;
+
   aboutToAppear(): void {
-    // 创建ComponentContent
+
     this.componentContent = new ComponentContent(this.getUIContext(), wrapBuilder(CustomKeyboardBuilder), this.builderParam);
   }
   build(){
@@ -1330,6 +1332,7 @@ struct SearchExample {
       Search({ controller: this.builderParam.controller, value: this.builderParam.inputValue })
         .customKeyboard(this.componentContent, { supportAvoidance: this.supportAvoidance })
         .margin(10).border({ width: 1 }).height('48vp')
+
       Text('ComponentContent').margin(10).border({ width: 1 })
       Search({ controller: this.builderParam.controller, value: this.builderParam.inputValue })
         .customKeyboard(CustomKeyboardBuilder(this.builderParam), { supportAvoidance: this.supportAvoidance })
@@ -1339,14 +1342,13 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/L1Wk8KLvRCK6oR__elK52A/zh-cn_image_0000002532907076.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=5BB1D7780E1AB7F6937416D88ACD44E46A2DD798C47C04AE2E0BF31A172C193A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/TheGzTriRGiz-tROqR7NeQ/zh-cn_image_0000002565291371.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=435A2B9F5FC15B9CC2BAFF1F8357AC6C6A29DFB396A708E68826824D3FC1D82A)
 
 ### 示例4（设置输入法回车键类型）
 
 该示例通过[enterKeyType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#enterkeytype12)（从API version 12开始）属性实现了动态切换输入法回车键的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
@@ -1364,6 +1366,7 @@ struct SearchExample {
         .onSubmit((value: string) => {
           console.info("trigger search onsubmit" + value);
         })
+
       Button('改变EnterKeyType').onClick(() => {
         this.index = (this.index + 1) % this.enterTypes.length;
       })
@@ -1372,14 +1375,13 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/bMG_AfwHS0-c_vdQ9E9JyA/zh-cn_image_0000002533067024.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=ADB86045A034C27E27C2171CC9045AE8C5DC315FFDB6D19B990159C9B274D796)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/cptFrMIYRxe7OS2RXnXGKw/zh-cn_image_0000002565211349.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=86B120F697B29C84881FDAA08CDD16BD65252C662CBD27A2AB434D318EEAF309)
 
 ### 示例5（设置文本样式）
 
 从API version 12开始，该示例通过[lineHeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#lineheight12)、[letterSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#letterspacing12)、[decoration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#decoration12)属性展示了不同样式的文本效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
@@ -1393,6 +1395,7 @@ struct SearchExample {
           .border({ width: 1 }).padding(10).lineHeight(15)
         Search({value: 'lineHeight 30'})
           .border({ width: 1 }).padding(10).lineHeight(30)
+
         Text('letterSpacing').fontSize(9).fontColor(0xCCCCCC)
         Search({value: 'letterSpacing 0'})
           .border({ width: 1 }).padding(5).letterSpacing(0)
@@ -1400,6 +1403,7 @@ struct SearchExample {
           .border({ width: 1 }).padding(5).letterSpacing(3)
         Search({value: 'letterSpacing -1'})
           .border({ width: 1 }).padding(5).letterSpacing(-1)
+
         Text('decoration').fontSize(9).fontColor(0xCCCCCC)
         Search({value: 'LineThrough, Red'})
           .border({ width: 1 }).padding(5)
@@ -1418,19 +1422,19 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/aIzauo7ISbmpPoOOjIwJ1g/zh-cn_image_0000002563866927.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=967E97A6A7594693913A058E282B50D80369AAD3E7141DDB0DFE80743A253646)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/yPd1aEgdSROKLbzs1IcPSw/zh-cn_image_0000002534251526.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=124E6A0B5E4AA3722BD511F1D556D6C092616090A4D1F6C7F15776502530A68E)
 
 ### 示例6（设置文字特性效果）
 
 该示例通过[fontFeature](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#fontfeature12)（从API version 12开始）属性实现了文本在不同文字特性下的展示效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   @State text1: string = 'This is ss01 on : 0123456789';
   @State text2: string = 'This is ss01 off: 0123456789';
+
   build() {
     Column(){
       Search({value: this.text1})
@@ -1446,14 +1450,13 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/SxK4htWZQouV-qLAS7kkeg/zh-cn_image_0000002563786973.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=4DA430C8FC7FFE2CD105D71908FAE06677A419F346BCE67238F4DF3450283379)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/hAOIH3HSSTipX3YP4VcIXw/zh-cn_image_0000002534411472.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=4D4E0FCFF1B1C7F869F78FF4A0BE5FCF8DBD869D17442D2848B0AFA6AF9028F2)
 
 ### 示例7（自定义键盘避让）
 
 该示例通过[customKeyboard](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#customkeyboard10)（从API version 10开始）属性配置[KeyboardOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#keyboardoptions12)（从API version 12开始）接口实现了自定义键盘避让的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
@@ -1461,16 +1464,17 @@ struct SearchExample {
   @State inputValue: string = "";
   @State height1: string | number = '80%';
   @State supportAvoidance: boolean = true;
-  // 自定义键盘组件
+
   @Builder
   CustomKeyboardBuilder() {
     Column() {
       Row() {
         Button('x').onClick(() => {
-          // 关闭自定义键盘
+
           this.controller.stopEditing();
         }).margin(10)
       }
+
       Grid() {
         ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#'], (item: number | string) => {
           GridItem() {
@@ -1484,6 +1488,7 @@ struct SearchExample {
     }
     .backgroundColor(Color.Gray)
   }
+
   build() {
     Column() {
       Row() {
@@ -1504,7 +1509,8 @@ struct SearchExample {
       .height(this.height1)
       .width("100%")
       .padding({ bottom: 50 })
-      Search({ controller: this.controller, value: this.inputValue })// 绑定自定义键盘
+
+      Search({ controller: this.controller, value: this.inputValue })
         .customKeyboard(this.CustomKeyboardBuilder(), { supportAvoidance: this.supportAvoidance })
         .margin(10)
         .border({ width: 1 })
@@ -1516,14 +1522,13 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Ob8FB8SBQ1OdUd6VMez5vg/zh-cn_image_0000002532907078.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=AB6DD3C41E8F1B84647B36E183B9F5DDA6F3FDC0292ACDE60649065349222306)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/92Ej6e9UQC2FOcvkrMwwsg/zh-cn_image_0000002565291373.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=C48A64A45DB3B822F6751AB0486224BF59D80D23416230C4385AE5C327F34077)
 
 ### 示例8（设置文本自适应）
 
 从API version 12开始，该示例通过[minFontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#minfontsize12)、[maxFontSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#maxfontsize12)属性展示了文本自适应字号的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
@@ -1531,6 +1536,7 @@ struct SearchExample {
     Row() {
       Column() {
         Text('adaptive font').fontSize(9).fontColor(0xCCCCCC)
+
         Search({value: 'This is the text without the adaptive font'})
           .width('80%').height(90).borderWidth(1)
         Search({value: 'This is the text without the adaptive font'})
@@ -1545,14 +1551,13 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/m1O-L1n_RQCSLESOtR4BuQ/zh-cn_image_0000002533067026.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=997E538B63F5A3A09294E80B01F5C4A105B490D8A806D0CAEBFFA2685621BA56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/_8kk_vNwQdi4j_AFcPN_bQ/zh-cn_image_0000002565211351.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=4694DACBCF76A571FCDE3B290F0B3C4CD1544C11731F4382446D519CF350C8F3)
 
 ### 示例9（支持插入和删除回调）
 
 从API version 12开始，该示例通过[onWillInsert](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#onwillinsert12)、[onDidInsert](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#ondidinsert12)、[onWillDelete](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#onwilldelete12)、[onDidDelete](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#ondiddelete12)接口实现了插入和删除的效果。从API version 15开始，通过[onWillChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#onwillchange15)接口展示了文本内容将要发生变化时的具体信息。
 
 ```typescript
-// xxx.ets
 class ChangeState {
   changeContent: string = "";
   changePreviewOffset: number | undefined = 0;
@@ -1564,6 +1569,7 @@ class ChangeState {
   changeTextChangeOldContent: string | undefined = "";
   changeTextChangechangePreviewOffset: number | undefined = 0;
   changeTextChangechangePreviewValue: string | undefined = "";
+
   SetInfo(info: EditableTextChangeValue) {
     this.changeContent = info.content;
     this.changePreviewOffset = info.previewText?.offset;
@@ -1577,6 +1583,7 @@ class ChangeState {
     this.changeTextChangechangePreviewValue = info.options?.oldPreviewText.value;
   }
 }
+
 @Entry
 @Component
 struct SearchExample {
@@ -1587,6 +1594,7 @@ struct SearchExample {
   @State deleteDirection: number = 0;
   @State changeState1: ChangeState = new ChangeState();
   @State changeState2: ChangeState = new ChangeState();
+
   build() {
     Row() {
       Column() {
@@ -1603,8 +1611,11 @@ struct SearchExample {
           .onDidInsert((info: InsertValue) => {
             this.insertOffset = info.insertOffset;
           })
+
         Text("insertValue:" + this.insertValue + "  insertOffset:" + this.insertOffset).height(20)
+
         Blank(30)
+
         Text("context:" + this.changeState1.changeContent).height(20)
         Text("previewText-offset:" + this.changeState1.changePreviewOffset).height(20)
         Text("previewText-value:" + this.changeState1.changePreviewValue).height(20)
@@ -1615,6 +1626,7 @@ struct SearchExample {
         Text("options-oldContent:" + this.changeState1.changeTextChangeOldContent).height(20)
         Text("options-oldPreviewText-offset:" + this.changeState1.changeTextChangechangePreviewOffset).height(20)
         Text("options-oldPreviewText-value:" + this.changeState1.changeTextChangechangePreviewValue).height(20)
+
         Search({ value: "Search支持删除回调文本b" })
           .height(60)
           .onWillDelete((info: DeleteValue) => {
@@ -1630,9 +1642,12 @@ struct SearchExample {
             this.deleteOffset = info.deleteOffset;
             this.deleteDirection = info.direction;
           })
+
         Text("deleteValue:" + this.deleteValue + "  deleteOffset:" + this.deleteOffset).height(20)
         Text("deleteDirection:" + (this.deleteDirection == 0 ? "BACKWARD" : "FORWARD")).height(20)
+
         Blank(30)
+
         Text("context:" + this.changeState2.changeContent).height(20)
         Text("previewText-offset:" + this.changeState2.changePreviewOffset).height(20)
         Text("previewText-value:" + this.changeState2.changePreviewValue).height(20)
@@ -1643,6 +1658,7 @@ struct SearchExample {
         Text("options-oldContent:" + this.changeState2.changeTextChangeOldContent).height(20)
         Text("options-oldPreviewText-offset:" + this.changeState2.changeTextChangechangePreviewOffset).height(20)
         Text("options-oldPreviewText-value:" + this.changeState2.changeTextChangechangePreviewValue).height(20)
+
       }.width('100%')
     }
     .height('100%')
@@ -1650,21 +1666,20 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/pNQ0JYFJSbq9BAicBV93hQ/zh-cn_image_0000002563866929.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=42F4639339C2BDDBBB7E6F35097E89044EEAD62B5A57E4FF563315AA455C391A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/RRlMMOFGSQmPaxDyG5yjGQ/zh-cn_image_0000002534251528.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=D113FA1763CB605BD1BE1AC1C300BD114DA1E66FD2F8BD6A877F0514CF8382DC)
 
 ### 示例10（文本扩展自定义菜单）
 
 从API version 12开始，该示例通过[editMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#editmenuoptions12)接口实现了文本设置自定义菜单扩展项的文本内容、图标以及回调的功能，同时，可以在[onPrepareMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#属性-1)（从API version 20开始）回调中，进行菜单数据的设置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   @State text: string = 'Search editMenuOptions';
   @State endIndex: number = 0;
   onCreateMenu = (menuItems: Array<TextMenuItem>) => {
-    // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
     let item1: TextMenuItem = {
       content: 'create1',
       icon: $r('app.media.startIcon'),
@@ -1679,7 +1694,7 @@ struct SearchExample {
     menuItems.unshift(item2);
     let targetIndex = menuItems.findIndex(item => item.id.equals(TextMenuItemId.AI_WRITER));
     if (targetIndex !== -1) {
-      menuItems.splice(targetIndex, 1); // 从目标索引删除1个元素
+      menuItems.splice(targetIndex, 1);
     }
     return menuItems;
   }
@@ -1702,7 +1717,7 @@ struct SearchExample {
     }
     return false;
   }
-  // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
   onPrepareMenu = (menuItems: Array<TextMenuItem>) => {
     let item1: TextMenuItem = {
       content: 'prepare1_' + this.endIndex,
@@ -1717,6 +1732,7 @@ struct SearchExample {
     onMenuItemClick: this.onMenuItemClick,
     onPrepareMenu: this.onPrepareMenu
   };
+
   build() {
     Column() {
       Search({ value: this.text })
@@ -1733,21 +1749,22 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/TFSXKwCvRnC1QiO5mGwdwA/zh-cn_image_0000002563786975.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=4736BEC12387EB1322185DF646A9BCAAD5E5570D73120DF03C742812CAD9970E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/JpoyHWXbQhSfZJ3skK4T5A/zh-cn_image_0000002534411474.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=DDA8E955054867E70CB10BFC6C7F7941C9AAF7DE6E3A6EF34FCBDAF9D73E65E2)
 
 ### 示例11（设置symbol类型清除按钮）
 
 从API version 10开始，该示例通过[searchIcon](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#searchicon10)、[cancelButton](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#cancelbutton10)属性展示了自定义右侧symbol类型清除按钮样式的效果。
 
 ```typescript
-// xxx.ets
 import { SymbolGlyphModifier } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
   @State changeValue: string = '';
   @State submitValue: string = '';
+
   build() {
     Column() {
       Search({ value: this.changeValue, placeholder: 'Type to search...', controller: this.controller })
@@ -1771,20 +1788,20 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ZUVvchufQoW_c8lZpN33vA/zh-cn_image_0000002532907080.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=9E58D910FE3CDF256F590A5BD3DE1D37CD2CD3788F31E90DB62BF7A3CB24C6E1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/khZjmuQHTFCyTfkIYFD7IA/zh-cn_image_0000002565291375.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=74D6AFC14616368162BE7F8C854F49E0A4F5332EC0D51D3E6AC95BDAC310FF0E)
 
 ### 示例12（设置文本是否可复制）
 
 从API version 9开始，该示例通过[copyOption](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#copyoption9)属性展示如何设置文本是否可复制。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
   @State copyValue: string = '';
   @State cutValue: string = '';
+
   build() {
     Column({ space: 3 }) {
       Text("copy: " + this.copyValue)
@@ -1826,18 +1843,18 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/RVOhcIUiQg-TupxRvj9ULA/zh-cn_image_0000002533067028.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=917297218B267C6F3AB6078F9A1BF91EF044104EFBE023C3018D109CE046DBFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ZZgR4oFLSKaKrP9nODt9kQ/zh-cn_image_0000002565211353.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=FCCE6890BAB8E61112EEEACCC20691AA2F7B8605B3133D149F1BBDA4E1B43334)
 
 ### 示例13（设置文本水平对齐/光标样式/选中背景色）
 
 该示例通过[textAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#textalign9)（从API version 9开始）、[caretStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#caretstyle10)（从API version 10开始）、[selectedBackgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#selectedbackgroundcolor12)（从API version 12开始）属性展示如何设置文本的水平对齐、光标样式和选中背景色。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
+
   build() {
     Column({ space: 3 }) {
       Search({ value: 'Search textAlign sample', controller: this.controller })
@@ -1854,19 +1871,19 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/vINlOU3QTZ-OM_8i1X0vDg/zh-cn_image_0000002563866931.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=8501CF4DD3E76E9DDB9FA160B4E4269784C9DCCCB735977BF0ABAA547DC5A7FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/DBusGJueSJybik06ubQiRA/zh-cn_image_0000002534251530.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=7AED9F2F8F53A9CAD74B0C5F0FCC4A29492F238D9928D3BC4B7416BBE2D12532)
 
 ### 示例14（设置默认获焦并拉起软键盘）
 
 该示例通过[defaultFocus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-focus#defaultfocus9)（从API version 9开始）、[enableKeyboardOnFocus](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#enablekeyboardonfocus10)（从API version 10开始）属性展示如何设置默认获焦并拉起软键盘。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
   @State value: string = 'false';
+
   build() {
     Column({ space: 3 }) {
       Text('editing: ' + this.value)
@@ -1887,18 +1904,18 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/tqb56QqhREeuKt9MaBm-vQ/zh-cn_image_0000002563786977.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=3526C0E9A669DC1FBA04ED831D27CF09B20D7D311B3D0D483504CC9F02EE82EC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Xzhvx_a2T3a5BpJUw1yDsg/zh-cn_image_0000002534411476.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=96B7B00252CDEC35BBF0461E99A815703C274A60309F21726E3154BC6D49A34D)
 
 ### 示例15（关闭系统文本选择菜单）
 
 该示例通过[selectionMenuHidden](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#selectionmenuhidden10)（从API version 10开始）属性展示如何关闭系统文本选择菜单。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
+
   build() {
     Column({ space: 3 }) {
       Search({ value: '123456', controller: this.controller })
@@ -1913,19 +1930,19 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/AVdpRSMdTjOjn8GK7QOepg/zh-cn_image_0000002532907082.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=2A2BBD61E4FC07344AECD7FAEB90A0CFA6703BBC80D965BDF1C177FFA2792C64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/THBrSdDCQSilEsk1RdokBA/zh-cn_image_0000002565291377.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=621E18D63103ADD64CA1B066E65FEB1F5BA579AEE600C8D496E472C030818A3D)
 
 ### 示例16（对输入的文本进行过滤）
 
 从API version 12开始，该示例通过[inputFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#inputfilter12)属性展示如何对输入的文本进行内容的过滤，以限制输入内容。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
   @State filterValue: string = '';
+
   build() {
     Column({ space: 3 }) {
       Text('Filter:' + this.filterValue)
@@ -1944,20 +1961,20 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/xeOhd2JdSJ2DcFNjC0YVUg/zh-cn_image_0000002533067030.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=56BC68413B9B8DF067EE490CB049254A959737FF81F0048D55227A511D4AFA2A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/_VRzfRysTny-hN57Rv-yfA/zh-cn_image_0000002565211355.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=BEF3C572CCA906FAFF793CC9C56A5E44960297864FD7725FA3EEC07AAA8C9F5A)
 
 ### 示例17（设置选中指定区域的文本内容）
 
 该示例通过[setTextSelection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#settextselection12)（从API version 12开始）方法展示如何设置选中指定区域的文本内容以及菜单的显隐策略。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
   @State startIndex: number = 0;
   @State endIndex: number = 0;
+
   build() {
     Column({ space: 3 }) {
       Text('Selection start:' + this.startIndex + ' end:' + this.endIndex)
@@ -1971,6 +1988,7 @@ struct SearchExample {
           this.startIndex = selectionStart;
           this.endIndex = selectionEnd;
         })
+
       Button('Selection [0,3]')
         .onClick(() => {
           this.controller.setTextSelection(0, 3, { menuPolicy: MenuPolicy.SHOW });
@@ -1982,20 +2000,20 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/fC4ZlV40RqC5UNtXkTW32Q/zh-cn_image_0000002563866933.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=0B616039C181D9D8DDD4848160DB40DF33508ABC627682701F34CE873AF2963A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Kefg2V7-TSyfNB21kFGWSA/zh-cn_image_0000002534251532.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=0B307010B0A090FD8B72683EBFAD3E596A8B0728EE1E62306B897076DA43CCC5)
 
 ### 示例18（设置文本滚动事件）
 
 从API version 10开始，该示例通过[onContentScroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#oncontentscroll10)事件展示如何设置文本滚动事件的回调。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
   controller: SearchController = new SearchController();
   @State offsetX: number = 0;
   @State offsetY: number = 0;
+
   build() {
     Column({ space: 3 }) {
       Text('offset x:' + this.offsetX + ' y:' + this.offsetY)
@@ -2013,17 +2031,13 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/HM6QLrx3QH2PpnSg3eVzqQ/zh-cn_image_0000002563786979.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=E258E25B1F177A75F4D4397305B1719FB9C6932465EDD59F804AAA66C7A15789)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ze6C3zXFQ-GIbz0AZSvFHA/zh-cn_image_0000002534411478.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=8481C2FD0FE94B8149279ADEBFFE6399C835030B214C22496873DF8AAC669142)
 
 ### 示例19（设置最小字体范围与最大字体范围）
 
 从API version 18开始，该示例通过[minFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#minfontscale18)、[maxFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#maxfontscale18)设置字体显示最小与最大范围。调整系统字体大小后，文本字体大小不会超过[minFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#minfontscale18)、[maxFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#maxfontscale18)设置的范围。如下示例展示了Search组件在不同的字体大小限制条件下，调整系统字体后的放大缩小效果。
 
 ```typescript
-// 开启应用缩放跟随系统
-// AppScope/resources/base，新建文件夹profile。
-// AppScope/resources/base/profile，新建文件configuration.json。
-// AppScope/resources/base/profile/configuration.json，增加如下代码。
 {
   "configuration": {
     "fontSizeScale": "followSystem",
@@ -2033,7 +2047,6 @@ struct SearchExample {
 ```
 
 ```typescript
-// AppScope/app.json5，修改如下代码。
 {
   "app": {
     "bundleName": "com.example.myapplication",
@@ -2048,7 +2061,6 @@ struct SearchExample {
 ```
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
@@ -2056,6 +2068,7 @@ struct SearchExample {
   @State maxFontScale: number = 1.0;
   @State minFontScale2: number = 0.5;
   @State maxFontScale2: number = 2.0;
+
   build() {
     Column() {
       Column() {
@@ -2066,31 +2079,33 @@ struct SearchExample {
         Search({
           placeholder: 'The text area can hold an unlimited amount of text. input your word...',
         })
-          .minFontScale(this.minFontScale) // 设置最小字体缩放倍数，参数为undefined则跟随系统默认倍数缩放
-          .maxFontScale(this.maxFontScale) // 设置最大字体缩放倍数，参数为undefined则跟随系统默认倍数缩放
+          .minFontScale(this.minFontScale)
+          .maxFontScale(this.maxFontScale)
+
         Blank(30)
+
         Text("minFontScale = " + this.minFontScale2)
         Text("maxFontScale = " + this.maxFontScale2)
         Search({
           placeholder: 'The text area can hold an unlimited amount of text. input your word...',
         })
-          .minFontScale(this.minFontScale2) // 设置最小字体缩放倍数，参数为undefined则跟随系统默认倍数缩放
-          .maxFontScale(this.maxFontScale2) // 设置最大字体缩放倍数，参数为undefined则跟随系统默认倍数缩放
+          .minFontScale(this.minFontScale2)
+          .maxFontScale(this.maxFontScale2)
       }.width('100%')
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/sE-AFUbqS5exVZ9wygRMiw/zh-cn_image_0000002532907084.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=F88E5748A0F289C734249ABA58A1CB3E96E211D7342F85AADF152DE3FCECCEBB) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/kfceaeixSwGRH4AdT0VIsw/zh-cn_image_0000002533067032.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=0B8739D874D8900807B6B5CDF7B4AFEC6783E02E12F723D526856531B9E3AEDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ZdHfpXAqSnmLIdvYxnl9IA/zh-cn_image_0000002565291379.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=7DB705A8BF1C01C0B27D3814F61F832B05D394B408DFEA28DE3299D50F6CCE87) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/GOEpX1xITyq8mX3N8AZK9A/zh-cn_image_0000002565211357.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=64C9502C4A86C3FCBE9F8A6C5A47D171AB67859634CB4D9DDE5DEA1B3DA5ED4A)
 
 ### 示例20（设置文本描边）
 
 从API version 20开始，该示例通过[strokeWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#strokewidth20)和[strokeColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#strokecolor20)属性设置文本的描边宽度及颜色。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct SearchExample {
@@ -2098,6 +2113,7 @@ struct SearchExample {
     Row() {
       Column() {
         Text('stroke feature').fontSize(9).fontColor(0xCCCCCC)
+
         Search({ value: 'Text without stroke' })
           .width('100%')
           .height(60)
@@ -2128,14 +2144,13 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Mykzm6AhSKSFW9Ydc9qjnQ/zh-cn_image_0000002563866935.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=25694D740FC3EEE339D1F457D6E9BBAAB3A973DF73C88F60E67B9FFA4F45FC47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/qdoUw3XBSZSpTAdNDE_UIA/zh-cn_image_0000002534251534.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=7FF93291D75F8D9FC5676B924AA70C0126FE1EF8AF0CBE41B67FAAA05466E195)
 
 ### 示例21（设置中西文自动间距）
 
 从API version 20开始，该示例通过[enableAutoSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-search#enableautospacing20)属性设置中西文自动间距。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
@@ -2155,15 +2170,15 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/wPvpqyLJROWtIG5D6xspdg/zh-cn_image_0000002563786981.png?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=6E1D01065B61DC396BF3B37A3E6A410709B6A03A0FE9EAF5345DE211D1DA4675)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ex72DJ9GSg25iNXaFyW2tQ/zh-cn_image_0000002534411480.png?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=C64C677F5DF439E567453D13FC9FA61D3C7ED7B3BC361655FD037E2D0F51D071)
 
 ### 示例22（设置placeholder富文本样式）
 
 从API version 22开始，该示例通过[setStyledPlaceholder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#setstyledplaceholder22)接口设置placeholder富文本样式。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct SearchExample {
@@ -2200,9 +2215,11 @@ struct SearchExample {
         }
       ]);
   controller: SearchController = new SearchController();
+
   aboutToAppear() {
     this.controller.setStyledPlaceholder(this.styledString)
   }
+
   build() {
     Scroll() {
       Column() {
@@ -2220,14 +2237,13 @@ struct SearchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/_vhQlC_bQGaNlNFthZKStw/zh-cn_image_0000002532907086.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T094723Z&HW-CC-Expire=86400&HW-CC-Sign=0ACE36CBF1D8016DEFBB982D113100FAF7D1D9DD0F7713A97F437C4C040C4D57)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/uD-XrvfwSiqKVPY77v7OTg/zh-cn_image_0000002565291381.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T095426Z&HW-CC-Expire=86400&HW-CC-Sign=F86753EB9800BB9DE5986334F32F37A5E6EE5E24104F67AB983D770FA3E9CBE8)
 
 ### 示例23（设置输入法扩展信息）
 
 从API version 22开始，该示例通过[IMEClient](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#imeclient20对象说明)的setExtraConfig设置输入法扩展信息。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct SearchExample {
@@ -2237,8 +2253,8 @@ struct SearchExample {
         .onWillAttachIME((client: IMEClient) => {
           client.setExtraConfig({
             customSettings: {
-              name: "Search", // 自定义属性
-              id: client.nodeId // 自定义属性
+              name: "Search",
+              id: client.nodeId
             }
           })
         })

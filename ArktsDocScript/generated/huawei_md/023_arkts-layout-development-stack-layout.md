@@ -1,4 +1,4 @@
-# 层叠布局 (Stack)-构建布局-组件布局-UI开发 (ArkTS声明式开发范式)-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 层叠布局 (Stack)
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-stack-layout
 
 ## 概述
@@ -11,7 +11,7 @@
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/4fk_hKTkRkWuw4So_J52ww/zh-cn_image_0000002533065786.png?HW-CC-KV=V1&HW-CC-Date=20260330T094136Z&HW-CC-Expire=86400&HW-CC-Sign=40900C2CC506F17C5F5A5E4A4DCB23E099AFAFE96DF7D5EE33EEA7A4CF9FDDFD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/4fk_hKTkRkWuw4So_J52ww/zh-cn_image_0000002533065786.png?HW-CC-KV=V1&HW-CC-Date=20260330T095116Z&HW-CC-Expire=86400&HW-CC-Sign=185027FB88399A6869B2A67006D83256F47C321BD241CA4D61B79A3A5B1F2384)
 
 > **说明**
 > 过多的嵌套组件数会导致性能劣化。在部分场景中，直接使用组件属性或借助系统API的能力可以替代层叠布局的效果，减少了嵌套组件数进而优化性能。最佳实践请参考[组件嵌套优化-优先使用组件属性代替嵌套组件](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-component-nesting-optimization#section78181114123811)。
@@ -38,7 +38,7 @@ struct StackLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/E07TVTsATEGhiwz4z3K8rA/zh-cn_image_0000002563865689.png?HW-CC-KV=V1&HW-CC-Date=20260330T094136Z&HW-CC-Expire=86400&HW-CC-Sign=22B03F9484B0FEDBB673A500AF2818FA4AC8B5AC0FE32E554D55ED7C3BC9B598)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/E07TVTsATEGhiwz4z3K8rA/zh-cn_image_0000002563865689.png?HW-CC-KV=V1&HW-CC-Date=20260330T095116Z&HW-CC-Expire=86400&HW-CC-Sign=7FC1B7123A82D4E330D45FE343635082D77F8C470A33221663862CD5F3F20B55)
 
 ## 对齐方式
 
@@ -46,7 +46,7 @@ Stack组件通过[alignContent参数](https://developer.huawei.com/consumer/cn/d
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/wu0c5ZdKRHGmZ-IsY_ivJA/zh-cn_image_0000002563785735.png?HW-CC-KV=V1&HW-CC-Date=20260330T094136Z&HW-CC-Expire=86400&HW-CC-Sign=9BD8C6C1A23170E00FC42F78FAF07D4913698214EAA8BF2C6C7C2CD77FF51B30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/wu0c5ZdKRHGmZ-IsY_ivJA/zh-cn_image_0000002563785735.png?HW-CC-KV=V1&HW-CC-Date=20260330T095116Z&HW-CC-Expire=86400&HW-CC-Sign=3DA6240B61D5EC6B3FEA812F806669B7ED83AF555849071F1D0CFC23C7FFB923)
 
 ```typescript
 @Entry
@@ -87,7 +87,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/vwB682s8QLuQkYmxNJvj3g/zh-cn_image_0000002532905840.png?HW-CC-KV=V1&HW-CC-Date=20260330T094136Z&HW-CC-Expire=86400&HW-CC-Sign=60F98523D6A19EBAD47DDF48F667617CE315F00E532BBEB811CD0ECA1025FB9E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/vwB682s8QLuQkYmxNJvj3g/zh-cn_image_0000002532905840.png?HW-CC-KV=V1&HW-CC-Date=20260330T095116Z&HW-CC-Expire=86400&HW-CC-Sign=A5F9AA3603582F0D036671DF1871DB19705336A2A2367C5B6256E992263EBE50)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
@@ -110,7 +110,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/llB3ATPjRECgoIvbc97JwQ/zh-cn_image_0000002533065788.png?HW-CC-KV=V1&HW-CC-Date=20260330T094136Z&HW-CC-Expire=86400&HW-CC-Sign=CB9FD5CBA7ED47B49BA04743C54052C17181DFC2C5698436F007ED488609D52D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/llB3ATPjRECgoIvbc97JwQ/zh-cn_image_0000002533065788.png?HW-CC-KV=V1&HW-CC-Date=20260330T095116Z&HW-CC-Expire=86400&HW-CC-Sign=D6D5EBFBAFCF6A26FF9E4D47121E4561A4212EB391900DC0A02479827F4F7C43)
 
 ## 场景示例
 
@@ -155,7 +155,7 @@ struct StackSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/POx5L0COROiCMnovaWyTOA/zh-cn_image_0000002563865691.png?HW-CC-KV=V1&HW-CC-Date=20260330T094136Z&HW-CC-Expire=86400&HW-CC-Sign=56B30C206DE7FAF9C6B49ECA5B2748C91B82CE39250ED6818508354430084ACB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/POx5L0COROiCMnovaWyTOA/zh-cn_image_0000002563865691.png?HW-CC-KV=V1&HW-CC-Date=20260330T095116Z&HW-CC-Expire=86400&HW-CC-Sign=8F4CE432BE6742A41B92F24B47A2DAAD8C82861B8DB3161820070025C660BDA8)
 
 ## 示例代码
 

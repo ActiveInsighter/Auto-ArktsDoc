@@ -1,4 +1,4 @@
-# 布局约束-布局与边框-通用属性-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# 布局约束
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-layout-constraints
 
 通过组件的宽高比和显示优先级约束组件显示效果。
@@ -119,11 +119,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/2VqbaFDmQ_iYou9bk_V-Jg/zh-cn_image_0000002533066740.png?HW-CC-KV=V1&HW-CC-Date=20260330T094622Z&HW-CC-Expire=86400&HW-CC-Sign=71D0AE4B7475F0B270383A871A19047ADF2E9F346E04BC56A33F19BCF21F974A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/2VqbaFDmQ_iYou9bk_V-Jg/zh-cn_image_0000002533066740.png?HW-CC-KV=V1&HW-CC-Date=20260330T095309Z&HW-CC-Expire=86400&HW-CC-Sign=0E4AA82B9E344E24766884581719F21F24B040C4F269F6D96D9520A5956A3C37)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/16erIB7WRCG5sG9bFor8IQ/zh-cn_image_0000002563866643.png?HW-CC-KV=V1&HW-CC-Date=20260330T094622Z&HW-CC-Expire=86400&HW-CC-Sign=A5309594A5EC93FD16CE4451EF4C0AAB865D3AB31AF43462D37C2D197A5A4203)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/16erIB7WRCG5sG9bFor8IQ/zh-cn_image_0000002563866643.png?HW-CC-KV=V1&HW-CC-Date=20260330T095309Z&HW-CC-Expire=86400&HW-CC-Sign=3F3D08F074AB09CF9F515A050A86EF30A23E0ED282E93CE302FEA8CCDA015CE1)
 
 ### 示例2（设置组件显示优先级）
 
@@ -187,4 +187,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/_Bw1cv5_T4mCyP1aR32-kw/zh-cn_image_0000002563786689.gif?HW-CC-KV=V1&HW-CC-Date=20260330T094622Z&HW-CC-Expire=86400&HW-CC-Sign=C42D4708852AEC5976EAF455FA20325B721065B2D931820C371C4CEAFB078A89)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/_Bw1cv5_T4mCyP1aR32-kw/zh-cn_image_0000002563786689.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095309Z&HW-CC-Expire=86400&HW-CC-Sign=7CEFE815FF5CBD3CE15E205778DD62769047F10762D0EDC57D6BAC912F6878E5)

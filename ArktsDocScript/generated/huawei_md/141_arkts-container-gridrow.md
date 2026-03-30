@@ -1,4 +1,4 @@
-# GridRow-栅格与分栏-ArkTS组件-ArkUI（方舟UI框架）-应用框架 - 华为HarmonyOS开发者
+# GridRow
 来源: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow
 
 栅格布局可以为布局提供规律性的结构，解决多尺寸多设备的动态布局问题，保证不同设备上各个模块的布局一致性。
@@ -69,20 +69,20 @@ GridRow(option?: GridRowOptions)
 API version 20之前，仅配置部分断点下GridRow组件的栅格列数，取已配置的更小断点的栅格列数补全未配置的栅格列数。若未配置更小断点的栅格列数，以默认栅格列数12补全未配置的栅格列数。
 
 ```typescript
-columns: {xs:2, md:4, lg:8} // 等于配置 columns: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8}
-columns: {md:4, lg:8} // 等于配置 columns: {xs:12, sm:12, md:4, lg:8, xl:8, xxl:8}
+columns: {xs:2, md:4, lg:8}
+columns: {md:4, lg:8}
 ```
 
 API version 20及以后，仅配置部分断点下GridRow组件的栅格列数，取已配置的更小断点的栅格列数补全未配置的栅格列数。若未配置更小断点的栅格列数，取已配置的更大断点的栅格列数补全未配置的栅格列数。
 
 ```typescript
-columns: {xs:2, md:4, lg:8} // 等于配置 columns: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8}
-columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8}
+columns: {xs:2, md:4, lg:8}
+columns: {md:4, lg:8}
 ```
 
 建议手动配置不同断点下GridRow组件的栅格列数，避免默认补全的栅格列数的布局效果不符合预期。
 
-每列栅格的宽度为GridRow的内容区大小减去栅格子组件的间距gutter， 再除以总的栅格列数。比如，宽800px的GridRow设置columns为12，gutter设置为10px， padding设置为20px，那么每列栅格的宽度为(800 - 20 * 2 - 10 * 11) / 12。
+每列栅格的宽度为GridRow的内容区大小减去栅格子组件的间距gutter，再除以总的栅格列数。比如，宽800px的GridRow设置columns为12，gutter设置为10px，padding设置为20px，那么每列栅格的宽度为(800 - 20 * 2 - 10 * 11) / 12。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -134,11 +134,10 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 | reference | [BreakpointsReference](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-gridrow#breakpointsreference枚举说明) | 否 | 是 | 断点切换参照物。 默认值：BreakpointsReference.WindowSize 非法值：按默认值处理。 |
 
 ```typescript
-  // 启用xs、sm、md共3个断点
   breakpoints: {value: ['100vp', '200vp']}
-  // 启用xs、sm、md、lg共4个断点，断点范围值必须单调递增
+
   breakpoints: {value: ['320vp', '600vp', '840vp']}
-  // 启用xs、sm、md、lg、xl共5个断点，断点范围数量不可超过断点可取值数量-1
+
   breakpoints: {value: ['320vp', '600vp', '840vp', '1080vp']}
 ```
 
@@ -166,7 +165,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 > - 栅格子组件仅能通过span、offset计算子组件位置与大小。多个子组件span超过规定列数时自动换行。
 > - 单个元素span大小超过最大列数时后台默认span为最大column数。
 > - 新一行的Offset加上子组件的span超过总列数时，将下一个子组件在新的一行放置。
-> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/gmhg2jg4TSeLSGXt-arkGg/zh-cn_image_0000002532906898.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=467AB8A6CB26824E5C61D4AB250C66F1F3902EB4A5C843714CD2F00C2AF2D2D5)
+> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/D5CvZCLFR7ysQJdSH2i_Ew/zh-cn_image_0000002565291193.png?HW-CC-KV=V1&HW-CC-Date=20260330T095327Z&HW-CC-Expire=86400&HW-CC-Sign=ECCA9AF6BDA36528538E4CC636D53301E6CEC926F63599EE9DF8F18F040819CA)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -233,12 +232,12 @@ onBreakpointChange(callback: (breakpoints: string) => void)
 本示例展示GridRow组件的基本用法。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct GridRowExample {
   @State bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
   @State currentBp: string = 'unknown'
+
   build() {
     Column() {
       GridRow({
@@ -263,7 +262,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/PhX9ZK0lTRuRQg72uQ1USA/zh-cn_image_0000002533066846.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=8AEF9E70F94C43B3DA059C2EB2D6EF84EC93C1FEFAE144AE8691575F814BFA46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/DiH2rbkwQaax9IcaS-3ZRg/zh-cn_image_0000002565211171.png?HW-CC-KV=V1&HW-CC-Date=20260330T095327Z&HW-CC-Expire=86400&HW-CC-Sign=F0E22F0B17E427A8B0226E674CA34624F6C5C24C746299165712311DF2A22F94)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -273,7 +272,8 @@ struct GridRowExample {
 @ComponentV2
 struct AlignItemsDemo {
   bgColors: Color[] = [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink];
-  @Param alignment: ItemAlign = ItemAlign.Start; // 接收父组件传入的alignItems属性值
+  @Param alignment: ItemAlign = ItemAlign.Start;
+
   ToString(alignment: ItemAlign): string {
     switch (alignment) {
       case ItemAlign.Start:
@@ -288,6 +288,7 @@ struct AlignItemsDemo {
         return "ItemAlign.Auto";
     }
   }
+
   build() {
     Column() {
       Text(this.ToString(this.alignment))
@@ -302,7 +303,7 @@ struct AlignItemsDemo {
         ForEach(this.bgColors, (color: Color, index: number) => {
           GridCol({ span: 1 }) {
             Row() {
-            }.width('100%').height(`${(index + 1) * 20}%`) // GridCol设置不同的高度，方便观察alignItems属性的效果
+            }.width('100%').height(`${(index + 1) * 20}%`)
           }.borderColor(color).borderWidth(2)
         })
       }
@@ -313,10 +314,12 @@ struct AlignItemsDemo {
     .height("20%")
   }
 }
+
 @Entry
 @ComponentV2
 struct GridRowExample {
   alignmentArray: ItemAlign[] = [ItemAlign.Start, ItemAlign.Center, ItemAlign.End, ItemAlign.Stretch];
+
   build() {
     Column({ space: 15 }) {
       ForEach(this.alignmentArray, (ele: ItemAlign) => {
@@ -327,4 +330,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ZAKuOeRsRz6p1lZCyKv4ew/zh-cn_image_0000002563866749.png?HW-CC-KV=V1&HW-CC-Date=20260330T094637Z&HW-CC-Expire=86400&HW-CC-Sign=F9F7716774A6812899F008635164608A33F51E319F522A683D9C3B89793D08FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/iJYqh17VQBO3p_FTOTVJuQ/zh-cn_image_0000002534251348.png?HW-CC-KV=V1&HW-CC-Date=20260330T095327Z&HW-CC-Expire=86400&HW-CC-Sign=ECF8F237BD9E8BB402A29FB8F3FC66BA9D823B227EE1EA9671A935F04AFA6CDD)
