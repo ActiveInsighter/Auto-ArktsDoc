@@ -93,7 +93,6 @@ type ComponentContent<T = Object> = ComponentContent<T>
 该示例通过传入string设置浮层。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct OverlayExample {
@@ -103,7 +102,7 @@ struct OverlayExample {
         Text('floating layer')
           .fontSize(12).fontColor(0xCCCCCC).maxLines(1)
         Column() {
-          // $r('app.media.img')需要替换为开发者所需的图像资源文件
+
           Image($r('app.media.img'))
             .width(240).height(240)
             .overlay("Winter is a beautiful season, especially when it snows.", {
@@ -117,32 +116,32 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/U0Uw5bqbRXeLmVDL-SaraQ/zh-cn_image_0000002533066728.png?HW-CC-KV=V1&HW-CC-Date=20260330T095301Z&HW-CC-Expire=86400&HW-CC-Sign=89C9D0D7F796044D4FCA2119D2D25ABF088A69EDCC81867B1A482B71C5144AEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/axn6Ym7bQZKJMWeROqlIBA/zh-cn_image_0000002565211053.png?HW-CC-KV=V1&HW-CC-Date=20260330T121650Z&HW-CC-Expire=86400&HW-CC-Sign=7CE8411271E456D0FEBF2DA2B7C1F54CF3F4F4641B1B6B3DF0492A445D56FA0A)
 
 ### 示例2（通过builder设置浮层）
 
 该示例通过传入builder设置浮层。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct OverlayExample {
   @Builder
   OverlayNode() {
     Column() {
-      // $r('app.media.img1')需要替换为开发者所需的图像资源文件
+
       Image($r('app.media.img1'))
       Text("This is overlayNode").fontSize(20).fontColor(Color.White)
     }
     .width(180)
     .height(180)
     .alignItems(HorizontalAlign.Center)
-    .hitTestBehavior(HitTestMode.Transparent) // 配置浮层不阻塞交互
+    .hitTestBehavior(HitTestMode.Transparent)
   }
+
   build() {
     Column() {
-      // $r('app.media.img2')需要替换为开发者所需的图像资源文件
+
       Image($r('app.media.img2'))
         .overlay(this.OverlayNode(), { align: Alignment.Center })
         .objectFit(ImageFit.Contain)
@@ -152,26 +151,29 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/_Uect5icSr-5BnHS4755uA/zh-cn_image_0000002563866631.png?HW-CC-KV=V1&HW-CC-Date=20260330T095301Z&HW-CC-Expire=86400&HW-CC-Sign=9EFFC83A468C3EACE1734DFA0480F5B85CC8428E330DC8C2CB3AC06EE02DB553)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/xNoOHxtlT4ODwoplUO-InA/zh-cn_image_0000002534251230.png?HW-CC-KV=V1&HW-CC-Date=20260330T121650Z&HW-CC-Expire=86400&HW-CC-Sign=71984B6FAE7531657CD763A4922ABDD0CB6D73214B64FD35A9A10631BA675B15)
 
 ### 示例3（通过ComponentContent设置浮层）
 
 该示例通过overlay传入了ComponentContent使backgroundColor不断发生变化。
 
 ```typescript
-// xxx.ets
 import { ComponentContent } from '@kit.ArkUI';
+
 class Params {
   backgroundColor: string | Resource = ""
+
   constructor(backgroundColor: string | Resource) {
     this.backgroundColor = backgroundColor;
   }
 }
+
 @Builder
 function overlayBuilder(params: Params) {
   Row() {
   }.width('100%').height('100%').backgroundColor(params.backgroundColor)
 }
+
 @Entry
 @Component
 struct Page_4040 {
@@ -179,6 +181,7 @@ struct Page_4040 {
   private uiContext: UIContext = this.getUIContext();
   private overlayNode: ComponentContent<Params> =
     new ComponentContent(this.uiContext, wrapBuilder(overlayBuilder), new Params(this.overlayColor))
+
   aboutToAppear(): void {
     setInterval(() => {
       if (this.overlayColor.includes('0.6')) {
@@ -190,6 +193,7 @@ struct Page_4040 {
       }
     }, 1000)
   }
+
   build() {
     Row() {
       Column() {
@@ -205,4 +209,4 @@ struct Page_4040 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/A_oaSLWWSSSEupPdSvMzyg/zh-cn_image_0000002563786677.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095301Z&HW-CC-Expire=86400&HW-CC-Sign=8D92BD6460A426F16F68670AD304FAD81CBD4CBBDA7482F4FEBB17EC918E1E2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Zv7ETQZpSE2CrAqMaOZPsg/zh-cn_image_0000002534411176.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121650Z&HW-CC-Expire=86400&HW-CC-Sign=60ED7116FC2545E4F687D2FAD1EF4AB3B5487B8FAC30EFF002F0BA2E772B4C03)

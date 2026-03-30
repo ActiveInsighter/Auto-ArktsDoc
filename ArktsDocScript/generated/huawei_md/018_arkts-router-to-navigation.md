@@ -149,7 +149,7 @@ export struct PageOne {
 }
 ```
 
-每个子页也需要配置到系统配置文件router_map.json中（参考[系统路由表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation#系统路由表)）。
+每个子页面也需要配置到系统配置文件router_map.json中（参考[系统路由表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation#系统路由表)）
 
 ```typescript
 {
@@ -374,7 +374,7 @@ onPageHide(): void {
 
 其生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/3oVn15iwQr2y_HggwRDsQg/zh-cn_image_0000002563865669.png?HW-CC-KV=V1&HW-CC-Date=20260330T095104Z&HW-CC-Expire=86400&HW-CC-Sign=2913DBD47DAF8FE4606FCD8FE5AA67C3FEA43ED8607E5B81012DD0DE9220B9D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/sf2L1xZoSMisdy_LlCYIig/zh-cn_image_0000002565210091.png?HW-CC-KV=V1&HW-CC-Date=20260330T121508Z&HW-CC-Expire=86400&HW-CC-Sign=5DFF7C51ABF019BE9997D08FEB4DBAD3950AFFB180A323C25B0E23A3F675B742)
 
 Navigation作为路由容器，其生命周期承载在NavDestination组件上，以组件事件的形式开放。
 
@@ -481,7 +481,7 @@ Navigation作为路由组件，默认支持跨包跳转。
 
 **方案二：** 系统路由表
 
-从API version 12版本开始，Navigation支持系统跨模块的路由表方案，整体设计是将路由表方案下沉到系统中管理，即在需要路由的各个业务模块（HSP/HAR）中独立配置router_map.json文件，在触发路由跳转时，应用只需要通过NavPathStack进行路由跳转，此时系统会自动完成路由模块的动态加载、组件构建，并完成路由跳转功能，从而实现了开发层面的模块解耦。
+从API version 12开始，Navigation支持系统跨模块的路由表方案，整体设计是将路由表方案下沉到系统中管理，即在需要路由的各个业务模块（HSP/HAR）中独立配置router_map.json文件，在触发路由跳转时，应用只需要通过NavPathStack进行路由跳转，此时系统会自动完成路由模块的动态加载、组件构建，并完成路由跳转功能，从而实现了开发层面的模块解耦。
 
 具体可参考Navigation[系统路由表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigation-navigation#系统路由表)。
 

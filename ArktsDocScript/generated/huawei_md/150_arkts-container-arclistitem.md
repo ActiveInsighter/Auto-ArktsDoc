@@ -81,16 +81,17 @@ swipeAction(options: Optional<SwipeActionOptions>)
 该示例展示了子项关闭自动缩放和开启自动缩放后的对比效果。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics, CircleShape } from '@kit.ArkUI';
-// 从API version 22开始，无需手动导入ArcListAttribute和ArcListItemAttribute。具体请参考ArcList、ArcListItem的导入模块说明。
+
 import { ArcList, ArcListItem, ArcListAttribute, ArcListItemAttribute } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct ArcListItemExample {
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  private watchSize: string = '466px'; // 手表默认宽高：466*466
-  private itemSize: string = '414px'; // item宽度
+  private watchSize: string = '466px';
+  private itemSize: string = '414px';
+
   @Builder
   buildList() {
     Stack() {
@@ -100,6 +101,7 @@ struct ArcListItemExample {
       .height(this.watchSize)
       .clipShape(new CircleShape({ width: '100%', height: '100%' }))
       .backgroundColor(0x707070)
+
       ArcList({ initialIndex: 3}) {
         ForEach(this.arr, (item: number) => {
           ArcListItem() {
@@ -118,6 +120,7 @@ struct ArcListItemExample {
     .width(this.watchSize)
     .height(this.watchSize)
   }
+
   build() {
     Column() {
       this.buildList();
@@ -130,4 +133,4 @@ struct ArcListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/J4j5dBa9TYWt0WH8ptFmLQ/zh-cn_image_0000002534411310.png?HW-CC-KV=V1&HW-CC-Date=20260330T095336Z&HW-CC-Expire=86400&HW-CC-Sign=92BF7FE2D7C97370A16E25F43042EF2D468274FC6A7D1010F27EEBDEBBFE9369)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/J4j5dBa9TYWt0WH8ptFmLQ/zh-cn_image_0000002534411310.png?HW-CC-KV=V1&HW-CC-Date=20260330T121722Z&HW-CC-Expire=86400&HW-CC-Sign=B9120F41BCCB261C23C42ACDD5A591FF28A11B9475EC0CDB3E84A3702D6B9DC5)

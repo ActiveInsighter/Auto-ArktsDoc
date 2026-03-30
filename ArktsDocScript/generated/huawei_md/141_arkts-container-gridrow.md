@@ -165,7 +165,7 @@ columns: {md:4, lg:8}
 > - 栅格子组件仅能通过span、offset计算子组件位置与大小。多个子组件span超过规定列数时自动换行。
 > - 单个元素span大小超过最大列数时后台默认span为最大column数。
 > - 新一行的Offset加上子组件的span超过总列数时，将下一个子组件在新的一行放置。
-> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/D5CvZCLFR7ysQJdSH2i_Ew/zh-cn_image_0000002565291193.png?HW-CC-KV=V1&HW-CC-Date=20260330T095327Z&HW-CC-Expire=86400&HW-CC-Sign=ECCA9AF6BDA36528538E4CC636D53301E6CEC926F63599EE9DF8F18F040819CA)
+> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/D5CvZCLFR7ysQJdSH2i_Ew/zh-cn_image_0000002565291193.png?HW-CC-KV=V1&HW-CC-Date=20260330T121714Z&HW-CC-Expire=86400&HW-CC-Sign=847BE8913FD412DF1E709AAA825621BA6CAEB7EC4F6F6B16B54F9ABD4C02AA3D)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -262,7 +262,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/DiH2rbkwQaax9IcaS-3ZRg/zh-cn_image_0000002565211171.png?HW-CC-KV=V1&HW-CC-Date=20260330T095327Z&HW-CC-Expire=86400&HW-CC-Sign=F0E22F0B17E427A8B0226E674CA34624F6C5C24C746299165712311DF2A22F94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/DiH2rbkwQaax9IcaS-3ZRg/zh-cn_image_0000002565211171.png?HW-CC-KV=V1&HW-CC-Date=20260330T121714Z&HW-CC-Expire=86400&HW-CC-Sign=234DA01C3BBDB7AF7C94820C09B0FDAA9D08E67B34DA9450EC784CCDB4E0FB59)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -330,4 +330,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/iJYqh17VQBO3p_FTOTVJuQ/zh-cn_image_0000002534251348.png?HW-CC-KV=V1&HW-CC-Date=20260330T095327Z&HW-CC-Expire=86400&HW-CC-Sign=ECF8F237BD9E8BB402A29FB8F3FC66BA9D823B227EE1EA9671A935F04AFA6CDD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/iJYqh17VQBO3p_FTOTVJuQ/zh-cn_image_0000002534251348.png?HW-CC-KV=V1&HW-CC-Date=20260330T121714Z&HW-CC-Expire=86400&HW-CC-Sign=D117FAF1769CAB521CE5CB3C0A52725979DB11B4957A6C04C845134CAB1A7B6D)

@@ -29,6 +29,7 @@ static close()
 > 推荐通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getContextMenuController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getcontextmenucontroller12)来明确UI的执行上下文。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct Index {
@@ -43,7 +44,6 @@ struct Index {
     .width(200)
     .height(160)
   }
-
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Column() {
@@ -56,8 +56,8 @@ struct Index {
       }
       .bindContextMenu(this.MenuBuilder, ResponseType.LongPress)
       .onDragStart(()=>{
-
-        ContextMenu.close()
+        // 拖拽时关闭菜单
+        ContextMenu.close() // 建议使用 this.getUIContext().getContextMenuController().close()
       })
     }
     .width('100%')
@@ -66,4 +66,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/FXJT0JG_QzeDMGdpfCS45w/zh-cn_image_0000002534251746.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095516Z&HW-CC-Expire=86400&HW-CC-Sign=7FAAA8199A1EEB94CBFF7C852681F4D89AEC9225DFF4E10589159A19830CD1E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/FXJT0JG_QzeDMGdpfCS45w/zh-cn_image_0000002534251746.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121908Z&HW-CC-Expire=86400&HW-CC-Sign=F0B8F255BCD814A71191DFD022DAD516251E9D56AE842D7FE84A18EF3699732D)

@@ -9,17 +9,21 @@ UI界面除了运行动画之外，还承载着与用户进行实时交互的功
 
 ```typescript
 import { curves } from '@kit.ArkUI';
+
 class SetAnimationVariables {
   isAnimation: boolean = true
+
   set(): void {
     this.isAnimation = !this.isAnimation;
   }
 }
+
 @Entry
 @Component
 struct AnimationToAnimationDemo {
-  // 第一步：声明相关状态变量
+
   @State animationController: SetAnimationVariables = new SetAnimationVariables();
+
   build() {
     Column() {
       Text('ArkUI')
@@ -32,15 +36,16 @@ struct AnimationToAnimationDemo {
         .width(100)
         .height(100)
         .scale({
-          // 第二步：将状态变量设置到相关可动画属性接口
+
           x: this.animationController.isAnimation ? 2 : 1,
           y: this.animationController.isAnimation ? 2 : 1
         })
-        .animation({ curve: curves.springMotion(0.4, 0.8) }) // 第四步：通过animation接口开启动画，动画终点值改变时，系统自动添加衔接动画
+        .animation({ curve: curves.springMotion(0.4, 0.8) })
+
       Button('Click')
         .margin({ top: 200 })
         .onClick(() => {
-          // 第三步：通过点击事件改变状态变量值，影响可动画属性值
+
           this.animationController.set()
         })
     }
@@ -51,7 +56,7 @@ struct AnimationToAnimationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/j1xefKu1SoCQW2GsJaSwYA/zh-cn_image_0000002532906116.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095245Z&HW-CC-Expire=86400&HW-CC-Sign=5B3BBA843FEC0972AA64838BF786BAE293CCB12335D9979FA4C9267FD04A7677)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/09y5l699SDu7K7Y0LZKsGA/zh-cn_image_0000002534410510.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121634Z&HW-CC-Expire=86400&HW-CC-Sign=AF32124F1071A2E3F82542DB7BBF642391C7E966110B96702664C19F240803F4)
 
 ## 手势与动画的衔接
 
@@ -66,34 +71,37 @@ struct AnimationToAnimationDemo {
 ```typescript
 import { curves } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+
 const DOMAIN = 0x0000;
 const TAG: string = '[AnimatorTest]';
+
 @Entry
 @Component
 struct SpringMotionDemo {
-  // 第一步：声明相关状态变量
+
   @State positionX: number = 100;
   @State positionY: number = 100;
   diameter: number = 50;
+
   build() {
     Column() {
       Row() {
         Circle({ width: this.diameter, height: this.diameter })
           .fill(Color.Blue)
-          .position({ x: this.positionX, y: this.positionY })// 第二步：将状态变量设置到相关可动画属性接口
+          .position({ x: this.positionX, y: this.positionY })
           .onTouch((event?: TouchEvent) => {
-            // 第三步：在跟手过程改变状态变量值，并且采用responsiveSpringMotion动画运动到新的值
+
             if (event) {
               if (event.type === TouchType.Move) {
-                // 跟手过程，使用responsiveSpringMotion曲线
+
                 this.getUIContext()?.animateTo({ curve: curves.responsiveSpringMotion() }, () => {
-                  // 减去半径，以使球的中心运动到手指位置
+
                   this.positionX = event.touches[0].windowX - this.diameter / 2;
                   this.positionY = event.touches[0].windowY - this.diameter / 2;
                   hilog.info(DOMAIN, TAG, `move, animateTo x:${this.positionX}, y:${this.positionY}`);
                 })
               } else if (event.type === TouchType.Up) {
-                // 第四步：在离手过程设定状态变量终点值，并且用springMotion动画运动到新的值，springMotion动画将继承跟手阶段的动画速度
+
                 this.getUIContext()?.animateTo({ curve: curves.springMotion() }, () => {
                   this.positionX = 100;
                   this.positionY = 100;
@@ -104,15 +112,17 @@ struct SpringMotionDemo {
           })
       }
       .width('100%').height('80%')
-      .clip(true) // 如果球超出父组件范围，使球不可见
+      .clip(true)
       .backgroundColor(Color.Orange)
+
       Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Start, justifyContent: FlexAlign.Center }) {
-        // 请将$r('app.string.drag')替换为实际资源文件，在本示例中该资源文件的value值为"拖动小球"
+
         Text($r('app.string.drag')).fontSize(16)
       }
       .width('100%')
+
       Row() {
-        // 请将$r('app.string.location')替换为实际资源文件，在本示例中该资源文件的value值为"点击位置:"
+
         Text($r('app.string.location') + ' [x: ' + Math.round(this.positionX) + ', y:' + Math.round(this.positionY) + ']').fontSize(16)
       }
       .padding(10)
@@ -122,4 +132,4 @@ struct SpringMotionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/X1la6qT6QaChltCHXzJy3A/zh-cn_image_0000002533066064.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095245Z&HW-CC-Expire=86400&HW-CC-Sign=A3F71ADFFA6803EFEACB7B2B3A17780C1A18410D29B159012F16C4C2B3560652)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/IAQ3TXqMTrm208Ih3kE2dg/zh-cn_image_0000002565290409.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121634Z&HW-CC-Expire=86400&HW-CC-Sign=0FE75CF6FFE2FA35937B7A2F769C73CC4E9A4B0FCBE2F1B997B584F3BA0AEFD1)

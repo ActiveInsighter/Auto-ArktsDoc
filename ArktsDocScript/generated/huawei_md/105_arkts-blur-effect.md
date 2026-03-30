@@ -42,7 +42,7 @@ struct BlurEffectsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/gp5SG1dgSCKjloPrTuproQ/zh-cn_image_0000002563865967.png?HW-CC-KV=V1&HW-CC-Date=20260330T095247Z&HW-CC-Expire=86400&HW-CC-Sign=4B9A443AA303E6D54B70DE3FA91CDCF7B2BABB295C61D97B1CE1DFC1DD774259)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/hMBzw50fR4m-Eb-XhcKIaw/zh-cn_image_0000002565210389.png?HW-CC-KV=V1&HW-CC-Date=20260330T121627Z&HW-CC-Expire=86400&HW-CC-Sign=A5161C492B337F754D57709C286D747B9FB59F4AA3EF13856FFEACCE592995F7)
 
 ## 使用blur为组件添加内容模糊
 
@@ -100,7 +100,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/lgRHFlPHTrOPvBvnIaqDPg/zh-cn_image_0000002563786013.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095247Z&HW-CC-Expire=86400&HW-CC-Sign=8ACFCCE1EE96D0BDEEEDA94E84422D722AE1B6F2D94A81BB5A832B2250FDAB2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/HYVscP4DTKmI6JmPClhkWA/zh-cn_image_0000002534250566.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121627Z&HW-CC-Expire=86400&HW-CC-Sign=16E795DACC3D293212E481564A08EB0B5530AD986DF471355E8560A0161F6719)
 
 ## 使用backgroundBlurStyle为组件添加背景模糊效果
 
@@ -366,7 +366,7 @@ struct BackDropBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/py-hrfk3T2GJtQqq5uulug/zh-cn_image_0000002532906118.png?HW-CC-KV=V1&HW-CC-Date=20260330T095247Z&HW-CC-Expire=86400&HW-CC-Sign=B3E9F20D6BDE4DA6BA3F532A1176C765889074DDA9F58622B5B503D2CFE4C51C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/uyMytgqBQAmNLLHXMddLxg/zh-cn_image_0000002534410512.png?HW-CC-KV=V1&HW-CC-Date=20260330T121627Z&HW-CC-Expire=86400&HW-CC-Sign=89647CB168830F1CD533634629B36ACA868B6F7A1968799A8FC0DC9F16414D63)
 
 ## 使用foregroundBlurStyle为组件添加内容模糊效果
 
@@ -630,7 +630,7 @@ struct ForegroundBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/bFqiDYFrSNGVO6VoO_cBpw/zh-cn_image_0000002533066066.png?HW-CC-KV=V1&HW-CC-Date=20260330T095247Z&HW-CC-Expire=86400&HW-CC-Sign=9208E8283ED51CBDE3E925411E7883A90D2B6EB52FAF9C4977E3D3BD74AC892A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/k8LKUV_YRyu4t7TC13B1jA/zh-cn_image_0000002565290411.png?HW-CC-KV=V1&HW-CC-Date=20260330T121627Z&HW-CC-Expire=86400&HW-CC-Sign=5D0382C6630A367C981AC68BAA5EC529BEF875BF95E34987DB56619120EE488E)
 
 ## 使用motionBlur为组件添加运动模糊效果
 
@@ -676,4 +676,4 @@ struct motionBlurTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/mSqegVV4R7u71fDDkVmWJQ/zh-cn_image_0000002563865969.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095247Z&HW-CC-Expire=86400&HW-CC-Sign=9E9554551B447D98E107AACD56720E5CC424A2A91D6C7D1F419FADB1BF8181DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/VDdFuWBhQnG-ofs-OxZFYg/zh-cn_image_0000002565210391.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121627Z&HW-CC-Expire=86400&HW-CC-Sign=6078664075E07D224E18A59EEFB51390F9D0986694BA21498DDBF8F76F7F5427)

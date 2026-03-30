@@ -74,7 +74,7 @@ struct attrAnimateToDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/kugCczVcRH2XBILhQS_Zqw/zh-cn_image_0000002533066046.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095230Z&HW-CC-Expire=86400&HW-CC-Sign=3CB92A42E2C784DC8520A6ED020117096AC385E2DACB5818F17099FF5D725BED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/uml-rix_Tk-2tEaMlbNc5w/zh-cn_image_0000002565290391.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121619Z&HW-CC-Expire=86400&HW-CC-Sign=5196D1C536168555A411796BEDB0F1A992A17D2714B2FE67795CD7C24456D4AE)
 
 ## 使用animation产生属性动画
 
@@ -133,7 +133,7 @@ struct attrAnimationDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Y3xwAft_QMKSWSTMpH0xxw/zh-cn_image_0000002563865949.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095230Z&HW-CC-Expire=86400&HW-CC-Sign=7360645CC30AFDBF02688485C64C00D015645C3E59057A915BDE6796E71C4020)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/IlStXeKLTa6eUCoRF9F-6A/zh-cn_image_0000002565210371.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121619Z&HW-CC-Expire=86400&HW-CC-Sign=2E42A3ED7DFC1821F79054A437A92210E3F923F9C198F92E8BAFB31F7B3F2326)
 
 ## 使用keyframeAnimateTo产生属性动画
 
@@ -210,7 +210,7 @@ struct KeyframeAnimateToDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/yTipZiURTcibfCW48MPpLw/zh-cn_image_0000002563785995.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095230Z&HW-CC-Expire=86400&HW-CC-Sign=8C068AB1882F6FF1E6534AB3E311B8985CB78A0B1FADBAC4662183F0B7A029B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/E0ma2_I3QSehs9MGwUfVhw/zh-cn_image_0000002534250548.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121619Z&HW-CC-Expire=86400&HW-CC-Sign=AE3B2A0432CDB5D6832104F8247CB9F5F88A75069A753E865E61F005BD6AA394)
 
 > **说明**
 > - 在对组件位置大小变化做动画的时候，由于布局属性的改变会触发测量布局，性能开销大。而[scale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-transformation#scale)属性的改变不会触发测量布局，性能开销小。因此，在组件位置大小持续发生变化的场景，如跟手触发组件大小变化的场景，推荐使用scale。

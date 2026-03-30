@@ -46,4 +46,4 @@ struct ShadowOptionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/2NTRIVkyQvmSiYCil_BloQ/zh-cn_image_0000002563786015.png?HW-CC-KV=V1&HW-CC-Date=20260330T095247Z&HW-CC-Expire=86400&HW-CC-Sign=18509AF50CA5696D5999BEEFEB923812B896DF45F14C33D556A281789C296B1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/iak8a2l2QgaGSHEtVVF-oQ/zh-cn_image_0000002534250568.png?HW-CC-KV=V1&HW-CC-Date=20260330T121635Z&HW-CC-Expire=86400&HW-CC-Sign=84D107B58D39DC6B96AD91ECB4B0CE1E8C2FECC8128D0B4D404615EB313D81FB)

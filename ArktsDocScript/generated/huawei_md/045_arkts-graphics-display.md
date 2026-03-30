@@ -23,7 +23,7 @@ Image支持加载存档图、多媒体像素图和可绘制描述符三种类型
 
 - 本地资源 创建文件夹，将本地图片放入ets文件夹下的任意位置。 Image组件引入本地图片路径，即可显示图片（根目录为ets文件夹）。不支持跨包、跨模块调用该Image组件。 > **说明** > 从DevEco Studio 6.0.0 Beta2版本开始，新建工程或模块时，默认创建的模块不会对非resources目录下的资源进行打包，需使相关模块：build-profile.json5中buildOption > resOptions > copyCodeResource > enable设置为true，详见resOptions中[copyCodeResource](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile#table1476161719356)相关介绍。 ```typescript Image('images/view.jpg')  .width(200) ``` 加载本地图片过程中，如果对图片进行修改或者替换，可能会引起应用崩溃。因此需要覆盖图片文件时，应该先删除该文件再重新创建一个同名文件。
 - 网络资源 引入网络图片需申请权限ohos.permission.INTERNET，具体申请方式请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。此时，Image组件的src参数为网络图片的链接。 当前Image组件仅支持加载简单网络图片。 首次加载网络图片时，Image组件需要请求网络资源；非首次加载时，默认从缓存中直接读取图片。 更多图片缓存设置请参考[setImageCacheCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagecachecount7)、[setImageRawDataCacheSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagerawdatacachesize7)和[setImageFileCacheSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagefilecachesize7)。这三个图片缓存接口主要用于支持简单、通用的场景，后续不再继续演进，且在灵活和扩展性方面存在一定限制，例如： - 无法获取当前缓存占用信息。Image组件目前不支持查询磁盘缓存的实时状态，包括文件总大小和文件数量。 - 缓存策略不可定制，缺乏缓存状态观测能力。开发者无法通过接口感知缓存命中率、淘汰次数等运行时的指标，难以基于实际缓存效果进行动态调优。 对于复杂情况，推荐使用[ImageKnife](https://gitcode.com/openharmony-tpc/ImageKnife)，该图像库提供了更灵活、可扩展的缓存策略以及完善的生命周期管理能力，更适合复杂业务需求。 网络图片必须支持RFC 9113标准，否则会导致加载失败。如果下载的网络图片大于10MB或一次下载的网络图片数量较多，建议使用[HTTP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request)工具提前下载，提高图片加载性能，方便应用侧管理数据。 在显示网络图片时，Image组件在机制上会依赖[缓存下载模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request-cachedownload)，开发者可参考[示例3（下载与显示网络gif图片）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#示例3下载与显示网络gif图片)了解具体用法。 缓存下载模块提供独立的预下载接口，允许应用开发者在创建Image组件前预下载所需图片。组件创建后，Image组件可直接从缓存下载模块中获取已下载的图片数据，从而加快图片的显示速度，优化加载体验，并有效避免网络图片加载延迟。网络缓存的位置位于应用根目录下的cache目录中。 ```typescript Image($r('app.string.LoadingResources')) ```
-- Resource资源 使用资源格式可以跨包/跨模块引入图片，resources文件夹下的图片都可以通过$r资源接口读取到并转换到Resource格式。 **图1** resources ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/THqzvYkfTJOO_wYO8wbnDA/zh-cn_image_0000002533065924.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=82919BA4417785BFF3F2B17C81FA231ABA5BC55BEFC3B7AAB5366B6DA78254B4) 调用方式： ```typescript Image($r('app.media.icon')) ``` 还可以将图片放在rawfile文件夹下。 **图2** rawfile ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/iPaBdu2uSnqJ1GWfJIXTKw/zh-cn_image_0000002563865827.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=71C3F162CE21EE646AE010DD962FB8EA40F04914B2F7C75105308E70019F9319) 调用方式： ```typescript Image($rawfile('example1.png')) ```
+- Resource资源 使用资源格式可以跨包/跨模块引入图片，resources文件夹下的图片都可以通过$r资源接口读取到并转换到Resource格式。 **图1** resources ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/kU6nfIrVR1iFUxVlUsaFdw/zh-cn_image_0000002565290269.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=A78E706A982D0C570C39F25154C87B54072E663F9AD5CE3DC392EFAFAC9C63DA) 调用方式： ```typescript Image($r('app.media.icon')) ``` 还可以将图片放在rawfile文件夹下。 **图2** rawfile ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/79mo_OrFTJCpQ3HKnmhvrg/zh-cn_image_0000002565210249.jpg?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=50DE0433AFE251861CA6720D3A4E0D07C0CC5CD09F9B69E22718F613E4635342) 调用方式： ```typescript Image($rawfile('example1.png')) ```
 - 媒体库file://data/storage 支持file://路径前缀的字符串，用于访问通过[选择器](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-picker)提供的图片路径。 1. 调用接口获取图库的照片url。 ```typescript import { photoAccessHelper } from '@kit.MediaLibraryKit'; import { BusinessError } from '@kit.BasicServicesKit'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0x0001; const TAG = 'Sample_imagecomponent'; @Entry @Component struct MediaLibraryFile { @State imgDatas: string[] = []; getAllImg() { try { let photoSelectOptions:photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions(); photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE; photoSelectOptions.maxSelectNumber = 5; let photoPicker:photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker(); photoPicker.select(photoSelectOptions).then((photoSelectResult:photoAccessHelper.PhotoSelectResult) => { this.imgDatas = photoSelectResult.photoUris; hilog.info(DOMAIN, TAG,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult)); }).catch((err:Error) => { let message = (err as BusinessError).message; let code = (err as BusinessError).code; hilog.info(DOMAIN, TAG,`PhotoViewPicker.select failed with. Code: ${code}, message: ${message}`); }); } catch (err) { let message = (err as BusinessError).message; let code = (err as BusinessError).code; hilog.info(DOMAIN, TAG,`PhotoViewPicker failed with. Code: ${code}, message: ${message}`); }; }; async aboutToAppear() { this.getAllImg(); }; build() { Column() { Grid() { ForEach(this.imgDatas, (item:string) => { GridItem() { Image(item) .width(200) } }, (item:string):string => JSON.stringify(item)) } }.width('100%').height('100%') } } ``` 2. 从媒体库获取的url格式通常如下。 ```typescript Image('file://media/Photos/5') .width(200) ```
 - base64 路径格式为data:image/[png|jpeg|bmp|webp|heif];base64,[base64 data]，其中[base64 data]为Base64字符串数据。 Base64格式字符串可用于存储图片的像素数据，在网页上使用较为广泛。
 
@@ -195,7 +195,7 @@ struct DrawableDescriptorType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/SwkNHRdhSBe_aXH6V8lZrw/zh-cn_image_0000002563785873.gif?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=75C0A2D7FF16796A13942C02BF041922F62DBAE4B6C5571B9F87C00BE4B39A50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ltTdHQC9TTOnnHFWsLAX7w/zh-cn_image_0000002534250426.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=1743C11BF0B5131E4745B75E4951ED3531285251F4324C6EF7892A66418FE99F)
 
 ## 显示矢量图
 
@@ -213,11 +213,11 @@ Image($r('app.media.cloud'))
 
 **图3** 原始图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/JAVAZY9mQLGDtnncUxCsYA/zh-cn_image_0000002532905978.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=A8BD7307BA5CF5F3A2C2FBF1D8D1B3B3E8DC7A9C00267892B1FF11591C6F8178)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/rJof3puaS26NGGYRLupAQA/zh-cn_image_0000002534410372.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=4B5D8AE3B2D2707EA844F664D1C9AC5345FC9E199A9199D33ED766CA9BFCB2FA)
 
 **图4** 设置绘制颜色后的SVG图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/aK9mXzyYShWou-NBWSXvaQ/zh-cn_image_0000002533065926.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=73147CEBA0349CE00BDA6FE86902F2C3BCA1AA3DA5964874F2E31AB5A1168229)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/La-VC0hMSYe5o7gK934l7w/zh-cn_image_0000002565290271.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=7EC8C51BA16584FC0364BA10699FADFAFFC37426A89E986B0B06B7C124BEC17B)
 
 ### 矢量图引用位图
 
@@ -241,7 +241,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 文件工程路径示例如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/yfwVIhQmTbmhovFThNrJWw/zh-cn_image_0000002563865829.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=1DCB06EF6257B193BD459F7AD7A2D07AE946520570F241CA45BF3ACD3B873A33)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mgbP443-RDG1eAx2Ai9GmA/zh-cn_image_0000002565210251.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=372049E3D13CB114BAA14EB51CEB6DAAD71E17B37F7AA62C7E61E1DED6ECEAC2)
 
 ## 添加属性
 
@@ -331,7 +331,7 @@ struct ImageScalingType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Qas1Aj0dR_CDdQ0Aow_K0A/zh-cn_image_0000002563785875.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=16E9A973903E7A8600A9862A073CB975A6B58A90AC998E035616244B29DBECC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/KRymlvrRSB2LkflxMNrhAg/zh-cn_image_0000002534250428.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=CA0585A7B4E158B5839A1716352DB3918B6F6C342431095237720B494A3750DC)
 
 ### 图片插值
 
@@ -392,7 +392,7 @@ struct ImageInterpolationType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/iPrKWoWPQN2mMgSPq2GxqQ/zh-cn_image_0000002532905980.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=EE4E717062A1FE35ECF7CDDF32FE4682608ABF6B4A11436F544EF8AA629A4477)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/S1jvm9TdTH2A9l-Alv_kfQ/zh-cn_image_0000002534410374.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=1350C85047AFB43CCF250AA5FFE0B033426B4EBE80B01FAFB6FD9A853150713C)
 
 ### 设置图片重复样式
 
@@ -441,7 +441,7 @@ struct ImageRepetitionStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/IeSQ4CmxQpG8n4z81dzWdA/zh-cn_image_0000002533065928.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=BA7E14BA1AC735E6131C05263F9309E67985DBB0B2253286D4573E350AA23E26)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/JV2yl0edRBWIUe3Kda_-gg/zh-cn_image_0000002565290273.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=E86A37E65E4EA2C685CDE7714E927DB3CCB4F4A5379F6E3CB610917E4DCCD03F)
 
 ### 设置图片渲染模式
 
@@ -478,7 +478,7 @@ struct SetImageRenderingMode {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/DRa9cib_QDOBfQLE53tO1A/zh-cn_image_0000002563865831.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=3EBA49EB2E13E9F3E58AF465A99E9B1AC13C3785B77F9D73EE283DEC3168AB3F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/0MdsgbphROycgqMxhOat1g/zh-cn_image_0000002565210253.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=B782881E04598B9CBDD4081DCFA7F6D3320A7CD4571BF51E4627D6AB3BCCFE07)
 
 ### 设置图片解码尺寸
 
@@ -526,7 +526,7 @@ struct SetImageDecodingSize {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/2tF_M8lBSzCmIkIVzH4PzA/zh-cn_image_0000002563785877.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=A55BCF8A9B0096355A31783850C3A3D90E3C0FC7B6ED2254729161D5FFC79853)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/jKJg_ZH7QTS6tRkmFEEFGg/zh-cn_image_0000002534250430.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=1EC74105A647CBF51178FFF0BD92A4A33B2AC3A94E6304F6862359ACE5F22D37)
 
 ### 为图片添加滤镜效果
 
@@ -560,7 +560,7 @@ struct AddFilterEffectsToImages {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/edVaFOcwT-Co83T-VK8NNw/zh-cn_image_0000002532905982.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=69BBEBC390F8AAE964B51051E3CB0B3251E6D2F0167779CB28A56FDAE4EEBBD5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/lwQDu7rRReC7sKlMMjBgKA/zh-cn_image_0000002534410376.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=99238C8ECE250E26099B46760FB67E04363D104ECC498C04B6EA1E06EEB46F3D)
 
 ### 同步加载图片
 
@@ -621,4 +621,4 @@ struct EventCall {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/I7g6DUseReycDVxUvsidtQ/zh-cn_image_0000002533065930.png?HW-CC-KV=V1&HW-CC-Date=20260330T095030Z&HW-CC-Expire=86400&HW-CC-Sign=B739EF573FEA4DBD3A1C01DB2407D19AFF0CD3E6CC9DFCAAFD93C903E89279C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/_BqZipBPSRWXbo28VVr17Q/zh-cn_image_0000002565290275.png?HW-CC-KV=V1&HW-CC-Date=20260330T121536Z&HW-CC-Expire=86400&HW-CC-Sign=F2619B758B988F6E517C627C589FA49D9D060586F8E292CCCBF14198C0FF28E0)
