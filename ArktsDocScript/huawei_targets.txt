@@ -1,4 +1,4 @@
-指南
+# Arkts指南
 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-development
 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-development-overview
 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-paradigm-basic-syntax
@@ -113,7 +113,7 @@ https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-support-acce
 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-theme
 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-system-scenarization-capability
 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-use-ndk
-API参考
+# Arkts API
 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-to-arkts
 https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-mvvm-v2
 https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-component-id
@@ -242,3 +242,25 @@ https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-tim
 https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-textpicker-dialog
 https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-with-theme
 https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-security-components-savebutton
+# UI design
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavigation
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssidebar
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssidemenu
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsactionbar
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdstabs
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitem
+https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitemcard
+# arkweb
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-app-frontend-page-function-invoking
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-page-app-function-invoking
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-app-page-data-channel
+# 图片
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-photoviewpicker
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshelper-savebutton
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-guidelines-photoviewpicker
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-guidelines-albumpicker
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-guidelines-recentphoto
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-pickercontroller
+https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/smart-photopicker
