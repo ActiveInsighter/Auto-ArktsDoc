@@ -224,11 +224,11 @@ GridItem元素被鼠标框选的状态改变时触发回调。
 GridItem通过设置合理的ColumnStart、ColumnEnd、RowStart、RowEnd属性来设置自身位置。需要指定GridItem起始行列号和所占行列数的场景推荐使用[Grid的layoutOptions参数](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#gridlayoutoptions10对象说明)，详细可参考[Grid的示例1](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例1固定行列grid)和[Grid的示例3](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#示例3可滚动grid设置跨行跨列节点)。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct GridItemExample {
   @State numbers: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
-
   build() {
     Column() {
       Grid() {
@@ -239,8 +239,7 @@ struct GridItemExample {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-        }.rowStart(1).rowEnd(2).columnStart(1).columnEnd(2)
-
+        }.rowStart(1).rowEnd(2).columnStart(1).columnEnd(2) // 同时设置合理的行列号
         ForEach(this.numbers, (item: string) => {
           GridItem() {
             Text(item)
@@ -251,7 +250,6 @@ struct GridItemExample {
               .textAlign(TextAlign.Center)
           }
         }, (item: string) => item)
-
         GridItem() {
           Text('5')
             .fontSize(16)
@@ -259,7 +257,7 @@ struct GridItemExample {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-        }.columnStart(1).columnEnd(4)
+        }.columnStart(1).columnEnd(4) // 只设置列号，不会从第1列开始布局
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
@@ -269,18 +267,18 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/L7_HJpQ6RpGNo1PyLHSGfA/zh-cn_image_0000002565291223.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121729Z&HW-CC-Expire=86400&HW-CC-Sign=318B2DD8BA092C2AD1515B033A574ACA97EB84AF9CC7225BF6FD3F4FBF62E19F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/L7_HJpQ6RpGNo1PyLHSGfA/zh-cn_image_0000002565291223.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024241Z&HW-CC-Expire=86400&HW-CC-Sign=063E6FE2C78810B53238003CBD941C2E78F54984698EB9F08D6857FE89AA79CC)
 
 ### 示例2（设置GridItem样式）
 
 使用GridItemOptions设置GridItem样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct GridItemExample {
   @State numbers: String[] = ['0', '1', '2'];
-
   build() {
     Column({ space: 5 }) {
       Grid() {
@@ -306,7 +304,6 @@ struct GridItemExample {
       .backgroundColor(0xFAEEE0)
       .height(150)
       .padding('4vp')
-
       Grid() {
         ForEach(this.numbers, (day: string) => {
           ForEach(this.numbers, (day: string) => {
@@ -335,4 +332,4 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/LvhITvq5ThSu23RSSrAtHA/zh-cn_image_0000002565211201.png?HW-CC-KV=V1&HW-CC-Date=20260330T121729Z&HW-CC-Expire=86400&HW-CC-Sign=43DE0180310D91A83618965389B6002D919E97244076966CF97D0693DA353D28)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/LvhITvq5ThSu23RSSrAtHA/zh-cn_image_0000002565211201.png?HW-CC-KV=V1&HW-CC-Date=20260331T024241Z&HW-CC-Expire=86400&HW-CC-Sign=9B453A02522544C73D321CA347537A9372A45DB85B59E32696B7C1B6968C3006)

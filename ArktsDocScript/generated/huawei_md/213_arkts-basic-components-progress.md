@@ -403,7 +403,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/I4OsdyVvQHSuq16k_oaihA/zh-cn_image_0000002534251638.png?HW-CC-KV=V1&HW-CC-Date=20260330T121853Z&HW-CC-Expire=86400&HW-CC-Sign=DA990AE033C5F19DA7C4AD30ED5E6D23206874E72A8A386A03BA62502AFDFB45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/I4OsdyVvQHSuq16k_oaihA/zh-cn_image_0000002534251638.png?HW-CC-KV=V1&HW-CC-Date=20260331T024404Z&HW-CC-Expire=86400&HW-CC-Sign=E951E2EB80132237CA7FEC743AEB5810E91D24766AFD63C218A7760D770166D1)
 
 ### 示例2（设置环形进度条属性）
 
@@ -432,7 +432,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/GZ4RVfViQzS45XmYHU-joQ/zh-cn_image_0000002534411584.png?HW-CC-KV=V1&HW-CC-Date=20260330T121853Z&HW-CC-Expire=86400&HW-CC-Sign=000D79C52208C9B84A1AA380EFF152D39EF52D2D8D95701359DBD12BEFA915EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/GZ4RVfViQzS45XmYHU-joQ/zh-cn_image_0000002534411584.png?HW-CC-KV=V1&HW-CC-Date=20260331T024404Z&HW-CC-Expire=86400&HW-CC-Sign=A2403378EB0915E8FCE230CA56952D7096A204D237B3F6140778F2C9D0C79F97)
 
 ### 示例3（设置环形进度条动画）
 
@@ -458,7 +458,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/mxlZWxVEQRCcAFu3fOxk_g/zh-cn_image_0000002565291485.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121853Z&HW-CC-Expire=86400&HW-CC-Sign=1EEB85B77517E59220DAF56372C32FF785EBB948B0F31CC6430348C325BFAC56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/mxlZWxVEQRCcAFu3fOxk_g/zh-cn_image_0000002565291485.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024404Z&HW-CC-Expire=86400&HW-CC-Sign=EFDEDFAC3F9E7EE9AD2ACFF0A23E57DCD09366CC7957C8B26E3AD0CC1EB1ACFB)
 
 ### 示例4（设置胶囊形进度条属性）
 
@@ -487,7 +487,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/smS2sFTXRr6UFaY3x9oh7Q/zh-cn_image_0000002565211463.png?HW-CC-KV=V1&HW-CC-Date=20260330T121853Z&HW-CC-Expire=86400&HW-CC-Sign=8E1BF17F52218B122DFF56EAA681DCDC73C9B56C007C1FF66E80323656889F15)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/smS2sFTXRr6UFaY3x9oh7Q/zh-cn_image_0000002565211463.png?HW-CC-KV=V1&HW-CC-Date=20260331T024404Z&HW-CC-Expire=86400&HW-CC-Sign=D88BCC1BCAD2C5A94943192884C02C2AB472D96CE06F19DAC338A9EBE8F6A89D)
 
 ### 示例5（设置进度平滑动效）
 
@@ -528,7 +528,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/8Nqc-y-sTESTWWAbON_sWQ/zh-cn_image_0000002534251640.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121853Z&HW-CC-Expire=86400&HW-CC-Sign=BDD8E90552A673E6C33D46F3A325092279E4A88B0D7F1492826EA86378C09E34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/8Nqc-y-sTESTWWAbON_sWQ/zh-cn_image_0000002534251640.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024404Z&HW-CC-Expire=86400&HW-CC-Sign=0BF22018A0E1B13BED00758C7E6C28F98FA15AC94E008F40C7BF73A6F8A8208A)
 
 ### 示例6（设置定制内容区）
 
@@ -608,7 +608,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/4vcuQuVVTyKF4tOF732TMA/zh-cn_image_0000002534411586.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121853Z&HW-CC-Expire=86400&HW-CC-Sign=8D462C031364B3A21B6B5564ED9601087107A4A197FA376E78B097145826FB44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/4vcuQuVVTyKF4tOF732TMA/zh-cn_image_0000002534411586.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024404Z&HW-CC-Expire=86400&HW-CC-Sign=C35A54BB8EFD89A868AB5A35A035A50C719B28213DE9F0F150072FC40A5EF52C)
 
 ### 示例7（设置隐私隐藏）
 
@@ -645,7 +645,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/TCchC54HQ6y2KhAGxtnlNA/zh-cn_image_0000002565291487.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121853Z&HW-CC-Expire=86400&HW-CC-Sign=FA37C3694034AB31F4946A07E87161078E81E0A23642196AEE311B59D1449DC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/TCchC54HQ6y2KhAGxtnlNA/zh-cn_image_0000002565291487.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024404Z&HW-CC-Expire=86400&HW-CC-Sign=74C10118BC6F48FD7F4AD223395D972C6F79B1083CDE979D59C7D54B8EC5ECBC)
 
 ### 示例8（设置capsule进度条圆角半径）
 
@@ -682,4 +682,4 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/D5YhZ5LuQSqaSRuqsRsmpQ/zh-cn_image_0000002565211465.png?HW-CC-KV=V1&HW-CC-Date=20260330T121853Z&HW-CC-Expire=86400&HW-CC-Sign=862532A6E4C6BD71A1508882D5A3F47D10ABC3E62BAF40A82221CDED9955EEDE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/D5YhZ5LuQSqaSRuqsRsmpQ/zh-cn_image_0000002565211465.png?HW-CC-KV=V1&HW-CC-Date=20260331T024404Z&HW-CC-Expire=86400&HW-CC-Sign=AD06B766DC058CC44B55EC8A5018CDFE098BFD1674D53EBBBC657632CD976C8D)

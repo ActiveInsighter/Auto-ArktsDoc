@@ -240,7 +240,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/dq3YJWE3RUCmGKKI71fOgg/zh-cn_image_0000002565211273.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121759Z&HW-CC-Expire=86400&HW-CC-Sign=91CCBBF67E52A0F9EB073CC9813E66509EAAEE4941EE68D439B7DAE4540BF564)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/dq3YJWE3RUCmGKKI71fOgg/zh-cn_image_0000002565211273.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024310Z&HW-CC-Expire=86400&HW-CC-Sign=63F13FC0ACFC2C4B1E051D6FF9C74205C25441266F444867A30AA951C71795A9)
 
 ### 示例2（设置开始日期和结束日期）
 
@@ -272,7 +272,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/aP2qaTSrQA6WdCD9Y7wdeA/zh-cn_image_0000002534251450.png?HW-CC-KV=V1&HW-CC-Date=20260330T121759Z&HW-CC-Expire=86400&HW-CC-Sign=3A3B1B763E0FA91AFAFC4BE1F083E593AEF8D30F42366648E098C06665BC6A39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/aP2qaTSrQA6WdCD9Y7wdeA/zh-cn_image_0000002534251450.png?HW-CC-KV=V1&HW-CC-Date=20260331T024310Z&HW-CC-Expire=86400&HW-CC-Sign=41BBCD773B15C28BDA4DD0B66BF1B10D04A84D067401B2B1D2591672E6848E78)
 
 ### 示例3（设置日历选择器在系统当前日期时，保持高亮显示和禁用日期区间）
 
@@ -305,4 +305,4 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/8z3UXwIdQwSFnarZfGf3Rg/zh-cn_image_0000002534411396.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121759Z&HW-CC-Expire=86400&HW-CC-Sign=DB89467FA5C58F25288B395DE62C25326F92A2424A5D8D5AEEC35B5F8A12BDA0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/8z3UXwIdQwSFnarZfGf3Rg/zh-cn_image_0000002534411396.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024310Z&HW-CC-Expire=86400&HW-CC-Sign=019E63FDFB5272A5872140B24FC5815838B936BF930B1F3DFB67F9FCA0EBAC64)

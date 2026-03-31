@@ -176,7 +176,7 @@ struct Next {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pOUPwUhVQGeAXhdiEhZR3w/zh-cn_image_0000002534250476.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121553Z&HW-CC-Expire=86400&HW-CC-Sign=639B0E02307749FCCD74AE52C5EDFAB70EE78A5570509ECB0BB7C975ADE78D32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pOUPwUhVQGeAXhdiEhZR3w/zh-cn_image_0000002534250476.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024105Z&HW-CC-Expire=86400&HW-CC-Sign=AB178F2A5A4CEBFE4C284052697FCC8355BC69FA4B8D2FDAF0812D62111C4BE2)
 
 下述示例为基于Navigation导航模式下的页面级弹出框。使用本示例前需要参考[Navigation使用NavDestination作为导航页](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#示例16navigation使用navdestination作为导航页)文档完成Index首页和router_map.json的创建与配置。并使用下述示例代码中的PageLevelDialogInNavigation和PageLevelDialogInNavigationTestTwo组件替换Navigation参考文档中的PageHome和PageOne组件。
 
@@ -278,4 +278,4 @@ export struct PageLevelDialogInNavigationTestTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_Wh9AU2lRkG-gVqNPozc6Q/zh-cn_image_0000002534410422.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121553Z&HW-CC-Expire=86400&HW-CC-Sign=CFD14B2FE59E05B9DDFF7E956CD0D99160595193A082AFFAB8030B503AE48C87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_Wh9AU2lRkG-gVqNPozc6Q/zh-cn_image_0000002534410422.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024105Z&HW-CC-Expire=86400&HW-CC-Sign=01CBE94D22F34F67B6F75C803859FA0A75917AFBC1E4CE0DC1C99F5D055BC8E2)

@@ -9,7 +9,7 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 **图1** 相对布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/CeWlRorETimRXEYaHMAQBQ/zh-cn_image_0000002534410252.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=A22A4755BBCF420B02E6AC7C3AE240CF91495834E8FE1879F42D5138A85BA235)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/CeWlRorETimRXEYaHMAQBQ/zh-cn_image_0000002534410252.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=74EDBD7A0CB3B4A18DAA777A3CE826BD02EBE5CF3387D5DA75481CE0E2D44431)
 
 子元素并不完全是上图中的依赖关系。比如，Item4可以以Item2为依赖锚点，也可以以RelativeContainer父容器为依赖锚点。
 
@@ -28,8 +28,8 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 设置当前组件的哪个边界对齐到锚点。容器内子组件的参考边界区分水平方向和垂直方向。
 
-- 在水平方向上，可以按照起始（left）、居中（middle）或尾端（right）的组件边界与锚点对齐。当设置三个边界时，仅起始（left）和居中（middle）的边界设置生效。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/DI1_RkH4QPG3RDSv08iM8Q/zh-cn_image_0000002565290151.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=D16279C6D49367BC27A401FB6B57D206D9F3AEBC74755E071775FD783C419BEE)
-- 在垂直方向上，可以设置组件边界与锚点对齐，具体包括顶部（top）、居中（center）和底部（bottom）。当设置三个边界时，仅顶部（top）和居中（center）生效。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/yFAnGib-Q1K41ApAsuRlzg/zh-cn_image_0000002565210131.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=1657FA5DA86F51CDB4F9EF4DDAA3E859C3F460CA665B6AE453669B0442FF8756)
+- 在水平方向上，可以按照起始（left）、居中（middle）或尾端（right）的组件边界与锚点对齐。当设置三个边界时，仅起始（left）和居中（middle）的边界设置生效。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/DI1_RkH4QPG3RDSv08iM8Q/zh-cn_image_0000002565290151.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=B2736C3B37CE059DE7C9F7BE9671FA1B47B74BEFE4C6EDF1CD20732F296C1076)
+- 在垂直方向上，可以设置组件边界与锚点对齐，具体包括顶部（top）、居中（center）和底部（bottom）。当设置三个边界时，仅顶部（top）和居中（center）生效。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/yFAnGib-Q1K41ApAsuRlzg/zh-cn_image_0000002565210131.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=3FF6F7769723596F3CA88B85C3E08BA1A54C1931503D77361FA4605A8061040C)
 
 ### 设置锚点
 
@@ -41,9 +41,9 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 > - 未设置组件标识（id）的组件虽可显示，但无法被其他组件引用为锚点。相对布局容器会为其拼接组件标识，但组件标识（id）的规律无法被应用感知。辅助线（guideline）与屏障（barrier）的组件标识（id）需确保唯一，避免与任何组件冲突。若有重复，遵循组件 > guideline > barrier 的优先级。
 > - 组件间设置锚点时应避免形成依赖循环（组件之间设置链除外），依赖循环将导致子组件缺乏定位基准，最终无法绘制。
 
-- RelativeContainer父组件为锚点，__container__代表父容器的组件标识（id）。 ```typescript let alignRus: Record<string, Record<string, string | VerticalAlign | HorizontalAlign>> = {  'top': { 'anchor': '__container__', 'align': VerticalAlign.Top },  'left': { 'anchor': '__container__', 'align': HorizontalAlign.Start } } let alignRue: Record<string, Record<string, string | VerticalAlign | HorizontalAlign>> = {  'top': { 'anchor': '__container__', 'align': VerticalAlign.Top },  'right': { 'anchor': '__container__', 'align': HorizontalAlign.End } } let marginLeft: Record<string, number> = { 'left': 20 } let bwc: Record<string, number | string> = { 'width': 2, 'color': '#6699FF' } @Entry @Component struct ParentRefRelativeContainer {  build() {  RelativeContainer() {  Row() {  Text('row1')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#a3cf62')  .alignRules(alignRus)  .id('row1')  Row() {  Text('row2')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#00ae9d')  .alignRules(alignRue)  .id('row2')  }.width(300).height(300)  .margin(marginLeft)  .border(bwc)  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/txoRnHjsTH6cE_cXrGmP1w/zh-cn_image_0000002534250308.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=801E0805002E8CBD127EA575DF038101B46CA85B7E2501DB3F3C18CECD55A2E3)
-- 以兄弟元素为锚点。 ```typescript let alignRus001: Record<string, Record<string, string | VerticalAlign | HorizontalAlign>> = {  'top': { 'anchor': '__container__', 'align': VerticalAlign.Top },  'left': { 'anchor': '__container__', 'align': HorizontalAlign.Start } } let relConB: Record<string, Record<string, string | VerticalAlign | HorizontalAlign>> = {  'top': { 'anchor': 'row1', 'align': VerticalAlign.Bottom },  'left': { 'anchor': 'row1', 'align': HorizontalAlign.Start } } let marginLeft001: Record<string, number> = { 'left': 20 } let bwc001: Record<string, number | string> = { 'width': 2, 'color': '#6699FF' } @Entry @Component struct SiblingRefRelativeContainer {  build() {  RelativeContainer() {  Row() {  Text('row1')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#00ae9d')  .alignRules(alignRus001)  .id('row1')  Row() {  Text('row2')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#a3cf62')  .alignRules(relConB)  .id('row2')  }.width(300).height(300)  .margin(marginLeft001)  .border(bwc001)  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/JSmYlBkSQg6kx3tZnQJ9pA/zh-cn_image_0000002534410254.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=E9E1F80F0BD916DD2526A1949BE822F65A29E3741783610CFC4C9D10C147BB96)
-- 子组件锚点可以任意选择，但需注意不要相互依赖。 ```typescript @Entry @Component struct ChildRefRelativeContainer {  build() {  Row() {  RelativeContainer() {  Row() {  Text('row1')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#a3cf62')  .alignRules({  top: { anchor: '__container__', align: VerticalAlign.Top },  left: { anchor: '__container__', align: HorizontalAlign.Start }  })  .id('row1')  Row() {  Text('row2')  }  .justifyContent(FlexAlign.Center)  .width(100)  .backgroundColor('#00ae9d')  .alignRules({  top: { anchor: '__container__', align: VerticalAlign.Top },  right: { anchor: '__container__', align: HorizontalAlign.End },  bottom: { anchor: 'row1', align: VerticalAlign.Center },  })  .id('row2')  Row() {  Text('row3')  }  .justifyContent(FlexAlign.Center)  .height(100)  .backgroundColor('#0a59f7')  .alignRules({  top: { anchor: 'row1', align: VerticalAlign.Bottom },  left: { anchor: 'row1', align: HorizontalAlign.Start },  right: { anchor: 'row2', align: HorizontalAlign.Start }  })  .id('row3')  Row() {  Text('row4')  }.justifyContent(FlexAlign.Center)  .backgroundColor('#2ca9e0')  .alignRules({  top: { anchor: 'row3', align: VerticalAlign.Bottom },  left: { anchor: 'row1', align: HorizontalAlign.Center },  right: { anchor: 'row2', align: HorizontalAlign.End },  bottom: { anchor: '__container__', align: VerticalAlign.Bottom }  })  .id('row4')  }  .width(300).height(300)  .margin({ left: 50 })  .border({ width: 2, color: '#6699FF' })  }  .height('100%')  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/mcXcky3NSwqbn-EjjXolmQ/zh-cn_image_0000002565290153.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=0B13E065EB5C8E7A0D1D99C3F75491DA66D23BACDE293A3627A9ED155C124D63)
+- RelativeContainer父组件为锚点，__container__代表父容器的组件标识（id）。 ```typescript let alignRus: Record<string, Record<string, string | VerticalAlign | HorizontalAlign>> = {  'top': { 'anchor': '__container__', 'align': VerticalAlign.Top },  'left': { 'anchor': '__container__', 'align': HorizontalAlign.Start } } let alignRue: Record<string, Record<string, string | VerticalAlign | HorizontalAlign>> = {  'top': { 'anchor': '__container__', 'align': VerticalAlign.Top },  'right': { 'anchor': '__container__', 'align': HorizontalAlign.End } } let marginLeft: Record<string, number> = { 'left': 20 } let bwc: Record<string, number | string> = { 'width': 2, 'color': '#6699FF' } @Entry @Component struct ParentRefRelativeContainer {  build() {  RelativeContainer() {  Row() {  Text('row1')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#a3cf62')  .alignRules(alignRus)  .id('row1')  Row() {  Text('row2')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#00ae9d')  .alignRules(alignRue)  .id('row2')  }.width(300).height(300)  .margin(marginLeft)  .border(bwc)  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/txoRnHjsTH6cE_cXrGmP1w/zh-cn_image_0000002534250308.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=3EFCEDB288DE10F2E7DFD675F105409F57BA775F45D6F1DB9AC9ECAB1E51E224)
+- 以兄弟元素为锚点。 ```typescript let alignRus001: Record<string, Record<string, string | VerticalAlign | HorizontalAlign>> = {  'top': { 'anchor': '__container__', 'align': VerticalAlign.Top },  'left': { 'anchor': '__container__', 'align': HorizontalAlign.Start } } let relConB: Record<string, Record<string, string | VerticalAlign | HorizontalAlign>> = {  'top': { 'anchor': 'row1', 'align': VerticalAlign.Bottom },  'left': { 'anchor': 'row1', 'align': HorizontalAlign.Start } } let marginLeft001: Record<string, number> = { 'left': 20 } let bwc001: Record<string, number | string> = { 'width': 2, 'color': '#6699FF' } @Entry @Component struct SiblingRefRelativeContainer {  build() {  RelativeContainer() {  Row() {  Text('row1')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#00ae9d')  .alignRules(alignRus001)  .id('row1')  Row() {  Text('row2')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#a3cf62')  .alignRules(relConB)  .id('row2')  }.width(300).height(300)  .margin(marginLeft001)  .border(bwc001)  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/JSmYlBkSQg6kx3tZnQJ9pA/zh-cn_image_0000002534410254.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=7FCD8F45EB3319899BB97E4C879AEB771389FBEA8327B811F0C102AECA66D623)
+- 子组件锚点可以任意选择，但需注意不要相互依赖。 ```typescript @Entry @Component struct ChildRefRelativeContainer {  build() {  Row() {  RelativeContainer() {  Row() {  Text('row1')  }  .justifyContent(FlexAlign.Center)  .width(100)  .height(100)  .backgroundColor('#a3cf62')  .alignRules({  top: { anchor: '__container__', align: VerticalAlign.Top },  left: { anchor: '__container__', align: HorizontalAlign.Start }  })  .id('row1')  Row() {  Text('row2')  }  .justifyContent(FlexAlign.Center)  .width(100)  .backgroundColor('#00ae9d')  .alignRules({  top: { anchor: '__container__', align: VerticalAlign.Top },  right: { anchor: '__container__', align: HorizontalAlign.End },  bottom: { anchor: 'row1', align: VerticalAlign.Center },  })  .id('row2')  Row() {  Text('row3')  }  .justifyContent(FlexAlign.Center)  .height(100)  .backgroundColor('#0a59f7')  .alignRules({  top: { anchor: 'row1', align: VerticalAlign.Bottom },  left: { anchor: 'row1', align: HorizontalAlign.Start },  right: { anchor: 'row2', align: HorizontalAlign.Start }  })  .id('row3')  Row() {  Text('row4')  }.justifyContent(FlexAlign.Center)  .backgroundColor('#2ca9e0')  .alignRules({  top: { anchor: 'row3', align: VerticalAlign.Bottom },  left: { anchor: 'row1', align: HorizontalAlign.Center },  right: { anchor: 'row2', align: HorizontalAlign.End },  bottom: { anchor: '__container__', align: VerticalAlign.Bottom }  })  .id('row4')  }  .width(300).height(300)  .margin({ left: 50 })  .border({ width: 2, color: '#6699FF' })  }  .height('100%')  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/mcXcky3NSwqbn-EjjXolmQ/zh-cn_image_0000002565290153.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=64B7A6111AF3FDEDCD3F229B61ED244F18FCD307AC775F942F961DFD01C4A80D)
 
 ### 设置相对于锚点的对齐位置
 
@@ -51,11 +51,11 @@ RelativeContainer是一种采用相对布局的容器，支持容器内部的子
 
 在水平方向上，对齐位置可以设置为HorizontalAlign.Start、HorizontalAlign.Center、HorizontalAlign.End。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Azj-D44yRce0QjaG7s5hTA/zh-cn_image_0000002565210133.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=7D65AB08D10B65E32E66D30C1EA79FB096CE1247723D10052AA08A50427FB91D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Azj-D44yRce0QjaG7s5hTA/zh-cn_image_0000002565210133.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=DA8A5AA2F73B098B8F84A16E2B98AB3BF550C9A05303B55E7F855D311927FA11)
 
 在垂直方向上，对齐位置可以设置为VerticalAlign.Top、VerticalAlign.Center、VerticalAlign.Bottom。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/k6u2V6ZfRJWbI8EEQk_38A/zh-cn_image_0000002534250310.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=F63E943413D507BCAB2CB5D79D616B1BE89956F79FCDC5ACDE127190116D9DC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/k6u2V6ZfRJWbI8EEQk_38A/zh-cn_image_0000002534250310.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=97BF17C08600E5DBAF9114CF6AF0353EDA2567AA90515691BC2F72880CBE6242)
 
 ### 子组件位置偏移
 
@@ -177,7 +177,7 @@ struct ChildComponentOffsetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/PCEZnGbqT_SRIflRDnWnvw/zh-cn_image_0000002534410256.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=C11B0A6177787922BA7162DB2A5FE2806EE31C0A72A736ACD0A56255CD98F01F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/PCEZnGbqT_SRIflRDnWnvw/zh-cn_image_0000002534410256.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=E0A4B58EFD3AB7D16A14D612853D352D1BDF710CE693A89DB4CDD32489867A02)
 
 ## 多种组件的对齐布局
 
@@ -254,7 +254,7 @@ struct RelativeContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/THypA8laSXeWNTXg43YguA/zh-cn_image_0000002565290155.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=7D02D80D97DB357A3335B1A803581E168DE0476EFBB50BB9D7386D57354A84AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/THypA8laSXeWNTXg43YguA/zh-cn_image_0000002565290155.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=316B165F003D3B4042492E449BD9968773358B33B3BCE9E6049822758056E67E)
 
 ## 组件尺寸
 
@@ -358,7 +358,7 @@ struct RelativeAlignRulesExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/MINYWv0KTyGDE1tyfwhTCg/zh-cn_image_0000002565210135.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=91E3542D98CF249BE7BE56A35A2189272272DF852AD7F1DCD56D2AF5C48810FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/MINYWv0KTyGDE1tyfwhTCg/zh-cn_image_0000002565210135.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=00DE2967A6225813CE931B9FCF90CA036CB15DF6F8F7420285FB3A7C76C8CCE9)
 
 ## 多个组件形成链
 
@@ -514,7 +514,7 @@ struct RelativeChainModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/MKnlBhsARQKZ-8U6C0Cgog/zh-cn_image_0000002534250312.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=91642FBA36EF5C37D122CE3099AB436A27787499F531742634E21B048E30D32D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/MKnlBhsARQKZ-8U6C0Cgog/zh-cn_image_0000002534250312.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=DF280DD769C89AFC0DC93FE7E9A2BC67BD792C9743B7AB58768DFBCAF077C73D)
 
 ## 使用辅助线辅助定位子组件
 
@@ -556,7 +556,7 @@ struct RelativeGuideLineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/wWX8H4YyTvil7Iy3qpS_qg/zh-cn_image_0000002534410258.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=4EDBD645C9600B2AAAAE5A08147F03876264E6C7D31F0CD4BF2912B2ACED04F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/wWX8H4YyTvil7Iy3qpS_qg/zh-cn_image_0000002534410258.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=FE46460BF944D2548DF9E5718828C553F28026F7A945842F28D752D44D9E8DED)
 
 ## 多个组件的屏障
 
@@ -684,4 +684,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/lGQSvrXMQ5-bo09JDeA_mw/zh-cn_image_0000002565290157.png?HW-CC-KV=V1&HW-CC-Date=20260330T121515Z&HW-CC-Expire=86400&HW-CC-Sign=9B9D69849984AAB04C6B846933328C580E045E5526AD8B3002B386D84E52ED34)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/lGQSvrXMQ5-bo09JDeA_mw/zh-cn_image_0000002565290157.png?HW-CC-KV=V1&HW-CC-Date=20260331T024026Z&HW-CC-Expire=86400&HW-CC-Sign=8803FA666C854639FF67F3A6877E77DFFB33C355A627DD5E07435C2DBCB5102D)

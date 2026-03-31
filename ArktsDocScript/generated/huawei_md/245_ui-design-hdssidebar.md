@@ -62,11 +62,12 @@ HdsSideBar提供侧边栏可以显示和隐藏的侧边栏容器，可以自定�
 
 ```typescript
 import { HdsSideBar } from '@kit.UIDesignKit';
+
 @Entry
 @ComponentV2
 struct Index {
   @Local isShowSidebar: boolean = true;
-  //左侧侧边栏区
+
   @Builder
   SideBarPanelBuilder() {
     Column() {
@@ -76,14 +77,16 @@ struct Index {
     .height('100%')
     .margin(40)
   }
-  //右侧内容区
+
   @Builder
   ContentPanelBuilder() {
     Text('右侧内容区')
       .margin(40)
   }
+
   @BuilderParam contentBuilder: () => void = this.ContentPanelBuilder
   @BuilderParam sideBarBuilder: () => void = this.SideBarPanelBuilder
+
   @Builder
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
@@ -103,6 +106,7 @@ struct Index {
       })
       .zIndex(1)
       .margin({ top: 10, left: 10 })
+
       HdsSideBar({
         sideBarPanelBuilder: (): void => {
           this.sideBarBuilder()
@@ -122,4 +126,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ibtqcKRJQU-g9_RZ-F3NUg/zh-cn_image_0000002532144163.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121934Z&HW-CC-Expire=86400&HW-CC-Sign=35EF7487FF276307DB7B7A13C1B93E1987B1A2603C86696D5CCACBD6795C46E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ibtqcKRJQU-g9_RZ-F3NUg/zh-cn_image_0000002532144163.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024445Z&HW-CC-Expire=86400&HW-CC-Sign=7B9B18BB3145FE1BB14BDC80D7803A2B56A371653C890A426BD8A26ACA9331FB)

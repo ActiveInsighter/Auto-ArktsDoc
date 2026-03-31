@@ -20,7 +20,6 @@ Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、
 @Component
 export struct TextPopupExample {
   @State handlePopup: boolean = false;
-
   build() {
     NavDestination() {
       Column() {
@@ -35,12 +34,12 @@ export struct TextPopupExample {
           })
       }.width('100%').padding({ top: 5 })
     }
-
+    // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/08IUHPHTTuWYgftiqW7QAQ/zh-cn_image_0000002565210309.png?HW-CC-KV=V1&HW-CC-Date=20260330T121605Z&HW-CC-Expire=86400&HW-CC-Sign=8EBC1D357D6C5BCA139F9044713314EB448A053E8BFC59C35F67DECB52B4136C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/08IUHPHTTuWYgftiqW7QAQ/zh-cn_image_0000002565210309.png?HW-CC-KV=V1&HW-CC-Date=20260331T024116Z&HW-CC-Expire=86400&HW-CC-Sign=F02C54BAC1A0D212B62F210E9FBEF95985CB44FF6D42B3582ABBDCDF849656A0)
 
 ## 添加气泡状态变化的事件
 
@@ -51,7 +50,6 @@ export struct TextPopupExample {
 @Component
 export struct StatePopupExample {
   @State handlePopup: boolean = false;
-
   build() {
     NavDestination() {
         Column() {
@@ -63,7 +61,7 @@ export struct StatePopupExample {
             })
             .bindPopup(this.handlePopup, {
               message: 'This is a popup with PopupOptions',
-              onStateChange: (e)=> {
+              onStateChange: (e)=> { // 返回当前的气泡状态
                 if (!e.isVisible) {
                   this.handlePopup = false;
                 }
@@ -71,12 +69,12 @@ export struct StatePopupExample {
             })
         }.width('100%').padding({ top: 5 })
     }
-
+    // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/lFfHkZbSTtGBSwGOgKa_Uw/zh-cn_image_0000002534250486.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121605Z&HW-CC-Expire=86400&HW-CC-Sign=457C6EB52198E21AE01A8DAD12D04257210667F4053BDA37C91E0D88316A0D2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/lFfHkZbSTtGBSwGOgKa_Uw/zh-cn_image_0000002534250486.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024116Z&HW-CC-Expire=86400&HW-CC-Sign=2C3D5E8F9BC427FC878A49C70C3DDCE5A8C9EDFC9B0CE836EC40E9A8CE611182)
 
 ## 带按钮的提示气泡
 
@@ -84,12 +82,10 @@ export struct StatePopupExample {
 
 ```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 @Entry
 @Component
 export struct ButtonPopupExample {
   @State handlePopup: boolean = false;
-
   build() {
     NavDestination() {
         Column() {
@@ -121,35 +117,35 @@ export struct ButtonPopupExample {
             })
         }.width('100%').padding({ top: 5 })
     }
-
+    // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/dXG1vRsVSJWQLZqXdqWE4g/zh-cn_image_0000002534410432.jpeg?HW-CC-KV=V1&HW-CC-Date=20260330T121605Z&HW-CC-Expire=86400&HW-CC-Sign=B2561F90D996E261C363AB44EE4281FC483D1FD76CFBA4FBEC285A50CFAA9EDC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/dXG1vRsVSJWQLZqXdqWE4g/zh-cn_image_0000002534410432.jpeg?HW-CC-KV=V1&HW-CC-Date=20260331T024116Z&HW-CC-Expire=86400&HW-CC-Sign=AD4DEBBBCD0AD5AA472767848FAA421A39CC076CE58CF4B8CBA40E95155AA788)
 
 ## 气泡的动画
 
 通过[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)或[CustomPopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#custompopupoptions8类型说明)中的transition属性，可以控制气泡的进场和出场动画效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 export struct AnimationPopupExample {
   @State handlePopup: boolean = false;
   @State customPopup: boolean = false;
-
+  // popup构造器定义弹框内容
   @Builder
   popupBuilder() {
     Row() {
       Text('Custom Popup with transitionEffect').fontSize(10)
     }.height(50).padding(5)
   }
-
   build() {
     NavDestination() {
       Flex({ direction: FlexDirection.Column }) {
-
+        // PopupOptions 类型设置弹框内容
         Button('PopupOptions')
           .id('PopupOptions')
           .onClick(() => {
@@ -164,14 +160,14 @@ export struct AnimationPopupExample {
                 this.handlePopup = false;
               }
             },
-
+            // 设置弹窗显示动效为透明度动效与平移动效的组合效果，无退出动效
             transition: TransitionEffect.asymmetric(
               TransitionEffect.OPACITY.animation({ duration: 1000, curve: Curve.Ease }).combine(
                 TransitionEffect.translate({ x: 50, y: 50 })),
               TransitionEffect.IDENTITY)
           })
           .position({ x: 100, y: 150 })
-
+        // CustomPopupOptions 类型设置弹框内容
         Button('CustomPopupOptions')
           .id('CustomPopupOptions')
           .onClick(() => {
@@ -186,29 +182,30 @@ export struct AnimationPopupExample {
                 this.customPopup = false;
               }
             },
-
+            // 设置弹窗显示动效与退出动效为缩放动效
             transition: TransitionEffect.scale({ x: 1, y: 0 }).animation({ duration: 500, curve: Curve.Ease })
           })
           .position({ x: 80, y: 300 })
       }.width('100%').padding({ top: 5 })
     }
-
+    // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/bEfAx-ahSGuPhVSefaCsaA/zh-cn_image_0000002565290331.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121605Z&HW-CC-Expire=86400&HW-CC-Sign=A8D61633D34E5623D139058BEFBD92777C12BD6F9C43F8BCF7018A85C000FB08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/bEfAx-ahSGuPhVSefaCsaA/zh-cn_image_0000002565290331.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024116Z&HW-CC-Expire=86400&HW-CC-Sign=2C2DFE12D85D0CCC46B442B57A26FAC9A0594EF382A44AE2CF9976CF47E87936)
 
 ## 自定义气泡
 
 开发者可以使用[CustomPopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#custompopupoptions8类型说明)的builder创建自定义气泡，@Builder中可以放自定义的内容。除此之外，还可以通过popupColor等参数控制气泡样式。
 
 ```typescript
+// 请将$r('app.media.xxx')替换为实际资源文件
 @Entry
 @Component
 export struct CustomPopupExample {
   @State customPopup: boolean = false;
-
+  // popup构造器定义弹框内容
   @Builder
   popupBuilder() {
     Row({ space: 2 }) {
@@ -216,7 +213,6 @@ export struct CustomPopupExample {
       Text('This is Custom Popup').fontSize(15)
     }.width(200).height(50).padding(5)
   }
-
   build() {
     NavDestination() {
         Column() {
@@ -227,9 +223,9 @@ export struct CustomPopupExample {
               this.customPopup = !this.customPopup;
             })
             .bindPopup(this.customPopup, {
-              builder: this.popupBuilder,
-              placement: Placement.Bottom,
-              popupColor: Color.Pink,
+              builder: this.popupBuilder, // 气泡的内容
+              placement: Placement.Bottom, // 气泡的弹出位置
+              popupColor: Color.Pink, // 气泡的背景色
               onStateChange: (e) => {
                 if (!e.isVisible) {
                   this.customPopup = false
@@ -239,14 +235,14 @@ export struct CustomPopupExample {
         }
         .height('100%')
     }
-
+    // ···
   }
 }
 ```
 
 使用者通过配置placement参数将弹出的气泡放到需要提示的位置。弹窗构造器会触发弹出提示信息，来引导使用者完成操作，也让使用者有更好的UI体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/_A_aXKmWR7yPMzj6C-MvqA/zh-cn_image_0000002565210311.jpeg?HW-CC-KV=V1&HW-CC-Date=20260330T121605Z&HW-CC-Expire=86400&HW-CC-Sign=5D65E0181CDE57C5B5CB00AA859947CECF7CC479517B284CE6DBACA95ED07A11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/_A_aXKmWR7yPMzj6C-MvqA/zh-cn_image_0000002565210311.jpeg?HW-CC-KV=V1&HW-CC-Date=20260331T024116Z&HW-CC-Expire=86400&HW-CC-Sign=2F84BADB22B006EF8C91876566217133EED6BBDA9AD056C7ACFB4FB514D1E123)
 
 ## 气泡样式
 
@@ -263,11 +259,11 @@ export struct CustomPopupExample {
 以下示例通过设置[PopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#popupoptions类型说明)中的popupColor（背景颜色）、mask（蒙层样式）、width（气泡宽度）、placement（显示位置）实现气泡的样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 export struct StylePopupExample {
   @State handlePopup: boolean = false;
-
   build() {
     NavDestination() {
       Column({ space: 100 }) {
@@ -278,33 +274,33 @@ export struct StylePopupExample {
           .bindPopup(this.handlePopup, {
             width: 200,
             message: 'This is a popup.',
-            popupColor: Color.Red,
+            popupColor: Color.Red, // 设置气泡的背景色
             mask: {
               color: '#33d9d9d9'
             },
             placement: Placement.Top,
-            backgroundBlurStyle: BlurStyle.NONE
+            backgroundBlurStyle: BlurStyle.NONE // 去除背景模糊效果需要关闭气泡的模糊背景
           })
       }
       .width('100%')
     }
-
+    // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/yWOYIaVUR4Kh7gdvlrsnpQ/zh-cn_image_0000002534250488.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121605Z&HW-CC-Expire=86400&HW-CC-Sign=CD35A8345D60085BEF6AEE8E4B4C1A4CFF61610429DA0B87564B155D02CAAB11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/yWOYIaVUR4Kh7gdvlrsnpQ/zh-cn_image_0000002534250488.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024116Z&HW-CC-Expire=86400&HW-CC-Sign=CB7D210FC2713245D546BD25F2D7EDCAB18BCD7AA9100D50F525B8C27A4AB710)
 
 ## 气泡避让软键盘
 
 当软键盘弹出时，气泡默认不会对其避让，可能导致气泡被软键盘覆盖，从API version 15开始，可以设置[CustomPopupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-popup#custompopupoptions8类型说明)中keyboardAvoidMode属性的值为KeyboardAvoidMode.DEFAULT，来使气泡避让键盘。这时如果当前没有位置放下气泡时，气泡会从预设位置平移覆盖宿主组件。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 export struct AvoidSoftKeyboardPopupExample {
   @State handlePopup: boolean = false;
-
   @Builder
   popupBuilder() {
     Column({ space: 2 }) {
@@ -313,7 +309,6 @@ export struct AvoidSoftKeyboardPopupExample {
       TextInput()
     }.width(200).padding(5)
   }
-
   build() {
     NavDestination() {
       Column({ space: 100 }) {
@@ -335,22 +330,23 @@ export struct AvoidSoftKeyboardPopupExample {
       }
       .width('100%')
     }
-
+    // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/U8MM7JX2SqaKcl_T2C5R-w/zh-cn_image_0000002534410434.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121605Z&HW-CC-Expire=86400&HW-CC-Sign=FD442C6459181ED5929F1DFCDDD4C27D489D6EC7DADD77A3A673E53CA00AED7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/U8MM7JX2SqaKcl_T2C5R-w/zh-cn_image_0000002534410434.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024116Z&HW-CC-Expire=86400&HW-CC-Sign=9CFE60C7059AABF1AA322D03E3CAADAF125FAA5BCE34CA1857C5194AE942E815)
 
 ## 设置气泡内的多态效果
 
 目前使用@Builder自定义气泡内容时，默认不支持多态样式，可以使用@Component新建一个组件实现按下气泡中的内容时背景变色。
 
 ```typescript
+// 请将$r('app.media.xxx')替换为实际资源文件
 @Entry
 @Component
 export struct PolymorphicEffectPopupExample {
-
+  // 请在resources\base\element\string.json文件中配置name为'xxx'，value为非空字符串的资源
   @State scan: string =
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Scan_title') as string;
   @State createGroupChat: string =
@@ -358,12 +354,12 @@ export struct PolymorphicEffectPopupExample {
   @State electronicWorkCard: string =
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Electronic_work_card') as string;
   private menus: Array<string> = [this.scan, this.createGroupChat, this.electronicWorkCard];
-
+  // popup构造器定义弹框内容
   @Builder
   popupItemBuilder(name: string, action: string) {
     PopupItemChild({ childName: name, childAction: action })
   }
-
+  // popup构造器定义弹框内容
   @Builder
   popupBuilder() {
     Column() {
@@ -378,9 +374,7 @@ export struct PolymorphicEffectPopupExample {
     }
     .padding(8)
   }
-
   @State customPopup: boolean = false;
-
   build() {
     NavDestination() {
       Column() {
@@ -392,9 +386,9 @@ export struct PolymorphicEffectPopupExample {
           .bindPopup(
             this.customPopup,
             {
-              builder: this.popupBuilder,
-              placement: Placement.Bottom,
-              popupColor: Color.White,
+              builder: this.popupBuilder, // 气泡的内容
+              placement: Placement.Bottom, // 气泡的弹出位置
+              popupColor: Color.White, // 气泡的背景色
               onStateChange: (event) => {
                 if (!event.isVisible) {
                   this.customPopup = false
@@ -405,17 +399,15 @@ export struct PolymorphicEffectPopupExample {
       .width('100%')
       .justifyContent(FlexAlign.Center)
     }
-
+    // ...
   }
 }
-
 @Component
 struct PopupItemChild {
   @Prop childName: string = '';
   @Prop childAction: string = '';
   @State selected: string =
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Selected') as string;
-
   build() {
     Row({ space: 8 }) {
       Image($r('app.media.startIcon'))
@@ -442,7 +434,7 @@ struct PopupItemChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1lqoyeEMSEmEqrVfBD5zIA/zh-cn_image_0000002565290333.gif?HW-CC-KV=V1&HW-CC-Date=20260330T121605Z&HW-CC-Expire=86400&HW-CC-Sign=0B54F5B6F4BE2E17C723E853CE5258A17CFF950D758456EB44E04B7F0971F2B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1lqoyeEMSEmEqrVfBD5zIA/zh-cn_image_0000002565290333.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024116Z&HW-CC-Expire=86400&HW-CC-Sign=68ACB127E1A95D7B79930A71610AE64FBEAB24D0E9B1A15E00104A639DF05BD3)
 
 ## 气泡支持避让中轴
 
@@ -456,7 +448,7 @@ struct PopupItemChild {
 @Entry
 @Component
 export struct SupportedAvoidAxisPopupExample {
-
+  // 请在resources\base\element\string.json文件中配置name为'xxx'，value为非空字符串的资源
   @State upScreen: string =
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Upper_half_screen') as string;
   @State middleAxle: string =
@@ -473,7 +465,6 @@ export struct SupportedAvoidAxisPopupExample {
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('zone') as string;
   @State hoverModeStart: string =
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('hoverMode_start') as string;
-
   @State message: string = 'Hello World';
   @State index: number = 0;
   @State arrayStr: Array<string> = [this.upScreen, this.middleAxle, this.lowerScreen];
@@ -481,7 +472,6 @@ export struct SupportedAvoidAxisPopupExample {
   @State showInSubwindow: boolean = false;
   @State placement: Placement | undefined = undefined;
   @State isShow: boolean = false;
-
   build() {
     NavDestination() {
       RelativeContainer() {
@@ -494,12 +484,10 @@ export struct SupportedAvoidAxisPopupExample {
                 this.index = 0
               }
             })
-
           Button(this.subwindowDisplay + (this.showInSubwindow ? this.subwindow : this.nonSubwindow))
             .onClick(() => {
               this.showInSubwindow = !this.showInSubwindow
             })
-
           Button(this.hoverModeStart + this.enableHoverMode)
             .onClick(() => {
               if (this.enableHoverMode === undefined) {
@@ -511,7 +499,6 @@ export struct SupportedAvoidAxisPopupExample {
               }
             })
         }
-
         Row() {
           Button('Popup')
             .id('Popup')
@@ -537,7 +524,7 @@ export struct SupportedAvoidAxisPopupExample {
       .height('100%')
       .width('100%')
     }
-
+    // ...
   }
 }
 ```
