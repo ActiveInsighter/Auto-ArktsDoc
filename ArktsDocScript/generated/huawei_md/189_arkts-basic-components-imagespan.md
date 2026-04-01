@@ -90,7 +90,7 @@ colorFilter(filter: ColorFilter | DrawingColorFilter)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| filter | [ColorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#colorfilter9) | [DrawingColorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#drawingcolorfilter12) | 是 | 1. 给图像设置颜色滤镜效果，入参为一个4x5的RGBA转换矩阵。 矩阵第一行表示R（红色）的向量值，第二行表示G（绿色）的向量值，第三行表示B（蓝色）的向量值，第四行表示A（透明度）的向量值，4行分别代表不同的RGBA的向量值。 当矩阵对角线值为1，其余值为0时，保持图片原有色彩。 **计算规则：** 如果输入的滤镜矩阵为： ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/wrCp-CzEQ-OXo-2nuRMrIQ/zh-cn_image_0000002565211361.png?HW-CC-KV=V1&HW-CC-Date=20260331T024333Z&HW-CC-Expire=86400&HW-CC-Sign=414C9F4A3EE7ED497506BB0DC1B968473B3F7C4F4809F438B8376055BDBB989D) 像素点为[R, G, B, A]，色值的范围[0, 255] 则过滤后的颜色为 [R’, G’, B’, A’] ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/kJ38fXJCSs6VzY_puhqz7Q/zh-cn_image_0000002534251538.png?HW-CC-KV=V1&HW-CC-Date=20260331T024333Z&HW-CC-Expire=86400&HW-CC-Sign=0D8BCEF4ABE33EB42D5A2F60CEFF8C61515158DD57EA969B8C136A727B44A3A5) 2. 支持@ohos.graphics.drawing的ColorFilter类型作为入参。 **说明：** 该接口中的DrawingColorFilter类型支持在元服务中使用。其中，svg类型的图源只对stroke属性生效。 |
+| filter | [ColorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#colorfilter9) | [DrawingColorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#drawingcolorfilter12) | 是 | 1. 给图像设置颜色滤镜效果，入参为一个4x5的RGBA转换矩阵。 矩阵第一行表示R（红色）的向量值，第二行表示G（绿色）的向量值，第三行表示B（蓝色）的向量值，第四行表示A（透明度）的向量值，4行分别代表不同的RGBA的向量值。 当矩阵对角线值为1，其余值为0时，保持图片原有色彩。 **计算规则：** 如果输入的滤镜矩阵为： ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/wrCp-CzEQ-OXo-2nuRMrIQ/zh-cn_image_0000002565211361.png?HW-CC-KV=V1&HW-CC-Date=20260401T025537Z&HW-CC-Expire=86400&HW-CC-Sign=D09E6669305FF121B7105EA36D1D8513297714BB9C561A13EC13D8BAD7094C61) 像素点为[R, G, B, A]，色值的范围[0, 255] 则过滤后的颜色为 [R’, G’, B’, A’] ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/kJ38fXJCSs6VzY_puhqz7Q/zh-cn_image_0000002534251538.png?HW-CC-KV=V1&HW-CC-Date=20260401T025537Z&HW-CC-Expire=86400&HW-CC-Sign=CBB993DA434BCAAFB3EEDDC5D3055C6D43C216959B9DE328A51A264527ABB5BA) 2. 支持@ohos.graphics.drawing的ColorFilter类型作为入参。 **说明：** 该接口中的DrawingColorFilter类型支持在元服务中使用。其中，svg类型的图源只对stroke属性生效。 |
 
 ### supportSvg222+
 
@@ -189,6 +189,7 @@ type ImageCompleteCallback = (result: ImageLoadResult) => void
 从API version 10开始，该示例通过[verticalAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan#verticalalign)、[objectFit](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan#objectfit)属性展示了ImageSpan组件的对齐方式以及缩放效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct SpanExample {
@@ -198,9 +199,8 @@ struct SpanExample {
         Span('This is the Span and ImageSpan component').fontSize(25).textCase(TextCase.Normal)
           .decoration({ type: TextDecorationType.None, color: Color.Pink })
       }.width('100%').textAlign(TextAlign.Center)
-
       Text() {
-
+        // $r('app.media.app_icon')需要替换为开发者所需的图像资源文件。
         ImageSpan($r('app.media.app_icon'))
           .width('200px')
           .height('200px')
@@ -233,13 +233,14 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/f0A4J0k7S5K_pAeSUhjjUg/zh-cn_image_0000002534411484.png?HW-CC-KV=V1&HW-CC-Date=20260331T024333Z&HW-CC-Expire=86400&HW-CC-Sign=F1B6A2311B711310DC574B8B1D0346D1C859A66E4B178B267E4FCC445BC651D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/f0A4J0k7S5K_pAeSUhjjUg/zh-cn_image_0000002534411484.png?HW-CC-KV=V1&HW-CC-Date=20260401T025537Z&HW-CC-Expire=86400&HW-CC-Sign=A9CB30BCFF46DFB28157E664B9E8F595FF67E7E43C3D879860023623FF9651D8)
 
 ### 示例2（设置背景样式）
 
 从API version 11开始，该示例通过[textBackgroundStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-span#textbackgroundstyle11)属性展示了文本设置背景样式的效果。
 
 ```typescript
+// xxx.ets
 @Component
 @Entry
 struct Index {
@@ -247,7 +248,7 @@ struct Index {
     Row() {
       Column() {
         Text() {
-
+          // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
           ImageSpan($r('app.media.sky'))
             .width('60vp')
             .height('60vp')
@@ -261,19 +262,19 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/EvJgjB1LRSiHVOsjP7HPIw/zh-cn_image_0000002565291385.png?HW-CC-KV=V1&HW-CC-Date=20260331T024333Z&HW-CC-Expire=86400&HW-CC-Sign=5AD5DEE3B2A770F449AB3D75235074C3E4CBF57DE02DA0CA28B8CA0A36ECFA24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/EvJgjB1LRSiHVOsjP7HPIw/zh-cn_image_0000002565291385.png?HW-CC-KV=V1&HW-CC-Date=20260401T025537Z&HW-CC-Expire=86400&HW-CC-Sign=08B411D1C546BDD096C4D2967ADF897AD3C35507281E8F2EFB5A9CECFC63DA54)
 
 ### 示例3（为图片添加事件）
 
 从API version 12开始，该示例通过[onComplete](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan#oncomplete12)、[onError](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan#onerror12)为图片添加加载成功和加载异常的事件。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct Index {
-
+  // $r('app.media.app_icon')需要替换为开发者所需的图像资源文件。
   @State src: ResourceStr = $r('app.media.app_icon');
-
   build() {
     Column() {
       Text() {
@@ -296,28 +297,27 @@ struct Index {
 从API version 14开始，该示例通过[colorFilter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan#colorfilter14)属性展示了给ImageSpan图像设置颜色滤镜的效果。
 
 ```typescript
+// xxx.ets
 import { drawing } from '@kit.ArkGraphics2D';
-
 @Entry
 @Component
 struct SpanExample {
   private ColorFilterMatrix: number[] = [0.239, 0, 0, 0, 0, 0, 0.616, 0, 0, 0, 0, 0, 0.706, 0, 0, 0, 0, 0, 1, 0];
   @State DrawingColorFilterFirst: ColorFilter | undefined = new ColorFilter(this.ColorFilterMatrix);
-
   build() {
     Row() {
       Column({ space: 10 }) {
-
+        //创建ColorFilter对象的方式为图片设置颜色滤镜
         Text() {
-
+          // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
           ImageSpan($r('app.media.sky'))
             .width('60vp')
             .height('60vp')
             .colorFilter(this.DrawingColorFilterFirst)
         }
-
+        //通过drawing.ColorFilter的方式为图片设置颜色滤镜
         Text() {
-
+          // $r('app.media.sky')需要替换为开发者所需的图像资源文件。
           ImageSpan($r('app.media.sky'))
             .width('60vp')
             .height('60vp')
@@ -334,24 +334,23 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/reJqrBhERySAvIzqMlTriA/zh-cn_image_0000002565211363.png?HW-CC-KV=V1&HW-CC-Date=20260331T024333Z&HW-CC-Expire=86400&HW-CC-Sign=9C98F59CE4D5643475CF11E789B980B71D90C23F32197B3B2D048F57FEDB81BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/reJqrBhERySAvIzqMlTriA/zh-cn_image_0000002565211363.png?HW-CC-KV=V1&HW-CC-Date=20260401T025537Z&HW-CC-Expire=86400&HW-CC-Sign=BFE20D1377254CC9EF6F7DD6AE00C0AD08DD2FD26E650A0342749BA140624C52)
 
 ### 示例5（设置加载占位图）
 
 从API version 12开始，该示例[alt](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-imagespan#alt12)属性展示了ImageSpan设置加载网络图片时占位图的效果。
 
 ```typescript
+// xxx.ets
 import { http } from '@kit.NetworkKit';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-
 @Entry
 @Component
 struct SpanExample {
   @State imageAlt: PixelMap | undefined = undefined;
-
   httpRequest() {
-
+    // 直接加载网络地址，请填写一个具体的网络图片地址
     http.createHttp().request("https://www.example.com/xxx.png", (error: BusinessError, data: http.HttpResponse) => {
       if (error) {
         console.error(`http request failed with. Code: ${error.code}, message: ${error.message}`);
@@ -359,48 +358,43 @@ struct SpanExample {
         console.info(`http request success.`);
         let imageData: ArrayBuffer = data.result as ArrayBuffer;
         let imageSource: image.ImageSource = image.createImageSource(imageData);
-
         class tmp {
           height: number = 100;
           width: number = 100;
         }
-
         let option: Record<string, number | boolean | tmp> = {
-          'alphaType': 0,
-          'editable': false,
-          'pixelFormat': 3,
-          'scaleMode': 1,
+          'alphaType': 0, // 透明度
+          'editable': false, // 是否可编辑
+          'pixelFormat': 3, // 像素格式
+          'scaleMode': 1, // 缩略值
           'size': { height: 100, width: 100 }
         };
-
+        //创建图片大小
         imageSource.createPixelMap(option).then((pixelMap: PixelMap) => {
           this.imageAlt = pixelMap;
         })
       }
     })
   }
-
   build() {
     Column() {
       Button("获取网络图片")
         .onClick(() => {
           this.httpRequest();
         })
-
       Text() {
-
+        // 直接加载网络地址，请填写一个具体的网络图片地址
         ImageSpan('https://www.example.com/xxx.png')
           .alt(this.imageAlt)
           .width(300)
           .height(300)
       }
-
     }.width('100%').height(250).padding({ left: 35, right: 35, top: 35 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Rv0FD907Tu-7jo2UdJFteA/zh-cn_image_0000002534251540.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024333Z&HW-CC-Expire=86400&HW-CC-Sign=6E56BB9BCB06CFA15C639A38B3E2B4338CE13E02188319997665BB946E230E0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Rv0FD907Tu-7jo2UdJFteA/zh-cn_image_0000002534251540.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025537Z&HW-CC-Expire=86400&HW-CC-Sign=F5D1D8AC3E0F5231D8C6ABDFBD86DAE6DF1D390FAE59AF86ADF4A4B70043DE66)
 
 ### 示例6（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -415,7 +409,7 @@ struct Index {
     Row() {
       Column() {
         Text('属性字符串不支持svg2')
-
+        // $r("app.media.ice")需要替换为开发者所需的图像资源文件。
         Text() {
           ImageSpan($r("app.media.ice"))
             .width(50)
@@ -424,7 +418,7 @@ struct Index {
               drawing.Tool.makeColorFromResourceColor(Color.Blue), drawing.BlendMode.SRC_IN))
         }
         Text('属性字符串支持svg2')
-
+        // $r("app.media.ice")需要替换为开发者所需的图像资源文件。
         Text() {
           ImageSpan($r("app.media.ice"))
             .width(50)
@@ -441,4 +435,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/ZuTl5lmBSkGkduCznP050g/zh-cn_image_0000002534411486.png?HW-CC-KV=V1&HW-CC-Date=20260331T024333Z&HW-CC-Expire=86400&HW-CC-Sign=1CC07471173AF353CB8070048798BE91E133A1AB3384B091E547E4AFF067FA1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/ZuTl5lmBSkGkduCznP050g/zh-cn_image_0000002534411486.png?HW-CC-KV=V1&HW-CC-Date=20260401T025537Z&HW-CC-Expire=86400&HW-CC-Sign=1C2532B245F8E0654CD6248BFF47E336DEFD7A76D02C12C8C8737EDB170F6931)

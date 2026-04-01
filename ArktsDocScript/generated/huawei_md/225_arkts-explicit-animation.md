@@ -197,7 +197,7 @@ struct AnimateToExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/j9H6fKp8RL2Ob3s7ZQPGSg/zh-cn_image_0000002565291593.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024420Z&HW-CC-Expire=86400&HW-CC-Sign=12DC8F535238B13E7CBF14614EF348BDCB1FD5C3E35F7C5DA6769A6816D3D150)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/j9H6fKp8RL2Ob3s7ZQPGSg/zh-cn_image_0000002565291593.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025622Z&HW-CC-Expire=86400&HW-CC-Sign=09816FA262A9E267DB5AAA7486D2C952371A6ADFBB1C2075307D74E9A5616015)
 
 ### 示例2（动画执行结束后组件消失）
 
@@ -249,4 +249,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/UOC16coYQDe3_nmPXdNgqw/zh-cn_image_0000002565211571.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024420Z&HW-CC-Expire=86400&HW-CC-Sign=37DF69BD736790196B39D302CF27EC831E6E0A3DFD7128517ED44CC23FCAB1D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/UOC16coYQDe3_nmPXdNgqw/zh-cn_image_0000002565211571.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025622Z&HW-CC-Expire=86400&HW-CC-Sign=31CB40CEA40754E390ACBFC0FF5795451AF763831EB3CA2088185110EE20117B)

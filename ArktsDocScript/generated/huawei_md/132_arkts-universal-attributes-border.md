@@ -197,7 +197,7 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/t8SbcYC3RM6x0XWM3CDInQ/zh-cn_image_0000002565211073.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024215Z&HW-CC-Expire=86400&HW-CC-Sign=1BCCC5DF2EF27F5F94FBEDF5D42C6E2B0EA2DFF605907EB03DA6B4CF463B4CC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/t8SbcYC3RM6x0XWM3CDInQ/zh-cn_image_0000002565211073.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025228Z&HW-CC-Expire=86400&HW-CC-Sign=67AFD9C40FFC594A3A514CF6FCCB94AB30F30F5950D7C06009843890D5822B9D)
 
 ### 示例2（边框宽度类型和边框颜色）
 
@@ -263,11 +263,11 @@ struct BorderExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/eOKNa-WtTxOboiRkASRulQ/zh-cn_image_0000002534251250.png?HW-CC-KV=V1&HW-CC-Date=20260331T024215Z&HW-CC-Expire=86400&HW-CC-Sign=CC9BD4FA69047C1864F116F46D6E44A52A62D37188F44A7C6E11A01C129F732E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/eOKNa-WtTxOboiRkASRulQ/zh-cn_image_0000002534251250.png?HW-CC-KV=V1&HW-CC-Date=20260401T025228Z&HW-CC-Expire=86400&HW-CC-Sign=F862FD193734EAC40C8845F0C3BC86781D615B99D9C9B6B8B9AAA589248F6B93)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ob7kq6bVSIGUe-nvj84anw/zh-cn_image_0000002534411196.png?HW-CC-KV=V1&HW-CC-Date=20260331T024215Z&HW-CC-Expire=86400&HW-CC-Sign=775F9903060F7D98F7DF8D1068B13CC0901276E8F6B89C100E0CFB71691DC9C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/ob7kq6bVSIGUe-nvj84anw/zh-cn_image_0000002534411196.png?HW-CC-KV=V1&HW-CC-Date=20260401T025228Z&HW-CC-Expire=86400&HW-CC-Sign=707D20D6124233622431F8C92027D5127B8BA089B50E555F04BCCEC6339BB34D)
 
 ### 示例3（设置离屏圆角）
 
@@ -341,7 +341,7 @@ struct RenderStrategyExample {
 
 设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/MXirIX4-Tzqb5VDiEeAyww/zh-cn_image_0000002565291097.jpg?HW-CC-KV=V1&HW-CC-Date=20260331T024215Z&HW-CC-Expire=86400&HW-CC-Sign=453DA03F5E8C34A2EBDBC2B61EB7BE81596EFD1D2FE6C6CD7D3F7A3FC6278EF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/MXirIX4-Tzqb5VDiEeAyww/zh-cn_image_0000002565291097.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T025228Z&HW-CC-Expire=86400&HW-CC-Sign=997425908805F1D3D57AFAC7D18E42D8B4C8D9E9605E66359561DDE8B9C4AF48)
 
 ### 示例4（设置异形圆角）
 
@@ -373,4 +373,4 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/OAUXf674SWKBnS06vNnsnQ/zh-cn_image_0000002565211075.png?HW-CC-KV=V1&HW-CC-Date=20260331T024215Z&HW-CC-Expire=86400&HW-CC-Sign=B0F7C7B0D37AF8118C062F7C4F99E32955FBCDC130C66E0D92531B501FEDC5DC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/OAUXf674SWKBnS06vNnsnQ/zh-cn_image_0000002565211075.png?HW-CC-KV=V1&HW-CC-Date=20260401T025228Z&HW-CC-Expire=86400&HW-CC-Sign=09E1CFB5A225E6BAA4CE6D255FE235183CA739FF1035C9920C48970B9BDAC704)

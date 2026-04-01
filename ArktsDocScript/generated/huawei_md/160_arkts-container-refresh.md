@@ -198,12 +198,12 @@ RefreshStatus刷新状态枚举。
 刷新区域使用默认刷新样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RefreshExample {
   @State isRefreshing: boolean = false;
   @State arr: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
   build() {
     Column() {
       Row() {
@@ -214,7 +214,6 @@ struct RefreshExample {
           this.isRefreshing = false;
         })
       }
-
       Refresh({ refreshing: $$this.isRefreshing }) {
         List() {
           ForEach(this.arr, (item: string) => {
@@ -258,20 +257,20 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/uwuu_4IMSpqudTUUw3nfTA/zh-cn_image_0000002534251398.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=32B5F260F893F2269F6C074128BF7DDA407C200D896BF3B3117847A124654316)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/uwuu_4IMSpqudTUUw3nfTA/zh-cn_image_0000002534251398.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=EE18A818AB7B0FAABE061A547298508F36E4ACA228F9EDA64213BCD82012716A)
 
 ### 示例2（设置刷新区域显示文本）
 
 通过[promptText](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#refreshoptions对象说明)参数设置刷新区域显示文本。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RefreshExample {
   @State isRefreshing: boolean = false;
   @State promptText: string = "Refreshing...";
   @State arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
   build() {
     Column() {
       Refresh({ refreshing: $$this.isRefreshing, promptText: this.promptText }) {
@@ -317,19 +316,19 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/wWSY8CwHQ6OZJu0BnG6VrQ/zh-cn_image_0000002534411344.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=10F9F38578EA5C85DA6C11FE1D0DBFB86ED0B8118A8A8C1A3AEFD82D93E929AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/wWSY8CwHQ6OZJu0BnG6VrQ/zh-cn_image_0000002534411344.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=2DB34B796F90D56A8B889A874D9B2911DE1E13B3DFE98F0DA104D1D8AE90CE52)
 
 ### 示例3（自定义刷新区域显示内容-builder）
 
 通过[builder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#refreshoptions对象说明)参数自定义刷新区域显示内容。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RefreshExample {
   @State isRefreshing: boolean = false;
   @State arr: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
   @Builder
   customRefreshComponent() {
     Stack() {
@@ -341,11 +340,10 @@ struct RefreshExample {
     }
     .align(Alignment.Center)
     .clip(true)
-
+    // 设置最小高度约束保证自定义组件高度随刷新区域高度变化时自定义组件高度不会低于minHeight。
     .constraintSize({ minHeight: 32 })
     .width('100%')
   }
-
   build() {
     Column() {
       Refresh({ refreshing: $$this.isRefreshing, builder: this.customRefreshComponent() }) {
@@ -388,23 +386,21 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/36LHjgcYRgmEgGKTaZltog/zh-cn_image_0000002565291245.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=B275FA7114CFAF4932523F7676F6C7A2EA3544C6F482B64F46F2F6E260DC2096)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/36LHjgcYRgmEgGKTaZltog/zh-cn_image_0000002565291245.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=1293CFCD0BD400E9D01A65B125E9F0A9DBF8FAF24A5BB7DA11A0813A4858C183)
 
 ### 示例4（自定义刷新区域显示内容-refreshingContent）
 
 通过[refreshingContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#refreshoptions对象说明)参数自定义刷新区域显示内容。
 
 ```typescript
+// xxx.ets
 import { ComponentContent } from '@kit.ArkUI';
-
 class Params {
   refreshStatus: RefreshStatus = RefreshStatus.Inactive;
-
   constructor(refreshStatus: RefreshStatus) {
     this.refreshStatus = refreshStatus;
   }
 }
-
 @Builder
 function customRefreshingContent(params: Params) {
   Stack() {
@@ -416,11 +412,10 @@ function customRefreshingContent(params: Params) {
   }
   .align(Alignment.Center)
   .clip(true)
-
+  // 设置最小高度约束保证自定义组件高度随刷新区域高度变化时自定义组件高度不会低于minHeight。
   .constraintSize({ minHeight: 32 })
   .width('100%')
 }
-
 @Entry
 @Component
 struct RefreshExample {
@@ -429,12 +424,10 @@ struct RefreshExample {
   @State refreshStatus: RefreshStatus = RefreshStatus.Inactive;
   private contentNode?: ComponentContent<Object> = undefined;
   private params: Params = new Params(RefreshStatus.Inactive);
-
   aboutToAppear(): void {
     let uiContext = this.getUIContext();
     this.contentNode = new ComponentContent(uiContext, wrapBuilder(customRefreshingContent), this.params);
   }
-
   build() {
     Column() {
       Refresh({ refreshing: $$this.isRefreshing, refreshingContent: this.contentNode }) {
@@ -466,7 +459,7 @@ struct RefreshExample {
       .onStateChange((refreshStatus: RefreshStatus) => {
         this.refreshStatus = refreshStatus;
         this.params.refreshStatus = refreshStatus;
-
+        // 更新自定义组件内容。
         this.contentNode?.update(this.params);
         console.info('Refresh onStatueChange state is ' + refreshStatus);
       })
@@ -481,15 +474,15 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Gme9ynr9QDOj2Yr783ov2g/zh-cn_image_0000002565211223.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=D0D29D1E9993237F208423A4B043BCC402BBFFF26EDC1D59EC15874D278161C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Gme9ynr9QDOj2Yr783ov2g/zh-cn_image_0000002565211223.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=2459967C0FCEB94C8B4B7C9CC9E54096D1266C6843466762E548F62116489873)
 
 ### 示例5（实现最大下拉距离）
 
 通过[pullDownRatio](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#pulldownratio12)属性和[onOffsetChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#onoffsetchange12)事件实现最大下拉距离。
 
 ```typescript
+// xxx.ets
 import { ComponentContent } from '@kit.ArkUI';
-
 @Builder
 function customRefreshingContent() {
   Stack() {
@@ -500,11 +493,10 @@ function customRefreshingContent() {
   }
   .align(Alignment.Center)
   .clip(true)
-
+  // 设置最小高度约束保证自定义组件高度随刷新区域高度变化时自定义组件高度不会低于minHeight。
   .constraintSize({ minHeight: 32 })
   .width('100%')
 }
-
 @Entry
 @Component
 struct RefreshExample {
@@ -513,12 +505,10 @@ struct RefreshExample {
   @State maxRefreshingHeight: number = 100.0;
   @State ratio: number = 1;
   private contentNode?: ComponentContent<Object> = undefined;
-
   aboutToAppear(): void {
     let uiContext = this.getUIContext();
     this.contentNode = new ComponentContent(uiContext, wrapBuilder(customRefreshingContent));
   }
-
   build() {
     Column() {
       Refresh({ refreshing: $$this.isRefreshing, refreshingContent: this.contentNode }) {
@@ -549,7 +539,7 @@ struct RefreshExample {
       .pullToRefresh(true)
       .refreshOffset(64)
       .onOffsetChange((offset: number) => {
-
+        // 越接近最大距离，下拉跟手系数越小。
         this.ratio = 1 - Math.pow((offset / this.maxRefreshingHeight), 3);
       })
       .onStateChange((refreshStatus: RefreshStatus) => {
@@ -566,13 +556,14 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Sqr3dKzfSyWuRTiF9DAZTg/zh-cn_image_0000002534251400.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=08161EF4DCEC04542995E2E2281D0F2EF066A2A9DB11F56271B2138AB3D16B88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Sqr3dKzfSyWuRTiF9DAZTg/zh-cn_image_0000002534251400.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=78306D67FC334E0F095DA030752964C87271A0E4440F2A2227A8C8878E487122)
 
 ### 示例6（实现下拉刷新上拉加载更多）
 
 Refresh组件与[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)组件组合实现下拉刷新上拉加载更多效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ListRefreshLoad {
@@ -581,11 +572,11 @@ struct ListRefreshLoad {
   @State refreshOffset: number = 0;
   @State refreshState: RefreshStatus = RefreshStatus.Inactive;
   @State isLoading: boolean = false;
-
   @Builder
   refreshBuilder() {
     Stack({ alignContent: Alignment.Bottom }) {
-
+      // 可以通过刷新状态控制是否存在Progress组件。
+      // 当刷新状态处于下拉中或刷新中状态时Progress组件才存在。
       if (this.refreshState != RefreshStatus.Inactive && this.refreshState != RefreshStatus.Done) {
         Progress({ value: this.refreshOffset, total: 64, type: ProgressType.Ring })
           .width(32).height(32)
@@ -597,7 +588,6 @@ struct ListRefreshLoad {
     .height('100%')
     .width('100%')
   }
-
   @Builder
   footer() {
     Row() {
@@ -606,10 +596,9 @@ struct ListRefreshLoad {
     }.width('100%')
     .height(64)
     .justifyContent(FlexAlign.Center)
-
+    // 当不处于加载中状态时隐藏组件。
     .visibility(this.isLoading ? Visibility.Visible : Visibility.Hidden)
   }
-
   build() {
     Refresh({ refreshing: $$this.refreshing, builder: this.refreshBuilder() }) {
       List() {
@@ -623,16 +612,15 @@ struct ListRefreshLoad {
               .backgroundColor(0xFFFFFF)
           }.borderWidth(1)
         }, (item: string) => item)
-
         ListItem() {
           this.footer();
         }
       }
       .onScrollIndex((start: number, end: number) => {
-
+        // 当达到列表末尾时，触发新数据加载。
         if (end >= this.arr.length - 1) {
           this.isLoading = true;
-
+          // 模拟新数据加载。
           setTimeout(() => {
             for (let i = 0; i < 10; i++) {
               this.arr.push(this.arr.length);
@@ -642,7 +630,7 @@ struct ListRefreshLoad {
         }
       })
       .scrollBar(BarState.Off)
-
+      // 开启边缘滑动效果。
       .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true })
     }
     .width('100%')
@@ -655,7 +643,7 @@ struct ListRefreshLoad {
       this.refreshState = state;
     })
     .onRefreshing(() => {
-
+      // 模拟数据刷新。
       setTimeout(() => {
         this.refreshing = false;
       }, 2000)
@@ -664,19 +652,19 @@ struct ListRefreshLoad {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/wBBT9YTHQ5WG8S1itb47LQ/zh-cn_image_0000002534411346.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=435C3F69E208E76B3286C79A6558C4288A298295D34EAA62F3A5FADBEEFE658A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/wBBT9YTHQ5WG8S1itb47LQ/zh-cn_image_0000002534411346.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=9E93F2DDC154D1CBB574CB1815B4B2864FE60B738A8FBBDA8D6C1062C11CF5A6)
 
 ### 示例7（设置最大下拉距离）
 
 从API version 20开始，通过[maxPullDownDistance](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#maxpulldowndistance20)属性设置最大下拉距离。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RefreshExample {
   @State isRefreshing: boolean = false
   @State arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-
   build() {
     Column() {
       Refresh({ refreshing: $$this.isRefreshing }) {
@@ -723,20 +711,20 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/4qGUUoj8TIeCtfyq5xfy7g/zh-cn_image_0000002565291247.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=240B9AE9458F05A7F141487FC9843F730A26CFD5DF037927BB030C3CA5C9EF8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/4qGUUoj8TIeCtfyq5xfy7g/zh-cn_image_0000002565291247.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=5E4C1677CDA39B97434FD48BA86D4B87789087090F8D22D67B792D25DD0817B0)
 
 ### 示例8（禁止下拉刷新）
 
 通过[pullDownRatio](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-refresh#pulldownratio12)属性禁止下拉刷新。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RefreshExample {
   @State isRefreshing: boolean = false;
   @State ratio: number | undefined = undefined;
   @State arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
   build() {
     Column() {
       Row() {
@@ -791,19 +779,19 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/hyuMti4UT8akmesTjfwnOw/zh-cn_image_0000002565211225.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=A4B9E6CEF44290101CB23FA0F2E34B96E4796297F58C0C6B52F7A117B83CF099)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/hyuMti4UT8akmesTjfwnOw/zh-cn_image_0000002565211225.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=9AE07C73A4A641767A05F00F0FD9CC94B163490F4ADB1D76E6FEA74F23594AA1)
 
 ### 示例9（不满一屏场景实现下拉刷新）
 
 通过设置[edgeEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scrollable-common#edgeeffect11)属性中的alwaysEnabled参数，可以在不满一屏的情况下实现Refresh组件的下拉刷新效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RefreshExample {
   @State isRefreshing: boolean = false;
   @State alwaysEnabled: boolean = false;
-
   build() {
     Column() {
       Refresh({ refreshing: $$this.isRefreshing }) {
@@ -827,7 +815,8 @@ struct RefreshExample {
           .height('100%')
           .alignListItem(ListItemAlign.Center)
           .scrollBar(BarState.Auto)
-
+          // List组件内容大小小于组件自身且alwaysEnabled为false时，List不会响应手势，此时手势会被Column组件响应，不会产生下拉刷新效果
+          // alwaysEnabled设为true，List会响应手势并通过嵌套滚动带动Refresh组件产生下拉刷新效果
           .edgeEffect(EdgeEffect.Spring, { alwaysEnabled: this.alwaysEnabled })
         }
         .gesture(
@@ -853,4 +842,4 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1TeQGJ9cQIOXNuogURKG2w/zh-cn_image_0000002534251402.gif?HW-CC-KV=V1&HW-CC-Date=20260331T024250Z&HW-CC-Expire=86400&HW-CC-Sign=57A46C5C08C007B6DC997A0AD84ACB614C4429D609EAAF3EDAF63FCCA9836E4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/1TeQGJ9cQIOXNuogURKG2w/zh-cn_image_0000002534251402.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025455Z&HW-CC-Expire=86400&HW-CC-Sign=38ECA848855D20AA4F32B0EF6AE5F6AF95D3F33CA4D983E18F86AC0C9D6425BE)
