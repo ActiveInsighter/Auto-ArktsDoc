@@ -1111,7 +1111,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/WCXkeKrgT9SIbgQzY16Qog/zh-cn_image_0000002534251420.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=0ABAF736E3B12A08C6A03798833F2E3BF173AB82118F7E0B8F5D3A96AA0E8BC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/WCXkeKrgT9SIbgQzY16Qog/zh-cn_image_0000002534251420.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=902445C6A26A241CE1C21FF0A61224ED82B94BB6C5FE05C567DA14DFF240FF5B)
 
 ### 示例2（设置Scrollable模式下的TabBar的布局样式）
 
@@ -1228,7 +1228,7 @@ struct TabsExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/cOk40WwYQiSQpbp4tdtw0g/zh-cn_image_0000002534411366.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=99915DB4689CB6CEB2DCFAC2C1D11357989DD5AB1C5289C8BA4EEDD4E16A6991)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/cOk40WwYQiSQpbp4tdtw0g/zh-cn_image_0000002534411366.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=78FC7D51380F2024324EDFE408D5225D03853E09715E0CCB098797C0A0B9B3E7)
 
 ### 示例3（自定义页签切换联动）
 
@@ -1304,7 +1304,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/LScpmpwyR6WCRJ6kUQdZWA/zh-cn_image_0000002565291267.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=7C94266C496F05BECA5A9338A009BD858E3F01924C209FB1B973F1DBC979EB55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/LScpmpwyR6WCRJ6kUQdZWA/zh-cn_image_0000002565291267.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=D3D12405F668FAEFFDFADA058A10575A8B1EB171E9A2A9E7F738E6DD3E298A64)
 
 ### 示例4（分割线基本属性）
 
@@ -1413,7 +1413,7 @@ struct TabsDivider1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/beJx3cyURkeeKQGSmWSmmQ/zh-cn_image_0000002565211245.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=B4D1E7E2D7569F476336F6B42AF5B2407343AC9D1E9A4993A4A256DBAC6473FC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/beJx3cyURkeeKQGSmWSmmQ/zh-cn_image_0000002565211245.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=4E002A1C4BD3CD52EB04403D96872DD969308AE55A21838D005DD380B90BEB09)
 
 ### 示例5（设置TabBar渐隐）
 
@@ -1526,7 +1526,7 @@ struct TabsOpaque {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/JIXSHryNTlKrFcv-IIjwYA/zh-cn_image_0000002534251422.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=2B93F08C8E4F32422F77FB63207623091A3831A8AF0F09B0CA5278F773FC5B47)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/JIXSHryNTlKrFcv-IIjwYA/zh-cn_image_0000002534251422.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=2B4E7FCB7C9D050592E2195ADA5A0133FB62B68D6DCD2A91A8028775E3C4BB5E)
 
 ### 示例6（设置TabBar叠加在TabContent内容上）
 
@@ -1577,7 +1577,7 @@ struct barHeightTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/JuV8qrZ4SVWu-SW6Snon8g/zh-cn_image_0000002534411368.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=A67A8ACE2DC82506937E31571ED52FDC25874A6FE0B3DD22A6EFC7DB5A8E8520)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/JuV8qrZ4SVWu-SW6Snon8g/zh-cn_image_0000002534411368.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=E5338D5538B3AD3C0F3506EB485A1EC4B55F52391DCCA8BC297353C23209783A)
 
 ### 示例7（设置TabBar栅格化可见区域）
 
@@ -1680,7 +1680,7 @@ struct TabsExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Q2aMdF9TSwKBc08MDWuWbg/zh-cn_image_0000002565291269.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=09C0FFFAD9863F269D81C018A12705A0AED55F94690371D294DE2199CD873A9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/Q2aMdF9TSwKBc08MDWuWbg/zh-cn_image_0000002565291269.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=F407F6C1D72F7E7B228A37FAA06A88FE25E8A507F0F6E7EF4152CD4708248E15)
 
 ### 示例8（自定义Tabs页面切换动画）
 
@@ -1769,7 +1769,7 @@ struct TabsCustomAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/X2dIEedOSzyRFG9O1F8cpQ/zh-cn_image_0000002565211247.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=72B1F7F76D16C1EDBF551CF6A9B4B56213F070DA6869183F32BC14D68E5A6989)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/X2dIEedOSzyRFG9O1F8cpQ/zh-cn_image_0000002565211247.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=A5D6D78B8054FF6486F69B44EBC40CCAAA82F5F91BEB1FEC62CD09F0B42C3177)
 
 ### 示例9（页面切换拦截）
 
@@ -1859,7 +1859,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/TwsYduW6RrWcxhOW4V1qyQ/zh-cn_image_0000002534251424.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=D8B8B1F9274A4A0DAC5D369CEB12A6AA5D5B9AA5336A76732E119F845C80BFAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/TwsYduW6RrWcxhOW4V1qyQ/zh-cn_image_0000002534251424.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=8B6A035421CE3F8A01E9607BA0F0514951A740A819DE77BDDB0BB03F1AE8C70D)
 
 ### 示例10（自定义TabBar切换动画）
 
@@ -2027,7 +2027,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6ytBF5_9Sri2azAMuXbnPg/zh-cn_image_0000002534411370.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=88DBBF0E37CAD285E255BF1C929E48645F73DCE8374F51DA0620DD6F5C852E5E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6ytBF5_9Sri2azAMuXbnPg/zh-cn_image_0000002534411370.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=26C6D5241820EEA985D76DBB18698F48156C9FA81FBD962C3AC0E7CE26082690)
 
 ### 示例11（预加载子节点）
 
@@ -2154,7 +2154,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ULzRZ6P7QkOmb0dycHrg7Q/zh-cn_image_0000002565291271.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=602940E7D3B37DFFCDC44FAE414C678F382B692BE426E15FB9A451C9CBBA835A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/ULzRZ6P7QkOmb0dycHrg7Q/zh-cn_image_0000002565291271.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=08844D84FF3F3DD747DE869AC18219E287751629F8FE3F1BDED9B7975C842D20)
 
 ### 示例13（页面懒加载和释放）
 
@@ -2261,7 +2261,7 @@ struct TabsSwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/cKlpZ46QQiS7dSi9njnRxQ/zh-cn_image_0000002565211249.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=975DD2FF4DFCAC79FF6F8844EACACA2A8035BA63BD4D92B832CEF89F74744E09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/cKlpZ46QQiS7dSi9njnRxQ/zh-cn_image_0000002565211249.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=FA298E6E7E5E2794756A381AAD19F7DDB26FE357A9158957A81BB59073B02AFC)
 
 ### 示例14（设置翻页动效）
 
@@ -2334,7 +2334,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/DPd54quRTQqEraKHfobBbA/zh-cn_image_0000002534251426.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=EE3DF73CB81F6ADFAA10776427F7D647063E2CF7181F7564AE72D83BF2FD70BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/DPd54quRTQqEraKHfobBbA/zh-cn_image_0000002534251426.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=B1F029911A71878BE7A304C55A63A892676AD226B96CDE01546CCDB84F5C5D46)
 
 ### 示例15（页签超出TabBar区域显示）
 
@@ -2425,7 +2425,7 @@ struct TabsBarModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/J7VEgOqGT866tW8PuFyUHw/zh-cn_image_0000002534411372.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=939F3313D6C1BE4D76F3F08FF36347C6EA0B6263E72CF38681DE80CC8DA3839E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/J7VEgOqGT866tW8PuFyUHw/zh-cn_image_0000002534411372.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=B05FC375E8723E62751BB47E5E98B8B0EEF8C8E2E35C454D788310E0A7EFDC8C)
 
 ### 示例16（页签对齐布局）
 
@@ -2529,7 +2529,7 @@ struct TabsBarModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/QWejQf1vTwGVEiqxxVADbw/zh-cn_image_0000002565291273.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=0CA5FF5EAAE2E53777FC0BE9D1A791AA15DEBC5B06579974426917EC9D1FA055)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/QWejQf1vTwGVEiqxxVADbw/zh-cn_image_0000002565291273.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=D15B44E82EA3DB4B865E9C7409BD203E1458D251B279ABFEFB3063975E390467)
 
 ### 示例17（Tabs与TabBar同步切换）
 
@@ -2606,7 +2606,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/JeIT0ergSWWJf1tVuP5y3g/zh-cn_image_0000002565211251.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=7BFF9AFA9AAFAE5CB8964837565BE12B2A4872253F0B001042D6581E7058172A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/JeIT0ergSWWJf1tVuP5y3g/zh-cn_image_0000002565211251.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=9E1803619A5F5C82AEEA3319E61E03FFE842FBEA34E1EFFCFA06669C28BDC0CB)
 
 ### 示例18（释放Tabs子组件）
 
@@ -2732,7 +2732,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/pDGZRhrlSWu1mcqljL11GQ/zh-cn_image_0000002534251428.png?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=96E197FD10A266CC8B09826C3A9547A47359B00D632F99C5B75FA53ADF526340)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/pDGZRhrlSWu1mcqljL11GQ/zh-cn_image_0000002534251428.png?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=472B1DC63E3811FEE23543EAF5F855CBC46A46AFA35A13AF7EA78F36D85801E4)
 
 ### 示例20（设置边缘滑动效果）
 
@@ -2788,7 +2788,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/dTe8AmC1Q9-XJ01ZmNEJxA/zh-cn_image_0000002534411374.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=B0EECA9AEA0A787E06DF247755C06485BE5F2814EE7F25F1135E68AF9B61DF70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/dTe8AmC1Q9-XJ01ZmNEJxA/zh-cn_image_0000002534411374.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=26C9528E036DCF290FB4D97CC3DAE08BB92240AA8AA10726F075F2627E83A049)
 
 ### 示例21（Tabs设置翻页动画曲线）
 
@@ -2880,4 +2880,4 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/sPveYAmUSWy80VCr3djRSw/zh-cn_image_0000002565291275.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025500Z&HW-CC-Expire=86400&HW-CC-Sign=E6D0B847DDB98968CD1730FEF2816040866E4FDE314EA97FE88DCC9A4439D540)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/sPveYAmUSWy80VCr3djRSw/zh-cn_image_0000002565291275.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132837Z&HW-CC-Expire=86400&HW-CC-Sign=CF8B8C6788B88E3027D9049B6EBD46CE30C3CB11D750A29FA9855ECCE0A094E4)

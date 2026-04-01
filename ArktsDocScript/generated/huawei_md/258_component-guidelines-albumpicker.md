@@ -7,15 +7,15 @@
 
 界面效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/UcTxvez_Sw2USFK-_g0RGg/zh-cn_image_0000002565210831.png?HW-CC-KV=V1&HW-CC-Date=20260401T025701Z&HW-CC-Expire=86400&HW-CC-Sign=765720EF03DF81C3E759E0392AF799A1CD94E44EE4601CE7D15953A20A6BA215)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/UcTxvez_Sw2USFK-_g0RGg/zh-cn_image_0000002565210831.png?HW-CC-KV=V1&HW-CC-Date=20260401T133241Z&HW-CC-Expire=86400&HW-CC-Sign=76440AF42DC1534D068FED745C1F78DBA555F10FC803BBC83570DF9E14041A93)
 
 ## 开发步骤
 
 1. 导入相册组件模块文件。 ```typescript import {  AlbumPickerComponent,  AlbumPickerOptions,  AlbumInfo,  PickerColorMode,  PickerController,  DataType } from '@kit.MediaLibraryKit'; ```
-2. 创建相册组件配置选项实例（AlbumPickerOptions）。 通过AlbumPickerOptions，开发者可配置相册页主题颜色，详见[AlbumPickerOptions API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-albumpickercomponent#albumpickeroptions)。 ```typescript // 用于相册组件初始化时设置参数信息。 albumOptions: AlbumPickerOptions = new AlbumPickerOptions(); pickerController: PickerController = new PickerController(); ```
-3. 初始化组件配置选项实例（AlbumPickerOptions）。 ```typescript /**  * 设置相册页颜色模式， 默认AUTO。  * AUTO：跟随系统的模式，LIGHT：浅色模式，DARK：深色模式。  */ this.albumOptions.themeColorMode = PickerColorMode.AUTO; ```
-4. 创建[AlbumPickerComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-albumpickercomponent#albumpickercomponent)组件。 ```typescript AlbumPickerComponent({  // 设置组件选择选项实例。  albumPickerOptions: this.albumOptions,  /**  *相册被选中回调，返回相册信息。  * AlbumInfo（uri）  */  onAlbumClick: (albumInfo: AlbumInfo): boolean => this.onAlbumClick(albumInfo), }) ```
-5. 与PhotoPicker组件联动，将相册URI给到应用，根据相册URI更新PhotoPicker组件宫格页内容。 ```typescript private onAlbumClick(albumInfo: AlbumInfo): boolean {  if (albumInfo?.uri) {  // 根据相册url更新宫格页内容。  this.pickerController.setData(DataType.SET_ALBUM_URI, albumInfo.uri);  }  return true; } ```
+2. 创建相册组件配置选项实例（AlbumPickerOptions）。 通过AlbumPickerOptions，开发者可配置相册页主题颜色，详见[AlbumPickerOptions API参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-albumpickercomponent#albumpickeroptions)。 ```typescript albumOptions: AlbumPickerOptions = new AlbumPickerOptions(); pickerController: PickerController = new PickerController(); ```
+3. 初始化组件配置选项实例（AlbumPickerOptions）。 ```typescript this.albumOptions.themeColorMode = PickerColorMode.AUTO; ```
+4. 创建[AlbumPickerComponent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file-albumpickercomponent#albumpickercomponent)组件。 ```typescript AlbumPickerComponent({  albumPickerOptions: this.albumOptions,  onAlbumClick: (albumInfo: AlbumInfo): boolean => this.onAlbumClick(albumInfo), }) ```
+5. 与PhotoPicker组件联动，将相册URI给到应用，根据相册URI更新PhotoPicker组件宫格页内容。 ```typescript private onAlbumClick(albumInfo: AlbumInfo): boolean {  if (albumInfo?.uri) {  this.pickerController.setData(DataType.SET_ALBUM_URI, albumInfo.uri);  }  return true; } ```
 
 ## 完整示例
 
@@ -29,6 +29,7 @@ import {
   PickerController,
   DataType
 } from '@kit.MediaLibraryKit';
+
 @Entry
 @Component
 struct AlbumPage {
@@ -43,28 +44,23 @@ struct AlbumPage {
   albumOptions = new AlbumPickerOptions();
   albumOptions1 = new AlbumPickerOptions();
   albumOptions2 = new AlbumPickerOptions();
-  /**
-   *相册被选中回调，返回相册信息
-   * AlbumInfo（uri）
-   */
+
   private onAlbumClick(albumInfo: AlbumInfo): boolean {
     this.isShowAlbum = false;
     if (albumInfo?.uri) {
-      //  根据相册url更新宫格页内容。
+
       this.pickerController.setData(DataType.SET_ALBUM_URI, albumInfo.uri);
     }
     return true;
   }
+
   aboutToAppear() {
-    /**
-     * 设置相册页颜色模式， 默认AUTO。
-     * AUTO：跟随系统的模式， LIGHT：浅色模式， DARK：深色模式
-     */
+
     this.albumOptions.themeColorMode = PickerColorMode.AUTO;
     this.albumOptions1.themeColorMode = PickerColorMode.LIGHT;
     this.albumOptions2.themeColorMode = PickerColorMode.DARK;
   }
-  // 设置导航栏的样式
+
   @Builder
   tabBuilder(index: number, name: string) {
     Column() {
@@ -80,6 +76,7 @@ struct AlbumPage {
         .opacity(this.currentIndex === index ? 1 : 0)
     }.width('100%')
   }
+
   build() {
     Stack() {
       Column() {
@@ -94,14 +91,11 @@ struct AlbumPage {
           }).height(this.Height).width(this.Width)
         }.width('100%').height('100%').alignItems(HorizontalAlign.Center).visibility(this.isShowAlbum ? Visibility.None: Visibility.Visible)
       }
+
       if (this.isShowAlbum) {
         Row() {
           Column() {
-            /**
-             * 使用3个组件,以便更好展示不同效果。
-             * 需要注意的是切换tab会导致AlbumPickerComponent覆盖在PhotoPickerComponent上导致点击事件失效，
-             * 设置PhotoPickerComponent不可见可以规避点击失效。
-             */
+
             Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
               TabContent() {
                 AlbumPickerComponent({
@@ -115,6 +109,7 @@ struct AlbumPage {
                   onAlbumClick: (albumInfo: AlbumInfo): boolean => this.onAlbumClick(albumInfo),
                 }).height('100%').width('100%')
               }.tabBar(this.tabBuilder(1, '浅色'))
+
               TabContent() {
                 AlbumPickerComponent({
                   albumPickerOptions: this.albumOptions2,

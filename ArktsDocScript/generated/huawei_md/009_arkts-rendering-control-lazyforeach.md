@@ -121,7 +121,7 @@ struct InitialRendering {
 
 **图1** LazyForEach正常首次渲染
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/KzMBzUGySC6CkQHL41mzfw/zh-cn_image_0000002534250234.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=E92455FD5A552911205799A4592F3F38A04D77CD5A0B290513AC91165ECDB075)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/KzMBzUGySC6CkQHL41mzfw/zh-cn_image_0000002534250234.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=E163407CA0B329C0E34501853A9387B9DE475440F4362C930CA034158DC2D5BA)
 
 **错误案例：键值相同导致渲染异常**
 
@@ -181,7 +181,7 @@ struct MyComponent {
 
 **图2** LazyForEach存在相同键值
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/TM5JH5kIQVaq1rALm1U3nA/zh-cn_image_0000002534410180.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=170E3B8C106FB19F868459BE811B0248CB8218B4547C778920A2B60A5E5CDDEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/TM5JH5kIQVaq1rALm1U3nA/zh-cn_image_0000002534410180.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=B02DA1448E290A41E498DCB99C0AF8DBBA552F3DACD0C59EB29B8625BC07046D)
 
 修改上述示例中LazyForEach的键值生成函数，使每个数据项生成唯一的键值，保证渲染效果符合预期。
 
@@ -202,7 +202,7 @@ LazyForEach(this.data, (item: string) => {
 
 **图3** LazyForEach生成唯一键值
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/sTnCXXG4QxGnQJegl2PWxw/zh-cn_image_0000002565290079.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=8ACABFEE1EE7D1096FFB2212CDC1B59B90A4DBC9C5CAF0B55CDAD5486444E903)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/sTnCXXG4QxGnQJegl2PWxw/zh-cn_image_0000002565290079.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=F7E59C59035889306D24ED2ACA08D36BA4D5EBF2E63FBD65EAE45D23BF6F3609)
 
 ### 数据更新
 
@@ -272,7 +272,7 @@ struct AddingData {
 
 **图4** LazyForEach添加数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/7Z29Lc6PQniCM_ywpTXzdw/zh-cn_image_0000002565210059.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=B5462B08CE61EE0C42BABD49F9948053FB862B69A66C6EF8EE1EA640ED8B1481)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/7Z29Lc6PQniCM_ywpTXzdw/zh-cn_image_0000002565210059.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=EBDBE37BCDEB2D707BA16AD0308FAC6D0F068F4B41F820F45D832C1549085A0D)
 
 **删除数据**
 
@@ -349,7 +349,7 @@ struct DataDeletion {
 
 **图5** LazyForEach删除数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/zrmb7cfTSI2khK1dpNq8Xg/zh-cn_image_0000002534250236.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=45D52BD05F9A57027E8C0BB0A0BDE75DD7FABFEC6D5358A0F236EABFCF3913A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/zrmb7cfTSI2khK1dpNq8Xg/zh-cn_image_0000002534250236.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=53A417DB1129ED2A439BC81844A153F9511B7AE35473BC55F1BB0E779CB1BFFD)
 
 **交换数据**
 
@@ -433,7 +433,7 @@ struct SwappingData {
 
 **图6** LazyForEach交换数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/w8N-r_HGQEu7MkFveT6kCw/zh-cn_image_0000002534410182.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=534F0851C25ADB1BA47007F7116A3621330A2EA3FC9BEBF485166849DFCC0157)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/w8N-r_HGQEu7MkFveT6kCw/zh-cn_image_0000002534410182.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=DE8DBFAED58F4C16B264C3CB35CAB25A7F7446B71918B7C07A2A4BF1B31265A1)
 
 **改变单个数据**
 
@@ -505,7 +505,7 @@ struct ModifyingIndividualDataItems {
 
 **图7** LazyForEach改变单个数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/HPMEDt35TF23Xoe_Drpc7Q/zh-cn_image_0000002565290081.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=6A2BB9A707C393393F653AC8360246A05B0312218BBFB8463361B80F52C4305B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/HPMEDt35TF23Xoe_Drpc7Q/zh-cn_image_0000002565290081.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=1D495595C5F5E358F0CAF632C7F766DBADFFA34A7D07507538BFE62CD7F38220)
 
 **改变多个数据**
 
@@ -583,7 +583,7 @@ struct ModifyingMultipleDataItems {
 
 **图8** LazyForEach改变多个数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/cjfHS5hHRgu0Zdb58x0ibw/zh-cn_image_0000002565210061.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=7DA59A8AE71822388BE60B82D763AB6B19194AA7C86EBC65B050633B49BB8B60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/cjfHS5hHRgu0Zdb58x0ibw/zh-cn_image_0000002565210061.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=B17374E7D4C662763CB1B9433704F1CDC95C618F3B95E4618EEE06C011DDE7B4)
 
 **精准批量修改数据**
 
@@ -671,7 +671,7 @@ onDatasetChange接口允许开发者一次性通知LazyForEach进行数据添加
 
 **图9** LazyForEach改变多个数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/sqWzxsT8Q1SEY6nznxt-4g/zh-cn_image_0000002534250238.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=2994963BE08AC3FCE8C92DCF9C9976777E1854259462C2CD16934E373050FB50)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/sqWzxsT8Q1SEY6nznxt-4g/zh-cn_image_0000002534250238.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=4FDE65EE858ADFEC8894E7726862721C8F2F35EE41E1A7786D024F10FE8FC061)
 
 第二个例子，直接给数组赋值，不涉及 splice 操作。operations直接从比较原数组和新数组得到。
 
@@ -750,7 +750,7 @@ struct PreciselyModifyingDataTwo {
 
 **图10** LazyForEach改变多个数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/04ZW6UsNSOGZhRUQoMdF8g/zh-cn_image_0000002534410184.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=06C4659812C28456BBE6B91826AD43AA3077251D36FAA390B5CDB4809FCA81CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/04ZW6UsNSOGZhRUQoMdF8g/zh-cn_image_0000002534410184.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=C5F84D2D8A5065E38445D3322F1A88EAD6488207A0B778B2DBFE109327A9E2D3)
 
 使用该接口时请注意以下事项。
 
@@ -841,7 +841,7 @@ struct ChangingDataSubpropertiesChildComponent {
 
 **图11** LazyForEach改变数据子属性
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/QWtT09NVSQmxMHyapGoeFg/zh-cn_image_0000002565290083.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=5D1FE44C6442E471EACB134C387592B64F2BB08D4D4FE25BBF24CF74D58B2B4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/QWtT09NVSQmxMHyapGoeFg/zh-cn_image_0000002565290083.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=BCF2D748FA27F97484706B90A36D3E54ABAD6FF5989110DDECB72B3EF2E864B1)
 
 ### 使用状态管理V2
 
@@ -1156,7 +1156,7 @@ struct DragandDropSorting {
 
 **图12** LazyForEach拖拽排序效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FioJYCQUTKqCrl3px0JNmQ/zh-cn_image_0000002565210063.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=769B9696CC30BEBB678BBC06FA1C9CE564F5052A3CAFFB74A318EEE01F676022)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/FioJYCQUTKqCrl3px0JNmQ/zh-cn_image_0000002565210063.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=ACFD90AB4972D42DAB8781CC02D3146C6E7093DD0ABC8EB18D4EC790FAB15F3E)
 
 ## 常见问题
 
@@ -1223,7 +1223,7 @@ struct MyComponent {
 
 **图13** LazyForEach删除数据非预期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/9ImgHJ31R4u5lhOS5wPCQw/zh-cn_image_0000002534250240.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=6C2D81F6C41D3AA45CE4C94E063143DCA94F2FBCA53F8F518836173ED076A84D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/9ImgHJ31R4u5lhOS5wPCQw/zh-cn_image_0000002534250240.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=B59C40484BA4007F02DF933EB6A37C7C7147D77C2935B0D91832782681F2852D)
 
 多次点击子组件时，发现删除的不一定是点击的那个子组件。原因在于删除某个子组件后，该子组件之后的数据项的index应减1，但实际后续数据项对应的子组件仍使用最初分配的index，itemGenerator中的index未更新，导致删除结果与预期不符。
 
@@ -1303,7 +1303,7 @@ struct UnexpectedRenderingResults {
 
 **图14** 修复LazyForEach删除数据非预期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/QcaQt1HmS368-4ETE94bfQ/zh-cn_image_0000002534410186.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=E8E5D6D1EC73D188A53A2E027074553167B5457F4AA817186A05FDF1169A41F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/QcaQt1HmS368-4ETE94bfQ/zh-cn_image_0000002534410186.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=E756D72D949858A2A8B94D511EBF8A0E00938CEA6CD62F1FD122B76F16BD277B)
 
 ### 重渲染时图片闪烁
 
@@ -1382,7 +1382,7 @@ struct MyComponent {
 
 **图15** LazyForEach仅改变文字但是图片闪烁问题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ZBojYSp5SR-Kz1JrXmi-NQ/zh-cn_image_0000002565290085.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=E1D0ADBD72F3F5CCCBDFF427B77E17EF17D8D8637217827AB532B503E29378F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ZBojYSp5SR-Kz1JrXmi-NQ/zh-cn_image_0000002565290085.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=46EA8EAA7016D3950F52B13D6B95F4A29855E550089E8299FA1004D07C8CB11A)
 
 单击ListItem子组件时，只改变了数据项的message属性，但因为键值发生变化，导致整个ListItem被重建。由于Image组件异步刷新，视觉上图片会闪烁。解决方法是保持键值不变，并使用@ObjectLink和@Observed单独刷新子组件Text。
 
@@ -1473,7 +1473,7 @@ struct ImageFlickeringChildComponent {
 
 **图16** 修复LazyForEach仅改变文字但是图片闪烁问题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/9zZftjbEQYqPRZxIZpixmQ/zh-cn_image_0000002565210065.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=C96A5546DCDE559C65278BA61B2EA041D2820E1F85F99C2554624F126E4D8A7A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/9zZftjbEQYqPRZxIZpixmQ/zh-cn_image_0000002565210065.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=002C82372C12C46655C427D458A4A39EF80F6CB43589A230FB2323688DF74674)
 
 ### @ObjectLink属性变化UI未更新
 
@@ -1560,7 +1560,7 @@ struct ChildComponent {
 
 **图17** ObjectLink属性变化后UI未更新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/qCYU01zJSgmfuWv416tUEA/zh-cn_image_0000002534250242.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=348BF42A3BEAB5058713B98832F23C25F32B4E747DDEE5A48B3FFE40BAB7254C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/qCYU01zJSgmfuWv416tUEA/zh-cn_image_0000002534250242.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=5168A20A482365EC0B28D8D9802D66403B5C87F8674C4B8C5A8DF66EA40DBF0B)
 
 @ObjectLink装饰的成员变量仅能监听到其子属性的变化，无法监听深层嵌套属性，因此，只能通过修改子属性来通知组件重新渲染。具体请查看[@ObjectLink装饰器与@Observed装饰器的详细使用方法和限制条件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-observed-and-objectlink)。
 
@@ -1648,7 +1648,7 @@ struct UINotRerenderedChildComponent {
 
 **图18** 修复ObjectLink属性变化后UI更新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/GYVr1tqARhWhTzuFsx9bng/zh-cn_image_0000002534410188.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=6F3E56CE7BD9C034B9030DE8F58D7AF1F64DB7CED4B3165480A7164F9C19FD46)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/GYVr1tqARhWhTzuFsx9bng/zh-cn_image_0000002534410188.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=396645DB10B88DEE4AC5A95096AD6EAB6D2C42564C30F3E341AA654E145D1432)
 
 ### 在List内使用屏幕闪烁
 
@@ -1725,7 +1725,7 @@ struct MyComponent {
 
 **图19** 当List下拉到底时，屏幕闪烁
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/ncg4BvHLQ8qNDhpbP1yG1Q/zh-cn_image_0000002565290087.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=92BC368745CBE2114F15EF76149D62C0EDCD90AD51DA4980E99A843FA93C14DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/ncg4BvHLQ8qNDhpbP1yG1Q/zh-cn_image_0000002565290087.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=D0AA578279EF5C5B61FCCEC3EAAE0FB88B24094A06B2FD89EDCA59126234EF8D)
 
 使用onDatasetChange代替onDataReloaded，不仅可以修复闪屏问题，还能提升加载性能。
 
@@ -1805,7 +1805,7 @@ struct ScreenFlickeringInList {
 
 **图20** 修复后，当List下拉到底时，屏幕不闪烁
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/NLgbjuTpR1GeMN6ykJVv6w/zh-cn_image_0000002565210067.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=68ED98D184AED24D651E0B19287B1015D42902A2A038B598C9CC5DB9C2C24EBF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/NLgbjuTpR1GeMN6ykJVv6w/zh-cn_image_0000002565210067.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=2ABE656D83C7A517C7B87C4B66ABE7A1037CCB27F5082C13823477F5F02AF15B)
 
 ### 组件复用渲染异常
 
@@ -1958,7 +1958,7 @@ struct MyComponent {
 
 **图21** 点击按钮更新数据，组件不会刷新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/VzCHGJ-XSyCIRhn6fwyCGQ/zh-cn_image_0000002534250244.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=E460978D87199A185E25D99B80878885CE44F0D7BCD6027DB37257FF92DE554B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/VzCHGJ-XSyCIRhn6fwyCGQ/zh-cn_image_0000002534250244.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=6D25C0E39B3FF8329B9EF9B911069CB0BBA296DAF68C96015418B4A56AB687E1)
 
 LazyForEach依赖生成的键值判断是否刷新子组件，如果更新的数据没有改变键值（如示例中开发者没有定义键值生成函数，此时键值仅与组件索引index有关，更新数据时键值不变），则LazyForEach不会刷新对应组件。
 
@@ -1972,7 +1972,7 @@ LazyForEach(this.data, (item: string) => {
 
 **图22** 定义键值生成函数后，点击按钮更新数据，组件刷新
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/awS4VTcFQaOK-bzGVJKecA/zh-cn_image_0000002534410190.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025212Z&HW-CC-Expire=86400&HW-CC-Sign=438562C223A0E6AAFBB5AABBD3D0D25E60655341A396BDB0E908A3283DBBA65B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/awS4VTcFQaOK-bzGVJKecA/zh-cn_image_0000002534410190.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132751Z&HW-CC-Expire=86400&HW-CC-Sign=AE7D9AA2628BC28D0CABE745DCEA6F94DD094D0CD79AE303663C5B7E4194EEC1)
 
 ### 懒加载失效
 

@@ -1294,10 +1294,12 @@ import {
   SuffixBadgeAndArrow
 } from '@kit.UIDesignKit';
 import { promptAction, ImageModifier, TextModifier } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct HdsListItemCardExample {
   private scroller: ListScroller = new ListScroller();
+
   build() {
     Column() {
       List({ space: 5, scroller: this.scroller }) {
@@ -1333,6 +1335,7 @@ struct HdsListItemCardExample {
             },
           })
         }
+
         ListItem() {
           HdsListItemCard({
             prefixItem: new PrefixImage({
@@ -1363,6 +1366,7 @@ struct HdsListItemCardExample {
             })
           })
         }
+
         ListItem() {
           HdsListItemCard({
             prefixItem: new PrefixIcon({
@@ -1395,4 +1399,4 @@ struct HdsListItemCardExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/LOECkBxmTSiEJ7MktZrkhg/zh-cn_image_0000002500424084.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T025652Z&HW-CC-Expire=86400&HW-CC-Sign=3541377EC7C9D9B78549A1E668D75D98CD4121265FBCE2D2F830201A2EA92719)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/LOECkBxmTSiEJ7MktZrkhg/zh-cn_image_0000002500424084.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T133235Z&HW-CC-Expire=86400&HW-CC-Sign=A5E0990EB063FFE6DF5B716E7F068C400217C4CE301D88FD0E04CD0F592B5A05)

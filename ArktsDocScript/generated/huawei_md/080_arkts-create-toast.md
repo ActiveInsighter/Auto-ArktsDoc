@@ -68,7 +68,7 @@ export struct DefaultAndTopToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/gDAM0rwBSmK5B4fKz5UcbA/zh-cn_image_0000002565290337.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025326Z&HW-CC-Expire=86400&HW-CC-Sign=BBE2A7935B5B66862313C059AC3D33331130DCE8746F32737CC1D648FA71EBC8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/gDAM0rwBSmK5B4fKz5UcbA/zh-cn_image_0000002565290337.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132906Z&HW-CC-Expire=86400&HW-CC-Sign=4756306A9166029E522C0496E058BB79DD376F7B6971975E3CC3DF0D67AF99B3)
 
 ## 创建即时反馈
 
@@ -109,7 +109,7 @@ export struct CreateToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/fZVw7KKCT-isrLpRguhqEA/zh-cn_image_0000002565210317.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025326Z&HW-CC-Expire=86400&HW-CC-Sign=8ED0B6C76CE69E43EC144DBBC06E7CBF9BEFC6EAB87F8940C42821C53FEEC777)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/fZVw7KKCT-isrLpRguhqEA/zh-cn_image_0000002565210317.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132906Z&HW-CC-Expire=86400&HW-CC-Sign=8FA98D69CCAF232C3D51B5EBC7C87D21A80C47E6033FB12A85620CC4F068E7A3)
 
 ## 显示和关闭即时反馈
 
@@ -169,4 +169,4 @@ export struct OpenCloseToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/r6R8GfKcRMK8sOL0-b5Fmg/zh-cn_image_0000002534250494.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025326Z&HW-CC-Expire=86400&HW-CC-Sign=CDB4B987EC24454AA21B4040020B812A81BC55C706DB944BEF22E55E94951364)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/r6R8GfKcRMK8sOL0-b5Fmg/zh-cn_image_0000002534250494.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132906Z&HW-CC-Expire=86400&HW-CC-Sign=2BEE058C9A3E98F525FF08310344355350B638F40EA867A12E6C518C09ADB784)

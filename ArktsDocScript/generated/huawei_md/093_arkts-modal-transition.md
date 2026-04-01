@@ -202,7 +202,7 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/fSvycIzuQUOb_oZidCxpTQ/zh-cn_image_0000002534410496.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025336Z&HW-CC-Expire=86400&HW-CC-Sign=BB5CD98322A70345C20A9B2A624B729C943E0857596374AC5F0AA3942AA6BAC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/fSvycIzuQUOb_oZidCxpTQ/zh-cn_image_0000002534410496.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132917Z&HW-CC-Expire=86400&HW-CC-Sign=14047559FD9E236C17DD798666429F92A3CC343976CF47D1C474A84080411D1F)
 
 ## 使用bindSheet构建半模态转场效果
 
@@ -308,7 +308,7 @@ struct BindSheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/7DMq8RkvRXm1khMVlXEv0A/zh-cn_image_0000002565290395.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025336Z&HW-CC-Expire=86400&HW-CC-Sign=162B0BB7C43096F693BD83083B88B2825EFDB3DF7C462C666736AA372C0C6254)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/7DMq8RkvRXm1khMVlXEv0A/zh-cn_image_0000002565290395.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132917Z&HW-CC-Expire=86400&HW-CC-Sign=B088F9AC971CC7541836D2067FE6616C6AD091BB7BD7705124319ECBB75F8E2C)
 
 ## 使用bindMenu实现菜单弹出效果
 
@@ -361,7 +361,7 @@ struct BindMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/QkUKn2wdT-OIfdz9VhGQMg/zh-cn_image_0000002565210375.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025336Z&HW-CC-Expire=86400&HW-CC-Sign=972E9E8F0C0A9097E431F7C6D530E5051FBA5C3FACE66BB0F284E08B1A48A297)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/QkUKn2wdT-OIfdz9VhGQMg/zh-cn_image_0000002565210375.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132917Z&HW-CC-Expire=86400&HW-CC-Sign=1BA9C0D8B49867EFE14AFA93AEF5EB0F3B29CB4FE485FD0D83CC5240CF3AEE7E)
 
 ## 使用bindContextMenu实现菜单弹出效果
 
@@ -437,7 +437,7 @@ struct BindContextMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/BJEE05WjTfm8KjijzXO3ZA/zh-cn_image_0000002534250552.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025336Z&HW-CC-Expire=86400&HW-CC-Sign=2422EC8FD699BE01C08E1930CBEE25D5C2AB99C5D133FAD982C25013EB332953)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/BJEE05WjTfm8KjijzXO3ZA/zh-cn_image_0000002534250552.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132917Z&HW-CC-Expire=86400&HW-CC-Sign=6BA31D1B9407D573171C7F31ECB4FA4B93E5601241DDB3D28D7819168E9BDD94)
 
 ## 使用bindPopup实现气泡弹窗效果
 
@@ -498,7 +498,7 @@ struct BindPopupDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/aXAbyWiuQmaTPTOD8Iwliw/zh-cn_image_0000002534410498.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025336Z&HW-CC-Expire=86400&HW-CC-Sign=BE162B7572760AB50148AA025A3DC93267D3DD965B4FF22AA964F21A85AFEB5B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/aXAbyWiuQmaTPTOD8Iwliw/zh-cn_image_0000002534410498.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132917Z&HW-CC-Expire=86400&HW-CC-Sign=9893BCE49BA5E1718FDB1E6D38987ED05C31BB2BCF9DBF8677DCDA030DACF231)
 
 ## 使用if实现模态转场
 
@@ -702,4 +702,4 @@ struct ModalTransitionWithIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Cxsn8Km6SF6WeEvo4KZxxA/zh-cn_image_0000002565290397.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025336Z&HW-CC-Expire=86400&HW-CC-Sign=C3A1F1532E325328CE51B10FA7347F59A06DB69BAE900B9A5948212F34680649)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Cxsn8Km6SF6WeEvo4KZxxA/zh-cn_image_0000002565290397.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132917Z&HW-CC-Expire=86400&HW-CC-Sign=DA782FDB9AA34F064BA52A0A971075E5ED7E1238CFCD0EE17EB18189C01E8B14)

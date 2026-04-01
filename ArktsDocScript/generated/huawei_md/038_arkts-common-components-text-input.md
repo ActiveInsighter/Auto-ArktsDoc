@@ -22,10 +22,10 @@ TextArea(value?:{placeholder?: ResourceStr, text?: ResourceStr, controller?: Tex
 Search(options?:{placeholder?: ResourceStr, value?: ResourceStr, controller?: SearchController, icon?: string})
 ```
 
-- 单行输入框。 ```typescript TextInput() ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/2n2JzCxAT5i0aaLeH7JZQg/zh-cn_image_0000002534250376.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=47947F5700107ED3304E38855DE18357FFDBB46539B68FD86F0142883820777F)
-- 多行输入框。 ```typescript TextArea() ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/cl65H_4PQXSgPeZu0JYUjA/zh-cn_image_0000002534410322.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=180E8AE1A5FCF9CBB3E00D350728584DF544D55C20A3432487DFF55B3BAD1A82)
-- 多行输入框文字超出一行时会自动折行。 ```typescript TextArea({ text: $r('app.string.CreatTextInput_textContent') })  .width(300) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/aASfHa8dSNWiGofej9N-EQ/zh-cn_image_0000002565290221.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=9B2BD10759075C4DD8130DC5684223BC1DE0896892D21D69B6D4E640D3C599D0)
-- 搜索框。 ```typescript Search()  .searchButton($r('app.string.Creat_TextInput_Content')) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/pcqvHFBmRqGSHTlOfk67Sw/zh-cn_image_0000002565210201.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=6598CA0ED630C8776C5CF5D99FBD2B9EBA6F20527D87C48406C34D24F1DCB00C)
+- 单行输入框。 ```typescript TextInput() ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/2n2JzCxAT5i0aaLeH7JZQg/zh-cn_image_0000002534250376.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=F5ED05DF786CA9727ADC435D3767855765134379C2BAF58DF3A0ADC698233085)
+- 多行输入框。 ```typescript TextArea() ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/cl65H_4PQXSgPeZu0JYUjA/zh-cn_image_0000002534410322.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=0FDADF60C71D21F0E4150424DFB84DA0D494BA4050A387FB160F2878A5533B5F)
+- 多行输入框文字超出一行时会自动折行。 ```typescript TextArea({ text: $r('app.string.CreatTextInput_textContent') })  .width(300) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/aASfHa8dSNWiGofej9N-EQ/zh-cn_image_0000002565290221.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=3BBC47CEA26EB00A9CBBB7610D6879117E43254300346A78D049B357D2AB18AC)
+- 搜索框。 ```typescript Search()  .searchButton($r('app.string.Creat_TextInput_Content')) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/pcqvHFBmRqGSHTlOfk67Sw/zh-cn_image_0000002565210201.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=85238481A184D386BF204B5A3BEDD70D923DF88FB04F2719622DB42E1337A2AF)
 
 ## 设置输入框类型
 
@@ -40,7 +40,7 @@ TextInput()
   .type(InputType.Normal)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Oi9ZNZwNRFiNeVqTKWguiQ/zh-cn_image_0000002534250378.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=40C5C76063CD2650FAFAD432C37C1A93806E22954D482D1C622899B1A470EA54)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/Oi9ZNZwNRFiNeVqTKWguiQ/zh-cn_image_0000002534250378.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=9E829029FF0235C84A99720C320D9A99D8DD4C9026F7A6256668E38475AD24C3)
 
 ### 密码模式
 
@@ -53,7 +53,7 @@ TextInput()
   .type(InputType.Password)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/FPFHJea_TROowUodb0YeAQ/zh-cn_image_0000002534410324.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=DB0A53D8212EDAAD4CF1C3B7874240126C5F382B50F9D675267124058E7C9028)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/FPFHJea_TROowUodb0YeAQ/zh-cn_image_0000002534410324.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=9B080D549C146E58470F0EDBE7C3E42DB74191EB00ADFA5A2B2A1FC42C6B7D89)
 
 ### 邮箱地址输入模式
 
@@ -64,7 +64,7 @@ TextInput()
   .type(InputType.Email)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/BHp5XpbZSYuzmHEVrrHD8A/zh-cn_image_0000002565290223.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=4A542E652C439D154CBC0E437DD1AC6033EA9F626AF5207489E0BE2D3D74AE52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/BHp5XpbZSYuzmHEVrrHD8A/zh-cn_image_0000002565290223.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=6E84E1C9138B6AAA93DEDDC7C58107D950A8422BE835211F4AAD3773FEF1C3B6)
 
 ### 纯数字输入模式
 
@@ -75,7 +75,7 @@ TextInput()
   .type(InputType.Number)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/VSzMkPa_SQGvHsb30Yw06g/zh-cn_image_0000002565210203.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=881CEB3FB3D16C05A856AE04E3E2CA937D284F4E5F648AD7874F3452266090AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/VSzMkPa_SQGvHsb30Yw06g/zh-cn_image_0000002565210203.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=51742F9B09C4B50441E200A8936CB413A0052F2385F6098950EF36C50E632FB4)
 
 ### 电话号码输入模式
 
@@ -86,7 +86,7 @@ TextInput()
   .type(InputType.PhoneNumber)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/pGGJHs8DTgeIJyL4Rgc1GQ/zh-cn_image_0000002534250380.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=AFB5FA29181750F9E87672F7938EE5531215B8B93ADA5549745435BF2E6A0FF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/pGGJHs8DTgeIJyL4Rgc1GQ/zh-cn_image_0000002534250380.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=9B2C0E5936A8782A8211528DE75EF550C7A2BA0CC50BD4791A05C38480695762)
 
 ### 带小数点的数字输入模式
 
@@ -97,7 +97,7 @@ TextInput()
   .type(InputType.NUMBER_DECIMAL)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/DpiB5-HZTxyzwjSoF3uy9A/zh-cn_image_0000002534410326.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=7A7E106B73F40FDBF2D37F18E5D58EAD4DBE22E37A2F1492D5BED924BE941998)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/DpiB5-HZTxyzwjSoF3uy9A/zh-cn_image_0000002534410326.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=0FA9F393A8016741AAE3E0FB4A8AB992E4ED354EE112890E8E50AF6A7E634463)
 
 ### 带URL的输入模式
 
@@ -108,7 +108,7 @@ TextInput()
   .type(InputType.URL)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/woNux_l0TFCj76hflSjGAw/zh-cn_image_0000002565290225.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=9F5E53190FC75372E54133B2CB33967425D7A4C669214E450E4EA6CAE4A9C5B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/woNux_l0TFCj76hflSjGAw/zh-cn_image_0000002565290225.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=A779AC561A309B39AA50BBECDF743FD965C954D0ADA2E335046790A692365755)
 
 ## 设置输入框多态样式
 
@@ -125,7 +125,7 @@ TextArea()
   .style(TextContentStyle.DEFAULT)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ElM9TUamS8aDSyzgXwUHgA/zh-cn_image_0000002565210205.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=6FA0AC4E4BA2BB9C6D2765EAE4F2F1FB82581F8D84321A56CD5D187468C95344)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/ElM9TUamS8aDSyzgXwUHgA/zh-cn_image_0000002565210205.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=7C1880350F1755AC1ED5FB1273B081EB1908C135D2AD7D8105F2826BA9D40358)
 
 ### 内联模式
 
@@ -136,13 +136,13 @@ TextArea()
   .style(TextContentStyle.INLINE)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/hIdAuyxXRlGKSs3GL7Vj_Q/zh-cn_image_0000002534250382.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=29208F0C4DBCCE12B3062EAC3907DC588C218BF7C12A58DB777956B57A5D58FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/hIdAuyxXRlGKSs3GL7Vj_Q/zh-cn_image_0000002534250382.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=E2675786F8335FB6E1E2DDE84BACAEAC130E67F3C6A448D45357EE36D65D04AC)
 
 ## 自定义样式
 
-- 设置无输入时的提示文本。 ```typescript TextInput({ placeholder: $r('app.string.i_am_placeholder') }) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/YFzUFysWSfyRRgh9Ikg7wQ/zh-cn_image_0000002534410328.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=6A52FFB66B149B6C793B5D0A4B4D9DD81A74782141B3C3D85DC4AE8BC2A7926B)
-- 设置输入框当前的文本内容。 ```typescript TextInput({  placeholder: $r('app.string.i_am_placeholder'),  text: $r('app.string.i_am_current_text_content') }) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/H2QD1A84TKeDKAK6ASt6YA/zh-cn_image_0000002565290227.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=C4EAF31971D6BF49DE20F6931A0B694CBF48F82AA09402707B000D04A7C4D2D2)
-- 添加backgroundColor改变输入框的背景颜色。 ```typescript TextInput({  placeholder: $r('app.string.i_am_placeholder'),  text: $r('app.string.i_am_current_text_content') })  .backgroundColor(Color.Pink) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/6ZiASJwgSzuNHrxzkleIUg/zh-cn_image_0000002565210207.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=32822E0923E77B86D6AF9A22EED76A907B00364C00A11E1C36291532D8E4E118) 更丰富的样式可以结合[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)实现。
+- 设置无输入时的提示文本。 ```typescript TextInput({ placeholder: $r('app.string.i_am_placeholder') }) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/YFzUFysWSfyRRgh9Ikg7wQ/zh-cn_image_0000002534410328.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=3F1EFECB06244974AE0831C38809F2EDE0EDF7F57E04187559DC6F8D1688AB09)
+- 设置输入框当前的文本内容。 ```typescript TextInput({  placeholder: $r('app.string.i_am_placeholder'),  text: $r('app.string.i_am_current_text_content') }) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/H2QD1A84TKeDKAK6ASt6YA/zh-cn_image_0000002565290227.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=D828AB661ECD2ACDA49530D2BEDD30474A9D194269753780E05A4BF0C0DC833C)
+- 添加backgroundColor改变输入框的背景颜色。 ```typescript TextInput({  placeholder: $r('app.string.i_am_placeholder'),  text: $r('app.string.i_am_current_text_content') })  .backgroundColor(Color.Pink) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/6ZiASJwgSzuNHrxzkleIUg/zh-cn_image_0000002565210207.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=ECF8118241B370FB47A26D273C2BFD42DD4834BA3E3CFE8B7F898B208E9F6CA6) 更丰富的样式可以结合[通用属性](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-component-general-attributes)实现。
 
 ## 添加事件
 
@@ -244,7 +244,7 @@ struct TextInputEventAdd {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vFoOpz5LTxilCh7k-3wZUQ/zh-cn_image_0000002534250384.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=D17187951DF629DF5C088B26E0A8DFECA3A3C13C65F02B5A02FFF6C5A4204358)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vFoOpz5LTxilCh7k-3wZUQ/zh-cn_image_0000002534250384.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=59388A62B16585F1FC788EB73D651E2B2639B19FAD378FD993A26A475B0A3EAE)
 
 ## 选中菜单
 
@@ -256,7 +256,7 @@ TextInput:
 TextInput({ text: $r('app.string.show_selected_menu') })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/1vKvmFPSQiqMqcx2fQu-UA/zh-cn_image_0000002534410330.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=CB171D03FDB77D08CD901D20209414870FAD2A132C294F4BD9A9D59B6218531B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/1vKvmFPSQiqMqcx2fQu-UA/zh-cn_image_0000002534410330.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=3691D810271D3307BD3AAA6491B2623F04DD158626DBBD59C84B93412EF40975)
 
 TextArea:
 
@@ -264,7 +264,7 @@ TextArea:
 TextArea({ text: $r('app.string.show_selected_menu') })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/m15hydO2SX6eI7iSyMZubQ/zh-cn_image_0000002565290229.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=644C3FE41D765241E462AB1803C91973E8197DA09535C58D15CF7E915430C739)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/m15hydO2SX6eI7iSyMZubQ/zh-cn_image_0000002565290229.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=3EF7596E2F69B12AC959DC86BD57BEDEE6A0F5891ABF4D0FEE232DD4F3D87263)
 
 ## 禁用系统服务类菜单
 
@@ -312,7 +312,7 @@ struct DisableSystemServiceMenuItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/O51aYxm0R2yqvdvW64bzgw/zh-cn_image_0000002565210209.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=11E81C21C5058B2CFA9AF2676DAB83EA2508D4AC40EB95AC20453B7A45213637)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/O51aYxm0R2yqvdvW64bzgw/zh-cn_image_0000002565210209.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=295114F4C736CF46D63917A7583772AB6227127ED51C4798AC55BEB69590A8F3)
 
 从API version 20开始，支持使用[disableMenuItems](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-textmenucontroller#disablemenuitems20)方法屏蔽文本选择菜单中指定的系统服务菜单项。
 
@@ -358,7 +358,7 @@ struct DisableMenuItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/w6L-DxS-QGu36ZPka0kx2A/zh-cn_image_0000002534250386.png?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=85B29F1B0E34C2A8F24BE9C5A29C7431A64AB6CD15FC55D9261C9F5F3F42ED1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/w6L-DxS-QGu36ZPka0kx2A/zh-cn_image_0000002534250386.png?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=7C89CA64266430B814143EC30CE216BA695A8A5C5D5A128E9D2ECD85296288D4)
 
 ## 自动填充
 
@@ -376,8 +376,8 @@ TextInput({ placeholder: $r('app.string.Auto_Fill_PlaceHolder') })
 
 ## 设置属性
 
-- 设置省略属性。 输入框可以通过[ellipsisMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#ellipsismode18)属性设置省略位置。 ellipsisMode属性需要配合[textOverflow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#textoverflow12)属性设置为TextOverflow.Ellipsis使用，单独设置ellipsisMode属性不生效。 ```typescript TextInput({ text: $r('app.string.Set_Omission_Property_textContent') })  .textOverflow(TextOverflow.Ellipsis)  .ellipsisMode(EllipsisMode.END)  .style(TextInputStyle.Inline)  .fontSize(30)  .margin(30) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/43N7L8PaQ7m2UWYWgendQg/zh-cn_image_0000002534410332.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=B640E617A6E40CA1A3F73032FC47030C3EEA2972C341DB8D5DE2530F3BFE22E2)
-- 设置文本描边属性。 从API version 20开始，输入框可以通过[strokeWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#strokewidth20)和[strokeColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#strokecolor20)属性设置文本的描边宽度及颜色。 ```typescript TextInput({ text: 'Text with stroke' })  .width('100%')  .height(60)  .borderWidth(1)  .fontSize(40)  .strokeWidth(LengthMetrics.px(3.0))  .strokeColor(Color.Red) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/XRJXi6Z9S2acUdqve-JfoA/zh-cn_image_0000002565290231.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=DFD2B026251C054A0C7FEFB1E2AEE1BC2BEBA5F47515275CF7287FEE70959AE5)
+- 设置省略属性。 输入框可以通过[ellipsisMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#ellipsismode18)属性设置省略位置。 ellipsisMode属性需要配合[textOverflow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#textoverflow12)属性设置为TextOverflow.Ellipsis使用，单独设置ellipsisMode属性不生效。 ```typescript TextInput({ text: $r('app.string.Set_Omission_Property_textContent') })  .textOverflow(TextOverflow.Ellipsis)  .ellipsisMode(EllipsisMode.END)  .style(TextInputStyle.Inline)  .fontSize(30)  .margin(30) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/43N7L8PaQ7m2UWYWgendQg/zh-cn_image_0000002534410332.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=F6D5ECE0546B646C64F0E4C365E4026B780DFB012612C3AF7035B2F110DFC2BD)
+- 设置文本描边属性。 从API version 20开始，输入框可以通过[strokeWidth](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#strokewidth20)和[strokeColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-textinput#strokecolor20)属性设置文本的描边宽度及颜色。 ```typescript TextInput({ text: 'Text with stroke' })  .width('100%')  .height(60)  .borderWidth(1)  .fontSize(40)  .strokeWidth(LengthMetrics.px(3.0))  .strokeColor(Color.Red) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/XRJXi6Z9S2acUdqve-JfoA/zh-cn_image_0000002565290231.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=6D4E05467276AA089CBF64C7E9ADAC6EB7983FFAD868B8F1C4666A273F12AF8A)
 
 ## 设置文本行间距
 
@@ -391,7 +391,7 @@ TextArea({
   .lineSpacing(LengthMetrics.px(20), { onlyBetweenLines: true })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lT9wefRGTJOvoWDZWCeVog/zh-cn_image_0000002565210211.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=A80755CA983140CA42F5DCB7D5F675C13663DAF0BFBC67A34C28DBC8B738A71C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lT9wefRGTJOvoWDZWCeVog/zh-cn_image_0000002565210211.jpg?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=BE48C061FADC1A5C379A942438D37214CDBC2E2D392C5B6FA3813610B243E478)
 
 ## 键盘避让
 
@@ -419,7 +419,7 @@ struct KeyboardAvoid {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_52lJdPJT5OHo1si2qnK0w/zh-cn_image_0000002534250388.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=0E9DEC80380A65B5537664C70833DC48430E86804C6C55F24E4726188F12EF4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/_52lJdPJT5OHo1si2qnK0w/zh-cn_image_0000002534250388.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=E680F0FA0278E1D368D6B5CBE98F6CF181954595B74BF4D6F1527C5AC8638622)
 
 ## 光标避让
 
@@ -493,7 +493,7 @@ struct CursorAvoid {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/S9Qy-ZbOSFu4El19XEabOw/zh-cn_image_0000002534410334.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=512314F0756FA49557FC0CDFE1795669AAF60B540F1EC2C87DA6B7C9E4D8D211)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/S9Qy-ZbOSFu4El19XEabOw/zh-cn_image_0000002534410334.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=503E34FC026AA2DD5FD48992BBFE37E00D67B73810D248C1A43CABE61B1BD372)
 
 ## 常见问题
 
@@ -561,4 +561,4 @@ struct TextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/am4S71qARLWrFu1BhTQ6fQ/zh-cn_image_0000002565290233.gif?HW-CC-KV=V1&HW-CC-Date=20260401T025244Z&HW-CC-Expire=86400&HW-CC-Sign=25AE2005134021F37E0E09011DC685B9586D1A6922E3DBDE3AB8FE0EBFB0D692)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/am4S71qARLWrFu1BhTQ6fQ/zh-cn_image_0000002565290233.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132822Z&HW-CC-Expire=86400&HW-CC-Sign=DE6B382AD3120694C803366375D2B4BD9C96552D164C536475D2D14C03079E27)
