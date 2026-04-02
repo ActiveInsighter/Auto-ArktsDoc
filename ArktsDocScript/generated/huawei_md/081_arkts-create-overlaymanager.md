@@ -3,7 +3,7 @@
 
 浮层（OverlayManager）用于在页面（Page）之上展示自定义的UI内容，位于Dialog、Popup、Menu、BindSheet、BindContentCover和Toast等组件之下，展示范围为当前窗口的安全区内，适用于常驻悬浮等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/5CO4QhAFQdqWJ9JTUBgRwg/zh-cn_image_0000002534410440.png?HW-CC-KV=V1&HW-CC-Date=20260401T132905Z&HW-CC-Expire=86400&HW-CC-Sign=97144898EFF8A85AE1A8F292CE5DF31E3E220A97C7965490AB4D99367E04D7C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/5CO4QhAFQdqWJ9JTUBgRwg/zh-cn_image_0000002534410440.png?HW-CC-KV=V1&HW-CC-Date=20260402T023730Z&HW-CC-Expire=86400&HW-CC-Sign=2AFFAD9666757DE40F67A44C6B5E77AE4646F3E38815BD705963F0A2C39A386E)
 
 可以通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getOverlayManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getoverlaymanager12)方法获取当前UI上下文关联的[OverlayManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-overlaymanager)对象，再通过该对象调用对应方法。
 
@@ -135,7 +135,7 @@ export struct OverlayManagerComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/of8RZ2avQBiyrAbzbcVu_Q/zh-cn_image_0000002565290339.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132905Z&HW-CC-Expire=86400&HW-CC-Sign=C2A5BD16C825123DB5817B2BE9099A4BC8B0C417E087833D5E50A0D4931FE927)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/of8RZ2avQBiyrAbzbcVu_Q/zh-cn_image_0000002565290339.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023730Z&HW-CC-Expire=86400&HW-CC-Sign=489DBEDB3613B8EFDF182BEA48FFB878F6AD811027CB6E98A0C03ECBBF0BD738)
 
 显示一个始终在屏幕左侧的悬浮球，点击可以弹出alertDialog弹窗。
 
@@ -210,7 +210,7 @@ export struct OverlayManagerAlertDialog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/KZDTx4V_TmqVbjEk_tl66A/zh-cn_image_0000002565210319.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132905Z&HW-CC-Expire=86400&HW-CC-Sign=C6807CD5F27B4500F006F65395C71AC6C003E00D5E1D10ABB77481DC023BE807)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/KZDTx4V_TmqVbjEk_tl66A/zh-cn_image_0000002565210319.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023730Z&HW-CC-Expire=86400&HW-CC-Sign=924A82DC9948855C854CF26E8A89632C5FB30BD52AB2940FF4415DDF89A78324)
 
 从API version 18开始，可以通过调用UIContext中getOverlayManager方法获取OverlayManager对象，并利用该对象在指定层级上新增指定节点（[addComponentContentWithOrder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-overlaymanager#addcomponentcontentwithorder18)），层次高的浮层会覆盖在层级低的浮层之上。
 
@@ -310,4 +310,4 @@ export struct OverlayManagerWithOrder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/xIBz1s9OQ7q1BsvKFJW5KA/zh-cn_image_0000002534250496.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132905Z&HW-CC-Expire=86400&HW-CC-Sign=A7F52CD35ED399D5814BBC20178B34E2BE337417951ED137FFA34BD1235AD1EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/xIBz1s9OQ7q1BsvKFJW5KA/zh-cn_image_0000002534250496.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023730Z&HW-CC-Expire=86400&HW-CC-Sign=36C9F301427C81233CAC1015666E73053F6AB3BCE344648D10B32A23505F0898)

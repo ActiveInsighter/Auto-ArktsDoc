@@ -229,7 +229,7 @@ struct PageTransitionDst1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/e_EMZAmIQtmq8WDnnqnbvg/zh-cn_image_0000002534410504.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132920Z&HW-CC-Expire=86400&HW-CC-Sign=D5A269425BB6FA7BCB0FE577C058EEBC4AB1157B5AFC4B8008B16582FAE74534)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/e_EMZAmIQtmq8WDnnqnbvg/zh-cn_image_0000002534410504.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023745Z&HW-CC-Expire=86400&HW-CC-Sign=D756BC1B2404A30D0809708C09D92C238A1C42DA295632223DC840A9CEAA6492)
 
 下面介绍使用了type为None的页面转场动画示例。
 
@@ -319,4 +319,4 @@ struct PageTransitionDst2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/sMoWAi7SQF6Q7Vta7WKJiA/zh-cn_image_0000002565290403.gif?HW-CC-KV=V1&HW-CC-Date=20260401T132920Z&HW-CC-Expire=86400&HW-CC-Sign=07C932B0B32188755DC1B86F178DE525EC8ADF0280EAED6132B2A67FCBA6CCCF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/sMoWAi7SQF6Q7Vta7WKJiA/zh-cn_image_0000002565290403.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023745Z&HW-CC-Expire=86400&HW-CC-Sign=8E395C05654F3AE743FC709BCD087813B1FF86B86FF670659851842A1C4A8D20)
