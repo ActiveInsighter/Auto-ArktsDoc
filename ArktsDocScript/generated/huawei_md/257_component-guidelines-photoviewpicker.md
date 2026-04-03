@@ -7,7 +7,7 @@
 
 | 宫格页 | 大图页 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/kwGSKMVNQvy2b7_6SAT0Vg/zh-cn_image_0000002534410952.jpg?HW-CC-KV=V1&HW-CC-Date=20260402T024055Z&HW-CC-Expire=86400&HW-CC-Sign=CA59D938856EBBCF29105DC9B3AC8F7954F4CA87FB548D09140C85F38318FBE1) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/7xZTcwQXTrCeFxlsZsxOzA/zh-cn_image_0000002565290851.jpg?HW-CC-KV=V1&HW-CC-Date=20260402T024055Z&HW-CC-Expire=86400&HW-CC-Sign=25C3D79448C55E2BFF494B67CAF8AE98496EB2256562B6A4CA9FE2BDA34C35F5) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/YjcWJ0lgQHa9FvI_tCTskA/zh-cn_image_0000002535299972.jpg?HW-CC-KV=V1&HW-CC-Date=20260403T024035Z&HW-CC-Expire=86400&HW-CC-Sign=DAB88C896850E68956E8649FCBB20CDBAE4F471B12F8D86AD886D0A953ABAF24) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/4C2KTng7TUCqfy21bsisfg/zh-cn_image_0000002566019835.jpg?HW-CC-KV=V1&HW-CC-Date=20260403T024035Z&HW-CC-Expire=86400&HW-CC-Sign=F16B932EF0B45FD0009A04A6930B3149DDF1794B8A4CFFCAA4E232E509D15F48) |
 
 ## 开发步骤
 

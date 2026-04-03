@@ -121,8 +121,8 @@ struct PixelRoundExample {
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/aDeFgu-HSiCwnirUBhhztA/zh-cn_image_0000002534411194.png?HW-CC-KV=V1&HW-CC-Date=20260402T023816Z&HW-CC-Expire=86400&HW-CC-Sign=EA333835FBD782A1B644603FD3309ADBE61FBBE72D0755D586ACC91A2DA2D690)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/1ZNgtVOKTnG6SIAMw2d82g/zh-cn_image_0000002535300214.png?HW-CC-KV=V1&HW-CC-Date=20260403T024051Z&HW-CC-Expire=86400&HW-CC-Sign=826BF509DDC2AEE5C3DCBDD6492B98286B9ECB2F2761E2C66346EA92FEDED3C1)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/hHzxwYZqSyeya3U60j96KA/zh-cn_image_0000002565291095.png?HW-CC-KV=V1&HW-CC-Date=20260402T023816Z&HW-CC-Expire=86400&HW-CC-Sign=8CEED4D08362556BEEC8F8438A584A9D8D9AC421B2A44D6EEC614F1E07D6F68B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Rb-OtGzuQJigB_CjcMhzww/zh-cn_image_0000002566020077.png?HW-CC-KV=V1&HW-CC-Date=20260403T024051Z&HW-CC-Expire=86400&HW-CC-Sign=52C00B31384B06E78AC7DBB36969A4BD0B92E93BE1980C86F49F3AA81B9A514F)

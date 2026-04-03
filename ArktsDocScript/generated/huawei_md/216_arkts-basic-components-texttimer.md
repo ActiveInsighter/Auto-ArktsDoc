@@ -38,7 +38,7 @@ TextTimer(options?: TextTimerOptions)
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| isCountDown | boolean | 否 | 是 | 倒计时开关。 true：计时器开启倒计时，例如从30秒~ 0秒。 false：计时器开始计时，例如从0秒 30秒。 默认值：false |
+| isCountDown | boolean | 否 | 是 | 倒计时开关。 true：计时器开启倒计时，例如从30秒~0秒。 false：计时器开始计时，例如从0秒~30秒。 默认值：false |
 | count | number | 否 | 是 | 计时器时间（isCountDown为true时生效），单位为毫秒。最长不超过86400000毫秒（24小时）。 0<count<86400000时，count值为计时器初始值。否则，使用默认值为计时器初始值。 默认值：60000 |
 | controller | [TextTimerController](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-texttimer#texttimercontroller) | 否 | 是 | TextTimer控制器。 |
 
@@ -331,7 +331,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/cUT4IvB0TISgdWNR7GJhgg/zh-cn_image_0000002565211469.gif?HW-CC-KV=V1&HW-CC-Date=20260402T024011Z&HW-CC-Expire=86400&HW-CC-Sign=C8D2141DF39A801A5DBA33002C2D90991700A1297B0755C3662CAC711BD1F0DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/vFHFiWlQTxqBz-U9ZpUL0A/zh-cn_image_0000002566100485.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024252Z&HW-CC-Expire=86400&HW-CC-Sign=56352893F5FE0001CC37A72E7C21F6F09CF41BFC9822CD7227CD59ED3CD6032E)
 
 ### 示例2（设定文本阴影样式）
 
@@ -376,7 +376,7 @@ struct TextTimerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/t0g-gswQROm5PP521vb40Q/zh-cn_image_0000002534251646.png?HW-CC-KV=V1&HW-CC-Date=20260402T024011Z&HW-CC-Expire=86400&HW-CC-Sign=E8528AD0E41FBC56BE8D7376CCED5013E3D75AFEF0DDECAD46AEDBBDC4FA0E6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/4ECwsR9CR1KxwUeYnNBcRQ/zh-cn_image_0000002535140674.png?HW-CC-KV=V1&HW-CC-Date=20260403T024252Z&HW-CC-Expire=86400&HW-CC-Sign=E332234FC17AF9BF49651886E36598C03C4DFCFD3603B9AA8D988343C9DDBE73)
 
 ### 示例3（设定自定义内容区）
 
@@ -454,7 +454,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/YJoowVgYTd2vqMnfmelWGA/zh-cn_image_0000002534411592.gif?HW-CC-KV=V1&HW-CC-Date=20260402T024011Z&HW-CC-Expire=86400&HW-CC-Sign=7EFE06651286D11F6DFF6B1C31C617D9EA663084ED506EC95B0B53C174567BF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/mX18snWSQcmLXMOdzVV3Pg/zh-cn_image_0000002535300612.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024252Z&HW-CC-Expire=86400&HW-CC-Sign=3F9C84E978E759779B778E9A347B63268A6464203278874FB23AB29C1DB21D90)
 
 ### 示例4（创建之后立即执行计时）
 
@@ -489,7 +489,7 @@ struct TextTimerStart {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/FfMOeGx4SyGpgiwUlBum-Q/zh-cn_image_0000002565291493.gif?HW-CC-KV=V1&HW-CC-Date=20260402T024011Z&HW-CC-Expire=86400&HW-CC-Sign=99E6ED89D27FABA704AB165D5E31D4F932C72B92828FA8C73D407C55F51D933F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RsI-IqBSSbSR0bSeHz84uQ/zh-cn_image_0000002566020475.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024252Z&HW-CC-Expire=86400&HW-CC-Sign=BDB24A8A12734FAEA9E9E881BC71969CDADD609462494044EA6DCF99D86CB40E)
 
 ### 示例5（设置文本样式）
 
@@ -542,4 +542,4 @@ struct demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/r3rSuVQTSGqN2syXR08mXQ/zh-cn_image_0000002565211471.png?HW-CC-KV=V1&HW-CC-Date=20260402T024011Z&HW-CC-Expire=86400&HW-CC-Sign=FE7DFC75183F065661F3AE515D51511FA4F2EC86714634B1FDB86922DD7878FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/NYuElo7qRFmp5OPmguADvw/zh-cn_image_0000002566100487.png?HW-CC-KV=V1&HW-CC-Date=20260403T024252Z&HW-CC-Expire=86400&HW-CC-Sign=13243DD5FD336D64C8B42AB52CD55F12E9CCA75F0BBE4E8592903A26D0941F53)

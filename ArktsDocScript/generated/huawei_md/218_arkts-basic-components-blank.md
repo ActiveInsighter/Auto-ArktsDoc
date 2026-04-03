@@ -67,7 +67,6 @@ color(value: ResourceColor)
 Blank组件在横竖屏占满空余空间效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct BlankExample {
@@ -85,35 +84,36 @@ struct BlankExample {
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/9uQPPaiwR_C3TlAUdgfOVg/zh-cn_image_0000002534251648.gif?HW-CC-KV=V1&HW-CC-Date=20260402T024011Z&HW-CC-Expire=86400&HW-CC-Sign=4039D3FC347907BA37DCA9BFAE3F87D7C0BDD586BE1D0B372E45B469F8EC1550)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/NvtzljeCQzmr9hx9Q1Z0Hw/zh-cn_image_0000002535140676.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024253Z&HW-CC-Expire=86400&HW-CC-Sign=CE651C7877ADA75AF079DAEC7C0EA60E41E5C968DAF1197D746C9A747B4CFF9F)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/4uQikee6T8C4YLHo_aNGjQ/zh-cn_image_0000002534411594.gif?HW-CC-KV=V1&HW-CC-Date=20260402T024011Z&HW-CC-Expire=86400&HW-CC-Sign=2CD7DC797CE91E6ABEE658C27F452F8F83C322558A47FCE887D31857228EAB02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Xu-GGPFPQ7GatORaEfr6OQ/zh-cn_image_0000002535300614.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024253Z&HW-CC-Expire=86400&HW-CC-Sign=68883FDA7A2397535BEB62DF2D4852E4629E145D9213E71C3BF4F7E64545D4F2)
 
 ### 示例2（填充固定宽度）
 
 Blank组件的父组件未设置宽度时，min参数的使用效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct BlankExample {
   build() {
     Column({ space: 20 }) {
-      // Blank父组件不设置宽度时，Blank失效，可以通过设置min最小宽度填充固定宽度
+
       Row() {
         Text('Bluetooth').fontSize(18)
         Blank().color(Color.Yellow)
         Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
       }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
+
       Row() {
         Text('Bluetooth').fontSize(18)
-        // 设置最小宽度为160
+
         Blank('160').color(Color.Yellow)
         Toggle({ type: ToggleType.Switch }).margin({ top: 14, bottom: 14, left: 6, right: 6 })
       }.backgroundColor(0xFFFFFF).borderRadius(15).padding({ left: 12 })
+
     }.backgroundColor(0xEFEFEF).padding(20).width('100%')
   }
 }
@@ -121,4 +121,4 @@ struct BlankExample {
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/wfceY8qJQc6Q7lJhpKCPqg/zh-cn_image_0000002565291495.png?HW-CC-KV=V1&HW-CC-Date=20260402T024011Z&HW-CC-Expire=86400&HW-CC-Sign=7473313C5C0487AD779AA30557C44196CEB8B250289C2A16E8CAC8FBECA2CB27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/QW2TbCmLQym_NNGOwJOqFQ/zh-cn_image_0000002566020477.png?HW-CC-KV=V1&HW-CC-Date=20260403T024253Z&HW-CC-Expire=86400&HW-CC-Sign=245BC515CB13825C14B39B5B8628AA5973445D0C05533257A3BCBB936F9393F5)

@@ -1399,4 +1399,4 @@ struct HdsListItemCardExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/LOECkBxmTSiEJ7MktZrkhg/zh-cn_image_0000002500424084.jpg?HW-CC-KV=V1&HW-CC-Date=20260402T023814Z&HW-CC-Expire=86400&HW-CC-Sign=A3AE8EBBE82B976627E3FFA3FA30D78E9EEAFD6D2803113C1FE0C17538798383)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/xk8Q73o9ScWl-B3rCrrkiw/zh-cn_image_0000002500424084.jpg?HW-CC-KV=V1&HW-CC-Date=20260403T024335Z&HW-CC-Expire=86400&HW-CC-Sign=5F82F1DF8E13A33864FCA55993C4B4C0FF8336C54DA102643BDE7E86FA6CE4A2)

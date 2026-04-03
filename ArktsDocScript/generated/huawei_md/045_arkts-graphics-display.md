@@ -21,10 +21,10 @@ Image支持加载存档图、多媒体像素图和可绘制描述符三种类型
 
 存档图类型的数据源可以分为本地资源、网络资源、Resource资源、媒体库资源和base64。
 
-- 本地资源 创建文件夹，将本地图片放入ets文件夹下的任意位置。 Image组件引入本地图片路径，即可显示图片（根目录为ets文件夹）。不支持跨包、跨模块调用该Image组件。 > **说明** > 从DevEco Studio 6.0.0 Beta2版本开始，新建工程或模块时，默认创建的模块不会对非resources目录下的资源进行打包，需使相关模块：build-profile.json5中buildOption > resOptions > copyCodeResource > enable设置为true，详见resOptions中[copyCodeResource](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile#table1476161719356)相关介绍。 ```typescript Image('images/view.jpg')  .width(200) ``` 加载本地图片过程中，如果对图片进行修改或者替换，可能会引起应用崩溃。因此需要覆盖图片文件时，应该先删除该文件再重新创建一个同名文件。
-- 网络资源 引入网络图片需申请权限ohos.permission.INTERNET，具体申请方式请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。此时，Image组件的src参数为网络图片的链接。 当前Image组件仅支持加载简单网络图片。 首次加载网络图片时，Image组件需要请求网络资源；非首次加载时，默认从缓存中直接读取图片。 更多图片缓存设置请参考[setImageCacheCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagecachecount7)、[setImageRawDataCacheSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagerawdatacachesize7)和[setImageFileCacheSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagefilecachesize7)。这三个图片缓存接口主要用于支持简单、通用的场景，后续不再继续演进，且在灵活和扩展性方面存在一定限制，例如： - 无法获取当前缓存占用信息。Image组件目前不支持查询磁盘缓存的实时状态，包括文件总大小和文件数量。 - 缓存策略不可定制，缺乏缓存状态观测能力。开发者无法通过接口感知缓存命中率、淘汰次数等运行时的指标，难以基于实际缓存效果进行动态调优。 对于复杂情况，推荐使用[ImageKnife](https://gitcode.com/openharmony-tpc/ImageKnife)，该图像库提供了更灵活、可扩展的缓存策略以及完善的生命周期管理能力，更适合复杂业务需求。 网络图片必须支持RFC 9113标准，否则会导致加载失败。如果下载的网络图片大于10MB或一次下载的网络图片数量较多，建议使用[HTTP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request)工具提前下载，提高图片加载性能，方便应用侧管理数据。 在显示网络图片时，Image组件在机制上会依赖[缓存下载模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request-cachedownload)，开发者可参考[示例3（下载与显示网络gif图片）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#示例3下载与显示网络gif图片)了解具体用法。 缓存下载模块提供独立的预下载接口，允许应用开发者在创建Image组件前预下载所需图片。组件创建后，Image组件可直接从缓存下载模块中获取已下载的图片数据，从而加快图片的显示速度，优化加载体验，并有效避免网络图片加载延迟。网络缓存的位置位于应用根目录下的cache目录中。 ```typescript Image($r('app.string.LoadingResources')) ```
-- Resource资源 使用资源格式可以跨包/跨模块引入图片，resources文件夹下的图片都可以通过$r资源接口读取到并转换到Resource格式。 **图1** resources ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/kU6nfIrVR1iFUxVlUsaFdw/zh-cn_image_0000002565290269.jpg?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=077B9DE5D6932A78AF68D8AF174CB70F581207011D5C7D24D554DE75679CD2D9) 调用方式： ```typescript Image($r('app.media.icon')) ``` 还可以将图片放在rawfile文件夹下。 **图2** rawfile ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/79mo_OrFTJCpQ3HKnmhvrg/zh-cn_image_0000002565210249.jpg?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=65214EF389A4440C98BAF174664AE4F54D3EE93929134A900457942D70F4DDDF) 调用方式： ```typescript Image($rawfile('example1.png')) ```
-- 媒体库file://data/storage 支持file://路径前缀的字符串，用于访问通过[选择器](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-picker)提供的图片路径。 1. 调用接口获取图库的照片url。 ```typescript import { photoAccessHelper } from '@kit.MediaLibraryKit'; import { BusinessError } from '@kit.BasicServicesKit'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0x0001; const TAG = 'Sample_imagecomponent'; @Entry @Component struct MediaLibraryFile { @State imgDatas: string[] = []; getAllImg() { try { let photoSelectOptions:photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions(); photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE; photoSelectOptions.maxSelectNumber = 5; let photoPicker:photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker(); photoPicker.select(photoSelectOptions).then((photoSelectResult:photoAccessHelper.PhotoSelectResult) => { this.imgDatas = photoSelectResult.photoUris; hilog.info(DOMAIN, TAG,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult)); }).catch((err:Error) => { let message = (err as BusinessError).message; let code = (err as BusinessError).code; hilog.info(DOMAIN, TAG,`PhotoViewPicker.select failed with. Code: ${code}, message: ${message}`); }); } catch (err) { let message = (err as BusinessError).message; let code = (err as BusinessError).code; hilog.info(DOMAIN, TAG,`PhotoViewPicker failed with. Code: ${code}, message: ${message}`); }; }; async aboutToAppear() { this.getAllImg(); }; build() { Column() { Grid() { ForEach(this.imgDatas, (item:string) => { GridItem() { Image(item) .width(200) } }, (item:string):string => JSON.stringify(item)) } }.width('100%').height('100%') } } ``` 2. 从媒体库获取的url格式通常如下。 ```typescript Image('file://media/Photos/5') .width(200) ```
+- 本地资源 创建文件夹，将本地图片放入ets文件夹下的任意位置。 Image组件引入本地图片路径，即可显示图片（根目录为ets文件夹）。不支持跨包、跨模块调用该Image组件。 > **说明** > 从DevEco Studio 6.0.0 Beta2版本开始，新建工程或模块时，默认创建的模块不会对非resources目录下的资源进行打包，需使相关模块：build-profile.json5中buildOption > resOptions > copyCodeResource > enable设置为true，详见resOptions中[copyCodeResource](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile#table1476161719356)相关介绍。 ```typescript // 'images/view.jpg'需要替换为开发者所需的资源文件 Image('images/view.jpg')  .width(200) ``` 加载本地图片过程中，如果对图片进行修改或者替换，可能会引起应用崩溃。因此需要覆盖图片文件时，应该先删除该文件再重新创建一个同名文件。
+- 网络资源 引入网络图片需申请权限ohos.permission.INTERNET，具体申请方式请参考[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions)。此时，Image组件的src参数为网络图片的链接。 当前Image组件仅支持加载简单网络图片。 首次加载网络图片时，Image组件需要请求网络资源；非首次加载时，默认从缓存中直接读取图片。 更多图片缓存设置请参考[setImageCacheCount](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagecachecount7)、[setImageRawDataCacheSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagerawdatacachesize7)和[setImageFileCacheSize](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-system-app#setimagefilecachesize7)。这三个图片缓存接口主要用于支持简单、通用的场景，后续不再继续演进，且在灵活和扩展性方面存在一定限制，例如： - 无法获取当前缓存占用信息。Image组件目前不支持查询磁盘缓存的实时状态，包括文件总大小和文件数量。 - 缓存策略不可定制，缺乏缓存状态观测能力。开发者无法通过接口感知缓存命中率、淘汰次数等运行时的指标，难以基于实际缓存效果进行动态调优。 对于复杂情况，推荐使用[ImageKnife](https://gitcode.com/openharmony-tpc/ImageKnife)，该图像库提供了更灵活、可扩展的缓存策略以及完善的生命周期管理能力，更适合复杂业务需求。 网络图片必须支持RFC 9113标准，否则会导致加载失败。如果下载的网络图片大于10MB或一次下载的网络图片数量较多，建议使用[HTTP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/http-request)工具提前下载，提高图片加载性能，方便应用侧管理数据。 在显示网络图片时，Image组件在机制上会依赖[缓存下载模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request-cachedownload)，开发者可参考[示例3（下载与显示网络gif图片）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image#示例3下载与显示网络gif图片)了解具体用法。 缓存下载模块提供独立的预下载接口，允许应用开发者在创建Image组件前预下载所需图片。组件创建后，Image组件可直接从缓存下载模块中获取已下载的图片数据，从而加快图片的显示速度，优化加载体验，并有效避免网络图片加载延迟。网络缓存的位置位于应用根目录下的cache目录中。 ```typescript // $r('app.string.LoadingResources')需要替换为开发者所需的资源文件，资源文件中的value值请替换为真实路径 Image($r('app.string.LoadingResources')) ```
+- Resource资源 使用资源格式可以跨包/跨模块引入图片，resources文件夹下的图片都可以通过$r资源接口读取到并转换到Resource格式。 **图1** resources ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/o7n3rWRHSUualmk-fagqtQ/zh-cn_image_0000002566019253.jpg?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=3BC901EDC2B9D269D8A2F4B8F46E81DEBB07531ABBE267ECD22030CA73539D3D) 调用方式： ```typescript // 请将$r('app.media.icon')替换为实际资源文件 Image($r('app.media.icon')) ``` 还可以将图片放在rawfile文件夹下。 **图2** rawfile ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Ug0MZL8hT2yGjWGz-Kiz6A/zh-cn_image_0000002566099265.jpg?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=3FDA0779E758103B50C8A3ACD6140A5179A9C4419A3266EDEB8F4D2F73075B6F) 调用方式： ```typescript // $rawfile('example1.png')需要替换为开发者所需的资源文件 Image($rawfile('example1.png')) ```
+- 媒体库file://data/storage 支持file://路径前缀的字符串，用于访问通过[选择器](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-file-picker)提供的图片路径。 1. 调用接口获取图库的照片url。 ```typescript import { photoAccessHelper } from '@kit.MediaLibraryKit'; import { BusinessError } from '@kit.BasicServicesKit'; import { hilog } from '@kit.PerformanceAnalysisKit'; const DOMAIN = 0x0001; const TAG = 'Sample_imagecomponent'; @Entry @Component struct MediaLibraryFile { @State imgDatas: string[] = []; // 使用PhotoViewPicker唤起图片选择器，选择图片并且渲染到页面中 // 获取照片url集 getAllImg() { try { let photoSelectOptions:photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions(); photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE; photoSelectOptions.maxSelectNumber = 5; let photoPicker:photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker(); photoPicker.select(photoSelectOptions).then((photoSelectResult:photoAccessHelper.PhotoSelectResult) => { this.imgDatas = photoSelectResult.photoUris; hilog.info(DOMAIN, TAG,'PhotoViewPicker.select successfully, photoSelectResult uri: ' + JSON.stringify(photoSelectResult)); }).catch((err:Error) => { let message = (err as BusinessError).message; let code = (err as BusinessError).code; hilog.info(DOMAIN, TAG,`PhotoViewPicker.select failed with. Code: ${code}, message: ${message}`); }); } catch (err) { let message = (err as BusinessError).message; let code = (err as BusinessError).code; hilog.info(DOMAIN, TAG,`PhotoViewPicker failed with. Code: ${code}, message: ${message}`); }; }; // aboutToAppear中调用上述函数，获取图库的所有图片url，存在imgDatas中 async aboutToAppear() { this.getAllImg(); }; // 使用imgDatas的url加载图片 build() { Column() { Grid() { ForEach(this.imgDatas, (item:string) => { GridItem() { Image(item) .width(200) } }, (item:string):string => JSON.stringify(item)) } }.width('100%').height('100%') } } ``` 2. 从媒体库获取的url格式通常如下。 ```typescript // 'file://media/Photos/5'需要替换为开发者所需的资源文件，资源文件中的value值请替换为真实路径 Image('file://media/Photos/5') .width(200) ```
 - base64 路径格式为data:image/[png|jpeg|bmp|webp|heif];base64,[base64 data]，其中[base64 data]为Base64字符串数据。 Base64格式字符串可用于存储图片的像素数据，在网页上使用较为广泛。
 
 ### 多媒体像素图
@@ -38,23 +38,22 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 const DOMAIN = 0x0001;
 const TAG = 'Sample_imagecomponent';
-
 @Entry
 @Component
 struct HttpExample {
   outData: http.HttpResponse | undefined = undefined;
   code: http.ResponseCode | number | undefined = undefined;
-  @State image: PixelMap | undefined = undefined;
-
+  @State image: PixelMap | undefined = undefined; // 创建PixelMap状态变量
+  // 使用createHttp接口将加载的网络图片返回的数据解码成PixelMap格式，再显示在Image组件上
   aboutToAppear(): void {
-    http.createHttp().request('xxx://xxx.xxx.xxx/example.png',
+    http.createHttp().request('xxx://xxx.xxx.xxx/example.png', // 需要替换为开发者所需的资源文件，资源文件中的value值请替换为真实路径
       (error: BusinessError, data: http.HttpResponse) => {
         if (error) {
           hilog.error(DOMAIN, TAG, `hello http request failed. Code: ${error.code}, message: ${error.message}`);
           return;
         };
         this.outData = data;
-
+        // 将网络地址成功返回的数据，编码转码成pixelMap的图片格式
         if (http.ResponseCode.OK === this.outData.responseCode) {
           let imageData: ArrayBuffer = this.outData.result as ArrayBuffer;
           let imageSource: image.ImageSource = image.createImageSource(imageData);
@@ -67,10 +66,9 @@ struct HttpExample {
         };
       });
   };
-
   build() {
     Column() {
-
+      // 显示图片
       Image(this.image)
         .height(100)
         .width(100)
@@ -94,50 +92,53 @@ import {
   AnimationOptions
 } from '@kit.ArkUI';
 import { image } from '@kit.ImageKit';
-
 @Entry
 @Component
 struct DrawableDescriptorType {
-
+  // 声明DrawableDescriptor对象
   @State pixmapDesc: DrawableDescriptor | null = null;
   @State pixelMapDesc: PixelMapDrawableDescriptor | null = null;
   @State layeredDesc: LayeredDrawableDescriptor | null = null;
   @State animatedDesc: AnimatedDrawableDescriptor | null = null;
-
+  // 动画配置
   private animationOptions: AnimationOptions = {
     duration: 3000,
     iterations: -1
   };
-
+  // 开发者可利用DrawableDescriptor实现图片的分层叠加（如徽章图标），动态属性调整（如颜色滤镜），复杂动画序列等高级效果
   async aboutToAppear() {
     const resManager = this.getUIContext().getHostContext()?.resourceManager;
     if (!resManager) {
       return;
     };
-
+    // 创建普通DrawableDescriptor
+    // 请将$r('app.media.landscape')替换为实际资源文件
     let pixmapDescResult = resManager.getDrawableDescriptor($r('app.media.landscape').id);
     if (pixmapDescResult) {
       this.pixmapDesc = pixmapDescResult as DrawableDescriptor;
     };
-
+    // 创建PixelMapDrawableDescriptor
+    // 请将$r('app.media.landscape')替换为实际资源文件
     const pixelMap = await this.getPixmapFromMedia($r('app.media.landscape'));
     this.pixelMapDesc = new PixelMapDrawableDescriptor(pixelMap);
-
+    // 创建分层图标
+    // 请将$r('app.media.foreground')替换为实际资源文件
     const foreground = await this.getDrawableDescriptor($r('app.media.foreground'));
-
+    // 请将$r('app.media.landscape')替换为实际资源文件
     const background = await this.getDrawableDescriptor($r('app.media.landscape'));
     this.layeredDesc = new LayeredDrawableDescriptor(foreground, background);
-
+    // 创建动画图片（需加载多张图片）
+    // 请将$r('app.media.sky')替换为实际资源文件
     const frame1 = await this.getPixmapFromMedia($r('app.media.sky'));
-
+    // 请将$r('app.media.landscape')替换为实际资源文件
     const frame2 = await this.getPixmapFromMedia($r('app.media.landscape'));
-
+    // 请将$r('app.media.clouds')替换为实际资源文件
     const frame3 = await this.getPixmapFromMedia($r('app.media.clouds'));
     if (frame1 && frame2 && frame3) {
       this.animatedDesc = new AnimatedDrawableDescriptor([frame1, frame2, frame3], this.animationOptions);
     };
   };
-
+  // 辅助方法：从资源获取PixelMap
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap | undefined> {
     const unit8Array = await this.getUIContext().getHostContext()?.resourceManager.getMediaContent(resource.id);
     if (!unit8Array) {
@@ -150,7 +151,7 @@ struct DrawableDescriptorType {
     await imageSource.release();
     return pixelMap;
   };
-
+  // 辅助方法：获取DrawableDescriptor
   private async getDrawableDescriptor(resource: Resource): Promise<DrawableDescriptor | undefined> {
     const resManager = this.getUIContext().getHostContext()?.resourceManager;
     if (!resManager) {
@@ -158,28 +159,27 @@ struct DrawableDescriptorType {
     };
     return (resManager.getDrawableDescriptor(resource.id)) as DrawableDescriptor;
   };
-
   build() {
     RelativeContainer() {
       Column() {
-
+        // 显示普通图片
         Image(this.pixmapDesc)
           .width(100)
           .height(100)
           .border({ width: 1, color: Color.Black })
-
+        // 显示PixelMap图片
         Image(this.pixelMapDesc)
           .width(100)
           .height(100)
           .border({ width: 1, color: Color.Red })
-
+        // 显示分层图标
         if (this.layeredDesc) {
           Image(this.layeredDesc)
             .width(100)
             .height(100)
             .border({ width: 1, color: Color.Blue })
         }
-
+        // 显示动画图片
         if (this.animatedDesc) {
           Image(this.animatedDesc)
             .width(200)
@@ -195,7 +195,7 @@ struct DrawableDescriptorType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/ltTdHQC9TTOnnHFWsLAX7w/zh-cn_image_0000002534250426.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=7CB92FB5D3DDE8536F8D83B0032C073D19C2753F3931AFD8D6FDE4E0B8825464)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/QWdsuD4OS6GKkfCxJ1mWmw/zh-cn_image_0000002535139454.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=BDAD8D5FAE6CBF3A2BDD8C928E930612FE6C0F6EB8D21394E644926C8DCB2D13)
 
 ## 显示矢量图
 
@@ -206,6 +206,7 @@ Image组件可显示矢量图（SVG格式的图片），SVG标签文档请参考
 SVG格式的图片可以使用fillColor属性改变图片的绘制颜色。
 
 ```typescript
+// 请将$r('app.media.cloud')替换为实际资源文件
 Image($r('app.media.cloud'))
   .width(50)
   .fillColor(Color.Blue)
@@ -213,11 +214,11 @@ Image($r('app.media.cloud'))
 
 **图3** 原始图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/rJof3puaS26NGGYRLupAQA/zh-cn_image_0000002534410372.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=2C1910E0A652C40F6D4E9A8448D3B45EE76B0D54800B36007F85F3A3A330777F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/NUM8uIt0SBmvAtlx7GwHfA/zh-cn_image_0000002535299392.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=7260CC8EE00E5EFBB411EAB8A831DFADF80781F1BA8B9A64D76C499819DE902D)
 
 **图4** 设置绘制颜色后的SVG图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/La-VC0hMSYe5o7gK934l7w/zh-cn_image_0000002565290271.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=32617ACAF5D180FDB8B2482A16C495CEE623CAA423E8B2171025BFBE05828E16)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/8sXpchM6QXGpc645u39Qqw/zh-cn_image_0000002566019255.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=BA4E40DD162F035F8935448AF10087F005873385E29DD1090D8B241594760D22)
 
 ### 矢量图引用位图
 
@@ -225,7 +226,11 @@ Image($r('app.media.cloud'))
 
 Image加载的SVG图源路径设置方法如下所示：
 
+> **说明**
+> 从DevEco Studio 6.0.0 Beta2版本开始，新建工程或模块时，默认创建的模块不会对非resources目录下的资源进行打包，需使相关模块：build-profile.json5中buildOption > resOptions > copyCodeResource > enable设置为true，详见resOptions中[copyCodeResource](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile#table1476161719356)相关介绍。
+
 ```typescript
+// 'images/icon.svg'需要替换为开发者所需的资源文件
 Image('/images/icon.svg')
   .width(50)
   .height(50)
@@ -241,7 +246,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 文件工程路径示例如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mgbP443-RDG1eAx2Ai9GmA/zh-cn_image_0000002565210251.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=96E978DFACCFC0A15A3B5A42A10208A37C3794A6EE3027D5CA97C5580AC71162)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/JNgTScIuScq916GCqME9Jg/zh-cn_image_0000002566099267.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=40B524D07BBE05CEB32B709B08ECC75D91BDA65EA49C1068B44B33F45EA4FF2E)
 
 ## 添加属性
 
@@ -256,73 +261,77 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 @Component
 struct ImageScalingType {
   scroller: Scroller = new Scroller();
-
   build() {
     Scroll(this.scroller) {
       Row() {
         Column() {
-
+          // 请将$r('app.media.img_2')替换为实际资源文件
           Image($r('app.media.img_2'))
             .width(200)
             .height(150)
             .border({ width: 1 })
-
+            // 通过设置objectFit属性，可以使图片在高度和宽度确定的框内进行缩放
+            // 保持宽高比进行缩小或者放大，使得图片完全显示在显示边界内
             .objectFit(ImageFit.Contain)
             .margin({bottom:25,left:10})
-
+            // overlay接口暂不支持深色模式
             .overlay('Contain', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-
+          // 请将$r('app.media.img_2')替换为实际资源文件
           Image($r('app.media.img_2'))
             .width(200)
             .height(150)
             .border({ width: 1 })
-
+            // 通过设置objectFit属性，可以使图片在高度和宽度确定的框内进行缩放
+            // 保持宽高比进行缩小或者放大，使得图片两边都大于或等于显示边界
             .objectFit(ImageFit.Cover)
             .margin({bottom:25,left:10})
-
+            // overlay接口暂不支持深色模式
             .overlay('Cover', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-
+          // 请将$r('app.media.img_2')替换为实际资源文件
           Image($r('app.media.img_2'))
             .width(200)
             .height(150)
             .border({ width: 1 })
-
+            // 通过设置objectFit属性，可以使图片在高度和宽度确定的框内进行缩放
+            // 自适应显示
             .objectFit(ImageFit.Auto)
             .margin({bottom:25,left:10})
-
+            // overlay接口暂不支持深色模式
             .overlay('Auto', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
         }
-
         Column() {
-
+          // 请将$r('app.media.img_2')替换为实际资源文件
           Image($r('app.media.img_2'))
             .width(200)
             .height(150)
             .border({ width: 1 })
-
+            // 通过设置objectFit属性，可以使图片在高度和宽度确定的框内进行缩放
+            // 不保持宽高比进行放大缩小，使得图片充满显示边界
             .objectFit(ImageFit.Fill)
             .margin({bottom:25,left:10})
-
+            // overlay接口暂不支持深色模式
             .overlay('Fill', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-
+          // 请将$r('app.media.img_2')替换为实际资源文件
           Image($r('app.media.img_2'))
             .width(200)
             .height(150)
             .border({ width: 1 })
-
+            // 通过设置objectFit属性，可以使图片在高度和宽度确定的框内进行缩放
+            // 保持宽高比显示，图片缩小或者保持不变
             .objectFit(ImageFit.ScaleDown)
             .margin({bottom:25,left:10})
-
+            // overlay接口暂不支持深色模式
             .overlay('ScaleDown', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-
+          // 请将$r('app.media.img_2')替换为实际资源文件
           Image($r('app.media.img_2'))
             .width(200)
             .height(150)
             .border({ width: 1 })
-
+            // 通过设置objectFit属性，可以使图片在高度和宽度确定的框内进行缩放
+            // 保持原有尺寸显示
             .objectFit(ImageFit.None)
             .margin({bottom:25,left:10})
-
+            // overlay接口暂不支持深色模式
             .overlay('None', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
         }
       }
@@ -331,7 +340,7 @@ struct ImageScalingType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/KRymlvrRSB2LkflxMNrhAg/zh-cn_image_0000002534250428.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=A4638354AA35289D2D94910779CA599903C49C394EA64CFA881C6FDD426CBCF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/VpRPY2qsTEaGqWVmQeEI0g/zh-cn_image_0000002535139456.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=B9D19E0892296F4D65845D4576EFAE4B932A2C68C2D55A671A42083EF7596DC0)
 
 ### 图片插值
 
@@ -344,44 +353,43 @@ struct ImageInterpolationType {
   build() {
     Column() {
       Row() {
-
+        // 请将$r('app.media.grass')替换为实际资源文件
         Image($r('app.media.grass'))
           .width('40%')
-
+          // 使用interpolation接口对图片进行插值，显著提升清晰度
           .interpolation(ImageInterpolation.None)
           .borderWidth(1)
-
+          // overlay接口暂不支持深色模式
           .overlay('Interpolation.None', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
           .margin(10)
-
+        // 请将$r('app.media.grass')替换为实际资源文件
         Image($r('app.media.grass'))
           .width('40%')
-
+          // 使用interpolation接口对图片进行插值，显著提升清晰度
           .interpolation(ImageInterpolation.Low)
           .borderWidth(1)
-
+          // overlay接口暂不支持深色模式
           .overlay('Interpolation.Low', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
           .margin(10)
       }.width('100%')
       .justifyContent(FlexAlign.Center)
-
       Row() {
-
+        // 请将$r('app.media.grass')替换为实际资源文件
         Image($r('app.media.grass'))
           .width('40%')
-
+          // 使用interpolation接口对图片进行插值，显著提升清晰度
           .interpolation(ImageInterpolation.Medium)
           .borderWidth(1)
-
+          // overlay接口暂不支持深色模式
           .overlay('Interpolation.Medium', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
           .margin(10)
-
+        // 请将$r('app.media.grass')替换为实际资源文件
         Image($r('app.media.grass'))
           .width('40%')
-
+          // 使用interpolation接口对图片进行插值，显著提升清晰度
           .interpolation(ImageInterpolation.High)
           .borderWidth(1)
-
+          // overlay接口暂不支持深色模式
           .overlay('Interpolation.High', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
           .margin(10)
       }.width('100%')
@@ -392,7 +400,7 @@ struct ImageInterpolationType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/S1jvm9TdTH2A9l-Alv_kfQ/zh-cn_image_0000002534410374.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=A4C20A172EEC4852CEA8F8C0DAABB68D4E03461477B055E74F0820066F30D138)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/rRQbDsdGQQu-HCl2XNmbWw/zh-cn_image_0000002535299394.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=A35DEE00A28CF1358282A00A8A5FFC821566D5C33C6B96D1085CA32350710EE9)
 
 ### 设置图片重复样式
 
@@ -405,35 +413,38 @@ struct ImageRepetitionStyle {
   build() {
     Column({ space: 10 }) {
       Column({ space: 25 }) {
-
+        // 请将$r('app.media.ic_public_favor_filled_1')替换为实际资源文件
         Image($r('app.media.ic_public_favor_filled_1'))
           .width(160)
           .height(160)
           .border({ width: 1 })
-
+          // 通过objectRepeat属性设置图片的重复样式方式
+          // 在水平轴和竖直轴上同时重复绘制图片
           .objectRepeat(ImageRepeat.XY)
           .objectFit(ImageFit.ScaleDown)
-
+          // overlay接口暂不支持深色模式
           .overlay('ImageRepeat.XY', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-
+        // 请将$r('app.media.ic_public_favor_filled_1')替换为实际资源文件
         Image($r('app.media.ic_public_favor_filled_1'))
           .width(160)
           .height(160)
           .border({ width: 1 })
-
+          // 通过objectRepeat属性设置图片的重复样式方式
+          // 只在竖直轴上重复绘制图片
           .objectRepeat(ImageRepeat.Y)
           .objectFit(ImageFit.ScaleDown)
-
+          // overlay接口暂不支持深色模式
           .overlay('ImageRepeat.Y', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-
+        // 请将$r('app.media.ic_public_favor_filled_1')替换为实际资源文件
         Image($r('app.media.ic_public_favor_filled_1'))
           .width(160)
           .height(160)
           .border({ width: 1 })
-
+          // 通过objectRepeat属性设置图片的重复样式方式
+          // 只在水平轴上重复绘制图片
           .objectRepeat(ImageRepeat.X)
           .objectFit(ImageFit.ScaleDown)
-
+          // overlay接口暂不支持深色模式
           .overlay('ImageRepeat.X', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
       }
     }.height(150).width('100%').padding(8)
@@ -441,7 +452,7 @@ struct ImageRepetitionStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/JV2yl0edRBWIUe3Kda_-gg/zh-cn_image_0000002565290273.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=9BDA1E56A3C2C79FC4F0382F96412C6C28AF96E33ADB6A2A9A1959099F217259)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/_6IXCZwkSLev4FNE8t_3GQ/zh-cn_image_0000002566019257.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=CB4A5FD9123F48EDDE4E51C4FAE182378FA9D594DD6D7FB2952ECFD524A346F0)
 
 ### 设置图片渲染模式
 
@@ -454,23 +465,23 @@ struct SetImageRenderingMode {
   build() {
     Column({ space: 10 }) {
       Row({ space: 50 }) {
-
+        // 请将$r('app.media.example')替换为实际资源文件
         Image($r('app.media.example'))
-
+          // 通过renderMode属性设置图片的渲染模式为原色或黑白
           .renderMode(ImageRenderMode.Original)
           .width(100)
           .height(100)
           .border({ width: 1 })
-
+          // overlay接口暂不支持深色模式
           .overlay('Original', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
-
+        // 请将$r('app.media.example')替换为实际资源文件
         Image($r('app.media.example'))
-
+          // 通过renderMode属性设置图片的渲染模式为原色或黑白
           .renderMode(ImageRenderMode.Template)
           .width(100)
           .height(100)
           .border({ width: 1 })
-
+          // overlay接口暂不支持深色模式
           .overlay('Template', { align: Alignment.Bottom, offset: { x: 0, y: 20 } })
       }
     }.height(150).width('100%').padding({ top: 20,right: 10 })
@@ -478,7 +489,7 @@ struct SetImageRenderingMode {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/0MdsgbphROycgqMxhOat1g/zh-cn_image_0000002565210253.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=185024F85D65EFF6CFF71DB1846413630D9A373FBD5C7B305843958D438C4CED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/IX2Unep4QpOEeCa6OwKNRA/zh-cn_image_0000002566099269.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=AE71D41526D4DDBF4F2FFD258CE0C58AC20F27AFACDCF591E3993DEED94428AB)
 
 ### 设置图片解码尺寸
 
@@ -493,9 +504,9 @@ struct SetImageDecodingSize {
   build() {
     Column() {
       Row({ space: 50 }) {
-
+        // 请将$r('app.media.example')替换为实际资源文件
         Image($r('app.media.example'))
-
+        // 使用sourceSize接口对图片设置解码尺寸，降低图片分辨率
           .sourceSize({
             width: 40,
             height: 40
@@ -504,11 +515,11 @@ struct SetImageDecodingSize {
           .aspectRatio(1)
           .width('25%')
           .border({ width: 1 })
-
+          // overlay接口暂不支持深色模式
           .overlay('width:40 height:40', { align: Alignment.Bottom, offset: { x: 0, y: 40 } })
-
+        // 请将$r('app.media.example')替换为实际资源文件
         Image($r('app.media.example'))
-
+        // 使用sourceSize接口对图片设置解码尺寸，降低图片分辨率
           .sourceSize({
             width: 90,
             height: 90
@@ -518,7 +529,7 @@ struct SetImageDecodingSize {
           .height(100)
           .aspectRatio(1)
           .border({ width: 1 })
-
+          // overlay接口暂不支持深色模式
           .overlay('width:90 height:90', { align: Alignment.Bottom, offset: { x: 0, y: 40 } })
       }.height(150).width('100%').padding(20)
     }
@@ -526,7 +537,7 @@ struct SetImageDecodingSize {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/jKJg_ZH7QTS6tRkmFEEFGg/zh-cn_image_0000002534250430.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=6022DE2F01BB6D8028C4CE7540E57C000BEB47813B7C4F898CBC8466385A3B6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Qja-190qQDuoYZm69Of_Qw/zh-cn_image_0000002535139458.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=4AC5774CC3D1D3170251B95AF4CE9C98D82D070141AA8A79C53D333527E474FE)
 
 ### 为图片添加滤镜效果
 
@@ -539,14 +550,14 @@ struct AddFilterEffectsToImages {
   build() {
     Column() {
       Row() {
-
+        // 请将$r('app.media.example')替换为实际资源文件
         Image($r('app.media.example'))
           .width('40%')
           .margin(10)
-
+        // 请将$r('app.media.example')替换为实际资源文件
         Image($r('app.media.example'))
           .width('40%')
-
+          // 通过colorFilter调整图片的像素颜色，为图片添加滤镜
           .colorFilter(
              [1, 1, 0, 0, 0,
               0, 1, 0, 0, 0,
@@ -560,13 +571,14 @@ struct AddFilterEffectsToImages {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/lwQDu7rRReC7sKlMMjBgKA/zh-cn_image_0000002534410376.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=5FB101FC73E84730613C8F53E779D94E22E47A6C1AB4C06D97FCC96347685EB0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/SKizP-gpSV2RmdQR21TCXw/zh-cn_image_0000002535299396.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=5B126EBF621F8711CF813250C24BBF90F9927BCEF670D4BC092D811882825C65)
 
 ### 同步加载图片
 
 一般情况下，图片加载流程会异步进行，以避免阻塞主线程，影响UI交互。但是特定情况下，图片刷新时会出现闪烁，这时可以使用syncLoad属性，使图片同步加载，从而避免出现闪烁。不建议图片加载较长时间时使用，会导致页面无法响应。
 
 ```typescript
+// 请将$r('app.media.icon')替换为实际资源文件
 Image($r('app.media.icon'))
   .syncLoad(true)
 ```
@@ -579,7 +591,6 @@ Image($r('app.media.icon'))
 import { hilog } from '@kit.PerformanceAnalysisKit';
 const DOMAIN = 0x0001;
 const TAG = 'Sample_imagecomponent';
-
 @Entry
 @Component
 struct EventCall {
@@ -587,16 +598,15 @@ struct EventCall {
   @State heightValue: number = 0;
   @State componentWidth: number = 0;
   @State componentHeight: number = 0;
-
   build() {
     Column() {
       Row() {
-
+        // 请将$r('app.media.ic_img_2')替换为实际资源文件
         Image($r('app.media.ic_img_2'))
           .width(200)
           .height(150)
           .margin(15)
-
+          // 图片加载成功后，通过onComplete获取图片必要信息
           .onComplete(msg => {
             if(msg){
               this.widthValue = msg.width;
@@ -606,11 +616,11 @@ struct EventCall {
             };
             hilog.info(DOMAIN, TAG, `${msg}`);
           })
-
+          // 如果加载失败，使用onError触发回调函数获取结果
           .onError(() => {
             hilog.info(DOMAIN, TAG, 'load image fail');
           })
-
+          // overlay接口暂不支持深色模式
           .overlay('\nwidth: ' + String(this.widthValue) + ', height: ' + String(this.heightValue) + '\ncomponentWidth: ' + String(this.componentWidth) + '\ncomponentHeight: ' + String(this.componentHeight), {
             align: Alignment.Bottom,
             offset: { x: 0, y: 60 }
@@ -621,4 +631,4 @@ struct EventCall {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/_BqZipBPSRWXbo28VVr17Q/zh-cn_image_0000002565290275.png?HW-CC-KV=V1&HW-CC-Date=20260402T023657Z&HW-CC-Expire=86400&HW-CC-Sign=A1B4EBC76114EE45D6C11CE07B5816747A56741D34231CBD67D154EE67E72318)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/EeqloTDUQySorkeQNEClLQ/zh-cn_image_0000002566019259.png?HW-CC-KV=V1&HW-CC-Date=20260403T023925Z&HW-CC-Expire=86400&HW-CC-Sign=6C5ADF5DF90C1D664686FD24C385D7316056042A69F63B18303B63FFBFBC6021)

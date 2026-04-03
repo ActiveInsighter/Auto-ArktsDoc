@@ -110,8 +110,8 @@ order(value: number | GridColColumnOption)
 
 用于自定义指定在不同宽度设备类型上，栅格子组件占据的栅格数量单位。
 
-- API version 20之前，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取默认值1。 ```typescript span: {xs:2, md:4, lg:8} span: {md:4, lg:8} ```
-- API version 20及以后，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取已配置的更大断点的列数补全未配置的列数。 ```typescript span: {xs:2, md:4, lg:8} span: {md:4, lg:8} ```
+- API version 20之前，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取默认值1。 ```typescript span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8} span: {md:4, lg:8} // 等于配置 span: {xs:1, sm:1, md:4, lg:8, xl:8, xxl:8} ```
+- API version 20及以后，仅配置部分断点下GridCol组件所占列数，取已配置的更小断点的列数补全未配置的列数。若未配置更小断点的列数，取已配置的更大断点的列数补全未配置的列数。 ```typescript span: {xs:2, md:4, lg:8} // 等于配置 span: {xs:2, sm:2, md:4, lg:8, xl:8, xxl:8} span: {md:4, lg:8} // 等于配置 span: {xs:4, sm:4, md:4, lg:8, xl:8, xxl:8} ```
 - 建议手动配置不同断点下GridCol组件所占列数，避免默认补全列数的布局效果不符合预期。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
@@ -138,13 +138,13 @@ order(value: number | GridColColumnOption)
 GridCol的基本用法示例。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct GridColExample {
   @State bgColors: Color[] =
     [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown]
   @State currentBp: string = 'unknown'
-
   build() {
     Column() {
       GridRow({
@@ -175,4 +175,4 @@ struct GridColExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ZrIObeXSRW2RWXjHEYrkGg/zh-cn_image_0000002565211171.png?HW-CC-KV=V1&HW-CC-Date=20260402T023830Z&HW-CC-Expire=86400&HW-CC-Sign=4725E00D74DCA28EF57A5CF95A2279077F8778A1EB2DAFC9BEBFE2266BE19B44)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Gy5t_EAbQ3OHnm22kH0gTA/zh-cn_image_0000002566100187.png?HW-CC-KV=V1&HW-CC-Date=20260403T024105Z&HW-CC-Expire=86400&HW-CC-Sign=C00F9925002828FB9B91997072388419FBF01C0EF9547E6EAEAF34CA354FF707)

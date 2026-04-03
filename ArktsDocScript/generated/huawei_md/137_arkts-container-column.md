@@ -244,7 +244,7 @@ struct ColumnExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/mfY2Vg5cQiiby1vplOLTyg/zh-cn_image_0000002565211163.png?HW-CC-KV=V1&HW-CC-Date=20260402T023802Z&HW-CC-Expire=86400&HW-CC-Sign=1BD17C8EAE8A55E95725A0535E633BCA119F9D4F0DAD81A6F6543829F5810C48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/NIyfhQBkQ1u9DHKABdWE6w/zh-cn_image_0000002566100179.png?HW-CC-KV=V1&HW-CC-Date=20260403T024058Z&HW-CC-Expire=86400&HW-CC-Sign=89FBFB68CBE3C3634DF5F688AE29EAFD9E5D47EC66EF63203C56C0E2215EB429)
 
 ### 示例2（设置反转属性）
 
@@ -274,4 +274,4 @@ struct ColumnReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/4R_U0B_FSMKmS5rtG4vknw/zh-cn_image_0000002534251340.png?HW-CC-KV=V1&HW-CC-Date=20260402T023802Z&HW-CC-Expire=86400&HW-CC-Sign=6C6AC1F95F7D12C66459735B8D553545925B084057018D228A54BC173D70420D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/PT1Kn1SIThSxeETIFSJfiA/zh-cn_image_0000002535140368.png?HW-CC-KV=V1&HW-CC-Date=20260403T024058Z&HW-CC-Expire=86400&HW-CC-Sign=62F3BFDDF760C19F2D1A7404A579EA5949CD652CB25A9B1B87F1AB2ABB3DCC60)

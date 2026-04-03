@@ -23,7 +23,7 @@ Button('click for Menu')
   ])
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/y6Aopu1YSym1d4rqMwphTw/zh-cn_image_0000002534410428.png?HW-CC-KV=V1&HW-CC-Date=20260402T023722Z&HW-CC-Expire=86400&HW-CC-Sign=6D191998F64F9602D6A956A9A83616E632A5D5A635CDE3027EFB8C733D16A75C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/cxuQAtmATgO0T-g7r-sMTA/zh-cn_image_0000002535299448.png?HW-CC-KV=V1&HW-CC-Date=20260403T023951Z&HW-CC-Expire=86400&HW-CC-Sign=9F6F3062E2CC3C56E0F6942D6A8190D38B6A09CE3E339EAEEFA2415E3383BF27)
 
 ## 创建自定义样式的菜单
 
@@ -117,7 +117,7 @@ Button('click for Menu')
   .bindMenu(this.MyMenu)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/l_WPADCbROC3eNjbS2RxGQ/zh-cn_image_0000002565290327.png?HW-CC-KV=V1&HW-CC-Date=20260402T023722Z&HW-CC-Expire=86400&HW-CC-Sign=EC767C93A5B5C142DD4E12066BE37EF646ACB779FB6D6F32ADD1A63F052DB62A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/1iz_QJr0RlCKrxy2PnMAvg/zh-cn_image_0000002566019311.png?HW-CC-KV=V1&HW-CC-Date=20260403T023951Z&HW-CC-Expire=86400&HW-CC-Sign=00F24EB9A0DB3AD385A18C1E375F04CBC63154E45D4BAEFD203E4CF4ECD08681)
 
 ## 创建支持右键或长按的菜单
 
@@ -218,7 +218,7 @@ export struct SupportAvoidCentralAxisMenuExample {
     }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/6BdiGpvpRY6aco3ORgckVA/zh-cn_image_0000002565210307.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023722Z&HW-CC-Expire=86400&HW-CC-Sign=9FB185FDA44CCEB4A8B4AFD6C2087B16EEC8EE84BA6845D103175C8338AADAF0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/VgrSLCieQTamclr2CzGexA/zh-cn_image_0000002566099323.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023951Z&HW-CC-Expire=86400&HW-CC-Sign=A1EE9EF16D6CA94ACC49B474932DADD293178845C43A11C5E412D2C368F04498)
 
 ## 控制子窗菜单的事件透传
 
@@ -267,7 +267,7 @@ export struct EventTransSubWindowMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/70dgSO9LTgWbGpXNify7Ww/zh-cn_image_0000002534250484.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023722Z&HW-CC-Expire=86400&HW-CC-Sign=109E4B00B9E0A7D26E2836B42EB69B4E7DE10FAA12CA4EAB5C86607E3AD63F18)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/CtIC4lW2SiGpo-n0xGggsQ/zh-cn_image_0000002535139512.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023951Z&HW-CC-Expire=86400&HW-CC-Sign=4167106A904922926F1052C11FEE0ED2FB884795887670C2EE90267C5DB8EA05)
 
 ## 基于绑定组件指定位置弹出菜单
 
@@ -323,4 +323,4 @@ export struct BindComponentMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/b6XJw1EIQWCJgQInae2b2A/zh-cn_image_0000002534410430.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023722Z&HW-CC-Expire=86400&HW-CC-Sign=6BED3C2E4775C45720545DA2C16A145A363D6990D80F11560625D15105EADC8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/qAboXubqQOOqsctbuyvpyQ/zh-cn_image_0000002535299450.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023951Z&HW-CC-Expire=86400&HW-CC-Sign=702C2E5E9D8CCA5458B5349B6F20E449ADE631BEF30F7DF4AD5C6CD6003F12DB)

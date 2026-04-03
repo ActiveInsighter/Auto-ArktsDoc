@@ -13,7 +13,7 @@
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Dy8R2_ZHRda4uy1cMV-nbg/zh-cn_image_0000002565210423.png?HW-CC-KV=V1&HW-CC-Date=20260402T023757Z&HW-CC-Expire=86400&HW-CC-Sign=3415EAC3BBC96C1D268AEE555C91977C27FDA8A632C6CE307B47915405256D26) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/hGxlxVfIRBme7p3j7q9qQg/zh-cn_image_0000002534250600.png?HW-CC-KV=V1&HW-CC-Date=20260402T023757Z&HW-CC-Expire=86400&HW-CC-Sign=654CA633C418CEF9316E420DE17EDECA01DE067069FA4DCDFB26D5EE4BF820C0) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/Gv8LjU0qQ-mwg8v7dMbzVA/zh-cn_image_0000002566099439.png?HW-CC-KV=V1&HW-CC-Date=20260403T024029Z&HW-CC-Expire=86400&HW-CC-Sign=B215F2D526BCC38CCEC1C66DC961BF46370727E65AF72741ED67C92B6450FE6D) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/zMFor9jqRzWhn2SzYW1ogw/zh-cn_image_0000002535139628.png?HW-CC-KV=V1&HW-CC-Date=20260403T024029Z&HW-CC-Expire=86400&HW-CC-Sign=2423F82457D2E9BB26BB41F863E24889620A0AE0225B3EB9AC2C829210BAA1EB) |
 
 当组件满足以下任意条件时，镜像能力生效：
 
@@ -143,7 +143,6 @@ struct CustomizeCanvasComponentDrawing {
         .onReady(() =>{
           this.drawText()
         })
-        .backgroundColor(Color.Pink)
     }
     .height('100%')
   }
@@ -153,7 +152,7 @@ struct CustomizeCanvasComponentDrawing {
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/HFWqJ2lpSg6olOGgqJzjpA/zh-cn_image_0000002534410546.jpg?HW-CC-KV=V1&HW-CC-Date=20260402T023757Z&HW-CC-Expire=86400&HW-CC-Sign=6F4D0D59330AD8753A62A9D948E8CA8AF394841407F53D442FE4E1FEE1BA2F18) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/LhPhIO9vR6K1Htl7hJ2Z6w/zh-cn_image_0000002565290445.jpg?HW-CC-KV=V1&HW-CC-Date=20260402T023757Z&HW-CC-Expire=86400&HW-CC-Sign=D842DEF7C27B033C5BC7B1F4AB1E101EF17DFFE7D3A4BC8D1FC2420308D626C9) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/L1Q8bFKYSiqqR7bfCxB0Cw/zh-cn_image_0000002535299566.jpg?HW-CC-KV=V1&HW-CC-Date=20260403T024029Z&HW-CC-Expire=86400&HW-CC-Sign=C0C40546DCF57EC4E61153845C686618EC22817371C8CAFD279E206D1271CCB0) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_pqu0WxxSdyAgCH4yNhzZQ/zh-cn_image_0000002566019429.jpg?HW-CC-KV=V1&HW-CC-Date=20260403T024029Z&HW-CC-Expire=86400&HW-CC-Sign=283D996B7E43667451F8685EBB049D24718BFF1AC20EB685AFED0CEF1BE434C9) |
 
 ### 镜像状态字符对齐
 
@@ -163,7 +162,7 @@ struct CustomizeCanvasComponentDrawing {
 
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/1KGP1qrgSG6IQezQdNWGnQ/zh-cn_image_0000002565210425.png?HW-CC-KV=V1&HW-CC-Date=20260402T023757Z&HW-CC-Expire=86400&HW-CC-Sign=2D0D32331A07D1398395C0142D3FB89D29C045A0D44DBB13478564D237C29AC3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/vMPaOW1RQOCgnnOkmC7khg/zh-cn_image_0000002566099441.png?HW-CC-KV=V1&HW-CC-Date=20260403T024029Z&HW-CC-Expire=86400&HW-CC-Sign=44B035D0DEC6CD7EAE6F2B1BE7B3423D52FE819FFB5575DBF904A95ED12CB0F3)
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
 
@@ -171,4 +170,4 @@ struct CustomizeCanvasComponentDrawing {
 2. 弱字符的方向性：弱字符不具备明确的方向性，这些字符不会影响其周围中性字符的方向。
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/FDO2P-rdQEWfOIx2ej_L6Q/zh-cn_image_0000002534250602.png?HW-CC-KV=V1&HW-CC-Date=20260402T023757Z&HW-CC-Expire=86400&HW-CC-Sign=80E76DC65318BE971D5F5D3552C47352678F98E189379E547E0A648A12F67913)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/jjLRqiXqTGyJ4JOY9nxjwQ/zh-cn_image_0000002535139630.png?HW-CC-KV=V1&HW-CC-Date=20260403T024029Z&HW-CC-Expire=86400&HW-CC-Sign=C863A07BFBA2CA6904AE360707B93A39B15E642D495808BF9B39F908783E05EA)

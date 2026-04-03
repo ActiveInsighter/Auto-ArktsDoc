@@ -20,7 +20,6 @@ struct ShadowOptionDemo {
         .backgroundColor(Color.White)
         .borderRadius(20)
         .shadow({ radius: 10, color: Color.Gray })
-
         Column() {
           Text('shadowOption').fontSize(12)
         }
@@ -46,4 +45,4 @@ struct ShadowOptionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/iak8a2l2QgaGSHEtVVF-oQ/zh-cn_image_0000002534250568.png?HW-CC-KV=V1&HW-CC-Date=20260402T023752Z&HW-CC-Expire=86400&HW-CC-Sign=E59AFADF57D7CCE812B51865D35B5BFA7F28F0143E9DA9D9FF5A885764C5DF9B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/0shRSJbiSDa0s-vyFyVVqA/zh-cn_image_0000002535139596.png?HW-CC-KV=V1&HW-CC-Date=20260403T024025Z&HW-CC-Expire=86400&HW-CC-Sign=78E47923374CB9D9D0629634246AA1C69D2400DD4692D4949A8705E8056C6780)

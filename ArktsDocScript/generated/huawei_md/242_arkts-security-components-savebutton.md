@@ -200,7 +200,7 @@ iconBorderRadius(radius: Dimension | BorderRadiuses)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| radius | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | [BorderRadiuses](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#borderradiuses9) | 是 | 保存控件图标的圆角半径，支持设置四个圆角。 如果应用无ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则图标的圆角半径设置不生效。 |
+| radius | [Dimension](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#dimension10) | [BorderRadiuses](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#borderradiuses9) | 是 | 保存控件图标的圆角半径，支持设置四个圆角。四个圆角默认值均为0vp。 如果应用无ohos.permission.CUSTOMIZE_SAVE_BUTTON权限，则图标的圆角半径设置不生效。 |
 
 ### stateEffect20+
 
@@ -334,7 +334,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Pfzy4x6RRuqC_NN7AledKQ/zh-cn_image_0000002534251800.png?HW-CC-KV=V1&HW-CC-Date=20260402T024038Z&HW-CC-Expire=86400&HW-CC-Sign=8DCC6CC67F14BBCCCA56E59C4C0EDB47CEE0DE51F004BAD80A82FE5011779290)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/IIAXNEtnRrGQEt4hoLKLBA/zh-cn_image_0000002535140828.png?HW-CC-KV=V1&HW-CC-Date=20260403T024322Z&HW-CC-Expire=86400&HW-CC-Sign=B2CE07248EDFA2BE3B3B934CF2E9A28A7769844B9640EE74ADE34940BCECF966)
 
 ## 示例2
 
@@ -408,4 +408,4 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/gty45SMaSFy18VsIj9zx0w/zh-cn_image_0000002534411746.png?HW-CC-KV=V1&HW-CC-Date=20260402T024038Z&HW-CC-Expire=86400&HW-CC-Sign=A8DAA11668336470DDD9CC9E32033BA3713544F1D3BC8B1235DC01D5D1A191AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/aZXwjntTSI6vU1RgCyWXvw/zh-cn_image_0000002535300766.png?HW-CC-KV=V1&HW-CC-Date=20260403T024322Z&HW-CC-Expire=86400&HW-CC-Sign=041BE1B6C38CAA99A4D68F6576363CF8A74E07764D05377943100265CD88A4D6)

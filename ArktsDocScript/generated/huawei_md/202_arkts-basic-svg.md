@@ -107,7 +107,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/9h2NTRHATHux2PqbsZMeIQ/zh-cn_image_0000002534251574.png?HW-CC-KV=V1&HW-CC-Date=20260402T023953Z&HW-CC-Expire=86400&HW-CC-Sign=87F91D70DCF98DC85786B1E687CFC6514A7B54C0D24280C6073058715BE6FFEA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/WSB09tAeTVqfVfwpjpfp7g/zh-cn_image_0000002535140602.png?HW-CC-KV=V1&HW-CC-Date=20260403T024233Z&HW-CC-Expire=86400&HW-CC-Sign=0E57DD90624543881E9DE6C3C3E10B46F55AA2E4CA6FB42B068AF452F28FCED5)
 
 ## 图形效果
 

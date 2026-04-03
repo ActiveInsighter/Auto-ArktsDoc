@@ -120,6 +120,7 @@ contentModifier(modifier: ContentModifier<LoadingProgressConfiguration>)
 该示例通过[color](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress#color)接口，实现了设置加载动效颜色的功能。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct LoadingProgressExample {
@@ -134,33 +135,29 @@ struct LoadingProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/NSESEsx7T6qrVZ7Jv3ZQJA/zh-cn_image_0000002565211459.gif?HW-CC-KV=V1&HW-CC-Date=20260402T024002Z&HW-CC-Expire=86400&HW-CC-Sign=FB9AB0E36EC6C670684391A721371432DA0B8D01FCB84FFE21E0610D37299A7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/E2m2Ty8BQO6ytK5QJKSScA/zh-cn_image_0000002566100475.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024245Z&HW-CC-Expire=86400&HW-CC-Sign=AEA2980837C470340E161A0514AAE08EBDED06EAA7F25AD89976095089C152AB)
 
 ### 示例2（设置定制内容区）
 
 该示例通过[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress#contentmodifier12)接口，实现了定制内容区的功能，并通过[enableLoading](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-loadingprogress#enableloading10)接口实现了通过按钮切换是否显示LoadingProgress的效果。
 
 ```typescript
+// xxx.ets
 import { UIContext } from '@kit.ArkUI';
-
 class MyLoadingProgressStyle implements ContentModifier<LoadingProgressConfiguration> {
   enableLoading: boolean = false;
   ctx: UIContext | undefined = undefined;
-
   constructor(enableLoading: boolean, ctx: UIContext) {
     this.enableLoading = enableLoading;
     this.ctx = ctx;
   }
-
   applyContent(): WrappedBuilder<[LoadingProgressConfiguration]> {
     return wrapBuilder(buildLoadingProgress);
   }
 }
-
 let arr1: string[] =
   ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'];
 let arr2: string[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
 @Builder
 function buildLoadingProgress(config: LoadingProgressConfiguration) {
   Column({ space: 8 }) {
@@ -172,7 +169,6 @@ function buildLoadingProgress(config: LoadingProgressConfiguration) {
         })
           .fill(((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? Color.Grey : 0x2577e3)
       }.width('50%')
-
       Column() {
         Button('' + ((config.contentModifier as MyLoadingProgressStyle).enableLoading))
           .onClick((event: ClickEvent) => {
@@ -186,9 +182,7 @@ function buildLoadingProgress(config: LoadingProgressConfiguration) {
           .fontColor(Color.White)
           .backgroundColor(((config.contentModifier as MyLoadingProgressStyle).enableLoading) ? Color.Grey : 0x2577e3)
       }.width('50%')
-
     }
-
     Row() {
       Column() {
         Gauge({
@@ -215,9 +209,7 @@ function buildLoadingProgress(config: LoadingProgressConfiguration) {
         .trackShadow({ radius: 7, offsetX: 7, offsetY: 7 })
         .height(200)
       }.width('100%')
-
     }
-
     Column() {
       List({ space: 20, initialIndex: 0 }) {
         ForEach(arr2, (item: string) => {
@@ -240,17 +232,14 @@ function buildLoadingProgress(config: LoadingProgressConfiguration) {
       .height(200)
       .width('100%')
       .friction(0.6)
-
       .lanes({
         minLength: (config.contentModifier as MyLoadingProgressStyle).enableLoading ? 40 : 80,
         maxLength: (config.contentModifier as MyLoadingProgressStyle).enableLoading ? 40 : 80
       })
       .scrollBar(BarState.Off)
     }
-
   }.width('100%').padding(10)
 }
-
 @Entry
 @Component
 struct LoadingProgressDemoExample {
@@ -259,7 +248,6 @@ struct LoadingProgressDemoExample {
   @State loadingProgressIndex: number = 0;
   @State clickFlag: number = 0;
   scroller: Scroller = new Scroller();
-
   build() {
     Column() {
       Scroll(this.scroller) {
@@ -272,16 +260,14 @@ struct LoadingProgressDemoExample {
           }.width('100%').backgroundColor(0xdcdcdc)
         }.width('100%').margin({ top: 5 })
       }.height('85%')
-
       Button('点击切换config.enableloading').onClick(() => {
         this.clickFlag++;
         this.loadingProgressIndex = (this.loadingProgressIndex + 1) % this.loadingProgressList.length;
         console.info('enableLoading:' + this.loadingProgressList[this.loadingProgressIndex]);
       }).margin(20)
     }
-
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ggjruv-5TkmNtNng21k36Q/zh-cn_image_0000002534251636.gif?HW-CC-KV=V1&HW-CC-Date=20260402T024002Z&HW-CC-Expire=86400&HW-CC-Sign=BA7E2D3B2A1009357C869748774CEEC82A016510454FA1F10C00E5B8D3AB5A87)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/zTGwX6kCSEiXpI10i2Ocyg/zh-cn_image_0000002535140664.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024245Z&HW-CC-Expire=86400&HW-CC-Sign=4281D182FA0FC415F68EA0DC1D0A74B92ADB4F9D544A322EADDA922C08712526)

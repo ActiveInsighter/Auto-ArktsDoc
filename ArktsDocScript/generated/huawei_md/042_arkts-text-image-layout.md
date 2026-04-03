@@ -9,13 +9,13 @@
 
 ```typescript
 Text() {
-
+  // 请将$r('app.media.hot_sale')替换为实际资源文件
   ImageSpan($r('app.media.hot_sale'))
     .width(50)
     .height(30)
     .borderRadius(5)
     .verticalAlign(ImageSpanAlignment.FOLLOW_PARAGRAPH)
-
+  // 请将$r('app.string.surprise_price')替换为实际资源文件，在本示例中该资源文件的value值为"惊喜价 ￥1299"
   Span($r('app.string.surprise_price'))
     .fontSize(25)
     .fontColor(Color.Red)
@@ -29,22 +29,21 @@ Text() {
 }.textVerticalAlign(TextVerticalAlign.CENTER)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/omh7YUZ6RzO72b98-5TKmg/zh-cn_image_0000002534250418.png?HW-CC-KV=V1&HW-CC-Date=20260402T023652Z&HW-CC-Expire=86400&HW-CC-Sign=8044FD237C3269C4885FF8080D8721551541699299CF5C1724EF21E9BB7570FF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/e5Y9NqIeRRCFhqn6ao9AFA/zh-cn_image_0000002535139446.png?HW-CC-KV=V1&HW-CC-Date=20260403T023921Z&HW-CC-Expire=86400&HW-CC-Sign=5214F6389E3B3F4AA2B3DD46ED3F611EE72D65BEC2FA25F67C3E280FC8F4F43F)
 
 ## 使用属性字符串实现图文混排
 
 通过[ImageAttachment](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#imageattachment)添加图片，[TextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-styled-string#textstyle)设置多种文本样式，实现商品详情信息展示的应用场景。
 
 ```typescript
+// resourceGetString封装工具，从资源中获取字符串
 import resourceGetString from '../../common/resource';
 import { image } from '@kit.ImageKit';
 import { LengthMetrics } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 const TAG = '[Sample_Textcomponent]';
 const DOMAIN = 0xF811;
 const BUNDLE = 'Textcomponent_';
-
 @Entry
 @Component
 struct styled_string_demo {
@@ -63,13 +62,11 @@ struct styled_string_demo {
       style: TextDecorationStyle.DOUBLE
     })
   }]);
-
   async aboutToAppear() {
     hilog.info(DOMAIN, TAG, BUNDLE + 'aboutToAppear initial imagePixelMap');
-
+    // $r('app.media.sky')需要替换为开发者所需的资源文件。
     this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.sky'));
   }
-
   private async getPixmapFromMedia(resource: Resource) {
     let unit8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
     let imageSource = image.createImageSource(unit8Array?.buffer?.slice(0, unit8Array?.buffer?.byteLength));
@@ -79,20 +76,19 @@ struct styled_string_demo {
     await imageSource.release();
     return createPixelMap;
   }
-
   leadingMarginValue: ParagraphStyle = new ParagraphStyle({
     leadingMargin: LengthMetrics.vp(5),
     maxLines: 2,
     overflow: TextOverflow.Ellipsis,
     textVerticalAlign: TextVerticalAlign.BASELINE
   });
-
+  //行高样式对象
   lineHeightStyle1: LineHeightStyle = new LineHeightStyle(new LengthMetrics(24));
-
+  //Bold样式
   boldTextStyle: TextStyle = new TextStyle({ fontWeight: FontWeight.Bold });
-
+  //创建含段落样式的对象paragraphStyledString1
   paragraphStyledString1: MutableStyledString =
-
+    // 请将$r('app.string.print_photo')替换为实际资源文件，在本示例中该资源文件的value值为"\n高质量冲洗照片，高清冲印3/4/5/6寸包邮塑封，品质保证，"
     new MutableStyledString(resourceGetString.resourceToString($r('app.string.print_photo')), [
       {
         start: 0,
@@ -107,7 +103,7 @@ struct styled_string_demo {
         styledValue: this.lineHeightStyle1
       }
     ]);
-
+  // 请将$r('app.string.limited_time_discount')替换为实际资源文件，在本示例中该资源文件的value值为"\n限时直降5.15元 限量增送"
   paragraphStyledString2: MutableStyledString = new MutableStyledString(resourceGetString.resourceToString($r('app.string.limited_time_discount')), [
     {
       start: 0,
@@ -140,7 +136,7 @@ struct styled_string_demo {
       styledValue: new TextStyle({ fontColor: Color.Grey, fontSize: LengthMetrics.vp(14) })
     }
   ]);
-
+  // 请将$r('app.string.sales_volume')替换为实际资源文件，在本示例中该资源文件的value值为"\n￥22.50 销量400万+"
   paragraphStyledString3: MutableStyledString = new MutableStyledString(resourceGetString.resourceToString($r('app.string.sales_volume')), [
     {
       start: 0,
@@ -185,7 +181,6 @@ struct styled_string_demo {
       styledValue: new TextStyle({ fontColor: Color.Grey, fontSize: LengthMetrics.vp(14) })
     }
   ]);
-
   build() {
     Row() {
       Column({ space: 10 }) {
@@ -195,7 +190,7 @@ struct styled_string_demo {
           .backgroundColor('#FFFFFF')
           .borderRadius(5)
           .width(210)
-
+        // 请将$r('app.string.textImageMixedLayout_content')替换为实际资源文件，在本示例中该资源文件的value值为"点击查看商品详情"
         Button($r('app.string.textImageMixedLayout_content'))
           .onClick(() => {
             if (this.imagePixelMap !== undefined) {
@@ -223,4 +218,4 @@ struct styled_string_demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/_BEfytk7Rj2GfwsxhzVzrQ/zh-cn_image_0000002534410364.png?HW-CC-KV=V1&HW-CC-Date=20260402T023652Z&HW-CC-Expire=86400&HW-CC-Sign=E9A447AB0F05F39F25F61FBC398F604004C8D488AFAD155AF2E8D2211E95AD55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/OrRWaHF-QKCnXQPEw_ssgg/zh-cn_image_0000002535299384.png?HW-CC-KV=V1&HW-CC-Date=20260403T023921Z&HW-CC-Expire=86400&HW-CC-Sign=50EB2AD2AB8AFBE679DB947FAED504A87EE479C7696D20300B2485E13ACB467C)

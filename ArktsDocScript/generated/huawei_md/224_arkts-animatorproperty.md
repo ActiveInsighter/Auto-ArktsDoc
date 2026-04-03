@@ -135,4 +135,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/KgdfH4v8Tfu0qBChivPQvw/zh-cn_image_0000002534411692.gif?HW-CC-KV=V1&HW-CC-Date=20260402T024018Z&HW-CC-Expire=86400&HW-CC-Sign=773D61D60767A6F5838EDDE48723DE639360260F86CC576879655879B7F37B8D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dhra-y80SK-8vWfvwIJ9Fw/zh-cn_image_0000002535300712.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024259Z&HW-CC-Expire=86400&HW-CC-Sign=EB164C10EE2AA9171B7A39ADA1235160DCDBA3B227034EE287E419FACCE70E05)

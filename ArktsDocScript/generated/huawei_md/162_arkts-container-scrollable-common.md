@@ -220,7 +220,7 @@ fadingEdge(enabled: Optional<boolean>, options?: FadingEdgeOptions): T
 设置是否开启边缘渐隐效果及设置边缘渐隐长度。
 
 > **说明**
-> fadingEdge是通过设置[overlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay#overlay)属性和[blendMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#blendmode11)属性（参数值为BlendMode.SRC_OVER，BlendApplyType.OFFSCREEN）实现的。当fadingEdge生效时，会覆盖原组件的.overlay()属性和.blendMode()属性。
+> fadingEdge是通过设置[overlay](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay#overlay)属性和[blendMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#blendmode11)属性（参数值为BlendMode.SRC_OVER，BlendApplyType.OFFSCREEN）实现的。当fadingEdge生效时，会覆盖原组件的.overlay()属性和.blendMode()属性，并将导致当前组件和其子组件需要截屏的接口无法截取到正确的画面。需要截屏的接口有：[blur](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#blur)、[linearGradientBlur](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#lineargradientblur12)、[brightness](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#brightness)、[visualEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-filter-effect#visualeffect)、[grayscale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#grayscale)、[saturate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#saturate)、[contrast](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#contrast)、[invert](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#invert)、[sepia](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#sepia)、[hueRotate](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#huerotate)、[colorBlend](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#colorblend)、[lightUpEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#lightupeffect12)、[pixelStretchEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#pixelstretcheffect12)、[blendMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-image-effect#blendmode11)、[backgroundBrightness](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#backgroundbrightness12)。
 >
 > fadingEdge生效时，建议不在设置fadingEdge属性的组件上设置[background](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-background#background10)相关属性，会影响渐隐的显示效果。
 >
@@ -766,7 +766,7 @@ onDidStopFling(handler: VoidCallback): T
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Niww2XZXTT6fNnnWlLttUQ/zh-cn_image_0000002565291249.png?HW-CC-KV=V1&HW-CC-Date=20260402T023857Z&HW-CC-Expire=86400&HW-CC-Sign=487912443F45EDF5D19362BC6757CDF3D12CA83D979C180134D0F4D577AD39B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/8ow6yiB_QEqLGXEAhjWR5A/zh-cn_image_0000002566020231.png?HW-CC-KV=V1&HW-CC-Date=20260403T024133Z&HW-CC-Expire=86400&HW-CC-Sign=319B7C6D871D0771E4EAD2693A7FCC3121B4C3BFAFF0787520EE069C8BE044E5)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1157,7 +1157,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/TdBDIQVXSZaSjkkbVCtw_w/zh-cn_image_0000002534411296.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023857Z&HW-CC-Expire=86400&HW-CC-Sign=9FC4860A1E7BFD6A2FF30645C03505DF3F7DBF74AA29C3BAAA019ABDA84D6F70)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/J0Q5WBslTgG0wUS2QJqkJw/zh-cn_image_0000002535300316.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024133Z&HW-CC-Expire=86400&HW-CC-Sign=E656B5F8A6A055C4B4D0EF5F5BE58164750AEACD48F82A6D01550EA3B6747DE6)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1201,7 +1201,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/xxl1B2gwT-Wap2rGF0Q5fw/zh-cn_image_0000002565211177.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023857Z&HW-CC-Expire=86400&HW-CC-Sign=ED048B5900EDB51A3002B1C0E265CC24DF2B19C9B53B9FD330B4C64D3A79F1BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/YwA36gF-SHGTNTdHu8GSLA/zh-cn_image_0000002566100193.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024133Z&HW-CC-Expire=86400&HW-CC-Sign=BD31DACEA0ECAAD2B172357062DC401E725B4D3296D812616032A1ED125A146C)
 
 ### 示例3（设置裁剪区域）
 
@@ -1261,7 +1261,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/hkglMOhsQVOHkqwIvKZ9GQ/zh-cn_image_0000002565211227.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023857Z&HW-CC-Expire=86400&HW-CC-Sign=419F9A0516B2B430E457191296F96E4E56326AB8A093E0BB904116C4092E0E55)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/_afF4iKmSEehu81yUjiDgQ/zh-cn_image_0000002566100243.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024133Z&HW-CC-Expire=86400&HW-CC-Sign=AA1F1420F0AD5BFEBE59F06145E9D4CE8AC354B9CDA4AF44C9267378E1933F61)
 
 ### 示例4（设置滚动条边距）
 
@@ -1317,4 +1317,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/xWdH6gh9SFa5vNpZn8_udA/zh-cn_image_0000002534251404.gif?HW-CC-KV=V1&HW-CC-Date=20260402T023857Z&HW-CC-Expire=86400&HW-CC-Sign=B5465BCD6F653073937163934FE706B0137EB62BE8FC1655629454ADE8C10DD6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/nKeURCn9SMmS8lyAZMJvDA/zh-cn_image_0000002535140432.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024133Z&HW-CC-Expire=86400&HW-CC-Sign=6C50F2DDB7BE722A91ECB019D0542CF2641768D39706B30F1090B3344F64519E)

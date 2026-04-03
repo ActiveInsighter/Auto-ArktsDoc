@@ -121,7 +121,7 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/42xzwDVtSniCRpl7pzL3xQ/zh-cn_image_0000002534251642.png?HW-CC-KV=V1&HW-CC-Date=20260402T024007Z&HW-CC-Expire=86400&HW-CC-Sign=EFDA8EAA9A5EA65B2EDEC5CFC147DA3747AAB86758528B0E8EDD2D196368F784)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/QZuQjOzyTn6-1-2zcTegkw/zh-cn_image_0000002535140670.png?HW-CC-KV=V1&HW-CC-Date=20260403T024247Z&HW-CC-Expire=86400&HW-CC-Sign=D10455C1D608E41326968036FFB662BB84A1D737830685641195BFD65F88F806)
 
 ### 示例2（设置背景颜色为透明）
 
@@ -146,4 +146,4 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/fHnEpYLiRACMaLh3Q2MQLQ/zh-cn_image_0000002534411588.png?HW-CC-KV=V1&HW-CC-Date=20260402T024007Z&HW-CC-Expire=86400&HW-CC-Sign=381D1B1FDB0432FD258935192982EC7FFD9A0794AF848B4BB48E4D583FD597F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/bQpGQmxBT1abk5icY6914w/zh-cn_image_0000002535300608.png?HW-CC-KV=V1&HW-CC-Date=20260403T024247Z&HW-CC-Expire=86400&HW-CC-Sign=96A1923CFE5680CAA36160F0BAFCBC96B0F89EF6B75C922ECE22997303B7B2A2)
