@@ -651,4 +651,4 @@ struct Index {
 ## 验证通道是否建立成功
 
 1. 打开web调试。 开启web调试请参考[使用DevTools工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools)。
-2. 举例说明通道是否建立成功。 使用[复杂类型使用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-page-app-function-invoking#复杂类型使用方法)中应用侧和前端页面之间传递Array作为示例，调试结果如下图所示： ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/dX4LhukUQJCPf32FFbzNFw/zh-cn_image_0000002566019579.png?HW-CC-KV=V1&HW-CC-Date=20260403T024337Z&HW-CC-Expire=86400&HW-CC-Sign=AE70391D23740EBB005F3454FE5DCE36465C8F3344FA688D3CAE7BCD05F8939F)
+2. 举例说明通道是否建立成功。 使用[复杂类型使用方法](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-page-app-function-invoking#复杂类型使用方法)中应用侧和前端页面之间传递Array作为示例，调试结果如下图所示： ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/K0Leq2GqToaPyBcxD31idg/zh-cn_image_0000002535788766.png?HW-CC-KV=V1&HW-CC-Date=20260404T023344Z&HW-CC-Expire=86400&HW-CC-Sign=E8CCA8EE631822A38DDADD41EA390C5E2499B40E29CE89BAC69C7524DC6985B3)

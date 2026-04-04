@@ -111,45 +111,44 @@ alignSelf(value: ItemAlign): T
 通过配置flexBasis/flexGrow/flexShrink/alignSelf属性设置Flex布局。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct FlexExample {
   build() {
     Column({ space: 5 }) {
       Text('flexBasis').fontSize(9).fontColor(0xCCCCCC).width('90%')
-      // 基于主轴的基准尺寸
-      // flexBasis()值可以是字符串'auto'，表示基准尺寸是元素本来的大小，也可以是长度设置，相当于.width()/.height()
+
       Flex() {
         Text('flexBasis(100)')
-          .flexBasis(100) // 这里表示宽度为100vp
+          .flexBasis(100)
           .height(100)
           .backgroundColor(0xF5DEB3)
           .textAlign(TextAlign.Center)
         Text(`flexBasis('auto')`)
-          .flexBasis('auto') // 这里表示宽度保持原本设置的60%的宽度
+          .flexBasis('auto')
           .width('60%')
           .height(100)
           .backgroundColor(0xD2B48C)
           .textAlign(TextAlign.Center)
       }.width('90%').height(120).padding(10).backgroundColor(0xAFEEEE)
+
       Text('flexGrow').fontSize(9).fontColor(0xCCCCCC).width('90%')
-      // flexGrow()表示剩余空间分配给该元素的比例
+
       Flex() {
         Text('flexGrow(2)')
-          .flexGrow(2) // 父容器分配给该Text的宽度为剩余宽度的2/3
+          .flexGrow(2)
           .height(100)
           .backgroundColor(0xF5DEB3)
           .textAlign(TextAlign.Center)
         Text('flexGrow(1)')
-          .flexGrow(1) // 父容器分配给该Text的宽度为剩余宽度的1/3
+          .flexGrow(1)
           .height(100)
           .backgroundColor(0xD2B48C)
           .textAlign(TextAlign.Center)
       }.width('90%').height(120).padding(10).backgroundColor(0xAFEEEE)
+
       Text('flexShrink').fontSize(9).fontColor(0xCCCCCC).width('90%')
-      // flexShrink()表示该元素的压缩比例，基于超出的总尺寸进行计算
-      // 第一个text压缩比例是0，另外两个都是1，因此放不下时等比例压缩后两个，第一个不压缩
+
       Flex({ direction: FlexDirection.Row }) {
         Text('flexShrink(0)')
           .flexShrink(0)
@@ -157,7 +156,7 @@ struct FlexExample {
           .height(100)
           .backgroundColor(0xF5DEB3)
           .textAlign(TextAlign.Center)
-        Text('default flexShrink') // 默认值为1
+        Text('default flexShrink')
           .width('40%')
           .height(100)
           .backgroundColor(0xD2B48C)
@@ -169,8 +168,9 @@ struct FlexExample {
           .backgroundColor(0xF5DEB3)
           .textAlign(TextAlign.Center)
       }.width('90%').height(120).padding(10).backgroundColor(0xAFEEEE)
+
       Text('alignSelf').fontSize(9).fontColor(0xCCCCCC).width('90%')
-      // alignSelf会覆盖Flex布局容器中的alignItems设置
+
       Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
         Text('no alignSelf,height:70')
           .width('33%')
@@ -194,4 +194,4 @@ struct FlexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/6dvC4wJyRNqK1XyNG2r4AA/zh-cn_image_0000002566020071.png?HW-CC-KV=V1&HW-CC-Date=20260403T024050Z&HW-CC-Expire=86400&HW-CC-Sign=49E968E0F9CE975433E1BB10195CDD0A36DC5801B00D22A8AB73E682CB687EC7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/vTV3XonWQ6W5oKgjh3xIyg/zh-cn_image_0000002566709055.png?HW-CC-KV=V1&HW-CC-Date=20260404T023125Z&HW-CC-Expire=86400&HW-CC-Sign=C8E1325F6CCFDC8728E21D1E00948AAE02205BC661AEB6BA9A42AD662BB3EE87)

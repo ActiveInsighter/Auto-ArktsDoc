@@ -117,13 +117,12 @@ lineCap(value: LineCapStyle)
 该示例定义了Divider的样式，如方向、颜色及宽度。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DividerExample {
   build() {
     Column() {
-      // 使用横向分割线场景
+
       Text('Horizontal divider').fontSize(9).fontColor(0xCCCCCC)
       List() {
         ForEach([1, 2, 3], (item: number) => {
@@ -132,6 +131,7 @@ struct DividerExample {
           }.width(244).height(48)
         }, (item: number) => item.toString())
       }.padding({ left: 24, bottom: 8 })
+
       Divider().strokeWidth(8).color('#F1F3F5')
       List() {
         ForEach([4, 5], (item: number) => {
@@ -140,7 +140,7 @@ struct DividerExample {
           }.width(244).height(48)
         }, (item: number) => item.toString())
       }.padding({ left: 24, top: 8 })
-      // 使用纵向分割线场景
+
       Text('Vertical divider').fontSize(9).fontColor(0xCCCCCC)
       Column() {
         Column() {
@@ -184,14 +184,13 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/D9VTh7CtRuux8PT_Gmf6pQ/zh-cn_image_0000002566100489.png?HW-CC-KV=V1&HW-CC-Date=20260403T024254Z&HW-CC-Expire=86400&HW-CC-Sign=B575CD8F59CEC14FBD23FC091D1E85738702BDE90D9C12D94B9CE78818EC5BB3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/5hGISdsdRY-41JstaLb4sA/zh-cn_image_0000002535789666.png?HW-CC-KV=V1&HW-CC-Date=20260404T023309Z&HW-CC-Expire=86400&HW-CC-Sign=F9FE3E3AF5690D83D56E9463606039F45633C34B02A5E24862D157D5004336D5)
 
 ### 示例2（定义Divider的lineCap样式）
 
 该示例定义了Divider的lineCap样式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct DividerExample {
@@ -203,21 +202,24 @@ struct DividerExample {
         .width("90%")
         .color('#F1F3F5')
         .lineCap(LineCapStyle.Butt)
+
       Text("LineCap:Round")
       Divider()
         .strokeWidth(20)
         .width("90%")
         .color('#F1F3F5')
         .lineCap(LineCapStyle.Round)
+
       Text("LineCap:Square")
       Divider()
         .strokeWidth(20)
         .width("90%")
         .color('#F1F3F5')
         .lineCap(LineCapStyle.Square)
+
     }.width('100%').padding({ top: 24 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/PboT3vwHTuS_vWJCV5NrxQ/zh-cn_image_0000002535140678.png?HW-CC-KV=V1&HW-CC-Date=20260403T024254Z&HW-CC-Expire=86400&HW-CC-Sign=86FC71ECC1102D2D38FED417FD1E19BF0928E0A1F36FB2ECCEF86086F90F952D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/2rVw6jBaRs-15syUysQRdg/zh-cn_image_0000002535949612.png?HW-CC-KV=V1&HW-CC-Date=20260404T023309Z&HW-CC-Expire=86400&HW-CC-Sign=6864C3E8B93AB0B143FFE1A38A7E69B5B916AB0BF6C24F55C38EE32034DD5F17)

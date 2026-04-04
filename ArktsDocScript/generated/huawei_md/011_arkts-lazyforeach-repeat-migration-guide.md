@@ -111,7 +111,7 @@ struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/1CuUldS-RRub29FNyUhrIA/zh-cn_image_0000002555222935.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023850Z&HW-CC-Expire=86400&HW-CC-Sign=05F7D78B03CEBF9652BFC6F53F7F88635AD245711FBDD0078C8CBD20AA6B6EF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/h0xkPcZrQp2RbbRX0cprdA/zh-cn_image_0000002555222935.gif?HW-CC-KV=V1&HW-CC-Date=20260404T022942Z&HW-CC-Expire=86400&HW-CC-Sign=0E96E460E93E3E82F8833AC0593245C71E8D6A469A279DCF76FE96D344F21F0E)
 
 ### 数据更新操作
 
@@ -294,7 +294,7 @@ struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/8kNG1tjbT7itDQ5ivCmBYg/zh-cn_image_0000002524063048.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023850Z&HW-CC-Expire=86400&HW-CC-Sign=D1DBDD4DE341B3C86688C8A053DDCEE67862BF6A7980301049158BC197DF0D48)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/UDV7rkZTQrqfkpG_c8YwRg/zh-cn_image_0000002524063048.gif?HW-CC-KV=V1&HW-CC-Date=20260404T022942Z&HW-CC-Expire=86400&HW-CC-Sign=FE4DBA3D32014599032D166DCB28A26E9CC7233DD0F5AE45E7109185A83C1454)
 
 ## 典型场景迁移
 
@@ -427,7 +427,7 @@ struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/e_Q4vSpyQvu2Wl-X7N_B0w/zh-cn_image_0000002555342913.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023850Z&HW-CC-Expire=86400&HW-CC-Sign=4BF49EE87ACE5F7099E9C125321E54761E3CE46CFF76215142E367DA70B44026)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/wHKi8CfbQ4mBXAAgkukzJQ/zh-cn_image_0000002555342913.gif?HW-CC-KV=V1&HW-CC-Date=20260404T022942Z&HW-CC-Expire=86400&HW-CC-Sign=A0516A727810115EFD191FEA568D8158C11E74D16B6F959C969D26EB523A7326)
 
 ### 状态管理V2观测组件内部状态
 
@@ -579,7 +579,7 @@ struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/TzE5fwZiT1SV9Qts85DY2w/zh-cn_image_0000002524223032.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023850Z&HW-CC-Expire=86400&HW-CC-Sign=60520BE141B5545BC891D75BCCED7E4367C28923E377D43DDD3CBC595DFC87E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Aglx9o3VSPi6OwVZ62MzXA/zh-cn_image_0000002524223032.gif?HW-CC-KV=V1&HW-CC-Date=20260404T022942Z&HW-CC-Expire=86400&HW-CC-Sign=C5BCEBB6E6A9729B68C962073CC585BD78D8A3C597FF4E652BB50FFA39D4A2EB)
 
 ### 状态管理V2观测组件外部输入
 
@@ -715,7 +715,7 @@ struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/u3SvkBPXQ4qI2SRs_elWxw/zh-cn_image_0000002555222937.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023850Z&HW-CC-Expire=86400&HW-CC-Sign=36A1F0B66EF920CD19F1C1F1D8299460A5B8F7F669A018C842EA0DCDF52D1704)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/JkmQDQ87Q723ZGy73nhafw/zh-cn_image_0000002555222937.gif?HW-CC-KV=V1&HW-CC-Date=20260404T022942Z&HW-CC-Expire=86400&HW-CC-Sign=27CAEBEE401C8DB3F77A69DF14C99189D5DB0D07DCBFD55AF2F91F9D5EA1D4A7)
 
 ### 拖拽排序
 
@@ -841,7 +841,7 @@ struct Parent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/wzRCn-9rT-eJa_nu8qXJPA/zh-cn_image_0000002524063050.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023850Z&HW-CC-Expire=86400&HW-CC-Sign=58B941D75D36ED1278684CA66C2C65F443EAEC7B5F784A128D46147D85AAF5A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/t7xuRLa1QnuoVOYGSTXaFw/zh-cn_image_0000002524063050.gif?HW-CC-KV=V1&HW-CC-Date=20260404T022942Z&HW-CC-Expire=86400&HW-CC-Sign=7636A36E98435EBF4342765DE8B22C05CCCD1A09C1A70F92860020D66BC5E4E0)
 
 ### 组件复用
 
@@ -1052,7 +1052,7 @@ struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/3hsuSgQVSz2TqhPIOPF3qg/zh-cn_image_0000002555342915.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023850Z&HW-CC-Expire=86400&HW-CC-Sign=55CB76EB6DC34B2BA2DE45ACCAD85EF58C71E0662155CF4DCA48C3118FF364AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/0hyTjouCRRqfBVqYk__CzQ/zh-cn_image_0000002555342915.gif?HW-CC-KV=V1&HW-CC-Date=20260404T022942Z&HW-CC-Expire=86400&HW-CC-Sign=30F2C5E5C3C6D581D0216AC19D00EDBB9E8EDE03543FF34939B766F5BC5626DE)
 
 ### 模板渲染
 
@@ -1374,7 +1374,7 @@ struct ChildComponentB {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/hs3MCH_8RwieRPbwABvREw/zh-cn_image_0000002524223034.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023850Z&HW-CC-Expire=86400&HW-CC-Sign=96BDE051FEF747EF8942C2DDADC686DC729D8FF572801ED49118613560F03B68)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/2-f5_HEnQtSLrS8BMGIKnw/zh-cn_image_0000002524223034.gif?HW-CC-KV=V1&HW-CC-Date=20260404T022942Z&HW-CC-Expire=86400&HW-CC-Sign=30F160DCCBDECAE05CC8366BB5A937864E866E4C02D0F4EB5980E954486DDF4C)
 
 ## BasicDataSource示例代码
 

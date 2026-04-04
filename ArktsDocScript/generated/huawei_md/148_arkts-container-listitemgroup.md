@@ -104,7 +104,7 @@ childrenMainSize(value: ChildrenMainSize)
 
 ## ListItemGroupStyle10+枚举说明
 
-List组件卡片样式枚举。
+ListItemGroup组件卡片样式枚举。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
@@ -124,58 +124,69 @@ List组件卡片样式枚举。
 ListDataSource实现了LazyForEach数据源接口[IDataSource](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach#idatasource)，用于通过LazyForEach给List和ListItemGroup提供子组件。
 
 ```typescript
-// ListDataSource.ets
 export class TimeTableDataSource implements IDataSource {
   private list: TimeTable[] = [];
   private listeners: DataChangeListener[] = [];
+
   constructor(list: TimeTable[]) {
     this.list = list;
   }
+
   totalCount(): number {
     return this.list.length;
   }
+
   getData(index: number): TimeTable {
     return this.list[index];
   }
+
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       this.listeners.push(listener);
     }
   }
+
   unregisterDataChangeListener(listener: DataChangeListener): void {
     const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
       this.listeners.splice(pos, 1);
     }
   }
-  // 通知控制器数据变化
+
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
       listener.onDataChange(index);
     });
   }
-  // 修改第一个元素
+
   public change1stItem(temp: TimeTable): void {
     this.list[0] = temp;
     this.notifyDataChange(0);
   }
 }
+
 export class ProjectsDataSource implements IDataSource {
   private list: string[] = [];
+
   constructor(list: string[]) {
     this.list = list;
   }
+
   totalCount(): number {
     return this.list.length;
   }
+
   getData(index: number): string {
     return this.list[index];
   }
+
   registerDataChangeListener(listener: DataChangeListener): void {
   }
+
   unregisterDataChangeListener(listener: DataChangeListener): void {
   }
 }
+
 export interface TimeTable {
   title: string;
   projects: string[];
@@ -183,12 +194,12 @@ export interface TimeTable {
 ```
 
 ```typescript
-// xxx.ets
 import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
 @Entry
 @Component
 struct ListItemGroupExample {
   itemGroupArray: TimeTableDataSource = new TimeTableDataSource([]);
+
   aboutToAppear(): void {
     let timeTable: TimeTable[] = [
       {
@@ -210,6 +221,7 @@ struct ListItemGroupExample {
     ];
     this.itemGroupArray = new TimeTableDataSource(timeTable);
   }
+
   @Builder
   itemHead(text: string) {
     Text(text)
@@ -218,6 +230,7 @@ struct ListItemGroupExample {
       .width('100%')
       .padding(10)
   }
+
   @Builder
   itemFoot(num: number) {
     Text('共' + num + '节课')
@@ -226,6 +239,7 @@ struct ListItemGroupExample {
       .width('100%')
       .padding(5)
   }
+
   build() {
     Column() {
       List({ space: 20 }) {
@@ -242,7 +256,7 @@ struct ListItemGroupExample {
               }
             }, (item: string) => item)
           }
-          .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+          .divider({ strokeWidth: 1, color: Color.Blue })
         })
       }
       .width('90%')
@@ -253,14 +267,13 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/uQQvbNbfT5K7y2LKBe_M0w/zh-cn_image_0000002535140390.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024113Z&HW-CC-Expire=86400&HW-CC-Sign=3120DBBED3B11BD0AFEC81C94C0F5C1F08F70C21CC91881C98922B2D1C81EB1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/JaAoRocWRhCaHsaBLpoukA/zh-cn_image_0000002535949324.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023146Z&HW-CC-Expire=86400&HW-CC-Sign=E01D01F0F2B6FB8B8881A98E916976F23A4097B74434796160C4FD397A37F608)
 
 ### 示例2（设置卡片样式）
 
 该示例展示了ListItemGroup的卡片样式效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ListItemGroupExample2 {
@@ -282,6 +295,7 @@ struct ListItemGroupExample2 {
       itemStyles: [ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.NONE]
     }
   ];
+
   build() {
     Column() {
       List({ space: '4vp', initialIndex: 0 }) {
@@ -307,13 +321,14 @@ struct ListItemGroupExample2 {
     .padding({ top: 5 })
   }
 }
+
 interface ArrObject {
   style: number;
   itemStyles: number[];
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/jqXPXOkdRrKjlk6lT9XiwQ/zh-cn_image_0000002535300328.jpeg?HW-CC-KV=V1&HW-CC-Date=20260403T024113Z&HW-CC-Expire=86400&HW-CC-Sign=2DE3F861AD499430348B25BBC820613E3D2FAAF47C5DBC467DDBFC517A80ED64)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/c4VJlnSgQHKQaLJoS9lCrw/zh-cn_image_0000002566869157.jpeg?HW-CC-KV=V1&HW-CC-Date=20260404T023146Z&HW-CC-Expire=86400&HW-CC-Sign=738E452B63B44E96C050E9A9D79D1DC72CF106EED9F15F53436DF2C2CC2589CB)
 
 ### 示例3（设置Header/Footer）
 
@@ -322,21 +337,23 @@ interface ArrObject {
 ListDataSource说明及完整代码参考[示例1设置吸顶/吸底](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitemgroup#示例1设置吸顶吸底)。
 
 ```typescript
-// xxx.ets
 import { ComponentContent } from '@kit.ArkUI';
 import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
+
 class HeadBuilderParams {
   text: string | Resource;
   constructor(text: string | Resource) {
     this.text = text;
   }
 }
+
 class FootBuilderParams {
   num: number | Resource;
   constructor(num: number | Resource) {
     this.num = num;
   }
 }
+
 @Builder
 function itemHead(params: HeadBuilderParams) {
   Text(params.text)
@@ -346,6 +363,7 @@ function itemHead(params: HeadBuilderParams) {
     .padding(10)
     .backgroundColor($r('sys.color.background_tertiary'))
 }
+
 @Builder
 function itemFoot(params: FootBuilderParams) {
   Text('共' + params.num.toString() + '节课')
@@ -355,6 +373,7 @@ function itemFoot(params: FootBuilderParams) {
     .padding(10)
     .backgroundColor($r('sys.color.background_tertiary'))
 }
+
 @Component
 struct MyItemGroup {
   item: TimeTable = { title: '', projects: [] };
@@ -363,6 +382,7 @@ struct MyItemGroup {
   headerParam = new HeadBuilderParams(this.item.title);
   footerParam = new FootBuilderParams(this.item.projects.length);
   itemArr: ProjectsDataSource = new ProjectsDataSource([]);
+
   aboutToAppear(): void {
     this.header = new ComponentContent(this.getUIContext(), wrapBuilder(itemHead), this.headerParam);
     this.footer = new ComponentContent(this.getUIContext(), wrapBuilder(itemFoot), this.footerParam);
@@ -372,10 +392,12 @@ struct MyItemGroup {
     this.header?.update(new HeadBuilderParams(this.item.title));
     return this.header;
   }
+
   GetFooter() {
     this.footer?.update(new FootBuilderParams(this.item.projects.length));
     return this.footer;
   }
+
   build() {
     ListItemGroup({
       headerComponent: this.GetHeader(),
@@ -391,9 +413,10 @@ struct MyItemGroup {
         }
       }, (item: string) => item)
     }
-    .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+    .divider({ strokeWidth: 1, color: Color.Blue })
   }
 }
+
 @Entry
 @Component
 struct ListItemGroupExample {
@@ -419,6 +442,7 @@ struct ListItemGroupExample {
     ];
     this.itemGroupArray = new TimeTableDataSource(timeTable);
   }
+
   build() {
     Column() {
       Button('update').width(100).height(50).onClick(() => {
@@ -430,7 +454,7 @@ struct ListItemGroupExample {
       List({ space: 20 }) {
         LazyForEach(this.itemGroupArray, (item: TimeTable) => {
           MyItemGroup({ item: item })
-        }, (item: TimeTable) => item.title) // LazyForEach依赖键值判断是否刷新子组件
+        }, (item: TimeTable) => item.title)
       }
       .layoutWeight(1)
       .sticky(StickyStyle.Header | StickyStyle.Footer)
@@ -441,7 +465,7 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Wan00JwnRB2Kr8ClDHaPsQ/zh-cn_image_0000002566020191.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024113Z&HW-CC-Expire=86400&HW-CC-Sign=D953990794BC4D163BC5C25C97DDE4534C033ECB5908516CE134EE8DCE9361C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/IPTHShN9SpeoXu57ODvg0g/zh-cn_image_0000002566709175.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023146Z&HW-CC-Expire=86400&HW-CC-Sign=4F3A2C6CBF1767286D46CD0A2639732C3B0306D967E8B67B6C42A51DE9E5D94F)
 
 ### 示例4（设置多列布局）
 
@@ -450,21 +474,25 @@ struct ListItemGroupExample {
 ListDataSource说明及完整代码参考[示例1设置吸顶/吸底](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitemgroup#示例1设置吸顶吸底)。
 
 ```typescript
-// xxx.ets
 import { ComponentContent } from '@kit.ArkUI';
 import { TimeTable, ProjectsDataSource, TimeTableDataSource } from './ListDataSource';
+
 class HeadBuilderParams {
   text: string | Resource;
+
   constructor(text: string | Resource) {
     this.text = text;
   }
 }
+
 class FootBuilderParams {
   num: number | Resource;
+
   constructor(num: number | Resource) {
     this.num = num;
   }
 }
+
 @Builder
 function itemHead(params: HeadBuilderParams) {
   Text(params.text)
@@ -474,6 +502,7 @@ function itemHead(params: HeadBuilderParams) {
     .padding(10)
     .backgroundColor($r('sys.color.background_tertiary'))
 }
+
 @Builder
 function itemFoot(params: FootBuilderParams) {
   Text('共' + params.num.toString() + '节课')
@@ -483,6 +512,7 @@ function itemFoot(params: FootBuilderParams) {
     .padding(10)
     .backgroundColor($r('sys.color.background_tertiary'))
 }
+
 @Component
 struct MyItemGroup {
   item: TimeTable = { title: '', projects: [] };
@@ -491,19 +521,23 @@ struct MyItemGroup {
   headerParam = new HeadBuilderParams(this.item.title);
   footerParam = new FootBuilderParams(this.item.projects.length);
   itemArr: ProjectsDataSource = new ProjectsDataSource([]);
+
   aboutToAppear(): void {
     this.header = new ComponentContent(this.getUIContext(), wrapBuilder(itemHead), this.headerParam);
     this.footer = new ComponentContent(this.getUIContext(), wrapBuilder(itemFoot), this.footerParam);
     this.itemArr = new ProjectsDataSource(this.item.projects);
   }
+
   GetHeader() {
     this.header?.update(new HeadBuilderParams(this.item.title));
     return this.header;
   }
+
   GetFooter() {
     this.footer?.update(new FootBuilderParams(this.item.projects.length));
     return this.footer;
   }
+
   build() {
     ListItemGroup({
       headerComponent: this.GetHeader(),
@@ -511,7 +545,7 @@ struct MyItemGroup {
     }) {
       LazyForEach(this.itemArr, (project: string) => {
         ListItem() {
-          // 修改ListItem样式以适应多列布局
+
           Column() {
             Text(project)
               .fontSize(20)
@@ -540,10 +574,12 @@ struct MyItemGroup {
     })
   }
 }
+
 @Entry
 @Component
 struct ListItemGroupExample {
   itemGroupArray: TimeTableDataSource = new TimeTableDataSource([]);
+
   aboutToAppear(): void {
     let timeTable: TimeTable[] = [
       {
@@ -569,6 +605,7 @@ struct ListItemGroupExample {
     ];
     this.itemGroupArray = new TimeTableDataSource(timeTable);
   }
+
   build() {
     Column() {
       List({ space: 15 }) {
@@ -576,8 +613,8 @@ struct ListItemGroupExample {
           MyItemGroup({ item: item })
         }, (item: TimeTable) => item.title)
       }
-      .lanes(3) // 设置3列布局
-      .alignListItem(ListItemAlign.Center) // 交叉轴居中对齐
+      .lanes(3)
+      .alignListItem(ListItemAlign.Center)
       .layoutWeight(1)
       .scrollBar(BarState.Auto)
       .width('100%')
@@ -591,4 +628,4 @@ struct ListItemGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/YsqFZ7HZTFSJk95OLK1Nrw/zh-cn_image_0000002566100203.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024113Z&HW-CC-Expire=86400&HW-CC-Sign=AAE935254A416AB493DD84E325CC0A24C017FEE922C2C90B8F5B6CF581F17A32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/cVxhVPyNRnK1cPnloAJrmQ/zh-cn_image_0000002535789380.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023146Z&HW-CC-Expire=86400&HW-CC-Sign=4AFB0E4CDFFC7BE62ACE7531C3A2BAAE5C1076DDE524C5FFC4CC2BD39C78C547)

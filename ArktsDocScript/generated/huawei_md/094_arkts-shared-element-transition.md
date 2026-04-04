@@ -7,7 +7,7 @@
 
 | 一帧切换效果 | 一镜到底效果 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/TbNeAIL1SA6mPi1C72semw/zh-cn_image_0000002566099393.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023644Z&HW-CC-Expire=86400&HW-CC-Sign=C26DAD4A70ACD8E0F8872427211B1B6751C35764B9D7E4FE6C95D5E997597847) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/KGHP_hcqTc2VJDr6tIEcWw/zh-cn_image_0000002535139582.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023644Z&HW-CC-Expire=86400&HW-CC-Sign=C414158DF1F38236730D7041CA2079D09DE083DD2AE9626A0B2A7FA26D0CF0AF) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/ZTsLa1OLQN2jDrPB9Cc3NA/zh-cn_image_0000002535948512.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023055Z&HW-CC-Expire=86400&HW-CC-Sign=6AC11DDC1759E15AA473BBBC3AD0B6B31AFA0C9CA55A1F95AF3427C406B40192) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ORyRCJk6Qw2FGG7eyQANcA/zh-cn_image_0000002566868345.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023055Z&HW-CC-Expire=86400&HW-CC-Sign=6A9E31B3DC245388C22F02EC29CFE7F77B2C5FD18DB231AE7E636BBBB7B6E835) |
 
 一镜到底的动效有多种实现方式，在实际开发过程中，应根据具体场景选择合适的方法进行实现。
 
@@ -181,7 +181,7 @@ export default struct Post {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/p6BR2NueQAqcIvc9_2W7lA/zh-cn_image_0000002535299520.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023644Z&HW-CC-Expire=86400&HW-CC-Sign=D0E003BDAE19054BB0B59E8FE8C7FED0E13750DC0D4514E3FAF7AD64F458CA52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/fryS4J65T42_pUJx46hw5Q/zh-cn_image_0000002566708363.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023055Z&HW-CC-Expire=86400&HW-CC-Sign=1F7B501F102706DA914BA722476551E6A4AC312AEC44A8A084253AA41CCBC3C8)
 
 ## 新建容器并跨容器迁移组件
 
@@ -555,7 +555,7 @@ export const deleteNode = (id: string) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/aF_ZleSuRKCe8XkPKa0FzQ/zh-cn_image_0000002566019383.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023644Z&HW-CC-Expire=86400&HW-CC-Sign=81E615D777AB3F92A3F2959A1E1067A86F9A18823F706727C2B4A7F4640BF1D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/OI6-UF2yQty3112S7kwheg/zh-cn_image_0000002535788568.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023055Z&HW-CC-Expire=86400&HW-CC-Sign=7B775C207F6BF727294B28CE83622FD7DA8A907F29BE6D68DC23DF01055A4919)
 
 ### 结合Navigation使用
 
@@ -1292,7 +1292,7 @@ export const getMyNode = (): MyNodeController | undefined => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MIn2qTEXTheQvtfW6bmxGA/zh-cn_image_0000002566099395.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023644Z&HW-CC-Expire=86400&HW-CC-Sign=C742376BA24AA2EB7ED694EF09A2701BA78B6268CC9C3FF33D794B15C0B05132)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/72inc5jMT523FoyRNI1IVg/zh-cn_image_0000002535948514.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023055Z&HW-CC-Expire=86400&HW-CC-Sign=A39AE49EAFF05A61165B1622CCDC0FBD70ED7CC29CC8ADC92BDF8B76AAE58747)
 
 ### 结合BindSheet使用
 
@@ -1814,7 +1814,7 @@ export default class EntryAbility extends UIAbility {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/5jul_bHFRamvfL9VNgLmtQ/zh-cn_image_0000002535139584.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023644Z&HW-CC-Expire=86400&HW-CC-Sign=63A85945571BF5BCBC0F8E11888E212BB25C20A0BA43D6C6BFCCE1F9B70804B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/8SAijKTTTuSPqAWRDFy-aQ/zh-cn_image_0000002566868347.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023055Z&HW-CC-Expire=86400&HW-CC-Sign=9B580F69A07A3108569D94F9E336BFEF43F15B9DCF8F3F5993F8BFA223E99FEA)
 
 ## 使用geometryTransition共享元素转场
 
@@ -1884,7 +1884,7 @@ struct IfElseGeometryTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Ofh2BJ7aTZqXDS7Br7AaYA/zh-cn_image_0000002535299522.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023644Z&HW-CC-Expire=86400&HW-CC-Sign=25D8B99C0D8BDFB522E9825AA4A9ED1F175F05F4DC2CF3398E3C6A70607D19DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ZHtk-tHmSru6QiRSviDDvA/zh-cn_image_0000002566708365.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023055Z&HW-CC-Expire=86400&HW-CC-Sign=B731871D6125346CFEDDF81AC7FB3A35DE45BE75CEED44994394222DD69D7732)
 
 ### geometryTransition结合模态转场使用
 
@@ -2065,7 +2065,7 @@ export default struct Post {
 
 效果为点击主页的头像后，弹出模态页面显示个人信息，并且两个页面之间的头像做一镜到底动效：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/sGfvW4XgT1G4tMISankBzQ/zh-cn_image_0000002566019385.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023644Z&HW-CC-Expire=86400&HW-CC-Sign=3631696F52C704E2B4BF05D8A821350770ADFF444C3192DCDC5A7766C2B36718)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/nO_bAIKrQs6oJwHof70kXw/zh-cn_image_0000002535788570.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023055Z&HW-CC-Expire=86400&HW-CC-Sign=27769B08CBBB7E00B5B7212D89D8BB20174B0D82F3C29B7EEBDB0EA09EF5F94A)
 
 ## 示例代码
 

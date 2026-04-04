@@ -121,8 +121,8 @@ struct PixelRoundExample {
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/1ZNgtVOKTnG6SIAMw2d82g/zh-cn_image_0000002535300214.png?HW-CC-KV=V1&HW-CC-Date=20260403T024051Z&HW-CC-Expire=86400&HW-CC-Sign=826BF509DDC2AEE5C3DCBDD6492B98286B9ECB2F2761E2C66346EA92FEDED3C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/s1AXYVMbTgS1CLv4hAwJmw/zh-cn_image_0000002566869043.png?HW-CC-KV=V1&HW-CC-Date=20260404T023127Z&HW-CC-Expire=86400&HW-CC-Sign=E4CC519EE5F4121E7782E94CC3C34D7AE1913C121513B65467008345E9150E0C)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Rb-OtGzuQJigB_CjcMhzww/zh-cn_image_0000002566020077.png?HW-CC-KV=V1&HW-CC-Date=20260403T024051Z&HW-CC-Expire=86400&HW-CC-Sign=52C00B31384B06E78AC7DBB36969A4BD0B92E93BE1980C86F49F3AA81B9A514F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/hSNOaCdAQ0eqS9EncL3_Aw/zh-cn_image_0000002566709061.png?HW-CC-KV=V1&HW-CC-Date=20260404T023127Z&HW-CC-Expire=86400&HW-CC-Sign=8FF22FD723E8AB6A99D4A027A263F5498E961270723815A191120593CD6D22DC)

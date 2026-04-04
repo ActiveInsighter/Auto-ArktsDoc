@@ -20,7 +20,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Wt-UfIzkS9moKqAcXKqT0w/zh-cn_image_0000002566019313.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023951Z&HW-CC-Expire=86400&HW-CC-Sign=B85DB3BBB94DE9BE58A023A86364BE5FDECC94FDA9B2AE49CFF0540D33A9F2D4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/aZYeXOuBSqCAw7BCefK7mg/zh-cn_image_0000002535788498.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023038Z&HW-CC-Expire=86400&HW-CC-Sign=5A80E40752603A24845CC7783464408E7031A398590FD3C7195A32E4DC6609F3)
 
 ### 创建ComponentContent
 
@@ -37,29 +37,29 @@ private contentNode: ComponentContent<Object> =
 @Builder
 export function buildText(params: Params) {
   Popup({
-    // 类型设置图标内容
+
     icon: {
-      // 请将$r('app.media.app_icon')替换为实际资源文件
+
       image: $r('app.media.app_icon'),
       width: 32,
       height: 32,
       fillColor: Color.White,
       borderRadius: 10
     } as PopupIconOptions,
-    // 设置文字内容
+
     title: {
       text: `This is a Popup title 1`,
       fontSize: 20,
       fontColor: Color.Black,
       fontWeight: FontWeight.Normal
     } as PopupTextOptions,
-    // 设置文字内容
+
     message: {
       text: `This is a Popup message 1`,
       fontSize: 15,
       fontColor: Color.Black
     } as PopupTextOptions,
-    // 设置按钮内容
+
     buttons: [{
       text: 'confirm',
       action: () => {
@@ -78,6 +78,7 @@ export function buildText(params: Params) {
       },] as [PopupButtonOptions?, PopupButtonOptions?]
   })
 }
+
 let contentNode: ComponentContent<Object> =
   new ComponentContent(uiContext, wrapBuilder(buildText), message, { nestingBuilderSupported: true });
 ```
@@ -116,7 +117,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/JPNgpMr8SX6XcHDeFlYRoA/zh-cn_image_0000002566019313.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023951Z&HW-CC-Expire=86400&HW-CC-Sign=21D338D50BFB2C0AB4C30609E0FBDF0646D18991E024A7AC00F8AB9869481D4C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/BBv1EgvETVaSl0sCc3LKag/zh-cn_image_0000002535788498.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023038Z&HW-CC-Expire=86400&HW-CC-Sign=B85B86B4C54BB1CD04C70F2E48150B5DCC12F74BE29497C7E6EC23EBA17EF5BF)
 
 ## 关闭菜单
 
@@ -133,7 +134,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/tShWh8L0R9yU8kewUIytBg/zh-cn_image_0000002566019313.gif?HW-CC-KV=V1&HW-CC-Date=20260403T023951Z&HW-CC-Expire=86400&HW-CC-Sign=FCAC7C9CA85C777B0B65908488CCE393CA336BA0AE1750C034E814D18EC2C088)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/KYftOwtkRcGjmvDs9d9b1w/zh-cn_image_0000002535788498.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023038Z&HW-CC-Expire=86400&HW-CC-Sign=89897DA779C079510866726CCECDFE095A5052BA61F0D9948EB74BC42B09A586)
 
 > **说明**
 > 由于[updateMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#updatemenu18)和[closeMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#closemenu18)依赖content来更新或者关闭指定的菜单，开发者需自行维护传入的content。

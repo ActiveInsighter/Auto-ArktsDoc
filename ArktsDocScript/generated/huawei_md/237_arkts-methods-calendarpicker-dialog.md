@@ -116,7 +116,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/JFimx3wQSYuj2pqMv2zVIw/zh-cn_image_0000002535140800.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024315Z&HW-CC-Expire=86400&HW-CC-Sign=A1CBFAF3281855D5E81C2E9EF72703373E6ED378881548AAFA7D56B873807B09)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/-pVkOE7ZSyO-14bdgoZxbQ/zh-cn_image_0000002535949734.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023327Z&HW-CC-Expire=86400&HW-CC-Sign=52192D8FC6484E2319A316012557E391CE100F92CA9CC4A459DAFE801DF07352)
 
 ### 示例2（自定义按钮样式）
 
@@ -171,7 +171,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Z6iEarv1QWq2bflS06kXjg/zh-cn_image_0000002535300738.png?HW-CC-KV=V1&HW-CC-Date=20260403T024315Z&HW-CC-Expire=86400&HW-CC-Sign=81300C3B5197FECFF751E9A3BAED0808DF07EB1329139A4F2C27A97F24852A27)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/0miTBKfLTtqYIHq8-m7Gow/zh-cn_image_0000002566869567.png?HW-CC-KV=V1&HW-CC-Date=20260404T023327Z&HW-CC-Expire=86400&HW-CC-Sign=E730B12E90348F351A7E48540757935D75A2A3C595E9FE497283FBC32C540ACD)
 
 ### 示例3（悬停态弹窗）
 
@@ -221,7 +221,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/maDuDvkjQ2uM48EnyBmsow/zh-cn_image_0000002566020601.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024315Z&HW-CC-Expire=86400&HW-CC-Sign=99740A5A31424D1679FFA5B8BE1AEAC6F93093C53E3FAB0D7DA6355FB275C8F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/-C5KfM8nT2eFijr6SXflgg/zh-cn_image_0000002566709585.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023327Z&HW-CC-Expire=86400&HW-CC-Sign=A474BFBB6F3066FD8967F11C6FE5F963E7F5264FF58CD4E7A3628FFA1C424A2E)
 
 ### 示例4（设置日期选中态底板样式）
 
@@ -253,7 +253,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lh4RUeNUQnuXeGn4B8KkKg/zh-cn_image_0000002566100613.png?HW-CC-KV=V1&HW-CC-Date=20260403T024315Z&HW-CC-Expire=86400&HW-CC-Sign=48CF96D0DFE127311981ECCC05D57DD3E558C2239E9F9D9908C7891AB6A2746F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/UhpoE8rdT5mbmfXDUdAe-A/zh-cn_image_0000002535789790.png?HW-CC-KV=V1&HW-CC-Date=20260404T023327Z&HW-CC-Expire=86400&HW-CC-Sign=F93CCB60D511D35D4A580884FEAD1E1CDEDACC4B86CE178AB3B73D0CA50012E4)
 
 ### 示例5（设置开始日期和结束日期）
 
@@ -285,7 +285,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/gKwgZ_FxRnG37DqDTK2DUQ/zh-cn_image_0000002535140802.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024315Z&HW-CC-Expire=86400&HW-CC-Sign=450B809F2C012DB56B20E08754D3476D16BAC2E5A981CE232D254ABD044790E7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/6vz1YmYkQcKqHRj5PWr2Cg/zh-cn_image_0000002535949736.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023327Z&HW-CC-Expire=86400&HW-CC-Sign=3FD89F4E6072499B3EB5CBEAFA820A86E1940C7A5C62A0F3646EDC624AF6D06D)
 
 ### 示例6（设置系统当前日期在日历选择器弹窗内保持高亮显示，并设置禁用日期区间）
 
@@ -316,7 +316,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/41PCP6p_QjeiO_by8-sNuw/zh-cn_image_0000002535300740.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024315Z&HW-CC-Expire=86400&HW-CC-Sign=8FDEF6B93E4176D136451717F17262BCF4F8DF5EFA37BCCCC28C2C758CE5C27B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/LD-2JrGsSCCDvgEsU9ctug/zh-cn_image_0000002566869569.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023327Z&HW-CC-Expire=86400&HW-CC-Sign=4F5FCD6E4D1B3E3B47561938450D6D26710E1A45A784A25C43CC3C8AC3C49E20)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -355,7 +355,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/OGkY4ZkLSZ61v6hEeeyWBA/zh-cn_image_0000002566020603.png?HW-CC-KV=V1&HW-CC-Date=20260403T024315Z&HW-CC-Expire=86400&HW-CC-Sign=61540C51322118836B8358F18EB212B649E497BA09426FDCF3639D0150A54C23)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Se1cVj7mSiSauzkeiFklKQ/zh-cn_image_0000002566709587.png?HW-CC-KV=V1&HW-CC-Date=20260404T023327Z&HW-CC-Expire=86400&HW-CC-Sign=FB28249B8BDE8E589FDD7AFD6F879C693F3013DA0EE629FA647780F19074CC86)
 
 ### 示例8（自定义背景效果参数）
 
@@ -395,4 +395,4 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/-dIczFlAR2WJwVLum5Wrqg/zh-cn_image_0000002566100615.png?HW-CC-KV=V1&HW-CC-Date=20260403T024315Z&HW-CC-Expire=86400&HW-CC-Sign=378943CBBB97B6DF4CB7210EC38A0C172BE8CF90788E203E18D658C1FFC5A69F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/rOdnb3V2S5ypZSotDmfCcg/zh-cn_image_0000002535789792.png?HW-CC-KV=V1&HW-CC-Date=20260404T023327Z&HW-CC-Expire=86400&HW-CC-Sign=6E459FCB89B2C438897C1F5D41AFFAACE08A3CAA217C00BDCE56D00AF9533C13)

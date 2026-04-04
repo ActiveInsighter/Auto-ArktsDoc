@@ -12,12 +12,14 @@ class TraditionalCurve {
   public title: string;
   public curve: Curve;
   public color: Color | string;
+
   constructor(title: string, curve: Curve, color: Color | string = '') {
     this.title = title;
     this.curve = curve;
     this.color = color;
   }
 }
+
 const traditionalCurves: TraditionalCurve[] = [
   new TraditionalCurve(' Linear', Curve.Linear, '#317AF7'),
   new TraditionalCurve(' Ease', Curve.Ease, '#D94838'),
@@ -26,13 +28,15 @@ const traditionalCurves: TraditionalCurve[] = [
   new TraditionalCurve(' EaseInOut', Curve.EaseInOut, '#317AF7'),
   new TraditionalCurve(' FastOutSlowIn', Curve.FastOutSlowIn, '#D94838')
 ]
+
 @Entry
 @Component
 struct CurveDemo {
-  @State dRotate: number = 0; // 旋转角度
+  @State dRotate: number = 0;
+
   build() {
     Column() {
-      // 曲线图例
+
       Grid() {
         ForEach(traditionalCurves, (item: TraditionalCurve) => {
           GridItem() {
@@ -56,8 +60,9 @@ struct CurveDemo {
       .width('100%')
       .height(300)
       .margin({ top: 50 })
+
       Stack() {
-        // 摆动管道
+
         Row()
           .width(290)
           .height(290)
@@ -66,8 +71,9 @@ struct CurveDemo {
             color: 0xE6E8EB,
             radius: 145
           })
+
         ForEach(traditionalCurves, (item: TraditionalCurve) => {
-          // 小球
+
           Column() {
             Row()
               .width(30)
@@ -97,4 +103,4 @@ struct CurveDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/JfWAd4SsTaereFoaVopEkA/zh-cn_image_0000002566099403.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024019Z&HW-CC-Expire=86400&HW-CC-Sign=A49DAE2239A2A440FD6C7F1867F44DAF5569F09279E5A285FAEC07276AC257B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ZYp01i8VQA60cdbk25ZOYg/zh-cn_image_0000002535948522.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023102Z&HW-CC-Expire=86400&HW-CC-Sign=A58BB16D3DE4F672A5EF3A7A978FE747CD057093148651AEB148148E954935E4)

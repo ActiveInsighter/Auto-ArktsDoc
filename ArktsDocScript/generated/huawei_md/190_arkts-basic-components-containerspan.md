@@ -97,7 +97,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/0C4PzucsRDejlbrZxbgnhQ/zh-cn_image_0000002566020369.png?HW-CC-KV=V1&HW-CC-Date=20260403T024216Z&HW-CC-Expire=86400&HW-CC-Sign=DED5F5CC33E0A538694967EA65A42DF27D82C60ABF9636E60B15770CA45FEA79)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/tAycs1nLTVGcLbjT6bbJtQ/zh-cn_image_0000002566709353.png?HW-CC-KV=V1&HW-CC-Date=20260404T023239Z&HW-CC-Expire=86400&HW-CC-Sign=F8810586DE6406CC1191D93363EB69BF723063F06954AA5C1B36A53D98F07876)
 
 ### 示例2（通过attributeModifier设置背景样式）
 
@@ -135,4 +135,4 @@ struct ContainerSpanModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/nw4wdGxlQo-hseC4P6sy_w/zh-cn_image_0000002566100381.png?HW-CC-KV=V1&HW-CC-Date=20260403T024216Z&HW-CC-Expire=86400&HW-CC-Sign=BF0B98E94E4D0E58D4A5B5E36FC8F6403A5C2BACBDC9726A812916A8503901ED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/uyqW44ZDQoak_GuQQ1gQSw/zh-cn_image_0000002535789558.png?HW-CC-KV=V1&HW-CC-Date=20260404T023239Z&HW-CC-Expire=86400&HW-CC-Sign=F9173809511B440A3A7E48AD6DAAD3DA3715737D5A64BC1A63D0AA3624311B4C)

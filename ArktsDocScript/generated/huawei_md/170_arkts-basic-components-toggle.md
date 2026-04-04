@@ -48,6 +48,9 @@ Toggle的信息。
 
 Toggle的样式。
 
+> **说明**
+> Toggle的样式继承对应组件样式的默认值，且不支持设置。例如，如果ToggleType为Button，则该组件样式继承[ButtonType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#buttontype枚举说明)的默认值。由于Button.type从API version 18开始，默认类型从胶囊型变更为圆角矩形，胶囊型按钮不支持设置[borderRadius](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#borderradius)，此时使用Toggle组件设置borderRadius也不生效。
+
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
@@ -252,7 +255,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/uw61fUP5QqSmd0RhoRBGtQ/zh-cn_image_0000002566020267.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024146Z&HW-CC-Expire=86400&HW-CC-Sign=F422AB9A8B4B9630389BDC19D068C9A36544F5D390F6D0A80494BBC2433A7407)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/wcj6vutSThGJImqbnsJ45g/zh-cn_image_0000002566709251.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023212Z&HW-CC-Expire=86400&HW-CC-Sign=7D83E4AD782AE48E0DDB4C38F31489C48C36A10FCE88B55BA3176021A008100D)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -293,7 +296,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/P_jD9jQUSOm9QpbHJ5MrEw/zh-cn_image_0000002566100279.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024146Z&HW-CC-Expire=86400&HW-CC-Sign=E29C8E3A4B81E640BD27BEBA3185E461A2E23666B69F59CEDB99D3D7AF0B04B9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/GU4Lac_NS_iL7LHipwomuQ/zh-cn_image_0000002535789456.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023212Z&HW-CC-Expire=86400&HW-CC-Sign=7A8DD21656DA2E29CDA879EB7BBC23B2A52ABD4C0579092FEE91C1E758ADB14D)
 
 ### 示例3（自定义Toggle样式）
 
@@ -348,4 +351,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Q8_RobfVRDeTOBuM7RXGVw/zh-cn_image_0000002535140468.gif?HW-CC-KV=V1&HW-CC-Date=20260403T024146Z&HW-CC-Expire=86400&HW-CC-Sign=653B5B50701B6B190EA6559439BA07BADA24BE4C00264C4405A9B83B92AF6290)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/oofZUk1fS0KZQaoC-RFKCg/zh-cn_image_0000002535949402.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023212Z&HW-CC-Expire=86400&HW-CC-Sign=17DE1D56ADB2E500DF705DEF5983F4BAEFE72D32C2B084FB7C8A6A1B3D9611D8)
