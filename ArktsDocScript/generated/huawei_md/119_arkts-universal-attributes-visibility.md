@@ -56,4 +56,4 @@ struct VisibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/R3WyJwHSTZmUsqTe6Ne9VA/zh-cn_image_0000002535789240.png?HW-CC-KV=V1&HW-CC-Date=20260404T023116Z&HW-CC-Expire=86400&HW-CC-Sign=5CBA432045C795B4CF4B008EA89478DEBCA35A52635EB601C05321A0E22654F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/R3WyJwHSTZmUsqTe6Ne9VA/zh-cn_image_0000002535789240.png?HW-CC-KV=V1&HW-CC-Date=20260405T024839Z&HW-CC-Expire=86400&HW-CC-Sign=E885DD72238E78C0A5001FEE926EEB9EF3396FA6175694578C8B9FB537E61FD9)

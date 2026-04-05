@@ -185,10 +185,9 @@ Menu子菜单展开样式枚举。
 @Component
 struct Index {
   @State select: boolean = true;
-
+  // $r('app.media.xxx')需要替换为开发者所需的图像资源文件。
   private iconStr: ResourceStr = $r("app.media.view_list_filled");
   private iconStr2: ResourceStr = $r("app.media.arrow_right_filled");
-
   @Builder
   SubMenu() {
     Menu() {
@@ -196,7 +195,6 @@ struct Index {
       MenuItem({ content: "粘贴", labelInfo: "Ctrl+V" })
     }
   }
-
   @Builder
   MyMenu(){
     Menu() {
@@ -229,7 +227,6 @@ struct Index {
       })
     }
   }
-
   build() {
     Row() {
       Column() {
@@ -245,15 +242,15 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/7ytUnQjuSKabOL8KjsvOxQ/zh-cn_image_0000002535949706.png?HW-CC-KV=V1&HW-CC-Date=20260404T023310Z&HW-CC-Expire=86400&HW-CC-Sign=3D31EC097DF78D048407DD3AA82275ECD3ACED80088117F08D4FABF71E09AACA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/7ytUnQjuSKabOL8KjsvOxQ/zh-cn_image_0000002535949706.png?HW-CC-KV=V1&HW-CC-Date=20260405T025051Z&HW-CC-Expire=86400&HW-CC-Sign=F1178748A5BEF19235A12813F2177D7CAC44221DAC319B0244AEB8DD67A3806B)
 
 ### 示例2（设置symbol类型图标）
 
 该示例通过配置symbolStartIcon、symbolEndIcon实现symbol类型图标的菜单。
 
 ```typescript
+// xxx.ets
 import { SymbolGlyphModifier } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct Index {
@@ -262,7 +259,6 @@ struct Index {
   @State selectIconModifier: SymbolGlyphModifier =
     new SymbolGlyphModifier($r('sys.symbol.checkmark')).fontSize('24vp');
   @State select: boolean = true;
-
   @Builder
   SubMenu() {
     Menu() {
@@ -270,7 +266,6 @@ struct Index {
       MenuItem({ content: "粘贴", labelInfo: "Ctrl+V" })
     }
   }
-
   @Builder
   MyMenu() {
     Menu() {
@@ -302,7 +297,6 @@ struct Index {
       }).selected(this.select).selectIcon(this.selectIconModifier)
     }
   }
-
   build() {
     Row() {
       Column() {
@@ -318,7 +312,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/pIJixJetT2mY_c1dhkClfQ/zh-cn_image_0000002566869539.png?HW-CC-KV=V1&HW-CC-Date=20260404T023310Z&HW-CC-Expire=86400&HW-CC-Sign=C3AD6B8F68C5F2055972A49B1D33008F5A3AABBA1333598CEB4B96B736665B7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/pIJixJetT2mY_c1dhkClfQ/zh-cn_image_0000002566869539.png?HW-CC-KV=V1&HW-CC-Date=20260405T025051Z&HW-CC-Expire=86400&HW-CC-Sign=1572D03DA1A99295C146A54F00218B788D0DB54867946462C387DC25FF00CD2D)
 
 ### 示例3（设置Menu子菜单展开符号）
 
@@ -326,7 +320,6 @@ struct Index {
 
 ```typescript
 import { SymbolGlyphModifier } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct Index {
@@ -334,7 +327,6 @@ struct Index {
   @State endIconModifier: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_mic'))
   @State expandSymbolModifier: SymbolGlyphModifier =
     new SymbolGlyphModifier($r('sys.symbol.chevron_down')).fontColor([Color.Red]).fontSize('24vp')
-
   @Builder
   SubMenu() {
     Menu() {
@@ -348,7 +340,6 @@ struct Index {
       })
     }.backgroundColor(Color.Grey)
   }
-
   @Builder
   MyMenu() {
     Menu() {
@@ -373,7 +364,6 @@ struct Index {
     .backgroundColor(Color.Grey)
     .subMenuExpandSymbol(this.expandSymbolModifier)
   }
-
   build() {
     Button('click to show menu')
       .position({ top: 40, left: 40 })
@@ -382,7 +372,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/xwBPfkyEQYG6H6SDnBT6Ng/zh-cn_image_0000002566709557.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023310Z&HW-CC-Expire=86400&HW-CC-Sign=7A4654AAE2A8824BDAC2E0BD5F768A61EC1C40E4B1685BAE6EC1317D881B7F61)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/xwBPfkyEQYG6H6SDnBT6Ng/zh-cn_image_0000002566709557.gif?HW-CC-KV=V1&HW-CC-Date=20260405T025051Z&HW-CC-Expire=86400&HW-CC-Sign=BB2122833AB012D7CEA5BB535AAF54C8D437E04D7870B70CC7840C364216B165)
 
 ### 示例4（设置分割线样式）
 
@@ -390,11 +380,9 @@ struct Index {
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI'
-
 @Entry
 @Component
 struct Index {
-
   @Builder
   MyMenu() {
     Menu() {
@@ -418,7 +406,6 @@ struct Index {
       mode: DividerMode.EMBEDDED_IN_MENU
     })
   }
-
   build() {
     RelativeContainer() {
       Button("show menu")
@@ -430,4 +417,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/1qhz9zxBQ0qRQ81KydB8hw/zh-cn_image_0000002535789762.png?HW-CC-KV=V1&HW-CC-Date=20260404T023310Z&HW-CC-Expire=86400&HW-CC-Sign=0927D67272C8E78BF0B8339C9968E13E29CD65372ABC4D12A8D65D4B6D8ED02F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/1qhz9zxBQ0qRQ81KydB8hw/zh-cn_image_0000002535789762.png?HW-CC-KV=V1&HW-CC-Date=20260405T025051Z&HW-CC-Expire=86400&HW-CC-Sign=83FBEA4A452B20663DF5968854924D0062D55AC731FA4715944DD4765034B224)

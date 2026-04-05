@@ -22,7 +22,7 @@ Radio({ value: 'Radio2', group: 'radioGroup' })
   .checked(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/SGwcJo65TC-bK76WvAkpBQ/zh-cn_image_0000002566868239.png?HW-CC-KV=V1&HW-CC-Date=20260404T023022Z&HW-CC-Expire=86400&HW-CC-Sign=961E2A031946504B1B247B48A1FC2629DC6CF491B3ED122805AFC6CFFC924B7C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/SGwcJo65TC-bK76WvAkpBQ/zh-cn_image_0000002566868239.png?HW-CC-KV=V1&HW-CC-Date=20260405T024738Z&HW-CC-Expire=86400&HW-CC-Sign=343120284427CE424D9ACA05CE425F8BBB704D0D97D860D97F4A2DF42B5ADED7)
 
 ## 添加事件
 
@@ -104,4 +104,4 @@ export struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/zoDWTO_bT9WefddWfuy8Yg/zh-cn_image_0000002566708259.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023022Z&HW-CC-Expire=86400&HW-CC-Sign=342BEF21833627CA2EEEC97F290C7A970587B5835B3EE4E4D5C9EBB286760551)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/zoDWTO_bT9WefddWfuy8Yg/zh-cn_image_0000002566708259.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024738Z&HW-CC-Expire=86400&HW-CC-Sign=4DEC3BC5E7C74C4834F28B9A6CA3F66DBEEBFE59C144D413FFBB1269292C428A)

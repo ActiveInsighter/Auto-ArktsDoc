@@ -402,7 +402,7 @@ struct TransitionEffectExample1 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0C55uBUZRgOiHkeVWH0LIw/zh-cn_image_0000002566869545.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023318Z&HW-CC-Expire=86400&HW-CC-Sign=58D6D8679D0220D292038D7CCB9121F533DA7D8DA08D2353D1288F49F0F9E8AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/0C55uBUZRgOiHkeVWH0LIw/zh-cn_image_0000002566869545.gif?HW-CC-KV=V1&HW-CC-Date=20260405T025101Z&HW-CC-Expire=86400&HW-CC-Sign=31CF4919C7BCA9C482C210DFD01E98C6BA8872548A55CFC5D95039C02CFD5C4B)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
@@ -458,7 +458,7 @@ struct TransitionEffectExample2 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/VWrMny8ERgy4HyF6Dm20QQ/zh-cn_image_0000002566709563.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023318Z&HW-CC-Expire=86400&HW-CC-Sign=4C20AEE6AAB050B677207B5C13797AC73AC929E8881116684E7C2EA3EF774906)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/VWrMny8ERgy4HyF6Dm20QQ/zh-cn_image_0000002566709563.gif?HW-CC-KV=V1&HW-CC-Date=20260405T025101Z&HW-CC-Expire=86400&HW-CC-Sign=35E8F7626CC14E851582A7AB52B08D95239F74C47637C565587ED2668D9209AE)
 
 ### 示例3（设置父子组件为transition）
 
@@ -515,4 +515,4 @@ struct TransitionEffectExample3 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/E6DREiDlRmO5ECTy7j1U5w/zh-cn_image_0000002535789768.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023318Z&HW-CC-Expire=86400&HW-CC-Sign=070B9FB26946FD3B332F28759A5FD06356B28D33C27B9D05BED5EDFAA8BCB6CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/E6DREiDlRmO5ECTy7j1U5w/zh-cn_image_0000002535789768.gif?HW-CC-KV=V1&HW-CC-Date=20260405T025101Z&HW-CC-Expire=86400&HW-CC-Sign=69F2A5B7E61AA2555263109B1DB10437E1EEDDD456BE6058171E67995FA22FD2)

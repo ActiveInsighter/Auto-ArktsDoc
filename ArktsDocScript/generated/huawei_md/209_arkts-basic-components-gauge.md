@@ -292,6 +292,7 @@ struct Gauge1 {
       .height('100%')
       .textAlign(TextAlign.Center)
   }
+
   build() {
     Column() {
       Gauge({ value: 50, min: 1, max: 100 }) {
@@ -339,7 +340,7 @@ struct Gauge1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/OE_-TMUzQPGNaYeaiBrhsw/zh-cn_image_0000002566869425.png?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=02B5AE049060A9910549D34698D8150C4502F681E3B1A1116D843608F260E02C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/OE_-TMUzQPGNaYeaiBrhsw/zh-cn_image_0000002566869425.png?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=E1132A0CDDFCF1ADF52A0985579C1C7A564FBC53822FFE8D7FB0D5C92B5C24C0)
 
 ### 示例2（设置单色量规图）
 
@@ -353,6 +354,7 @@ struct Gauge2 {
   descriptionBuilderImage() {
     Image($r('sys.media.ohos_ic_public_clock')).width(72).height(72)
   }
+
   build() {
     Column() {
       Gauge({ value: 50, min: 1, max: 100 }) {
@@ -382,7 +384,7 @@ struct Gauge2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/axOOxaz7Qy-CWnm_38gQcA/zh-cn_image_0000002566709443.png?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=83B76ECD5EDE2BAF38B52842F48F754ECDB6608BAE760144A30627322D69B907)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/axOOxaz7Qy-CWnm_38gQcA/zh-cn_image_0000002566709443.png?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=BE3E77E3DB371D77658643CB806E0B9C5A6CDDF65CB57A7B2A19442526C8B2AD)
 
 ### 示例3（设置定制说明区）
 
@@ -403,6 +405,7 @@ struct Gauge2 {
         .height('100%')
         .textAlign(TextAlign.Center)
     }
+
     build() {
       Column() {
         Column() {
@@ -443,7 +446,7 @@ struct Gauge2 {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/629qAVffT8W3hom9f7I3Gw/zh-cn_image_0000002535789648.png?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=654331FE342B396A2554F2EF05BFA6A07B642E3990975E80EEF3C7A02A899EC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/629qAVffT8W3hom9f7I3Gw/zh-cn_image_0000002535789648.png?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=ACFCFD45F4474967199F85EAA94CB572DD5DE6AEB2B974D68016ADC6FB799279)
 
 ### 示例4（设置辅助区）
 
@@ -498,7 +501,7 @@ struct Gauge4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/4InzV2_bSCW-w6yl1jDoJw/zh-cn_image_0000002535949594.png?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=272F1C48371CC139542E9292288ABA6258005F991B2E19054754CD5A69157F3C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/4InzV2_bSCW-w6yl1jDoJw/zh-cn_image_0000002535949594.png?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=F64FE48BA254507D1298D6CE75BDDC5D844C862C79F0A73760020DD4344F4063)
 
 ### 示例5（设置最大最小值）
 
@@ -540,7 +543,7 @@ struct Gauge5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/8YMOB04MSJyI_ZWnVkGbRw/zh-cn_image_0000002566869427.png?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=4BA3E4E639A1A1ED0F0F66BEE6462AE3DE785AC62EAECF07849AA29CF5E9EF02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/8YMOB04MSJyI_ZWnVkGbRw/zh-cn_image_0000002566869427.png?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=08D85826B51E92B978CFDCF4021700921CC5DB08E9C757B9AEB2B9E5394AC496)
 
 ### 示例6（设置指针）
 
@@ -588,7 +591,7 @@ struct Gauge6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/QmYi_t97RKuMcstw8LtoTQ/zh-cn_image_0000002566709445.png?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=7344479A546F6A1081F6957F2D7688DC33F83B0FFE64DBC6D5220C3E5DBC1F13)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/QmYi_t97RKuMcstw8LtoTQ/zh-cn_image_0000002566709445.png?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=DBC4D7AFAB6C728048C14693F7F7B4AA4ABEC3E6B2CDC58CE5CDF7BB8CD39CCD)
 
 ### 示例7（设置起止角度）
 
@@ -628,15 +631,13 @@ struct Gauge7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zczURRgBSCG2wgvMWapf8A/zh-cn_image_0000002535789650.png?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=60602581A4BCB574EB1CB284658F49324322FD4A6C83D1D8427987BA98B0CE5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zczURRgBSCG2wgvMWapf8A/zh-cn_image_0000002535789650.png?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=AB4894D4CF6B35F304ADDE3DD47C79C6A0DBDE582DC92B5AE46A7083CA50E3A9)
 
 ### 示例8（设置定制内容区）
 
 该示例通过[contentModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-gauge#contentmodifier12)接口，实现了定制量规图内容区的功能。
 
 ```typescript
-// xxx.ets
-// 该示例实现了Gauge组件使用Builder定制内容区，使用了环形图表组件，按钮和文本框。点击增加按钮，环形图表指针位置会向右偏移，反之点减少按钮环形图表指针位置会向左偏移。
 @Builder
 function buildGauge(config: GaugeConfiguration) {
   Column({ space: 30 }) {
@@ -646,6 +647,7 @@ function buildGauge(config: GaugeConfiguration) {
         '  max：' + JSON.stringify((config.contentModifier as MyGaugeStyle).max))
         .fontSize(12)
     }
+
     Text('【Config】value：' + config.value + '  min：' + config.min + '  max：' + config.max).fontSize(12)
     Gauge({
       value: config.value,
@@ -658,25 +660,30 @@ function buildGauge(config: GaugeConfiguration) {
   .margin({ top: 5 })
   .alignItems(HorizontalAlign.Center)
 }
+
 class MyGaugeStyle implements ContentModifier<GaugeConfiguration> {
   value: number = 0
   min: number = 0
   max: number = 0
+
   constructor(value: number, min: number, max: number) {
     this.value = value
     this.min = min
     this.max = max
   }
+
   applyContent(): WrappedBuilder<[GaugeConfiguration]> {
     return wrapBuilder(buildGauge)
   }
 }
+
 @Entry
 @Component
 struct refreshExample {
   @State gaugeValue: number = 20
   @State gaugeMin: number = 0
   @State gaugeMax: number = 100
+
   build() {
     Column({ space: 20 }) {
       Gauge({
@@ -685,6 +692,7 @@ struct refreshExample {
         max: this.gaugeMax
       })
         .contentModifier(new MyGaugeStyle(30, 10, 100))
+
       Column({ space: 20 }) {
         Row({ space: 20 }) {
           Button('增加').onClick(() => {
@@ -704,7 +712,7 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/H7H1gRXoRoiR1AIunmeOvA/zh-cn_image_0000002535949596.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=CE4DFCB21A7B297C38B99CA76B028D75CEA431407F00D34BD39AA03886AE51C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/H7H1gRXoRoiR1AIunmeOvA/zh-cn_image_0000002535949596.gif?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=4A2C8FEB7E48C2A12422DA7A96D472F00484B8D6D3A4B67FF6326001F61160CD)
 
 ### 示例9（设置隐私隐藏）
 
@@ -735,7 +743,7 @@ struct GaugeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/whBAh_bHT--g-SxqaUsGag/zh-cn_image_0000002566869429.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=CC04AFF37A520A2488F19896C4F040315EB74CC3E79B36F712557E22216001F3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/whBAh_bHT--g-SxqaUsGag/zh-cn_image_0000002566869429.gif?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=7B06C8C2B682ED6D4D5CCE03DAEA39F4F74F9CDB9CA4B490236AE50F0726C283)
 
 ### 示例10（设置自定义指针）
 
@@ -748,7 +756,7 @@ struct Gauge2 {
   build() {
     Column() {
       Gauge({ value: 50, min: 1, max: 100 })
-        // $r('app.media.indicator')需要替换为开发者所需的图像资源文件。
+
         .indicator({ space: 10, icon: $r('app.media.indicator') })
         .startAngle(210)
         .endAngle(150)
@@ -770,4 +778,4 @@ struct Gauge2 {
 </svg>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/eksWCtwmQvutk2V7P0g_LA/zh-cn_image_0000002566709447.png?HW-CC-KV=V1&HW-CC-Date=20260404T023301Z&HW-CC-Expire=86400&HW-CC-Sign=B6FC35A54771E7688882B797534A1786A73F93753BB9A910440B7D39E1776A10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/eksWCtwmQvutk2V7P0g_LA/zh-cn_image_0000002566709447.png?HW-CC-KV=V1&HW-CC-Date=20260405T025039Z&HW-CC-Expire=86400&HW-CC-Sign=8DA89CA89F67B3ACFF953B16BF9FB3CF6E48A10D82C3E194E4F866DAA1A43E8E)

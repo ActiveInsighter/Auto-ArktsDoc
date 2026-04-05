@@ -270,7 +270,7 @@ struct DataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/FOf_Yq8JQ0yu_8EoVuORCg/zh-cn_image_0000002566869423.png?HW-CC-KV=V1&HW-CC-Date=20260404T023258Z&HW-CC-Expire=86400&HW-CC-Sign=32D0D1DF8347A7DB85103B114BD1FBF59681A96521AE4A4AC64A61025D8B5F4E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/FOf_Yq8JQ0yu_8EoVuORCg/zh-cn_image_0000002566869423.png?HW-CC-KV=V1&HW-CC-Date=20260405T025038Z&HW-CC-Expire=86400&HW-CC-Sign=4D128DD13095C5439DF5C87D6D6783DAC0D915CC62438D80FB43A8499961E01B)
 
 ### 示例2（设置渐变色和阴影）
 
@@ -328,7 +328,7 @@ struct LinearGradientDataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/sgQSPGsvTeyugJgfrsCXsA/zh-cn_image_0000002566709441.png?HW-CC-KV=V1&HW-CC-Date=20260404T023258Z&HW-CC-Expire=86400&HW-CC-Sign=04AFBD4A469E58DE5ED5E18E7A4FA4970D2FB0104871CC8B9A8025F960523052)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/sgQSPGsvTeyugJgfrsCXsA/zh-cn_image_0000002566709441.png?HW-CC-KV=V1&HW-CC-Date=20260405T025038Z&HW-CC-Expire=86400&HW-CC-Sign=3AE8480535B93451A816739D48EAAC372DAAEFF8EC43D810479C12402EEDA758)
 
 ### 示例3（设置关闭动画和阴影）
 
@@ -381,7 +381,7 @@ struct LinearGradientDataPanelExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/JqRMT72DTrq1utFviGX02Q/zh-cn_image_0000002535789646.png?HW-CC-KV=V1&HW-CC-Date=20260404T023258Z&HW-CC-Expire=86400&HW-CC-Sign=19B84D63D1C4260E5453187716B84683F9C5180AF24CF07AA6A4E94DF73C0E8F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/JqRMT72DTrq1utFviGX02Q/zh-cn_image_0000002535789646.png?HW-CC-KV=V1&HW-CC-Date=20260405T025038Z&HW-CC-Expire=86400&HW-CC-Sign=C07BCCA7F7DD8D1D25246E9DD7EC7E7A5BCF971E058D7C195B0174469B3F1B7D)
 
 ### 示例4（设置定制内容区）
 
@@ -466,4 +466,4 @@ struct ChildItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/h8MM-ns2Qqy0F7-qaAIJtg/zh-cn_image_0000002535949592.jpg?HW-CC-KV=V1&HW-CC-Date=20260404T023258Z&HW-CC-Expire=86400&HW-CC-Sign=6D6396910F5C7DE3962ACFD339C58A65F814AEC7A8D49DF91FD5846FC5DD740A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/h8MM-ns2Qqy0F7-qaAIJtg/zh-cn_image_0000002535949592.jpg?HW-CC-KV=V1&HW-CC-Date=20260405T025038Z&HW-CC-Expire=86400&HW-CC-Sign=054BDA32932278DC9E96358927785EA849E494700B87D39D94C83D31B3190B0E)

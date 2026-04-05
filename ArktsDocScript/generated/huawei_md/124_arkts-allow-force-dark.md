@@ -35,7 +35,6 @@ allowForceDark(value: boolean): T
 ## 示例
 
 ```typescript
-// 组件添加allowForceDark(false)属性后，说明对当前组件不使用反色相关能力。
 @Entry
 @Component
 struct ComponentPage {
@@ -49,7 +48,8 @@ struct ComponentPage {
             console.info(`Text is clicked`);
           })
       }
-      .allowForceDark(false) // Column及其子组件Text不生效反色能力，不受父组件Column使用反色能力的影响。
+      .allowForceDark(false)
+
       Row() {
         Button('BUTTON')
           .backgroundColor(Color.Grey)
@@ -58,7 +58,7 @@ struct ComponentPage {
             console.info(`Button is clicked`);
           })
       }
-      .allowForceDark(false) // Row及其子组件Button不生效反色能力，不受父组件Column使用反色能力的影响。
+      .allowForceDark(false)
     }
     .allowForceDark(true)
     .width('100%')
@@ -67,4 +67,4 @@ struct ComponentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/-FyvpcBYS6-opCZbRbW4fA/zh-cn_image_0000002566869029.png?HW-CC-KV=V1&HW-CC-Date=20260404T023121Z&HW-CC-Expire=86400&HW-CC-Sign=E8CA738A70E051F34B0B91F7A406E3B7E67EF34524FCEE66CA9CF1BA5F79F532)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/-FyvpcBYS6-opCZbRbW4fA/zh-cn_image_0000002566869029.png?HW-CC-KV=V1&HW-CC-Date=20260405T024845Z&HW-CC-Expire=86400&HW-CC-Sign=38483F01B1A0274541DE1AF438C04F3FF82925663FA58240C85D206DF12D33C5)

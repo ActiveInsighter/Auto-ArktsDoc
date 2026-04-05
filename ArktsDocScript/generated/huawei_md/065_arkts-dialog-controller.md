@@ -279,4 +279,4 @@ export struct DialogController {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/QCTUOIw6SbOta_OGMbMg5A/zh-cn_image_0000002535948436.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023033Z&HW-CC-Expire=86400&HW-CC-Sign=4A9D7350ADD6C3E2B4B564660E25A8F8959365FA324FFEE3FEAEB145935C531A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/QCTUOIw6SbOta_OGMbMg5A/zh-cn_image_0000002535948436.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024748Z&HW-CC-Expire=86400&HW-CC-Sign=8287FA95157F7669C24015ABE50C76AA932C9E0AF1A1A828D09154F502DB2C71)

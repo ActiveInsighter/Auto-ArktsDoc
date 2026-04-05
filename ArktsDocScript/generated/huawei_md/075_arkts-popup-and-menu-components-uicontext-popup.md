@@ -34,29 +34,29 @@ private contentNode: ComponentContent<Object> =
 @Builder
 export function buildText(params: Params) {
   Popup({
-
+    // 类型设置图标内容。
     icon: {
-
+      // 请将$r('app.media.app_icon')替换为实际资源文件
       image: $r('app.media.app_icon'),
       width: 32,
       height: 32,
       fillColor: Color.White,
       borderRadius: 10
     } as PopupIconOptions,
-
+    // 设置文字内容。
     title: {
       text: `This is a Popup title 1`,
       fontSize: 20,
       fontColor: Color.Black,
       fontWeight: FontWeight.Normal
     } as PopupTextOptions,
-
+    // 设置文字内容。
     message: {
       text: `This is a Popup message 1`,
       fontSize: 15,
       fontColor: Color.Black
     } as PopupTextOptions,
-
+    // 设置按钮内容。
     buttons: [{
       text: 'confirm',
       action: () => {
@@ -75,7 +75,6 @@ export function buildText(params: Params) {
       },] as [PopupButtonOptions?, PopupButtonOptions?]
   });
 }
-
 let contentNode: ComponentContent<Object> =
   new ComponentContent(uiContext, wrapBuilder(buildText), message, { nestingBuilderSupported: true });
 ```
@@ -138,34 +137,27 @@ this.promptAction.closePopup(this.contentNode)
 import { BusinessError } from '@kit.BasicServicesKit';
 import { ComponentContent, TargetInfo, PromptAction } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-
 export class PromptActionClass {
   private promptAction: PromptAction | null = null;
   private contentNode: ComponentContent<Object> | null = null;
   private options: PopupCommonOptions | null = null;
   private target: TargetInfo | null = null;
   private isPartialUpdate: boolean = false;
-
   public setPromptAction(promptAction: PromptAction) {
     this.promptAction = promptAction;
   }
-
   public setContentNode(node: ComponentContent<Object>) {
     this.contentNode = node;
   }
-
   public setTarget(target: TargetInfo) {
     this.target = target;
   }
-
   public setOptions(options: PopupCommonOptions) {
     this.options = options;
   }
-
   public setIsPartialUpdate(isPartialUpdate: boolean) {
     this.isPartialUpdate = isPartialUpdate;
   }
-
   public openPopup() {
     if (this.promptAction != null) {
       this.promptAction.openPopup(this.contentNode, this.target, this.options)
@@ -177,7 +169,6 @@ export class PromptActionClass {
         });
     }
   }
-
   public closePopup() {
     if (this.promptAction != null) {
       this.promptAction.closePopup(this.contentNode)
@@ -189,7 +180,6 @@ export class PromptActionClass {
         });
     }
   }
-
   public updatePopup(options: PopupCommonOptions) {
     if (this.promptAction != null) {
       this.promptAction.updatePopup(this.contentNode, options, this.isPartialUpdate)
@@ -207,19 +197,15 @@ export class PromptActionClass {
 ```typescript
 import { PromptActionClass } from './PopupMainPage';
 import { ComponentContent, PromptAction } from '@kit.ArkUI';
-
 const ID: number = 0;
-
 class Params {
   public text: string = '';
   public promptActionClass: PromptActionClass = new PromptActionClass();
-
   constructor(text: string, promptActionClass: PromptActionClass) {
     this.text = text;
     this.promptActionClass = promptActionClass;
   }
 }
-
 @Builder
 function buildText(params: Params) {
   Column() {
@@ -242,7 +228,6 @@ function buildText(params: Params) {
       })
   }.width(130).height(150)
 }
-
 @Entry
 @Component
 export struct OpenPopup {
@@ -254,7 +239,6 @@ export struct OpenPopup {
   private contentNode: ComponentContent<Object> =
     new ComponentContent(this.uiContext, wrapBuilder(buildText), this.message);
   private options: PopupCommonOptions = { enableArrow: true };
-
   build() {
     NavDestination() {
       Column() {
@@ -281,4 +265,4 @@ export struct OpenPopup {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/6-l30FtVSe2PVPhVpYL6Tg/zh-cn_image_0000002535948448.gif?HW-CC-KV=V1&HW-CC-Date=20260404T023040Z&HW-CC-Expire=86400&HW-CC-Sign=ABF145E73BF564C10C2AE39E63E50B24F9D8A56C0FA4EA8EC89B5E6CF393C3F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/6-l30FtVSe2PVPhVpYL6Tg/zh-cn_image_0000002535948448.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024800Z&HW-CC-Expire=86400&HW-CC-Sign=B6ED4DF7F26D1D5F8F3BCDE004AEF8D65B9410DD05A5331338F9D0426070C9BF)
