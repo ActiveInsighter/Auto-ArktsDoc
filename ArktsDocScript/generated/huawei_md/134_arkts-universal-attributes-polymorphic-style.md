@@ -68,11 +68,11 @@ stateStyles(value: StateStyles): T
 该示例展示了状态为pressed和disabled时Text组件的样式变化。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct StyleExample {
   @State isEnable: boolean = true
-
   @Styles
   pressedStyles(): void {
     .backgroundColor("#ED6F21")
@@ -84,7 +84,6 @@ struct StyleExample {
     .height(30)
     .opacity(1)
   }
-
   @Styles
   disabledStyles(): void {
     .backgroundColor("#E5E5E5")
@@ -96,7 +95,6 @@ struct StyleExample {
     .height(25)
     .opacity(1)
   }
-
   @Styles
   normalStyles(): void {
     .backgroundColor("#0A59F7")
@@ -108,14 +106,13 @@ struct StyleExample {
     .height(25)
     .opacity(1)
   }
-
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
       Text("normal")
         .fontSize(14)
         .fontColor(Color.White)
         .opacity(0.5)
-
+        // stateStyles设置组件无状态时的样式
         .stateStyles({
           normal: this.normalStyles,
         })
@@ -132,7 +129,7 @@ struct StyleExample {
         .opacity(1)
         .fontSize(14)
         .fontColor(Color.White)
-
+        // stateStyles设置组件按下状态时的样式
         .stateStyles({
           pressed: this.pressedStyles,
         })
@@ -150,7 +147,7 @@ struct StyleExample {
         .fontSize(14)
         .fontColor(Color.White)
         .enabled(this.isEnable)
-
+        // stateStyles设置组件禁用状态时的样式
         .stateStyles({
           disabled: this.disabledStyles,
         })
@@ -166,30 +163,28 @@ struct StyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Ni2suBG_RTG7JKJf6gXP2w/zh-cn_image_0000002566869087.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024858Z&HW-CC-Expire=86400&HW-CC-Sign=A84B1FF496145969B3012D1E213E9C889F3389B4FB506845F36641604482C91D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Ni2suBG_RTG7JKJf6gXP2w/zh-cn_image_0000002566869087.gif?HW-CC-KV=V1&HW-CC-Date=20260406T025020Z&HW-CC-Expire=86400&HW-CC-Sign=DBB47A4E261489A52D08F73CF6A5006ADC913CA746C85C9A2E416D7B283CEA40)
 
 ### 示例2（设置Radio多态样式）
 
 该示例展示了状态为selected时Radio组件的样式变化。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct Index {
   @State value: boolean = false
   @State value2: boolean = false
-
   @Styles
   normalStyles(): void{
     .backgroundColor("#E5E5E1")
   }
-
   @Styles
   selectStyles(): void{
     .backgroundColor("#ED6F21")
     .borderWidth(2)
   }
-
   build() {
     Flex({ direction: FlexDirection.Row, justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
       Column() {
@@ -210,7 +205,6 @@ struct Index {
           })
       }
       .margin(30)
-
       Column() {
         Text('Radio2')
           .fontSize(25)
@@ -231,7 +225,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Re7Y7mWnQYiiS3Ue-BxXUw/zh-cn_image_0000002566709105.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024858Z&HW-CC-Expire=86400&HW-CC-Sign=6F8761AE00C32D90D640B644520EBE55A0549CFE72D0216777AC26ED020EE34E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Re7Y7mWnQYiiS3Ue-BxXUw/zh-cn_image_0000002566709105.gif?HW-CC-KV=V1&HW-CC-Date=20260406T025020Z&HW-CC-Expire=86400&HW-CC-Sign=8FBD1B6544AFF431759826DC779E8B66AC7C7EFBDFC7B4A590AD22130AA02721)
 
 ### 示例3（设置Builder多态样式）
 
@@ -240,7 +234,6 @@ struct Index {
 ```typescript
 import { ComponentContent } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-
 @Component
 struct Child {
   build() {
@@ -258,18 +251,15 @@ struct Child {
       })
   }
 }
-
 @Builder
 function buildText() {
   Child()
 }
-
 @Entry
 @Component
 struct Index {
   private contentNode: ComponentContent<Object> =
     new ComponentContent(this.getUIContext(), wrapBuilder(buildText));
-
   build() {
     Column() {
       Button().margin({ top: 200 }).onClick((event: ClickEvent) => {
@@ -292,4 +282,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/XjkFVR_GSNeK8B0Kzb_v5Q/zh-cn_image_0000002535789310.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024858Z&HW-CC-Expire=86400&HW-CC-Sign=AA8AE9EB825FB1E71241DE1365178287C2791DD7EB3318C13F6ACF30E8D02B78)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/XjkFVR_GSNeK8B0Kzb_v5Q/zh-cn_image_0000002535789310.gif?HW-CC-KV=V1&HW-CC-Date=20260406T025020Z&HW-CC-Expire=86400&HW-CC-Sign=5F749DB0A2E458B9BFDBF6A5E1A2421E6ACBFA3997A45C5F1503B0607825CD8C)

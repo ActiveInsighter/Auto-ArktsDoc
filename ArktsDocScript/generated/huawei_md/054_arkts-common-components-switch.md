@@ -17,13 +17,13 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 
 接口调用有以下两种形式：
 
-- 创建不包含子组件的Toggle。 当ToggleType为Checkbox或者Switch时，用于创建不包含子组件的Toggle： ```typescript Toggle({ type: ToggleType.Checkbox, isOn: false }).id('toggle1') Toggle({ type: ToggleType.Checkbox, isOn: true }).id('toggle2') ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/VqlVOVOaRjqcN-C2P8wd-g/zh-cn_image_0000002535788462.png?HW-CC-KV=V1&HW-CC-Date=20260405T024737Z&HW-CC-Expire=86400&HW-CC-Sign=4B455A6C1412877835429EF440B1238E71F5C47117B062FD9A83581961EB40F4) ```typescript Toggle({ type: ToggleType.Switch, isOn: false }).id('toggle3') Toggle({ type: ToggleType.Switch, isOn: true }).id('toggle4') ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Q-_t3vMzRn6JU55XqfML2w/zh-cn_image_0000002535948410.png?HW-CC-KV=V1&HW-CC-Date=20260405T024737Z&HW-CC-Expire=86400&HW-CC-Sign=5FA54B63719F56DF5897681AE11D978436E8C5488819AA9CF4B6FC6B624A3448)
-- 创建包含子组件的Toggle。 当ToggleType为Button时，只能包含一个子组件，如果子组件有文本设置，则相应的文本内容会显示在按钮上。 ```typescript Toggle({ type: ToggleType.Button, isOn: false }) {  Text('status button')  .fontColor('#182431')  .fontSize(12) }.width(100).id('toggle5') Toggle({ type: ToggleType.Button, isOn: true }) {  Text('status button')  .fontColor('#182431')  .fontSize(12) }.width(100).id('toggle6') ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5n74oi2ySD-FryYMhZLdCQ/zh-cn_image_0000002566868241.png?HW-CC-KV=V1&HW-CC-Date=20260405T024737Z&HW-CC-Expire=86400&HW-CC-Sign=668232CB581D9A1A5D3FFC9D7372ADD1EA6447DB00F30E0A9F7A9F9382CFE313)
+- 创建不包含子组件的Toggle。 当ToggleType为Checkbox或者Switch时，用于创建不包含子组件的Toggle： ```typescript Toggle({ type: ToggleType.Checkbox, isOn: false }).id('toggle1') // 请开发者替换为实际的id Toggle({ type: ToggleType.Checkbox, isOn: true }).id('toggle2') // 请开发者替换为实际的id ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/VqlVOVOaRjqcN-C2P8wd-g/zh-cn_image_0000002535788462.png?HW-CC-KV=V1&HW-CC-Date=20260406T024904Z&HW-CC-Expire=86400&HW-CC-Sign=011F4D13B7FEF236899B6F80FD5B102FC48B0863BFE8B605FC63DDB0D1777E06) ```typescript Toggle({ type: ToggleType.Switch, isOn: false }).id('toggle3') // 请开发者替换为实际的id Toggle({ type: ToggleType.Switch, isOn: true }).id('toggle4') // 请开发者替换为实际的id ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Q-_t3vMzRn6JU55XqfML2w/zh-cn_image_0000002535948410.png?HW-CC-KV=V1&HW-CC-Date=20260406T024904Z&HW-CC-Expire=86400&HW-CC-Sign=57EAD983FF50862146CDB645E27FFEF70974ADE1DFB451A4E724B2F963CD622B)
+- 创建包含子组件的Toggle。 当ToggleType为Button时，只能包含一个子组件，如果子组件有文本设置，则相应的文本内容会显示在按钮上。 ```typescript Toggle({ type: ToggleType.Button, isOn: false }) {  Text('status button')  .fontColor('#182431')  .fontSize(12) }.width(100).id('toggle5') // 请开发者替换为实际的id Toggle({ type: ToggleType.Button, isOn: true }) {  Text('status button')  .fontColor('#182431')  .fontSize(12) }.width(100).id('toggle6') // 请开发者替换为实际的id ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5n74oi2ySD-FryYMhZLdCQ/zh-cn_image_0000002566868241.png?HW-CC-KV=V1&HW-CC-Date=20260406T024904Z&HW-CC-Expire=86400&HW-CC-Sign=5CFE7C5ECEDD8F3EC9B77DD11D4AEF738A3BFDB57902F7A1497539892E9DDF5F)
 
 ## 自定义样式
 
-- 通过selectedColor属性设置Toggle打开选中后的背景颜色。 ```typescript  Toggle({ type: ToggleType.Button, isOn: true }) {  Text('status button')  .fontColor('#182431')  .fontSize(12)  }.width(100)  .selectedColor(Color.Pink)  Toggle({ type: ToggleType.Checkbox, isOn: true })  .selectedColor(Color.Pink)  Toggle({ type: ToggleType.Switch, isOn: true })  .selectedColor(Color.Pink) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/AGkZmrJVR1aBmXBT6zoYkw/zh-cn_image_0000002566708261.png?HW-CC-KV=V1&HW-CC-Date=20260405T024737Z&HW-CC-Expire=86400&HW-CC-Sign=16A0DF23B047B311115D6851C6DCF4484284C4941FD234E8A46E7C75954DEDAB)
-- 通过switchPointColor属性设置Switch类型的圆形滑块颜色，仅对type为ToggleType.Switch生效。 ```typescript Toggle({ type: ToggleType.Switch, isOn: false })  .switchPointColor(Color.Pink) Toggle({ type: ToggleType.Switch, isOn: true })  .switchPointColor(Color.Pink) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/euAHQozJSLmDppUOevH6NQ/zh-cn_image_0000002535788466.png?HW-CC-KV=V1&HW-CC-Date=20260405T024737Z&HW-CC-Expire=86400&HW-CC-Sign=91FF77D36309A502D8467EB977C074BBC8373E3455F0D13C2058E357CBFF6EAB)
+- 通过selectedColor属性设置Toggle打开选中后的背景颜色。 ```typescript  Toggle({ type: ToggleType.Button, isOn: true }) {  Text('status button')  .fontColor('#182431')  .fontSize(12)  }.width(100)  .selectedColor(Color.Pink) // ···  Toggle({ type: ToggleType.Checkbox, isOn: true })  .selectedColor(Color.Pink)  // ···  Toggle({ type: ToggleType.Switch, isOn: true })  .selectedColor(Color.Pink)  // ··· ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/AGkZmrJVR1aBmXBT6zoYkw/zh-cn_image_0000002566708261.png?HW-CC-KV=V1&HW-CC-Date=20260406T024904Z&HW-CC-Expire=86400&HW-CC-Sign=8D3F35B521585B29D1694AADF68B72A0922426811F7CCBF84B8776BA5867FE35)
+- 通过switchPointColor属性设置Switch类型的圆形滑块颜色，仅对type为ToggleType.Switch生效。 ```typescript Toggle({ type: ToggleType.Switch, isOn: false })  .switchPointColor(Color.Pink)  // ··· Toggle({ type: ToggleType.Switch, isOn: true })  .switchPointColor(Color.Pink)  // ··· ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/euAHQozJSLmDppUOevH6NQ/zh-cn_image_0000002535788466.png?HW-CC-KV=V1&HW-CC-Date=20260406T024904Z&HW-CC-Expire=86400&HW-CC-Sign=469C496055DEAE6FE1FC09331A7510BDA14805EDA86FE127382D06901DBB48D2)
 
 ## 添加事件
 
@@ -33,7 +33,8 @@ API version 11开始，Checkbox默认样式由圆角方形变为圆形。
 Toggle({ type: ToggleType.Switch, isOn: false })
   .onChange((isOn: boolean) => {
     if(isOn) {
-
+      // 需要执行的操作
+      // ···
     }
   })
 ```
@@ -43,16 +44,15 @@ Toggle({ type: ToggleType.Switch, isOn: false })
 Toggle用于切换蓝牙开关状态。
 
 ```typescript
+// xxx.ets
 import { promptAction } from '@kit.ArkUI';
-
 @Entry
 @Component
 export struct ToggleSample {
   @State message: string = 'off';
   pathStack: NavPathStack = new NavPathStack();
-
   build() {
-
+    // ···
       Column({ space: 8 }) {
         Column({ space: 8 }) {
           Text('Bluetooth Mode: ' + this.message)
@@ -61,7 +61,7 @@ export struct ToggleSample {
             Text('Bluetooth')
             Blank()
             Toggle({ type: ToggleType.Switch })
-              .id('toggle')
+              .id('toggle') // 请开发者替换为实际的id
               .onChange((isOn: boolean) => {
                 if (isOn) {
                   this.message = 'on';
@@ -82,12 +82,12 @@ export struct ToggleSample {
       .width('100%')
       .height('100%')
       .padding({ left: 12, right: 12 })
-
+    // ···
     .backgroundColor('#f1f2f3')
-
+    // 请将$r('app.string.ToggleCaseExample_title')替换为实际资源文件，在本示例中该资源文件的value值为"toggle蓝牙示例"
     .title($r('app.string.ToggleCaseExample_title'))
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/afguYZHZSgmh-nV1maUcZg/zh-cn_image_0000002535948412.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024737Z&HW-CC-Expire=86400&HW-CC-Sign=3C94977C3251B2429ABA128CBBAA3D7827BE8F859C93DD368EECECE65E91FEB5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/afguYZHZSgmh-nV1maUcZg/zh-cn_image_0000002535948412.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024904Z&HW-CC-Expire=86400&HW-CC-Sign=3A517FC1B1934DEE004D8897129894331954EDAE320FF649CD8ACA12EADDDB24)

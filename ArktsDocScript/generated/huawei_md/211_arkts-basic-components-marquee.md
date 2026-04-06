@@ -300,4 +300,4 @@ struct MarqueeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Lcz7uMWXSwOkgWwwTW5E8g/zh-cn_image_0000002566869431.gif?HW-CC-KV=V1&HW-CC-Date=20260405T025043Z&HW-CC-Expire=86400&HW-CC-Sign=1A4D102CD66AAFC7294C6AD2872A183D6E03331F8730793BA30FD21BBECE74DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Lcz7uMWXSwOkgWwwTW5E8g/zh-cn_image_0000002566869431.gif?HW-CC-KV=V1&HW-CC-Date=20260406T025203Z&HW-CC-Expire=86400&HW-CC-Sign=8B0798B7B42B8474DAD042FC981FD5BD1B2A85F86996B77B0F084113780A6F6F)

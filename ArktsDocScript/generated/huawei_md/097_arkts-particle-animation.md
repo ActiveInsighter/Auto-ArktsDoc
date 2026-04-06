@@ -35,7 +35,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/fT_KUKPATa23Hq81Gum7EQ/zh-cn_image_0000002535948518.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024818Z&HW-CC-Expire=86400&HW-CC-Sign=3F8CD8955CC2D2154D067A691E027A40DC62F19F2612DE1628DE95702137CF6E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/fT_KUKPATa23Hq81Gum7EQ/zh-cn_image_0000002535948518.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024940Z&HW-CC-Expire=86400&HW-CC-Sign=20B26AD1E2A32808CFDEC0C137C987907B6EE65BD782B4B8906A49ECE74F1114)
 
 ## 实现粒子发射器
 
@@ -54,7 +54,7 @@ struct ParticleExample {
 Particle(...).width(300).height(300).emitter(this.emitterProperties)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/OP9Rv8azT5-W1TwR8vTgQA/zh-cn_image_0000002566868351.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024818Z&HW-CC-Expire=86400&HW-CC-Sign=DEC71F4BF5148C880C12DFB83B59EF44B3EFB7E28F7720E3C00540CA835CC7A8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/OP9Rv8azT5-W1TwR8vTgQA/zh-cn_image_0000002566868351.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024940Z&HW-CC-Expire=86400&HW-CC-Sign=85F6D584964340100F39D76DB44DF4156B9849D7F5D68E78AD67B6EA32BB832C)
 
 ## 设置粒子颜色
 
@@ -67,7 +67,7 @@ color: {
 },
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/ppK1CEieRkeEx2-00WNR-w/zh-cn_image_0000002566708369.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024818Z&HW-CC-Expire=86400&HW-CC-Sign=0265AB0409F66825618D4CFDA6626212A3BA4099DE91D7A424188CDA6CFB06B8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/ppK1CEieRkeEx2-00WNR-w/zh-cn_image_0000002566708369.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024940Z&HW-CC-Expire=86400&HW-CC-Sign=AC4923BBA8076708018A1E9E04FE1AC07843C364F85DF0555B2B74C0BEA3683F)
 
 ## 粒子的生命周期
 
@@ -89,7 +89,7 @@ color: {
 },
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/yC1zzLhYS7motIpHZFKV0w/zh-cn_image_0000002535788574.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024818Z&HW-CC-Expire=86400&HW-CC-Sign=E6A6E68EC7DA72B2CC93DA0522D97B9F4BCBDAA50FBA3BE1C243750B86DFC77A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/yC1zzLhYS7motIpHZFKV0w/zh-cn_image_0000002535788574.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024940Z&HW-CC-Expire=86400&HW-CC-Sign=3F35E1A4EC6EA5EF56D131072A22E9DFF72509A3DC0D847E16FF15C710FC798F)
 
 ## 设置粒子扰动场
 
@@ -142,4 +142,4 @@ Particle({ particles: [
 }])
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/lFAv9ZBCREizpqbkUAabzg/zh-cn_image_0000002535948520.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024818Z&HW-CC-Expire=86400&HW-CC-Sign=A71EE4F57F21C38EA5A11E1871B4C8F822C4ACDCAA2C3303288AE0DE5741B078)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/lFAv9ZBCREizpqbkUAabzg/zh-cn_image_0000002535948520.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024940Z&HW-CC-Expire=86400&HW-CC-Sign=378C08F678639124F3FF412A3A0B7FFBCB60458F03B7EEAAE72DCCC11E58097F)

@@ -56,7 +56,7 @@ struct AnimationToAnimationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/yohcb1O7SzmaeLCTy-24ZQ/zh-cn_image_0000002566708373.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024826Z&HW-CC-Expire=86400&HW-CC-Sign=6FB5DBAE0ABEEAD01D79E1426FFFCF5A25D68F73A5CD6F7460B53B37A327B08D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/yohcb1O7SzmaeLCTy-24ZQ/zh-cn_image_0000002566708373.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024947Z&HW-CC-Expire=86400&HW-CC-Sign=9BD79989A475276F1967AB82F1A7FD30AD1A8B88334392D3226E718EEA2DEBB0)
 
 ## 手势与动画的衔接
 
@@ -132,4 +132,4 @@ struct SpringMotionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/wGOfBRufQ9S6pfDp9XnfGg/zh-cn_image_0000002535788578.gif?HW-CC-KV=V1&HW-CC-Date=20260405T024826Z&HW-CC-Expire=86400&HW-CC-Sign=D0EA3DBDFF22D22B6EF380F87A4B044BA3E58A41C9A63B7AB79FEE1C9FF490A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/wGOfBRufQ9S6pfDp9XnfGg/zh-cn_image_0000002535788578.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024947Z&HW-CC-Expire=86400&HW-CC-Sign=7AA4B8F2A3EA97B22219FC1A425C225A3D4C4BE16C923BA6946B58BFEFC6DBA6)
