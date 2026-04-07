@@ -12,7 +12,7 @@
 
 **图1** 页面跳转
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/XA10Uv6xRL6whYqyneUM0w/zh-cn_image_0000002535788222.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024826Z&HW-CC-Expire=86400&HW-CC-Sign=1397E062A10BDE363531AF9B5CBED3A88C657B6865A3AB249591B4A8BD02D748)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/XA10Uv6xRL6whYqyneUM0w/zh-cn_image_0000002535788222.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024141Z&HW-CC-Expire=86400&HW-CC-Sign=C1EA20CC27FF3327074521BCDEF9E4EDD59D271C80B06A9DC5D3F468413E229E)
 
 Router模块提供了两种跳转模式，分别是[pushUrl](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#pushurl)和[replaceUrl](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-router#replaceurl)。这两种模式决定了目标页面是否会替换当前页。
 
@@ -96,7 +96,7 @@ private age: number = this.params.info.age;
 
 **图2** 页面返回
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/VYm0WxpySTOUGC0IesgnIg/zh-cn_image_0000002535948168.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024826Z&HW-CC-Expire=86400&HW-CC-Sign=A00B36F2E9A0B65552861459324EBEF26CE50A71334C3A8FDA614941F064A048)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/VYm0WxpySTOUGC0IesgnIg/zh-cn_image_0000002535948168.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024141Z&HW-CC-Expire=86400&HW-CC-Sign=2CA5DDB3C6958F0F58781D36FD44D380DFAC74AB7F11806FC0F0153A77FD227B)
 
 直接使用router可能导致[UI上下文不明确](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-global-interface#ui上下文不明确)的问题，建议使用getUIContext()获取[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)实例，并使用[getRouter](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getrouter)获取绑定实例的router。
 
@@ -224,7 +224,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/rOdBeDsiTBCxTeQjndf3Fg/zh-cn_image_0000002566868001.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024826Z&HW-CC-Expire=86400&HW-CC-Sign=D914141D2AD730F0C42DD03578365B7DC090D65B35F1A678A34266D3FE29F87B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/rOdBeDsiTBCxTeQjndf3Fg/zh-cn_image_0000002566868001.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024141Z&HW-CC-Expire=86400&HW-CC-Sign=525EF041DD6A28184A1F5670BD9A0217FC28E5FA4BAAE662293878F225CEA0BB)
 
 ## 自定义转场
 
@@ -238,7 +238,7 @@ router自定义转场可以通过[pageTransition](https://developer.huawei.com/c
 
 **图3** 页面返回前增加一个询问框
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/j9zikgNTRG-PaSWixjpuww/zh-cn_image_0000002566708019.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024826Z&HW-CC-Expire=86400&HW-CC-Sign=BC6EF04E06E308873D69CA47330E323EE7533CCA7685008C54F821C89C220473)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/j9zikgNTRG-PaSWixjpuww/zh-cn_image_0000002566708019.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024141Z&HW-CC-Expire=86400&HW-CC-Sign=43BC201A417178E9B37DC56535307CC5329432CE8D51A2B1E6BD99825655DECC)
 
 ### 系统默认询问框
 
@@ -341,7 +341,7 @@ onBackClick() {
 
 **图4** 命名路由跳转
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/IlX_DTAHTrmxgVDxZbkz7g/zh-cn_image_0000002535788224.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024826Z&HW-CC-Expire=86400&HW-CC-Sign=A45D373F7EB0755E2A88A4F0B9755BE896A70DC9F870713D4A1C6B1B54282261)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/IlX_DTAHTrmxgVDxZbkz7g/zh-cn_image_0000002535788224.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024141Z&HW-CC-Expire=86400&HW-CC-Sign=7700B5AD13BAAC4764BDFCD03348754F3139C71446A87C1DB59E4C276C2B66DF)
 
 在想要跳转到的共享包[HAR](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package)或者[HSP](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp)页面里，给[@Entry](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-custom-components#entry)修饰的自定义组件EntryOptions命名：
 

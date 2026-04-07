@@ -555,6 +555,6 @@ struct PageOne {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/xMbBsHgCQOuWQBUJWJMS0w/zh-cn_image_0000002500304212.gif?HW-CC-KV=V1&HW-CC-Date=20260406T025239Z&HW-CC-Expire=86400&HW-CC-Sign=582AF4CE4864314C585363FDAB4B682D548CD655624B1349E605986A7D991D76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/xMbBsHgCQOuWQBUJWJMS0w/zh-cn_image_0000002500304212.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024558Z&HW-CC-Expire=86400&HW-CC-Sign=194144B7CFCB9B490DF6D4982378E030D6E36E95BF0FE8ADBF9EEBEBFB4B9DA6)
 
 HdsNavDestination更多示例可以参考HdsNavigation[示例代码](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavigation#section86814120266)。

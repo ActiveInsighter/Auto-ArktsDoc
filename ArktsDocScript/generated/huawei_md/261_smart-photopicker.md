@@ -3,8 +3,8 @@
 
 应用在调用PhotoPicker接口时，如果配置了PhotoPicker图片推荐参数，当设备中有满足图片推荐参数的图片，且设备中的图片已经分析完成时，PhotoPicker界面除了展示全量的图片外，还会展示符合条件的推荐图片供用户参考选择，从而缩短用户筛选图片的时间。
 
-- 选择特定类型（[RecommendationType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-e#recommendationtype11)）的图片，如身份证、银行卡、驾驶证、行驶证、二维码等。当有符合应用指定类型的图片传入时，将显示对应的图片推荐页。 以指定图片类型为二维码为例，PhotoPicker界面上将出现“二维码”的Tab页，展示图库中的二维码图片。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ObCG6ZPrSd2IiObUdhoNrQ/zh-cn_image_0000002535789026.jpg?HW-CC-KV=V1&HW-CC-Date=20260406T025258Z&HW-CC-Expire=86400&HW-CC-Sign=400CAC23DD01FFFE0407597339935CDEB125F885F0D281A5ED27B45F58B6AE8D)
-- 在图文编辑时选择图片，系统可以根据应用传入的文本信息，提取出时间、地点、事物或活动，并根据提取的信息，推荐对应的图片展示在PhotoPicker中。 举例说明，如设置的推荐参数文本是“国庆节，带着女儿去了上海野生动物园，看到了凶猛的大象，漂亮的火烈鸟，还有她心心念念的大熊猫，小家伙可开心了。” 而且手机中有相应的图片，图片分析完成时，会在“推荐”的Tab页中展示出时间是国庆节，地点是上海野生动物园的大熊猫、火烈鸟、大象的图片。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/JQnfrX3EQQCQdsFhBQXIYg/zh-cn_image_0000002535948972.jpg?HW-CC-KV=V1&HW-CC-Date=20260406T025258Z&HW-CC-Expire=86400&HW-CC-Sign=9D78ADDB89834BFE65F6282EEDC4872DE87893897420A37843AE7C5612836005)
+- 选择特定类型（[RecommendationType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-e#recommendationtype11)）的图片，如身份证、银行卡、驾驶证、行驶证、二维码等。当有符合应用指定类型的图片传入时，将显示对应的图片推荐页。 以指定图片类型为二维码为例，PhotoPicker界面上将出现“二维码”的Tab页，展示图库中的二维码图片。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ObCG6ZPrSd2IiObUdhoNrQ/zh-cn_image_0000002535789026.jpg?HW-CC-KV=V1&HW-CC-Date=20260407T024619Z&HW-CC-Expire=86400&HW-CC-Sign=59A8924A18B6E7CB47A8986838B122394CDB479A686B22346B93EB4558F61934)
+- 在图文编辑时选择图片，系统可以根据应用传入的文本信息，提取出时间、地点、事物或活动，并根据提取的信息，推荐对应的图片展示在PhotoPicker中。 举例说明，如设置的推荐参数文本是“国庆节，带着女儿去了上海野生动物园，看到了凶猛的大象，漂亮的火烈鸟，还有她心心念念的大熊猫，小家伙可开心了。” 而且手机中有相应的图片，图片分析完成时，会在“推荐”的Tab页中展示出时间是国庆节，地点是上海野生动物园的大熊猫、火烈鸟、大象的图片。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/JQnfrX3EQQCQdsFhBQXIYg/zh-cn_image_0000002535948972.jpg?HW-CC-KV=V1&HW-CC-Date=20260407T024619Z&HW-CC-Expire=86400&HW-CC-Sign=491631B9E0E7564B57C259BB123AECA4D273EF46C1D49B2419A9EB9B6D9A9134)
 
 ## 约束与限制
 
@@ -32,9 +32,9 @@
 
 ```typescript
 let recommendationOptions: photoAccessHelper.RecommendationOptions = {
-  recommendationType: photoAccessHelper.RecommendationType.QR_CODE // 配置枚举类型，不同的枚举值，推荐不同种类的图片
+  recommendationType: photoAccessHelper.RecommendationType.QR_CODE
 };
-this.pickerOptions.recommendationOptions = recommendationOptions;// 将推荐参数赋值给 pickerOptions.recommendationOptions
+this.pickerOptions.recommendationOptions = recommendationOptions;
 ```
 
 > **说明**
@@ -56,7 +56,7 @@ let textInfo: photoAccessHelper.TextContextInfo = {
 let recommendationOptions: photoAccessHelper.RecommendationOptions = {
   textContextInfo: textInfo
 };
-this.pickerOptions.recommendationOptions = recommendationOptions;// 将推荐参数赋值给 pickerOptions.recommendationOptions
+this.pickerOptions.recommendationOptions = recommendationOptions;
 ```
 
 > **说明**

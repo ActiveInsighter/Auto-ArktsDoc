@@ -161,22 +161,22 @@ borderRadius(value: Length | BorderRadiuses | LocalizedBorderRadiuses, type?: Re
 设置边框的宽度、颜色、圆角半径以及点、线样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct BorderExample {
   build() {
     Column() {
       Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-
+        // 线段
         Text('dashed')
           .borderStyle(BorderStyle.Dashed).borderWidth(5).borderColor(0xAFEEEE).borderRadius(10)
           .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
-
+        // 点线
         Text('dotted')
           .border({ width: 5, color: 0x317AF7, radius: 10, style: BorderStyle.Dotted })
           .width(120).height(120).textAlign(TextAlign.Center).fontSize(16)
       }.width('100%').height(150)
-
       Text('.border')
         .fontSize(50)
         .width(300)
@@ -197,13 +197,14 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/lAIy01axR3KysuyUlUsiOQ/zh-cn_image_0000002535789266.gif?HW-CC-KV=V1&HW-CC-Date=20260406T024655Z&HW-CC-Expire=86400&HW-CC-Sign=649C10672491AF87B1232C29A60AF525F68B7035325409CC09E20DA112DB0E32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/lAIy01axR3KysuyUlUsiOQ/zh-cn_image_0000002535789266.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024335Z&HW-CC-Expire=86400&HW-CC-Sign=E8E1A4C2655F7EE12472ACF66C59B32AA7F2196DAAB9BC23A02701E6E7DB5EA9)
 
 ### 示例2（边框宽度类型和边框颜色）
 
 border属性的width、radius、color属性值使用LocalizedEdgeWidths类型和LocalizedEdgeColors类型。
 
 ```typescript
+// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
 @Entry
 @Component
@@ -211,7 +212,7 @@ struct BorderExample {
   build() {
     Column() {
       Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-
+        // 线段
         Text('dashed')
           .borderStyle(BorderStyle.Dashed)
           .borderWidth(5)
@@ -221,7 +222,7 @@ struct BorderExample {
           .height(120)
           .textAlign(TextAlign.Center)
           .fontSize(16)
-
+        // 点线
         Text('dotted')
           .border({ width: 5, color: 0x317AF7, radius: 10, style: BorderStyle.Dotted })
           .width(120)
@@ -229,7 +230,6 @@ struct BorderExample {
           .textAlign(TextAlign.Center)
           .fontSize(16)
       }.width('100%').height(150)
-
       Text('.border')
         .fontSize(50)
         .width(300)
@@ -263,17 +263,18 @@ struct BorderExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/MuWZuZljRh2H-hBw59-_bw/zh-cn_image_0000002535949212.png?HW-CC-KV=V1&HW-CC-Date=20260406T024655Z&HW-CC-Expire=86400&HW-CC-Sign=320AC59D79E6F2C244D3A54AE8E36D813368C7026D6216961943A79180E6DA93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/MuWZuZljRh2H-hBw59-_bw/zh-cn_image_0000002535949212.png?HW-CC-KV=V1&HW-CC-Date=20260407T024335Z&HW-CC-Expire=86400&HW-CC-Sign=255A304B2FC759C1C90FE27E8054460C5ED90A54C3B542F27C99D105A08D2556)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/g7MSdeFVTcCMOUk2fTG53g/zh-cn_image_0000002566869045.png?HW-CC-KV=V1&HW-CC-Date=20260406T024655Z&HW-CC-Expire=86400&HW-CC-Sign=2D095C5BB861AA563CFD7E6394FEA0FAE24614D49FF16C22AF5275429940BFAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/g7MSdeFVTcCMOUk2fTG53g/zh-cn_image_0000002566869045.png?HW-CC-KV=V1&HW-CC-Date=20260407T024335Z&HW-CC-Expire=86400&HW-CC-Sign=B2A7C69DE4C96FF8F4598ABF79F0459B173EC4AD8EF0884C9FAB3432C73C0B1F)
 
 ### 示例3（设置离屏圆角）
 
 从API version 22开始，该示例支持设置组件绘制圆角的模式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RenderStrategyExample {
@@ -285,13 +286,11 @@ struct RenderStrategyExample {
             .width(320)
             .height(320)
             .backgroundColor(Color.Black)
-
           Stack() {
             Stack() {
               Scroll(new Scroller()) {
                 Image($r('app.media.startIcon')).width('100%').height('200%')
               }
-
               Column()
                 .blur(50)
                 .width(300)
@@ -305,19 +304,16 @@ struct RenderStrategyExample {
           .borderRadius(50, RenderStrategy.FAST)
           .clip(true)
         }
-
         Stack() {
           Column()
             .width(320)
             .height(320)
             .backgroundColor(Color.Black)
-
           Stack() {
             Stack() {
               Scroll(new Scroller()) {
                 Image($r('app.media.startIcon')).width('100%').height('200%')
               }
-
               Column()
                 .blur(50)
                 .width(300)
@@ -341,13 +337,14 @@ struct RenderStrategyExample {
 
 设置在线绘制模式（上方）以及离屏绘制模式（下方）的示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/LAFF1PlKSHS_7TCvOp2_mg/zh-cn_image_0000002566709063.jpg?HW-CC-KV=V1&HW-CC-Date=20260406T024655Z&HW-CC-Expire=86400&HW-CC-Sign=AC50ADE432E5FA981B267417CA34A7C03F2767B52A9D52C0E6752A8E388B805B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/LAFF1PlKSHS_7TCvOp2_mg/zh-cn_image_0000002566709063.jpg?HW-CC-KV=V1&HW-CC-Date=20260407T024335Z&HW-CC-Expire=86400&HW-CC-Sign=DB9E6400378565155FFD9462BCCC63D48B8D6AD4920D83BB59338971FD9B5F8A)
 
 ### 示例4（设置异形圆角）
 
 该示例通过[borderRadius](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#borderradius)设置四个不同圆角值。当其中一个圆角值超过高度或宽度最小值的一半时，按值的比例绘制异形圆角。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct BorderExample {
@@ -373,4 +370,4 @@ struct BorderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/gt7dRytXQ6WW05V49qhLJQ/zh-cn_image_0000002535789268.png?HW-CC-KV=V1&HW-CC-Date=20260406T024655Z&HW-CC-Expire=86400&HW-CC-Sign=437EDBB76670E7E31844B9560904A5FB0B05F10DD5CBEC6D5954702FE9F07E7F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/gt7dRytXQ6WW05V49qhLJQ/zh-cn_image_0000002535789268.png?HW-CC-KV=V1&HW-CC-Date=20260407T024335Z&HW-CC-Expire=86400&HW-CC-Sign=B5E497867B12EAE44D081A120A4856825B24C91420EF0613C5C58C17690D8D2F)

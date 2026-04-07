@@ -131,7 +131,7 @@ struct RichTextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/iHeFv6ZGTFybXSeXsKpqVw/zh-cn_image_0000002535789562.png?HW-CC-KV=V1&HW-CC-Date=20260406T025139Z&HW-CC-Expire=86400&HW-CC-Sign=F9D49FC790F4E79548AA46EDFA1E70B56654D091B024A60A0BA94EA3087D66A5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/iHeFv6ZGTFybXSeXsKpqVw/zh-cn_image_0000002535789562.png?HW-CC-KV=V1&HW-CC-Date=20260407T024458Z&HW-CC-Expire=86400&HW-CC-Sign=B28616C838895BEDED4928A9050B843E2FCB09633D8012FB7D2A44F1E07CA261)
 
 加载本地资源文件。
 
