@@ -573,6 +573,7 @@ type OnAlphabetIndexerRequestPopupDataCallback = (index: number) => Array<string
 通过[onRequestPopupData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#onrequestpopupdata8)事件自定义提示弹窗显示文本内容。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -584,7 +585,6 @@ struct AlphabetIndexerSample {
     'H', 'I', 'J', 'K', 'L', 'M', 'N',
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
     'V', 'W', 'X', 'Y', 'Z'];
-
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -598,7 +598,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -608,7 +607,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -618,7 +616,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayL, (item: string) => {
             ListItem() {
               Text(item)
@@ -631,32 +628,32 @@ struct AlphabetIndexerSample {
         }
         .width('50%')
         .height('100%')
-
         AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-          .autoCollapse(false)
-          .enableHapticFeedback(false)
-          .selectedColor(0xFFFFFF)
-          .popupColor(0xFFFAF0)
-          .selectedBackgroundColor(0xCCCCCC)
-          .popupBackground(0xD2B48C)
-          .usingPopup(true)
-          .selectedFont({ size: 16, weight: FontWeight.Bolder })
-          .popupFont({ size: 30, weight: FontWeight.Bolder })
-          .itemSize(28)
-          .alignStyle(IndexerAlign.Left)
-          .popupItemBorderRadius(24)
-          .itemBorderRadius(14)
-          .popupBackgroundBlurStyle(BlurStyle.NONE)
-          .popupTitleBackground(0xCCCCCC)
-          .popupSelectedColor(0x00FF00)
-          .popupUnselectedColor(0x0000FF)
-          .popupItemFont({ size: 30, style: FontStyle.Normal })
-          .popupItemBackgroundColor(0xCCCCCC)
+          .autoCollapse(false) // 关闭自适应折叠模式
+          .enableHapticFeedback(false) // 关闭触控反馈
+          .selectedColor(0xFFFFFF) // 选中项文本颜色
+          .popupColor(0xFFFAF0) // 提示弹窗一级索引文本颜色
+          .selectedBackgroundColor(0xCCCCCC) // 选中项背景颜色
+          .popupBackground(0xD2B48C) // 提示弹窗背景颜色
+          .usingPopup(true) // 索引项被选中时显示提示弹窗
+          .selectedFont({ size: 16, weight: FontWeight.Bolder }) // 选中项文本样式
+          .popupFont({ size: 30, weight: FontWeight.Bolder }) // 提示弹窗一级索引的文本样式
+          .itemSize(28) // 索引项的尺寸大小
+          .alignStyle(IndexerAlign.Left) // 提示弹窗在索引条右侧弹出
+          .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
+          .itemBorderRadius(14) // 设置索引项背板圆角半径
+          .popupBackgroundBlurStyle(BlurStyle.NONE) // 设置提示弹窗的背景模糊材质
+          .popupTitleBackground(0xCCCCCC) // 设置提示弹窗一级索引项背景颜色
+          .popupSelectedColor(0x00FF00) // 提示弹窗二级索引选中项文本颜色
+          .popupUnselectedColor(0x0000FF) // 提示弹窗二级索引未选中项文本颜色
+          .popupItemFont({ size: 30, style: FontStyle.Normal }) // 提示弹窗二级索引项文本样式
+          .popupItemBackgroundColor(0xCCCCCC) // 提示弹窗二级索引项背景颜色
           .onSelect((index: number) => {
             console.info(this.value[index] + ' Selected!');
           })
           .onRequestPopupData((index: number) => {
-
+            // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
+            // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
             if (this.value[index] == 'A') {
               return this.arrayA;
             } else if (this.value[index] == 'B') {
@@ -680,13 +677,14 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ku0OfMRKRRu7iwbhRFTKLA/zh-cn_image_0000002566869419.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024514Z&HW-CC-Expire=86400&HW-CC-Sign=49B2BF37C12B11E7D54646BB9014CCECBAA398B80DE60B893BBD4E240A747AED)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ku0OfMRKRRu7iwbhRFTKLA/zh-cn_image_0000002566869419.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024549Z&HW-CC-Expire=86400&HW-CC-Sign=73005BE6E114E62675985F0B02485092777462C39FE33FDC2B310FC1268994CB)
 
 ### 示例2（开启自适应折叠模式）
 
 通过[autoCollapse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#autocollapse11)属性开启自适应折叠模式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -700,7 +698,6 @@ struct AlphabetIndexerSample {
     'V', 'W', 'X', 'Y', 'Z'];
   @State isNeedAutoCollapse: boolean = false;
   @State indexerHeight: string = '75%';
-
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -714,7 +711,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -724,7 +720,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -734,7 +729,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayJ, (item: string) => {
             ListItem() {
               Text(item)
@@ -747,32 +741,32 @@ struct AlphabetIndexerSample {
         }
         .width('50%')
         .height('100%')
-
         Column() {
           Column() {
             AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-              .autoCollapse(this.isNeedAutoCollapse)
-              .height(this.indexerHeight)
-              .enableHapticFeedback(false)
-              .selectedColor(0xFFFFFF)
-              .popupColor(0xFFFAF0)
-              .selectedBackgroundColor(0xCCCCCC)
-              .popupBackground(0xD2B48C)
-              .usingPopup(true)
-              .selectedFont({ size: 16, weight: FontWeight.Bolder })
-              .popupFont({ size: 30, weight: FontWeight.Bolder })
-              .itemSize(28)
-              .alignStyle(IndexerAlign.Right)
-              .popupTitleBackground("#D2B48C")
-              .popupSelectedColor(0x00FF00)
-              .popupUnselectedColor(0x0000FF)
-              .popupItemFont({ size: 30, style: FontStyle.Normal })
-              .popupItemBackgroundColor(0xCCCCCC)
+              .autoCollapse(this.isNeedAutoCollapse) // 开启或关闭自适应折叠模式
+              .height(this.indexerHeight) // 索引条高度
+              .enableHapticFeedback(false) // 关闭触控反馈
+              .selectedColor(0xFFFFFF) // 选中项文本颜色
+              .popupColor(0xFFFAF0) // 提示弹窗一级索引文本颜色
+              .selectedBackgroundColor(0xCCCCCC) // 选中项背景颜色
+              .popupBackground(0xD2B48C) // 提示弹窗背景颜色
+              .usingPopup(true) // 索引项被选中时显示提示弹窗
+              .selectedFont({ size: 16, weight: FontWeight.Bolder }) // 选中项文本样式
+              .popupFont({ size: 30, weight: FontWeight.Bolder }) // 提示弹窗内容的文本样式
+              .itemSize(28) // 每一项的尺寸大小
+              .alignStyle(IndexerAlign.Right) // 提示弹窗在索引条左侧弹出
+              .popupTitleBackground("#D2B48C") // 设置提示弹窗一级索引项背景颜色
+              .popupSelectedColor(0x00FF00) // 提示弹窗二级索引未选中项文本颜色
+              .popupUnselectedColor(0x0000FF) // 提示弹窗二级索引选中项文本颜色
+              .popupItemFont({ size: 30, style: FontStyle.Normal }) // 提示弹窗二级索引项文本样式
+              .popupItemBackgroundColor(0xCCCCCC) // 提示弹窗二级索引项背景颜色
               .onSelect((index: number) => {
                 console.info(this.value[index] + ' Selected!');
               })
               .onRequestPopupData((index: number) => {
-
+                // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
+                // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
                 if (this.value[index] == 'A') {
                   return this.arrayA;
                 } else if (this.value[index] == 'B') {
@@ -791,7 +785,6 @@ struct AlphabetIndexerSample {
           }
           .height('80%')
           .justifyContent(FlexAlign.Center)
-
           Column() {
             Button('切换成折叠模式')
               .margin('5vp')
@@ -820,13 +813,14 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/hkzRI2SzQgytD2rkeHdvjg/zh-cn_image_0000002566709437.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024514Z&HW-CC-Expire=86400&HW-CC-Sign=5621118EA14062B1D10E02A56785917F88ABC66E821033E14F1878E89AD1D6EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/hkzRI2SzQgytD2rkeHdvjg/zh-cn_image_0000002566709437.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024549Z&HW-CC-Expire=86400&HW-CC-Sign=16E69C5BF1BD4B1FADE745CC9E91EDDE47CD2293C011B582AB92106952A5383D)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
 通过[popupBackgroundBlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#popupbackgroundblurstyle12)属性实现提示弹窗的背景模糊效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -839,7 +833,6 @@ struct AlphabetIndexerSample {
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
     'V', 'W', 'X', 'Y', 'Z'];
   @State customBlurStyle: BlurStyle = BlurStyle.NONE;
-
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -853,7 +846,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -863,7 +855,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -873,7 +864,6 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
-
           ForEach(this.arrayL, (item: string) => {
             ListItem() {
               Text(item)
@@ -886,7 +876,6 @@ struct AlphabetIndexerSample {
         }
         .width('30%')
         .height('100%')
-
         Column() {
           Column() {
             Text('切换模糊材质: ')
@@ -906,20 +895,20 @@ struct AlphabetIndexerSample {
                 this.customBlurStyle = BlurStyle.BACKGROUND_THIN;
               })
           }.height('20%')
-
           Column() {
             AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-              .usingPopup(true)
-              .alignStyle(IndexerAlign.Left)
-              .popupItemBorderRadius(24)
-              .itemBorderRadius(14)
-              .popupBackgroundBlurStyle(this.customBlurStyle)
-              .popupTitleBackground(0xCCCCCC)
+              .usingPopup(true) // 索引项被选中时显示提示弹窗
+              .alignStyle(IndexerAlign.Left) // 提示弹窗在索引条右侧弹出
+              .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
+              .itemBorderRadius(14) // 设置索引项背板圆角半径
+              .popupBackgroundBlurStyle(this.customBlurStyle) // 设置提示弹窗的背景模糊材质
+              .popupTitleBackground(0xCCCCCC) // 设置提示弹窗一级索引项背景颜色
               .onSelect((index: number) => {
                 console.info(this.value[index] + ' Selected!');
               })
               .onRequestPopupData((index: number) => {
-
+                // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
+                // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
                 if (this.value[index] == 'A') {
                   return this.arrayA;
                 } else if (this.value[index] == 'B') {
@@ -942,11 +931,11 @@ struct AlphabetIndexerSample {
       }
       .width('100%')
       .height('100%')
-
+      // $r('app.media.image')需要替换为开发者所需的图像资源文件。
       .backgroundImage($r("app.media.image"))
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/cpFGMO-8Rd6d1E2YUP1k5w/zh-cn_image_0000002535789642.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024514Z&HW-CC-Expire=86400&HW-CC-Sign=945C72DE499783B8BE8C8652B2FEC8C222F595B3FEF9F30460BEE1208F019911)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/cpFGMO-8Rd6d1E2YUP1k5w/zh-cn_image_0000002535789642.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024549Z&HW-CC-Expire=86400&HW-CC-Sign=C3C596583AA0EB20BF31D26186FD4FB70DA3DCDA4336DA09D8B404C55FE64E49)

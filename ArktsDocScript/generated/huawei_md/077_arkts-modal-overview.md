@@ -3,8 +3,8 @@
 
 模态页面是一种大面板交互式的弹窗，和其他弹窗组件一样，通常用于在保持当前的上下文环境时，临时展示用户需关注的信息或待处理的操作。相比于其他弹窗组件，模态页面的内容都需要开发者通过自定义组件来填充实现，可展示的视图往往也很大。默认需要用户进行交互才能够退出模态页面。ArkUI当前提供了**半模态**和**全模态**两类模态页面组件。
 
-- **​半模态：​**开发者可以利用此模态页面实现多形态效果。支持不同宽度设备显示不同样式的半模态页面。允许用户通过侧滑，点击蒙层，点击关闭按钮，下拉关闭半模态页面。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/tragdoOrRrehkYCT7zSpTA/zh-cn_image_0000002566868281.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024244Z&HW-CC-Expire=86400&HW-CC-Sign=6683D0FD7C1C3619E135310CDB578CC08AADAA7C146D07DB9E30E9227585D4A1)
-- **全模态：​**开发者可以利用此模态页面实现全屏的模态弹窗效果。默认需要侧滑才能关闭。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/XqINMjwES32eHZcqXXsTNw/zh-cn_image_0000002566708299.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024244Z&HW-CC-Expire=86400&HW-CC-Sign=109B2CCE8B03E56E00729B538A3ACE44B9121B72BC5DC3C9F1B609E07116A4D5)
+- **​半模态：​**开发者可以利用此模态页面实现多形态效果。支持不同宽度设备显示不同样式的半模态页面。允许用户通过侧滑，点击蒙层，点击关闭按钮，下拉关闭半模态页面。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/tragdoOrRrehkYCT7zSpTA/zh-cn_image_0000002566868281.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024328Z&HW-CC-Expire=86400&HW-CC-Sign=FF8DEAF12ABF3D2C8D1A50802AF87A5E9CEE5FBD5AA837525F7E7070DA0C28A6)
+- **全模态：​**开发者可以利用此模态页面实现全屏的模态弹窗效果。默认需要侧滑才能关闭。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/XqINMjwES32eHZcqXXsTNw/zh-cn_image_0000002566708299.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024328Z&HW-CC-Expire=86400&HW-CC-Sign=CF7178A9042D0F6FF6A525DF67F8B7797CAE28C9B3165F9B922DA233394F381B)
 
 ## 使用场景
 

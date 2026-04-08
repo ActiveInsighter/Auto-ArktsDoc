@@ -606,6 +606,7 @@ finishTransition(): void
 该示例通过设置arcSwiper的基本属性，展示了组件的基本功能。
 
 ```typescript
+// xxx.ets
 import {
   CircleShape,
   ArcSwiper,
@@ -614,29 +615,23 @@ import {
   ArcDirection,
   ArcSwiperController
 } from '@kit.ArkUI';
-
+// 从API version 22开始，无需手动导入ArcSwiperAttribute。具体请参考ArcSwiper的导入模块说明
 class MyDataSource implements IDataSource {
   private list: Color[] = [];
-
   constructor(list: Color[]) {
     this.list = list;
   }
-
   totalCount(): number {
     return this.list.length;
   }
-
   getData(index: number): Color {
     return this.list[index];
   }
-
   registerDataChangeListener(listener: DataChangeListener): void {
   }
-
   unregisterDataChangeListener() {
   }
 }
-
 @Entry
 @Component
 struct TestNewInterface {
@@ -648,7 +643,6 @@ struct TestNewInterface {
   @State backgroundColors: Color[] =
     [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.White, Color.Gray, Color.Orange, Color.Transparent];
   innerSelectedIndex: number = 0;
-
   aboutToAppear(): void {
     let list: Color[] = [];
     for (let i = 1; i <= 6; i++) {
@@ -656,7 +650,6 @@ struct TestNewInterface {
     }
     this.data = new MyDataSource(this.backgroundColors);
   }
-
   build() {
     Column() {
       Row() {
@@ -695,11 +688,11 @@ struct TestNewInterface {
           console.info("velocity: " + extraInfo.velocity);
         })
         .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-          others: Array<GestureRecognizer>): GestureJudgeResult => {
+          others: Array<GestureRecognizer>): GestureJudgeResult => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
           if (current) {
             let target = current.getEventTargetInfo();
             if (target && current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
-
+              // 此处判断swiperTarget.isBegin()或innerSelectedIndex === 0，表明ArcSwiper滑动到开头
               let swiperTarget = target as ScrollableTargetInfo
               if (swiperTarget instanceof ScrollableTargetInfo &&
                 (swiperTarget.isBegin() || this.innerSelectedIndex === 0)) {
@@ -723,7 +716,7 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/8SGkcFvdSdm7dlLRj7NEHg/zh-cn_image_0000002566709201.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024403Z&HW-CC-Expire=86400&HW-CC-Sign=62E9F371BDCD270DA6848D678CD1FCE39A3CD73E8E92F48E6681193B69BBABA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/8SGkcFvdSdm7dlLRj7NEHg/zh-cn_image_0000002566709201.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=037EF408B1479ABFB537F8A06FA8874D0807E8899F8F4F23780FA49A5CC94B05)
 
 ### 示例2（设置ArcSwiper自定义页面切换动画）
 
@@ -732,20 +725,18 @@ struct TestNewInterface {
 ```typescript
 import { Decimal } from '@kit.ArkTS';
 import { CircleShape, ArcSwiper, ArcSwiperAttribute } from '@kit.ArkUI';
-
+// 从API version 22开始，无需手动导入ArcSwiperAttribute。具体请参考ArcSwiper的导入模块说明
 @Entry
 @Component
 struct TestNewInterface {
   private backgroundColors: Color[] =
     [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.White, Color.Gray, Color.Orange];
   @State scaleList: number[] = [];
-
   aboutToAppear(): void {
     for (let i = 0; i < this.backgroundColors.length; i++) {
       this.scaleList.push(1.0);
     }
   }
-
   build() {
     Column() {
       Row() {
@@ -766,12 +757,12 @@ struct TestNewInterface {
           console.info('onChange:' + index.toString());
         })
         .customContentTransition({
-
+          // 页面移除视窗时超时1000ms下渲染树
           timeout: 1000,
-
+          // 对视窗内所有页面逐帧回调transition，在回调中修改opacity属性值，实现自定义动画
           transition: (proxy: SwiperContentTransitionProxy) => {
             if (proxy.position <= -1 || proxy.position >= 1) {
-
+              // 页面完全滑出视窗外时，重置属性值
               this.scaleList[proxy.index] = 1.0;
             } else {
               let position: number = Decimal.abs(proxy.position).toNumber();
@@ -786,4 +777,4 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/w6MkdmGHS_qN-OF8sTR2_g/zh-cn_image_0000002535789406.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024403Z&HW-CC-Expire=86400&HW-CC-Sign=B633B67478F1ED8A770FD5E748C9175196A098597CE1BE9B5DEC2CE6FF1361CD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/w6MkdmGHS_qN-OF8sTR2_g/zh-cn_image_0000002535789406.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=B9F7CCC2C5F6760E6B62CCB2974E39AD7C6D45F65E28CBBDC087B987FF285616)

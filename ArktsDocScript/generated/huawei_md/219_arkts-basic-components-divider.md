@@ -184,7 +184,7 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/5hGISdsdRY-41JstaLb4sA/zh-cn_image_0000002535789666.png?HW-CC-KV=V1&HW-CC-Date=20260407T024531Z&HW-CC-Expire=86400&HW-CC-Sign=ED98013C356BAA9C17EC7849E519B8D992AE16FF0B2A3433F6145236D04BACC6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/5hGISdsdRY-41JstaLb4sA/zh-cn_image_0000002535789666.png?HW-CC-KV=V1&HW-CC-Date=20260408T024604Z&HW-CC-Expire=86400&HW-CC-Sign=F51CCCAA9771C86DD9A22972509492F11EAB7D09CEC64CD2F29085457050CF61)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -222,4 +222,4 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/2rVw6jBaRs-15syUysQRdg/zh-cn_image_0000002535949612.png?HW-CC-KV=V1&HW-CC-Date=20260407T024531Z&HW-CC-Expire=86400&HW-CC-Sign=BA1BB2B08951DBA31FF2A3400A0EAD91EF4247E3CF2F045F3A417DDF3381240F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/2rVw6jBaRs-15syUysQRdg/zh-cn_image_0000002535949612.png?HW-CC-KV=V1&HW-CC-Date=20260408T024604Z&HW-CC-Expire=86400&HW-CC-Sign=4364F6189DCF493899FF89B94DFF2D4F5B7903E0457A0ABD7D46EAC55F055B32)

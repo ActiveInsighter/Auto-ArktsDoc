@@ -137,7 +137,7 @@ export struct CustomDialogComponentWithTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/j0xxcaMUTXGqzkbFHV54xg/zh-cn_image_0000002566868257.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024225Z&HW-CC-Expire=86400&HW-CC-Sign=42AA8F498E7A39CF27368B8C3B2C983482E1AA7AEB595247EF413448093FCA63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/j0xxcaMUTXGqzkbFHV54xg/zh-cn_image_0000002566868257.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024018Z&HW-CC-Expire=86400&HW-CC-Sign=9484DD230E12EF15B8193BB1F45EE5FD20FAAC443152ADC0C938A80E35BDC7AA)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -194,7 +194,7 @@ export struct CustomDialogWithKeyboardAvoidDistance {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/HbqDRzR1TR-5xqi7y99X0Q/zh-cn_image_0000002566708275.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024225Z&HW-CC-Expire=86400&HW-CC-Sign=279820C462B574AA89D7190B81D5B36EEF87C48C0B8762E136C853BA855483B3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/HbqDRzR1TR-5xqi7y99X0Q/zh-cn_image_0000002566708275.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024018Z&HW-CC-Expire=86400&HW-CC-Sign=DBD8E75A3DD73CFD544DB014BCA2884B4466236D0B196D014C124DA7BAEFB6C7)
 
 ## 完整示例
 
@@ -339,4 +339,4 @@ export struct OpenDialogAndUpdate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/idEVYDW0RSelfLWHSoT9aA/zh-cn_image_0000002535788480.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024225Z&HW-CC-Expire=86400&HW-CC-Sign=A132C285BBF68493948D86628C6D237B2AE402FAEAA063965B240647A110618D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/idEVYDW0RSelfLWHSoT9aA/zh-cn_image_0000002535788480.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024018Z&HW-CC-Expire=86400&HW-CC-Sign=8258210FE588CE04B95FFCA48783997F7E49A44E20C7C0BB26E28502C7C52914)

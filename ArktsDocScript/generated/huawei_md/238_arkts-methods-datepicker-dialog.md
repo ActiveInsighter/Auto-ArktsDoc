@@ -152,7 +152,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/s7OUcp_QRqGQ88FrH97C7Q/zh-cn_image_0000002535949738.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=5923403CE0811E7AD96BAA806037E815A17381F7ECB5AF50D13479FAF631E4A2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/s7OUcp_QRqGQ88FrH97C7Q/zh-cn_image_0000002535949738.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=D72ABB25566665A600546D47A25AA1BB704796CE031CF50A364D5286D4B39BC9)
 
 ### 示例2（自定义样式）
 
@@ -230,7 +230,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GCxr3gsnSKeedd0imo9hBw/zh-cn_image_0000002566869571.png?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=2B83C8EFE9E1C270E4330EA844843CCCE49940C0FBE48776FBE58CAF38585438)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/GCxr3gsnSKeedd0imo9hBw/zh-cn_image_0000002566869571.png?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=CC673995507B68227FA17221AE186330606E8CB51B045A116043796C9B4FE7EB)
 
 > **说明**
 > 如需完全自定义实现日期滑动选择器弹窗，可以通过先使用[自定义弹窗 (CustomDialog)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-custom-dialog-box)，然后使用[DatePicker](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-datepicker)组件来实现。
@@ -291,7 +291,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bhrYTD9hTQmcpTmU6_xkEw/zh-cn_image_0000002566709589.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=8D6E69B0826545118FEEA102C8B3404C65C93EA0FCB5F88CAAEC62519FDF74EF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bhrYTD9hTQmcpTmU6_xkEw/zh-cn_image_0000002566709589.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=433E51186470A26E3B1DB30772814818484D37CC6E21D41ADDC57F8DE1A5F1D4)
 
 ### 示例4（设置弹窗位置）
 
@@ -326,7 +326,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/2bxIaHmeRzufqABfodTEAQ/zh-cn_image_0000002535789794.png?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=94A9A6C0D6696AC7DC7E70A41CA2DB9ACFCC989B6387959EA506724D5C987C99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/2bxIaHmeRzufqABfodTEAQ/zh-cn_image_0000002535789794.png?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=A41B422D0FC5AB4204761DCA5951AD611C0435797E77513B01A68300914B3E43)
 
 ### 示例5（设置遮蔽区）
 
@@ -365,7 +365,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/mexERZPdSgytuRmKdo6xxA/zh-cn_image_0000002535949740.png?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=B4C87A4EEAB078FE19AAF904925D7CCA8E465A68BAFD73B245D7D0C3FD07A917)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/mexERZPdSgytuRmKdo6xxA/zh-cn_image_0000002535949740.png?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=3ABC38538EBCD383EC1AE3B7DD28DFF08FA06C86F83FDA7AF2A09F74A72A70F4)
 
 ### 示例6（设置弹窗背板）
 
@@ -401,7 +401,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/2cb39w2PRGu9L0LYozzWYQ/zh-cn_image_0000002566869573.png?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=842854AD0AF637D28604B077E06F82164F8EE152422981156B82302C741DEE11)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/2cb39w2PRGu9L0LYozzWYQ/zh-cn_image_0000002566869573.png?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=BAF82BB66103010B5D4E0671828C2457843925AA00D85D1429502D69B46A3993)
 
 ### 示例7（设置公历农历）
 
@@ -451,7 +451,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/cRf-ifx5SG-Mo7SCO0Z4fQ/zh-cn_image_0000002566709591.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=882DF7C81337DAB57137A262D55F676A1F77DAC9B5F0CF1788F1D6A7BC97D79F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/cRf-ifx5SG-Mo7SCO0Z4fQ/zh-cn_image_0000002566709591.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=E7395C122B450F04D5CF6A946EB1A03E27AAFB1B9D5AAB15DF5646FB051D2606)
 
 ### 示例8（设置显示月、日列）
 
@@ -485,7 +485,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/A9tvHK8PTXuiXYx_AoggOw/zh-cn_image_0000002535789796.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=DD28B2C065BEC6A0DFEED4A2024869AC4DBB3838BD6F87E1A9A6F2C96D4AA3B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/A9tvHK8PTXuiXYx_AoggOw/zh-cn_image_0000002535789796.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=65B77AFE26B1DC10CF134499DC58503C77D3E756A64E566287EE7F1F138AB35B)
 
 ### 示例9（设置循环滚动）
 
@@ -528,7 +528,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/zSS4wi6sS9iFASlyd8sfvQ/zh-cn_image_0000002535949742.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=B5CF53A182D74FA323B265B05C268477CA48B23B30DB9B6FF6D164B10DB2484E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/zSS4wi6sS9iFASlyd8sfvQ/zh-cn_image_0000002535949742.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=6F5730411E1A1947290D6987C72374EDC3FEB9519E892E83EFC0899EF55A34DA)
 
 ### 示例10（自定义背景模糊效果参数）
 
@@ -567,7 +567,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ATScWHDvQR65TL91cSJiwg/zh-cn_image_0000002566869575.png?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=4AA7ED20E726595517C518102B720D1DB7FFF55DC77A5EB22ED5E7B7DCB44EAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ATScWHDvQR65TL91cSJiwg/zh-cn_image_0000002566869575.png?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=5FB344F303982D39D27D21A8FA3FAAACB272D026AE2CF69B3FB1FA0D7EB2FDE4)
 
 ### 示例11（自定义背景效果参数）
 
@@ -608,4 +608,4 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/-ftODWoHT9Oc15CZkZwvCw/zh-cn_image_0000002566709593.png?HW-CC-KV=V1&HW-CC-Date=20260407T024551Z&HW-CC-Expire=86400&HW-CC-Sign=D1829E82229E1C72E81825369A6AD834FBE30DDFB0E109D678A057666F4782A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/-ftODWoHT9Oc15CZkZwvCw/zh-cn_image_0000002566709593.png?HW-CC-KV=V1&HW-CC-Date=20260408T024623Z&HW-CC-Expire=86400&HW-CC-Sign=396C2C7B143B1D2FB0002B7312468E0437594A3C47393658B673F9A35323D919)

@@ -72,4 +72,4 @@ struct MotionPathExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/yw8TBxFBQSmomqkhN0nD8w/zh-cn_image_0000002566709565.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024544Z&HW-CC-Expire=86400&HW-CC-Sign=BE96D4D32493B34840F61AB253BF471B5943B0B27BC9DF676655636B8878DC81)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/yw8TBxFBQSmomqkhN0nD8w/zh-cn_image_0000002566709565.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024616Z&HW-CC-Expire=86400&HW-CC-Sign=5C0CDB95BD31B3C0A60E291E6988636FF157495020CA2B271AFBEA1BE8D0EBDE)

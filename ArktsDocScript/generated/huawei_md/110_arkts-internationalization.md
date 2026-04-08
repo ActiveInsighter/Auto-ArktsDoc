@@ -13,7 +13,7 @@
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/_8D9rPR6SSeTxOa4raZ-7A/zh-cn_image_0000002535948558.png?HW-CC-KV=V1&HW-CC-Date=20260407T024311Z&HW-CC-Expire=86400&HW-CC-Sign=429836A4D2B27319D232CB3EB6022E76A77C62CBD743C7659A93EEF66A98F25B) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/JPLBqlRbRqi0Z5l0cu3s-Q/zh-cn_image_0000002566868391.png?HW-CC-KV=V1&HW-CC-Date=20260407T024311Z&HW-CC-Expire=86400&HW-CC-Sign=864312BDD6EDF9101CA122398308463D8DCE6EA33D02708EE41D95079B334E9B) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/_8D9rPR6SSeTxOa4raZ-7A/zh-cn_image_0000002535948558.png?HW-CC-KV=V1&HW-CC-Date=20260408T024357Z&HW-CC-Expire=86400&HW-CC-Sign=1FC391968DAC5FD1761A127BF5F739C365F0EBECB1EE1136DBD8174E8A99632B) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/JPLBqlRbRqi0Z5l0cu3s-Q/zh-cn_image_0000002566868391.png?HW-CC-KV=V1&HW-CC-Date=20260408T024357Z&HW-CC-Expire=86400&HW-CC-Sign=659810263E8315CFB031E9DC3064D63BD647EA814529293C7A3E13EF3BFC3915) |
 
 当组件满足以下任意条件时，镜像能力生效：
 
@@ -152,7 +152,7 @@ struct CustomizeCanvasComponentDrawing {
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/CC7h218BTvSic30h3-0xCA/zh-cn_image_0000002566708411.jpg?HW-CC-KV=V1&HW-CC-Date=20260407T024311Z&HW-CC-Expire=86400&HW-CC-Sign=56706EAC02B434DB0D750C0784B067DC44B0794920E1E3CF1699862E769CB039) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/7XX0ygp7Q6at0WnrgiuVVA/zh-cn_image_0000002535788614.jpg?HW-CC-KV=V1&HW-CC-Date=20260407T024311Z&HW-CC-Expire=86400&HW-CC-Sign=B5349CE6471B6B38118154E8B62140CEB19E4E16155FA2A902D0322B59103776) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/CC7h218BTvSic30h3-0xCA/zh-cn_image_0000002566708411.jpg?HW-CC-KV=V1&HW-CC-Date=20260408T024357Z&HW-CC-Expire=86400&HW-CC-Sign=E42CC54E16F383854ED013C94E9806B9211864416E7ECBEEBA43EBB29A7735D7) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/7XX0ygp7Q6at0WnrgiuVVA/zh-cn_image_0000002535788614.jpg?HW-CC-KV=V1&HW-CC-Date=20260408T024357Z&HW-CC-Expire=86400&HW-CC-Sign=CD2BCBBF9FF9B45FE265035F9CB43EC515D1866DDBAB2DF56C019E0A6903FAB7) |
 
 ### 镜像状态字符对齐
 
@@ -162,7 +162,7 @@ struct CustomizeCanvasComponentDrawing {
 
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gfLEGXrQTGucxE-X_6BPDQ/zh-cn_image_0000002535948560.png?HW-CC-KV=V1&HW-CC-Date=20260407T024311Z&HW-CC-Expire=86400&HW-CC-Sign=CA9BEA8818144DDC83375FD612D9E4B98DAC8E538FC7AAEB78CE370999762F9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gfLEGXrQTGucxE-X_6BPDQ/zh-cn_image_0000002535948560.png?HW-CC-KV=V1&HW-CC-Date=20260408T024357Z&HW-CC-Expire=86400&HW-CC-Sign=2A48966A8C56DD0E53D9587B48A63C854D98A3161292870B39B3A768797AE376)
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
 
@@ -170,4 +170,4 @@ struct CustomizeCanvasComponentDrawing {
 2. 弱字符的方向性：弱字符不具备明确的方向性，这些字符不会影响其周围中性字符的方向。
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/W22FJd_BQHauaBa76rNQiQ/zh-cn_image_0000002566868393.png?HW-CC-KV=V1&HW-CC-Date=20260407T024311Z&HW-CC-Expire=86400&HW-CC-Sign=CDD5950CE70F1F7FCEAC59B54CBF92AE91746440C1240E49AA5296B595008105)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/W22FJd_BQHauaBa76rNQiQ/zh-cn_image_0000002566868393.png?HW-CC-KV=V1&HW-CC-Date=20260408T024357Z&HW-CC-Expire=86400&HW-CC-Sign=B62C57680462842FFF4FDA3EE9DAF6A60D73B612AAD39AB0D23BB031798323C0)

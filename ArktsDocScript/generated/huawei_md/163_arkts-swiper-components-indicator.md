@@ -240,7 +240,6 @@ struct DotIndicatorDemo {
       this.list.push(i);
     }
   }
-
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -265,7 +264,6 @@ struct DotIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(
@@ -287,7 +285,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/J8xoot9STweqIpKy4g77PQ/zh-cn_image_0000002566869199.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024413Z&HW-CC-Expire=86400&HW-CC-Sign=1F56A89436FA61915F50063D67591D18D10D9D95B600027672E0BC808748D750)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/J8xoot9STweqIpKy4g77PQ/zh-cn_image_0000002566869199.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024454Z&HW-CC-Expire=86400&HW-CC-Sign=22F1EB46466F73D3173AED1F910B7D4CDD7B5BB2F5960B3C00202FB985B766E4)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -305,7 +303,6 @@ struct DigitIndicatorDemo {
       this.list.push(i);
     }
   }
-
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -330,7 +327,6 @@ struct DigitIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(Indicator.digit()
@@ -349,4 +345,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/7eM8piMlTMGnGM3IVdLm9g/zh-cn_image_0000002566709217.gif?HW-CC-KV=V1&HW-CC-Date=20260407T024413Z&HW-CC-Expire=86400&HW-CC-Sign=9FF8D92ACE7BB90B7FCF4A636C18297A3611005D51D5F0DB1FAC2330D1FF9E60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/7eM8piMlTMGnGM3IVdLm9g/zh-cn_image_0000002566709217.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024454Z&HW-CC-Expire=86400&HW-CC-Sign=154F050DD3BE9A82B030CDB93174835776F9C558A6C45781BF42A1A3819D5B95)
