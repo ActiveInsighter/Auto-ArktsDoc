@@ -16,7 +16,7 @@
 
 Button(options: ButtonOptions)
 
-创建可以包含单个子组件的按钮。
+创建可以包含单个子组件的按钮。未通过该接口设置时，则按照ButtonOptions中各参数的默认值配置。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -49,7 +49,7 @@ Button(label: ResourceStr, options?: ButtonOptions)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | label | [ResourceStr](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcestr) | 是 | 按钮文本内容。 **说明：** 当文本字符的长度超过按钮本身的宽度时，文本将会被截断。 |
-| options | [ButtonOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#buttonoptions对象说明) | 否 | 配置按钮的显示样式。 |
+| options | [ButtonOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-button#buttonoptions对象说明) | 否 | 配置按钮的显示样式。 未设置时，则按照ButtonOptions中各参数的默认值配置。 |
 
 ### Button
 
@@ -513,7 +513,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/a_7FwP27QjS6lQ_r0ZPnAQ/zh-cn_image_0000002535789452.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024503Z&HW-CC-Expire=86400&HW-CC-Sign=1CBB5C27DA1DF4EB1401726D5A53E6F1334B59DF661010B70240CC8228C3B993)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/F17bYi5zQpe2IIglwiMbYg/zh-cn_image_0000002537333896.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023941Z&HW-CC-Expire=86400&HW-CC-Sign=4245DADEF2054DF2597FD379218843238FEB92DA97006B86132CF5267967097A)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -544,7 +544,7 @@ struct SwipeGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Z6x1DAOvQDOGaEyQpXMrcg/zh-cn_image_0000002535949398.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024503Z&HW-CC-Expire=86400&HW-CC-Sign=95F24F3EF78CE0BED63EE8D53C81D1C2AA0C438A0FAA38E9515FF0E07FAA741F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/A2BvdMYuReSVoDlDY-9AXw/zh-cn_image_0000002568173691.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023941Z&HW-CC-Expire=86400&HW-CC-Sign=3B0B981845AA264EC1899F66F48524197C98ABE8B974F99A50809D4E20841513)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -585,7 +585,7 @@ struct ButtonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/Z3rw66IeR06Pk__pf5fFFA/zh-cn_image_0000002566869231.png?HW-CC-KV=V1&HW-CC-Date=20260408T024503Z&HW-CC-Expire=86400&HW-CC-Sign=4C99BFE07817C5DDA2892BFD687FCCFE2B3409F4E2BB59F7C2F7FCF107126ACC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/Pu4krQ7CQ8CvN7pNiUY6HQ/zh-cn_image_0000002568253687.png?HW-CC-KV=V1&HW-CC-Date=20260409T023941Z&HW-CC-Expire=86400&HW-CC-Sign=52B6E59B6FB35804C696DABBFE1D27F1C8668C3DA1815B1AC9B1BC6D37531FCC)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -623,7 +623,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ILzW6BH-R4udF8rkWC6O6A/zh-cn_image_0000002566709249.jpeg?HW-CC-KV=V1&HW-CC-Date=20260408T024503Z&HW-CC-Expire=86400&HW-CC-Sign=ED2C6844BF203F108763053F0DE1591F3479C3D28AE10920CDE7A2271AA5EE3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/FyXV7100QPS_1gxfk7SZ2Q/zh-cn_image_0000002537173978.jpeg?HW-CC-KV=V1&HW-CC-Date=20260409T023941Z&HW-CC-Expire=86400&HW-CC-Sign=D8102B00D2917D1F4AB35EB0F05B30DE7D4128AE94789FA9C7F52CCDCD595F33)
 
 ### 示例5（设置按钮的角色）
 
@@ -652,7 +652,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/yh5WbWsITn-zcxjk2ZC0lA/zh-cn_image_0000002535789454.jpeg?HW-CC-KV=V1&HW-CC-Date=20260408T024503Z&HW-CC-Expire=86400&HW-CC-Sign=20047384B24B20EDF96B5A01E0AEDC8651250D4406C4A3A20DD8A267D0426F84)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/VwOyZulkScu_j3Az9UWtEw/zh-cn_image_0000002537333898.jpeg?HW-CC-KV=V1&HW-CC-Date=20260409T023941Z&HW-CC-Expire=86400&HW-CC-Sign=FB16B818383A37B736BD59B91437CFEB8572B9EC62242CB4EB142A5DD5E35AD0)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -723,7 +723,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/gG5DMPYESr6pI79kNiXLLg/zh-cn_image_0000002535949400.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024503Z&HW-CC-Expire=86400&HW-CC-Sign=93345F87214107DCEC1667A8349A05733AF34D4CFDA744509A13FA19CD68C67A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/n9GPo_3GS--kzeKJt5DsZA/zh-cn_image_0000002568173693.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023941Z&HW-CC-Expire=86400&HW-CC-Sign=A1B1C792A6FAD307917F588A94A7F976180CCC699F00404AA6021C1282114AE7)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -765,4 +765,4 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/feUVLoO6QWKBBgNXXUfT5w/zh-cn_image_0000002566869233.jpeg?HW-CC-KV=V1&HW-CC-Date=20260408T024503Z&HW-CC-Expire=86400&HW-CC-Sign=FE94A08F09D01168B0B60C9566BE4E2BFE0362A74AC21F24C612633D25E9C9CC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ESJqeFkqR2ioJT3UkdmkHQ/zh-cn_image_0000002568253689.jpeg?HW-CC-KV=V1&HW-CC-Date=20260409T023941Z&HW-CC-Expire=86400&HW-CC-Sign=56794B83407D95D3A39C11F99F6F88AFB443F973B453A2112505E0C83DE0E3CC)

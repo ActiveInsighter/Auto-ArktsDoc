@@ -1826,7 +1826,9 @@ finishTransition(): void
 
 ### 示例1（设置导航点交互及翻页动效）
 
-该示例通过[changeIndex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#changeindex15)接口设置[SwiperAnimationMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#swiperanimationmode15枚举说明)动效模式，实现了Swiper组件翻页至指定页面。
+该示例通过[changeIndex](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#changeindex15)接口设置[SwiperAnimationMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#swiperanimationmode15枚举说明)动效以跳转指定页面，并使用[onScrollStateChanged](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#onscrollstatechanged20)回调监听滑动状态的变化。
+
+从API version 20开始，新增onScrollStateChanged事件。
 
 ```typescript
 class MyDataSource implements IDataSource {
@@ -1959,7 +1961,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ydIIVZudSUe8tHvQplbrCw/zh-cn_image_0000002535949346.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=EA73B1DE87292D51C3BB051EE03E296A8882AD7F03F609E66DAE10F6D1EF4F24)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Y932x4fBQ-WFkX8vrO51_A/zh-cn_image_0000002568173639.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=4BE956554D0D5EE15ED921B5FFAA677BD7F336F3E90A00527F7DFBEE55DB30C5)
 
 ### 示例2（设置数字指示器）
 
@@ -2045,7 +2047,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/SFSQY9LyQLSyXZ3UZACCCQ/zh-cn_image_0000002566869179.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=77FF1D6F5207FC26DAC21ADFAD7871A1D2054FB2519B325BCEC60C44D14F3EF8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/kQcUH67FSAaFJqYsWuTXfw/zh-cn_image_0000002568253635.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=5C5EA3B031DFBCE16D339186E7E5383D4C5AF20A9DB2B4A70607F93E2930AE99)
 
 ### 示例3（设置按组翻页）
 
@@ -2131,7 +2133,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/dFgUKQwUR1quMqvPbKhuJg/zh-cn_image_0000002566709197.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=A9C04C815AA628A712BA3A4DA2B80177727C491A442042449D7507FFF8645BCC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/WWF2z1ZoTgSxIlA5YhRbJA/zh-cn_image_0000002537173926.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=679C3BD3FCBF1EA2A93FB4CF10A0E889D1BFB800A925B14D9C603DA34E9F364B)
 
 ### 示例4（设置自定义页面切换动画）
 
@@ -2264,7 +2266,7 @@ struct SwiperCustomAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/QXtvio2hRcyWzqt-XZjVuQ/zh-cn_image_0000002535789402.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=B56A26FCE7216F22845D14D966680FAB360BE9237ABA12118E5D4B2956D99D30)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/hOh37baIRTqbJbmEmJyxRQ/zh-cn_image_0000002537333846.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=783AD464AB05D05D24C5CDF451A7E6CA0F6E764D47833EBBFCEAD0AB489FC885)
 
 ### 示例5（设置圆点导航点超长显示）
 
@@ -2360,7 +2362,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/0K1FoKN2Tq-I0unyPvTFPg/zh-cn_image_0000002535949348.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=90E16631452E577E11D0D76C95020DE4A627ABD1FD700DE41C8CAF49D2C8696D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/SJvg7wKBQtSku2YiwBvH9A/zh-cn_image_0000002568173641.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=59A41108834A148CABF2C57225E7A90A1F86F197E2785AD47D190A2794C07F52)
 
 ### 示例6（预加载子节点）
 
@@ -2538,7 +2540,7 @@ struct TabsSwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/_Ik_9XlhSHKoY7WaC8f-uQ/zh-cn_image_0000002566869181.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=982CB1E21DADE1F9DA9ADFB7F0F297EBAF07809FFC1D3F637EE7A1BC6D32E5C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/yg28k0JpQ5-M7IVtoaooRQ/zh-cn_image_0000002568253637.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=A03550AF8B31A7D23E228C9A8DB399EF3AA475B67F6D2CFBA68603847684E05B)
 
 ### 示例8（滑动行为拦截事件）
 
@@ -2623,7 +2625,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/dCmUv8zhR2Ktr5uPoIrkyA/zh-cn_image_0000002566709199.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=77088505DC7340255D80CAF744A5DEEABD7078E3F84EE548355142C515AF3260)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/2hYz_zlIRm-rK0WUTY_eVg/zh-cn_image_0000002537173928.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=80A4F3ABD72584D18EB78EFF2FE17E7C2B3C25419755B192D2986E8BDF52A16F)
 
 ### 示例9（演示导航点space与bottom）
 
@@ -2725,7 +2727,7 @@ struct SwiperExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/S5z_n6fPR4eedGAF-GlZWQ/zh-cn_image_0000002535789404.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=F32B80B15F0F01D8A201E85DDDFA825FE6BD6642FD9B8BE35C5E2223B8A06B1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/C1zNRJZ8QTqnJvh9ug0o8g/zh-cn_image_0000002537333848.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=5D6357E10A7B898FCFC45DED5ADF30039E5F13C97577485511699CA3273660C4)
 
 ### 示例10（Swiper组件基于断点配置显示个数）
 
@@ -2789,8 +2791,8 @@ struct SwiperExample {
 
 Swiper宽度属于[sm](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)及更小的断点区间时显示1列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/jwwvD9_vQGGpNwEFh3WXQw/zh-cn_image_0000002535949350.jpg?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=5D36B93D42C615C46108AF5DD3764FF22165CB5F38C24EEC6FA79B4F7E14CEBB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/RiK49Yb2RuiJjmfTis0MgA/zh-cn_image_0000002568173643.jpg?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=66D3E82E6EAC1BC1EDA98DD3FCE02F0991278D971D8801000A85B16C761BCCB3)
 
 Swiper宽度属于[md](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-development-grid-layout#栅格容器断点)断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/-gvD4kujSMGO8wlOKgiBww/zh-cn_image_0000002566869183.jpg?HW-CC-KV=V1&HW-CC-Date=20260408T024443Z&HW-CC-Expire=86400&HW-CC-Sign=9D8B254103393E7DEF4FF9D885422653F07D87C51ED16B5379AFA9BB9D5A1B12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/-e-cpxDSSyKTnqISwbXOWA/zh-cn_image_0000002568253639.jpg?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=45ED9F2F3E8A85DA7D868A0ABF3E731664AD059DB537C78DC89272E181581BF7)

@@ -21,14 +21,14 @@ ArcSwiper提供了默认的弧形导航点样式，导航点默认显示在ArcSw
 
 通过indicator属性，开发者可以设置弧形导航点的方向，同时也可以设置导航点和被选中导航点的颜色。
 
-- 导航点使用默认样式 ```typescript ArcSwiper() {  Text('0')  .width(233)  .height(233)  .backgroundColor(Color.Gray)  .textAlign(TextAlign.Center)  .fontSize(30)  Text('1')  .width(233)  .height(233)  .backgroundColor(Color.Green)  .textAlign(TextAlign.Center)  .fontSize(30)  Text('2')  .width(233)  .height(233)  .backgroundColor(Color.Pink)  .textAlign(TextAlign.Center)  .fontSize(30) } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Jg22-2ezQKm7RBarnNACFg/zh-cn_image_0000002535948390.png?HW-CC-KV=V1&HW-CC-Date=20260408T024302Z&HW-CC-Expire=86400&HW-CC-Sign=64E5496086ADBF4B8B0102A1A3B9376D4DA87C8C6940622AE9980A863012A142)
-- 自定义导航点样式 导航点位于ArcSwiper组件6点钟方向，导航点颜色设为红色，被选中导航点颜色为蓝色。 ```typescript ArcSwiper() { } .indicator(  new ArcDotIndicator()  .arcDirection(ArcDirection.SIX_CLOCK_DIRECTION)  .itemColor(Color.Red)  .selectedItemColor(Color.Blue) ) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/mxCWGua5TliDs3DYxS4kOw/zh-cn_image_0000002566868223.png?HW-CC-KV=V1&HW-CC-Date=20260408T024302Z&HW-CC-Expire=86400&HW-CC-Sign=8E4481D00152DFDEC845D3EEF5B1708E16D09BFCB61173EA1A613F2785222415)
+- 导航点使用默认样式 ```typescript ArcSwiper() {  Text('0')  .width(233)  .height(233)  .backgroundColor(Color.Gray)  .textAlign(TextAlign.Center)  .fontSize(30)  Text('1')  .width(233)  .height(233)  .backgroundColor(Color.Green)  .textAlign(TextAlign.Center)  .fontSize(30)  Text('2')  .width(233)  .height(233)  .backgroundColor(Color.Pink)  .textAlign(TextAlign.Center)  .fontSize(30) } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/7U6ZbCMAQY6JyaTF-PR-tw/zh-cn_image_0000002568252689.png?HW-CC-KV=V1&HW-CC-Date=20260409T023736Z&HW-CC-Expire=86400&HW-CC-Sign=479517261720BCEBD1EF847FFBE17B3D9F3026CE39E47A1A5B11E24BDCE77ECB)
+- 自定义导航点样式 导航点位于ArcSwiper组件6点钟方向，导航点颜色设为红色，被选中导航点颜色为蓝色。 ```typescript ArcSwiper() { } .indicator(  new ArcDotIndicator()  .arcDirection(ArcDirection.SIX_CLOCK_DIRECTION)  .itemColor(Color.Red)  .selectedItemColor(Color.Blue) ) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/bhHsD3HnR6C7emc871K7XA/zh-cn_image_0000002537172976.png?HW-CC-KV=V1&HW-CC-Date=20260409T023736Z&HW-CC-Expire=86400&HW-CC-Sign=A0A6959062CE11EABAD96B5F4DDBA30922F43979DF49ED06794577EF10D99AF5)
 
 ## 控制页面切换方式
 
 ArcSwiper支持滑动手指、点击导航点、旋转表冠和控制控制器四种方式切换页面。以下示例展示通过控制控制器和旋转表冠翻页的方法。
 
-- 控制控制器翻页。 ```typescript import {  ArcButton,  ArcButtonOptions,  ArcButtonStatus,  ArcButtonStyleMode,  ArcButtonPosition,  ArcSwiper,  ArcSwiperAttribute,  ArcSwiperController, } from '@kit.ArkUI'; @Entry @Component export struct ArcSwiperToggle {  private wearableSwiperController: ArcSwiperController = new ArcSwiperController();  build() {  Column({ space: 12 }) {  Stack() {  ArcSwiper(  this.wearableSwiperController  ) {  }  .vertical(true)  .indicator(false)  Column() {  ArcButton({  options: new ArcButtonOptions({  label: 'previous',  position: ArcButtonPosition.TOP_EDGE,  styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,  onClick: () => {  this.wearableSwiperController.showPrevious();  }  })  })  Blank()  ArcButton({  options: new ArcButtonOptions({  label: 'next',  position: ArcButtonPosition.BOTTOM_EDGE,  styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,  onClick: () => {  this.wearableSwiperController.showNext();  }  })  })  }.width('100%').height('100%')  }  }  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/SU55bBPMTMKotaC-6WCoHQ/zh-cn_image_0000002566708243.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024302Z&HW-CC-Expire=86400&HW-CC-Sign=43925EC86E1ADFE92182AF06B34E5C66C9B53AB90B5A3E77864645F704F31421)
+- 控制控制器翻页。 ```typescript import {  ArcButton,  ArcButtonOptions,  ArcButtonStatus,  ArcButtonStyleMode,  ArcButtonPosition,  ArcSwiper,  ArcSwiperAttribute,  ArcSwiperController, } from '@kit.ArkUI'; @Component export struct ArcSwiperToggle {  private wearableSwiperController: ArcSwiperController = new ArcSwiperController();  build() {  Column({ space: 12 }) {  Stack() {  ArcSwiper(  this.wearableSwiperController  ) {  }  .vertical(true)  .indicator(false)  Column() {  ArcButton({  options: new ArcButtonOptions({  label: 'previous',  position: ArcButtonPosition.TOP_EDGE,  styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,  onClick: () => {  this.wearableSwiperController.showPrevious();  }  })  })  Blank()  ArcButton({  options: new ArcButtonOptions({  label: 'next',  position: ArcButtonPosition.BOTTOM_EDGE,  styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,  onClick: () => {  this.wearableSwiperController.showNext();  }  })  })  }.width('100%').height('100%')  }  }  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fnlBhmYqRQS0Z0H2uWRSjw/zh-cn_image_0000002537332898.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023736Z&HW-CC-Expire=86400&HW-CC-Sign=3168D42919BAF6EE7B1E931833A2123B837C2CC0B97F02FB7979BB31EA5C8710)
 - 旋转表冠翻页。 ArcSwiper在获得焦点时能够响应旋转表冠的操作，用户可以通过旋转表冠来滑动ArcSwiper，从而浏览数据。 ```typescript ArcSwiper( ) { } .focusable(true) .focusOnTouch(true) .defaultFocus(true) ``` 还可以通过设置[digitalCrownSensitivity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#digitalcrownsensitivity)属性来调整表冠对事件响应的灵敏度，以适应不同规模的数据处理。在处理大量数据时，可以提高响应事件的灵敏度；而在处理少量数据时，则可以降低灵敏度设置。 ```typescript ArcSwiper( ) { } .digitalCrownSensitivity(CrownSensitivity.MEDIUM) ```
 
 ## 设置轮播方向
@@ -37,8 +37,8 @@ ArcSwiper支持水平和垂直方向上进行轮播，主要通过[vertical](htt
 
 当vertical为true时，表示在垂直方向上进行轮播；为false时，表示在水平方向上进行轮播。vertical默认值为false。
 
-- 设置水平方向上轮播。 ```typescript ArcSwiper() { } .indicator(true) .vertical(false) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5rlhMy1nRJ6auq6Tcb-HNA/zh-cn_image_0000002535948390.png?HW-CC-KV=V1&HW-CC-Date=20260408T024302Z&HW-CC-Expire=86400&HW-CC-Sign=B499BBE0BA829F749F0C3B4F142D44A8F12361AAAACFC3D7AEDE9F4894E57A7B)
-- 设置垂直方向轮播，导航点设为3点钟方向。 ```typescript ArcSwiper() { } .indicator(new ArcDotIndicator()  .arcDirection(ArcDirection.THREE_CLOCK_DIRECTION)) .vertical(true) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-xPQZw1_RG-bCCBssvtywQ/zh-cn_image_0000002535788446.png?HW-CC-KV=V1&HW-CC-Date=20260408T024302Z&HW-CC-Expire=86400&HW-CC-Sign=4E55DDAF76A941E960A39BC8CDDCE2635927626BF9708457E4B34ED663E08813)
+- 设置水平方向上轮播。 ```typescript ArcSwiper() { } .indicator(true) .vertical(false) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/SVunyJD9SP2Fa8oRz6YhrQ/zh-cn_image_0000002568252689.png?HW-CC-KV=V1&HW-CC-Date=20260409T023736Z&HW-CC-Expire=86400&HW-CC-Sign=3F50D4D1D056826C5B900152BF8952CAB841131E9765871261484D8751B46EA7)
+- 设置垂直方向轮播，导航点设为3点钟方向。 ```typescript ArcSwiper() { } .indicator(new ArcDotIndicator()  .arcDirection(ArcDirection.THREE_CLOCK_DIRECTION)) .vertical(true) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/o2SvjNheSPOHv9C0_cwRQQ/zh-cn_image_0000002568172695.png?HW-CC-KV=V1&HW-CC-Date=20260409T023736Z&HW-CC-Expire=86400&HW-CC-Sign=7D697C861AEBAF5BAD35030C518563E19B0998EC9B0E26BD584DC0F122BFF80A)
 
 ## 自定义切换动画
 
@@ -49,12 +49,8 @@ import { Decimal } from '@kit.ArkTS';
 import {
   ArcSwiper,
   ArcSwiperAttribute,
-  ArcDotIndicator,
-  ArcDirection,
-  ArcSwiperController
 } from '@kit.ArkUI';
 
-@Entry
 @Component
 export struct ArcSwiperAction {
   private MIN_SCALE: number = 0.1;
@@ -108,7 +104,7 @@ export struct ArcSwiperAction {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/j1oxtCf9TEa1oyL4q84ddQ/zh-cn_image_0000002535948392.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024302Z&HW-CC-Expire=86400&HW-CC-Sign=4FF43EAE70137E15F1FB6E3D97D6268ED342974EBD831B793BDA98D4250909A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/dcCy3RXuQWu1q_VsWvy3aA/zh-cn_image_0000002568252691.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023736Z&HW-CC-Expire=86400&HW-CC-Sign=91DA7E724E59C9379CC1F1CD9BFC2AA0425182FB2D826F870AD74E6EF5F16B05)
 
 ## 实现侧滑返回
 
@@ -118,12 +114,8 @@ ArcSwiper的滑动事件会与侧滑返回冲突，可以通过[onGestureRecogni
 import {
   ArcSwiper,
   ArcSwiperAttribute,
-  ArcDotIndicator,
-  ArcDirection,
-  ArcSwiperController
 } from '@kit.ArkUI';
 
-@Entry
 @Component
 export struct ArcSwiperSideSlip {
   @State backgroundColors: Color[] = [Color.Green, Color.Blue, Color.Yellow, Color.Pink, Color.Gray, Color.Orange];
@@ -171,4 +163,4 @@ export struct ArcSwiperSideSlip {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/90LN26DkRwm6c84X2Q3LbA/zh-cn_image_0000002566868225.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024302Z&HW-CC-Expire=86400&HW-CC-Sign=13A08FDB5ADCED750538D0A9C4B1659BD4AAEA98C2FEE68511FABB57A1482F37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/yO4y5vA1RDm2Gvzgi6Bg0A/zh-cn_image_0000002537172978.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023736Z&HW-CC-Expire=86400&HW-CC-Sign=7FE81F9EFF34C9FBD8EEAF954B5526CFAEB23FBC9A533750BCDC8417E1E6BD10)

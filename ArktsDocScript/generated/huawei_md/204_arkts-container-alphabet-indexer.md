@@ -40,7 +40,7 @@ AlphabetIndexer(options: AlphabetIndexerOptions)
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | arrayValue7+ | Array<string> | 否 | 否 | 字符串数组，每个字符串代表一个索引项。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| selected7+ | number | 否 | 否 | 初始选中项索引值，若超出索引值范围，则取默认值0。 该参数支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| selected7+ | number | 否 | 否 | 初始选中项索引值，若超出索引值范围，则取默认值0。与[selected](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#selected8)属性同时设置时，selected属性的优先级较高。 取值范围：[0, arrayValue.length-1] 该属性支持[$$](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-two-way-sync)双向绑定变量。 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 
 ## 属性
 
@@ -245,7 +245,7 @@ selected(index: number)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| index | number | 是 | 选中项索引值。 默认值：0 |
+| index | number | 是 | 选中项索引值。 取值范围：[0, [arrayValue](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#alphabetindexeroptions18对象说明).length-1] 默认值：0 |
 
 ### popupPosition8+
 
@@ -573,7 +573,6 @@ type OnAlphabetIndexerRequestPopupDataCallback = (index: number) => Array<string
 通过[onRequestPopupData](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#onrequestpopupdata8)事件自定义提示弹窗显示文本内容。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -585,6 +584,7 @@ struct AlphabetIndexerSample {
     'H', 'I', 'J', 'K', 'L', 'M', 'N',
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
     'V', 'W', 'X', 'Y', 'Z'];
+
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -598,6 +598,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -607,6 +608,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -616,6 +618,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayL, (item: string) => {
             ListItem() {
               Text(item)
@@ -628,32 +631,32 @@ struct AlphabetIndexerSample {
         }
         .width('50%')
         .height('100%')
+
         AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-          .autoCollapse(false) // 关闭自适应折叠模式
-          .enableHapticFeedback(false) // 关闭触控反馈
-          .selectedColor(0xFFFFFF) // 选中项文本颜色
-          .popupColor(0xFFFAF0) // 提示弹窗一级索引文本颜色
-          .selectedBackgroundColor(0xCCCCCC) // 选中项背景颜色
-          .popupBackground(0xD2B48C) // 提示弹窗背景颜色
-          .usingPopup(true) // 索引项被选中时显示提示弹窗
-          .selectedFont({ size: 16, weight: FontWeight.Bolder }) // 选中项文本样式
-          .popupFont({ size: 30, weight: FontWeight.Bolder }) // 提示弹窗一级索引的文本样式
-          .itemSize(28) // 索引项的尺寸大小
-          .alignStyle(IndexerAlign.Left) // 提示弹窗在索引条右侧弹出
-          .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
-          .itemBorderRadius(14) // 设置索引项背板圆角半径
-          .popupBackgroundBlurStyle(BlurStyle.NONE) // 设置提示弹窗的背景模糊材质
-          .popupTitleBackground(0xCCCCCC) // 设置提示弹窗一级索引项背景颜色
-          .popupSelectedColor(0x00FF00) // 提示弹窗二级索引选中项文本颜色
-          .popupUnselectedColor(0x0000FF) // 提示弹窗二级索引未选中项文本颜色
-          .popupItemFont({ size: 30, style: FontStyle.Normal }) // 提示弹窗二级索引项文本样式
-          .popupItemBackgroundColor(0xCCCCCC) // 提示弹窗二级索引项背景颜色
+          .autoCollapse(false)
+          .enableHapticFeedback(false)
+          .selectedColor(0xFFFFFF)
+          .popupColor(0xFFFAF0)
+          .selectedBackgroundColor(0xCCCCCC)
+          .popupBackground(0xD2B48C)
+          .usingPopup(true)
+          .selectedFont({ size: 16, weight: FontWeight.Bolder })
+          .popupFont({ size: 30, weight: FontWeight.Bolder })
+          .itemSize(28)
+          .alignStyle(IndexerAlign.Left)
+          .popupItemBorderRadius(24)
+          .itemBorderRadius(14)
+          .popupBackgroundBlurStyle(BlurStyle.NONE)
+          .popupTitleBackground(0xCCCCCC)
+          .popupSelectedColor(0x00FF00)
+          .popupUnselectedColor(0x0000FF)
+          .popupItemFont({ size: 30, style: FontStyle.Normal })
+          .popupItemBackgroundColor(0xCCCCCC)
           .onSelect((index: number) => {
             console.info(this.value[index] + ' Selected!');
           })
           .onRequestPopupData((index: number) => {
-            // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
-            // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
+
             if (this.value[index] == 'A') {
               return this.arrayA;
             } else if (this.value[index] == 'B') {
@@ -677,14 +680,13 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/ku0OfMRKRRu7iwbhRFTKLA/zh-cn_image_0000002566869419.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024549Z&HW-CC-Expire=86400&HW-CC-Sign=73005BE6E114E62675985F0B02485092777462C39FE33FDC2B310FC1268994CB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/DqX5PvkbTvuwVKtV9efgDg/zh-cn_image_0000002568253875.gif?HW-CC-KV=V1&HW-CC-Date=20260409T024030Z&HW-CC-Expire=86400&HW-CC-Sign=463F5B126174CEADF8BA43C437AAFF4C06D657B3D998F0E27434971ED6D42234)
 
 ### 示例2（开启自适应折叠模式）
 
 通过[autoCollapse](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#autocollapse11)属性开启自适应折叠模式。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -698,6 +700,7 @@ struct AlphabetIndexerSample {
     'V', 'W', 'X', 'Y', 'Z'];
   @State isNeedAutoCollapse: boolean = false;
   @State indexerHeight: string = '75%';
+
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -711,6 +714,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -720,6 +724,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -729,6 +734,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayJ, (item: string) => {
             ListItem() {
               Text(item)
@@ -741,32 +747,32 @@ struct AlphabetIndexerSample {
         }
         .width('50%')
         .height('100%')
+
         Column() {
           Column() {
             AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-              .autoCollapse(this.isNeedAutoCollapse) // 开启或关闭自适应折叠模式
-              .height(this.indexerHeight) // 索引条高度
-              .enableHapticFeedback(false) // 关闭触控反馈
-              .selectedColor(0xFFFFFF) // 选中项文本颜色
-              .popupColor(0xFFFAF0) // 提示弹窗一级索引文本颜色
-              .selectedBackgroundColor(0xCCCCCC) // 选中项背景颜色
-              .popupBackground(0xD2B48C) // 提示弹窗背景颜色
-              .usingPopup(true) // 索引项被选中时显示提示弹窗
-              .selectedFont({ size: 16, weight: FontWeight.Bolder }) // 选中项文本样式
-              .popupFont({ size: 30, weight: FontWeight.Bolder }) // 提示弹窗内容的文本样式
-              .itemSize(28) // 每一项的尺寸大小
-              .alignStyle(IndexerAlign.Right) // 提示弹窗在索引条左侧弹出
-              .popupTitleBackground("#D2B48C") // 设置提示弹窗一级索引项背景颜色
-              .popupSelectedColor(0x00FF00) // 提示弹窗二级索引未选中项文本颜色
-              .popupUnselectedColor(0x0000FF) // 提示弹窗二级索引选中项文本颜色
-              .popupItemFont({ size: 30, style: FontStyle.Normal }) // 提示弹窗二级索引项文本样式
-              .popupItemBackgroundColor(0xCCCCCC) // 提示弹窗二级索引项背景颜色
+              .autoCollapse(this.isNeedAutoCollapse)
+              .height(this.indexerHeight)
+              .enableHapticFeedback(false)
+              .selectedColor(0xFFFFFF)
+              .popupColor(0xFFFAF0)
+              .selectedBackgroundColor(0xCCCCCC)
+              .popupBackground(0xD2B48C)
+              .usingPopup(true)
+              .selectedFont({ size: 16, weight: FontWeight.Bolder })
+              .popupFont({ size: 30, weight: FontWeight.Bolder })
+              .itemSize(28)
+              .alignStyle(IndexerAlign.Right)
+              .popupTitleBackground("#D2B48C")
+              .popupSelectedColor(0x00FF00)
+              .popupUnselectedColor(0x0000FF)
+              .popupItemFont({ size: 30, style: FontStyle.Normal })
+              .popupItemBackgroundColor(0xCCCCCC)
               .onSelect((index: number) => {
                 console.info(this.value[index] + ' Selected!');
               })
               .onRequestPopupData((index: number) => {
-                // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
-                // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
+
                 if (this.value[index] == 'A') {
                   return this.arrayA;
                 } else if (this.value[index] == 'B') {
@@ -785,6 +791,7 @@ struct AlphabetIndexerSample {
           }
           .height('80%')
           .justifyContent(FlexAlign.Center)
+
           Column() {
             Button('切换成折叠模式')
               .margin('5vp')
@@ -813,14 +820,13 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/hkzRI2SzQgytD2rkeHdvjg/zh-cn_image_0000002566709437.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024549Z&HW-CC-Expire=86400&HW-CC-Sign=16E69C5BF1BD4B1FADE745CC9E91EDDE47CD2293C011B582AB92106952A5383D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/XWkksWStSH-Lj_FAzwkX7Q/zh-cn_image_0000002537174166.gif?HW-CC-KV=V1&HW-CC-Date=20260409T024030Z&HW-CC-Expire=86400&HW-CC-Sign=94BCB21392A5C915632460D05AE61A87AC014E9B5131FA7D13EA9E4AB6519959)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
 通过[popupBackgroundBlurStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-alphabet-indexer#popupbackgroundblurstyle12)属性实现提示弹窗的背景模糊效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AlphabetIndexerSample {
@@ -833,6 +839,7 @@ struct AlphabetIndexerSample {
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
     'V', 'W', 'X', 'Y', 'Z'];
   @State customBlurStyle: BlurStyle = BlurStyle.NONE;
+
   build() {
     Stack({ alignContent: Alignment.Start }) {
       Row() {
@@ -846,6 +853,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayB, (item: string) => {
             ListItem() {
               Text(item)
@@ -855,6 +863,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayC, (item: string) => {
             ListItem() {
               Text(item)
@@ -864,6 +873,7 @@ struct AlphabetIndexerSample {
                 .textAlign(TextAlign.Center)
             }
           }, (item: string) => item)
+
           ForEach(this.arrayL, (item: string) => {
             ListItem() {
               Text(item)
@@ -876,6 +886,7 @@ struct AlphabetIndexerSample {
         }
         .width('30%')
         .height('100%')
+
         Column() {
           Column() {
             Text('切换模糊材质: ')
@@ -895,20 +906,20 @@ struct AlphabetIndexerSample {
                 this.customBlurStyle = BlurStyle.BACKGROUND_THIN;
               })
           }.height('20%')
+
           Column() {
             AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-              .usingPopup(true) // 索引项被选中时显示提示弹窗
-              .alignStyle(IndexerAlign.Left) // 提示弹窗在索引条右侧弹出
-              .popupItemBorderRadius(24) // 设置提示弹窗索引项背板圆角半径
-              .itemBorderRadius(14) // 设置索引项背板圆角半径
-              .popupBackgroundBlurStyle(this.customBlurStyle) // 设置提示弹窗的背景模糊材质
-              .popupTitleBackground(0xCCCCCC) // 设置提示弹窗一级索引项背景颜色
+              .usingPopup(true)
+              .alignStyle(IndexerAlign.Left)
+              .popupItemBorderRadius(24)
+              .itemBorderRadius(14)
+              .popupBackgroundBlurStyle(this.customBlurStyle)
+              .popupTitleBackground(0xCCCCCC)
               .onSelect((index: number) => {
                 console.info(this.value[index] + ' Selected!');
               })
               .onRequestPopupData((index: number) => {
-                // 当选中A时，提示弹窗里面的二级索引文本列表显示A对应的列表arrayA，选中B、C、L时也同样
-                // 选中其余索引项时，提示弹窗二级索引文本列表为空，提示弹窗会只显示一级索引项
+
                 if (this.value[index] == 'A') {
                   return this.arrayA;
                 } else if (this.value[index] == 'B') {
@@ -931,11 +942,11 @@ struct AlphabetIndexerSample {
       }
       .width('100%')
       .height('100%')
-      // $r('app.media.image')需要替换为开发者所需的图像资源文件。
+
       .backgroundImage($r("app.media.image"))
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/cpFGMO-8Rd6d1E2YUP1k5w/zh-cn_image_0000002535789642.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024549Z&HW-CC-Expire=86400&HW-CC-Sign=C3C596583AA0EB20BF31D26186FD4FB70DA3DCDA4336DA09D8B404C55FE64E49)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/B9-NOwIcTaWRqBLYXYVH6A/zh-cn_image_0000002537334086.gif?HW-CC-KV=V1&HW-CC-Date=20260409T024030Z&HW-CC-Expire=86400&HW-CC-Sign=C6732BD17F858AD3F1996273EE0915C6BFC2E8CD9168EFB93644253CB7C3FF9A)

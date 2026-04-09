@@ -25,7 +25,7 @@ Rating(options?: RatingOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [RatingOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-rating#ratingoptions18对象说明) | 否 | 设置评分组件。 |
+| options | [RatingOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-rating#ratingoptions18对象说明) | 否 | 设置评分组件。 未设置时，则按照RatingOptions中各参数的默认值配置。 |
 
 ## 属性
 
@@ -361,7 +361,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/awp-Wr_kRymtYiPZXhXgFQ/zh-cn_image_0000002535789480.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024515Z&HW-CC-Expire=86400&HW-CC-Sign=4742A364A0B131DDF6A63CC50A446D9E35EE5089851E0051C374B0C52C279548)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/hKuGfvK-SLCxqlPuWkZdVA/zh-cn_image_0000002537333924.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023955Z&HW-CC-Expire=86400&HW-CC-Sign=2AD0E5B9DA50BCACFCAE7FD095D43063A8EDB1BC3C98536E161061D199F5A151)
 
 ### 示例2（自定义评分条）
 
@@ -565,7 +565,7 @@ struct ratingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/PhgdLJMPQ7aDsEeQWA8FSQ/zh-cn_image_0000002535949426.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024515Z&HW-CC-Expire=86400&HW-CC-Sign=8AB8E0586CD38A4B6568B17E2CD15504E03B42F9AB18A5BCA7F6617501C322EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/IwcduKqqQe6iAqlG11G2Zw/zh-cn_image_0000002568173719.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023955Z&HW-CC-Expire=86400&HW-CC-Sign=98C3557FBEEDE54A2A831312E0BA929B3E39EDA712B68BB033E433E82A896DE4)
 
 ### 示例3（通过Resource资源设置评分的样式）
 
@@ -601,7 +601,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/9zZCZNYPTC2SxJIBvyKZZw/zh-cn_image_0000002566869259.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024515Z&HW-CC-Expire=86400&HW-CC-Sign=C743BB37A762C50D777D7B4699FC6187CF3E4AF3E6291220D2756151D5D126E2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/BsNyblIDQ4KAX2fzr9FPwA/zh-cn_image_0000002568253715.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023955Z&HW-CC-Expire=86400&HW-CC-Sign=D2C065E42453F7E2152CE051209BD199AB3979A10784141E932DC2B9A0F8E2DB)
 
 ### 示例4（设置评分的样式）
 
@@ -639,4 +639,4 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/PWSE6DA6S9qBMmiFYBX0aA/zh-cn_image_0000002566869259.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024515Z&HW-CC-Expire=86400&HW-CC-Sign=0BE5693CA1072A9B697267D1F7771B06090646CB4FF3036D82813A1D06EC08BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/WdRjGBkHRr-Y3lsj3HsMsQ/zh-cn_image_0000002568253715.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023955Z&HW-CC-Expire=86400&HW-CC-Sign=8B9DB4B2F7C54882A92726D5E936C2E632334110C261BA18A124FEABDDF199CE)

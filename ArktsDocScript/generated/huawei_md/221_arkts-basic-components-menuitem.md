@@ -22,7 +22,7 @@ MenuItem(value?: MenuItemOptions | CustomBuilder)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [MenuItemOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem#menuitemoptions对象说明) | [CustomBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#custombuilder8) | 否 | 包含设置MenuItem的各项信息。 |
+| value | [MenuItemOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-menuitem#menuitemoptions对象说明) | [CustomBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#custombuilder8) | 否 | 包含设置MenuItem的各项信息。 如果不传该参数，则创建空的MenuItem对象。 |
 
 ## MenuItemOptions对象说明
 

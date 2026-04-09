@@ -240,6 +240,7 @@ struct DotIndicatorDemo {
       this.list.push(i);
     }
   }
+
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -264,6 +265,7 @@ struct DotIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
+
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(
@@ -285,7 +287,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/J8xoot9STweqIpKy4g77PQ/zh-cn_image_0000002566869199.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024454Z&HW-CC-Expire=86400&HW-CC-Sign=22F1EB46466F73D3173AED1F910B7D4CDD7B5BB2F5960B3C00202FB985B766E4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wRB_dgXkQYyuiylDxzd6og/zh-cn_image_0000002568253655.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023934Z&HW-CC-Expire=86400&HW-CC-Sign=977186D2DAE259F6BDF0ECF2570389CD7E8F06F81D643DAEE2E1422E9464AD5B)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -303,6 +305,7 @@ struct DigitIndicatorDemo {
       this.list.push(i);
     }
   }
+
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -327,6 +330,7 @@ struct DigitIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
+
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(Indicator.digit()
@@ -345,4 +349,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/7eM8piMlTMGnGM3IVdLm9g/zh-cn_image_0000002566709217.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024454Z&HW-CC-Expire=86400&HW-CC-Sign=154F050DD3BE9A82B030CDB93174835776F9C558A6C45781BF42A1A3819D5B95)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/ArwSctXwS2KnoXrTHDjmfg/zh-cn_image_0000002537173946.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023934Z&HW-CC-Expire=86400&HW-CC-Sign=3FE341EA0B25597A7A3BEFC9D10F8F62F000EAD3C3FCB77363171B1A68E8A3CF)

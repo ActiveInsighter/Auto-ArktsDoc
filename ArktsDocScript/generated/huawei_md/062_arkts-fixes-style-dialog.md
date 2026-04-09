@@ -36,14 +36,12 @@
 
 ```typescript
 import { PromptAction } from '@kit.ArkUI';
-
 @Entry
 @Component
 export struct ShowActionMenuExample {
   build() {
-
+    // ...
       Column({ space: 12 }) {
-
         Column() {
           Button('ShowActionMenu')
             .margin(30)
@@ -77,12 +75,12 @@ export struct ShowActionMenuExample {
       }
       .width('100%')
       .height('100%')
-
+      // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/pcvIoJ9FQDqxzhsLXafdUQ/zh-cn_image_0000002535948430.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=4F35FB067C6532A9C2C2888B1294319841192F366591A45EC5C167F30F32312C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/fCdua_HxQUCLCjMYv05j1A/zh-cn_image_0000002568252721.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=3CEC6D901A858FB78F0F5C7929AE91F4341A1CC127A157D8665FE3D1578B1BC7)
 
 ## 对话框 (showDialog)
 
@@ -93,14 +91,14 @@ export struct ShowActionMenuExample {
 创建并显示对话框，对话框响应后异步返回选中按钮在buttons数组中的索引。
 
 ```typescript
+// xxx.ets
 import { PromptAction } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-
 @Entry
 @Component
 export struct ShowDialogExample {
   build() {
-
+    // ...
       Column({ space: 12 }) {
         Column() {
           Button('ShowDialog')
@@ -140,12 +138,12 @@ export struct ShowDialogExample {
       .width('100%')
       .height('100%')
       .padding({ left: 12, right: 12 })
-
+      // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mLsshKrpQvqPnGxyEua5CQ/zh-cn_image_0000002566868263.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=12BE7F8FB14D5531BD1F61FDA43AB6F18CAC39E1031E2088B9A4394AB7AB1135)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/jBiuke7xT9-0VSqLwHmoiw/zh-cn_image_0000002537173008.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=C31D57F250736B5EC9E414F7C33270DC3E0684121B077267F97E4AA263CFA42C)
 
 ## 选择器弹窗 (PickerDialog)
 
@@ -160,15 +158,14 @@ export struct ShowDialogExample {
 通过配置[CalendarDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-calendarpicker-dialog#calendardialogoptions对象说明)中的acceptButtonStyle、cancelButtonStyle属性可以实现自定义按钮样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 export struct CalendarDialog {
   private selectedDate: Date = new Date('2024-04-23');
-
   build() {
     NavDestination() {
       Column({ space: 12 }) {
-
         Column() {
           Button('Show CalendarPicker Dialog')
             .margin(20)
@@ -189,25 +186,25 @@ export struct CalendarDialog {
                   borderRadius: 10
                 },
                 onAccept: (date: Date) => {
-
+                  // 当弹出框再次弹出时显示选中的是上一次确定的日期
                   this.selectedDate = date;
                 }
               })
             })
         }.width('100%')
-
       }
       .width('100%')
       .height('100%')
       .padding({ left: 12, right: 12 })
     }
-
+    // ...
+    // 请将$r('app.string.CustomDialog_calender')替换为实际资源文件，在本示例中该资源文件的value值为"日历选择器弹窗"
     .title($r('app.string.CustomDialog_calender'))
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/0-QfXFaLTVyzzZFTEY13gQ/zh-cn_image_0000002566708281.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=33D6AA6A1B92046FD91C55ACEA195D32A2305FF366C73138210127DB997208C4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/wUDMbyI5QZiryJqQCJYOgg/zh-cn_image_0000002537332930.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=45EEC3089F83BC388CDEE84F0D39792CCAF8B1916EE56E9F699D8773AFDDF5F4)
 
 ### 日期滑动选择器弹窗 (DatePickerDialog)
 
@@ -222,11 +219,9 @@ export struct CalendarDialog {
 @Component
 export struct DatePickerDialogExample {
   @State selectTime: Date = new Date('2023-12-25T08:30:00');
-
   build() {
     NavDestination() {
       Column({ space: 12 }) {
-
         Column() {
           Button('showDatePickerDialog')
             .margin(30)
@@ -244,18 +239,17 @@ export struct DatePickerDialogExample {
               })
             })
         }.width('100%').margin({ top: 5 })
-
       }
       .width('100%')
       .height('100%')
       .padding({ left: 12, right: 12 })
     }
-
+    // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/XTLCf_QRTw6r2M8qIRSLeg/zh-cn_image_0000002535788486.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=FCD134F8449FE955EB781A059A67E0D86A22ADC8EB8140F9266785EDA3037DF3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/FaZai4JkSnGXycbDhcAX1g/zh-cn_image_0000002568172727.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=07C184FF21EF106482FF8A9FE997D1F62A29DFA3D4FEE40FC43514BF59000CDA)
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
@@ -264,7 +258,6 @@ export struct DatePickerDialogExample {
 @Component
 export struct DatePickerCustomDialogExample {
   @State selectTime: Date = new Date('2023-12-25T08:30:00');
-
   build() {
     NavDestination() {
       Column() {
@@ -293,12 +286,12 @@ export struct DatePickerCustomDialogExample {
           })
       }.width('100%').margin({ top: 5 })
     }
-
+    // ...
     }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/ebDT9zlYSi2DJjuA0_t0rA/zh-cn_image_0000002535948432.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=F3A2F47F444D459434469FE5473E163E2DEEC2A68EBEF734BBC511509E76B863)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/0g3iEhDlRd62Jlv5VordFA/zh-cn_image_0000002568252723.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=E3F6A26A138A68142264DDA3362FE7A1C6D3C8692B582E14EDF9B5A667BF1CFB)
 
 ### 时间滑动选择器弹窗 (TimePickerDialog)
 
@@ -309,15 +302,14 @@ export struct DatePickerCustomDialogExample {
 该示例通过配置[disappearTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker#disappeartextstyle10)、[textStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker#textstyle10)、[selectedTextStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-timepicker#selectedtextstyle10)、[acceptButtonStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-timepicker-dialog#timepickerdialogoptions对象说明)、[cancelButtonStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-timepicker-dialog#timepickerdialogoptions对象说明)实现了自定义文本以及按钮样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 export struct TimePickerDialogExample {
   @State selectTime: Date = new Date('2023-12-25T08:30:00');
-
   build() {
     NavDestination() {
       Column({ space: 12 }) {
-
         Column() {
           Button('showTimePickerDialog')
             .margin(30)
@@ -342,14 +334,14 @@ export struct TimePickerDialogExample {
             })
         }.width('100%').margin({ top: 5 })
       }
-
+      // ...
     }
-
+    // ...
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/f5RLWkNAROWGypx0mCdnWQ/zh-cn_image_0000002566868265.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=D9D51D24EDA4D046E85F9A651259F50D4D37D79FD0DC5FF9EF77D0BB19AD90AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/-D-36wdwRk2n1BI5u3gCCg/zh-cn_image_0000002537173010.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=0C654A87CBC6D26ECB9D81D5726EC95137843B5202A675D08EAA0F8C68EA7A54)
 
 ### 文本滑动选择器弹窗 (TextPickerDialog)
 
@@ -381,12 +373,11 @@ export struct TextPickerCNDialogExample {
     }
   ];
   private select: number = 0;
-
   build() {
-
+    // ···
       Column() {
         Button('showTextPickerDialog')
-
+        // ···
           .margin(30)
           .onClick(() => {
             this.getUIContext().showTextPickerDialog({
@@ -398,12 +389,12 @@ export struct TextPickerCNDialogExample {
             });
           })
       }.width('100%').margin({ top: 5 })
-
+    // ···
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/1qQRtioMTKO3sn6wQmgsWw/zh-cn_image_0000002566708283.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=FB48122E069E87166338FAA49633AEDEDD5F1FE0ED8D76D374EC6DF678D3BE2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1dyqTbjLTmCJvSnc8ABThw/zh-cn_image_0000002537332932.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=A54C76B3A25FDB03580ECFB188538F177E77C929208E4E8EC51891BA461CD227)
 
 ## 列表选择弹窗 (ActionSheet)
 
@@ -419,11 +410,9 @@ export struct TextPickerCNDialogExample {
 @Entry
 @Component
 export struct showActionSheetExample {
-
   build() {
     NavDestination() {
       Column({ space: 12 }) {
-
         Column() {
           Button('showActionSheet')
             .margin(30)
@@ -474,20 +463,19 @@ export struct showActionSheetExample {
               })
             })
         }.width('100%').margin({ top: 5 })
-
       }
       .width('100%')
       .height('100%')
       .padding({ left: 12, right: 12 })
     }
     .backgroundColor('#f1f2f3')
-
+    // 请将$r('app.string.CustomDialog_ActionSheet')替换为实际资源文件，在本示例中该资源文件的value值为"列表选择弹窗"
     .title($r('app.string.CustomDialog_ActionSheet'))
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/XScU-4bJQO2Xw_ZfXtspPQ/zh-cn_image_0000002535788488.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=C53D9D813E41EB8CBEC991472ED90300E791F961BF16A6574029A870281900CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/w6D2Fn3dQj6ogvCT9Xa_fw/zh-cn_image_0000002568172729.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=3A105DE496042F8ECADF11E3FEA8FF2FC9950C50AE956B1FD849FD2986009E36)
 
 ## 警告弹窗 (AlertDialog)
 
@@ -504,14 +492,12 @@ export struct showActionSheetExample {
 
 ```typescript
 import { PromptAction } from '@kit.ArkUI';
-
 @Entry
 @Component
 export struct showAlertDialogExample {
   build() {
     NavDestination() {
       Column({ space: 12 }) {
-
         Column() {
           Button('showAlertDialog')
             .margin(30)
@@ -550,17 +536,16 @@ export struct showAlertDialogExample {
               )
             })
         }.width('100%').margin({ top: 5 })
-
       }
       .width('100%')
       .height('100%')
       .padding({ left: 12, right: 12 })
     }
     .backgroundColor('#f1f2f3')
-
+    // 请将$r('app.string.CustomDialog_AlertDialog')替换为实际资源文件，在本示例中该资源文件的value值为"警告弹窗"
     .title($r('app.string.CustomDialog_AlertDialog'))
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/QNNDkUQOSmm28LAiqF9H2A/zh-cn_image_0000002535948434.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024015Z&HW-CC-Expire=86400&HW-CC-Sign=7E8CEFB7920A30BDB6750E8FA7F78C19FC96CF93DDB8B67C930E9359D4F6A61A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/yu7Kt1PnRhmiywccwdh2tA/zh-cn_image_0000002568252725.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023749Z&HW-CC-Expire=86400&HW-CC-Sign=7B4E45820967A557D11BF3121A7CCD686C3EF920D5A49A2FB03064B450A3D0E4)

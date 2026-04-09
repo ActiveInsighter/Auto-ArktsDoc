@@ -194,4 +194,4 @@ struct FlexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/vTV3XonWQ6W5oKgjh3xIyg/zh-cn_image_0000002566709055.png?HW-CC-KV=V1&HW-CC-Date=20260408T024248Z&HW-CC-Expire=86400&HW-CC-Sign=7C2861696E48ED91F70C6B2A8ED97C398DE701D4309C2201AAD9EB9FEC45F8E8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/XgbzeQXeQpWzSUzPTgckfA/zh-cn_image_0000002537173784.png?HW-CC-KV=V1&HW-CC-Date=20260409T023848Z&HW-CC-Expire=86400&HW-CC-Sign=8A6801412D9AE35D08260967026402452CA93B88C073A9A0BF5BC5191EE7C209)

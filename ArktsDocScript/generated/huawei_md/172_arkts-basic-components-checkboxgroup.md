@@ -28,7 +28,7 @@ CheckboxGroup(options?: CheckboxGroupOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [CheckboxGroupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup#checkboxgroupoptions对象说明) | 否 | 配置多选框群组参数。 |
+| options | [CheckboxGroupOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-checkboxgroup#checkboxgroupoptions对象说明) | 否 | 配置多选框群组参数。 未设置时，按照CheckboxGroupOptions中各参数的默认值配置。 |
 
 ## CheckboxGroupOptions对象说明
 
@@ -411,7 +411,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/0KRT8mGjSBe2k0fF8OFPZg/zh-cn_image_0000002535789460.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024507Z&HW-CC-Expire=86400&HW-CC-Sign=71C6C4E3403865CC38E27A841907874E6304CC2C8EECA0431CD059E88F06B770)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/vfh7OlptTMSgIjg_2J5rvg/zh-cn_image_0000002537333904.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023946Z&HW-CC-Expire=86400&HW-CC-Sign=5F779E8B6BDE4156AEBADA2451A6E36FF59BCD3ABAC74A5264E4502150B46571)
 
 ### 示例2（自定义勾选样式）
 
@@ -489,7 +489,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/RaACIy1HQOGpXRbnuVh1gQ/zh-cn_image_0000002535949406.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024507Z&HW-CC-Expire=86400&HW-CC-Sign=9503F7E8EF4140F0BD7D0AD7007C5D0E3B5F4B949C765124FCFA3314E385615A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/mB0N1vgNTnOLKm0CD3MxmQ/zh-cn_image_0000002568173699.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023946Z&HW-CC-Expire=86400&HW-CC-Sign=B47814B87A58F1765AC1E7C40CE9F19407DF717D57D83C75BFC887F49596FBDB)
 
 ### 示例3（自定义多选框样式）
 
@@ -608,7 +608,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/jb_LeRrtRy2ljtDwXiQkyg/zh-cn_image_0000002566869239.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024507Z&HW-CC-Expire=86400&HW-CC-Sign=1853C903CCB2839E6F0524FA1C9DF6EE183F02549DED932C1F2F46D91542C99C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/DAWoTmVSTxOCu3hXb8HdcA/zh-cn_image_0000002568253695.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023946Z&HW-CC-Expire=86400&HW-CC-Sign=4FE5DE21913A808AC1847B40B88C32F2FAF0BDC58F4A3F299062C55A65A71459)
 
 ### 示例4（设置全选）
 
@@ -765,4 +765,4 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/ltbLVm9ZQouhQMPjoMjzzA/zh-cn_image_0000002566709257.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024507Z&HW-CC-Expire=86400&HW-CC-Sign=12B793BD1A6302037CC4FB8975C42266622D1007E3A373205A03AF38601879C2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Vj4bnLqeSKeM_BIgHpbJ6Q/zh-cn_image_0000002537173986.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023946Z&HW-CC-Expire=86400&HW-CC-Sign=A5787D010106301862B9B48F06EA96CF82F518EA2CD63A18C9E6D6357884361C)

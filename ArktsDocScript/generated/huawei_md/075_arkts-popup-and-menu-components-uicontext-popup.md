@@ -281,4 +281,4 @@ export struct OpenPopup {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/6-l30FtVSe2PVPhVpYL6Tg/zh-cn_image_0000002535948448.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024326Z&HW-CC-Expire=86400&HW-CC-Sign=F4E98A4EE362836DA84602986330BE43738A77769EA38DE6EBCEDD60DA0D731C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/FrMN8PBbS0asDhNaeG3pBA/zh-cn_image_0000002568252739.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023801Z&HW-CC-Expire=86400&HW-CC-Sign=F894B2675FDF5AD77618B3D8F2D3D93040FF343BE2E0FD4884D33BDBF859C1EE)

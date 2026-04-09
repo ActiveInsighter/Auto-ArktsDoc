@@ -205,7 +205,6 @@ import {
   SnackBarStyleOptions,
   SnackBarOperationType
 } from '@kit.UIDesignKit'
-
 @Entry
 @ComponentV2
 struct TestSnackBar {
@@ -227,7 +226,6 @@ struct TestSnackBar {
     nextFocusId: 'button',
     duration: -1
   }
-
   build() {
     Column() {
       Blank()
@@ -237,10 +235,9 @@ struct TestSnackBar {
           this.hdsSnackBar.show(this.icon, this.message, this.operation, this.style);
         })
         .id("button")
-
       Button('关注')
         .nextFocus({
-
+          // 这里forward的id必须和SnackBarOperationOptions接口中传入的textButtonId相同
           forward: 'snackBarTextButton'
         })
     }
@@ -253,4 +250,4 @@ struct TestSnackBar {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/yUnT_o__TuywvoNglKK7Dg/zh-cn_image_0000002532304107.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024633Z&HW-CC-Expire=86400&HW-CC-Sign=C67D09ADB93972D1C1234F973CD2A658B02DD582DAD1CBB6F6529EDDF0455468)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vfgH39YFSqeVGJ8bcPLxjg/zh-cn_image_0000002532304107.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023733Z&HW-CC-Expire=86400&HW-CC-Sign=472BB10BBF10FDF52AAFEC373B1FBDA674F03F917ADABE9A7BB1380BCB2A0E3B)

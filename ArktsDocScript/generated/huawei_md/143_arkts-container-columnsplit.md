@@ -96,7 +96,7 @@ divider(value: ColumnSplitDividerStyle | null)
 @Component
 struct ColumnSplitExample {
   build() {
-    Column(){
+    Column() {
       Text('The dividing line can be dragged').fontSize(9).fontColor(0xCCCCCC).width('90%')
       ColumnSplit() {
         Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
@@ -113,7 +113,7 @@ struct ColumnSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/skoy_q7nQh6Dwqo5ibAHzw/zh-cn_image_0000002566869143.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024429Z&HW-CC-Expire=86400&HW-CC-Sign=FAFEA1362047FD3A7E5B097EF4A71F93466B328F2B6F51D7B9C532C5D7479AA3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/KPYK-qggRm6FaXzRo54qeg/zh-cn_image_0000002568253599.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023907Z&HW-CC-Expire=86400&HW-CC-Sign=BDCE6EB6C9BD1C4A7953DEE86AE65E5DFAC63FC668611B4B5C1BA91BF78AF0AC)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
@@ -142,4 +142,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/cetvGDSKTla_inq46mI5SQ/zh-cn_image_0000002566709161.png?HW-CC-KV=V1&HW-CC-Date=20260408T024429Z&HW-CC-Expire=86400&HW-CC-Sign=86EAFAB7204510268FC1E1331551B67D6F683BFA9F5A8761EA970C9A97F8A158)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/mXefCmv0Sc26VkV_Vn2BNg/zh-cn_image_0000002537173890.png?HW-CC-KV=V1&HW-CC-Date=20260409T023907Z&HW-CC-Expire=86400&HW-CC-Sign=0BCC3D6A51D51DD18059FD2020E168A239DF8EBF36B2630A6777A0B08CD0E7E2)

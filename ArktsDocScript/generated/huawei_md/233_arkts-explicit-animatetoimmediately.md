@@ -90,4 +90,4 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/uw0In0pySF2xt559Uvvsjg/zh-cn_image_0000002535789774.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024618Z&HW-CC-Expire=86400&HW-CC-Sign=1C989964A627C05A64123AF0606B8924E1B3BC6DC6A87569D94228327ABC1310)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/C7_8FJ1yRD62Q2a8x1IQYg/zh-cn_image_0000002537334218.gif?HW-CC-KV=V1&HW-CC-Date=20260409T024104Z&HW-CC-Expire=86400&HW-CC-Sign=6D540F3CFB8C5F4176089D17F1E34B6DD1BF27FE5D3E5756B395B8A957B01292)

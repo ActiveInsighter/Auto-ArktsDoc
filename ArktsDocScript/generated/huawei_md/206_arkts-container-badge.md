@@ -302,7 +302,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/8loGTihvTG2_Nu2SuRvZxg/zh-cn_image_0000002566869421.png?HW-CC-KV=V1&HW-CC-Date=20260408T024550Z&HW-CC-Expire=86400&HW-CC-Sign=7AD039F388A9F58CC26550388ED33526745E5846D046502E482438DCD97D5CF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/aUbaCYBvQNiuB639t7pApQ/zh-cn_image_0000002568253877.png?HW-CC-KV=V1&HW-CC-Date=20260409T024033Z&HW-CC-Expire=86400&HW-CC-Sign=5CB2B6B0B8DAB58BC138B885631E15B1AD7E8668212AFC8F02F8943DA791F77D)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -339,7 +339,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/CZZXlQ06Swm6_XTqSESaLg/zh-cn_image_0000002566709439.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024550Z&HW-CC-Expire=86400&HW-CC-Sign=74E5B5FA1A717BCA9A20B612C32C8F0DDBF99F49924D6AA26857909BAB2AB8DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/-9RYRJHBRw28LikrL-4UxA/zh-cn_image_0000002537174168.gif?HW-CC-KV=V1&HW-CC-Date=20260409T024033Z&HW-CC-Expire=86400&HW-CC-Sign=DF94A5F6109B9FDB321565F263750097014F6B143B234A7813EB59A274A3833F)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -388,4 +388,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/tWgMF2t-RmS0-x7CVMl6_A/zh-cn_image_0000002535789644.png?HW-CC-KV=V1&HW-CC-Date=20260408T024550Z&HW-CC-Expire=86400&HW-CC-Sign=F15642179C3AE8E5448CB86F376121E1B2FF00EBFB41B13B8FCEA7BC8139E7C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/4jgOKEfmRO6GUNyNDjv4gw/zh-cn_image_0000002537334088.png?HW-CC-KV=V1&HW-CC-Date=20260409T024033Z&HW-CC-Expire=86400&HW-CC-Sign=0926EDCCA538889ED807D4EC44AD492B8CED24E76E4F70D2FBABEDA6E125C47E)

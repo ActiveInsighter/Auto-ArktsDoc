@@ -13,7 +13,8 @@ overlay(value: string | CustomBuilder | ComponentContent, options?: OverlayOptio
 在当前组件上，增加遮罩文本或者叠加自定义组件以及[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay#componentcontent12)作为该组件的浮层。浮层的定位同样基于当前组件进行计算。浮层不通过组件树进行渲染，部分接口（例如[getRectangleById](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentutils#componentutilsgetrectanglebyiddeprecated)）不支持获取浮层中的组件。
 
 > **说明**
-> overlay会将浮层组件覆盖在所绑定的组件上方，阻塞用户对浮层下方组件的所有交互操作。若需用户可操作下方组件，应参照[示例2（通过builder设置浮层）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay#示例2通过builder设置浮层)中的实现，在浮层builder的最外层组件上配置.hitTestBehavior(HitTestMode.Transparent)。此配置在通过浮层实现水印时尤其重要，因为水印显示不应妨碍用户对下层组件的操作。
+> - overlay会将浮层组件覆盖在所绑定的组件上方，阻塞用户对浮层下方组件的所有交互操作。若需用户可操作下方组件，应参照[示例2（通过builder设置浮层）](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay#示例2通过builder设置浮层)中的实现，在浮层builder的最外层组件上配置.hitTestBehavior(HitTestMode.Transparent)。此配置在通过浮层实现水印时尤其重要，因为水印显示不应妨碍用户对下层组件的操作。
+> - 多次调用overlay接口时，如果同时传入string类型和[CustomBuilder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#custombuilder8)类型，或者同时传入string类型和[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-overlay#componentcontent12)类型，浮层内容会叠加显示。
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -116,7 +117,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/fHJUJNv4Qd2YM_M6TqwWeQ/zh-cn_image_0000002535789246.png?HW-CC-KV=V1&HW-CC-Date=20260408T024407Z&HW-CC-Expire=86400&HW-CC-Sign=96BB80094E4D37A6975F40D95FF877A4BFAB0EF1B829ACDCACCE4EB9AD7C59C8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/CujajuGGQlOjKSRujIK4Fw/zh-cn_image_0000002537333690.png?HW-CC-KV=V1&HW-CC-Date=20260409T023842Z&HW-CC-Expire=86400&HW-CC-Sign=8759A79389FCE332DD82557D006F8DCF2F4A6E0B06C3184779FFB0741FF3F0DF)
 
 ### 示例2（通过builder设置浮层）
 
@@ -151,7 +152,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/zJlrc-AKQtGnuHkf3sEI7g/zh-cn_image_0000002535949192.png?HW-CC-KV=V1&HW-CC-Date=20260408T024407Z&HW-CC-Expire=86400&HW-CC-Sign=EFDB94C01D90D699E03701D2D975623C193F5BFF279A395F54897DC6773B43D3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/e6HhNYekQ7OlRCfG45spAw/zh-cn_image_0000002568173485.png?HW-CC-KV=V1&HW-CC-Date=20260409T023842Z&HW-CC-Expire=86400&HW-CC-Sign=5DCEA8C2D11C8E54188903CA05EE4EC6944FD541EC201E11E7433A793777FE95)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -209,4 +210,4 @@ struct Page_4040 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/OGBpiBKhS9aKyjZGpwuBAg/zh-cn_image_0000002566869025.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024407Z&HW-CC-Expire=86400&HW-CC-Sign=A29A9E5DA5A9835AE2FC9AF2CED9A5D65EF4B4AAC3730DBF25EA17FCE41C7874)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/KtT04yDGQMu50ghr7VKTyA/zh-cn_image_0000002568253481.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023842Z&HW-CC-Expire=86400&HW-CC-Sign=5B6525CCBE38EAD8FADA6F8D01E79340A0E6593D00E1369A74BCAD4FFABC6811)

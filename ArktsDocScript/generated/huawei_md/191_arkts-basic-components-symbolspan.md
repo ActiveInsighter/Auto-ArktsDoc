@@ -123,7 +123,7 @@ renderingStrategy(value: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/-4gb_IGMSI6XJZacLkzYDA/zh-cn_image_0000002535949504.png?HW-CC-KV=V1&HW-CC-Date=20260408T024144Z&HW-CC-Expire=86400&HW-CC-Sign=3E660417B841CDE5A526FFD008D82C9EA7E3BF3B54525830491487544B49DA4B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/m8-skQn-Tv6Q5R5d1YL8nQ/zh-cn_image_0000002568173797.png?HW-CC-KV=V1&HW-CC-Date=20260409T024013Z&HW-CC-Expire=86400&HW-CC-Sign=C4BEECF67778119AC4FC9696B2AD4AB79C7B1E90561A2DB1019B4DAD021AA8F6)
 
 ### effectStrategy
 
@@ -272,7 +272,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/kIwKT4ZpQh24aiNloZIvqQ/zh-cn_image_0000002566869337.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024144Z&HW-CC-Expire=86400&HW-CC-Sign=DE39D8ED61EF4319ABF6627FD8D7D6655889BF56DF2EF377B13D4165AEAC5950)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/uo1B6byfRI6hTScGvCpSTQ/zh-cn_image_0000002568253793.gif?HW-CC-KV=V1&HW-CC-Date=20260409T024013Z&HW-CC-Expire=86400&HW-CC-Sign=AB6CA10FBE89D5651B692FD0A0D92653C128576CBD4C95C81F3DBE8DF69BD7B1)
 
 ### 示例2（设置动态属性）
 
@@ -301,4 +301,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/kCTnJhBSRUePTrK6NwgNrQ/zh-cn_image_0000002566709355.png?HW-CC-KV=V1&HW-CC-Date=20260408T024144Z&HW-CC-Expire=86400&HW-CC-Sign=60CE14F663F2CA2D88B47DBC15633BEAF88FF3AABC80D187183C55198B684621)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/j_JCY7x_RuqWcqgdxMjStw/zh-cn_image_0000002537174084.png?HW-CC-KV=V1&HW-CC-Date=20260409T024013Z&HW-CC-Expire=86400&HW-CC-Sign=9B9F3EECFE0986C3A8460D66F50182EC9D1451E0B0F9BD3D24A7B3C151BE6B83)

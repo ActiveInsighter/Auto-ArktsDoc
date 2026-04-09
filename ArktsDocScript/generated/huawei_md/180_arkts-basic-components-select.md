@@ -805,7 +805,7 @@ textModifier(modifier: Optional<[TextModifier](https://developer.huawei.com/cons
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[TextModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier)> | 是 | 在Select组件上，定制按钮文本样式的方法。 |
+| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[TextModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier)> | 是 | 在Select组件上，定制按钮文本样式的方法。 当modifier的值为undefined时，不自定义文本样式。 |
 
 ### arrowModifier20+
 
@@ -824,7 +824,7 @@ arrowModifier(modifier: Optional<SymbolGlyphModifier>)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[SymbolGlyphModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/universal-attributes-attribute-symbolglyphmodifier)> | 是 | 在Select组件上，定制Select按钮下拉箭头图标样式的方法。 |
+| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[SymbolGlyphModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/universal-attributes-attribute-symbolglyphmodifier)> | 是 | 在Select组件上，定制Select按钮下拉箭头图标样式的方法。 当modifier的值为undefined时，不自定义下拉箭头图标样式。 |
 
 ### optionTextModifier20+
 
@@ -845,7 +845,7 @@ optionTextModifier(modifier: Optional<[TextModifier](https://developer.huawei.co
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[TextModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier)> | 是 | 在Select组件上，定制Select下拉菜单未选中项样式的方法。 |
+| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[TextModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier)> | 是 | 在Select组件上，定制Select下拉菜单未选中项样式的方法。 当modifier的值为undefined时，不自定义下拉菜单未选中项的文本样式。 |
 
 ### selectedOptionTextModifier20+
 
@@ -866,7 +866,7 @@ selectedOptionTextModifier(modifier: Optional<[TextModifier](https://developer.h
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[TextModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier)> | 是 | 设置下拉菜单项选中项的文本样式。 开发者可以根据需要管理和维护文本的样式进行设置。 |
+| modifier | [Optional](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-custom-property#optionalt)<[TextModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier)> | 是 | 设置下拉菜单项选中项的文本样式。 开发者可以根据需要管理和维护文本的样式进行设置。 当modifier的值为undefined时，不自定义下拉菜单项选中项的文本样式。 |
 
 ### showInSubWindow20+
 
@@ -1052,7 +1052,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/EDOM6t0GQAqY94b48hLqhA/zh-cn_image_0000002566709277.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=FDF05DFC9119AA3C05F966D6F1C5588FBD0743FEB94685B07BC8AEF3D9177A96)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/0tQ09ksNRCiX5BZ4AbEyaA/zh-cn_image_0000002537174006.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=1B3C12FC2C50DCE1695B1220BC5FFEFCF497E067D95FAC107556CD20A6F5596F)
 
 ## 示例2（设置symbol类型图标）
 
@@ -1105,7 +1105,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/aW21BFo2SaaGJ1bY8eS91Q/zh-cn_image_0000002535789482.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=7E8EEEFF92480A249A5F22C86207FF45A371E021440FC539279BCDAB4741CC08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Me6vNsetTeWeKfPVnMfwqw/zh-cn_image_0000002537333926.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=9549B5B20482FE48D0199DE0FA7E81D70707CFB89555143EF973B62A776862B6)
 
 ## 示例3（自定义下拉菜单）
 
@@ -1180,7 +1180,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/UbCYgARgTYO2me502NNwyg/zh-cn_image_0000002535949428.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=1E21D69C5E44869F09643FD813019B1D4BC442C84E286B24F47FAE1305FC6721)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/2iGx5LPQRliExPQqdYZO0g/zh-cn_image_0000002568173721.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=5629A3B1C4E26A4025936953530164AE3071D1A0664BAEBF5A856568F5D7ECEF)
 
 ## 示例4（设置分割线样式）
 
@@ -1230,7 +1230,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/afPzWuYPRAmtEf0w6muJPw/zh-cn_image_0000002566869261.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=5EBEB0CC9DFFD528520B056F426A90FF537FBB7E467B19450946CE467B9D8547)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/g-AJ19C4ROeZLMBFzeRDQg/zh-cn_image_0000002568253717.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=ED25441DA5D110042BC99218918C7E343D3690E4D8889A3F351ADBA9FBF15820)
 
 ## 示例5（设置无分割线样式）
 
@@ -1275,7 +1275,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/D_YRKxeVQVCASRYQhCaIVg/zh-cn_image_0000002566709279.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=49B0ED047CD8EA3C4FC280EE207F16CB7869D3E23D1D18CA2B6D52B4321FAD31)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/7TAtBkW9ROWpHnD5ZyRogw/zh-cn_image_0000002537174008.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=75525EB304C0415BC393FA378133EC93EF4425D5540557F614A204DBF2D9E10F)
 
 ## 示例6（设置Select中文本和箭头样式）
 
@@ -1342,7 +1342,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/PCaRy5JgQxeh6wvpNJSBig/zh-cn_image_0000002535789484.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=2759A35CAAACDE9249CA32733733CCF6F68E4670C68FE085BB6DBE83EB9DEB01)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/kPHIJMMtTu2axIYoMWeVrg/zh-cn_image_0000002537333928.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=FDCD825DB884146E142FD632E16656D33E0404367C0AD9688F8582921F6D28AA)
 
 ## 示例7（设置Select下拉菜单选中和非选中项文本样式）
 
@@ -1412,7 +1412,7 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/f-Aowv7RStmUHfKWpYnMNg/zh-cn_image_0000002535949430.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=59CD87AF1A00A0ED0DF4DC1D23562F47AF7112F5A1959CAE1EE8AECC29CE9474)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1GVrQxrkS_CMrpzfQEmrSw/zh-cn_image_0000002568173723.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=49CCB6011C63C98799E9D9D747D0F9A7250D13C882B07DF9B1758ED25DADAF43)
 
 ## 示例8（设置分割线模式）
 
@@ -1440,7 +1440,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Y8mjbGywQLG_a186wmj3fg/zh-cn_image_0000002566869263.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=EB9BE60A43DB5345E5FFAECFEB930F1411612931AC118BEDA97A59EE06DAAC67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/8ksmkecJSIa72MD_bBmvOw/zh-cn_image_0000002568253719.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=4F298293CA2FB2E9A11A4D872FD1993CA2A7D7819734784707D5EA497B92944E)
 
 ## 示例9（设置Select下拉菜单外描边样式）
 
@@ -1489,4 +1489,4 @@ struct SelectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/XLLprItgQGW2T6kdP4QW6g/zh-cn_image_0000002566709281.png?HW-CC-KV=V1&HW-CC-Date=20260408T024516Z&HW-CC-Expire=86400&HW-CC-Sign=66FC9146DAEDF05CCC0B4376BF1EE16BAE9455B94CA65E170678F3F8E5B84178)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/GlNiNvJtS8Sjezm5-HWqpw/zh-cn_image_0000002537174010.png?HW-CC-KV=V1&HW-CC-Date=20260409T023956Z&HW-CC-Expire=86400&HW-CC-Sign=D7B753A0A6C13E92917A2BB6D4802EFAE089F43ADBDCA3D420E2A4139C10F059)

@@ -103,4 +103,4 @@ struct CurveDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/ZYp01i8VQA60cdbk25ZOYg/zh-cn_image_0000002535948522.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024350Z&HW-CC-Expire=86400&HW-CC-Sign=2558E0A1F8B4DEFA5BBA87ED4BC9EF35363417DAADC000FE6A47FB8E20EE09BE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/2jjvZdZZTZOJgUfU-dk_SQ/zh-cn_image_0000002568252813.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023825Z&HW-CC-Expire=86400&HW-CC-Sign=13210573A5B17F2D4511AEA42CF2CA8314A6CA15B17D6EF4D734726A0642340B)

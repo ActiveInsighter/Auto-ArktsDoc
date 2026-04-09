@@ -121,7 +121,7 @@ radioStyle(value?: RadioStyle)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [RadioStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio#radiostyle10对象说明) | 否 | 单选框选中状态和非选中状态的样式。 |
+| value | [RadioStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-radio#radiostyle10对象说明) | 否 | 单选框选中状态和非选中状态的样式。 未设置时，则按照RadioStyle中各参数的默认值配置。 |
 
 ### contentModifier12+
 
@@ -292,7 +292,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/MjKKrmEKRYu31v5c1qq99Q/zh-cn_image_0000002535949424.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024514Z&HW-CC-Expire=86400&HW-CC-Sign=20786C933968A1274C99992EBE41DD39A2877C2A45A54BFE9BA8941C1955B584)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/y3gJml3ITxWQS3hS9tqsPw/zh-cn_image_0000002568173717.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023954Z&HW-CC-Expire=86400&HW-CC-Sign=992E630DDC850304CF9C96B0972C7F7EB549D30EA99025BF081B2CAE35CBAFE7)
 
 ### 示例2 （设置选中样式）
 
@@ -348,7 +348,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/2GD8a7sRRSy1478ycOFLfg/zh-cn_image_0000002566869257.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024514Z&HW-CC-Expire=86400&HW-CC-Sign=452D2261D93864B134BCD7AD7D79E8B93B7ED4FCB2E0CEC7592B83D66B690545)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/sHi5lLZeTW62ci1nfSV9wA/zh-cn_image_0000002568253713.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023954Z&HW-CC-Expire=86400&HW-CC-Sign=985A89664AE598D0553383F10CE50C0833900769E918A87046E9F2A8559487F1)
 
 ### 示例3（设置自定义样式）
 
@@ -414,4 +414,4 @@ struct refreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/M4GUWz_oShSyugrZyJ7tjA/zh-cn_image_0000002566709275.gif?HW-CC-KV=V1&HW-CC-Date=20260408T024514Z&HW-CC-Expire=86400&HW-CC-Sign=80EE023A3896CEF3EB4F578BA9E4D7C700CB8FB72EFE70F60E727CD96B5113AC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Qbp077PtQY2E6TqVUybzNg/zh-cn_image_0000002537174004.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023954Z&HW-CC-Expire=86400&HW-CC-Sign=200163762ECE4A5E7643F8A800FE813049EC7BA76DEFC84C427207DE36C26DA4)
