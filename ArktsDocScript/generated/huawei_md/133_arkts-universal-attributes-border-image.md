@@ -111,7 +111,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/pIFPUlR_TWukhqJRIu9Smg/zh-cn_image_0000002568173507.png?HW-CC-KV=V1&HW-CC-Date=20260409T023856Z&HW-CC-Expire=86400&HW-CC-Sign=B007736FD15A55E2A3681DE87271E8F6FFF4020D999A7CBD7F8DBF1BD37FFAB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/pIFPUlR_TWukhqJRIu9Smg/zh-cn_image_0000002568173507.png?HW-CC-KV=V1&HW-CC-Date=20260410T025407Z&HW-CC-Expire=86400&HW-CC-Sign=A8797CA7E5EAEA6DDCB397D64DC2FF5B98302C00786AB042C8CDF4629F2BFE7D)
 
 ### 示例2（动态调整属性值）
 
@@ -210,7 +210,7 @@ struct BorderImage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/p_6ecNd0QQCJMhFQnLPZCg/zh-cn_image_0000002568253503.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023856Z&HW-CC-Expire=86400&HW-CC-Sign=D1B60B990E1C0BAB0E61F1A0BB0E1DDE55FE9270F04A5CF9A8458E1D2A9C3ABC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/p_6ecNd0QQCJMhFQnLPZCg/zh-cn_image_0000002568253503.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025407Z&HW-CC-Expire=86400&HW-CC-Sign=DFF67C5FE0B8932C9307EF29845D19E976A574EA40CA435C0CBA347689679EEE)
 
 ### 示例3（使用LocalizedEdgeWidths类型值）
 
@@ -369,4 +369,4 @@ struct BorderImage {
 
 显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Sqf9JUTxSMaEM6kGOI6qgw/zh-cn_image_0000002537173794.png?HW-CC-KV=V1&HW-CC-Date=20260409T023856Z&HW-CC-Expire=86400&HW-CC-Sign=B22E992CD8C74F0F0972E7ED3FD241A17D8E60F9C32DB8A288F62EA808CDAAAC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Sqf9JUTxSMaEM6kGOI6qgw/zh-cn_image_0000002537173794.png?HW-CC-KV=V1&HW-CC-Date=20260410T025407Z&HW-CC-Expire=86400&HW-CC-Sign=479FC8F8A7D91350BEB953DEEBEBDE0E3CAB626B5A749703F30D1EA36B0C312A)

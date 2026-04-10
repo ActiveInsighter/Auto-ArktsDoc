@@ -354,27 +354,33 @@ ListItem划出菜单的展开方向。
 该示例实现了创建ListItem的基本用法。
 
 ```typescript
-// xxx.ets
 export class ListDataSource implements IDataSource {
   private list: number[] = [];
+
   constructor(list: number[]) {
     this.list = list;
   }
+
   totalCount(): number {
     return this.list.length;
   }
+
   getData(index: number): number {
     return this.list[index];
   }
+
   registerDataChangeListener(listener: DataChangeListener): void {
   }
+
   unregisterDataChangeListener(listener: DataChangeListener): void {
   }
 }
+
 @Entry
 @Component
 struct ListItemExample {
   private arr: ListDataSource = new ListDataSource([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
   build() {
     Column() {
       List({ space: 20, initialIndex: 0 }) {
@@ -396,14 +402,13 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/tyBmj91UTMuqmlrMqLYR7g/zh-cn_image_0000002537333820.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023913Z&HW-CC-Expire=86400&HW-CC-Sign=8A4C8257F88F791766B65152AFD6CD679CB2E4A7FC66C3475F98FCB7A7871C6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/tyBmj91UTMuqmlrMqLYR7g/zh-cn_image_0000002537333820.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025422Z&HW-CC-Expire=86400&HW-CC-Sign=4F886B50D3EB84B78C455DC991A76DD747C9A12DC58D22CA5AB0D54B31AFBF2C)
 
 ### 示例2（设置划出组件）
 
 该示例展示了ListItem设置了swipeAction的横滑效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ListItemExample2 {
@@ -411,6 +416,7 @@ struct ListItemExample2 {
   @State enterEndDeleteAreaString: string = 'not enterEndDeleteArea';
   @State exitEndDeleteAreaString: string = 'not exitEndDeleteArea';
   private scroller: ListScroller = new ListScroller();
+
   @Builder
   itemEnd() {
     Row() {
@@ -420,6 +426,7 @@ struct ListItemExample2 {
       })
     }.padding('4vp').justifyContent(FlexAlign.SpaceEvenly)
   }
+
   build() {
     Column() {
       List({ space: 10, scroller: this.scroller }) {
@@ -458,6 +465,7 @@ struct ListItemExample2 {
           })
         }, (item: number) => item.toString())
       }
+
       Text(this.enterEndDeleteAreaString).fontSize(20)
       Text(this.exitEndDeleteAreaString).fontSize(20)
     }
@@ -469,14 +477,13 @@ struct ListItemExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/i567WHePSUCpXbpLBQwqBQ/zh-cn_image_0000002568173615.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023913Z&HW-CC-Expire=86400&HW-CC-Sign=0F89DAF3248D04B92E126E29BBB90F0387DEA3AC674A56DC810603D469CC28F7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/i567WHePSUCpXbpLBQwqBQ/zh-cn_image_0000002568173615.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025422Z&HW-CC-Expire=86400&HW-CC-Sign=D90328EEC0DD66BE872A905213ACF66805E31A5A4E42AEFA5D0A0590298894CE)
 
 ### 示例3（设置卡片样式）
 
 该示例展示了ListItem的卡片样式效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ListItemExample3 {
@@ -492,6 +499,7 @@ struct ListItemExample3 {
             }
           })
         }
+
         ForEach([ListItemStyle.CARD, ListItemStyle.CARD, ListItemStyle.NONE], (itemStyle: number, index?: number) => {
           ListItem({ style: itemStyle }) {
             Text('' + index)
@@ -510,23 +518,25 @@ struct ListItemExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/b9rtezjIQEeKRYUCPjrIKQ/zh-cn_image_0000002568253611.jpeg?HW-CC-KV=V1&HW-CC-Date=20260409T023913Z&HW-CC-Expire=86400&HW-CC-Sign=DC45D019C7AFF19D8A5CC6D189BD3FA7B7749E5DDB0D84629F78050818D24283)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/b9rtezjIQEeKRYUCPjrIKQ/zh-cn_image_0000002568253611.jpeg?HW-CC-KV=V1&HW-CC-Date=20260410T025422Z&HW-CC-Expire=86400&HW-CC-Sign=DFA0EB1B2FB0B3D936B6AB3C154E780F21697F215C92E93BDC75B5B01146DDE2)
 
 ### 示例4（通过ComponentContent设置划出组件）
 
 该示例通过[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent#componentcontent-1)设置ListItem中的划出组件操作时显示的操作项。
 
 ```typescript
-// xxx.ets
 import { ComponentContent } from '@kit.ArkUI';
+
 class BuilderParams {
   text: string | Resource;
   scroller: ListScroller;
+
   constructor(text: string | Resource, scroller: ListScroller) {
     this.text = text;
     this.scroller = scroller;
   }
 }
+
 @Builder
 function itemBuilder(params: BuilderParams) {
   Row() {
@@ -536,6 +546,7 @@ function itemBuilder(params: BuilderParams) {
     })
   }.padding('4vp').justifyContent(FlexAlign.SpaceEvenly)
 }
+
 @Component
 struct MyListItem {
   scroller: ListScroller = new ListScroller();
@@ -544,18 +555,22 @@ struct MyListItem {
   startBuilder ?: ComponentContent<BuilderParams> = undefined;
   endBuilder ?: ComponentContent<BuilderParams> = undefined;
   builderParam = new BuilderParams('delete', this.scroller);
+
   aboutToAppear(): void {
     this.startBuilder = new ComponentContent(this.getUIContext(), wrapBuilder(itemBuilder), this.builderParam);
     this.endBuilder = new ComponentContent(this.getUIContext(), wrapBuilder(itemBuilder), this.builderParam);
   }
+
   GetStartBuilder() {
     this.startBuilder?.update(new BuilderParams('StartDelete', this.scroller));
     return this.startBuilder;
   }
+
   GetEndBuilder() {
     this.endBuilder?.update(new BuilderParams('EndDelete', this.scroller));
     return this.endBuilder;
   }
+
   build() {
     ListItem() {
       Text('item' + this.project)
@@ -592,11 +607,13 @@ struct MyListItem {
     .padding(5)
   }
 }
+
 @Entry
 @Component
 struct ListItemExample {
   @State arr: number[] = [0, 1, 2, 3, 4];
   private scroller: ListScroller = new ListScroller();
+
   build() {
     Column() {
       List({ space: 10, scroller: this.scroller }) {
@@ -615,15 +632,15 @@ struct ListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/MNBkO3RAQK6T8e5WAuKstw/zh-cn_image_0000002537173902.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023913Z&HW-CC-Expire=86400&HW-CC-Sign=C9368B9480C7A17D72AD160495E414F6888A48DB57B447128A2643EBC06213FD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/MNBkO3RAQK6T8e5WAuKstw/zh-cn_image_0000002537173902.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025422Z&HW-CC-Expire=86400&HW-CC-Sign=43517D16F1E8FCD6C591178CD05D5F7BF1D23C4E940FF300CE2013DF48962C57)
 
 ### 示例5（通过ListItemSwipeActionManager管理划出菜单）
 
 从API version 21开始，该示例通过[ListItemSwipeActionManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-listitem#listitemswipeactionmanager21)管理ListItem的划出菜单。
 
 ```typescript
-// xxx.ets
 import { BusinessError } from '@kit.BasicServicesKit';
+
 @Entry
 @Component
 struct ListItemExample5 {
@@ -633,6 +650,7 @@ struct ListItemExample5 {
       Button(str).margin('4vp')
     }.padding('4vp').justifyContent(FlexAlign.SpaceEvenly)
   }
+
   build() {
     Flex({ wrap: FlexWrap.Wrap }) {
       Flex({ wrap: FlexWrap.Wrap, justifyContent: FlexAlign.SpaceBetween }) {
@@ -665,6 +683,7 @@ struct ListItemExample5 {
           })
       }
       .margin({ bottom: 10 })
+
       List({ space: 10 }) {
         ListItem() {
           Text('item')
@@ -691,6 +710,7 @@ struct ListItemExample5 {
         })
       }
       .height('80%')
+
     }
     .padding(10)
     .backgroundColor(0xDCDCDC)
@@ -700,4 +720,4 @@ struct ListItemExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/9A1KvTthQ9eF4aGTSAnAPw/zh-cn_image_0000002537333822.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023913Z&HW-CC-Expire=86400&HW-CC-Sign=5CD71FD4120781485F8251717254821FE4BA3868F146CEA7E842E9C64D20FB22)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/9A1KvTthQ9eF4aGTSAnAPw/zh-cn_image_0000002537333822.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025422Z&HW-CC-Expire=86400&HW-CC-Sign=7CA8C5CCC7E1EEDC71FB74F6FE18F945759541F3799856BC453BB90476B4B63D)

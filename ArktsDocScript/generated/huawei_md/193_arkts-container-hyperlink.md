@@ -62,12 +62,13 @@ struct HyperlinkExample {
     Column() {
       Column() {
         Hyperlink('https://example.com/') {
-          // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
+
           Image($r('app.media.bg'))
             .width(200)
             .height(100)
         }
       }
+
       Column() {
         Hyperlink('https://example.com/', 'Go to the developer website') {
         }
@@ -78,4 +79,4 @@ struct HyperlinkExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/dd7kDSqCS7yyH3xVwOt50Q/zh-cn_image_0000002537174086.png?HW-CC-KV=V1&HW-CC-Date=20260409T024015Z&HW-CC-Expire=86400&HW-CC-Sign=0281EADC0ECD0B0EE741DA6D2A631AE2DA5BD9D45B046108AD086020DE5014E9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/dd7kDSqCS7yyH3xVwOt50Q/zh-cn_image_0000002537174086.png?HW-CC-KV=V1&HW-CC-Date=20260410T025526Z&HW-CC-Expire=86400&HW-CC-Sign=3E64FFC755E38798C289843516B158F5214286D7DCE8D66C6716207BE86448D2)

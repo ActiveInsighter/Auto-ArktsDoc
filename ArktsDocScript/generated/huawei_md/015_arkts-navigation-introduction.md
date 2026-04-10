@@ -12,7 +12,7 @@
 
 从ArkUI组件树层级上来看，原先由Router管理的page在页面栈管理节点stage的下面。Navigation作为导航容器组件，可以挂载在单个page节点下，也可以叠加、嵌套。Navigation管理了标题栏、内容区和工具栏，内容区用于显示用户自定义页面的内容，并支持页面的路由能力。Navigation的这种设计上有如下优势：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/_KmLKL_4TmCiXYg2feRzxQ/zh-cn_image_0000002537332716.png?HW-CC-KV=V1&HW-CC-Date=20260409T023704Z&HW-CC-Expire=86400&HW-CC-Sign=6E27CD9518D8F4AC6FB085BCA493804A6790DE1EE936EE9C527765E82B3ABB02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/_KmLKL_4TmCiXYg2feRzxQ/zh-cn_image_0000002537332716.png?HW-CC-KV=V1&HW-CC-Date=20260410T025211Z&HW-CC-Expire=86400&HW-CC-Sign=9F38857FADFE0C23115CE6B8A48FB315ADC9C7217DB02B458EAA84A9BF56F869)
 
 1. 接口上显式区分标题栏、内容区和工具栏，实现更加灵活的管理和UX动效能力；
 2. 显式提供路由容器概念，由开发者决定路由容器的位置，支持在全模态、半模态、弹窗中显示；

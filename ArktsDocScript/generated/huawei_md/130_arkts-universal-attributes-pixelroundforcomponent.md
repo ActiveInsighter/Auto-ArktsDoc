@@ -76,6 +76,7 @@ pixelRound(value: PixelRoundPolicy): T
 @Component
 struct PixelRoundExample {
     @State curWidth : number = 300;
+
     build() {
         Column() {
             Button() {
@@ -87,7 +88,9 @@ struct PixelRoundExample {
             .height(200)
             .width(200)
             .backgroundColor('rgb(213, 213, 213)')
+
             Blank().height(20)
+
             Row() {
                 Row() {
                 }
@@ -118,8 +121,8 @@ struct PixelRoundExample {
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/FkVdR37sTraFPFfFf_paVw/zh-cn_image_0000002568253499.png?HW-CC-KV=V1&HW-CC-Date=20260409T023850Z&HW-CC-Expire=86400&HW-CC-Sign=7547254ADE9FB8DF7DA6E9B6E7C632161215E9D69FA54F0DF73512A30ADFDCD0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/FkVdR37sTraFPFfFf_paVw/zh-cn_image_0000002568253499.png?HW-CC-KV=V1&HW-CC-Date=20260410T025401Z&HW-CC-Expire=86400&HW-CC-Sign=75BF53C5F8CA6322FAE6EDE0A7B9476CC90C349902CF042C3E710FEB996320D1)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/WiG5NUDXRlKZJd_LQfXRyg/zh-cn_image_0000002537173790.png?HW-CC-KV=V1&HW-CC-Date=20260409T023850Z&HW-CC-Expire=86400&HW-CC-Sign=04D398CDE986901C3113B56F48B4971E605E54B6D2F1A9B9E240B77368AF1131)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/WiG5NUDXRlKZJd_LQfXRyg/zh-cn_image_0000002537173790.png?HW-CC-KV=V1&HW-CC-Date=20260410T025401Z&HW-CC-Expire=86400&HW-CC-Sign=8B27369A08BB05900B1AFA1A5246076999AC9A1F56A1B1930673E1D43230B3B2)

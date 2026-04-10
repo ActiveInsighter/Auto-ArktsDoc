@@ -723,7 +723,7 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/OOfYEw52Qt-4PNQhjIW-jg/zh-cn_image_0000002537173930.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=164E6AF1F8717E95A69F223B2EA2FD58B0103A746C27CA285C658C0503DED668)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/OOfYEw52Qt-4PNQhjIW-jg/zh-cn_image_0000002537173930.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025430Z&HW-CC-Expire=86400&HW-CC-Sign=C6F7BF98ABE1F497E85C7DCD3703626AFA7555AC21DCFB253D064E4F376F8A4E)
 
 ### 示例2（设置ArcSwiper自定义页面切换动画）
 
@@ -786,4 +786,4 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/ZXsplP2AQmKXts2sU09ASg/zh-cn_image_0000002537333850.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023921Z&HW-CC-Expire=86400&HW-CC-Sign=5AB22FF40828C7BC47B2C60EAE336853FC6E348FE6B34D5572B6AD840C5843A4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/ZXsplP2AQmKXts2sU09ASg/zh-cn_image_0000002537333850.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025430Z&HW-CC-Expire=86400&HW-CC-Sign=5CA1D08C5F0C2EAB1D0E7CA39540F85DA42DB2C481E30EC1FE608CD20711E5A0)

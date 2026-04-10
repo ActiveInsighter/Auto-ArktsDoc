@@ -30,8 +30,8 @@ struct BlurEffectsExample {
         .fontSize(20)
         .fontColor(Color.White)
         .textAlign(TextAlign.Center)
-        .backdropBlur(10)// 对背景进行模糊
-        // 请将$r('app.media.bg')替换为实际资源文件
+        .backdropBlur(10)
+
         .backgroundImage($r('app.media.bg'))
         .backgroundImageSize({ width: 400, height: 300 })
     }
@@ -42,27 +42,28 @@ struct BlurEffectsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/vSovPSFYTh6JOJsOP_Mpng/zh-cn_image_0000002568252815.png?HW-CC-KV=V1&HW-CC-Date=20260409T023827Z&HW-CC-Expire=86400&HW-CC-Sign=37E317A784B6FAEC728F8CC4D1D7617C1DDAB1D6CC655C3836A4DF3E9E137EFB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/vSovPSFYTh6JOJsOP_Mpng/zh-cn_image_0000002568252815.png?HW-CC-KV=V1&HW-CC-Date=20260410T025338Z&HW-CC-Expire=86400&HW-CC-Sign=735B707B2C198CC36AFCEBAF03A323241DCD121429BCC6FE24B7578DA1BDF501)
 
 ## 使用blur为组件添加内容模糊
 
 ```typescript
 import { common } from '@kit.AbilityKit';
+
 @Entry
 @Component
 struct Index {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   @State radius: number = 0;
   @State text: string = '';
-  @State y: Resource | string = this.context.resourceManager.getStringSync($r('app.string.animation_blur_text1').id);// 请在resources\base\element\string.json文件中配置name为'animation_blur_text1'，value为非空字符串的资源
+  @State y: Resource | string = this.context.resourceManager.getStringSync($r('app.string.animation_blur_text1').id);
+
   aboutToAppear() {
-    // 请在resources\base\element\string.json文件中配置name为'animation_blur_text2'，value为非空字符串的资源
-    // 请在resources\base\element\string.json文件中配置name为'animation_blur_text3'，value为非空字符串的资源
-    // 请在resources\base\element\string.json文件中配置name为'animation_blur_text4'，value为非空字符串的资源
+
     this.text = this.context.resourceManager.getStringSync($r('app.string.animation_blur_text2').id) +
     "\n" + this.context.resourceManager.getStringSync($r('app.string.animation_blur_text3').id) + this.y +
       "\n" + this.context.resourceManager.getStringSync($r('app.string.animation_blur_text4').id) + this.radius;
   }
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
       Text(this.text)
@@ -71,9 +72,9 @@ struct Index {
         .fontWeight(FontWeight.Bold)
         .fontFamily("cursive")
         .fontStyle(FontStyle.Italic)
-      // 请将$r('app.media.bg')替换为实际资源文件
+
       Image($r("app.media.bg"))
-        .blur(this.radius)// 使用blur接口为照片组件添加内容模糊效果
+        .blur(this.radius)
         .height('100%')
         .width("100%")
         .objectFit(ImageFit.Cover)
@@ -83,17 +84,15 @@ struct Index {
       if (event) {
         if (event.type === TouchType.Move) {
           this.y = Number(event.touches[0].y.toString()).toString();
-          this.radius = Number(this.y) / 10; // 根据跟手过程中的滑动距离修改模糊半径，配合模糊接口，形成跟手模糊效果
+          this.radius = Number(this.y) / 10;
         }
         if (event.type === TouchType.Up) {
           this.radius = 0;
-          // 请在resources\base\element\string.json文件中配置name为'animation_blur_text1'，value为非空字符串的资源
+
           this.y = this.context.resourceManager.getStringSync($r('app.string.animation_blur_text1').id);
         }
       }
-      // 请在resources\base\element\string.json文件中配置name为'animation_blur_text2'，value为非空字符串的资源
-      // 请在resources\base\element\string.json文件中配置name为'animation_blur_text3'，value为非空字符串的资源
-      // 请在resources\base\element\string.json文件中配置name为'animation_blur_text4'，value为非空字符串的资源
+
       this.text = this.context.resourceManager.getStringSync($r('app.string.animation_blur_text2').id) + "\n" + this.context.resourceManager.getStringSync($r('app.string.animation_blur_text3').id) + this.y +
         "\n" + this.context.resourceManager.getStringSync($r('app.string.animation_blur_text4').id) + this.radius;
     })
@@ -101,7 +100,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/-V9Pcp5ZTG6_wfWm432wUg/zh-cn_image_0000002537173102.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023827Z&HW-CC-Expire=86400&HW-CC-Sign=12D4FBED3E0AFFE60C30D6F4759E86FC14F200023EF6BF0620B2087A1161F788)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/-V9Pcp5ZTG6_wfWm432wUg/zh-cn_image_0000002537173102.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025338Z&HW-CC-Expire=86400&HW-CC-Sign=C041A57400E8AF3ACA69281E6125AE757A8C64602EBB5B2BD5D08414F15ADC98)
 
 ## 使用backgroundBlurStyle为组件添加背景模糊效果
 
@@ -114,7 +113,7 @@ struct BackDropBlurStyleDemo {
       GridItem() {
         Column() {
           Column() {
-            // 请将$r('app.string.originalImage')替换为实际资源文件，在本示例中该资源文件的value值为"原图"
+
             Text($r('app.string.originalImage'))
               .fontSize(20)
               .fontColor(Color.White)
@@ -125,9 +124,9 @@ struct BackDropBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
-          // 请将$r('app.string.originalImage')替换为实际资源文件，在本示例中该资源文件的value值为"原图"
+
           Text($r('app.string.originalImage'))
             .fontSize(12)
             .fontColor(Color.Black)
@@ -138,6 +137,7 @@ struct BackDropBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -151,17 +151,15 @@ struct BackDropBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
-          // BlurStyle.Thin: 为组件添加轻薄材质模糊效果
-          // ThemeColorMode.LIGHT: 固定使用浅色模式效果
-          // AdaptiveColor.DEFAULT: 不使用取色模糊，使用默认的颜色作为蒙版颜色
-          // scale: 背景材质模糊效果程度，默认值是1
+
           .backgroundBlurStyle(BlurStyle.Thin, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('Thin')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -172,6 +170,7 @@ struct BackDropBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -185,13 +184,14 @@ struct BackDropBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .backgroundBlurStyle(BlurStyle.Regular, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('Regular')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -201,6 +201,7 @@ struct BackDropBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -214,13 +215,14 @@ struct BackDropBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .backgroundBlurStyle(BlurStyle.Thick, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('Thick')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -230,6 +232,7 @@ struct BackDropBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -243,13 +246,14 @@ struct BackDropBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .backgroundBlurStyle(BlurStyle.BACKGROUND_THIN, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('BACKGROUND_THIN')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -259,6 +263,7 @@ struct BackDropBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -272,13 +277,14 @@ struct BackDropBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .backgroundBlurStyle(BlurStyle.BACKGROUND_REGULAR, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('BACKGROUND_REGULAR')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -288,6 +294,7 @@ struct BackDropBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -301,13 +308,14 @@ struct BackDropBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .backgroundBlurStyle(BlurStyle.BACKGROUND_THICK, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('BACKGROUND_THICK')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -317,6 +325,7 @@ struct BackDropBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -330,13 +339,14 @@ struct BackDropBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .backgroundBlurStyle(BlurStyle.BACKGROUND_ULTRA_THICK, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('BACKGROUND_ULTRA_THICK')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -356,7 +366,7 @@ struct BackDropBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/V0q6o7LOT2ajeU8cAojOuA/zh-cn_image_0000002537333024.png?HW-CC-KV=V1&HW-CC-Date=20260409T023827Z&HW-CC-Expire=86400&HW-CC-Sign=DD48AE3BD8BEF015723AE9626CEA5F8A186A0025811CE1203797BD75700BED3B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/V0q6o7LOT2ajeU8cAojOuA/zh-cn_image_0000002537333024.png?HW-CC-KV=V1&HW-CC-Date=20260410T025338Z&HW-CC-Expire=86400&HW-CC-Sign=F6085D00EB546231F2005B54FE7ACAF90D900EBC455027820B92037549A0A8D4)
 
 ## 使用foregroundBlurStyle为组件添加内容模糊效果
 
@@ -369,7 +379,7 @@ struct ForegroundBlurStyleDemo {
       GridItem() {
         Column() {
           Column() {
-            // 请将$r('app.string.originalImage')替换为实际资源文件，在本示例中该资源文件的value值为"原图"
+
             Text($r('app.string.originalImage'))
               .fontSize(20)
               .fontColor(Color.White)
@@ -380,9 +390,9 @@ struct ForegroundBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
-          // 请将$r('app.string.originalImage')替换为实际资源文件，在本示例中该资源文件的value值为"原图"
+
           Text($r('app.string.originalImage'))
             .fontSize(12)
             .fontColor(Color.Black)
@@ -392,6 +402,7 @@ struct ForegroundBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -405,17 +416,15 @@ struct ForegroundBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
-          // BlurStyle.Thin: 为组件添加轻薄材质模糊效果
-          // ThemeColorMode.LIGHT: 固定使用浅色模式效果
-          // AdaptiveColor.DEFAULT: 不使用取色模糊，使用默认的颜色作为蒙版颜色
-          // scale: 背景材质模糊效果程度，默认值是1
+
           .foregroundBlurStyle(BlurStyle.Thin, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('Thin')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -425,6 +434,7 @@ struct ForegroundBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -438,13 +448,14 @@ struct ForegroundBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .foregroundBlurStyle(BlurStyle.Regular, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('Regular')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -454,6 +465,7 @@ struct ForegroundBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -467,13 +479,14 @@ struct ForegroundBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .foregroundBlurStyle(BlurStyle.Thick, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('Thick')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -483,6 +496,7 @@ struct ForegroundBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -496,13 +510,14 @@ struct ForegroundBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .foregroundBlurStyle(BlurStyle.BACKGROUND_THIN, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('BACKGROUND_THIN')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -512,6 +527,7 @@ struct ForegroundBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -525,13 +541,14 @@ struct ForegroundBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .foregroundBlurStyle(BlurStyle.BACKGROUND_REGULAR, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('BACKGROUND_REGULAR')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -541,6 +558,7 @@ struct ForegroundBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -554,13 +572,14 @@ struct ForegroundBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .foregroundBlurStyle(BlurStyle.BACKGROUND_THICK, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('BACKGROUND_THICK')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -570,6 +589,7 @@ struct ForegroundBlurStyleDemo {
       }
       .width(200)
       .height(200)
+
       GridItem() {
         Column() {
           Column() {
@@ -583,13 +603,14 @@ struct ForegroundBlurStyleDemo {
           .height(100)
           .aspectRatio(1)
           .borderRadius(10)
-          // 请将$r('app.media.bg')替换为实际资源文件
+
           .backgroundImage($r('app.media.bg'))
           .foregroundBlurStyle(BlurStyle.BACKGROUND_ULTRA_THICK, {
             colorMode: ThemeColorMode.LIGHT,
             adaptiveColor: AdaptiveColor.DEFAULT,
             scale: 0.1
           })
+
           Text('BACKGROUND_ULTRA_THICK')
             .fontSize(12)
             .fontColor(Color.Black)
@@ -609,12 +630,13 @@ struct ForegroundBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/FdEHtEjCS3SEp1kC0S1NKA/zh-cn_image_0000002568172821.png?HW-CC-KV=V1&HW-CC-Date=20260409T023827Z&HW-CC-Expire=86400&HW-CC-Sign=0E336920C8B28700709B127058832F8E433C64A9D2DC57A0058DB51DD30B97F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/FdEHtEjCS3SEp1kC0S1NKA/zh-cn_image_0000002568172821.png?HW-CC-KV=V1&HW-CC-Date=20260410T025338Z&HW-CC-Expire=86400&HW-CC-Sign=909309F15DEAF07AE42F5B4BF0DA6EA868B05B32216DDB7CFD3101318D3D9D3F)
 
 ## 使用motionBlur为组件添加运动模糊效果
 
 ```typescript
 import { curves } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct motionBlurTest {
@@ -624,10 +646,11 @@ struct motionBlurTest {
   @State radius: number = 0;
   @State x: number = 0.5;
   @State y: number = 0.5;
+
   build() {
     Column() {
       Column() {
-        // 请将$r('app.media.testImg')替换为实际资源文件
+
         Image($r('app.media.testImg'))
           .width(this.widthSize)
           .height(this.heightSize)
@@ -653,4 +676,4 @@ struct motionBlurTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/fMUZON53QGuR45cjbTkpcA/zh-cn_image_0000002568252817.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023827Z&HW-CC-Expire=86400&HW-CC-Sign=B6D48B47494509B54926E907982A1CD4DAA55ECEA73AFFAF6892C853CF8E21A1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/fMUZON53QGuR45cjbTkpcA/zh-cn_image_0000002568252817.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025338Z&HW-CC-Expire=86400&HW-CC-Sign=5F2B32FFC3BEC28092995388FC88EEBA35DE3003CBEA1C65980BA4604987C6FD)

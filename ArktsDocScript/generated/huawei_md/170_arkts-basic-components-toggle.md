@@ -255,7 +255,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/9vr_z_drSD2KShDoqj5wEQ/zh-cn_image_0000002537173980.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023943Z&HW-CC-Expire=86400&HW-CC-Sign=61337FCB8716D717A40CEF6C6BA0F1E004FD7EB32051D9B339ABF547FD948FDA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/9vr_z_drSD2KShDoqj5wEQ/zh-cn_image_0000002537173980.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025453Z&HW-CC-Expire=86400&HW-CC-Sign=265A76AF4C654A3AD7F28A849EE1B906845C664316F37F82CDD475C8ED5C4F43)
 
 ### 示例2（自定义开关类型的样式）
 
@@ -296,7 +296,7 @@ struct ToggleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/leOdtcBrTI6tJTwJcnJBIg/zh-cn_image_0000002537333900.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023943Z&HW-CC-Expire=86400&HW-CC-Sign=21E36DCDF118E7CE690929D79BD192D4E0AB2C1726094BC12542AE903736FE59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/leOdtcBrTI6tJTwJcnJBIg/zh-cn_image_0000002537333900.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025453Z&HW-CC-Expire=86400&HW-CC-Sign=31070596121D777A44CA6C1B9DEBBDF6D41441A5EE7C3F181BADF5EE5FC6B377)
 
 ### 示例3（自定义Toggle样式）
 
@@ -351,4 +351,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/5ziyHJbnTDOaZ2Aru9BZrg/zh-cn_image_0000002568173695.gif?HW-CC-KV=V1&HW-CC-Date=20260409T023943Z&HW-CC-Expire=86400&HW-CC-Sign=701520DDD4204CF996408E28FAE59B16C48ACC61777052A6D392B4EBDE97AAA2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/5ziyHJbnTDOaZ2Aru9BZrg/zh-cn_image_0000002568173695.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025453Z&HW-CC-Expire=86400&HW-CC-Sign=4185E333A4661F3FEBF072368E4BB6ED6E14B7DD88E6554E36EF43E375A87B10)
