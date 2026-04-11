@@ -14,12 +14,12 @@ ArcList({
   initialIndex: 2
 }) {
   ArcListItem() {
-    // ···
+
   }
   ArcListItem() {
-    // ···
+
   }
-// ···
+
 }
 ```
 
@@ -32,13 +32,14 @@ ArcList({
 
 ```typescript
 import { ArcList, ArcListItem, ArcListAttribute, ArcListItemAttribute, LengthMetrics } from '@kit.ArkUI';
+
 @Entry
 @Component
 export struct ArcListShow {
   build() {
     NavDestination() {
       Column({ space: 12 }) {
-        // ...
+
           ArcList({ initialIndex: 2 }) {
             ArcListItem() {
               Row() {
@@ -48,6 +49,7 @@ export struct ArcListShow {
                   Text($r('app.string.ArcListStyles_waln')).fontSize('38px').fontColor('#FFFFFFFF')
                   Text($r('app.string.ArcListStyles_open')).fontSize('20px').fontColor('#FFFFFFFF')
                 }.width('190px')
+
                 Image($r('app.media.ic_settings_arrow')).width('92px').height('92px')
                   .borderRadius('50px')
               }
@@ -56,6 +58,7 @@ export struct ArcListShow {
             .width('414px')
             .height('129px')
             .backgroundColor('#26FFFFFF')
+
             ArcListItem() {
               Row() {
                 Image($r('app.media.blueTooth')).width('99px').height('99px')
@@ -64,6 +67,7 @@ export struct ArcListShow {
                   Text($r('app.string.ArcListStyles_blue')).fontSize('38px').fontColor('#FFFFFFFF')
                   Text($r('app.string.ArcListStyles_open')).fontSize('20px').fontColor('#FFFFFFFF')
                 }.width('190px')
+
                 Image($r('app.media.ic_settings_arrow')).width('92px').height('92px')
                   .borderRadius('50px')
               }
@@ -72,6 +76,7 @@ export struct ArcListShow {
             .width('414px')
             .height('129px')
             .backgroundColor('#26FFFFFF')
+
             ArcListItem() {
               Row() {
                 Image($r('app.media.mobileData')).width('99px').height('99px')
@@ -79,6 +84,7 @@ export struct ArcListShow {
                 Column() {
                   Text($r('app.string.ArcListStyles_net')).fontSize('38px').fontColor('#FFFFFFFF')
                 }.width('190px')
+
                 Image($r('app.media.ic_settings_arrow')).width('92px').height('92px')
                   .borderRadius('50px')
               }
@@ -87,6 +93,7 @@ export struct ArcListShow {
             .width('414px')
             .height('129px')
             .backgroundColor('#26FFFFFF')
+
             ArcListItem() {
               Row() {
                 Image($r('app.media.ic_settings_more_connections')).width('99px').height('99px')
@@ -94,6 +101,7 @@ export struct ArcListShow {
                 Column() {
                   Text($r('app.string.ArcListStyles_connect')).fontSize('38px').fontColor('#FFFFFFFF')
                 }.width('190px')
+
                 Image($r('app.media.ic_settings_arrow')).width('92px').height('92px')
                   .borderRadius('50px')
               }
@@ -102,6 +110,7 @@ export struct ArcListShow {
             .width('414px')
             .height('129px')
             .backgroundColor('#26FFFFFF')
+
             ArcListItem() {
               Row() {
                 Image($r('app.media.displayAndBrightness')).width('99px').height('99px')
@@ -109,6 +118,7 @@ export struct ArcListShow {
                 Column() {
                   Text($r('app.string.ArcListStyles_light')).fontSize('38px').fontColor('#FFFFFFFF')
                 }.width('190px')
+
                 Image($r('app.media.ic_settings_arrow')).width('92px').height('92px')
                   .borderRadius('50px')
               }
@@ -124,10 +134,10 @@ export struct ArcListShow {
           .borderRadius('233px')
           .backgroundColor(Color.Black)
         }
-      // ...
+
     }
     .backgroundColor('#f1f2f3')
-    // 请将$r('app.string.ArcListShow_title')替换为实际资源文件，在本示例中该资源文件的value值为"在弧形列表中显示数据"
+
     .title($r('app.string.ArcListShow_title'))
   }
 }
@@ -135,7 +145,7 @@ export struct ArcListShow {
 
 **图1** 显示弧形列表数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/uOxqk-8sQOWAHiTO5V6Pkg/zh-cn_image_0000002568172587.png?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=EE0B7D47B36144C3A06F52EAFCA161C06EB6ED8BC80A66EFEAB8DCBF5A22CC93)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/uKIPw3chTp-TTy3u-YmFng/zh-cn_image_0000002538288616.png?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=C5DF0915CBCCBA9828DA27ECF32C2431B62E63DD355144D942613BBADA67A5F0)
 
 ## 迭代弧形列表内容
 
@@ -147,31 +157,35 @@ ArkTS通过[ForEach](https://developer.huawei.com/consumer/cn/doc/harmonyos-guid
 import { ArcList, ArcListAttribute, ArcListItemAttribute, ArcListItem, LengthMetrics } from '@kit.ArkUI';
 import { util } from '@kit.ArkTS';
 import { common } from '@kit.AbilityKit';
+
 class Contact {
   key: string = util.generateRandomUUID(true);
   name: ResourceStr;
   icon: Resource;
+
   constructor(name: ResourceStr, icon: Resource) {
     this.name = name;
     this.icon = icon;
   }
 }
+
 @Entry
 @Component
 export struct ArcListContents {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   @State private contacts: Array<object> = [
-    // 请将$r('app.string.xxx')替换为实际资源文件
+
     new Contact($r('app.string.name_xiaohong'), $r('app.media.ic_contact')),
     new Contact($r('app.string.name_xiaolan'), $r('app.media.ic_contact')),
     new Contact($r('app.string.name_xiaowang'), $r('app.media.ic_contact')),
     new Contact($r('app.string.name_xiaoli'), $r('app.media.ic_contact')),
     new Contact($r('app.string.name_xiaoming'), $r('app.media.ic_contact'))
   ];
+
   build() {
     NavDestination() {
       Column({ space: 12 }) {
-        // ...
+
           ArcList({ initialIndex: 2 }) {
             ForEach(this.contacts, (item: Contact) => {
               ArcListItem() {
@@ -199,10 +213,10 @@ export struct ArcListContents {
           .borderRadius('233px')
           .backgroundColor(Color.Black)
         }
-        // ...
+
     }
     .backgroundColor('#f1f2f3')
-    // 请将$r('app.string.ArcListContents_title')替换为实际资源文件，在本示例中该资源文件的value值为"迭代弧形列表内容"
+
     .title($r('app.string.ArcListContents_title'))
   }
 }
@@ -210,7 +224,7 @@ export struct ArcListContents {
 
 **图2** 迭代弧形列表内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/U4WBD_VGQemkX3lKMOVyIA/zh-cn_image_0000002568252597.png?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=F55AA048F0A9BE030879FEAA2C4A828A96DB330B3309DCAEEE1C2491FDCB0FA5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/DFWPQh-jSUSBm2-PCLyXPw/zh-cn_image_0000002569168393.png?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=930C50AB09F4AACF75B790CD5877F06D6C6143369BF3F46EA2098AE10FD5AEFC)
 
 ## 自定义弧形列表样式
 
@@ -220,11 +234,11 @@ export struct ArcListContents {
 
 1. 首先，需要构造自定义标题组件customHeader。 ```typescript @Builder function customHeader() {  Column() {  Text($r('app.string.ArcListCrown_set'))  .fontColor('#FFFFFFFF')  .fontSize('19fp')  } } ```
 2. 由于[header](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist#arklistoptions)参数的类型是[ComponentContent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-componentcontent)，所以需要对自定义标题组件进行封装。 ```typescript context: UIContext = this.getUIContext(); arcListHeader: ComponentContent<Object> = new ComponentContent(this.context, wrapBuilder(customHeader)); ```
-3. 最后，通过[header](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist#arklistoptions)参数将arcListHeader设置到弧形列表中。 ```typescript ArcList({ header: this.arcListHeader }) {  ArcListItem() {  // ···  }  // ···  ArcListItem() {  // ···  }  // ··· } ```
+3. 最后，通过[header](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist#arklistoptions)参数将arcListHeader设置到弧形列表中。 ```typescript ArcList({ header: this.arcListHeader }) {  ArcListItem() {  }  ArcListItem() {  } } ```
 
 **图3** 自定义弧形列表标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/czhFf-7NSUuFcPGSQqAVgw/zh-cn_image_0000002537172884.png?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=C193EAC9BBF7A9C211DC4AB3A37C427E66CF398EA7774BCFA88DFFEAB017B8B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/SdGzd_glQSC5PaxPYcvLfw/zh-cn_image_0000002569128419.png?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=4D6B5B5ED687A4E0E4C662A1DA1D4299389CBBA6D5D98AE8CECEE0F52C74FE12)
 
 ### 设置弧形列表项间距
 
@@ -232,14 +246,14 @@ export struct ArcListContents {
 
 ```typescript
 ArcList({ initialIndex: 2 }) {
-  // ···
+
 }
 .space(LengthMetrics.px(30))
 ```
 
 **图4** 设置弧形列表项间距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/nH_fIy5FR8qX4Ty9V4Yf2w/zh-cn_image_0000002537332806.png?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=0866B50B1E9348F9A8E74C841230932A1D0A086063D42AEEDB1E477534406E91)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/1j6Zb1ZgSqSh0cgtXFAijA/zh-cn_image_0000002538128698.png?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=89432BD123DACBE858BAC54185B4376738D818C82F74386FA23B0ABCBFA1AEEA)
 
 ### 列表项关闭自动缩放
 
@@ -247,14 +261,14 @@ ArcList({ initialIndex: 2 }) {
 
 ```typescript
 ArcListItem() {
-  // ...
+
 }
 .autoScale(false)
 ```
 
 **图5** 列表项关闭自动缩放
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/yFBrsbvTRdCJsSReumaE-g/zh-cn_image_0000002568172603.png?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=34B1B6E3B9E84366BFF1B5E0CFF31C1F725EA01082A160DA4864B5BD3C8FC4D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/mjDwpKXaR7KDLBkmCN3nKQ/zh-cn_image_0000002538288632.png?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=81601F8AFDC59E9D66F42AEC5168BD85093E3CA4DA301B931E15D57803D99645)
 
 ### 添加内置滚动条
 
@@ -264,7 +278,7 @@ ArcListItem() {
 
 ```typescript
 ArcList({ header: this.arcListHeader }) {
-  // ···
+
 }
 .scrollBar(BarState.Auto)
 .scrollBarWidth(LengthMetrics.px(10))
@@ -273,19 +287,19 @@ ArcList({ header: this.arcListHeader }) {
 
 **图6** 弧形列表的内置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/3m57ZP9dSu2krHrAf-6Q6w/zh-cn_image_0000002568252599.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=FC83C5A17A030197EC69FE0BE589896A3425569F02E58F051D0962F5FA0B869D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/IJKdeLY6SYSCiYBWq8QQnQ/zh-cn_image_0000002569168395.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=DA8F7BFED8140E49D4498E5AF740241F86FC7B4F58844DBAAD5C2D9408A2DFDA)
 
 ## 添加外置滚动条ArcScrollBar
 
 弧形列表[ArcList](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist)可与[ArcScrollBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-arcscrollbar)组件配合使用，为弧形列表添加外置滚动条。两者通过绑定同一个[Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)滚动控制器对象实现联动。
 
 1. 首先，需要创建一个[Scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll#scroller)类型的对象arcListScroller。 ```typescript private arcListScroller: Scroller = new Scroller(); ```
-2. 然后，弧形列表通过[scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist#arklistoptions)参数绑定滚动控制器。 ```typescript // 将arcListScroller用于初始化ArcList组件的scroller参数，完成arcListScroller与弧形列表的绑定。 ArcList({ scroller: this.arcListScroller, header: this.arcListHeader }) {  // ··· } ```
-3. 最后，弧形滚动条通过[scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-arcscrollbar#arcscrollbaroptions)参数绑定滚动控制器。 ```typescript // 将arcListScroller用于初始化ArcScrollBar组件的scroller参数，完成arcListScroller与滚动条的绑定。 ArcScrollBar({ scroller: this.arcListScroller }) ```
+2. 然后，弧形列表通过[scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclist#arklistoptions)参数绑定滚动控制器。 ```typescript ArcList({ scroller: this.arcListScroller, header: this.arcListHeader }) { } ```
+3. 最后，弧形滚动条通过[scroller](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-arcscrollbar#arcscrollbaroptions)参数绑定滚动控制器。 ```typescript ArcScrollBar({ scroller: this.arcListScroller }) ```
 
 **图7** 弧形列表的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/KmQjvilLQkSY5iHh-iYHVQ/zh-cn_image_0000002537172886.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=BA3DDFCAB7E207B94EE8DC41CC5BF0A8B716E6561ED5ECB45174E583CBC840B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/iptGaLUiTnC3UFztpp-gqQ/zh-cn_image_0000002569128421.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=2DA4612935AD4AD33C7A92053186C47B153D602EE142DAAB3898C3C41AE716C3)
 
 > **说明**
 > 弧形滚动条组件[ArcScrollBar](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-arcscrollbar)，还可配合其他可滚动组件使用，如[List](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list)、[Grid](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid)、[Scroll](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-scroll)、[WaterFlow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow)。
@@ -303,50 +317,49 @@ ArcList({ header: this.arcListHeader }) {
 ```typescript
 import { ArcList, ArcListAttribute, ArcListItemAttribute, ArcListItem, LengthMetrics } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
-// ...
+
 const alphabets: string[] = [
   '#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N',
   'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ];
+
 @Entry
 @Component
 export struct ArcListArcIndexerBar {
-  // ...
-  // 索引条选中项索引
+
   @State indexerIndex: number = 0;
-  // 列表绑定的滚动控制器
+
   private arcListScroller: Scroller = new Scroller();
-  // ...
+
   build() {
-    // ...
+
           Stack({alignContent: Alignment.End}) {
             ArcList({ initialIndex: 0, header:this.tabBar1, scroller:this.arcListScroller }) {
-              // ...
+
             }
-            // ...
+
             .onScrollIndex((firstIndex: number, lastIndex: number, centerIndex: number) => {
-              // 根据列表滚动到的索引值，重新计算对应索引条的位置this.selectedIndex
+
               this.indexerIndex = centerIndex + 1;
             })
-            // ...
-            // 弧形索引条组件
+
             ArcAlphabetIndexer({ arrayValue: alphabets, selected: this.indexerIndex})
               .selected(this.indexerIndex!!)
               .onSelect((index: number) => {
-                // 选中索引项后，列表跳转到相应位置
+
                 this.indexerIndex = index
                 this.arcListScroller.scrollToIndex(this.indexerIndex - 1)
               })
-              // ...
+
           }
-          // ...
+
   }
 }
 ```
 
 **图8** 弧形列表与弧形索引条联动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/antamc7rTu269p4Mb6QUjQ/zh-cn_image_0000002537332808.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=563BEF4C5975C6A49BBF61E100D27BE543FDA9FFA709830ED59356B21728EA2E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/-POI5Yh-TySiG87xq_4fSQ/zh-cn_image_0000002538128700.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=8EC758ECD79AB9DE3256BAB5E336B8B7FAF3CE8A6017B310F41C914109FD6DB2)
 
 ## 响应列表项侧滑
 
@@ -354,12 +367,12 @@ export struct ArcListArcIndexerBar {
 
 在联系人列表中，end参数表示设置[ArcListItem](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem)左滑时尾端划出自定义组件，即删除按钮。在初始化end方法时，将滑动列表项的索引传入删除按钮组件，当用户点击删除按钮时，可以根据数据索引来删除列表项对应的数据，从而实现侧滑删除功能。
 
-1. 首先，实现尾端滑出组件的构建。 ```typescript @Builder itemEnd(item: Contact) {  // 构建尾端滑出组件  Button({ type: ButtonType.Circle }) {  Image($r('app.media.ic_public_delete_filled'))  .width(20)  .height(20)  }  .width(20)  .height(20)  .backgroundColor(Color.Black)  .onClick(() => {  this.getUIContext()?.animateTo({  duration: 1000,  curve: Curve.Smooth,  iterations: 1,  playMode: PlayMode.Normal,  }, () => {  // this.contacts为列表数据源，可根据实际场景构造，indexOf方法可获取将被删除数据在数据源中的索引  let index = this.contacts.indexOf(item);  // 从数据源删除指定数据项  this.contacts.splice(index, 1);  })  }) } ```
-2. 然后，绑定[swipeAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem#swipeaction)属性到可左滑的ArcListItem上。 ```typescript // 构建ArcList时，通过ForEach基于数据源this.contacts循环渲染ArcListItem ArcListItem() { // ··· } .swipeAction({  end: {  // index为该ArcListItem在ArcList中的索引值。  builder: () => {  this.itemEnd(item);  },  } }) // 设置侧滑属性. ```
+1. 首先，实现尾端滑出组件的构建。 ```typescript @Builder itemEnd(item: Contact) {  Button({ type: ButtonType.Circle }) {  Image($r('app.media.ic_public_delete_filled'))  .width(20)  .height(20)  }  .width(20)  .height(20)  .backgroundColor(Color.Black)  .onClick(() => {  this.getUIContext()?.animateTo({  duration: 1000,  curve: Curve.Smooth,  iterations: 1,  playMode: PlayMode.Normal,  }, () => {  let index = this.contacts.indexOf(item);  this.contacts.splice(index, 1);  })  }) } ```
+2. 然后，绑定[swipeAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arclistitem#swipeaction)属性到可左滑的ArcListItem上。 ```typescript ArcListItem() { } .swipeAction({  end: {  builder: () => {  this.itemEnd(item);  },  } }) ```
 
 **图9** 侧滑删除列表项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/8Ls4WtyXQ9OGS3KB1DvjiQ/zh-cn_image_0000002568172605.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025228Z&HW-CC-Expire=86400&HW-CC-Sign=0D4EDB93D6D75133C0BDD658243C53A8FFBB60BFE2D668276F8705C6035159F9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/Blst8sroR0Cj9MN_8AYl-Q/zh-cn_image_0000002538288634.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023344Z&HW-CC-Expire=86400&HW-CC-Sign=F6142DC23152DCB10E5FE04D155CD2BF700EED42DA6B9B418D28648E265ACC57)
 
 ## 处理长列表
 
@@ -369,7 +382,7 @@ export struct ArcListArcIndexerBar {
 
 ```typescript
 ArcList() {
-  // ···
+
 }.cachedCount(3)
 ```
 
@@ -385,13 +398,13 @@ ArcList() {
 ArcList({
   initialIndex: 2,
 }) {
-// ···
+
 }
-// 设置弧形列表支持获焦
+
 .focusable(true)
-// 设置弧形列表支持点击获焦
+
 .focusOnTouch(true)
-// 设置弧形列表为所在页面上的默认焦点
+
 .defaultFocus(true)
 ```
 
@@ -401,8 +414,8 @@ ArcList({
 ArcList({
   initialIndex: 2,
 }) {
-// ···
+
 }
-// ···
+
 .digitalCrownSensitivity(CrownSensitivity.MEDIUM)
 ```

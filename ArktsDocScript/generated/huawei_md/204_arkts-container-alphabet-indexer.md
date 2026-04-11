@@ -325,7 +325,7 @@ popupItemBackgroundColor(value: ResourceColor)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 提示弹窗二级索引项背景颜色。 默认值： API version 11及以前：#FFFFFFFF，显示为白色。 API version 12及以后：#00000000，显示为黑色。 |
+| value | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 是 | 提示弹窗二级索引项背景颜色。 默认值： API version 11及以前：#FFFFFFFF，显示为白色。 API version 12及以后：#00000000，显示为透明色。 |
 
 ### autoCollapse11+
 
@@ -680,7 +680,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/DqX5PvkbTvuwVKtV9efgDg/zh-cn_image_0000002568253875.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025539Z&HW-CC-Expire=86400&HW-CC-Sign=BCA229C39EE923774CE1D9A72EE152B75D91E27D3B38EE035EFFC55528B75E10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/IUHxNINdQqSQHuSXY-NVUA/zh-cn_image_0000002569169671.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023657Z&HW-CC-Expire=86400&HW-CC-Sign=B98375C48DE45073209334A504B16283AE5117E0DD617E7A80DD40CE4106C89F)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -820,7 +820,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/XWkksWStSH-Lj_FAzwkX7Q/zh-cn_image_0000002537174166.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025539Z&HW-CC-Expire=86400&HW-CC-Sign=15FED528804D506A28A37C27403DB72EAC634568B57485F5E9341C98877EB542)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/sfjImTsRQ_qV-HqrDWBPuw/zh-cn_image_0000002569129697.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023657Z&HW-CC-Expire=86400&HW-CC-Sign=D8D6B43B8D71B2A5391617EBCC594B050AB078EA6E2192B1304C6FAD2D104D89)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -949,4 +949,4 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/B9-NOwIcTaWRqBLYXYVH6A/zh-cn_image_0000002537334086.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025539Z&HW-CC-Expire=86400&HW-CC-Sign=390E8AF951D63F0945F78E9A708D2F2E7EA41F082B87D6CD01A03EA0815C2D5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/omRcTVdVR-Sqk5xteP-egA/zh-cn_image_0000002538129976.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023657Z&HW-CC-Expire=86400&HW-CC-Sign=D28A8B7B6586EF64E33CCA2EE4703DEF9FF5BBF7960D21C8AC7494E609F2A2AC)

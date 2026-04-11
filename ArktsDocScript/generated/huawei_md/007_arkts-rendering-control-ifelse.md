@@ -57,7 +57,7 @@ struct IfExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/usfabE-TTlGLiCSvZoOsKQ/zh-cn_image_0000002537172760.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025203Z&HW-CC-Expire=86400&HW-CC-Sign=2926123883CC9E960588BB31FD9959D6BD1C19EFB0E306E82DFD1D2053F0F98D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/W3Jo0aS7TPWC55yK7tHIoA/zh-cn_image_0000002569128295.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023319Z&HW-CC-Expire=86400&HW-CC-Sign=AAE8442A907C0B0615ED3E221F422B2C877368EB4AE9F5323801E781DF086787)
 
 if语句的每个分支都包含一个构建函数。此类构建函数必须创建一个或多个子组件。在初始渲染时，if语句会执行构建函数，并将生成的子组件添加到其父组件中。
 
@@ -115,7 +115,7 @@ struct MainView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/rs9lgJUoTQaDxtHySwhhDw/zh-cn_image_0000002537332682.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025203Z&HW-CC-Expire=86400&HW-CC-Sign=C2E0FDF4AA5122CDCB8D5474474B31CD9EEE33DDB1D9DC877A37433B1CD75D08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/2qz0wgnJR16m2aOjJM72Mg/zh-cn_image_0000002538128574.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023319Z&HW-CC-Expire=86400&HW-CC-Sign=8E65F7E910304F9ACBB76A6FE87BD52337DAA5D27AB000627070A104327C75C7)
 
 **初次渲染**：创建CounterView子组件（label为 'CounterView #positive'），其状态变量counter初始值为0。
 
@@ -176,7 +176,7 @@ struct KeepMainView {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/FVvAWCiGST6tr1r7U8ooEQ/zh-cn_image_0000002568172479.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025203Z&HW-CC-Expire=86400&HW-CC-Sign=D0BC0839A71E63631A7B872E6D3F1E2A0A4D29C73393549514ED20F4BC1B096D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/gPUOrU9hTy-HEqb_uo7sBA/zh-cn_image_0000002538288508.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023319Z&HW-CC-Expire=86400&HW-CC-Sign=17147085FDB43C6701D5AED80C5AC8F407378EA8F3480B2D0C8221C21C5310BB)
 
 此处，@State counter变量归父组件所有。因此，当KeepCounterView组件实例被删除时，该变量不会被销毁。KeepCounterView组件通过[@Link](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-link)装饰器引用状态。状态必须从子级移动到其父级（或父级的父级），以避免在条件内容或重复内容被销毁时丢失状态。
 
@@ -234,4 +234,4 @@ struct NestedIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YmsGAwGnRMmK6JFtAlz97g/zh-cn_image_0000002568252473.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025203Z&HW-CC-Expire=86400&HW-CC-Sign=A1F84309F1DC09120C5008322B93642EC700A4FCF4B85FF4718C4A7267E71676)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/kSMLIXo4S8uV0j0TsPuMtw/zh-cn_image_0000002569168271.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023319Z&HW-CC-Expire=86400&HW-CC-Sign=B859EFF4B8768E7FAAF3FF37A4F498B91D9330ADFFA3E3C448E5A63EA1CEC858)

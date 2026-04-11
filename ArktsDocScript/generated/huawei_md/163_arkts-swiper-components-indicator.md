@@ -240,7 +240,6 @@ struct DotIndicatorDemo {
       this.list.push(i);
     }
   }
-
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -265,7 +264,6 @@ struct DotIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(
@@ -287,7 +285,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wRB_dgXkQYyuiylDxzd6og/zh-cn_image_0000002568253655.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025441Z&HW-CC-Expire=86400&HW-CC-Sign=0A4A834F3A2E8A5D79E3C3A2F420450FEE7B35E27C61A51F971C31274FD23C03)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/wpYtBdnpSu6NkSB2sULa1Q/zh-cn_image_0000002569169451.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023600Z&HW-CC-Expire=86400&HW-CC-Sign=C7821D30D214A4F4A75AD66A1F4CFAC66A55893BDCE4B094401A1D52B18F071F)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -305,7 +303,6 @@ struct DigitIndicatorDemo {
       this.list.push(i);
     }
   }
-
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -330,7 +327,6 @@ struct DigitIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(Indicator.digit()
@@ -349,4 +345,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/ArwSctXwS2KnoXrTHDjmfg/zh-cn_image_0000002537173946.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025441Z&HW-CC-Expire=86400&HW-CC-Sign=741B1D7EEDFAA328F3DE002BB5DF5A56C6B1A919D0A55A49AB23125777B1F499)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/SfQeqrD2RzKOESzsGny8RQ/zh-cn_image_0000002569129477.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023600Z&HW-CC-Expire=86400&HW-CC-Sign=57E25CD5D6529185A64CDC1FB4121402D8E98DAF31E5A29B710F7F702FBA27F0)

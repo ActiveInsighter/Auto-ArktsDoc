@@ -22,7 +22,7 @@ Radio({ value: 'Radio2', group: 'radioGroup' })
   .checked(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/nUTxcPP5RESDJZJKxVtFHA/zh-cn_image_0000002537172988.png?HW-CC-KV=V1&HW-CC-Date=20260410T025250Z&HW-CC-Expire=86400&HW-CC-Sign=A6C8203D53CC2BFC4AA10CC1B904B369D1403047F1C8A8FB378E9425D71126D1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/CZoPYNr_RpW_2-y4GXu7PQ/zh-cn_image_0000002569128523.png?HW-CC-KV=V1&HW-CC-Date=20260411T023405Z&HW-CC-Expire=86400&HW-CC-Sign=87A6B38638EA9BC10E9CCCAF3D37EAB7C3C672AF85B0FC6F7AFBC118322E0A52)
 
 ## 添加事件
 
@@ -32,13 +32,15 @@ Radio({ value: 'Radio2', group: 'radioGroup' })
 Radio({ value: 'Radio1', group: 'radioGroup' })
   .onChange((isChecked: boolean) => {
     if(isChecked) {
-
+      //需要执行的操作
+      // ···
     }
   })
 Radio({ value: 'Radio2', group: 'radioGroup' })
   .onChange((isChecked: boolean) => {
     if(isChecked) {
-
+      //需要执行的操作
+      // ···
     }
   })
 ```
@@ -48,17 +50,16 @@ Radio({ value: 'Radio2', group: 'radioGroup' })
 通过点击Radio切换声音模式。
 
 ```typescript
+// xxx.ets
 import { promptAction } from '@kit.ArkUI';
-
 @Entry
 @Component
 export struct RadioExample {
   @State rst: promptAction.ShowToastOptions = { 'message': 'Ringing mode.' };
   @State vst: promptAction.ShowToastOptions = { 'message': 'Vibration mode.' };
   @State sst: promptAction.ShowToastOptions = { 'message': 'Silent mode.' };
-
   build() {
-
+    // ···
       Row() {
         Column() {
           Radio({ value: 'Ringing', group: 'radioGroup' }).checked(true)
@@ -66,42 +67,40 @@ export struct RadioExample {
             .width(50)
             .onChange((isChecked: boolean) => {
               if (isChecked) {
-
+                // 切换为响铃模式
                 this.getUIContext().getPromptAction().openToast(this.rst);
               }
             })
           Text('Ringing')
         }
-
         Column() {
           Radio({ value: 'Vibration', group: 'radioGroup' })
             .height(50)
             .width(50)
             .onChange((isChecked: boolean) => {
               if (isChecked) {
-
+                // 切换为振动模式
                 this.getUIContext().getPromptAction().openToast(this.vst);
               }
             })
           Text('Vibration')
         }
-
         Column() {
           Radio({ value: 'Silent', group: 'radioGroup' })
             .height(50)
             .width(50)
             .onChange((isChecked: boolean) => {
               if (isChecked) {
-
+                // 切换为静音模式
                 this.getUIContext().getPromptAction().openToast(this.sst);
               }
             })
           Text('Silent')
         }
       }.height('100%').width('100%').justifyContent(FlexAlign.Center)
-
+    // ···
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/80vm9qEqSJ-dzpb8sIhPMg/zh-cn_image_0000002537332910.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025250Z&HW-CC-Expire=86400&HW-CC-Sign=0785533F2993A20E7BF71AA371599D941A02776E8A4616FC594D66C5FEFA01EE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/QS3z3GqbThOQuRacShqwTg/zh-cn_image_0000002538128802.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023405Z&HW-CC-Expire=86400&HW-CC-Sign=F10338FFF0AF1473D25FE81B85803E15B9D0C8EA080D7C0F53B7F8C35315C2EC)

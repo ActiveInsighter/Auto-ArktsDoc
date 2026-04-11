@@ -5,7 +5,7 @@
 
 界面效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/asbZSq3aTZOdGSOpoP2Vjw/zh-cn_image_0000002568173263.png?HW-CC-KV=V1&HW-CC-Date=20260410T025643Z&HW-CC-Expire=86400&HW-CC-Sign=99C7B0F8E899F296CEBA2CE85213322D9393DAD2E1910463B244C34E704B1DD1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/CgHBSfOiTLe_RqeCwPw46Q/zh-cn_image_0000002538289292.png?HW-CC-KV=V1&HW-CC-Date=20260411T023759Z&HW-CC-Expire=86400&HW-CC-Sign=A271782A9B08AE5734BCC07AD3DFC6094D91F2F3BFA59C68630F3420D6D95BA9)
 
 ## 开发步骤
 

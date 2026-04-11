@@ -22,7 +22,7 @@
 
 **图1** 整体架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/g83BJHCQSdGHM9M7vvxT7w/zh-cn_image_0000002537332592.png?HW-CC-KV=V1&HW-CC-Date=20260410T024952Z&HW-CC-Expire=86400&HW-CC-Sign=4330D805492B7945B9710557F131271429FB12F0CAA6873934F07DBE91D9FB74)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Ianj6nxOSbONKh_xGWzY0A/zh-cn_image_0000002538128484.png?HW-CC-KV=V1&HW-CC-Date=20260411T023315Z&HW-CC-Expire=86400&HW-CC-Sign=06822713C118217F7D517002850FD9C92C8AD1240405B63D73EFFDCFE627FB9B)
 
 - **声明式UI前端** 提供了UI开发范式的基础语言规范，并提供内置的UI组件、布局和动画，提供了多种状态管理机制，为应用开发者提供一系列接口支持。
 - **语言运行时** 选用方舟语言运行时，提供了针对UI范式语法的解析能力、跨语言调用支持的能力和TS语言高性能运行环境。

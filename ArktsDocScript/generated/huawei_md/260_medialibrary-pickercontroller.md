@@ -7,7 +7,7 @@
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/8ftEl3ObTwifZ9AUvndzbA/zh-cn_image_0000002568253259.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025643Z&HW-CC-Expire=86400&HW-CC-Sign=3F1F46558B16E1F8F05BDC2F0E669BEFA86CEEA68615394D81359F40FD4F0BD7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/iglEm-TnRbeBEOvgmUtvew/zh-cn_image_0000002569169055.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023800Z&HW-CC-Expire=86400&HW-CC-Sign=FB95E1A26E41ADF5F40868C7EB365F16F66116771F4C9582B225AF848EF51460)
 
 ### 开发步骤
 
@@ -21,7 +21,7 @@
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/OMc9-n8xRIeUpL6utvjVkw/zh-cn_image_0000002537173548.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025643Z&HW-CC-Expire=86400&HW-CC-Sign=55242E70C1C54CC9B36A98780F0485F48974DEECD7A97AC13C31D5C0FC9BFBAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/61rSF0WjTlWSG-30XApuSQ/zh-cn_image_0000002569129081.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023800Z&HW-CC-Expire=86400&HW-CC-Sign=9ECFD71539DECB9152A4A31BD0DFBE64A5CDC2132F5CDAF49A6CB5CFFF8A9918)
 
 ### 开发步骤
 

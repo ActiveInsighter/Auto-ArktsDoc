@@ -316,6 +316,7 @@ type OnSelectCallback = (index: number) => void
 该示例实现了弧形索引条和弧形列表联动控制和定位。
 
 ```typescript
+// xxx.ets
 import {
   LengthMetrics,
   ColorMetrics,
@@ -326,7 +327,7 @@ import {
   ArcAlphabetIndexer,
   ArcAlphabetIndexerAttribute
 } from '@kit.ArkUI';
-
+// 从API version 22开始，无需手动导入ArcListAttribute、ArcListItemAttribute、ArcAlphabetIndexerAttribute。具体请参考ArcList、ArcListItem、ArcAlphabetIndexer的导入模块说明。
 @Entry
 @Component
 struct ArcListAndIndexer {
@@ -339,13 +340,10 @@ struct ArcListAndIndexer {
     '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38',
     '39','40', '41','42',
   ];
-
   private scrollerForList: Scroller = new Scroller();
   @State indexerIndex: number = 0;
-
-  private watchSize: string = '466px';
-  private itemSize: number = 24;
-
+  private watchSize: string = '466px'; // 手表默认宽高：233*233
+  private itemSize: number = 24;  // 索引项默认大小：24
   build() {
     Column() {
       Row() {
@@ -372,7 +370,6 @@ struct ArcListAndIndexer {
           .height(this.watchSize)
           .borderRadius(this.watchSize)
           .space(LengthMetrics.px(4))
-
           ArcAlphabetIndexer({ arrayValue: this.fullValue, selected: 0 })
             .autoCollapse(true)
             .width(this.watchSize)
@@ -403,7 +400,6 @@ struct ArcListAndIndexer {
               weight:500,
               family:'HarmonyOS Sans'
             })
-
         }.width('100%').height('100%')
       }.width('100%').height('100%')
     }
@@ -411,4 +407,4 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/VQVktM7CThyEo9Kp9HSWVQ/zh-cn_image_0000002568173881.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025541Z&HW-CC-Expire=86400&HW-CC-Sign=C8381289E3A98384A44D380FB6AD2F588BE53640AD8610EE085527AB75638CB7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Yp0iWXzWTPy0GvzCVLmpLA/zh-cn_image_0000002538289910.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023658Z&HW-CC-Expire=86400&HW-CC-Sign=2DA011FB0BCC98188DB892051DEB78E9B30F6FFCB5C6AD6FA4110D5E2BD99EC2)

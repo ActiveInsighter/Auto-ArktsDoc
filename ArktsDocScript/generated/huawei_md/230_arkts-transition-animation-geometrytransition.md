@@ -45,7 +45,7 @@ geometryTransition(id: string, options?: GeometryTransitionOptions): T
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | id | string | 是 | 用于设置绑定关系，id置空字符串清除绑定关系避免参与共享行为，id可更换重新建立绑定关系。同一个id只能有两个组件绑定且是in/out不同类型角色，不能多个组件绑定同一个id。 |
-| options | [GeometryTransitionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-geometrytransition#geometrytransitionoptions11) | 否 | 组件内共享元素转场动画参数。 |
+| options | [GeometryTransitionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-geometrytransition#geometrytransitionoptions11) | 否 | 组件内共享元素转场动画参数。 默认值为 { follow: false }。 |
 
 **返回值：**
 
@@ -111,4 +111,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/TsZ4F5_FQoS67yL2q1eIUw/zh-cn_image_0000002568254003.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025610Z&HW-CC-Expire=86400&HW-CC-Sign=7A1ABB5840A9CFF24D42C355171E201502EF54D40548DBB9141BDF7A9446F3B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/6cwdaLioRLyUDxhOvIWGbQ/zh-cn_image_0000002569169799.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023727Z&HW-CC-Expire=86400&HW-CC-Sign=68DA1BE7B49FB8F56B0DCAC515C1E32E366425C3686A753D090A1D353AC5084A)

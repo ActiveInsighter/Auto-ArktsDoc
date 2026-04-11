@@ -14,11 +14,11 @@ ArkUI提供了WaterFlow容器组件，用于构建瀑布流布局。WaterFlow组
 
 在瀑布流的纵向布局中，第一行的子节点按从左到右顺序排列，从第二行开始，每个子节点将放置在当前总高度最小的列。如果多个列的总高度相同，则按照从左到右的顺序填充。如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/o7orgd1yTt2KapTGkN6gMw/zh-cn_image_0000002537332790.png?HW-CC-KV=V1&HW-CC-Date=20260410T025229Z&HW-CC-Expire=86400&HW-CC-Sign=CBCE3BA4A2A1BE3C6CCEA50AF5E836C97642A2B3830C074B92A2DC7751EFE6BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/k4POILn4RziqxPj82pzHmQ/zh-cn_image_0000002538128682.png?HW-CC-KV=V1&HW-CC-Date=20260411T023346Z&HW-CC-Expire=86400&HW-CC-Sign=7968FFCBE4873093BE9FAFCC2FDC03BE0D4FE7F39837689AA3F6BAEB6F238416)
 
 在瀑布流的横向布局中，每个子节点都会放置在当前总宽度最小的行。若多行总宽度相同，则按照从上到下的顺序进行填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/uDBXIXvlRxWPty7vTYhNxA/zh-cn_image_0000002537332814.png?HW-CC-KV=V1&HW-CC-Date=20260410T025229Z&HW-CC-Expire=86400&HW-CC-Sign=6508E2155238D2C3AB47A583DE89D9741DD9D840EF5531E7FC90D9B03960CF4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/MCJMNn1xSEeeyaA3Otw64g/zh-cn_image_0000002538128706.png?HW-CC-KV=V1&HW-CC-Date=20260411T023346Z&HW-CC-Expire=86400&HW-CC-Sign=4F2CEFB76CE37C8965FA7B4503DB529D7CFC6D888AC06E8B3980C58D0540B589)
 
 ## 无限滚动
 
@@ -80,7 +80,7 @@ build() {
 
 由于在瀑布流布局中，各子节点的高度不一致，下面的节点位置依赖于上面的节点，所以重新加载所有数据会触发整个瀑布流重新计算布局，可能会导致卡顿。在数据末尾增加数据后，应使用[onDataAdd](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-rendering-control-lazyforeach#ondataadd8)通知，以使瀑布流能够识别新增数据并继续加载，同时避免对已有数据进行重复处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/cxO3tug8RjOaDxkJZzYToQ/zh-cn_image_0000002568172611.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025229Z&HW-CC-Expire=86400&HW-CC-Sign=B3D9F315330E1EED92E65833054455C8E8D326BFE8F646E12FB151EC6E0D968E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/--lS5z6ZTxO0SCu1MEgr1g/zh-cn_image_0000002538288640.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023346Z&HW-CC-Expire=86400&HW-CC-Sign=0F400CA75A3528259011E275E8C78822DFCB9B005AE69CCF56381C5C66D13C1D)
 
 ### 提前新增数据
 
@@ -125,7 +125,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Olt4Q0UqSSOMV6wbuHKr3Q/zh-cn_image_0000002568252607.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025229Z&HW-CC-Expire=86400&HW-CC-Sign=37EE1F5601EA275A78FF0ED9B1646A0D6B0894E5210B931339AEFB52F1754DD4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/kF4McsB_QpKjDa2OMPciiA/zh-cn_image_0000002569168403.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023346Z&HW-CC-Expire=86400&HW-CC-Sign=0C3593CB6D086CD7B2064058B47CA17B024057FEBF8C52AF6FD907BBB116BB11)
 
 ## 动态切换列数
 
@@ -210,13 +210,13 @@ export struct WaterFlowDynamicSwitchover {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/zkDfC8IERgGbBkJ-lOdJ7A/zh-cn_image_0000002537172894.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025229Z&HW-CC-Expire=86400&HW-CC-Sign=ACB5AA8951EDB56CA20EDF031EDE9124481E2EE4E3BF64A463F3F701B1B256E0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/IxzbKcwGQFi8MtSUQvCemA/zh-cn_image_0000002569128429.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023346Z&HW-CC-Expire=86400&HW-CC-Sign=B8500D3FC343A4B22EECB3F45503316D781C804A9347DA35F8995E76F1D9CFA9)
 
 ## 分组混合布局
 
 许多应用界面在瀑布流上方包含其他内容，这类场景可通过在Scroll或List内部嵌套WaterFlow来实现。类似下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/hF2qkwYNRk6KXz9N8RRSrw/zh-cn_image_0000002537332816.png?HW-CC-KV=V1&HW-CC-Date=20260410T025229Z&HW-CC-Expire=86400&HW-CC-Sign=0313998A29F9A7C0A0372CB851DAA12A93D8D48BC1041421E253A1073F4A32DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/SFJ6YIvtTIGbKkszSLAmaQ/zh-cn_image_0000002538128708.png?HW-CC-KV=V1&HW-CC-Date=20260411T023346Z&HW-CC-Expire=86400&HW-CC-Sign=E88B6E836489BEE2D8867B823F69E7DD9694F0B22BBFE2B5B0C3425BA45E60DD)
 
 如果能够将不同部分的子节点整合到一个数据源中，那么通过设置[WaterFlowSections](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-waterflow#waterflowsections12)，可以在一个 WaterFlow 容器内实现混合布局。与嵌套滚动相比，这种方法可以简化滚动事件处理等应用逻辑。
 

@@ -23,7 +23,7 @@ Button('click for Menu')
   ])
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/H4Yyuw-2Qh-ArXTQlDiKGw/zh-cn_image_0000002537332940.png?HW-CC-KV=V1&HW-CC-Date=20260410T025305Z&HW-CC-Expire=86400&HW-CC-Sign=AB378A06A8CF564D4620EC1EC1E215A779395424B2DE247CA1E9A2583620F98F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Amc1qhWPSzuWxMLPQo4X9Q/zh-cn_image_0000002538128832.png?HW-CC-KV=V1&HW-CC-Date=20260411T023421Z&HW-CC-Expire=86400&HW-CC-Sign=86766BDBC54211D31BDC37D6B15006120BDBE217FCE34DA9A3A2170C6539EA60)
 
 ## 创建自定义样式的菜单
 
@@ -33,24 +33,28 @@ Button('click for Menu')
 
 ```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
+
 class Tmp {
-  // 请将$r('app.media.view_list_filled')替换为实际资源文件
+
   public iconStr2: ResourceStr = $r('app.media.view_list_filled');
+
   set(val: Resource) {
     this.iconStr2 = val;
   }
 }
+
 @Entry
 @Component
 export struct BuilderCustomMenuExample {
   @State select: boolean = true;
-   // 请将$r('app.media.view_list_filled')替换为实际资源文件
+
   private iconStr: ResourceStr = $r('app.media.view_list_filled');
   private iconStr2: ResourceStr = $r('app.media.view_list_filled');
-  // 请将$r('app.string.copy')替换为实际资源文件，在本示例中该资源文件的value值为"复制"
+
   private copy: ResourceStr = $r('app.string.copy');
-  // 请将$r('app.string.paste')替换为实际资源文件，在本示例中该资源文件的value值为"粘贴"
+
   private paste: ResourceStr = $r('app.string.paste');
+
   @Builder
   SubMenu() {
     Menu() {
@@ -58,24 +62,23 @@ export struct BuilderCustomMenuExample {
       MenuItem({ content: this.paste, labelInfo: 'Ctrl+V' })
     }
   }
+
   @Builder
   MyMenu() {
     Menu() {
-      // 请将$r('app.string.menu_selection')替换为实际资源文件，在本示例中该资源文件的value值为"菜单选项"
-      // 请将$r('app.media.icon')替换为实际资源文件
-      // 请将$r('app.media.arrow_right_filled')替换为实际资源文件
+
       MenuItem({ startIcon: $r('app.media.icon'), content: $r('app.string.menu_selection') })
       MenuItem({ startIcon: $r('app.media.icon'), content: $r('app.string.menu_selection') }).enabled(false)
       MenuItem({
         startIcon: this.iconStr,
         content: $r('app.string.menu_selection'),
         endIcon: $r('app.media.arrow_right_filled'),
-        // 当builder参数进行配置时，表示与menuItem项绑定了子菜单。鼠标hover在该菜单项时，会显示子菜单。
+
         builder: this.SubMenu
       })
-      // 请将$r('app.string.menu_subtitle')替换为实际资源文件，在本示例中该资源文件的value值为"小标题"
+
       MenuItemGroup({ header: $r('app.string.menu_subtitle') }) {
-        // 请将$r('app.string.menu_selection')替换为实际资源文件，在本示例中该资源文件的value值为"菜单选项"
+
         MenuItem({ content: $r('app.string.menu_selection') })
           .selectIcon(true)
           .selected(this.select)
@@ -84,9 +87,7 @@ export struct BuilderCustomMenuExample {
             let str: Tmp = new Tmp();
             str.set($r('app.media.icon'));
           })
-        // 请将$r('app.string.menu_selection')替换为实际资源文件，在本示例中该资源文件的value值为"菜单选项"
-        // 请将$r('app.media.view_list_filled')替换为实际资源文件
-        // 请将$r('app.media.arrow_right_filled')替换为实际资源文件
+
         MenuItem({
           startIcon: $r('app.media.view_list_filled'),
           content: $r('app.string.menu_selection'),
@@ -94,8 +95,7 @@ export struct BuilderCustomMenuExample {
           builder: this.SubMenu
         })
       }
-      // 请将$r('app.string.menu_selection')替换为实际资源文件，在本示例中该资源文件的value值为"菜单选项"
-      // 请将$r('app.media.arrow_right_filled')替换为实际资源文件
+
       MenuItem({
         startIcon: this.iconStr2,
         content: $r('app.string.menu_selection'),
@@ -103,8 +103,9 @@ export struct BuilderCustomMenuExample {
       })
     }
   }
+
   build() {
-    // ...
+
   }
 }
 ```
@@ -116,7 +117,7 @@ Button('click for Menu')
   .bindMenu(this.MyMenu)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/kVkCcXQZQ2KnJKP-GD9RqA/zh-cn_image_0000002568172737.png?HW-CC-KV=V1&HW-CC-Date=20260410T025305Z&HW-CC-Expire=86400&HW-CC-Sign=7E31B006CB37EE3D1ACCE4C0DC8FC4699163255FF7B602935BE8443D94BB7DC5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/vgk9dhFHTEisrQ9NPVNh7Q/zh-cn_image_0000002538288766.png?HW-CC-KV=V1&HW-CC-Date=20260411T023421Z&HW-CC-Expire=86400&HW-CC-Sign=F0F971CFAAB3436D9CF42D6A2E7B7E08160FD10C8029422181483E58A47116EA)
 
 ## 创建支持右键或长按的菜单
 
@@ -151,7 +152,7 @@ Button('click for Menu')
 @Component
 export struct SupportAvoidCentralAxisMenuExample {
   @State message: string = 'Hello World';
-  // 请在resources\base\element\string.json文件中配置name为'xxx'，value为非空字符串的资源
+
   @State upScreen: string =
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('Upper_half_screen') as string;
   @State middleAxle: string =
@@ -162,23 +163,26 @@ export struct SupportAvoidCentralAxisMenuExample {
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('zone') as string;
   @State hoverModeStart: string =
     this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('hoverMode_start') as string;
-  // 请将$r('app.media.startIcon')替换为实际资源文件
+
   private iconStr: Resource = $r('app.media.startIcon');
   @State index: number = 0;
   @State arrayStr: Array<string> = [this.upScreen, this.middleAxle, this.lowerScreen];
   @State enableHoverMode: boolean | undefined = true;
   @State showInSubwindow: boolean = false;
+
   @Builder
   MyMenu1() {
     Menu() {
-      // 请将$r('app.string.menu_selection')替换为实际资源文件，在本示例中该资源文件的value值为"菜单选项"
+
       MenuItem({ startIcon: this.iconStr, content: $r('app.string.menu_selection') })
       MenuItem({ startIcon: this.iconStr, content: $r('app.string.menu_selection') })
       MenuItem({ startIcon: this.iconStr, content: $r('app.string.menu_selection') })
       MenuItem({ startIcon: this.iconStr, content: $r('app.string.menu_selection') })
     }
   }
+
   @State isShow: boolean = false;
+
   build() {
     NavDestination() {
       Column({ space: 5 }) {
@@ -190,6 +194,7 @@ export struct SupportAvoidCentralAxisMenuExample {
               this.index = 0
             }
           })
+
         Button(this.hoverModeStart + this.enableHoverMode)
           .id('hoverMode_start')
           .onClick(() => {
@@ -211,10 +216,9 @@ export struct SupportAvoidCentralAxisMenuExample {
       .height('100%')
       .width('100%')
     }
-    // ···
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/7C1RIsrjTq-mi6t5EjP7Pw/zh-cn_image_0000002568252733.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025305Z&HW-CC-Expire=86400&HW-CC-Sign=AFCA18CDABFFD2BCF0440DF17AF4DEED1F8845B270398FB20FF682A1690E0199)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/3ea74cYlQkyjonuP6XwkxA/zh-cn_image_0000002569168529.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023421Z&HW-CC-Expire=86400&HW-CC-Sign=1B3C15B07AD0A1ACFC3AC38EB4AB4570FDC5C0E4654C830C0D500A51EF8D52FA)
 
 ## 控制子窗菜单的事件透传
 
@@ -240,26 +244,30 @@ export struct EventTransSubWindowMenuExample {
       .width('100%')
       .height('100%')
     }
-    // ...
+
   }
+
   @Builder
   bindMenuBuilder() {
     Menu() {
       MenuItem({ content: 'bindMenu item' }) {
+
       }
     }
   }
+
   @Builder
   contextMenuBuilder() {
     Menu() {
       MenuItem({ content: 'contextMenu item' }) {
+
       }
     }
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ulzgNf7bRPeM61Eg0sZaXQ/zh-cn_image_0000002537173020.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025305Z&HW-CC-Expire=86400&HW-CC-Sign=E4466645FFB56E7DDA5B8E619428FC626C5B2A2D95A2FB142894136ADC0E8E39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/X3axfu4kQyy1FHKXPTl_pA/zh-cn_image_0000002569128555.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023421Z&HW-CC-Expire=86400&HW-CC-Sign=16043BB9DC6BC6DBF7DFD23313F28081B7DC1A39545C4FF7655786936886363D)
 
 ## 基于绑定组件指定位置弹出菜单
 
@@ -281,7 +289,7 @@ export struct BindComponentMenuExample {
     Column() {
       Menu() {
         MenuItemGroup() {
-          // 请将$r('app.media.app_icon')替换为实际资源文件
+
           MenuItem({ startIcon: $r('app.media.app_icon'), content: 'Select Mixed Menu 1', labelInfo: '' })
           MenuItem({ startIcon: $r('app.media.app_icon'), content: 'Select Mixed Menu 2', labelInfo: '' })
           MenuItem({ startIcon: $r('app.media.app_icon'), content: 'Select Mixed Menu 3', labelInfo: '' })
@@ -289,6 +297,7 @@ export struct BindComponentMenuExample {
       }
     }
   }
+
   build() {
     NavDestination() {
       Column() {
@@ -309,9 +318,9 @@ export struct BindComponentMenuExample {
       .height('100%')
       .backgroundColor('#F5F5F5')
     }
-    // ...
+
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/6AyciIJgQ8KQuZI9VbtPKw/zh-cn_image_0000002537332942.gif?HW-CC-KV=V1&HW-CC-Date=20260410T025305Z&HW-CC-Expire=86400&HW-CC-Sign=1AFCC4C97118AC47D00180C04261659E09F41A7F64133903E627F8EE036B88B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/8aiq9mL0RVS8u9Rv8HS0CA/zh-cn_image_0000002538128834.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023421Z&HW-CC-Expire=86400&HW-CC-Sign=B6684B1A2C9ED19BA6AECD7F8786EF1F20E6CCB71F679538F36361437FD009C5)

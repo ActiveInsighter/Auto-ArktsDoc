@@ -133,4 +133,4 @@ struct ArcListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/ctBfvVj6RG6mG-kUlMLyaQ/zh-cn_image_0000002568253615.png?HW-CC-KV=V1&HW-CC-Date=20260410T025423Z&HW-CC-Expire=86400&HW-CC-Sign=C35E8A9D8D91D12332CEAB69B39B76CC5D0923B37EF073CF67973BAC3EA45E39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/RotJytI_ReWvWDTs6pw4Xw/zh-cn_image_0000002569169411.png?HW-CC-KV=V1&HW-CC-Date=20260411T023541Z&HW-CC-Expire=86400&HW-CC-Sign=46C3704A467470C0DBA71EA171B78C68EFAB39155CB686D7B462CDC119E1156A)
