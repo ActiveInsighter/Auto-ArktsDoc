@@ -26,8 +26,8 @@ this.getUIContext().getPromptAction().openCustomDialog({
   builder: () => {
     this.customDialogComponent();
   },
-  levelMode: LevelMode.EMBEDDED,
-
+  levelMode: LevelMode.EMBEDDED, // 启用页面级弹出框
+  // ···
 })
 ```
 
@@ -47,9 +47,9 @@ Text(this.message).id('test_text')
       builder: () => {
         this.customDialogComponent();
       },
-
-      levelMode: LevelMode.EMBEDDED,
-      levelUniqueId: node?.getUniqueId(),
+      // ···
+      levelMode: LevelMode.EMBEDDED, // 启用页面级弹出框
+      levelUniqueId: node?.getUniqueId(), // 设置页面级弹出框所在页面的任意节点ID
     })
       .then((dialogId: number) => {
         customDialogId = dialogId;
@@ -69,9 +69,9 @@ Text(this.message).id('test_text')
       builder: () => {
         this.customDialogComponent();
       },
-      levelMode: LevelMode.EMBEDDED,
-      levelUniqueId: node?.getUniqueId(),
-      immersiveMode: ImmersiveMode.EXTEND,
+      levelMode: LevelMode.EMBEDDED, // 启用页面级弹出框
+      levelUniqueId: node?.getUniqueId(), // 设置页面级弹出框所在页面的任意节点ID
+      immersiveMode: ImmersiveMode.EXTEND, // 设置页面级弹出框蒙层的显示模式
     })
       .then((dialogId: number) => {
         customDialogId = dialogId;
@@ -92,16 +92,14 @@ Text(this.message).id('test_text')
 
 ```typescript
 import { LevelMode, ImmersiveMode } from '@kit.ArkUI';
-
 let customDialogId: number = 0;
-
 @Builder
 function customDialogBuilder(uiContext: UIContext) {
   Column() {
     Text('Custom dialog Message').fontSize(20).height(100)
     Row() {
       Button('Next').onClick(() => {
-
+        // 在弹窗内部进行路由跳转。
         uiContext.getRouter().pushUrl({ url: 'pages/Next' });
       })
       Blank().width(50)
@@ -111,18 +109,15 @@ function customDialogBuilder(uiContext: UIContext) {
     }
   }.padding(20)
 }
-
 @Entry
 @Component
 export struct PageLevelDialogBox {
   @State message: string = 'Hello World';
   private uiContext: UIContext = this.getUIContext();
-
   @Builder
   customDialogComponent() {
     customDialogBuilder(this.uiContext);
   }
-
   build() {
     NavDestination() {
       Row() {
@@ -136,9 +131,9 @@ export struct PageLevelDialogBox {
                 builder: () => {
                   this.customDialogComponent();
                 },
-                levelMode: LevelMode.EMBEDDED,
-                levelUniqueId: node?.getUniqueId(),
-                immersiveMode: ImmersiveMode.EXTEND,
+                levelMode: LevelMode.EMBEDDED, // 启用页面级弹出框
+                levelUniqueId: node?.getUniqueId(), // 设置页面级弹出框所在页面的任意节点ID
+                immersiveMode: ImmersiveMode.EXTEND, // 设置页面级弹出框蒙层的显示模式
               })
                 .then((dialogId: number) => {
                   customDialogId = dialogId;
@@ -154,11 +149,11 @@ export struct PageLevelDialogBox {
 ```
 
 ```typescript
+// Next.ets
 @Entry
 @Component
 struct Next {
   @State message: string = 'Back';
-
   build() {
     Row() {
       Column() {
@@ -176,22 +171,20 @@ struct Next {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/ovmeiE9qTomReAK_9nl-4g/zh-cn_image_0000002569128547.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023353Z&HW-CC-Expire=86400&HW-CC-Sign=5FF47EE85960AF15FA12A9CD29E13F8571A1E208324C10811F93CB644003F07B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/ovmeiE9qTomReAK_9nl-4g/zh-cn_image_0000002569128547.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025330Z&HW-CC-Expire=86400&HW-CC-Sign=5488D26FE90C9B72C628DA87A8D4AE39C486E15A609C3394734FB81FB7032DC5)
 
 下述示例为基于Navigation导航模式下的页面级弹出框。使用本示例前需要参考[Navigation使用NavDestination作为导航页](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#示例16navigation使用navdestination作为导航页)文档完成Index首页和router_map.json的创建与配置。并使用下述示例代码中的PageLevelDialogInNavigation和PageLevelDialogInNavigationTestTwo组件替换Navigation参考文档中的PageHome和PageOne组件。
 
 ```typescript
 import { LevelMode, ImmersiveMode } from '@kit.ArkUI';
-
 let customDialogId: number = 0;
-
 @Builder
 function customDialogBuilder(uiContext: UIContext, stack: NavPathStack | undefined) {
   Column() {
     Text('Custom dialog Message').fontSize(20).height(100)
     Row() {
       Button('Next').onClick(() => {
-
+        // 在弹窗内部进行路由跳转。
         if (stack) {
           stack.pushPath({ name: 'Custom_ROUTE_PREFIX/PageLevelDialogInNavigationPageTwo'})
         }
@@ -203,19 +196,16 @@ function customDialogBuilder(uiContext: UIContext, stack: NavPathStack | undefin
     }
   }.padding(20)
 }
-
 @Component
 export struct PageLevelDialogInNavigation {
   @State info: string = '';
   private stack: NavPathStack | undefined = undefined;
   private uiContext: UIContext = this.getUIContext();
   @State message: string = 'Hello World';
-
   @Builder
   customDialogComponent() {
     customDialogBuilder(this.uiContext, this.stack);
   }
-
   build() {
     NavDestination() {
       Stack({alignContent: Alignment.Center}) {
@@ -229,9 +219,9 @@ export struct PageLevelDialogInNavigation {
                 builder: () => {
                   this.customDialogComponent();
                 },
-                levelMode: LevelMode.EMBEDDED,
-                levelUniqueId: node?.getUniqueId(),
-                immersiveMode: ImmersiveMode.EXTEND,
+                levelMode: LevelMode.EMBEDDED, // 启用页面级弹出框
+                levelUniqueId: node?.getUniqueId(), // 设置页面级弹出框所在页面的任意节点ID
+                immersiveMode: ImmersiveMode.EXTEND, // 设置页面级弹出框蒙层的显示模式
               }).then((dialogId: number) => {
                 customDialogId = dialogId;
               })
@@ -247,12 +237,10 @@ export struct PageLevelDialogInNavigation {
     })
   }
 }
-
 @Component
 export struct PageLevelDialogInNavigationTestTwo {
   @State message: string = 'Back';
   private stack: NavPathStack | undefined = undefined;
-
   build() {
     NavDestination() {
       Stack({alignContent: Alignment.Center}) {
@@ -278,4 +266,4 @@ export struct PageLevelDialogInNavigationTestTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/xINVHq_VRqC_vV2d9jfJiQ/zh-cn_image_0000002538128826.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023353Z&HW-CC-Expire=86400&HW-CC-Sign=A37EE36D63077A820A36A2C27DA938B3626C6FC02133212566ED3770325A3DA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/xINVHq_VRqC_vV2d9jfJiQ/zh-cn_image_0000002538128826.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025330Z&HW-CC-Expire=86400&HW-CC-Sign=6885916E91E69DC541332A4301743C6D4F2601BCF18D7395AFF406B24E0656FE)

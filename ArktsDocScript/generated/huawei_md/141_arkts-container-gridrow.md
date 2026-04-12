@@ -165,7 +165,7 @@ columns: {md:4, lg:8}
 > - 栅格子组件仅能通过span、offset计算子组件位置与大小。多个子组件span超过规定列数时自动换行。
 > - 单个元素span大小超过最大列数时后台默认span为最大column数。
 > - 新一行的Offset加上子组件的span超过总列数时，将下一个子组件在新的一行放置。
-> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/arwTjB_UScGPZFvHuwXN4Q/zh-cn_image_0000002569129419.png?HW-CC-KV=V1&HW-CC-Date=20260411T023533Z&HW-CC-Expire=86400&HW-CC-Sign=B89060AD2A0DF12177CF397CF2B7316C41BED8CCDB82294BC11B62BD3DF4850F)
+> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/arwTjB_UScGPZFvHuwXN4Q/zh-cn_image_0000002569129419.png?HW-CC-KV=V1&HW-CC-Date=20260412T025448Z&HW-CC-Expire=86400&HW-CC-Sign=436BDBC5FAABFF870C5F9437380FE13BB6CA4B9320EBFE157AE9020952BFC363)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -262,7 +262,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/QaEj3mFpQP2CKNlQoJt0ZA/zh-cn_image_0000002538129698.png?HW-CC-KV=V1&HW-CC-Date=20260411T023533Z&HW-CC-Expire=86400&HW-CC-Sign=E6D03545CDBDBED83C3F137C6C68F1650ADC1CD859DB2192739F9DF030D6C6D2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/QaEj3mFpQP2CKNlQoJt0ZA/zh-cn_image_0000002538129698.png?HW-CC-KV=V1&HW-CC-Date=20260412T025448Z&HW-CC-Expire=86400&HW-CC-Sign=410C5C5679CA2EE202F089AFDF00167D6DC46C28546AF08D7ECD10D3472E50A9)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -330,4 +330,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/qD8ta_dvQlWvfB63lRUlLA/zh-cn_image_0000002538289632.png?HW-CC-KV=V1&HW-CC-Date=20260411T023533Z&HW-CC-Expire=86400&HW-CC-Sign=932CF4D8B900E9217D23F41BDFC287A3CEF821DFDEABA5A5CFEBD59C896A5726)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/qD8ta_dvQlWvfB63lRUlLA/zh-cn_image_0000002538289632.png?HW-CC-KV=V1&HW-CC-Date=20260412T025448Z&HW-CC-Expire=86400&HW-CC-Sign=EEC21885C24EAC267779F18449325D537E7213D444ED3E01831064315F73C79F)

@@ -67,4 +67,4 @@ struct ComponentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/4T15aEnqQEeod3F-uVSOrw/zh-cn_image_0000002569169281.png?HW-CC-KV=V1&HW-CC-Date=20260411T023514Z&HW-CC-Expire=86400&HW-CC-Sign=38037319893DC14E1E7907827AA0D8265A3BD1B34F8472B6BA656B80BEF31DB8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/4T15aEnqQEeod3F-uVSOrw/zh-cn_image_0000002569169281.png?HW-CC-KV=V1&HW-CC-Date=20260412T025428Z&HW-CC-Expire=86400&HW-CC-Sign=E92C84E3620FD610F2DDDB219F6C864354944E54AB3E56D1FD3B9747428102CF)

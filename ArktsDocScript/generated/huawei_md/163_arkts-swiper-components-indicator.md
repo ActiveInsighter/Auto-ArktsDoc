@@ -240,6 +240,7 @@ struct DotIndicatorDemo {
       this.list.push(i);
     }
   }
+
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -264,6 +265,7 @@ struct DotIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
+
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(
@@ -285,7 +287,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/wpYtBdnpSu6NkSB2sULa1Q/zh-cn_image_0000002569169451.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023600Z&HW-CC-Expire=86400&HW-CC-Sign=C7821D30D214A4F4A75AD66A1F4CFAC66A55893BDCE4B094401A1D52B18F071F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/wpYtBdnpSu6NkSB2sULa1Q/zh-cn_image_0000002569169451.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025516Z&HW-CC-Expire=86400&HW-CC-Sign=9C734FCF85931C836263901FBD30D1233F1E3B80FC9DA20180F1203046066F58)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -303,6 +305,7 @@ struct DigitIndicatorDemo {
       this.list.push(i);
     }
   }
+
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -327,6 +330,7 @@ struct DigitIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
+
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(Indicator.digit()
@@ -345,4 +349,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/SfQeqrD2RzKOESzsGny8RQ/zh-cn_image_0000002569129477.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023600Z&HW-CC-Expire=86400&HW-CC-Sign=57E25CD5D6529185A64CDC1FB4121402D8E98DAF31E5A29B710F7F702FBA27F0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/SfQeqrD2RzKOESzsGny8RQ/zh-cn_image_0000002569129477.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025516Z&HW-CC-Expire=86400&HW-CC-Sign=10508D7F05E67784BC904271BC2E714F9FA560265FDD24379D7A051B3E6BCAC8)

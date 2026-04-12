@@ -8,69 +8,66 @@ ArkUI提供[@AnimatableExtend装饰器](https://developer.huawei.com/consumer/cn
 ## 使用number数据类型和@AnimatableExtend装饰器改变Text组件宽度实现逐帧布局的效果
 
 ```typescript
+// 第一步：使用@AnimatableExtend装饰器，自定义可动画属性接口
 @AnimatableExtend(Text)
 function animatableWidth(width: number) {
-  .width(width)
+  .width(width) // 调用系统属性接口，逐帧回调函数每帧修改可动画属性的值，实现逐帧布局的效果。
 }
-
 @Entry
 @Component
 struct AnimatablePropertyExample {
-  @State textWidth: number = 80;
-
+  @State textWidth: number = 80; // 80: 初始文本宽度
   build() {
     Column() {
       Text('AnimatableProperty')
-        .animatableWidth(this.textWidth)
-        .animation({ duration: 2000, curve: Curve.Ease })
+        .animatableWidth(this.textWidth) // 第二步：将自定义可动画属性接口设置到组件上
+        .animation({ duration: 2000, curve: Curve.Ease }) // 第三步:为自定义可动画属性接口绑定动画。
       Button('Play')
         .onClick(() => {
-          this.textWidth = this.textWidth == 80 ? 160 : 80;
+          this.textWidth = this.textWidth == 80 ? 160 : 80; // 第四步：改变自定义可动画属性的参数，产生动画。
         })
     }
     .width('100%')
-    .padding(10)
+    .padding(10) // 10: 内边距
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/rGrqP1yFRaSm1fE5bJTfaQ/zh-cn_image_0000002538128898.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023437Z&HW-CC-Expire=86400&HW-CC-Sign=A99730F730C6C238D60CE5E9F52AE2F405F61D63ED04D8957B45B15F251609A0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/rGrqP1yFRaSm1fE5bJTfaQ/zh-cn_image_0000002538128898.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025353Z&HW-CC-Expire=86400&HW-CC-Sign=A1FE41824508D18BE25BDFC31A72293DB4C58C17230F75041CC0C0DC6DC66858)
 
 ## 使用自定义数据类型和@AnimatableExtend装饰器改变图形形状
 
 ```typescript
 declare type Point = number[];
-
+// 定义可动画属性接口的参数类型，实现AnimatableArithmetic<T>接口中加法、减法、乘法和判断相等函数
 class PointClass extends Array<number> {
   constructor(value: Point) {
     super(value[0], value[1]);
   }
-
   add(rhs: PointClass): PointClass {
     let result: Point = new Array<number>() as Point;
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) { // 2: 二维坐标点
       result.push(rhs[i] + this[i]);
     }
     return new PointClass(result);
   }
-
   subtract(rhs: PointClass): PointClass {
     let result: Point = new Array<number>() as Point;
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) { // 2: 二维坐标点
       result.push(this[i] - rhs[i]);
     }
     return new PointClass(result);
   }
-
   multiply(scale: number): PointClass {
     let result: Point = new Array<number>() as Point;
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 2; i++) { // 2: 二维坐标点
       result.push(this[i] * scale);
     }
     return new PointClass(result);
   }
 }
-
+// 定义可动画属性接口的参数类型，实现AnimatableArithmetic<T>接口中加法、减法、乘法和判断相等函数
+// 模板T支持嵌套实现AnimatableArithmetic<T>的类型
 class PointVector extends Array<PointClass> implements AnimatableArithmetic<Array<Point>> {
   constructor(initialValue: Array<Point>) {
     super();
@@ -78,7 +75,7 @@ class PointVector extends Array<PointClass> implements AnimatableArithmetic<Arra
       initialValue.forEach((p: Point) => this.push(new PointClass(p)));
     }
   }
-
+  // implement the IAnimatableArithmetic interface
   plus(rhs: PointVector): PointVector {
     let result = new PointVector([]);
     const len = Math.min(this.length, rhs.length);
@@ -87,7 +84,6 @@ class PointVector extends Array<PointClass> implements AnimatableArithmetic<Arra
     }
     return result;
   }
-
   subtract(rhs: PointVector): PointVector {
     let result = new PointVector([]);
     const len = Math.min(this.length, rhs.length);
@@ -96,7 +92,6 @@ class PointVector extends Array<PointClass> implements AnimatableArithmetic<Arra
     }
     return result;
   }
-
   multiply(scale: number): PointVector {
     let result = new PointVector([]);
     for (let i = 0; i < this.length; i++) {
@@ -104,7 +99,6 @@ class PointVector extends Array<PointClass> implements AnimatableArithmetic<Arra
     }
     return result;
   }
-
   equals(rhs: PointVector): boolean {
     if (this.length !== rhs.length) {
       return false;
@@ -117,20 +111,19 @@ class PointVector extends Array<PointClass> implements AnimatableArithmetic<Arra
     return true;
   }
 }
-
+// 自定义可动画属性接口
 @AnimatableExtend(Polyline)
 function animatablePoints(points: PointVector) {
   .points(points);
 }
-
 @Entry
 @Component
 struct AnimatedShape {
-  squareStartPointX: number = 75;
-  squareStartPointY: number = 25;
-  squareWidth: number = 150;
-  squareEndTranslateX: number = 50;
-  squareEndTranslateY: number = 50;
+  squareStartPointX: number = 75; // 75: 正方形起始点X坐标
+  squareStartPointY: number = 25; // 25: 正方形起始点Y坐标
+  squareWidth: number = 150; // 150: 正方形宽度
+  squareEndTranslateX: number = 50; // 50: 正方形结束位置X轴平移量
+  squareEndTranslateY: number = 50; // 50: 正方形结束位置Y轴平移量
   @State pointVec1: PointVector = new PointVector([
     [this.squareStartPointX, this.squareStartPointY],
     [this.squareStartPointX + this.squareWidth, this.squareStartPointY],
@@ -145,19 +138,18 @@ struct AnimatedShape {
     [this.squareStartPointX, this.squareStartPointY + this.squareWidth]
   ]);
   @State color: Color = Color.Green;
-  @State fontSize: number = 20.0;
+  @State fontSize: number = 20.0; // 20.0: 字体大小
   @State polyline1Vec: PointVector = this.pointVec1;
   @State polyline2Vec: PointVector = this.pointVec2;
-
   build() {
     Row() {
       Polyline()
-        .width(300)
-        .height(200)
-        .backgroundColor('#0C000000')
-        .fill('#317AF7')
+        .width(300) // 300: 折线宽度
+        .height(200) // 200: 折线高度
+        .backgroundColor('#0C000000') // 0C000000: 背景颜色（黑色带透明度）
+        .fill('#317AF7') // 317AF7: 填充颜色（蓝色）
         .animatablePoints(this.polyline1Vec)
-        .animation({ duration: 2000, delay: 0, curve: Curve.Ease })
+        .animation({ duration: 2000, delay: 0, curve: Curve.Ease }) // 2000: 动画持续时间（毫秒），0: 动画延迟时间
         .onClick(() => {
           if (this.polyline1Vec.equals(this.pointVec1)) {
             this.polyline1Vec = this.pointVec2;
@@ -171,4 +163,4 @@ struct AnimatedShape {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ATXb6CXaSpe8MrOR_bY_Fw/zh-cn_image_0000002538288832.gif?HW-CC-KV=V1&HW-CC-Date=20260411T023437Z&HW-CC-Expire=86400&HW-CC-Sign=CE1E22279FE39C29693F6D1EDC01A7CBFAFBDFBE9C3DAF02C1FF5E987C7B5021)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ATXb6CXaSpe8MrOR_bY_Fw/zh-cn_image_0000002538288832.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025353Z&HW-CC-Expire=86400&HW-CC-Sign=84138FE3577DFABB54447522FB7B61D43ABF3D7C5F90E1CCD4180F619694D90A)

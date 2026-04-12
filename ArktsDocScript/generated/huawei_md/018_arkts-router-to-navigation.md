@@ -374,7 +374,7 @@ onPageHide(): void {
 
 其生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/NsRUt_arQEynvMO31KDFgg/zh-cn_image_0000002569168313.png?HW-CC-KV=V1&HW-CC-Date=20260411T023328Z&HW-CC-Expire=86400&HW-CC-Sign=0D350CF35A25748C333CBD5856EC60B837D312EA8FE08C03713182CB0E84C4E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/NsRUt_arQEynvMO31KDFgg/zh-cn_image_0000002569168313.png?HW-CC-KV=V1&HW-CC-Date=20260412T025244Z&HW-CC-Expire=86400&HW-CC-Sign=AA3141A747863884AFFCBBFFC30F54F93BD6D14529B0590E2243F2E287D6F8CD)
 
 Navigation作为路由容器，其生命周期承载在NavDestination组件上，以组件事件的形式开放。
 
