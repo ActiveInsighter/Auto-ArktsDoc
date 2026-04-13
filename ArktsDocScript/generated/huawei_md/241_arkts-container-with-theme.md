@@ -69,7 +69,7 @@ type CustomTheme = CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/3LECGmqYSmaNhLusY_dEJg/zh-cn_image_0000002569129873.png?HW-CC-KV=V1&HW-CC-Date=20260412T025659Z&HW-CC-Expire=86400&HW-CC-Sign=E6051C3E52C3CABB3B18CD8D2BEFB6A42EDC866BC23E89AF6CABA759E334217C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/3LECGmqYSmaNhLusY_dEJg/zh-cn_image_0000002569129873.png?HW-CC-KV=V1&HW-CC-Date=20260413T030111Z&HW-CC-Expire=86400&HW-CC-Sign=FB05EA7239A639B089E9BD4B84D4ADDBB927EDB288261662EBAD8E52ACABD5D4)
 
 dark.json数据示例：
 
@@ -87,12 +87,13 @@ dark.json数据示例：
 ### 示例1（指定局部深浅色模式）
 
 ```typescript
+// 指定局部深浅色模式
 @Entry
 @Component
 struct Index {
   build() {
     Column() {
-
+    // 系统默认
       Column() {
         Text('无WithTheme')
           .fontSize(40)
@@ -102,7 +103,7 @@ struct Index {
       .width('100%')
       .height('33%')
       .backgroundColor($r('app.color.start_window_background'))
-
+      // 设置组件为深色模式
       WithTheme({ colorMode: ThemeColorMode.DARK }) {
         Column() {
           Text('WithTheme')
@@ -117,7 +118,7 @@ struct Index {
         .height('33%')
         .backgroundColor($r('sys.color.background_primary'))
       }
-
+      // 设置组件为浅色模式
       WithTheme({ colorMode: ThemeColorMode.LIGHT }) {
         Column() {
           Text('WithTheme')
@@ -139,13 +140,13 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/9TwNIEJkSqy42NoEYhIIyw/zh-cn_image_0000002538130152.png?HW-CC-KV=V1&HW-CC-Date=20260412T025659Z&HW-CC-Expire=86400&HW-CC-Sign=36A1F194BB24988ED920FC9CAB6DF55AB1365F62F69BDC559F4138972605DD77)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/9TwNIEJkSqy42NoEYhIIyw/zh-cn_image_0000002538130152.png?HW-CC-KV=V1&HW-CC-Date=20260413T030111Z&HW-CC-Expire=86400&HW-CC-Sign=1C2A622A8FD6B118422E6524C129A27E61C7145EC4C633D43B2CA34460CA6B17)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
 ```typescript
+// 自定义WithTheme作用域内组件缺省配色
 import { CustomTheme, CustomColors } from '@kit.ArkUI';
-
 class GreenColors implements CustomColors {
   fontPrimary = '#ff049404';
   fontEmphasize = '#FF00541F';
@@ -154,7 +155,6 @@ class GreenColors implements CustomColors {
   backgroundEmphasize = '#FF00541F';
   compEmphasizeSecondary = '#3322FF22';
 }
-
 class RedColors implements CustomColors {
   fontPrimary = '#fff32b3c';
   fontEmphasize = '#FFD53032';
@@ -163,37 +163,33 @@ class RedColors implements CustomColors {
   backgroundEmphasize = '#FFD00000';
   compEmphasizeSecondary = '#33FF1111';
 }
-
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors
-
   constructor(colors: CustomColors) {
     this.colors = colors
   }
 }
-
 @Entry
 @Component
 struct IndexPage {
   static readonly themeCount = 3;
   themeNames: string[] = ['System', 'Custom (green)', 'Custom (red)'];
   themeArray: (CustomTheme | undefined)[] = [
-    undefined,
+    undefined, // System
     new PageCustomTheme(new GreenColors()),
     new PageCustomTheme(new RedColors())
   ]
   @State themeIndex: number = 0;
-
   build() {
     Column() {
       Column({ space: '8vp' }) {
         Text(`未使用WithTheme`)
-
+        // 点击按钮切换局部换肤
         Button(`切换theme配色：${this.themeNames[this.themeIndex]}`)
           .onClick(() => {
             this.themeIndex = (this.themeIndex + 1) % IndexPage.themeCount;
           })
-
+        // 系统默认按钮配色
         Button('Button.style(NORMAL) with System Theme')
           .buttonStyle(ButtonStyleMode.NORMAL)
         Button('Button.style(EMP..ED) with System Theme')
@@ -204,9 +200,8 @@ struct IndexPage {
       .margin({
         top: '50vp'
       })
-
       WithTheme({ theme: this.themeArray[this.themeIndex] }) {
-
+        // WithTheme作用域
         Column({ space: '8vp' }) {
           Text(`使用WithTheme`)
           Button('Button.style(NORMAL) with Custom Theme')
@@ -223,4 +218,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/dp3zkZG6Q8yH0r5AKnnTqQ/zh-cn_image_0000002538290086.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025659Z&HW-CC-Expire=86400&HW-CC-Sign=1226BBEF60324F2745E2CB13C932AB3EAEDBFEA57465582A5261D3CAC070B63C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/dp3zkZG6Q8yH0r5AKnnTqQ/zh-cn_image_0000002538290086.gif?HW-CC-KV=V1&HW-CC-Date=20260413T030111Z&HW-CC-Expire=86400&HW-CC-Sign=77A8B6032350DB1E1AAA66A716220F7F520283BF4D944F7688E823B2AF6F1B4D)

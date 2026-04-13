@@ -3,7 +3,7 @@
 
 浮层（OverlayManager）用于在页面（Page）之上展示自定义的UI内容，位于Dialog、Popup、Menu、BindSheet、BindContentCover和Toast等组件之下，展示范围为当前窗口的安全区内，适用于常驻悬浮等场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/yjEWh1VzTiayCtcXSBpM9g/zh-cn_image_0000002538128844.png?HW-CC-KV=V1&HW-CC-Date=20260412T025347Z&HW-CC-Expire=86400&HW-CC-Sign=788F17FDB1B5A2922F3A3B987C42AA61191A1770B6CD878B7889A7042B5B616E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/yjEWh1VzTiayCtcXSBpM9g/zh-cn_image_0000002538128844.png?HW-CC-KV=V1&HW-CC-Date=20260413T025811Z&HW-CC-Expire=86400&HW-CC-Sign=CF045EA359CA3BDA62C4CCADDED9BD7763C38CC3E85688F77B544E26A3DA051F)
 
 可以通过使用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中的[getOverlayManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getoverlaymanager12)方法获取当前UI上下文关联的[OverlayManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-overlaymanager)对象，再通过该对象调用对应方法。
 
@@ -23,16 +23,20 @@
 ```typescript
 import { ComponentContent, OverlayManager } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+
 const TAG: string = '[Sample_dialogproject]';
 const DOMAIN: number = 0xFF00;
+
 class Params {
   public text: string = '';
   public offset: Position;
+
   constructor(text: string, offset: Position) {
     this.text = text;
     this.offset = offset;
   }
 }
+
 @Builder
 function builderText(params: Params) {
   Column() {
@@ -41,6 +45,7 @@ function builderText(params: Params) {
       .fontWeight(FontWeight.Bold)
   }.offset(params.offset)
 }
+
 @Entry
 @Component
 export struct OverlayManagerComponent {
@@ -51,8 +56,9 @@ export struct OverlayManagerComponent {
   @StorageLink('componentContentIndex') componentContentIndex: number = 0;
   @StorageLink('arrayIndex') arrayIndex: number = 0;
   @StorageLink('componentOffset') componentOffset: Position = { x: 0, y: 30 };
+
   build() {
-    // ...
+
       Column({ space: 10 }) {
         Button('Increment componentContentIndex:' + this.componentContentIndex)
           .onClick(() => {
@@ -114,6 +120,7 @@ export struct OverlayManagerComponent {
           .onClick(() => {
             this.overlayNode.hideAllComponentContents();
           })
+
         Button('Go')
           .onClick(() => {
             this.getUIContext().getRouter().pushUrl({
@@ -123,17 +130,18 @@ export struct OverlayManagerComponent {
       }
       .width('100%')
       .height('100%')
-      // ...
+
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/WpdRoEgQTBmSA7st8mHEUg/zh-cn_image_0000002538288778.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025347Z&HW-CC-Expire=86400&HW-CC-Sign=36972ECBB840C8B40CA8371070E10F51A41C33D1ACFC2C91C19468CD121E1AF9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/WpdRoEgQTBmSA7st8mHEUg/zh-cn_image_0000002538288778.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025811Z&HW-CC-Expire=86400&HW-CC-Sign=091D4E88208C55490EB69EA48C664E3EF5DF353168F70C8E74EF164F182E27D1)
 
 显示一个始终在屏幕左侧的悬浮球，点击可以弹出alertDialog弹窗。
 
 ```typescript
 import { ComponentContent, OverlayManager } from '@kit.ArkUI';
+
 class Params {
   public context: UIContext;
   public offset: Position;
@@ -165,6 +173,7 @@ function builderOverlay(params: Params) {
     })
   }.focusable(false).width('100%').height('100%').hitTestBehavior(HitTestMode.Transparent)
 }
+
 @Entry
 @Component
 export struct OverlayManagerAlertDialog {
@@ -173,6 +182,7 @@ export struct OverlayManagerAlertDialog {
   private overlayNode: OverlayManager = this.uiContext.getOverlayManager();
   private overlayContent:ComponentContent<Params>[] = [];
   controller: TextInputController = new TextInputController();
+
   aboutToAppear(): void {
     let uiContext = this.getUIContext();
     let componentContent = new ComponentContent(
@@ -182,38 +192,45 @@ export struct OverlayManagerAlertDialog {
     this.overlayNode.addComponentContent(componentContent, 0);
     this.overlayContent.push(componentContent);
   }
+
   aboutToDisappear(): void {
     let componentContent = this.overlayContent.pop();
     this.overlayNode.removeComponentContent(componentContent);
   }
+
   build() {
-    // ···
+
       Column() {
+
       }
       .width('100%')
       .height('100%')
-    // ···
+
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/W63bXbBqRq-fZMH7faZw2g/zh-cn_image_0000002569168541.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025347Z&HW-CC-Expire=86400&HW-CC-Sign=8779858C122DA8F3271D971B15ABD1A6F7FCC6347F937E1DCBDD9EBC334A03D6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/W63bXbBqRq-fZMH7faZw2g/zh-cn_image_0000002569168541.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025811Z&HW-CC-Expire=86400&HW-CC-Sign=29FD2BD6BC0F0C3E07CCAD9466656182D917B743C926EA287D2B314A097810C6)
 
 从API version 18开始，可以通过调用UIContext中getOverlayManager方法获取OverlayManager对象，并利用该对象在指定层级上新增指定节点（[addComponentContentWithOrder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-overlaymanager#addcomponentcontentwithorder18)），层次高的浮层会覆盖在层级低的浮层之上。
 
 ```typescript
 import { ComponentContent, LevelOrder, OverlayManager } from '@kit.ArkUI';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+
 const TAG: string = '[Sample_dialogproject]';
 const DOMAIN: number = 0xFF00;
+
 class Params {
   public text: string = '';
   public offset: Position;
+
   constructor(text: string, offset: Position) {
     this.text = text;
     this.offset = offset;
   }
 }
+
 @Builder
 function builderTopText(params: Params) {
   Column() {
@@ -229,6 +246,7 @@ function builderTopText(params: Params) {
     .alignContent(Alignment.Top)
   }.offset(params.offset)
 }
+
 @Builder
 function builderNormalText(params: Params) {
   Column() {
@@ -244,6 +262,7 @@ function builderNormalText(params: Params) {
     .alignContent(Alignment.Top)
   }.offset(params.offset)
 }
+
 @Entry
 @Component
 export struct OverlayManagerWithOrder {
@@ -253,8 +272,9 @@ export struct OverlayManagerWithOrder {
   @StorageLink('componentContentIndex') componentContentIndex: number = 0;
   @StorageLink('arrayIndex') arrayIndex: number = 0;
   @StorageLink('componentOffset') componentOffset: Position = { x: 0, y: 80 };
+
   build() {
-    // ...
+
       Row() {
         Column({ space: 5 }) {
           Button('Open Top-Level Dialog Box')
@@ -285,9 +305,9 @@ export struct OverlayManagerWithOrder {
           })
         }.width('100%')
       }
-      // ...
+
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/xqpYtOSBSQqJMRa730rTOw/zh-cn_image_0000002569128567.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025347Z&HW-CC-Expire=86400&HW-CC-Sign=E25A0565ECA28B2D741AA8C00412AF69440C588B75CA9EB427BBEA5D228848C9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/xqpYtOSBSQqJMRa730rTOw/zh-cn_image_0000002569128567.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025811Z&HW-CC-Expire=86400&HW-CC-Sign=820E27609126F744D715AD67FA34E5FCC8E7F8388A9A2A6CEFF2176CD99BC7D2)

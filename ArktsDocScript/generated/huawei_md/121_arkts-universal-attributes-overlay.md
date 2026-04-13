@@ -117,7 +117,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/xYjco3RvQJ20AaOp_dLe7w/zh-cn_image_0000002538129580.png?HW-CC-KV=V1&HW-CC-Date=20260412T025426Z&HW-CC-Expire=86400&HW-CC-Sign=53DA452A03063D31B6CFB78C0BFD7B1EECC67BF35B05C49A02B44DF3279E14AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/xYjco3RvQJ20AaOp_dLe7w/zh-cn_image_0000002538129580.png?HW-CC-KV=V1&HW-CC-Date=20260413T025848Z&HW-CC-Expire=86400&HW-CC-Sign=93E8EE2EE6AB351E253F1299B3D5589C818967AAE0C63DDFB9344432099C9FE1)
 
 ### 示例2（通过builder设置浮层）
 
@@ -152,7 +152,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/UW3VnSAnRYeOc3pjkcLyvA/zh-cn_image_0000002538289514.png?HW-CC-KV=V1&HW-CC-Date=20260412T025426Z&HW-CC-Expire=86400&HW-CC-Sign=CB5B93084C1A5C7AFAA3AAE69777D648AC10FE4795960E239F0473EEEC40BA6F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/UW3VnSAnRYeOc3pjkcLyvA/zh-cn_image_0000002538289514.png?HW-CC-KV=V1&HW-CC-Date=20260413T025848Z&HW-CC-Expire=86400&HW-CC-Sign=F1C0E1A5F3308D0830B854123DF78BE176CD500E25A562EC96D5A3DD67BE1D64)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -210,4 +210,4 @@ struct Page_4040 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/S1OiDQdiS6mGdeAzxmRMvQ/zh-cn_image_0000002569169277.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025426Z&HW-CC-Expire=86400&HW-CC-Sign=56ECE034C4AEBFBBE2D8FBE0A806078EB08D8F5CA833EDCB248F0DF80CC031A7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/S1OiDQdiS6mGdeAzxmRMvQ/zh-cn_image_0000002569169277.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025848Z&HW-CC-Expire=86400&HW-CC-Sign=E44F2CB5497F60F76BFB6449E9CC47BDA5A0131BA84A9367D6324AB9AB323CFC)

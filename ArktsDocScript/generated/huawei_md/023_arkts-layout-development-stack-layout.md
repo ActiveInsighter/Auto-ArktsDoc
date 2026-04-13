@@ -11,7 +11,7 @@
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/VcSWR-U7Rm2bQLkRzoi2gQ/zh-cn_image_0000002538288570.png?HW-CC-KV=V1&HW-CC-Date=20260412T025250Z&HW-CC-Expire=86400&HW-CC-Sign=071CD12AC6B0C16585E1DDB7314748EA2F25D1F7E43B1C6A97139C4B94FC3211)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/VcSWR-U7Rm2bQLkRzoi2gQ/zh-cn_image_0000002538288570.png?HW-CC-KV=V1&HW-CC-Date=20260413T025524Z&HW-CC-Expire=86400&HW-CC-Sign=96CD24E1F83E1C4C8A837C21052CC885998122214288BE0BE89C96F2A3122C3B)
 
 > **说明**
 > 过多的嵌套组件数会导致性能劣化。在部分场景中，直接使用组件属性或借助系统API的能力可以替代层叠布局的效果，减少了嵌套组件数进而优化性能。最佳实践请参考[组件嵌套优化-优先使用组件属性代替嵌套组件](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-component-nesting-optimization#section78181114123811)。
@@ -21,8 +21,8 @@
 Stack组件为容器组件，容器内可包含各种子元素。其中子元素默认进行居中堆叠。子元素被约束在Stack下，进行自己的样式定义以及排列。
 
 ```typescript
-// xxx.ets
 let mTop:Record<string,number> = { 'top': 50 }
+
 @Entry
 @Component
 struct StackLayoutExample {
@@ -38,7 +38,7 @@ struct StackLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/0Db7zaGGTceEx_OtHwAAqQ/zh-cn_image_0000002569168333.png?HW-CC-KV=V1&HW-CC-Date=20260412T025250Z&HW-CC-Expire=86400&HW-CC-Sign=41EC0D8EE79571EA803D8E569120A39D42C50F0076BD1DB013A43E0E42F84F0C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/0Db7zaGGTceEx_OtHwAAqQ/zh-cn_image_0000002569168333.png?HW-CC-KV=V1&HW-CC-Date=20260413T025524Z&HW-CC-Expire=86400&HW-CC-Sign=B5C9699F7F95ECCE72AB1843BCE215078ADEF00B75B4DD79AACD6AC9327FE87A)
 
 ## 对齐方式
 
@@ -46,10 +46,9 @@ Stack组件通过[alignContent参数](https://developer.huawei.com/consumer/cn/d
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/OZkwU9LRQRmD1mZwbihBtA/zh-cn_image_0000002569128359.png?HW-CC-KV=V1&HW-CC-Date=20260412T025250Z&HW-CC-Expire=86400&HW-CC-Sign=F37260741345E4B69B1F260A579536C5B8DC733AEA5EF0C551D0A94D47CB02DD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/OZkwU9LRQRmD1mZwbihBtA/zh-cn_image_0000002569128359.png?HW-CC-KV=V1&HW-CC-Date=20260413T025524Z&HW-CC-Expire=86400&HW-CC-Sign=985516198C3114B55BB95DCECE14B1B2C226E9038C2D9CED8A62D658DC6A58D9)
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct StackAlignContentExample {
@@ -72,42 +71,46 @@ Stack容器中兄弟组件显示层级关系可以通过[Z序控制](https://dev
 ```typescript
 Stack({ alignContent: Alignment.BottomStart }) {
   Column() {
-    // 请将$r('app.string.stack_num1')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素1"
+
     Text($r('app.string.stack_num1')).textAlign(TextAlign.End).fontSize(20)
   }.width(100).height(100).backgroundColor(0xffd306)
+
   Column() {
-    // 请将$r('app.string.stack_num2')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素2"
+
     Text($r('app.string.stack_num2')).fontSize(20)
   }.width(150).height(150).backgroundColor(Color.Pink)
+
   Column() {
-    // 请将$r('app.string.stack_num3')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素3"
+
     Text($r('app.string.stack_num3')).fontSize(20)
   }.width(200).height(200).backgroundColor(Color.Grey)
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/p0Y8fsbsSaWGzshRntDRfg/zh-cn_image_0000002538128638.png?HW-CC-KV=V1&HW-CC-Date=20260412T025250Z&HW-CC-Expire=86400&HW-CC-Sign=3BCD5EDC80C5AE9B3405227C252257C9244D61BE842160787397983066EF4CC4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/p0Y8fsbsSaWGzshRntDRfg/zh-cn_image_0000002538128638.png?HW-CC-KV=V1&HW-CC-Date=20260413T025524Z&HW-CC-Expire=86400&HW-CC-Sign=8D500EE4381174A08B070B0D78D76778CC8604E1B1ADCC13231B46F02B74C19D)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
 ```typescript
 Stack({ alignContent: Alignment.BottomStart }) {
   Column() {
-    // 请将$r('app.string.stack_num1')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素1"
+
     Text($r('app.string.stack_num1')).fontSize(20)
   }.width(100).height(100).backgroundColor(0xffd306).zIndex(2)
+
   Column() {
-    // 请将$r('app.string.stack_num2')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素2"
+
     Text($r('app.string.stack_num2')).fontSize(20)
   }.width(150).height(150).backgroundColor(Color.Pink).zIndex(1)
+
   Column() {
-    // 请将$r('app.string.stack_num3')替换为实际资源文件，在本示例中该资源文件的value值为"Stack子元素3"
+
     Text($r('app.string.stack_num3')).fontSize(20)
   }.width(200).height(200).backgroundColor(Color.Grey)
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/QFY3rA4ATVq_ipJdHOHLFw/zh-cn_image_0000002538288572.png?HW-CC-KV=V1&HW-CC-Date=20260412T025250Z&HW-CC-Expire=86400&HW-CC-Sign=9A17E2CF50C68D6265E0F189F3A60BB2401608C727F34F31D8E2014CFDCA6B25)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/QFY3rA4ATVq_ipJdHOHLFw/zh-cn_image_0000002538288572.png?HW-CC-KV=V1&HW-CC-Date=20260413T025524Z&HW-CC-Expire=86400&HW-CC-Sign=37D29CE068115688BCDA104C96A7C1D58E697160C05F60662C62C3A6F572D073)
 
 ## 场景示例
 
@@ -118,6 +121,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 @Component
 struct StackSample {
   private arr: string[] = ['APP1', 'APP2', 'APP3', 'APP4', 'APP5', 'APP6', 'APP7', 'APP8'];
+
   build() {
     Stack({ alignContent: Alignment.Bottom }) {
       Flex({ wrap: FlexWrap.Wrap }) {
@@ -132,12 +136,13 @@ struct StackSample {
             .backgroundColor(0xFFFFFF)
         }, (item:string):string => item)
       }.width('100%').height('100%')
+
       Flex({ justifyContent: FlexAlign.SpaceAround, alignItems: ItemAlign.Center }) {
-        // 请将$r('app.string.contacts')替换为实际资源文件，在本示例中该资源文件的value值为"联系人"
+
         Text($r('app.string.contacts')).fontSize(16)
-        // 请将$r('app.string.setting')替换为实际资源文件，在本示例中该资源文件的value值为"设置"
+
         Text($r('app.string.setting')).fontSize(16)
-        // 请将$r('app.string.text_message')替换为实际资源文件，在本示例中该资源文件的value值为"短信"
+
         Text($r('app.string.text_message')).fontSize(16)
       }
       .width('50%')
@@ -150,7 +155,7 @@ struct StackSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/hfCJsDinQZOl2mNmG9S8RQ/zh-cn_image_0000002569168335.png?HW-CC-KV=V1&HW-CC-Date=20260412T025250Z&HW-CC-Expire=86400&HW-CC-Sign=807635C4D88BB7085B66494916D5CD5593ED11921A4642F1D011E795B11D01A6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/hfCJsDinQZOl2mNmG9S8RQ/zh-cn_image_0000002569168335.png?HW-CC-KV=V1&HW-CC-Date=20260413T025524Z&HW-CC-Expire=86400&HW-CC-Sign=BF36EBC2D333A3A4A05773C3765A940C17F3A7355673790B0261B7273AC2D237)
 
 ## 示例代码
 

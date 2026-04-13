@@ -13,7 +13,7 @@
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/cvpzpX_eRSyJDB_pIRMSjw/zh-cn_image_0000002569168645.png?HW-CC-KV=V1&HW-CC-Date=20260412T025414Z&HW-CC-Expire=86400&HW-CC-Sign=5EEDBA3C16FAEA246FA2AD0E277DCD0637C4911C03B1E1130021FAD08ADEC547) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/5n901QQiRs6PVgN9CUsNlw/zh-cn_image_0000002569128671.png?HW-CC-KV=V1&HW-CC-Date=20260412T025414Z&HW-CC-Expire=86400&HW-CC-Sign=C47A6ABCDDC0C7C21E8A1DD0219CE351FFCDF8628C91DD2BFE5594C77A74E760) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/cvpzpX_eRSyJDB_pIRMSjw/zh-cn_image_0000002569168645.png?HW-CC-KV=V1&HW-CC-Date=20260413T025838Z&HW-CC-Expire=86400&HW-CC-Sign=57F0B88F2ADB30CE549AA628C3E56F492305C1EEDD73506E3F26F978BF36DC5E) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/5n901QQiRs6PVgN9CUsNlw/zh-cn_image_0000002569128671.png?HW-CC-KV=V1&HW-CC-Date=20260413T025838Z&HW-CC-Expire=86400&HW-CC-Sign=B1CBF98683BCAFE1F616DD50C5F751187BA9F3D73FCFA09028D2429C4B3E513E) |
 
 当组件满足以下任意条件时，镜像能力生效：
 
@@ -56,7 +56,6 @@ ArkUI 如下能力已默认适配镜像：
 
 ```typescript
 import { LengthMetrics } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct InterfaceLayoutBorderSettings {
@@ -70,8 +69,8 @@ struct InterfaceLayoutBorderSettings {
           .position({
             start: LengthMetrics.px(200),
             top: LengthMetrics.px(200)
-          })
-
+          }) // 需要同时支持LTR和RTL时使用API12新增的LocalizedEdges入参类型,
+        // 仅支持LTR时等同于.position({ x: '200px', y: '200px' })
       }.backgroundColor(Color.Blue)
     }.width('100%').height('100%').border({ color: '#880606' })
   }
@@ -90,16 +89,14 @@ Canvas组件的绘制内容和坐标均不支持镜像能力。已绘制到Canva
 
 ```typescript
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
-
 @Entry
 @Component
 struct CustomizeCanvasComponentDrawing {
   @State message: string = 'Hello world';
   private settings: RenderingContextSettings = new RenderingContextSettings(true)
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(this.settings)
-
   aboutToAppear(): void {
-
+    // 监听系统语言切换
     let subscriber: commonEventManager.CommonEventSubscriber | null = null;
     let subscribeInfo2: commonEventManager.CommonEventSubscribeInfo = {
       events: ['usual.event.LOCALE_CHANGED'],
@@ -110,14 +107,13 @@ struct CustomizeCanvasComponentDrawing {
           console.error(`Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
           return;
         }
-
         subscriber = data;
         if (subscriber !== null) {
           commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
             if (err) {
               return;
             }
-
+            // 监听到语言切换后，需要重新绘制Canvas内容
             this.drawText();
           })
         } else {
@@ -125,7 +121,6 @@ struct CustomizeCanvasComponentDrawing {
         }
       })
   }
-
   drawText(): void {
     console.error('MayTest drawText')
     this.context.reset()
@@ -133,7 +128,6 @@ struct CustomizeCanvasComponentDrawing {
     this.context.font = '30px sans-serif'
     this.context.fillText('ab%123&*@', 50, 50)
   }
-
   build() {
     Row() {
       Canvas(this.context)
@@ -146,13 +140,12 @@ struct CustomizeCanvasComponentDrawing {
     }
     .height('100%')
   }
-
 }
 ```
 
 | 镜像前 | 镜像后 |
 | --- | --- |
-| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Pc_UKdXrREydF5VRcVkvAg/zh-cn_image_0000002538128950.jpg?HW-CC-KV=V1&HW-CC-Date=20260412T025414Z&HW-CC-Expire=86400&HW-CC-Sign=09F44865AF8F01BA792B5F383618D5D90FF6044ADF6829831FC89E223B2F109F) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/RGJ6EjsvRVuxnoMcbrFryw/zh-cn_image_0000002538288884.jpg?HW-CC-KV=V1&HW-CC-Date=20260412T025414Z&HW-CC-Expire=86400&HW-CC-Sign=85C63AF8D63AE7C4D334AD8A02E7FA30F6C8F1A093CFA0E6DD24CD831CBF110A) |
+| ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Pc_UKdXrREydF5VRcVkvAg/zh-cn_image_0000002538128950.jpg?HW-CC-KV=V1&HW-CC-Date=20260413T025838Z&HW-CC-Expire=86400&HW-CC-Sign=4A58D68F047B1F8A5AD6719B10DC3CE80FC2EC3247F6EE9EB594D56174B03E7D) | ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/RGJ6EjsvRVuxnoMcbrFryw/zh-cn_image_0000002538288884.jpg?HW-CC-KV=V1&HW-CC-Date=20260413T025838Z&HW-CC-Expire=86400&HW-CC-Sign=6FC03E2A212478C75716AF531DB3511587C2CD5B508BE5F2281F0623A7A377FF) |
 
 ### 镜像状态字符对齐
 
@@ -162,7 +155,7 @@ struct CustomizeCanvasComponentDrawing {
 
 在LTR与RTL文本混排时，如一个英文句子中包含阿拉伯语的单词或短语，显示顺序将变得复杂。下图为数字和维吾尔语混合时对应的字符逻辑顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/E0C13D8LSqWbtB_Fp8EBEg/zh-cn_image_0000002569168647.png?HW-CC-KV=V1&HW-CC-Date=20260412T025414Z&HW-CC-Expire=86400&HW-CC-Sign=85820FD527988897FB326204F3DC86341CB0E034C8A7A5529EE207E1FAE97DE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/E0C13D8LSqWbtB_Fp8EBEg/zh-cn_image_0000002569168647.png?HW-CC-KV=V1&HW-CC-Date=20260413T025838Z&HW-CC-Expire=86400&HW-CC-Sign=9CB6FAB350459C65FEA82FFD774D58E4693E05EA2FEED47F972836876B315A83)
 
 此时，文本渲染引擎会采用名为“双向算法”或“Unicode双向算法”（Unicode Bidirectional Algorithm）的方法来确定字符的显示顺序。下图展示了LTR与RTL文本混合时对应的字符显示顺序，确定字符方向的基本原则如下：
 
@@ -170,4 +163,4 @@ struct CustomizeCanvasComponentDrawing {
 2. 弱字符的方向性：弱字符不具备明确的方向性，这些字符不会影响其周围中性字符的方向。
 3. 中性字符的方向性：中性字符无固定方向性，它们会继承其最近的强字符的方向；若附近无强字符，则采用全局方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/XpDX4gfHRWKseeyvT6cXFg/zh-cn_image_0000002569128673.png?HW-CC-KV=V1&HW-CC-Date=20260412T025414Z&HW-CC-Expire=86400&HW-CC-Sign=7ECA73890BBF85E513B6AFE4DB905056CE2FA3A0BC677A888D068B251C697308)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/XpDX4gfHRWKseeyvT6cXFg/zh-cn_image_0000002569128673.png?HW-CC-KV=V1&HW-CC-Date=20260413T025838Z&HW-CC-Expire=86400&HW-CC-Sign=19630EBF44418544B767C87613DB7D29198B2193493DA964C7A3F4D9E2189A23)

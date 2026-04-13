@@ -66,15 +66,15 @@ geometryTransition(id: string, options?: GeometryTransitionOptions): T
 ## 示例
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct Index {
   @State isShow: boolean = false;
+
   build() {
     Stack({ alignContent: Alignment.Center }) {
       if (this.isShow) {
-        // 图片使用Resource资源，需用户自定义
+
         Image($r('app.media.pic'))
           .autoResize(false)
           .clip(true)
@@ -84,23 +84,21 @@ struct Index {
           .geometryTransition("picture", { follow: false })
           .transition(TransitionEffect.OPACITY)
       } else {
-        // geometryTransition此处绑定的是容器，那么容器内的子组件需设为相对布局跟随父容器变化，
-        // 套多层容器为了说明相对布局约束传递
+
         Column() {
           Column() {
-            // 图片使用Resource资源，需用户自定义
+
             Image($r('app.media.icon'))
               .width('100%').height('100%')
           }.width('100%').height('100%')
         }
         .width(80)
         .height(80)
-        // geometryTransition会同步圆角，但仅限于geometryTransition绑定处，此处绑定的是容器
-        // 则对容器本身有圆角同步而不会操作容器内部子组件的borderRadius
+
         .borderRadius(20)
         .clip(true)
         .geometryTransition("picture")
-        // transition保证组件离场不被立即析构，可设置其他转场效果
+
         .transition(TransitionEffect.OPACITY)
       }
     }
@@ -113,4 +111,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/6cwdaLioRLyUDxhOvIWGbQ/zh-cn_image_0000002569169799.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025644Z&HW-CC-Expire=86400&HW-CC-Sign=5067CCC573D0F974CFCD82831C020725B8A64BDE781F8E5A82014755D8582041)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/6cwdaLioRLyUDxhOvIWGbQ/zh-cn_image_0000002569169799.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025718Z&HW-CC-Expire=86400&HW-CC-Sign=28AC2356EFCCE33F3BC436B33717B04DEDBAFF326A8D6B55ED44B574846168E9)

@@ -20,7 +20,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/MoRha1UfQUCLTtTo8_xSqA/zh-cn_image_0000002538288768.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025336Z&HW-CC-Expire=86400&HW-CC-Sign=3EEE559CD4749B5DC120887691B0D1D6F01EF68F0DE13247C31155CAB2E8369E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/MoRha1UfQUCLTtTo8_xSqA/zh-cn_image_0000002538288768.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025801Z&HW-CC-Expire=86400&HW-CC-Sign=CAFF5D1990E37187F5A242760D2864880594A2701EF22F85852D50050FE4FDF0)
 
 ### 创建ComponentContent
 
@@ -117,7 +117,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/PN4lqkkVTfOnygXLu2LTBg/zh-cn_image_0000002538288768.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025336Z&HW-CC-Expire=86400&HW-CC-Sign=6DA2EC0FD9B6061151BBEDD025AF41ED751D3642B0E1E28779A4947E5E5908E5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/PN4lqkkVTfOnygXLu2LTBg/zh-cn_image_0000002538288768.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025801Z&HW-CC-Expire=86400&HW-CC-Sign=A764E3BFE5AED09E83D9FE63F3BB296CDC9F06BBD14DA24AF29C310EB1A7D9C6)
 
 ## 关闭菜单
 
@@ -134,7 +134,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/h1Q1U9ImQ6-LHErkCWlODQ/zh-cn_image_0000002538288768.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025336Z&HW-CC-Expire=86400&HW-CC-Sign=97FD6A0FE7F9EC9E4C7B39B2A9F4D807D61D0D2F5B71459E407D108C38AB43B5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/h1Q1U9ImQ6-LHErkCWlODQ/zh-cn_image_0000002538288768.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025801Z&HW-CC-Expire=86400&HW-CC-Sign=D76E542FD4BC0651D48C3952DCB297F0A310ADB59938A1F15C9FFCD1AB7369AC)
 
 > **说明**
 > 由于[updateMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#updatemenu18)和[closeMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#closemenu18)依赖content来更新或者关闭指定的菜单，开发者需自行维护传入的content。

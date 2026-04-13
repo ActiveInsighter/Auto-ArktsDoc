@@ -40,7 +40,7 @@ export struct TextPopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/tH8U0kDKST2csNSpMrwzPg/zh-cn_image_0000002569168531.png?HW-CC-KV=V1&HW-CC-Date=20260412T025340Z&HW-CC-Expire=86400&HW-CC-Sign=F1F8CE171443BF6B5F8E2B883E945D059610A3916E086553118A7579E2A953AB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/tH8U0kDKST2csNSpMrwzPg/zh-cn_image_0000002569168531.png?HW-CC-KV=V1&HW-CC-Date=20260413T025804Z&HW-CC-Expire=86400&HW-CC-Sign=E548B6F6D72F060CADA15739BC12146869FC63C524A1EBDEB0C1F3D3CACBA19F)
 
 ## 添加气泡状态变化的事件
 
@@ -76,7 +76,7 @@ export struct StatePopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/8vPQGNv6Qn20q30RvF7KHA/zh-cn_image_0000002569128557.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025340Z&HW-CC-Expire=86400&HW-CC-Sign=853FB266F7AFCA7CE0107C1DC2CD248B2162172AEF133AF6BB16A97D676F7321)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/8vPQGNv6Qn20q30RvF7KHA/zh-cn_image_0000002569128557.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025804Z&HW-CC-Expire=86400&HW-CC-Sign=4C02A0FA40AEE5B97DB8ADFD3DBDB3212F6FE01D1DDD0CFF34FED0CFBC549E76)
 
 ## 带按钮的提示气泡
 
@@ -126,7 +126,7 @@ export struct ButtonPopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/57ri0sWzTaGUeOWqCnBBpA/zh-cn_image_0000002538128836.jpeg?HW-CC-KV=V1&HW-CC-Date=20260412T025340Z&HW-CC-Expire=86400&HW-CC-Sign=E70EC6F46D7E071DDFB1506162A1ACD856F2999A383C0AA1DB90D0A5CC13091C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/57ri0sWzTaGUeOWqCnBBpA/zh-cn_image_0000002538128836.jpeg?HW-CC-KV=V1&HW-CC-Date=20260413T025804Z&HW-CC-Expire=86400&HW-CC-Sign=CA30E6E39EAE0C6C67DFA0195CB3534B76FFE03C9BB4AD583F6E688C8049227D)
 
 ## 气泡的动画
 
@@ -197,7 +197,7 @@ export struct AnimationPopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/fCJ4xekXR6eL3zweP4T1sA/zh-cn_image_0000002538288770.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025340Z&HW-CC-Expire=86400&HW-CC-Sign=DD1A92C40FA7DE185A1EC1F0B5C234A2456A524D8A96BEE859A41DDE9BBC112C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/fCJ4xekXR6eL3zweP4T1sA/zh-cn_image_0000002538288770.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025804Z&HW-CC-Expire=86400&HW-CC-Sign=78746FAD060F4834ADAAE0C6894CB0537B59E6B365E201D132B5FF37E22CCF62)
 
 ## 自定义气泡
 
@@ -246,7 +246,7 @@ export struct CustomPopupExample {
 
 使用者通过配置placement参数将弹出的气泡放到需要提示的位置。弹窗构造器会触发弹出提示信息，来引导使用者完成操作，也让使用者有更好的UI体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/hXSssfBnTiGImjPca6zVnw/zh-cn_image_0000002569168533.jpeg?HW-CC-KV=V1&HW-CC-Date=20260412T025340Z&HW-CC-Expire=86400&HW-CC-Sign=FFF475308BE7E1E2822CC78887FACE9F2F7C834554131063C2DF6456F89014DE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/hXSssfBnTiGImjPca6zVnw/zh-cn_image_0000002569168533.jpeg?HW-CC-KV=V1&HW-CC-Date=20260413T025804Z&HW-CC-Expire=86400&HW-CC-Sign=4D2A7A31AAC546162199FB5FA24271C333470FB9F5E561E10E918697DE565E17)
 
 ## 气泡样式
 
@@ -293,7 +293,7 @@ export struct StylePopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/04-g2WQuSqqx1IU-IKOsPw/zh-cn_image_0000002569128559.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025340Z&HW-CC-Expire=86400&HW-CC-Sign=03156B08CA15C6FD71B8CCF9007C0F637CE643760B3F1F439CE47F62435625E6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/04-g2WQuSqqx1IU-IKOsPw/zh-cn_image_0000002569128559.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025804Z&HW-CC-Expire=86400&HW-CC-Sign=9586246FCAC56B72F85202E12188F014464E87E2A4680C04D5D7713A11571E3D)
 
 ## 气泡避让软键盘
 
@@ -340,7 +340,7 @@ export struct AvoidSoftKeyboardPopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/YFKe4dmGTTaOYfdoCzrnUg/zh-cn_image_0000002538128838.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025340Z&HW-CC-Expire=86400&HW-CC-Sign=8EB351C613E45FBDAE04AE6DF90C6B4CAB6221D6664D276BC546CF351B626D66)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/YFKe4dmGTTaOYfdoCzrnUg/zh-cn_image_0000002538128838.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025804Z&HW-CC-Expire=86400&HW-CC-Sign=0EAB58BBADF9B3525035E33C065FD0C4FBADBF15758E0ACE86AD88E4788EFAE3)
 
 ## 设置气泡内的多态效果
 
@@ -442,7 +442,7 @@ struct PopupItemChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/zxOttZt2RHiFORwN0pPdeA/zh-cn_image_0000002538288772.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025340Z&HW-CC-Expire=86400&HW-CC-Sign=16A96FB3971CFE7E9323784F70A93F7F018939D6BC3E233C2C3754F203972AAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/zxOttZt2RHiFORwN0pPdeA/zh-cn_image_0000002538288772.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025804Z&HW-CC-Expire=86400&HW-CC-Sign=093DA25C85708CC020D778036046CCD1082C2BA5B0F2AF48BD74701E3144B571)
 
 ## 气泡支持避让中轴
 

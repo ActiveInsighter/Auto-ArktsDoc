@@ -405,7 +405,7 @@ struct SizeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/L0oQgklGTyaVycuvCHMlRA/zh-cn_image_0000002569129307.png?HW-CC-KV=V1&HW-CC-Date=20260412T025428Z&HW-CC-Expire=86400&HW-CC-Sign=2F3B7183FE25EAF600DA88FA9D7428E3FCC76D49E14CBED53CC6F91E7A1562CF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/L0oQgklGTyaVycuvCHMlRA/zh-cn_image_0000002569129307.png?HW-CC-KV=V1&HW-CC-Date=20260413T025850Z&HW-CC-Expire=86400&HW-CC-Sign=8CE2E08B354435B7F9A895429EBC7CC0C11E2D32E89A64A0EC90EDAA770A4FD0)
 
 ### 示例2（LocalizedPadding和LocalizedMargin类型的使用）
 
@@ -456,11 +456,11 @@ struct SizeExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/9xOwshhJQEu05X6PmXsZYA/zh-cn_image_0000002538129586.png?HW-CC-KV=V1&HW-CC-Date=20260412T025428Z&HW-CC-Expire=86400&HW-CC-Sign=2C3BBBC9DD0CC0A5D25BB2F76C84B70DCCB78DEC8DEB1032B4D9129B98B05CC0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/9xOwshhJQEu05X6PmXsZYA/zh-cn_image_0000002538129586.png?HW-CC-KV=V1&HW-CC-Date=20260413T025850Z&HW-CC-Expire=86400&HW-CC-Sign=70E6FEF784BBE0FF6881F5DA15FCA0B3889C7038C8399B3CDF0D979D8B9C7366)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/0fWs-mi3QtS37PtpmOCegA/zh-cn_image_0000002538289520.png?HW-CC-KV=V1&HW-CC-Date=20260412T025428Z&HW-CC-Expire=86400&HW-CC-Sign=ABB4E91611B0A96992BCD5BB2FB00CA32C83D32E7551B2695BD7660597F85F1D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/0fWs-mi3QtS37PtpmOCegA/zh-cn_image_0000002538289520.png?HW-CC-KV=V1&HW-CC-Date=20260413T025850Z&HW-CC-Expire=86400&HW-CC-Sign=B94A778CBCF062DC2E18380CA549CBFDBE43C7DA7CAFE777A3EDC864DFE21F52)
 
 ### 示例3（设置组件级安全区）
 
@@ -493,7 +493,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/CvwjVss-RqmZoJ1J10w5Ug/zh-cn_image_0000002569169283.png?HW-CC-KV=V1&HW-CC-Date=20260412T025428Z&HW-CC-Expire=86400&HW-CC-Sign=60EDBA2F4488A46F6383394F03BF13C0203084C95F1C3C44505ECE83843D84BD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/CvwjVss-RqmZoJ1J10w5Ug/zh-cn_image_0000002569169283.png?HW-CC-KV=V1&HW-CC-Date=20260413T025850Z&HW-CC-Expire=86400&HW-CC-Sign=CB68C2E23AE14414E36FECC415B8C4B140828514530B26F3C3B75201241056E2)
 
 ### 示例4（使用attributeModifier动态设置安全区）
 
@@ -537,7 +537,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/QypJnKDlRbGiW_TJuWmSyQ/zh-cn_image_0000002569129309.png?HW-CC-KV=V1&HW-CC-Date=20260412T025428Z&HW-CC-Expire=86400&HW-CC-Sign=F28B9A995336280438DB36A0D4F732FBB4E62005C3B81BD723D05972236AD91E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/QypJnKDlRbGiW_TJuWmSyQ/zh-cn_image_0000002569129309.png?HW-CC-KV=V1&HW-CC-Date=20260413T025850Z&HW-CC-Expire=86400&HW-CC-Sign=83DEECF148C8F05C08A3D1576D591FB8281B24F8977B92E0194A353198FB4759)
 
 ### 示例5（设置布局策略）
 
@@ -591,4 +591,4 @@ struct LayoutPolicyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/0sX4ITu2So6SgQkQTIzK-g/zh-cn_image_0000002538129588.jpg?HW-CC-KV=V1&HW-CC-Date=20260412T025428Z&HW-CC-Expire=86400&HW-CC-Sign=43B422B9A60D34C85563E11C47367880FB6B3C9A4295203516D5C9659807A517)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/0sX4ITu2So6SgQkQTIzK-g/zh-cn_image_0000002538129588.jpg?HW-CC-KV=V1&HW-CC-Date=20260413T025850Z&HW-CC-Expire=86400&HW-CC-Sign=2980FEAAE32C9ED53DA28DC3546CE942AEA76574DB0420C49B7AE4501D702BB5)

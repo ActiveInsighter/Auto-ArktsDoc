@@ -111,4 +111,4 @@ struct KeyframeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/jk8wFZHER3qhMqhU0jrQNA/zh-cn_image_0000002538290032.gif?HW-CC-KV=V1&HW-CC-Date=20260412T025641Z&HW-CC-Expire=86400&HW-CC-Sign=7014DE2E8327D192766A250DD2D6BED368E873C6BE319001C2A4A366FBCFEEF6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/jk8wFZHER3qhMqhU0jrQNA/zh-cn_image_0000002538290032.gif?HW-CC-KV=V1&HW-CC-Date=20260413T030055Z&HW-CC-Expire=86400&HW-CC-Sign=0D11069E8EC330444E6E9572E3495B966DEA3DE91C8BB8343C9C7DF044CFE18A)

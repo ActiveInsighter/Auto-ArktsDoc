@@ -76,6 +76,7 @@ alignContent(value: Alignment)
 Stack的alignContent设置为Alignment.Bottom条件下子组件显示效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct StackExample {
@@ -88,4 +89,4 @@ struct StackExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ao-VlDbXQ8qFd6D-_0w0Vg/zh-cn_image_0000002538129692.png?HW-CC-KV=V1&HW-CC-Date=20260412T025447Z&HW-CC-Expire=86400&HW-CC-Sign=60BC141F0D9A31A262280363DF2C4484A2EE2C5B9CA4C2771F6A3BE649F0C84B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ao-VlDbXQ8qFd6D-_0w0Vg/zh-cn_image_0000002538129692.png?HW-CC-KV=V1&HW-CC-Date=20260413T025907Z&HW-CC-Expire=86400&HW-CC-Sign=4063A5B05840037CB5ECABDF67F915C556B0B078E86A2E5D182ADA0F97ECD81C)
