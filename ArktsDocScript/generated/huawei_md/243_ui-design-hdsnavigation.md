@@ -1123,7 +1123,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/K9xx-g2VQKCd0kGy3JmqmQ/zh-cn_image_0000002500304242.gif?HW-CC-KV=V1&HW-CC-Date=20260413T030112Z&HW-CC-Expire=86400&HW-CC-Sign=BE58ECCDC7FEDDF697A70DACEB3F93FE9BC56CC3ECB9DA5052F0F5FB8C0F8DB2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/U5PPyFKhTvKaOkxDfCEfAQ/zh-cn_image_0000002500304242.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025432Z&HW-CC-Expire=86400&HW-CC-Sign=D3198532A417C5BB4D04D2D2E124D72E7BEC664DD7C2B8880EBDA06D3DD34B0B)
 
 ### 设置菜单消息提醒
 
@@ -1185,7 +1185,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/W3rt9mqSTyaOl4SduJo9gg/zh-cn_image_0000002532144149.jpg?HW-CC-KV=V1&HW-CC-Date=20260413T030112Z&HW-CC-Expire=86400&HW-CC-Sign=F2081F772DFF30C37260CE25F0245CFBFFA721BEA43A1056FB472F7FBF430951)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/pzgB45UyQ52rxY_1zKQRpA/zh-cn_image_0000002532144149.jpg?HW-CC-KV=V1&HW-CC-Date=20260414T025432Z&HW-CC-Expire=86400&HW-CC-Sign=88324360D818F543BFA727A6F7CD2C49C3C1EA209508A48416BE959F32E037C0)
 
 ### 设置自定义区域
 
@@ -1271,7 +1271,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/10_KPFsvTF-7cVogkLpllA/zh-cn_image_0000002500424092.jpg?HW-CC-KV=V1&HW-CC-Date=20260413T030112Z&HW-CC-Expire=86400&HW-CC-Sign=8EFBF1CC6D5D8D792E43385A5144B3DBD267860C259B87D62E0A77ED7981E5AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/puGDqhthRLK1ELGYxSqQsQ/zh-cn_image_0000002500424092.jpg?HW-CC-KV=V1&HW-CC-Date=20260414T025432Z&HW-CC-Expire=86400&HW-CC-Sign=A453C1FF23B5F1FF30AB431DB1800492B069BA34A07AB7DC83FAD89A12EABAAE)
 
 ### 设置标题栏的动态显隐
 
@@ -1331,7 +1331,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/viBveAxAStSoH3_0KMg5pA/zh-cn_image_0000002532304127.gif?HW-CC-KV=V1&HW-CC-Date=20260413T030112Z&HW-CC-Expire=86400&HW-CC-Sign=41129EC966F5166628BDA1DEB03BE58F8425E0A1B6E39729573876DA131ED824)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/cegwEqbZSvyi0eexES3_Kw/zh-cn_image_0000002532304127.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025432Z&HW-CC-Expire=86400&HW-CC-Sign=DFD182EB70EB82AB7939490ACC91B2C17E3F431D3287193C686726085C78293B)
 
 ### 设置标题栏图标样式
 
@@ -1404,7 +1404,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Z3VjOKB9TS-J68mR9d5j7g/zh-cn_image_0000002500304234.jpg?HW-CC-KV=V1&HW-CC-Date=20260413T030112Z&HW-CC-Expire=86400&HW-CC-Sign=317F18C24134F73F0DACCF9CC4693CDEEF7DDFD65EC7B2925C1CDC5D5C597872)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/jgmadaxATR67qe_q18gPOA/zh-cn_image_0000002500304234.jpg?HW-CC-KV=V1&HW-CC-Date=20260414T025432Z&HW-CC-Expire=86400&HW-CC-Sign=003902D201CF5A1EC2B511ABE2B0F2C655933A48B6763F1377CB89EC164A16AE)
 
 ### 半模态标题栏样式
 
@@ -1493,7 +1493,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/0uENQHFPReCWKRPGvhAPFA/zh-cn_image_0000002500304230.jpg?HW-CC-KV=V1&HW-CC-Date=20260413T030112Z&HW-CC-Expire=86400&HW-CC-Sign=5BDBEE20E8D1099B751958D699932FDFC320152C495A9BB5411199DD5560FCAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/GhSTF0saQnGnWlPnzMY0Vg/zh-cn_image_0000002500304230.jpg?HW-CC-KV=V1&HW-CC-Date=20260414T025432Z&HW-CC-Expire=86400&HW-CC-Sign=CA9971F1F1F0A37A9C5A87C7B17B340CA2225E1076731187E21390CA1FF52163)
 
 ### 图标上绑定自定义menu
 
@@ -1577,7 +1577,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/79CafzNbT-CdytkHjzl4JQ/zh-cn_image_0000002532304119.gif?HW-CC-KV=V1&HW-CC-Date=20260413T030112Z&HW-CC-Expire=86400&HW-CC-Sign=6E6637654F1656521F8CFDEF1603E8A01203103B9B8923F60D687AD09D14AADD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/l7DjJMDaRGyRm1AyU0yURg/zh-cn_image_0000002532304119.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025432Z&HW-CC-Expire=86400&HW-CC-Sign=E024135393793F25E53DF291079DE8CF2B7A6B38832022224F06AB8BE8641FD6)
 
 ### 设置应用内多窗图标
 
@@ -1629,4 +1629,4 @@ struct MultiWindowEntryInAPPTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/skZhsxUDTy-75q7QyCU4bw/zh-cn_image_0000002532144155.jpg?HW-CC-KV=V1&HW-CC-Date=20260413T030112Z&HW-CC-Expire=86400&HW-CC-Sign=2786A23C569952D92C3969016244A9073172A1178EE69FE6FB39347EB0138D72)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/uAG4sG7pTc6mxysi_-uZoQ/zh-cn_image_0000002532144155.jpg?HW-CC-KV=V1&HW-CC-Date=20260414T025432Z&HW-CC-Expire=86400&HW-CC-Sign=315FF71059BEB7343E98C8B467CB4692822BF84AEB96D671C36807A36979BD46)

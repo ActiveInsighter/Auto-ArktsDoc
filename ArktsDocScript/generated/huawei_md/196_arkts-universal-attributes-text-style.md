@@ -204,8 +204,8 @@ clearPreviewText(): void
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [TextDecorationType](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#textdecorationtype) | 否 | 否 | 设置文本装饰线类型。 |
-| color | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 否 | 是 | 设置文本装饰线颜色。 |
-| style | [TextDecorationStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#textdecorationstyle12) | 否 | 是 | 设置文本装饰线样式。 |
+| color | [ResourceColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types#resourcecolor) | 否 | 是 | 设置文本装饰线颜色。 默认值：Color.Black。 |
+| style | [TextDecorationStyle](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-appendix-enums#textdecorationstyle12) | 否 | 是 | 设置文本装饰线样式。 默认值：TextDecorationStyle.SOLID。 |
 
 ## SelectionOptions12+对象说明
 
@@ -217,7 +217,7 @@ setTextSelection选中文字时的配置。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| menuPolicy | [MenuPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#menupolicy12) | 否 | 是 | 菜单弹出的策略。 |
+| menuPolicy | [MenuPolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#menupolicy12) | 否 | 是 | 菜单弹出的策略。 默认值：MenuPolicy.DEFAULT。 |
 
 ## MenuPolicy12+
 
@@ -257,4 +257,4 @@ SymbolGlyphModifier类型，用于设置自定义图标小符号。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| offset | number | 否 | 是 | 插入文本的位置。 |
+| offset | number | 否 | 是 | 插入文本的位置。 **说明：** 当需要在指定位置（而非末尾）插入文本时传入此参数。不传入时默认插入到文本末尾。 |

@@ -48,11 +48,11 @@ motionPath(value: MotionPathOptions): T
 该示例主要演示如何设置组件进行位移动画时的运动路径。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct MotionPathExample {
   @State toggle: boolean = true;
+
   build() {
     Column() {
       Button('click me').margin(50)
@@ -61,10 +61,10 @@ struct MotionPathExample {
           from: 0.0,
           to: 1.0,
           rotatable: true
-        }) // 执行动画：从起点移动到(300,200)，再到(300,500)，再到终点
+        })
         .onClick(() => {
           this.getUIContext()?.animateTo({ duration: 4000, curve: Curve.Linear }, () => {
-            this.toggle = !this.toggle; // 通过this.toggle变化组件的位置
+            this.toggle = !this.toggle;
           });
         })
     }.width('100%').height('100%').alignItems(this.toggle ? HorizontalAlign.Start : HorizontalAlign.Center)
@@ -72,4 +72,4 @@ struct MotionPathExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/B3GLTj-NQleD82HKeRcx3Q/zh-cn_image_0000002569129825.gif?HW-CC-KV=V1&HW-CC-Date=20260413T030100Z&HW-CC-Expire=86400&HW-CC-Sign=12DAE80793C715609797509B7B11B35E859D3360730E043753387E427E83E464)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/SDuXO0-uR5CoAoUcNkgjAA/zh-cn_image_0000002540612844.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025420Z&HW-CC-Expire=86400&HW-CC-Sign=FFA58073D6356DE9CEA3BF3C47B287C9112E9E5BEDA7106E294441216D2928C6)

@@ -65,4 +65,4 @@ export struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/a39iH_-hSsWwrE16AC8CWg/zh-cn_image_0000002569128549.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025756Z&HW-CC-Expire=86400&HW-CC-Sign=CC2E69D4B82255125DF2F8EFF97597E88F89194716A31FA3C3B52CD377831E39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/mg7hb1IyQPmhMqvr9GbNwA/zh-cn_image_0000002540611548.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025112Z&HW-CC-Expire=86400&HW-CC-Sign=CE3D79BF7E26E2B35A6D06CAA7255B2CE2ECE629E471793A32851EFDB2128DBB)

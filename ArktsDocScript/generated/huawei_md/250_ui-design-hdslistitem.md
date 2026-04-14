@@ -296,4 +296,4 @@ export class LazyDataSource<T> implements IDataSource {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/8zKKwppwQvyTLityZ16tpQ/zh-cn_image_0000002532304111.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025903Z&HW-CC-Expire=86400&HW-CC-Sign=4F1F2BF4636A772EECF5E76DDB60636226B7E2BA245B5FE0577BD221B92B2590)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/XSQHwN6qSu6wSq0EtUrtoQ/zh-cn_image_0000002532304111.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025440Z&HW-CC-Expire=86400&HW-CC-Sign=C04B950B14898A93C6C80D23CE60A3E123C9F11DB4364458E7BA3428D810B060)

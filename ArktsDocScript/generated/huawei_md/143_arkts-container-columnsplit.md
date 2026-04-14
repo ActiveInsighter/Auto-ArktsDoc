@@ -92,6 +92,7 @@ divider(value: ColumnSplitDividerStyle | null)
 本示例展示如何设置可拖动的ColumnSplit组件及其效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ColumnSplitExample {
@@ -106,20 +107,21 @@ struct ColumnSplitExample {
         Text('5').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
       .borderWidth(1)
-      .resizeable(true)
+      .resizeable(true) // 可拖动
       .width('90%').height('60%')
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/NCg86sInRZGvfvIIMyxLUA/zh-cn_image_0000002569169395.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025911Z&HW-CC-Expire=86400&HW-CC-Sign=D066EBC70FC7A036C34CBF0CBDC617CBD049EB62D0D83EE053C118C98C19D60E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/_kct-ihuSNKrHZdTfJ7SLA/zh-cn_image_0000002571292387.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025225Z&HW-CC-Expire=86400&HW-CC-Sign=D41A1A3AB7D21838809C21C69D67453FF0D54CABF0893E95CBAE9A6044173131)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
 本示例展示如何设置带有间隔的ColumnSplit组件及其效果。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ColumnSplitDividerExample {
@@ -134,7 +136,7 @@ struct ColumnSplitDividerExample {
         Text('5').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
       .borderWidth(1)
-      .divider({ startMargin: 5, endMargin: 5 })
+      .divider({ startMargin: 5, endMargin: 5 }) // 设置间隔
       .width('90%')
       .height('60%')
     }.width('100%')
@@ -142,4 +144,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/XsOqXa-_TZifKpwIrZeZaA/zh-cn_image_0000002569129421.png?HW-CC-KV=V1&HW-CC-Date=20260413T025911Z&HW-CC-Expire=86400&HW-CC-Sign=4D4EA990BBE40732C8264FF75C39692F32C6EA71F273002E354DDDD7A91F30C7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/LrdgmflFQVOLIQjyKvksdw/zh-cn_image_0000002540612440.png?HW-CC-KV=V1&HW-CC-Date=20260414T025225Z&HW-CC-Expire=86400&HW-CC-Sign=0A09D487CF9B9716ACB5BF3290B8815836E79FCB17D88A228DFD761EC6C09711)

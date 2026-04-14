@@ -557,7 +557,7 @@ selectionStart和selectionEnd均为-1时表示全选。
 | --- | --- | --- | --- |
 | selectionStart | number | 是 | 选中开始位置。 取值小于0时，按0处理。 |
 | selectionEnd | number | 是 | 选中结束位置。 取值大于文本长度时，按当前文本长度处理。 |
-| options | [SelectionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#selectionoptions12对象说明) | 否 | 选择项配置。 |
+| options | [SelectionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#selectionoptions12对象说明) | 否 | 选择项配置。 默认值继承[SelectionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#selectionoptions12对象说明)。 |
 
 ### closeSelectionMenu12+
 
@@ -1101,7 +1101,7 @@ constructor(options?: NumericTextTransitionOptions)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| options | [NumericTextTransitionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#numerictexttransitionoptions20对象说明) | 否 | 设置数字翻牌动效。 |
+| options | [NumericTextTransitionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#numerictexttransitionoptions20对象说明) | 否 | 设置数字翻牌动效。 默认值继承[NumericTextTransitionOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#numerictexttransitionoptions20对象说明)。 |
 
 ## NumericTextTransitionOptions20+对象说明
 

@@ -85,4 +85,4 @@ struct ArcScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/FeRueQ_3ToylW9qani65tA/zh-cn_image_0000002569169449.png?HW-CC-KV=V1&HW-CC-Date=20260413T025935Z&HW-CC-Expire=86400&HW-CC-Sign=2590D682001FA037F3AA897184EA5378AAFFC643977686186446F874530D063C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/QWEW7wiOSceDOyUA7epRBQ/zh-cn_image_0000002571292441.png?HW-CC-KV=V1&HW-CC-Date=20260414T025248Z&HW-CC-Expire=86400&HW-CC-Sign=AB7DDB721ECA068BA172FCF78FE094382C869336DFE759A56E36E3B39DD29168)

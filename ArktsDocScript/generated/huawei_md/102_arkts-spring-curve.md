@@ -19,26 +19,23 @@ ArkUI提供了四种阻尼弹簧曲线接口。
 ```typescript
 import { curves } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
-
 class Spring {
   public title: string;
   public subTitle: ResourceStr;
   public iCurve: ICurve;
-
   constructor(title: string, subTitle: ResourceStr, iCurve: ICurve) {
     this.title = title;
     this.iCurve = iCurve;
     this.subTitle = subTitle;
   }
 }
-
+// 弹簧组件
 @Component
 struct Motion {
   @Prop dRotate: number = 0;
   private title: string = '';
   private subTitle: ResourceStr = '';
   private iCurve: ICurve | undefined = undefined;
-
   build() {
     Column() {
       Circle()
@@ -47,7 +44,6 @@ struct Motion {
         .foregroundColor('#317AF7')
         .width(30)
         .height(30)
-
       Column() {
         Text(this.title)
           .fontColor(Color.Black)
@@ -61,33 +57,30 @@ struct Motion {
       .width(80)
       .alignItems(HorizontalAlign.Center)
       .height(100)
-
     }
     .height(110)
     .margin({ bottom: 5 })
     .alignItems(HorizontalAlign.Center)
   }
 }
-
 @Entry
 @Component
 export struct SpringCurve {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   @State dRotate: number = 0;
   private springs: Spring[] = [
-
+    // 请将$r('app.string.springCurve_text1')替换为实际资源文件，在本示例中该资源文件的value值为"周期1, 阻尼0.25"
     new Spring('springMotion', $r('app.string.springCurve_text1'), curves.springMotion(1, 0.25)),
-
+    // 请将$r('app.string.springCurve_text2')替换为实际资源文件，在本示例中该资源文件的value值为"弹性跟手曲线"
     new Spring('responsive' + '\n' + 'SpringMotion', $r('app.string.springCurve_text2'),
       curves.responsiveSpringMotion(1, 0.25)),
-
+    // 请将$r('app.string.springCurve_text3')替换为实际资源文件，在本示例中该资源文件的value值为"初始速度10， 质量1， 刚度228， 阻尼30"
     new Spring('interpolating' + '\n' + 'Spring', $r('app.string.springCurve_text3'),
       curves.interpolatingSpring(10, 1, 228, 30)),
-
+    // 请将$r('app.string.springCurve_text1')替换为实际资源文件，在本示例中该资源文件的value值为"周期1, 阻尼0.25"
     new Spring('springCurve', $r('app.string.springCurve_text1'),
       curves.springCurve(10, 1, 228, 30))
   ];
-
   build() {
     Row() {
       ForEach(this.springs, (item: Spring) => {
@@ -111,4 +104,4 @@ export struct SpringCurve {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/il8hTzRERMShbe6SNNoBUw/zh-cn_image_0000002569128635.gif?HW-CC-KV=V1&HW-CC-Date=20260413T025833Z&HW-CC-Expire=86400&HW-CC-Sign=48F39E44C2B838B96D1965DF653AD1365039FEB87A21ECAB4A7DE25DDDD4F0A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/O_8sX8ArTeKx4YtB2KTbnA/zh-cn_image_0000002540611652.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025144Z&HW-CC-Expire=86400&HW-CC-Sign=4E218B1F6395B8DC3DF574475A83E1515ED959BD11342093D9DF132453E3838F)
