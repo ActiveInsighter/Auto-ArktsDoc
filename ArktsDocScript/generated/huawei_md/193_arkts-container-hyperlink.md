@@ -79,4 +79,4 @@ struct HyperlinkExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/WCCAwO2HRaagRmkeM3UwDA/zh-cn_image_0000002540612636.png?HW-CC-KV=V1&HW-CC-Date=20260414T025333Z&HW-CC-Expire=86400&HW-CC-Sign=29F5C3012CD2E624669563977325BBC01A82F947AA04578BF6D42A4C08C35045)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/WCCAwO2HRaagRmkeM3UwDA/zh-cn_image_0000002540612636.png?HW-CC-KV=V1&HW-CC-Date=20260415T025049Z&HW-CC-Expire=86400&HW-CC-Sign=E8A62560540009DA9467EC9F6BF5E9960460FCE4ABF5548208F43A4E5EBDF7E2)

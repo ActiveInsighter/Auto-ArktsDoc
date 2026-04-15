@@ -15,7 +15,7 @@
 
 **图1** 常见页面结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/JFa61qqQRReyiKFw-Sfi0A/zh-cn_image_0000002540611336.png?HW-CC-KV=V1&HW-CC-Date=20260414T025024Z&HW-CC-Expire=86400&HW-CC-Sign=C6192E41328241F350E27F3199B7161EF325D17EA1902488BC222826F2AE94FE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/JFa61qqQRReyiKFw-Sfi0A/zh-cn_image_0000002540611336.png?HW-CC-KV=V1&HW-CC-Date=20260415T024804Z&HW-CC-Expire=86400&HW-CC-Sign=ABC64BFAE3927E4466F314EF27AD1B3EE0494E6612A3BA924484FD4D34AA83DC)
 
 为实现上述效果，开发者需要在页面中声明对应的元素。其中，Page表示页面的根节点，Column/Row等元素为系统组件。针对不同的页面结构，ArkUI提供了不同的布局组件来帮助开发者实现对应布局的效果，例如Row用于实现线性布局。
 
@@ -25,7 +25,7 @@
 
 **图2** 布局元素组成图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/9F7CqnkFRpiwzLhPlkG1LA/zh-cn_image_0000002571171331.png?HW-CC-KV=V1&HW-CC-Date=20260414T025024Z&HW-CC-Expire=86400&HW-CC-Sign=AA06E23C6FB0977F5FE881ADBDE37EE64CD14CDF98577145721270E5BE1F288B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/9F7CqnkFRpiwzLhPlkG1LA/zh-cn_image_0000002571171331.png?HW-CC-KV=V1&HW-CC-Date=20260415T024804Z&HW-CC-Expire=86400&HW-CC-Sign=738237E240096E62434E24EDB5B7DABDA01CD7EA69B429032D40859B186450DA)
 
 - 组件区域（蓝色方块）：组件区域表示组件的大小，[width](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#width)、[height](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-size#height)属性用于设置组件区域的大小。
 - 组件内容区（黄色方块）：组件内容区大小为组件区域大小减去组件的[border](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-border#border)值，组件内容区大小会作为组件内容（或者子组件）进行大小测算时的布局测算限制。

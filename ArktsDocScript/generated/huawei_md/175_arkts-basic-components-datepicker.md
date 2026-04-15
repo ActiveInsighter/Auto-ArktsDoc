@@ -396,7 +396,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/uP4GSkXzQ82L7drxrZUKXQ/zh-cn_image_0000002540612542.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025306Z&HW-CC-Expire=86400&HW-CC-Sign=60284268D0A105D736AEB801425299B1F0CF9DC414CC2D37DA9A5307DCC3A903)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/uP4GSkXzQ82L7drxrZUKXQ/zh-cn_image_0000002540612542.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025027Z&HW-CC-Expire=86400&HW-CC-Sign=C70688DCBD5BDBB2F39D1178D82E036387E53DAF70F6E219D1577A738DC73858)
 
 ### 示例2（设置文本样式）
 
@@ -428,7 +428,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/glzzgt6bThatOhTTuCUjfg/zh-cn_image_0000002571172537.png?HW-CC-KV=V1&HW-CC-Date=20260414T025306Z&HW-CC-Expire=86400&HW-CC-Sign=94ABBB9ACF478D54F145A836AF1EA939AC8B124571501917592FB113D01ABD57)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/glzzgt6bThatOhTTuCUjfg/zh-cn_image_0000002571172537.png?HW-CC-KV=V1&HW-CC-Date=20260415T025027Z&HW-CC-Expire=86400&HW-CC-Sign=A0A5D23A6532C7542915D1C9B54E4C244159C0830521700E9D0075E07AF81871)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -480,7 +480,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/xPprzrTrSEC5PAwOFjX5wQ/zh-cn_image_0000002540772196.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025306Z&HW-CC-Expire=86400&HW-CC-Sign=2A1D7C35C9A56A9375676EFC2EBDAAA7C48959CD8F58CCF86F3F81E9B732B808)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/xPprzrTrSEC5PAwOFjX5wQ/zh-cn_image_0000002540772196.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025027Z&HW-CC-Expire=86400&HW-CC-Sign=D839EB173F4533A9716417F59D45F89C6E578F67E2DB65E5C7037C2024948FA4)
 
 ### 示例4（设置循环滚动）
 
@@ -517,4 +517,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XO4jVxoVRfmz10Hhp7nqvQ/zh-cn_image_0000002571292491.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025306Z&HW-CC-Expire=86400&HW-CC-Sign=8343637C9A9F081BDADA184E3B2B8818AEB0D85921E9D940F40351B904F90565)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XO4jVxoVRfmz10Hhp7nqvQ/zh-cn_image_0000002571292491.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025027Z&HW-CC-Expire=86400&HW-CC-Sign=132E8B39061777D5BC142DD219BF85E88089E3A90E3BC6234F8EDBAE4363EC40)

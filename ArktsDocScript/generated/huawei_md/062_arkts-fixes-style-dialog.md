@@ -82,7 +82,7 @@ export struct ShowActionMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ANBbO7BUSLGFob-9vM8wbQ/zh-cn_image_0000002571291491.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=D33ADC58F8824E5E944126EF3C8E7671F8E2F1A92868F3F122F9352813F7F15E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ANBbO7BUSLGFob-9vM8wbQ/zh-cn_image_0000002571291491.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=D719F4ED0DA83DE3A1F1ADFFBD6AE0EFEB2D0ADB7A1EA52A0E1BF8A0AE3D0C8A)
 
 ## 对话框 (showDialog)
 
@@ -145,7 +145,7 @@ export struct ShowDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Ra9t3EWcQeCl4puwLkbe3w/zh-cn_image_0000002540611542.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=03DE4B2ECAD1F7607D3AEEF6A0561DA56AAC67207B85B952A34A07DEFF1B658C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Ra9t3EWcQeCl4puwLkbe3w/zh-cn_image_0000002540611542.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=20680C5015DCDA07526A09543FABDE92AC35F1F65455C3EAE0DAB143B0F03F83)
 
 ## 选择器弹窗 (PickerDialog)
 
@@ -207,7 +207,7 @@ export struct CalendarDialog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/qdFivFx_QbySft3A7Q6OAg/zh-cn_image_0000002571171537.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=699E746A9D034B0BD110C72B7F5B4FA9CB8D5AC6942507CC678649EBC463368C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/qdFivFx_QbySft3A7Q6OAg/zh-cn_image_0000002571171537.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=075CE4C7437734E031AEA7DD6BD69DC6952B01EB3888CB62675153B2CDB29386)
 
 ### 日期滑动选择器弹窗 (DatePickerDialog)
 
@@ -255,7 +255,7 @@ export struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/OLTIjPqTTrmBcntyRI_5tg/zh-cn_image_0000002540771196.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=E2EE39D5905B3E8CC31976E51A35A54120A952874938DB9FF1D565B41AE8E88A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/OLTIjPqTTrmBcntyRI_5tg/zh-cn_image_0000002540771196.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=355196E483090CA69D51D820F90789A9D9C420BB388487A1588F5A2D021CF3FA)
 
 该示例通过配置disappearTextStyle、textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
@@ -298,7 +298,7 @@ export struct DatePickerCustomDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/M4Mj5dOiRlqseEERueunWg/zh-cn_image_0000002571291493.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=1D0BD48CC03B302489A298E063C8CA25009260FB529CDEA094AC9D552F927C0E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/M4Mj5dOiRlqseEERueunWg/zh-cn_image_0000002571291493.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=18FA561DE4037C7F3CFCCAF686B01BAAAAE469541911A72F9B4B09CA65B633DE)
 
 ### 时间滑动选择器弹窗 (TimePickerDialog)
 
@@ -349,7 +349,7 @@ export struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/GhSr7wPrTrSn51zJYvsM-Q/zh-cn_image_0000002540611544.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=6D857A3C262CD80953B6D1828E6485DBBE3507DF58EBD6549CCD6E4D538A264B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/GhSr7wPrTrSn51zJYvsM-Q/zh-cn_image_0000002540611544.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=88A8A92544248048D8FA5AAF389105F463464FFB98C8718CFD1BB87EB41CFFCA)
 
 ### 文本滑动选择器弹窗 (TextPickerDialog)
 
@@ -403,7 +403,7 @@ export struct TextPickerCNDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/i8QZS6GtSHGdluLc1yiwSw/zh-cn_image_0000002571171539.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=F7D371ADA3F5C0F0B9881AE06A2F0D0C666C7BB9494FA17533ED2A799B9A0437)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/i8QZS6GtSHGdluLc1yiwSw/zh-cn_image_0000002571171539.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=2CA16B3006F93EC70A752B75E2685477FAA833D3700EDC49C7C14493CF2CCE5C)
 
 ## 列表选择弹窗 (ActionSheet)
 
@@ -487,7 +487,7 @@ export struct showActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/hD8BkO21TMWkSpGQP959DA/zh-cn_image_0000002540771198.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=13B84784B0EA0D68FD21E00612A9689E709E4B917FA7FDBAD6AEF62A9F2B381A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/hD8BkO21TMWkSpGQP959DA/zh-cn_image_0000002540771198.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=C19CC0281E7291876ACE7D593A29D6887DC105336E5AE578AF95D7BDACE463E8)
 
 ## 警告弹窗 (AlertDialog)
 
@@ -563,4 +563,4 @@ export struct showAlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/flegdDfnT_qPX33v0q8fQA/zh-cn_image_0000002571291495.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025105Z&HW-CC-Expire=86400&HW-CC-Sign=30DA957DDE0556D1C968C1E19ECCA86D956D2F6E8AF9A56B6E6BDC9F2000A769)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/flegdDfnT_qPX33v0q8fQA/zh-cn_image_0000002571291495.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024839Z&HW-CC-Expire=86400&HW-CC-Sign=40567D06B93A300E2E82CA91C76BAFA086A76BF100CB090B873B8362AF462305)

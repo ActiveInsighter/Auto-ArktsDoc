@@ -370,17 +370,17 @@ TransitionOptions通过指定结构体内的参数来指定转场效果。
 该示例主要演示如何通过同一[TransitionEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component#transitioneffect10对象说明)来实现图片的出现与消失，出现和消失互为逆过程。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TransitionEffectExample1 {
   @State flag: boolean = true;
   @State show: string = 'show';
-
   build() {
     Column() {
       Button(this.show).width(80).height(30).margin(30)
         .onClick(() => {
-
+          // 点击Button控制Image的显示和消失
           if (this.flag) {
             this.show = 'hide';
           } else {
@@ -389,7 +389,10 @@ struct TransitionEffectExample1 {
           this.flag = !this.flag;
         })
       if (this.flag) {
-
+        // Image的显示和消失配置为相同的过渡效果（出现和消失互为逆过程）
+        // 出现时从指定的透明度为0、绕z轴旋转180°的状态，变为默认的透明度为1、旋转角为0的状态，透明度与旋转动画时长都为2000ms
+        // 消失时从默认的透明度为1、旋转角为0的状态，变为指定的透明度为0、绕z轴旋转180°的状态，透明度与旋转动画时长都为2000ms
+        // $r('app.media.testImg')需要替换为开发者所需的图像资源文件。
         Image($r('app.media.testImg')).width(200).height(200)
           .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }).combine(
             TransitionEffect.rotate({ z: 1, angle: 180 })
@@ -402,36 +405,40 @@ struct TransitionEffectExample1 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/otMH69EmRzCtAz8tfww8RA/zh-cn_image_0000002571292789.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025416Z&HW-CC-Expire=86400&HW-CC-Sign=A1EADE6E608B0532CBFD311C89907D470C355F4000F68C954DE101E8AE1FCE67)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/otMH69EmRzCtAz8tfww8RA/zh-cn_image_0000002571292789.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025123Z&HW-CC-Expire=86400&HW-CC-Sign=585A1FAA19406898691F7261A932AC9F616063AB42EDB2D58A301210BA8C9BB6)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
 该示例主要演示使用不同[TransitionEffect](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component#transitioneffect10对象说明)来实现图片的出现和消失。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TransitionEffectExample2 {
   @State flag: boolean = true;
   @State show: string = 'show';
-
   build() {
     Column() {
       Button(this.show).width(80).height(30).margin(30)
         .onClick(() => {
-
+          // 点击Button控制Image的显示和消失
           if (this.flag) {
             this.show = 'hide';
           } else {
             this.show = 'show';
           }
           this.getUIContext().animateTo({ duration: 2000 }, () => {
-
+            // 第一张图的TransitionEffect包含了animation，transition的动画参数由TransitionEffect指定
+            // 第二张图的TransitionEffect不包含animation，transition的动画参数由animateTo指定
             this.flag = !this.flag;
           });
         })
       if (this.flag) {
-
+        // Image的显示和消失配置为不同的过渡效果
+        // 出现时做从指定的透明度为0变为默认的透明度1的动画，该动画时长为1000ms，以及做从指定的绕z轴旋转180°变为默认的旋转角为0的动画，该动画1000ms后播放，时长为1000ms
+        // 消失时做从默认的透明度为1变为指定的透明度0的动画，该动画1000ms后播放，时长为1000ms，以及做从默认的旋转角0变为指定的绕z轴旋转180°的动画，该动画时长为1000ms
+        // $r('app.media.testImg')需要替换为开发者所需的图像资源文件。
         Image($r('app.media.testImg')).width(200).height(200)
           .transition(
             TransitionEffect.asymmetric(
@@ -442,7 +449,9 @@ struct TransitionEffectExample2 {
               TransitionEffect.rotate({ z: 1, angle: 180 }).animation({ duration: 1000 }))
             )
           )
-
+        // 出现时做从x方向和y方向scale都为0变为默认的x方向和y方向scale都为1的动画，该动画时长为animateTo中指定的2000ms
+        // 消失时无转场效果
+        // $r('app.media.testImg')需要替换为开发者所需的图像资源文件。
         Image($r('app.media.testImg')).width(200).height(200).margin({ top: 100 })
           .transition(
             TransitionEffect.asymmetric(
@@ -458,24 +467,24 @@ struct TransitionEffectExample2 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/T_LnfAYgTZOFaRWNj6KmVQ/zh-cn_image_0000002540612842.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025416Z&HW-CC-Expire=86400&HW-CC-Sign=F148C41FFA85F90CE72EBFAA8FBD4D531C7BCC7466429BFB29255FFD2C29E962)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/T_LnfAYgTZOFaRWNj6KmVQ/zh-cn_image_0000002540612842.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025123Z&HW-CC-Expire=86400&HW-CC-Sign=D609CE52002B41A9EFDAFF24ECEE3ACDE576C58D795574A552BD75D659411CD2)
 
 ### 示例3（设置父子组件为transition）
 
 该示例主要演示通过父子组件都配置[transition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transition-animation-component#transition)来实现图片的出现和消失。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct TransitionEffectExample3 {
   @State flag: boolean = true;
   @State show: string = 'show';
-
   build() {
     Column() {
       Button(this.show).width(80).height(30).margin(30)
         .onClick(() => {
-
+          // 点击Button控制Image的显示和消失
           if (this.flag) {
             this.show = 'hide';
           } else {
@@ -484,14 +493,15 @@ struct TransitionEffectExample3 {
           this.flag = !this.flag;
         })
       if (this.flag) {
-
+        // 当flag条件改变时，会触发id为"column1"、"image1"、"image2"的transition动画。
+        // id为"column1"的组件是这棵新出现/消失的子树的根节点。
         Column() {
           Row() {
-
+            // $r('app.media.testImg')需要替换为开发者所需的图像资源文件。
             Image($r('app.media.testImg')).width(150).height(150).id("image1")
               .transition(TransitionEffect.OPACITY.animation({ duration: 1000 }))
           }
-
+          // $r('app.media.testImg')需要替换为开发者所需的图像资源文件。
           Image($r('app.media.testImg'))
             .width(150)
             .height(150)
@@ -502,7 +512,7 @@ struct TransitionEffectExample3 {
         }
         .id("column1")
         .transition(TransitionEffect.opacity(0.99).animation({ duration: 1000 }),
-
+          // 结束回调设置在消失的第一层节点上，确保能有消失的结束回调
           (transitionIn: boolean) => {
             console.info("transition finish, transitionIn:" + transitionIn);
           }
@@ -515,4 +525,4 @@ struct TransitionEffectExample3 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Esh3chQ7QKqKredn1Xo0Wg/zh-cn_image_0000002571172837.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025416Z&HW-CC-Expire=86400&HW-CC-Sign=F0F69A00695DF5E15EDA91682F6D03B209BCD6736E2E61B0081E02883FD14C12)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Esh3chQ7QKqKredn1Xo0Wg/zh-cn_image_0000002571172837.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025123Z&HW-CC-Expire=86400&HW-CC-Sign=235493A978B311E5E2C94DC2442806C3D83113ED923A06EF0F20FC749530B04D)

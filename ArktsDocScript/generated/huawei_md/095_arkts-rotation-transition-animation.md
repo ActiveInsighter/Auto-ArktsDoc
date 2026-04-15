@@ -35,7 +35,7 @@ struct rotation {
 
 布局切换的旋转屏动画，会对同步旋转的窗口与应用视图做大小和位置的过渡。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/_JeJzXZJTcSnXMNIC43E_A/zh-cn_image_0000002571291593.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025137Z&HW-CC-Expire=86400&HW-CC-Sign=B08DD5A82DD37AAE210DB3DD2EF67B12A05E48BEC4530D569A0E911B0E596002)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/_JeJzXZJTcSnXMNIC43E_A/zh-cn_image_0000002571291593.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024905Z&HW-CC-Expire=86400&HW-CC-Sign=E5E5D96A56F7BB901F5327C7A238C76CFF17ECFD4DB600EFBBEFCFFA9E7A06A0)
 
 ## 透明度变化的旋转屏动画
 
@@ -128,4 +128,4 @@ const TAG: string = 'EntryAbility';
 
 透明度变化的旋转屏动画，会对窗口做大小和位置的过渡，并同时对应用视图做切换过渡，且为消失隐藏的应用视图做渐隐效果，对新出现的视图做渐显的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Q_11ceF5Qx-lk7cRhswn0g/zh-cn_image_0000002540611644.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025137Z&HW-CC-Expire=86400&HW-CC-Sign=2A58FD4DFA1EBB3590E2310533844241025B6E2C45048140235F35D9F2B0F45B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Q_11ceF5Qx-lk7cRhswn0g/zh-cn_image_0000002540611644.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024905Z&HW-CC-Expire=86400&HW-CC-Sign=CB70799F8EBA2BDD0B81005EE1F5C96A0D570ADB8A60931958D84232E682B3F2)

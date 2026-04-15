@@ -65,7 +65,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
     },
     autoCancel: false,
   } as promptAction.CustomDialogOptions;
-
+  // ···
   build() {
     NavDestination() {
       Column() {
@@ -75,7 +75,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog(this.autoCancelOpt)
           })
-
+        // ···
       }
       .width('100%')
       .height('100%')
@@ -83,7 +83,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LLSnGdyJRqOmfrO0Liy9lQ/zh-cn_image_0000002571171543.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025113Z&HW-CC-Expire=86400&HW-CC-Sign=401B52370A53370B76B25D6C0270BF7786AD171E6A339B3FE54919DDD8013CAD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LLSnGdyJRqOmfrO0Liy9lQ/zh-cn_image_0000002571171543.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024844Z&HW-CC-Expire=86400&HW-CC-Sign=2A1344DFD26DC78C8C4D6E7F1A0A1405764FDB2997D223D1A76948B7E26766C5)
 
 设置isModal为false，将默认的模态弹出框变为非模态弹出框。
 
@@ -94,18 +94,18 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
     },
     isModal: false,
   } as promptAction.CustomDialogOptions;
-
+  // ···
   build() {
     NavDestination() {
       Column() {
-
+        // ···
         Button('openCustomDialog isModal:false')
           .width('100%')
           .margin({ top: 10 })
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog(this.modalOpt)
           })
-
+        // ···
       }
       .width('100%')
       .height('100%')
@@ -113,7 +113,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/SVmZV1dnQhmUdSgi_8vpEA/zh-cn_image_0000002540771202.png?HW-CC-KV=V1&HW-CC-Date=20260414T025113Z&HW-CC-Expire=86400&HW-CC-Sign=04F066E4A79D6AF9A246DA54D9DA7CBE21CE2B32CC8B1AECE01ED9C0605E3356)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/SVmZV1dnQhmUdSgi_8vpEA/zh-cn_image_0000002540771202.png?HW-CC-KV=V1&HW-CC-Date=20260415T024844Z&HW-CC-Expire=86400&HW-CC-Sign=53E7186B3636B3488B7C7D5BFDC944383B7B2ED11B4C09002078D67D140CFD9B)
 
 ## 弹出框蒙层样式控制
 
@@ -134,18 +134,18 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
     },
     maskColor: '#33AA0000'
   } as promptAction.CustomDialogOptions;
-
+  // ···
   build() {
     NavDestination() {
       Column() {
-
+        // ···
         Button('openCustomDialog maskOpt')
           .width('100%')
           .margin({ top: 10 })
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog(this.maskOpt)
           })
-
+        // ···
       }
       .width('100%')
       .height('100%')
@@ -153,17 +153,17 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/id8hOPRxS3ezhWnuGD94Ng/zh-cn_image_0000002571291499.png?HW-CC-KV=V1&HW-CC-Date=20260414T025113Z&HW-CC-Expire=86400&HW-CC-Sign=770A39F42140AD307928F96BEB3CB7606AB5670229380B7FA246CB1E136D6D08)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/id8hOPRxS3ezhWnuGD94Ng/zh-cn_image_0000002571291499.png?HW-CC-KV=V1&HW-CC-Date=20260415T024844Z&HW-CC-Expire=86400&HW-CC-Sign=D694AA23A0F26B79D260BDB0A7754818BC263CC5ECF3C0B0322A28CF845E1A5E)
 
 在levelMode为LevelMode.EMBEDDED下，展示不同immersiveMode对蒙层在导航栏和状态栏的延伸效果。
 
 ```typescript
   @State immersiveMode: ImmersiveMode = ImmersiveMode.DEFAULT;
-
+  // ···
   build() {
     NavDestination() {
       Column() {
-
+        // ···
         Button('openCustomDialog immersiveMode')
           .width('100%')
           .margin({ top: 10 })
@@ -178,7 +178,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
               immersiveMode: this.immersiveMode,
             })
           })
-
+        // ···
       }
       .width('100%')
       .height('100%')
@@ -186,7 +186,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/fRwhuWCPSPCn9323dUXIxA/zh-cn_image_0000002540611552.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025113Z&HW-CC-Expire=86400&HW-CC-Sign=5BABBEC35F5435155A4B06D53C5813F9D9A8E1097FF4FEE0E23ECD9DA9E66DE7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/fRwhuWCPSPCn9323dUXIxA/zh-cn_image_0000002540611552.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024844Z&HW-CC-Expire=86400&HW-CC-Sign=692835F4DA0227589CA4EE41B262A0BC017B35B703C4A71C2F702496C3CBFE8E)
 
 ## 弹出框蒙层动画控制
 
@@ -201,18 +201,18 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
     },
     transition: TransitionEffect.OPACITY.animation({ duration: 3000 })
   } as promptAction.CustomDialogOptions;
-
+  // ···
   build() {
     NavDestination() {
       Column() {
-
+        // ···
         Button('openCustomDialog transition')
           .width('100%')
           .margin({ top: 10 })
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog(this.transitionOpt);
           })
-
+        // ···
       }
       .width('100%')
       .height('100%')
@@ -220,7 +220,7 @@ ArkUI提供多种弹出框，不同类型的弹出框具备不同的蒙层定制
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/iNTMDODMSkqOdzXMS22X1Q/zh-cn_image_0000002571171545.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025113Z&HW-CC-Expire=86400&HW-CC-Sign=40EDB8D4266F2C8C9E207671384B1515EFB57F25E272391FA4B842F5FE6E60A9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/iNTMDODMSkqOdzXMS22X1Q/zh-cn_image_0000002571171545.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024844Z&HW-CC-Expire=86400&HW-CC-Sign=1CF852C31CBD6FDDB0090647A277D72E73A4D8E8A5B075F73E6108060D3EBBCE)
 
 设置maskTransition，实现弹出框中蒙层单独的动画定制能力。
 
@@ -239,16 +239,16 @@ Button('openCustomDialog maskTransition')
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/JcZyjzYpTYC12L6hoZYcHA/zh-cn_image_0000002540771204.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025113Z&HW-CC-Expire=86400&HW-CC-Sign=EF603E403A3BCE483D166383F7FCD81C43528F782B622DE41E28726E5864E6B6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/JcZyjzYpTYC12L6hoZYcHA/zh-cn_image_0000002540771204.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024844Z&HW-CC-Expire=86400&HW-CC-Sign=1466FB5782DFCED92B045EDF767DB6B4D74C473B638715C539227AF869C60FB9)
 
 [CustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-components-custom-dialog)虽然不支持transition接口，但与之对应的openAnimation和closeAnimation接口在动画的打开和关闭时可进行定制，示例代码如下：
 
 ```typescript
+// xxx.ets
 @CustomDialog
 @Component
 struct CustomDialogAnimationBuilder {
   controller?: CustomDialogController;
-
   build() {
     Column() {
       Text('title')
@@ -270,7 +270,6 @@ struct CustomDialogAnimationBuilder {
     .height('50%')
   }
 }
-
 @Entry
 @Component
 export struct CustomDialogAnimation {
@@ -280,11 +279,9 @@ export struct CustomDialogAnimation {
       closeAnimation: { duration: 2000 },
       openAnimation: { duration: 2000 }
     });
-
   aboutToDisappear(): void {
     this.animationController = null;
   }
-
   build() {
     NavDestination() {
       Column() {
@@ -300,32 +297,29 @@ export struct CustomDialogAnimation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/HcLMcunPTtG8FEZ94X6_8w/zh-cn_image_0000002571291501.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025113Z&HW-CC-Expire=86400&HW-CC-Sign=4991331C70D5AA5BEE7D182C538C53D4BF63D0EF3F35F220E05702EFCE887E94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/HcLMcunPTtG8FEZ94X6_8w/zh-cn_image_0000002571291501.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024844Z&HW-CC-Expire=86400&HW-CC-Sign=3AA59C1D526CEA46373CAD4937CAB749FA67D7D96766250429D1F83537ACDD4A)
 
 ## 完整示例
 
 ```typescript
+// xxx.ets
 import { ImmersiveMode, LevelMode, promptAction } from '@kit.ArkUI';
-
 @Entry
 @Component
 export struct CustomDialogControl {
   @State immersiveMode: ImmersiveMode = ImmersiveMode.DEFAULT;
-
   autoCancelOpt: promptAction.CustomDialogOptions = {
     builder: () => {
       this.myBuilder();
     },
     autoCancel: false,
   } as promptAction.CustomDialogOptions;
-
   modalOpt: promptAction.CustomDialogOptions = {
     builder: () => {
       this.myBuilder();
     },
     isModal: false,
   } as promptAction.CustomDialogOptions;
-
   maskOpt: promptAction.CustomDialogOptions = {
     builder: () => {
       this.myBuilder();
@@ -338,14 +332,12 @@ export struct CustomDialogControl {
     },
     maskColor: '#33AA0000'
   } as promptAction.CustomDialogOptions;
-
   transitionOpt: promptAction.CustomDialogOptions = {
     builder: () => {
       this.myBuilder();
     },
     transition: TransitionEffect.OPACITY.animation({ duration: 3000 })
   } as promptAction.CustomDialogOptions;
-
   @Builder
   myBuilder() {
     Column() {
@@ -354,7 +346,6 @@ export struct CustomDialogControl {
       Button('button2').margin(10).fontSize(20)
     }.width('100%').height('50%')
   }
-
   build() {
     NavDestination() {
       Column() {
@@ -364,28 +355,24 @@ export struct CustomDialogControl {
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog(this.autoCancelOpt)
           })
-
         Button('openCustomDialog isModal:false')
           .width('100%')
           .margin({ top: 10 })
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog(this.modalOpt)
           })
-
         Button('openCustomDialog maskOpt')
           .width('100%')
           .margin({ top: 10 })
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog(this.maskOpt)
           })
-
         Button('openCustomDialog transition')
           .width('100%')
           .margin({ top: 10 })
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog(this.transitionOpt);
           })
-
         Button('openCustomDialog immersiveMode')
           .width('100%')
           .margin({ top: 10 })
@@ -400,7 +387,6 @@ export struct CustomDialogControl {
               immersiveMode: this.immersiveMode,
             })
           })
-
         Button('openCustomDialog maskTransition')
           .width('100%')
           .margin({ top: 10 })
@@ -421,4 +407,4 @@ export struct CustomDialogControl {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/lA7hBpBzRg29sD3KTnAfLQ/zh-cn_image_0000002540611554.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025113Z&HW-CC-Expire=86400&HW-CC-Sign=16D535639F31813D2AE23B6181837EEAFE2BEAE96B1051AAF252C31579BF0861)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/lA7hBpBzRg29sD3KTnAfLQ/zh-cn_image_0000002540611554.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024844Z&HW-CC-Expire=86400&HW-CC-Sign=678677DE7A9BC9B5FB677F53FC0D05CDFCC1FA6D8FE08254FF430093E392EB71)

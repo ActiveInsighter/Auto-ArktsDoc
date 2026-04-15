@@ -84,11 +84,11 @@ struct BlankExample {
 
 竖屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/BD2-NG8pTqOD1CuGXGosTQ/zh-cn_image_0000002540772392.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025404Z&HW-CC-Expire=86400&HW-CC-Sign=F9EF16037EE56FC3549A71F69A75672A9ECE54CC40827AB6F5D5A88E7404F1B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/BD2-NG8pTqOD1CuGXGosTQ/zh-cn_image_0000002540772392.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025113Z&HW-CC-Expire=86400&HW-CC-Sign=E3A8FD7FB7A900FAB88562BBD60E5CA416604162370D20B713091B1D16C5A915)
 
 横屏状态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/5OzDmcBRTxqDKpFe5wepqQ/zh-cn_image_0000002571292687.gif?HW-CC-KV=V1&HW-CC-Date=20260414T025404Z&HW-CC-Expire=86400&HW-CC-Sign=35D4183A92E372468CF7A2C0FF78AF4A416472B959E7E733D2A5286FB3B6CC8A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/5OzDmcBRTxqDKpFe5wepqQ/zh-cn_image_0000002571292687.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025113Z&HW-CC-Expire=86400&HW-CC-Sign=641530787EF6E64D1534E7EFA9BA78C105F8A5EDF4D3D7AA0045840230CE641B)
 
 ### 示例2（填充固定宽度）
 
@@ -121,4 +121,4 @@ struct BlankExample {
 
 Blank父组件未设置宽度时，子组件间无空白填充，使用min参数设置填充尺寸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/HnR_3SwjQFKVefKCqbUV7g/zh-cn_image_0000002540612740.png?HW-CC-KV=V1&HW-CC-Date=20260414T025404Z&HW-CC-Expire=86400&HW-CC-Sign=3E75A9CE9340A9E12CAF345B72FBA251818737B5ADB91B5B629298863843AE99)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/HnR_3SwjQFKVefKCqbUV7g/zh-cn_image_0000002540612740.png?HW-CC-KV=V1&HW-CC-Date=20260415T025113Z&HW-CC-Expire=86400&HW-CC-Sign=9BDE90E94C95CF54B5C7F83282DC63DC1D82FC7CF86329348D90BF53BB39D15C)
