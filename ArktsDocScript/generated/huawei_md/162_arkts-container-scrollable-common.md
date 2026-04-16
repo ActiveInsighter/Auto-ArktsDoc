@@ -766,7 +766,7 @@ onDidStopFling(handler: VoidCallback): T
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/_iYemDOfSJGYOoIkkrYUHQ/zh-cn_image_0000002540612494.png?HW-CC-KV=V1&HW-CC-Date=20260415T024624Z&HW-CC-Expire=86400&HW-CC-Sign=2E3F88FB94BDFF918B712DD42963DD49AC0498B1E58E42EA7BC4014796378DE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/_iYemDOfSJGYOoIkkrYUHQ/zh-cn_image_0000002540612494.png?HW-CC-KV=V1&HW-CC-Date=20260416T025728Z&HW-CC-Expire=86400&HW-CC-Sign=98067D0D08FB59D96B26715CBB854DB1455DC4A0A7E9784A4CF24F438F94F5C9)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1157,7 +1157,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/wy31d0oCTvixXkBN2b-A2Q/zh-cn_image_0000002571292389.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024624Z&HW-CC-Expire=86400&HW-CC-Sign=AF85EBA115F2634D481162EAB7AD0A6C7DDDA5438127CAB7F1A7F3AB4A116347)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/wy31d0oCTvixXkBN2b-A2Q/zh-cn_image_0000002571292389.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025728Z&HW-CC-Expire=86400&HW-CC-Sign=D9B3B81ECD7C4E7B4206272CEC542EC3888EBCF2E287E4D748B2F14CC6625599)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1201,7 +1201,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/aDoDRurlSqmio1KZQLr33g/zh-cn_image_0000002571172439.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024624Z&HW-CC-Expire=86400&HW-CC-Sign=659AC30251173D948E5D36D413F5D6415246CF96033F220B242495638C58FF23)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/aDoDRurlSqmio1KZQLr33g/zh-cn_image_0000002571172439.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025728Z&HW-CC-Expire=86400&HW-CC-Sign=20E16E86B33D8E4D0AE330E7C31243B6F3E409E62E803FBEC440D9AFB65B8839)
 
 ### 示例3（设置裁剪区域）
 
@@ -1261,7 +1261,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/US54ebOtS6iFsyiwVRGeBQ/zh-cn_image_0000002571172489.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024624Z&HW-CC-Expire=86400&HW-CC-Sign=795C4005A0D9AA04A9E66B3A67E59D769096DC327EDF6386D681C466F729DE9F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/US54ebOtS6iFsyiwVRGeBQ/zh-cn_image_0000002571172489.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025728Z&HW-CC-Expire=86400&HW-CC-Sign=ABAE26A85226078E907AB7CA41A50B0A0812952B0E9285B13E1BE8F50772E96A)
 
 ### 示例4（设置滚动条边距）
 
@@ -1317,4 +1317,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Hm_QtXsvQ0Ktfb2WaqTlPg/zh-cn_image_0000002540772148.gif?HW-CC-KV=V1&HW-CC-Date=20260415T024624Z&HW-CC-Expire=86400&HW-CC-Sign=43DAFD2707960C38F684C297E113BAC7D6F4A8A84623D64C28CEF2327794C634)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Hm_QtXsvQ0Ktfb2WaqTlPg/zh-cn_image_0000002540772148.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025728Z&HW-CC-Expire=86400&HW-CC-Sign=71EC27CECEA546962B2B788D0D82BBAF2CC8BB5666FF5CC3F3A9EF4C5A8BC4BF)

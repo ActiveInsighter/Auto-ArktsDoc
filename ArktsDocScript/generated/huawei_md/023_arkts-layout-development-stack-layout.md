@@ -11,7 +11,7 @@
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/iXsgQkRZTuq3C7_0JTp-_g/zh-cn_image_0000002540771006.png?HW-CC-KV=V1&HW-CC-Date=20260415T024806Z&HW-CC-Expire=86400&HW-CC-Sign=9473495212E8F9E7D5663BAD37B389B5B8FA02B5ED153E725A44385FE5938DEB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/iXsgQkRZTuq3C7_0JTp-_g/zh-cn_image_0000002540771006.png?HW-CC-KV=V1&HW-CC-Date=20260416T025326Z&HW-CC-Expire=86400&HW-CC-Sign=B76267B98F64B1BDD0E38309A62815EA6BD112760B25942B32AD9FC7BB1E21E1)
 
 > **说明**
 > 过多的嵌套组件数会导致性能劣化。在部分场景中，直接使用组件属性或借助系统API的能力可以替代层叠布局的效果，减少了嵌套组件数进而优化性能。最佳实践请参考[组件嵌套优化-优先使用组件属性代替嵌套组件](https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-component-nesting-optimization#section78181114123811)。
@@ -38,7 +38,7 @@ struct StackLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/spRtZ1GWSRaYe1ikYE-uMw/zh-cn_image_0000002571291303.png?HW-CC-KV=V1&HW-CC-Date=20260415T024806Z&HW-CC-Expire=86400&HW-CC-Sign=BB3B986286EB3271B4C7CC3F6BF13D539388909A53FCF38648C9104EDF2F8CA7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/spRtZ1GWSRaYe1ikYE-uMw/zh-cn_image_0000002571291303.png?HW-CC-KV=V1&HW-CC-Date=20260416T025326Z&HW-CC-Expire=86400&HW-CC-Sign=A2876D3BA7117A3793131EE9EA23A78C7BE2D38408D436E4D4F805C7EDAFA8E6)
 
 ## 对齐方式
 
@@ -46,7 +46,7 @@ Stack组件通过[alignContent参数](https://developer.huawei.com/consumer/cn/d
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/nej4KuMJQ6GPEV6Qu5eXqw/zh-cn_image_0000002540611356.png?HW-CC-KV=V1&HW-CC-Date=20260415T024806Z&HW-CC-Expire=86400&HW-CC-Sign=01BA60DBACAB4BA648E6D066D95F9E2F23E7D175651BF09AFC5C1E0383CD2A85)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/nej4KuMJQ6GPEV6Qu5eXqw/zh-cn_image_0000002540611356.png?HW-CC-KV=V1&HW-CC-Date=20260416T025326Z&HW-CC-Expire=86400&HW-CC-Sign=F7E5B61C494A3D5152F1295BD1C442B7C3AB779D672FC4B2B0B356C5D2197FC5)
 
 ```typescript
 @Entry
@@ -87,7 +87,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/sSknCapJSUC_gfp7Hzwh8A/zh-cn_image_0000002571171351.png?HW-CC-KV=V1&HW-CC-Date=20260415T024806Z&HW-CC-Expire=86400&HW-CC-Sign=85D94B1E2623A59EC5E7B7A3E63B406F25A006A5EC0C19539C199B3912AB4B3A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/sSknCapJSUC_gfp7Hzwh8A/zh-cn_image_0000002571171351.png?HW-CC-KV=V1&HW-CC-Date=20260416T025326Z&HW-CC-Expire=86400&HW-CC-Sign=25847CB08BA5A328BA5EE334BAC80C36D2580ED1474536D537C697DE01B8BD36)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
@@ -110,7 +110,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/mNh0YvLvRpOWyF7bKO7HSA/zh-cn_image_0000002540771008.png?HW-CC-KV=V1&HW-CC-Date=20260415T024806Z&HW-CC-Expire=86400&HW-CC-Sign=DAF9FBAA6ABCD7B902E860D43FE49D245930C4EAE5C6A9F949B334AD7FB95D2B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/mNh0YvLvRpOWyF7bKO7HSA/zh-cn_image_0000002540771008.png?HW-CC-KV=V1&HW-CC-Date=20260416T025326Z&HW-CC-Expire=86400&HW-CC-Sign=3225FA99A7B8380E0CFD0A55EFE24B58179B5C5418D7ECA538E0A367EB6795E8)
 
 ## 场景示例
 
@@ -155,7 +155,7 @@ struct StackSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/TMp5VFYBSf6mJvPnt5ZFvg/zh-cn_image_0000002571291305.png?HW-CC-KV=V1&HW-CC-Date=20260415T024806Z&HW-CC-Expire=86400&HW-CC-Sign=4608E92D0CA6DFFBD500EDF319D0F97D6063D513B2D5A42FDFF3CCE33CC10A7E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/TMp5VFYBSf6mJvPnt5ZFvg/zh-cn_image_0000002571291305.png?HW-CC-KV=V1&HW-CC-Date=20260416T025326Z&HW-CC-Expire=86400&HW-CC-Sign=85C82872B17302D01710BC2F920E384D4E7448269E9DFBDE58BF68FA0439448D)
 
 ## 示例代码
 

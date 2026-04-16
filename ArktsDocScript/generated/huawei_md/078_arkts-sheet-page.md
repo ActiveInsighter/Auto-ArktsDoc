@@ -37,9 +37,9 @@
 
 ```typescript
 .nestedScroll({
-    // 可滚动组件往末尾端滚动时的嵌套滚动选项，手势向上
+
     scrollForward: NestedScrollMode.PARENT_FIRST,
-    // 可滚动组件往起始端滚动时的嵌套滚动选项，手势向下
+
     scrollBackward: NestedScrollMode.SELF_FIRST,
 })
 ```
@@ -52,10 +52,11 @@
 struct SheetDemo {
   @State isShowSheet: boolean = false;
   private items: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   @Builder
   SheetBuilder() {
     Column() {
-      // 第一步：自定义滚动容器
+
       List({ space: '10vp' }) {
         ForEach(this.items, (item: number) => {
           ListItem() {
@@ -67,12 +68,12 @@ struct SheetDemo {
       .margin({ top: '10vp' })
       .width('100%')
       .height('900px')
-      // 第二步：设置滚动组件的嵌套滚动属性
+
       .nestedScroll({
         scrollForward: NestedScrollMode.PARENT_FIRST,
         scrollBackward: NestedScrollMode.SELF_FIRST,
       })
-      // 请将$r('app.string.tSheetBuilder_text1')替换为实际资源文件，在本示例中该资源文件的value值为"非滚动区域"
+
       Text($r('app.string.tSheetBuilder_text1'))
         .width('100%')
         .backgroundColor(Color.Gray)
@@ -81,6 +82,7 @@ struct SheetDemo {
         .align(Alignment.Top)
     }.width('100%').height('100%')
   }
+
   build() {
     Column() {
       Button('Open Sheet').width('90%').height('80vp')
@@ -90,7 +92,7 @@ struct SheetDemo {
         .bindSheet($$this.isShowSheet, this.SheetBuilder(), {
           detents: [SheetSize.MEDIUM, SheetSize.LARGE, 600],
           preferType: SheetType.BOTTOM,
-          // 请将$r('app.string.tSheetBuilder_text2')替换为实际资源文件，在本示例中该资源文件的value值为"嵌套滚动场景"
+
           title: { title: $r('app.string.tSheetBuilder_text2') },
         })
     }.width('100%').height('100%')
@@ -99,7 +101,7 @@ struct SheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/L3FGUqx6Qda5Kx7z8HgT9w/zh-cn_image_0000002540771214.png?HW-CC-KV=V1&HW-CC-Date=20260415T024853Z&HW-CC-Expire=86400&HW-CC-Sign=ABD32382A1C2B6FB067011A745DCF89CA6D3E54C489800CEFDF1CF87C718C03C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/L3FGUqx6Qda5Kx7z8HgT9w/zh-cn_image_0000002540771214.png?HW-CC-KV=V1&HW-CC-Date=20260416T025618Z&HW-CC-Expire=86400&HW-CC-Sign=8616E70912E54040F67ADC830B913D9167353808434B561E95CE6244652F17A7)
 
 ## 二次确认能力
 
@@ -110,19 +112,23 @@ struct SheetDemo {
 
 ```typescript
 import { hilog } from '@kit.PerformanceAnalysisKit';
+
 const TAG = '[Sample_SupportingAgingFriendly]';
 const DOMAIN = 0xF811;
 const BUNDLE = 'SupportingAgingFriendly_';
+
 @Entry
 @Component
 struct OnWillDismiss_Dismiss {
   @State isShow: Boolean = false;
+
   @Builder
   myBuilder() {
     Column() {
       Button('Button')
     }
   }
+
   build() {
     Button('OpenBindSheet')
       .onClick(() => {
@@ -137,10 +143,10 @@ struct OnWillDismiss_Dismiss {
         title: { title: 'title', subtitle: 'subtitle' },
         enableOutsideInteractive: false,
         onWillDismiss: ((dismissSheetAction: DismissSheetAction) => {
-          // 第二步：确认二次回调交互能力，此处用AlertDialog提示 "是否需要关闭半模态"
+
           this.getUIContext().showAlertDialog(
             {
-              // 请将$r('app.string.bindContentCover_label2')替换为实际资源文件，在本示例中该资源文件的value值为"示例2（自定义转场动画）"
+
               message: $r('app.string.bindContentCover_label2'),
               autoCancel: true,
               alignment: DialogAlignment.Bottom,
@@ -157,9 +163,9 @@ struct OnWillDismiss_Dismiss {
                 defaultFocus: true,
                 style: DialogButtonStyle.HIGHLIGHT,
                 value: 'ok',
-                // 第三步：确认关闭半模态逻辑所在，此处为AlertDialog的Button回调
+
                 action: () => {
-                  // 第四步：上述第三步逻辑触发的时候，调用dismiss()关闭半模态
+
                   dismissSheetAction.dismiss();
                   hilog.info(DOMAIN, TAG, 'Callback when the ok button is clicked');
                 }
@@ -175,7 +181,7 @@ struct OnWillDismiss_Dismiss {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/vmCt0_PvQoaZOrcmXK0S8Q/zh-cn_image_0000002571291511.png?HW-CC-KV=V1&HW-CC-Date=20260415T024853Z&HW-CC-Expire=86400&HW-CC-Sign=52C7E6E3284D24899C169B702E73966DDA6C88E9ADB6D326AB8795EF4CC1FB2F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/vmCt0_PvQoaZOrcmXK0S8Q/zh-cn_image_0000002571291511.png?HW-CC-KV=V1&HW-CC-Date=20260416T025618Z&HW-CC-Expire=86400&HW-CC-Sign=43ADBBF36C306EBF4B39FD9A00B8AF24237B4D624F0D3D7A51D3609796B8E17F)
 
 ## 屏蔽部分关闭行为
 
@@ -186,7 +192,7 @@ struct OnWillDismiss_Dismiss {
 ```typescript
 onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
   if (DismissSheetAction.reason === DismissReason.SLIDE_DOWN) {
-    DismissSheetAction.dismiss();// 注册dismiss行为
+    DismissSheetAction.dismiss();
   }
 }),
 ```
@@ -200,11 +206,12 @@ onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
 ```typescript
 onWillDismiss: ((DismissSheetAction: DismissSheetAction) => {
   if (DismissSheetAction.reason === DismissReason.SLIDE_DOWN) {
-    DismissSheetAction.dismiss();// 注册dismiss行为
+    DismissSheetAction.dismiss();
   }
 }),
+
 onWillSpringBackWhenDismiss: ((SpringBackAction: SpringBackAction) => {
-// 没有注册springBack，下拉半模态页面无回弹行为
+
 }),
 ```
 
@@ -224,17 +231,18 @@ struct SheetTransitionExample {
   @State isShow: boolean = false;
   @State enableHoverMode: boolean = true;
   @State hoverModeArea: HoverModeAreaType = HoverModeAreaType.TOP_SCREEN;
+
   @Builder
   myBuilder() {
     Column() {
-      // 请将$r('app.string.bindSheetCmd_label10')替换为实际资源文件，在本示例中该资源文件的value值为"enableHoverMode切换"
+
       Button($r('app.string.bindSheetCmd_label10'))
         .margin(10)
         .fontSize(20)
         .onClick(() => {
           this.enableHoverMode = !this.enableHoverMode;
         })
-      // 请将$r('app.string.bindSheetCmd_label11')替换为实际资源文件，在本示例中该资源文件的value值为"hoverModeArea切换"
+
       Button($r('app.string.bindSheetCmd_label11'))
         .margin(10)
         .fontSize(20)
@@ -242,6 +250,7 @@ struct SheetTransitionExample {
           this.hoverModeArea = this.hoverModeArea === HoverModeAreaType.TOP_SCREEN ?
             HoverModeAreaType.BOTTOM_SCREEN : HoverModeAreaType.TOP_SCREEN;
         })
+
       Button('close modal')
         .margin(10)
         .fontSize(20)
@@ -252,9 +261,10 @@ struct SheetTransitionExample {
     .width('100%')
     .height('100%')
   }
+
   build() {
     Column() {
-      // 请将$r('app.string.bindSheetCmd_label9')替换为实际资源文件，在本示例中该资源文件的value值为"拉起半模态"
+
       Button($r('app.string.bindSheetCmd_label9'))
         .onClick(() => {
           this.isShow = true;
@@ -276,4 +286,4 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/yKzIj0wJR2yp9597XAKKOQ/zh-cn_image_0000002540611564.png?HW-CC-KV=V1&HW-CC-Date=20260415T024853Z&HW-CC-Expire=86400&HW-CC-Sign=24D054C7876212D08A4962AA6D826EDE0EEB924E5B80923FB2B1EFBF0B6291DA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/yKzIj0wJR2yp9597XAKKOQ/zh-cn_image_0000002540611564.png?HW-CC-KV=V1&HW-CC-Date=20260416T025618Z&HW-CC-Expire=86400&HW-CC-Sign=879C6D90477CFEDA05CF9A8D819028446DB03723EF30892EBA5A99165DAC6ED0)

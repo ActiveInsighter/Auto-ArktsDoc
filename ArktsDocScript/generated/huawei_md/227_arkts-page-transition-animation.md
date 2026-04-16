@@ -349,7 +349,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/MqN2MQnGQnqVdNO8XMeYjA/zh-cn_image_0000002571292787.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025121Z&HW-CC-Expire=86400&HW-CC-Sign=C924990FC38AE5A5E8307F004F5F9D49E7D2BEC0219A7A7F1F7CFC46B748CA4D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/MqN2MQnGQnqVdNO8XMeYjA/zh-cn_image_0000002571292787.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025838Z&HW-CC-Expire=86400&HW-CC-Sign=4E2760B962FA3D8160D18A2F3EAF2A0139A43FD31471436C928CD4492936D9AA)
 
 自定义方式2：配置了当前页面的入场动画为从左侧滑入，退场为平移加透明度变化。
 
@@ -405,7 +405,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/5NhvPwoySAu1Q_v08UreJQ/zh-cn_image_0000002540612840.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025121Z&HW-CC-Expire=86400&HW-CC-Sign=94C3E5EE3D6AE561451F87203C96581915964B96EA015AF3852A4184D52A2FC2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/5NhvPwoySAu1Q_v08UreJQ/zh-cn_image_0000002540612840.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025838Z&HW-CC-Expire=86400&HW-CC-Sign=EF31D033610645B0685952823C7C1F8E6DAE918ACCC9FE283AAB365628870E5E)
 
 ### 示例2（设置退入场平移效果）
 
@@ -487,7 +487,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/PDpIprx9T1Ke4Ss6iL_tbw/zh-cn_image_0000002571172835.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025121Z&HW-CC-Expire=86400&HW-CC-Sign=71CBE9DFDE85C239B8A4C725AF7FB728018BCC65E1E6E03EAA6F5069B0B661C1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/PDpIprx9T1Ke4Ss6iL_tbw/zh-cn_image_0000002571172835.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025838Z&HW-CC-Expire=86400&HW-CC-Sign=89D9797AF2944CBD1FC215AE40E423FD7BE248BF77135417404996DDB921CF99)
 
 自定义方式2：使用系统默认的退入场效果，将系统语言排版模式改为RTL。
 
@@ -545,4 +545,4 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/qxGTnCr0TIOSVcKNZ_Z4Ag/zh-cn_image_0000002540772494.gif?HW-CC-KV=V1&HW-CC-Date=20260415T025121Z&HW-CC-Expire=86400&HW-CC-Sign=368D654B6317857B2FBCE31CA04834BEE6A4DDD1D1B633FE3E059A1E7B9AFBA6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/qxGTnCr0TIOSVcKNZ_Z4Ag/zh-cn_image_0000002540772494.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025838Z&HW-CC-Expire=86400&HW-CC-Sign=A09EE7ACEA58AC03D7E4609244E33BABCED3A42BE941BA69E87E0444A0219B7B)
