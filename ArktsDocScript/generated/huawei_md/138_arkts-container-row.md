@@ -161,7 +161,6 @@ reverse(isReversed: Optional<boolean>)
 本示例展示设置Row组件的布局属性，如间距、对齐方式等属性后的效果。
 
 ```typescript
-// resources/base/element/string.json
 {
   "string": [
     {
@@ -173,41 +172,42 @@ reverse(isReversed: Optional<boolean>)
 ```
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct RowExample {
   build() {
     Column({ space: 5 }) {
-      // 设置子组件水平方向的间距为5
+
       Text('space').width('90%')
       Row({ space: 5 }) {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').height(107).border({ width: 1 })
-      // 通过资源引用方式设置子组件水平方向的间距
+
       Text('Resource space').width('90%')
       Row({ space: $r('app.string.stringSpace') }) {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').height(107).border({ width: 1 })
-      // 设置子元素垂直方向对齐方式
+
       Text('alignItems(Bottom)').width('90%')
       Row() {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').alignItems(VerticalAlign.Bottom).height('15%').border({ width: 1 })
+
       Text('alignItems(Center)').width('90%')
       Row() {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').alignItems(VerticalAlign.Center).height('15%').border({ width: 1 })
-      // 设置子元素水平方向对齐方式
+
       Text('justifyContent(End)').width('90%')
       Row() {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
         Row().width('30%').height(50).backgroundColor(0x00FFFF)
       }.width('90%').border({ width: 1 }).justifyContent(FlexAlign.End)
+
       Text('justifyContent(Center)').width('90%')
       Row() {
         Row().width('30%').height(50).backgroundColor(0xAFEEEE)
@@ -218,7 +218,7 @@ struct RowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/zWfqyacgS1eSoSPmeJ-kEw/zh-cn_image_0000002571292379.png?HW-CC-KV=V1&HW-CC-Date=20260416T025703Z&HW-CC-Expire=86400&HW-CC-Sign=D2E47163F9A385958999658C604ADD0E5A9A34F54E5B370A893428063C6B4915)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/zWfqyacgS1eSoSPmeJ-kEw/zh-cn_image_0000002571292379.png?HW-CC-KV=V1&HW-CC-Date=20260417T025239Z&HW-CC-Expire=86400&HW-CC-Sign=AC018A730BA656C802FCFE1A62F2A87EA79ABD85965810E7049010E140EF2C60)
 
 ### 示例2（设置反转属性）
 
@@ -234,6 +234,7 @@ struct RowReverseSample {
         .width(100)
         .height(50)
         .backgroundColor(0xAFEEEE)
+
       Text("2")
         .width(100)
         .height(50)
@@ -247,4 +248,4 @@ struct RowReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/sPb8kQ0cTMaMfgoW8Kz2_A/zh-cn_image_0000002540612432.png?HW-CC-KV=V1&HW-CC-Date=20260416T025703Z&HW-CC-Expire=86400&HW-CC-Sign=3929CAD814637A8A5CC0F7FB8DBB80D79D55DCB20EDF67E242DEDCE6D3758A62)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/sPb8kQ0cTMaMfgoW8Kz2_A/zh-cn_image_0000002540612432.png?HW-CC-KV=V1&HW-CC-Date=20260417T025239Z&HW-CC-Expire=86400&HW-CC-Sign=38747DCC155AE2596BA639CF55BECF76EA6A6FC52902285A50C22F3B801D9751)

@@ -68,11 +68,11 @@ static show(options?: CalendarDialogOptions): void
 该示例通过[CalendarDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-calendarpicker-dialog#calendardialogoptions对象说明)的backgroundColor、backgroundBlurStyle、shadow设置日历选择器弹窗背板。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CalendarPickerDialogExample {
   private selectedDate: Date = new Date('2024-03-24');
-
   build() {
     Column() {
       Button('Show CalendarPicker Dialog')
@@ -85,16 +85,16 @@ struct CalendarPickerDialogExample {
             backgroundBlurStyle: BlurStyle.NONE,
             shadow: ShadowStyle.OUTER_FLOATING_SM,
             onAccept: (value) => {
-
+              // 点击弹窗中的“确定”按钮时触发该回调，value表示选中的日期值。
               this.selectedDate = value;
               console.info('calendar onAccept:' + JSON.stringify(value));
             },
             onCancel: () => {
-
+              // 点击弹窗中的“取消”按钮时触发该回调。
               console.info('calendar onCancel');
             },
             onChange: (value) => {
-
+              // 选择弹窗中日期使当前选中项改变时触发该回调，value表示选中的日期值。
               console.info('calendar onChange:' + JSON.stringify(value));
             },
             onDidAppear: () => {
@@ -116,18 +116,18 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/BOALpP2PRnOsbDoGTfLuJg/zh-cn_image_0000002540772516.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025845Z&HW-CC-Expire=86400&HW-CC-Sign=D60FF6CF498C73AF498080E9081E81D29AD34E69F3F31DA81836076635AED3AA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/BOALpP2PRnOsbDoGTfLuJg/zh-cn_image_0000002540772516.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025445Z&HW-CC-Expire=86400&HW-CC-Sign=BFD01FE1B4DF2D3677242A6AAB5E6235641D8773D9A85C945C88C511EA4766E2)
 
 ### 示例2（自定义按钮样式）
 
 从API version 12开始，该示例通过配置[CalendarDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-calendarpicker-dialog#calendardialogoptions对象说明)的acceptButtonStyle、cancelButtonStyle实现自定义日历选择器弹窗按钮样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CalendarPickerDialogExample {
   private selectedDate: Date = new Date();
-
   build() {
     Column() {
       Button('Show CalendarPicker Dialog')
@@ -171,7 +171,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/f8-wjPvtQGeCNFZtRzOXVQ/zh-cn_image_0000002571292811.png?HW-CC-KV=V1&HW-CC-Date=20260416T025845Z&HW-CC-Expire=86400&HW-CC-Sign=0B5CD019487C1E04F2FC49D3B31A8BBD633A2E55352CE9480D96BDB64BB88187)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/f8-wjPvtQGeCNFZtRzOXVQ/zh-cn_image_0000002571292811.png?HW-CC-KV=V1&HW-CC-Date=20260417T025445Z&HW-CC-Expire=86400&HW-CC-Sign=81A3C63B8F9BBEEB610AAFB9D768AAEF397D41F945A791210FB718D015E7805F)
 
 ### 示例3（悬停态弹窗）
 
@@ -182,7 +182,6 @@ struct CalendarPickerDialogExample {
 @Component
 struct CalendarPickerDialogExample {
   private selectedDate: Date = new Date('2024-04-23');
-
   build() {
     Column() {
       Button('Show CalendarPicker Dialog')
@@ -221,18 +220,18 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/HGB2JkiQRR6X6mnBEWgKaA/zh-cn_image_0000002540612864.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025845Z&HW-CC-Expire=86400&HW-CC-Sign=7A1C980CCBD2FA593728E7820FF529A8726C6824064AC6154CE743E8551D2B39)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/HGB2JkiQRR6X6mnBEWgKaA/zh-cn_image_0000002540612864.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025445Z&HW-CC-Expire=86400&HW-CC-Sign=45FDB5C035DF1745441497F1A6B05A638481BC78297119751796EA74E463CDAF)
 
 ### 示例4（设置日期选中态底板样式）
 
 从API version 10开始，该示例通过[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)的hintRadius设置日期选中态底板样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CalendarPickerDialogExample {
   private selectedDate: Date = new Date('2024-04-23');
-
   build() {
     Column() {
       Button('Show CalendarPicker Dialog')
@@ -253,20 +252,20 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/lenmz1qgS0yy5BqMROHGOw/zh-cn_image_0000002571172859.png?HW-CC-KV=V1&HW-CC-Date=20260416T025845Z&HW-CC-Expire=86400&HW-CC-Sign=6645BB1E52F665C2AB971067EFBDB6E44A4B0D8515CE4740CBD933CBCE61341E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/lenmz1qgS0yy5BqMROHGOw/zh-cn_image_0000002571172859.png?HW-CC-KV=V1&HW-CC-Date=20260417T025445Z&HW-CC-Expire=86400&HW-CC-Sign=7CD4D319337124F9AC13B7381EB6ADF148A506E65A3D1DB5F30C4C9522625F67)
 
 ### 示例5（设置开始日期和结束日期）
 
 从API version 18开始，该示例通过[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)的start和end设置日历选择器弹窗的开始日期和结束日期。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CalendarPickerDialogExample {
   private selectedDate: Date = new Date('2025-01-01');
   private startDate: Date = new Date('2024-01-10');
   private endDate: Date = new Date('2025-01-10');
-
   build() {
     Column() {
       Text('月历日期选择器').fontSize(30)
@@ -285,13 +284,14 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/BlalNJh6QpukL-OxAR8MbA/zh-cn_image_0000002540772518.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025845Z&HW-CC-Expire=86400&HW-CC-Sign=5D70E531022399F9521273C174E67D0E36B714CCCADB80160BEBD9C59082A7BF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/BlalNJh6QpukL-OxAR8MbA/zh-cn_image_0000002540772518.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025445Z&HW-CC-Expire=86400&HW-CC-Sign=591A1A2C2D059B58091621255B2B786F7188D67FAEBB7FE6B99B7406DA378157)
 
 ### 示例6（设置系统当前日期在日历选择器弹窗内保持高亮显示，并设置禁用日期区间）
 
 从API version 19开始，该示例通过配置[CalendarDialogOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-methods-calendarpicker-dialog#calendardialogoptions对象说明)的markToday，使系统当前日期在日历选择器弹窗内保持高亮显示，并通过配置[CalendarOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-calendarpicker#calendaroptions对象说明)的disabledDateRange设置禁用的日期区间。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct CalendarPickerExample {
@@ -302,7 +302,6 @@ struct CalendarPickerExample {
     { start: new Date('2025-01-19'), end: new Date('2025-01-19') },
     { start: new Date('2025-01-22'), end: new Date('2025-01-25') }
   ];
-
   build() {
     Column() {
       Button("Show CalendarPicker Dialog")
@@ -316,7 +315,7 @@ struct CalendarPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Zw8nyKvmToOxBjUicB2LyQ/zh-cn_image_0000002571292813.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025845Z&HW-CC-Expire=86400&HW-CC-Sign=208B4904AB34A8AF0A77ADA2D49F498B7A36FB861814999BA7D20265E01DAAAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Zw8nyKvmToOxBjUicB2LyQ/zh-cn_image_0000002571292813.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025445Z&HW-CC-Expire=86400&HW-CC-Sign=2CF214A70F007CEE8A5A9DC9D2EF7A850272B97B94A27504EECEC157AA096762)
 
 ### 示例7（自定义背景模糊效果参数）
 
@@ -327,10 +326,9 @@ struct CalendarPickerExample {
 @Component
 struct CalendarPickerDialogExample {
   private selectedDate: Date = new Date('2025-08-05');
-
   build() {
     Stack({ alignContent: Alignment.Top }) {
-
+      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
       Image($r('app.media.bg'))
       Column() {
         Button('Show CalendarPicker Dialog')
@@ -355,7 +353,7 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/zFlpLJplR72XTjhUTWIfIg/zh-cn_image_0000002540612866.png?HW-CC-KV=V1&HW-CC-Date=20260416T025845Z&HW-CC-Expire=86400&HW-CC-Sign=C4E5873D59A11C9AD57BC102F6BE6389A4DC6330E546B7A42A2E5A97E7450B9D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/zFlpLJplR72XTjhUTWIfIg/zh-cn_image_0000002540612866.png?HW-CC-KV=V1&HW-CC-Date=20260417T025445Z&HW-CC-Expire=86400&HW-CC-Sign=2F79F660706870E6B480957D30365AC478575EC608108136E662FD4963761C6F)
 
 ### 示例8（自定义背景效果参数）
 
@@ -366,10 +364,9 @@ struct CalendarPickerDialogExample {
 @Component
 struct CalendarPickerDialogExample {
   private selectedDate: Date = new Date('2025-08-05');
-
   build() {
     Stack({ alignContent: Alignment.Top }) {
-
+      // $r('app.media.bg')需要替换为开发者所需的图像资源文件。
       Image($r('app.media.bg'))
       Column() {
         Button('Show CalendarPicker Dialog')
@@ -395,4 +392,4 @@ struct CalendarPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/nY7ZGsLjSmGI3vointUrSA/zh-cn_image_0000002571172861.png?HW-CC-KV=V1&HW-CC-Date=20260416T025845Z&HW-CC-Expire=86400&HW-CC-Sign=94E619B410DF0391BEA6616C526AC9A0D5BD2669D2420172CF431ADBA2A2720D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/nY7ZGsLjSmGI3vointUrSA/zh-cn_image_0000002571172861.png?HW-CC-KV=V1&HW-CC-Date=20260417T025445Z&HW-CC-Expire=86400&HW-CC-Sign=3388C2E56A2B0D5E3A7ECD7358F190B1C5D8C503A689A2E859471C4A84211523)

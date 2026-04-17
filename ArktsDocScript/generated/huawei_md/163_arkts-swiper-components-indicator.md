@@ -240,7 +240,6 @@ struct DotIndicatorDemo {
       this.list.push(i);
     }
   }
-
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -265,7 +264,6 @@ struct DotIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(
@@ -287,7 +285,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/trdxoTqQTEG2rgwd1yPswQ/zh-cn_image_0000002571292443.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025728Z&HW-CC-Expire=86400&HW-CC-Sign=3979126D2077FB3E874A8703A5438B1D22C8B0DA08A79D2579FE79FDBE12D7F2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/trdxoTqQTEG2rgwd1yPswQ/zh-cn_image_0000002571292443.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025311Z&HW-CC-Expire=86400&HW-CC-Sign=4E094D65AEDC39331625CD47150926FDEDC14368FB8838F27D051B7A1B63B438)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -305,7 +303,6 @@ struct DigitIndicatorDemo {
       this.list.push(i);
     }
   }
-
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -330,7 +327,6 @@ struct DigitIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
-
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(Indicator.digit()
@@ -349,4 +345,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/4PsTJScoTgCASjSQEZU1vw/zh-cn_image_0000002540612496.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025728Z&HW-CC-Expire=86400&HW-CC-Sign=B276CC847839075A4D72A01BC4B2ACF376A884D966D86F1126DE9E0CC311E3B2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/4PsTJScoTgCASjSQEZU1vw/zh-cn_image_0000002540612496.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025311Z&HW-CC-Expire=86400&HW-CC-Sign=4F2EB888CC222A19937EC430E38B5242832BB6A2388703B52A6C314B5FBF587B)

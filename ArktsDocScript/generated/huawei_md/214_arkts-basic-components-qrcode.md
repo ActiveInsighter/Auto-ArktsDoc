@@ -98,22 +98,22 @@ contentOpacity(value: number | Resource)
 该示例展示了QRCode组件的基本使用方法，通过[color](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode#color)属性设置二维码颜色、[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode#backgroundcolor)属性设置二维码背景颜色、[contentOpacity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode#contentopacity11)属性设置二维码不透明度。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct QRCodeExample {
   private value: string = 'hello world';
-
   build() {
     Column({ space: 5 }) {
       Text('normal').fontSize(9).width('90%').fontColor(0xCCCCCC).fontSize(30)
       QRCode(this.value).width(140).height(140)
-
+      // 设置二维码颜色
       Text('color').fontSize(9).width('90%').fontColor(0xCCCCCC).fontSize(30)
       QRCode(this.value).color(0xF7CE00).width(140).height(140)
-
+      // 设置二维码背景色
       Text('backgroundColor').fontSize(9).width('90%').fontColor(0xCCCCCC).fontSize(30)
       QRCode(this.value).width(140).height(140).backgroundColor(Color.Orange)
-
+      // 设置二维码不透明度
       Text('contentOpacity').fontSize(9).width('90%').fontColor(0xCCCCCC).fontSize(30)
       QRCode(this.value).width(140).height(140).color(Color.Black).contentOpacity(0.1)
     }.width('100%').margin({ top: 5 })
@@ -121,24 +121,24 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/I4RWC7_4Qh-5WV8gDLxDSg/zh-cn_image_0000002540772386.png?HW-CC-KV=V1&HW-CC-Date=20260416T025824Z&HW-CC-Expire=86400&HW-CC-Sign=084E801C595A91400FEFDDE990A74823B0AE3753F6763D1A4D67C5941476A9EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/I4RWC7_4Qh-5WV8gDLxDSg/zh-cn_image_0000002540772386.png?HW-CC-KV=V1&HW-CC-Date=20260417T025420Z&HW-CC-Expire=86400&HW-CC-Sign=57B96E518559E80BF8FC49AEB6073A741D54DD1B346C7BAD43B5C30340F6B035)
 
 ### 示例2（设置背景颜色为透明）
 
 该示例通过[backgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-qrcode#backgroundcolor)属性设置二维码背景颜色为透明，从而实现二维码内容与背景融合。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct QRCodeExample {
   private value: string = 'hello world';
-
   build() {
     Column({ space: 5 }) {
       RelativeContainer() {
-
+        // $r('app.media.ocean')需要替换为开发者所需的图像资源文件。
         Image($r('app.media.ocean'))
-
+        // 设置二维码背景色为透明
         QRCode(this.value).width(200).height(200).backgroundColor('#00ffffff')
       }.width(200).height(200)
     }.width('100%').margin({ top: 5 })
@@ -146,4 +146,4 @@ struct QRCodeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/eoeXv1duQUuxC90JeVlCeA/zh-cn_image_0000002571292681.png?HW-CC-KV=V1&HW-CC-Date=20260416T025824Z&HW-CC-Expire=86400&HW-CC-Sign=675B7FB295C93D8B777E152D632C7D99353752C3747D55EE5A0DE21531AAEA8B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/eoeXv1duQUuxC90JeVlCeA/zh-cn_image_0000002571292681.png?HW-CC-KV=V1&HW-CC-Date=20260417T025420Z&HW-CC-Expire=86400&HW-CC-Sign=F6DA464A97EB3DC5958EF77E83CE1FF48558740755A2EFA91AE8162D50DB8B0E)

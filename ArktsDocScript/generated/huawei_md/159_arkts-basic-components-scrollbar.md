@@ -108,12 +108,12 @@ scrollBarColor(color: Optional<ColorMetrics>)
 该示例为ScrollBar组件有子节点时的滚动条样式。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct ScrollBarExample {
   private scroller: Scroller = new Scroller();
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
   build() {
     Column() {
       Stack({ alignContent: Alignment.End }) {
@@ -136,7 +136,6 @@ struct ScrollBarExample {
         .width('90%')
         .scrollBar(BarState.Off)
         .scrollable(ScrollDirection.Vertical)
-
         ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto }) {
           Text()
             .width(20)
@@ -150,7 +149,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/1pDW5_wvTNOKrQ1AqvdaIw/zh-cn_image_0000002571292435.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025726Z&HW-CC-Expire=86400&HW-CC-Sign=56367D4B9EEB4625049F0BD450FAAEDC141BC8E7B81629C0174FC694F3D8AE0B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/1pDW5_wvTNOKrQ1AqvdaIw/zh-cn_image_0000002571292435.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025306Z&HW-CC-Expire=86400&HW-CC-Sign=415B414E4481D03DDB723254DCEB0CFBDF3429339A03D31064029C101CB3E39D)
 
 ## 示例2（不设置子节点）
 
@@ -158,14 +157,12 @@ struct ScrollBarExample {
 
 ```typescript
 import { ColorMetrics } from '@kit.ArkUI'
-
 @Entry
 @Component
 struct ScrollBarExample {
   private scroller: Scroller = new Scroller();
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   @State scrollBarColor: ColorMetrics = ColorMetrics.rgba(24, 35, 48, 0.4);
-
   build() {
     Column() {
       Stack({ alignContent: Alignment.End }) {
@@ -188,7 +185,6 @@ struct ScrollBarExample {
         .width('90%')
         .scrollBar(BarState.Off)
         .scrollable(ScrollDirection.Vertical)
-
         ScrollBar({ scroller: this.scroller, direction: ScrollBarDirection.Vertical, state: BarState.Auto })
           .scrollBarColor(this.scrollBarColor)
       }
@@ -197,7 +193,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/9jKeyqoTQliY2109DRkyAA/zh-cn_image_0000002540612488.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025726Z&HW-CC-Expire=86400&HW-CC-Sign=62BFA3CE31C49F738F590ACD39F41CC35DFB614973C2F7831215AC8C80EA57B7)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/9jKeyqoTQliY2109DRkyAA/zh-cn_image_0000002540612488.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025306Z&HW-CC-Expire=86400&HW-CC-Sign=963776E577AA462A52407079E23AF4011EE9DD0040434D31A56F605FBE2BCC3D)
 
 ## 示例3（支持嵌套滚动）
 
@@ -205,14 +201,12 @@ struct ScrollBarExample {
 
 ```typescript
 import { ColorMetrics } from '@kit.ArkUI'
-
 @Entry
 @Component
 struct StickyNestedScroll {
   listScroller: Scroller = new Scroller();
   @State array: number[] = [];
   @State scrollBarColor: ColorMetrics = ColorMetrics.rgba(24, 35, 48, 0.4);
-
   @Styles
   listCard() {
     .backgroundColor(Color.White)
@@ -220,7 +214,6 @@ struct StickyNestedScroll {
     .width('100%')
     .borderRadius(12)
   }
-
   build() {
     Stack() {
       Scroll() {
@@ -253,14 +246,12 @@ struct StickyNestedScroll {
       .scrollBar(BarState.Off)
       .width('100%')
       .height('100%')
-
       ScrollBar({ scroller: this.listScroller })
         .position({ right: 0 })
         .enableNestedScroll(true)
         .scrollBarColor(this.scrollBarColor)
     }
   }
-
   aboutToAppear() {
     for (let i = 0; i < 15; i++) {
       this.array.push(i);
@@ -269,4 +260,4 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/yn9rf1plTHaS-ePdjuIXDQ/zh-cn_image_0000002571172483.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025726Z&HW-CC-Expire=86400&HW-CC-Sign=C1F1FF8A45396036313EBDE178CB7E81108ECC8900F3E129FD7503D4450EF3C0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/yn9rf1plTHaS-ePdjuIXDQ/zh-cn_image_0000002571172483.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025306Z&HW-CC-Expire=86400&HW-CC-Sign=13088E0FC644BD3B9456AE8A142A1345EA3C581281E4186FB12FABD5F93F4D5A)

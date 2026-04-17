@@ -36,7 +36,6 @@ animateToImmediately(value: AnimateParam , event: () => void): void
 该示例主要演示通过animateToImmediately接口来实现显式动画立即下发。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct AnimateToImmediatelyExample {
@@ -44,6 +43,7 @@ struct AnimateToImmediatelyExample {
   @State heightSize: number = 100;
   @State opacitySize: number = 0;
   private flag: boolean = true;
+
   build() {
     Column() {
       Column()
@@ -90,4 +90,4 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Ud0l4gpqQRKSK8VlyHz5Kw/zh-cn_image_0000002571172843.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025842Z&HW-CC-Expire=86400&HW-CC-Sign=FF161D6E25B5AE33185452A170326FB5C05C77F6CB8D6135D58D3E3E0B5C5AB1)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Ud0l4gpqQRKSK8VlyHz5Kw/zh-cn_image_0000002571172843.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025442Z&HW-CC-Expire=86400&HW-CC-Sign=F0271315A077A5CB8D864B3547EC239902EED8F6973A3AB838E0934F17EEF674)

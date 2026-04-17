@@ -37,23 +37,21 @@ zIndex(value: number): T
 该示例通过zIndex设置组件堆叠顺序。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ZIndexExample {
   build() {
     Column() {
       Stack() {
-        // Stack会重叠组件，默认后定义的在最上面，具有较高zIndex值的元素在zIndex较小的元素前面
-        // Text1设置zIndex值为2
+
         Text('1, zIndex(2)')
           .size({ width: '40%', height: '30%' }).backgroundColor(0xbbb2cb)
           .zIndex(2)
-        // Text2设置zIndex值为1
+
         Text('2, default zIndex(1)')
           .size({ width: '70%', height: '50%' }).backgroundColor(0xd2cab3).align(Alignment.TopStart)
           .zIndex(1)
-        // Text3设置zIndex值为0
+
         Text('3, zIndex(0)')
           .size({ width: '90%', height: '80%' }).backgroundColor(0xc1cbac).align(Alignment.TopStart)
           .zIndex(0)
@@ -65,35 +63,35 @@ struct ZIndexExample {
 
 Stack容器内子组件不设置zIndex的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/QncgXQc8RVil8md912kKiw/zh-cn_image_0000002540612322.png?HW-CC-KV=V1&HW-CC-Date=20260416T025651Z&HW-CC-Expire=86400&HW-CC-Sign=C14DA05CF24464AAEDDE6D5DCB8C2E7AC6A24A4D8746E11C4876F48B0F2F45DF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/QncgXQc8RVil8md912kKiw/zh-cn_image_0000002540612322.png?HW-CC-KV=V1&HW-CC-Date=20260417T025223Z&HW-CC-Expire=86400&HW-CC-Sign=72A785717E208A3F193914741A06743F55920E452A7BA4952BA8E4D8F8E5DDB1)
 
 Stack容器子组件设置zIndex后的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hsYx0mO4RBuVS0CxcCq1qw/zh-cn_image_0000002571172317.png?HW-CC-KV=V1&HW-CC-Date=20260416T025651Z&HW-CC-Expire=86400&HW-CC-Sign=1331D513777A878D773536583982C536AEE96BA4F1785979FF0FF086E97CB441)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/hsYx0mO4RBuVS0CxcCq1qw/zh-cn_image_0000002571172317.png?HW-CC-KV=V1&HW-CC-Date=20260417T025223Z&HW-CC-Expire=86400&HW-CC-Sign=BAC47F200568075DF7E1CDCF66A551566BE0E38D40A909BD1E18ECA5F1849197)
 
 ### 示例2（动态修改zIndex属性）
 
 该示例使用Button组件动态修改zIndex属性。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ZIndexExample {
   @State zIndex_: number = 0
+
   build() {
     Column() {
-      // 点击Button改变zIndex后，在点击Button前的层级顺序上根据zIndex进行稳定排序。
+
       Button("change Text2 zIndex")
         .onClick(() => {
           this.zIndex_ = (this.zIndex_ + 1) % 3;
         })
       Stack() {
-        // Text1设置zIndex值为1
+
         Text('1, zIndex(1)')
           .size({ width: '70%', height: '50%' }).backgroundColor(0xd2cab3).align(Alignment.TopStart)
           .zIndex(1)
-        // Text2设置zIndex默认值为0
+
         Text('2, default zIndex(0), now zIndex:' + this.zIndex_)
           .size({ width: '90%', height: '80%' }).backgroundColor(0xc1cbac).align(Alignment.TopStart)
           .zIndex(this.zIndex_)
@@ -105,40 +103,39 @@ struct ZIndexExample {
 
 不点击Button修改zIndex值的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/d4fDPcbdQAKTZLleZfUicw/zh-cn_image_0000002540771976.png?HW-CC-KV=V1&HW-CC-Date=20260416T025651Z&HW-CC-Expire=86400&HW-CC-Sign=5C6BCAF103DB0E2FD8A243017883F4B3612BCCDB6D05A5F08A69CD9D995ED501)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/d4fDPcbdQAKTZLleZfUicw/zh-cn_image_0000002540771976.png?HW-CC-KV=V1&HW-CC-Date=20260417T025223Z&HW-CC-Expire=86400&HW-CC-Sign=249E7B4F6C9F14CB76E9E5910C7E524E6027DE06938DB3292DB26DE6246DCF87)
 
 点击Button动态修改zIndex，使Text1和Text2的zIndex相等，因为在点击Button前的层级顺序上根据zIndex进行稳定排序，层级顺序不发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/45ItYWVFT1eyT4-0Mlmy8Q/zh-cn_image_0000002571292271.png?HW-CC-KV=V1&HW-CC-Date=20260416T025651Z&HW-CC-Expire=86400&HW-CC-Sign=6F2F45C05E81D1AD1186B2B11718BEDEE2FC85D401C93F1508E4380C87F1AE00)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/45ItYWVFT1eyT4-0Mlmy8Q/zh-cn_image_0000002571292271.png?HW-CC-KV=V1&HW-CC-Date=20260417T025223Z&HW-CC-Expire=86400&HW-CC-Sign=F13F1799EB0E172F796DE2589123A1A7BC03FA6C0942DBE0B40AD5BFE00E9550)
 
 点击Button动态修改zIndex，使Text2的zIndex大于Text1，层级顺序发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/bU6P7p5BRtC9IWxel-00kQ/zh-cn_image_0000002540612324.png?HW-CC-KV=V1&HW-CC-Date=20260416T025651Z&HW-CC-Expire=86400&HW-CC-Sign=DDEDA057F7D03771AE4BFD7F446554871039C9A8F5CB6F3292670F772FFEB241)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/bU6P7p5BRtC9IWxel-00kQ/zh-cn_image_0000002540612324.png?HW-CC-KV=V1&HW-CC-Date=20260417T025223Z&HW-CC-Expire=86400&HW-CC-Sign=D43D6BC9461EAAACBF43756E8A2E964E9CF282F6DD1DAD9D63AED11AE5CA05F6)
 
 ### 示例3（设置不同容器内组件的zIndex属性）
 
 该示例在不同容器内设置zIndex属性。其中，Text1、Text2和Text3在不同的Stack容器内。虽然Text3的zIndex值最小，但Text1、Text2仍无法按照预期显示在Text3的上方。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ZIndexExample {
   build() {
     Stack() {
       Stack() {
-        // Text1设置zIndex值为2
+
         Text('1, zIndex(2)')
           .size({ width: '40%', height: '30%' }).backgroundColor(0xbbb2cb)
           .zIndex(2)
-        // Text2设置zIndex值为1
+
         Text('2, default zIndex(1)')
           .size({ width: '70%', height: '50%' }).backgroundColor(0xd2cab3).align(Alignment.TopStart)
           .zIndex(1)
       }.width('100%').height(200)
+
       Stack() {
-        // zIndex在不同容器的组件中无法生效，Text3会显示在最上方
-        // Text3设置zIndex值为0
+
         Text('3, zIndex(0)')
           .size({ width: '90%', height: '80%' }).backgroundColor(0xc1cbac).align(Alignment.TopStart)
           .zIndex(0)
@@ -148,4 +145,4 @@ struct ZIndexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/jl_Iu1-gR2uJlKiecV30IQ/zh-cn_image_0000002571172319.png?HW-CC-KV=V1&HW-CC-Date=20260416T025651Z&HW-CC-Expire=86400&HW-CC-Sign=13B6197ADFD60FBABFF275F048AE107DE9BE01E204F7B496F9B0ACED67098D6C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/jl_Iu1-gR2uJlKiecV30IQ/zh-cn_image_0000002571172319.png?HW-CC-KV=V1&HW-CC-Date=20260417T025223Z&HW-CC-Expire=86400&HW-CC-Sign=A5E46112FED861B56996E10A0FA567612AFBC8EFD7C10AAF5CDBC9380307B88F)

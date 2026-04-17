@@ -93,4 +93,4 @@ export struct DialogBoxLayer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Nj4VRiG6ToWRMxZ-j2Xb4g/zh-cn_image_0000002540771200.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025608Z&HW-CC-Expire=86400&HW-CC-Sign=E52CEA2AA164F3B298C431755FC6A4410F729F144BE79D6F33D79D3D6F8FA331)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Nj4VRiG6ToWRMxZ-j2Xb4g/zh-cn_image_0000002540771200.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025130Z&HW-CC-Expire=86400&HW-CC-Sign=367D5A3A70605636961181E9B41EB6F52697623BD0DC86F0C7E704F4738EFE97)

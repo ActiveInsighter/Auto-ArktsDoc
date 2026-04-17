@@ -59,6 +59,7 @@ resizeable(value: boolean)
 RowSplit的基本用法。设置可拖动的、横向布局的子组件。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct RowSplitExample {
@@ -72,11 +73,11 @@ struct RowSplitExample {
         Text('4').width('10%').height(100).backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
         Text('5').width('10%').height(100).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
-      .resizeable(true)
+      .resizeable(true) // 可拖拽
       .width('90%').height(100)
     }.width('100%').margin({ top: 5 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/HYkmt8VEQHiphXHyd4Sqnw/zh-cn_image_0000002571172435.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025709Z&HW-CC-Expire=86400&HW-CC-Sign=546C7BF23EA92529C5E865D0E57668C9D354622F92D7605197BF833C821A8075)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/HYkmt8VEQHiphXHyd4Sqnw/zh-cn_image_0000002571172435.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025246Z&HW-CC-Expire=86400&HW-CC-Sign=9FF533E4DA52CE39D0D52817241279570DE571BCCA58172901C5D16584146519)

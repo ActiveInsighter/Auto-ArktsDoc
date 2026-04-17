@@ -980,7 +980,7 @@ struct TodoList {
 
 ### 效果图展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/MUTfn4xHQoeEoQfDPnknjg/zh-cn_image_0000002540770896.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025645Z&HW-CC-Expire=86400&HW-CC-Sign=5B8D93572C4EEB939EC11D5E39B0E0E1EFBD2B84F5268ECB42008F67580D2784)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/MUTfn4xHQoeEoQfDPnknjg/zh-cn_image_0000002540770896.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025156Z&HW-CC-Expire=86400&HW-CC-Sign=C0CFDC519AA6079B24FF334F8059117643A1D1BC03EF0260AC997CFAA5E3E4C7)
 
 ## 重构代码以符合MVVM架构
 

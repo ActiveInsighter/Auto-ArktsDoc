@@ -576,7 +576,7 @@ fontFeature(value: string)
 
 fontFeature属性列表：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/X7V6h4ZERnCvc7CuWRRxfQ/zh-cn_image_0000002571292513.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=9C88E97A3BDC37A30B25F5BD3E6BA2A68528425C0D78E5FCA893F11E933D6753)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/X7V6h4ZERnCvc7CuWRRxfQ/zh-cn_image_0000002571292513.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=F39CB28304B4D0F5D1FFEC7B648463479CF205B1E68891E4E3B15EBD98D63BCC)
 
 设置fontFeature属性，fontFeature是OpenType字体的高级排版能力，如支持连字、数字等宽等特性，一般用在自定义字体中，其能力需要字体本身支持。
 
@@ -1547,7 +1547,6 @@ Marquee状态回调的返回值。
 该示例通过[textAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textalign)、[lineHeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#lineheight)、[baselineOffset](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#baselineoffset)、[halfLeading](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#halfleading12)（从API version 12开始）属性展示了文本布局的效果。
 
 ```typescript
-// xxx.ets
 @Extend(Text)
 function style(TextAlign: TextAlign) {
   .textAlign(TextAlign)
@@ -1557,6 +1556,7 @@ function style(TextAlign: TextAlign) {
   .width('100%')
   .margin(5)
 }
+
 @Entry
 @Component
 struct TextExample1 {
@@ -1564,17 +1564,18 @@ struct TextExample1 {
   @State changeDecorationIndex: number = 0;
   @State textAlign: TextAlign[] = [TextAlign.Start, TextAlign.Center, TextAlign.End];
   @State textAlignStr: string[] = ['Start', 'Center', 'End'];
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-      // 设置文本水平方向对齐方式
-      // 单行文本
+
       Text('textAlign').fontSize(9).fontColor(0xCCCCCC)
       Text(`TextAlign set to ${this.textAlignStr[this.changeTextAlignIndex]}.`)
         .style(this.textAlign[this.changeTextAlignIndex])
-      // 多行文本
+
       Text(`This is the text content with textAlign set to ${this.textAlignStr[this.changeTextAlignIndex]}.`)
         .style(this.textAlign[this.changeTextAlignIndex])
         .margin(5)
+
       Row() {
         Button('当前TextAlign类型：' + this.textAlignStr[this.changeTextAlignIndex]).onClick(() => {
           this.changeTextAlignIndex++;
@@ -1583,14 +1584,14 @@ struct TextExample1 {
           }
         })
       }.justifyContent(FlexAlign.Center).width('100%')
-      // 设置文本行高
+
       Text('lineHeight').fontSize(9).fontColor(0xCCCCCC)
       Text('This is the text with the line height set. This is the text with the line height set.')
         .style(TextAlign.Start)
       Text('This is the text with the line height set. This is the text with the line height set.')
         .style(TextAlign.Start)
         .lineHeight(20)
-      // 设置文本基线偏移
+
       Text('baselineOffset').fontSize(9).fontColor(0xCCCCCC)
       Text('This is the text content with baselineOffset 0.')
         .baselineOffset(0)
@@ -1601,7 +1602,7 @@ struct TextExample1 {
       Text('This is the text content with baselineOffset -20.')
         .baselineOffset(-20)
         .style(TextAlign.Start)
-      // 设置文本是否居中对齐
+
       Text('halfLeading').fontSize(9).fontColor(0xCCCCCC)
       Text("This is the text with the halfLeading set.")
         .lineHeight(60)
@@ -1616,14 +1617,13 @@ struct TextExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/XhxlRXDRTJel7x4wcmTlIA/zh-cn_image_0000002540612566.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=C2D17845DAB834F74C7420EBF34FEA4DACD96016FDA79802A36EDA4151BD612C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/XhxlRXDRTJel7x4wcmTlIA/zh-cn_image_0000002540612566.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=49B4BB7A8F0A6F7165A9831FBF0B01262E19F6AF1EA80B69AB7DC3841F4DE145)
 
 ### 示例2（设置文本样式）
 
 该示例通过[decoration](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#decoration)、[letterSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#letterspacing)、[textCase](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textcase)、[fontFamily](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#fontfamily)、[textShadow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textshadow10)（从API version 10开始）、fontStyle、[textIndent](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textindent10)（从API version 10开始）、[fontWeight](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#fontweight12)（从API version 12开始，支持设置字重无极调节配置项）属性展示了不同样式的文本效果。
 
 ```typescript
-// xxx.ets
 @Extend(Text)
 function style() {
   .font({ size: 12 }, { enableVariableFontWeight: true })
@@ -1632,6 +1632,7 @@ function style() {
   .width('100%')
   .margin(5)
 }
+
 @Entry
 @Component
 struct TextExample2 {
@@ -1642,6 +1643,7 @@ struct TextExample2 {
   @State textDecorationStyle: TextDecorationStyle[] =
     [TextDecorationStyle.SOLID, TextDecorationStyle.DOTTED, TextDecorationStyle.WAVY];
   @State textDecorationStyleStr: string[] = ['SOLID', 'DOTTED', 'WAVY'];
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
       Text('decoration').fontSize(9).fontColor(0xCCCCCC)
@@ -1653,6 +1655,7 @@ struct TextExample2 {
         })
         .style()
         .margin(5)
+
       Row() {
         Button('decoration type：' + this.textDecorationTypeStr[this.changeDecorationIndex] + ' & ' +
         this.textDecorationStyleStr[this.changeDecorationIndex]).onClick(() => {
@@ -1662,7 +1665,7 @@ struct TextExample2 {
           }
         })
       }.justifyContent(FlexAlign.Center).width('100%')
-      // 文本字符间距
+
       Text('letterSpacing').fontSize(9).fontColor(0xCCCCCC)
       Text('This is the text content with letterSpacing 0.')
         .letterSpacing(0)
@@ -1673,25 +1676,28 @@ struct TextExample2 {
       Text('This is the text content with letterSpacing -1.')
         .letterSpacing(-1)
         .style()
+
       Text('textCase').fontSize(9).fontColor(0xCCCCCC)
       Text('This is the text content with textCase set to Normal.')
         .textCase(TextCase.Normal)
         .style()
-      // 文本全小写展示
+
       Text('This is the text content with textCase set to LowerCase.')
         .textCase(TextCase.LowerCase)
         .style()
-      // 文本全大写展示
+
       Text('This is the text content with textCase set to UpperCase.')
         .textCase(TextCase.UpperCase)
         .style()
+
       Text('fontFamily').fontSize(9).fontColor(0xCCCCCC)
-      // 设置字体列表
+
       Text('This is the text content with fontFamily')
         .style()
         .fontFamily('HarmonyOS Sans')
+
       Text('textShadow').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文字阴影效果
+
       Text('textShadow')
         .style()
         .textAlign(TextAlign.Center)
@@ -1702,37 +1708,40 @@ struct TextExample2 {
           offsetX: 0,
           offsetY: 0
         })
+
       Text('fontStyle').fontSize(9).fontColor(0xCCCCCC)
-      // 设置字体样式
+
       Text('This is the text content with fontStyle set to Italic')
         .style()
         .fontStyle(FontStyle.Italic)
       Text('This is the text content with fontStyle set to Normal')
         .style()
         .fontStyle(FontStyle.Normal)
+
       Text('textIndent').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文字缩进
+
       Text('This is the text content with textIndent 30')
         .style()
         .textIndent(30)
+
       Text('fontWeight').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文本的字体粗细
+
       Text('This is the text content with fontWeight 800')
         .style()
         .fontWeight('800', { enableVariableFontWeight: true })
+
     }.width('100%').padding({ left: 35, right: 35 })
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/aIcgxG5aQZySGlpH4DNmIQ/zh-cn_image_0000002571172561.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=1B0E40286EE82FBB9087E11C225B2E3ABE5139660EAB2829F81B41D15E27B46E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/aIcgxG5aQZySGlpH4DNmIQ/zh-cn_image_0000002571172561.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=0772FAEB8FFDA0ED6C777A2F9B3879A6C684F0F53B3F239A7A3A3EE7808CC33C)
 
 ### 示例3（设置文本超长省略）
 
 该示例通过[maxLines](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#maxlines)、[textOverflow](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textoverflow)、[ellipsisMode](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#ellipsismode11)（从API version 11开始）属性展示了文本超长省略以及调整省略位置的效果，同时，可以通过[marqueeOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#marqueeoptions18)（从API version 18开始）配置跑马灯模式下的配置项以及跑马灯动画进行到特定的阶段时，触发的回调[onMarqueeStateChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#onmarqueestatechange18)（从API version 18开始）。
 
 ```typescript
-// xxx.ets
 @Extend(Text)
 function style() {
   .textAlign(TextAlign.Center)
@@ -1742,6 +1751,7 @@ function style() {
   .width('100%')
   .margin(5)
 }
+
 @Entry
 @Component
 struct TextExample3 {
@@ -1750,22 +1760,24 @@ struct TextExample3 {
   @State ellipsisModeIndex: number = 0;
   @State ellipsisMode: EllipsisMode[] = [EllipsisMode.START, EllipsisMode.CENTER, EllipsisMode.END];
   @State ellipsisModeStr: string[] = ['START', 'CENTER', 'END'];
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-      // 文本超长时显示方式
+
       Text('TextOverflow+maxLines').fontSize(9).fontColor(0xCCCCCC)
-      // 超出maxLines截断内容展示
+
       Text('This is the setting of textOverflow to Clip text content This is the setting of textOverflow to None text content. This is the setting of textOverflow to Clip text content This is the setting of textOverflow to None text content.')
         .textOverflow({ overflow: TextOverflow.Clip })
         .maxLines(1)
         .style()
-      // 超出maxLines展示省略号
+
       Text('This is set textOverflow to Ellipsis text content This is set textOverflow to Ellipsis text content.')
         .textOverflow({ overflow: TextOverflow.Ellipsis })
         .maxLines(1)
         .style()
+
       Text('marquee').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文本超长时以跑马灯的方式展示
+
       Text('This is the text with the text overflow set marquee')
         .textOverflow({ overflow: TextOverflow.MARQUEE })
         .style()
@@ -1780,20 +1792,22 @@ struct TextExample3 {
         })
         .onMarqueeStateChange((state: MarqueeState) => {
           if (state == MarqueeState.START) {
-            // "收到状态: START";
+
           } else if (state == MarqueeState.BOUNCE) {
-            // "收到状态: BOUNCE";
+
           } else if (state == MarqueeState.FINISH) {
-            // "收到状态: FINISH";
+
           }
         })
+
       Text('ellipsisMode').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文本超长时省略号的位置
+
       Text(this.text)
         .textOverflow({ overflow: TextOverflow.Ellipsis })
         .ellipsisMode(this.ellipsisMode[this.ellipsisModeIndex])
         .maxLines(1)
         .style()
+
       Row() {
         Button('更改省略号位置：' + this.ellipsisModeStr[this.ellipsisModeIndex]).onClick(() => {
           this.ellipsisModeIndex++;
@@ -1807,14 +1821,13 @@ struct TextExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/c5z98pAjSIGS_pDu1bcWlQ/zh-cn_image_0000002540772220.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=68587E642B91EBD98C876E86894CA012889EE587D752322A2D85257C653E20EA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/c5z98pAjSIGS_pDu1bcWlQ/zh-cn_image_0000002540772220.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=622767CA5C2A215118C0AC7662B3449437F599F73259BC7EC18EB836D5FAEB18)
 
 ### 示例4（设置文本断行及折行）
 
 该示例通过[wordBreak](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#wordbreak11)（从API version 11开始）、[lineBreakStrategy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#linebreakstrategy12)（从API version 12开始）、[clip](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-sharp-clipping#clip12)属性展示了文本在不同断行、折行规则下的效果以及文本超长时是否截断。
 
 ```typescript
-// xxx.ets
 @Extend(Text)
 function style() {
   .fontSize(12)
@@ -1823,6 +1836,7 @@ function style() {
   .width('100%')
   .margin(5)
 }
+
 @Entry
 @Component
 struct TextExample4 {
@@ -1840,15 +1854,17 @@ struct TextExample4 {
   @State lineBreakStrategy: LineBreakStrategy[] =
     [LineBreakStrategy.GREEDY, LineBreakStrategy.HIGH_QUALITY, LineBreakStrategy.BALANCED];
   @State lineBreakStrategyStr: string[] = ['GREEDY', 'HIGH_QUALITY', 'BALANCED'];
+
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
       Text('wordBreak').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文本断行规则
+
       Text(this.text)
         .maxLines(2)
         .textOverflow({ overflow: TextOverflow.Ellipsis })
         .wordBreak(this.wordBreak[this.wordBreakIndex])
         .style()
+
       Row() {
         Button('当前wordBreak模式：' + this.wordBreakStr[this.wordBreakIndex]).onClick(() => {
           this.wordBreakIndex++;
@@ -1857,8 +1873,9 @@ struct TextExample4 {
           }
         })
       }
+
       Text('clip').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文本是否超长截断
+
       Text('This is set wordBreak to WordBreak text Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu.')
         .wordBreak(WordBreak.NORMAL)
         .maxLines(2)
@@ -1869,8 +1886,9 @@ struct TextExample4 {
           this.textClip = !this.textClip;
         })
       }
+
       Text('lineBreakStrategy').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文本折行规则
+
       Text(this.text2)
         .lineBreakStrategy(this.lineBreakStrategy[this.lineBreakStrategyIndex])
         .style()
@@ -1887,14 +1905,13 @@ struct TextExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/uNSvbOkUSPqDUZMmyXq3IQ/zh-cn_image_0000002571292515.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=F2CE763096EABB8F3B7534ADE705C4F53C3DC0BC2A5ADFDFFB49D7DAB30D25F8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/uNSvbOkUSPqDUZMmyXq3IQ/zh-cn_image_0000002571292515.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=3DFC2D511EAEBB6C185BD0A94F8EEAED61A34FFAF03E258D58E66508D9A122C0)
 
 ### 示例5（设置文本选中和复制）
 
 该示例通过[selection](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#selection11)（从API version 11开始）、[onCopy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#oncopy11)（从API version 11开始）、[draggable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#draggable9)（从API version 9开始）、[caretColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#caretcolor14)（从API version 14开始）、[selectedBackgroundColor](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#selectedbackgroundcolor14)（从API version 14开始）接口展示了文本选中、触发复制回调、设置文本选中可拖拽以及修改手柄和选中颜色的效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample5 {
@@ -1903,6 +1920,7 @@ struct TextExample5 {
     'This is set selection to Selection text content This is set selection to Selection text content.';
   @State start: number = 0;
   @State end: number = 20;
+
   build() {
     Column() {
       Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
@@ -1922,7 +1940,7 @@ struct TextExample5 {
           .enableHapticFeedback(true)
         Button('Set text selection')
           .onClick(() => {
-            // 变更文本选中起始点、终点
+
             this.start = 10;
             this.end = 30;
           })
@@ -1933,14 +1951,13 @@ struct TextExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/YNWL7ueQT2uaLLHhXdWiqg/zh-cn_image_0000002540612568.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=6060FDE223A3E68E22B45EE4B935E2265861FA193E0B631F20A98F90AAB60E7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/YNWL7ueQT2uaLLHhXdWiqg/zh-cn_image_0000002540612568.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=921BDFAE665191A814A942FCE5BCF389692FB75F7FFE9F8364F645BDCE893683)
 
 ### 示例6（设置文本自适应和缩放倍数限制范围）
 
 该示例通过[heightAdaptivePolicy](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#heightadaptivepolicy10)（从API version 10开始）属性展示文本自适应效果以及通过[minFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#minfontscale12)（从API version 12开始）、[maxFontScale](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#maxfontscale12)（从API version 12开始）展示设置字体缩放倍数限制范围。
 
 ```typescript
-// xxx.ets
 @Extend(Text)
 function style(HeightAdaptivePolicy: TextHeightAdaptivePolicy) {
   .width('80%')
@@ -1953,12 +1970,13 @@ function style(HeightAdaptivePolicy: TextHeightAdaptivePolicy) {
   .textOverflow({ overflow: TextOverflow.Ellipsis })
   .heightAdaptivePolicy(HeightAdaptivePolicy)
 }
+
 @Entry
 @Component
 struct TextExample6 {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center }) {
-      // 设置文本自适应高度的方式
+
       Text('heightAdaptivePolicy').fontSize(9).fontColor(0xCCCCCC)
       Text('This is the text with the height adaptive policy set.')
         .style(TextHeightAdaptivePolicy.MAX_LINES_FIRST)
@@ -1966,6 +1984,7 @@ struct TextExample6 {
         .style(TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST)
       Text('This is the text with the height adaptive policy set.')
         .style(TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST)
+
       Text('fontScale').fontSize(9).fontColor(0xCCCCCC)
       Text('This is the text content with minFontScale set to 1 and maxFontScale set to 1.2')
         .style(TextHeightAdaptivePolicy.MAX_LINES_FIRST)
@@ -1976,14 +1995,13 @@ struct TextExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/rj6Hpej5Rg29t8q9kRzsmQ/zh-cn_image_0000002571172563.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=D47F3288009A9352AC76F14F79380EAB8B77F00E6F1EBF7B4D4CA18AFC181F60)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/rj6Hpej5Rg29t8q9kRzsmQ/zh-cn_image_0000002571172563.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=E62951882CA15BD17AE2EFAB6848520ADA101568BAEA6A1B1A94CFBB793C43E1)
 
 ### 示例7（设置文本识别）
 
 从API version 11开始，该示例通过[enableDataDetector](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#enabledatadetector11)、[dataDetectorConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#datadetectorconfig11)接口实现了文本识别的功能。当[enableDataDetector](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#enabledatadetector11)设为true且不设置[dataDetectorConfig](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#datadetectorconfig11)时，系统会识别所有实体类型，并将识别实体的字体颜色改为蓝色、添加蓝色下划线。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample7 {
@@ -1994,6 +2012,7 @@ struct TextExample7 {
   @State datetime: string = 'XX年XX月XX日XXXX';
   @State enableDataDetector: boolean = true;
   @State types: TextDataDetectorType[] = [];
+
   build() {
     Row() {
       Column() {
@@ -2033,8 +2052,7 @@ struct TextExample7 {
           .copyOption(CopyOptions.LocalDevice)
       }
       .width('100%')
-      // 使用parallelGesture中的TapGesture替代onClick属性，达到非冒泡事件类似冒泡
-      // 的效果，点击Text组件区域Column上的点击事件正常响应
+
       .parallelGesture(TapGesture().onAction((event: GestureEvent) => {
         console.info('test column onClick timestamp:' + event.timestamp);
       }), GestureMask.Normal)
@@ -2044,25 +2062,25 @@ struct TextExample7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/a_S7EyGsQI6DJ0TkC-FA2w/zh-cn_image_0000002540772222.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=0420CB3B193A8D008DF8178DC7CAE7BCF4C5333CBA40BF3C682139598336E273)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/a_S7EyGsQI6DJ0TkC-FA2w/zh-cn_image_0000002540772222.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=37AF20AC627D9F8B29FE2E65783C38C5F23CDF71FFA4739614BCEFC54EEDA509)
 
 ### 示例8（文本绑定自定义菜单）
 
 从API version 11开始，该示例通过[bindSelectionMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#bindselectionmenu11)、[onTextSelectionChange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#ontextselectionchange11)、[closeSelectionMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#closeselectionmenu11)接口实现了文本绑定自定义菜单的功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample8 {
   controller: TextController = new TextController();
   options: TextOptions = { controller: this.controller };
+
   build() {
     Column() {
       Column() {
         Text(undefined, this.options) {
           Span('Hello World')
-          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
           ImageSpan($r('app.media.startIcon'))
             .width(50)
             .height(50)
@@ -2101,12 +2119,13 @@ struct TextExample8 {
     }
     .height('100%')
   }
+
   @Builder
   RightClickTextCustomMenu() {
     Column() {
       Menu() {
         MenuItemGroup() {
-          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
           MenuItem({ startIcon: $r('app.media.startIcon'), content: "Right Click Menu 1", labelInfo: "" })
             .onClick((event) => {
               this.controller.closeSelectionMenu();
@@ -2118,12 +2137,13 @@ struct TextExample8 {
       .MenuStyles()
     }
   }
+
   @Builder
   LongPressImageCustomMenu() {
     Column() {
       Menu() {
         MenuItemGroup() {
-          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
           MenuItem({ startIcon: $r('app.media.startIcon'), content: "Long Press Image Menu 1", labelInfo: "" })
             .onClick((event) => {
               this.controller.closeSelectionMenu();
@@ -2135,12 +2155,13 @@ struct TextExample8 {
       .MenuStyles()
     }
   }
+
   @Builder
   SelectMixCustomMenu() {
     Column() {
       Menu() {
         MenuItemGroup() {
-          // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
           MenuItem({ startIcon: $r('app.media.startIcon'), content: "Select Mixed Menu 1", labelInfo: "" })
             .onClick((event) => {
               this.controller.closeSelectionMenu();
@@ -2153,6 +2174,7 @@ struct TextExample8 {
     }
   }
 }
+
 @Extend(Menu)
 function MenuStyles() {
   .radius($r('sys.float.ohos_id_corner_radius_card'))
@@ -2161,28 +2183,29 @@ function MenuStyles() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CECT1nYJQZarpOG8xa5fbA/zh-cn_image_0000002571292517.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=EA3C7DFE6089868FC8CE418113CDDF90EC54C2614B9EC433B65F0C626A8DEE76)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CECT1nYJQZarpOG8xa5fbA/zh-cn_image_0000002571292517.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=83008A75FEFF80B7CE2A9E81DD45D6663CAC7DAA2D4750537F9A041840A2C8A9)
 
 ### 示例9（设置文本特性与行间距）
 
 从API version 12开始，该示例通过[fontFeature](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#fontfeature12)、[lineSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#linespacing12)接口展示了设置文本特性与行间距的效果，同时，配置[LineSpacingOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#linespacingoptions20对象说明)中的onlyBetweenLines（从API version 20开始）属性，可以设置文本的行间距，是否仅在行与行之间生效。
 
 ```typescript
-// xxx.ets
 import { LengthMetrics } from '@kit.ArkUI';
+
 @Extend(Text)
 function style() {
   .fontSize(12)
   .border({ width: 1 })
   .width('100%')
 }
+
 @Entry
 @Component
 struct TextExample9 {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
       Text('lineSpacing').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文本行间距
+
       Text('This is a context with no lineSpacing set.')
         .lineSpacing(undefined)
         .style()
@@ -2204,8 +2227,9 @@ struct TextExample9 {
       Text('The line spacing of this context is set to 20_px, and the spacing is effective only between the lines.')
         .lineSpacing(LengthMetrics.px(20), { onlyBetweenLines: true })
         .style()
+
       Text('fontFeature').fontSize(9).fontColor(0xCCCCCC)
-      // 设置文本特性
+
       Text('This is frac on : 1/2 2/3 3/4')
         .fontFeature("\"frac\" on")
         .style()
@@ -2217,15 +2241,15 @@ struct TextExample9 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Ij5tIydQSH2D-H-mCXghMw/zh-cn_image_0000002540612570.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=E28C256DD227EB26BCDC5174AB17C1C73D209297CA8E6AE7D7EF898131CFED88)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Ij5tIydQSH2D-H-mCXghMw/zh-cn_image_0000002540612570.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=23FDB76D13A1EE7A63F6258046C7F0B3D23F687881E5858BDEF7E242E2A80ABA)
 
 ### 示例10（获取文本信息）
 
 从API version 12开始，该示例通过[getLayoutManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#getlayoutmanager12)接口调用文本的布局管理对象获取文本信息，同时，[LayoutManager](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#layoutmanager12)中的[getRectsForRange](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#getrectsforrange14)（从API version 14开始）接口可以获取指定矩形宽度和高度下，文本中任意区间范围内字符或占位符的绘制区域信息。
 
 ```typescript
-// xxx.ets
 import { text } from '@kit.ArkGraphics2D';
+
 @Entry
 @Component
 struct TextExample10 {
@@ -2236,6 +2260,7 @@ struct TextExample10 {
   controller: TextController = new TextController();
   @State textStr: string =
     'Hello World! 您好，世界！';
+
   build() {
     Scroll() {
       Column() {
@@ -2251,8 +2276,10 @@ struct TextExample10 {
             let layoutManager: LayoutManager = this.controller.getLayoutManager();
             this.lineCount = "LineCount: " + layoutManager.getLineCount();
           })
+
         Text('LineCount').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
         Text(this.lineCount)
+
         Text('GlyphPositionAtCoordinate').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
         Button("相对组件坐标[150,50]字形信息")
           .onClick(() => {
@@ -2264,6 +2291,7 @@ struct TextExample10 {
           })
           .margin({ bottom: 20, top: 10 })
         Text(this.glyphPositionAtCoordinate)
+
         Text('LineMetrics').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
         Button("首行行信息、文本样式信息、以及字体属性信息")
           .onClick(() => {
@@ -2277,6 +2305,7 @@ struct TextExample10 {
           })
           .margin({ bottom: 20, top: 10 })
         Text(this.lineMetrics)
+
         Text('getRectsForRange').fontSize(15).fontColor(0xCCCCCC).width('90%').padding(10)
         Button("获取指定矩形宽度和高度下，文本中任意区间范围内字符或占位符的绘制区域信息")
           .onClick(() => {
@@ -2298,19 +2327,19 @@ struct TextExample10 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Ut6L4DiCTvqLWZWm3aFiuQ/zh-cn_image_0000002571172565.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=7BB6DAC21A4221657F3874DC6E2AAD88F22AFEE60E094C0BE720C2DA12837F32)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/Ut6L4DiCTvqLWZWm3aFiuQ/zh-cn_image_0000002571172565.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=CBCD8367645121E661B8D69192002E54994DA4FE871F2008BDAD13F8FA7D98F3)
 
 ### 示例11（实现键盘框选文本）
 
 从API version 12开始，该示例通过[textSelectable](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textselectable12)属性实现了设置TextSelectMode.SELECTABLE_FOCUSABLE时能够触发键盘框选文本功能。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample11 {
   @State message: string =
     'TextTextTextTextTextTextTextText' + 'TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText';
+
   build() {
     Column() {
       Text(this.message)
@@ -2326,21 +2355,20 @@ struct TextExample11 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/NKb3uAM7QaqashpmK2F2cw/zh-cn_image_0000002540772224.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=F3A9161379431EDF90C704D3C35539D8E1242446D6250226E60AA48CB5187B56)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/NKb3uAM7QaqashpmK2F2cw/zh-cn_image_0000002540772224.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=CFAE20E82A660F2894E29BBF3E350CB2A9E3947794D14157EDAF54E93E4CAA1E)
 
 ### 示例12（文本扩展自定义菜单）
 
 从API version 12开始，该示例通过[editMenuOptions](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#editmenuoptions12)接口实现了文本设置自定义菜单扩展项的文本内容、图标以及回调的功能，同时，可以在[onPrepareMenu](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-common#属性-1)（从API version 20开始）回调中，进行菜单数据的设置。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample12 {
   @State text: string = 'Text editMenuOptions'
   @State endIndex: number = 0;
   onCreateMenu = (menuItems: Array<TextMenuItem>) => {
-    // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
     let item1: TextMenuItem = {
       content: 'create1',
       icon: $r('app.media.startIcon'),
@@ -2355,7 +2383,7 @@ struct TextExample12 {
     menuItems.unshift(item2);
     let targetIndex = menuItems.findIndex(item => item.id.equals(TextMenuItemId.askAI));
     if (targetIndex !== -1) {
-      menuItems.splice(targetIndex, 1); // 从目标索引删除1个元素
+      menuItems.splice(targetIndex, 1);
     }
     targetIndex = menuItems.findIndex(item => item.id.equals(TextMenuItemId.TRANSLATE));
     if (targetIndex !== -1) {
@@ -2382,7 +2410,7 @@ struct TextExample12 {
     }
     return false;
   }
-  // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
   onPrepareMenu = (menuItems: Array<TextMenuItem>) => {
     let item1: TextMenuItem = {
       content: 'prepare1_' + this.endIndex,
@@ -2397,6 +2425,7 @@ struct TextExample12 {
     onMenuItemClick: this.onMenuItemClick,
     onPrepareMenu: this.onPrepareMenu
   };
+
   build() {
     Column() {
       Text(this.text)
@@ -2414,14 +2443,13 @@ struct TextExample12 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/WDJFuKmFQ2eVhFfJ0W_rUw/zh-cn_image_0000002571292519.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=93B14F9CD23845D8A3851C3995A1872C17990FC3F7D9D56A8A68D008C1C2959E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/WDJFuKmFQ2eVhFfJ0W_rUw/zh-cn_image_0000002571292519.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=CF60D93AF1F9AA3A80555E039AD48C5D0C4BD3AC589A21CFC8DE580B1146426F)
 
 ### 示例13（配置隐私隐藏）
 
 从API version 12开始，该示例通过[privacySensitive](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#privacysensitive12)属性展示了文本如何配置隐私隐藏的效果，实际显示需要卡片框架支持。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample13 {
@@ -2437,14 +2465,13 @@ struct TextExample13 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/8NEcNEELTzey2jWPU-bfyg/zh-cn_image_0000002540612572.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=B65BDB93713DEA85CFF872271A4E033C847398670EA031ABD2FF8E15A6124A82)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/8NEcNEELTzey2jWPU-bfyg/zh-cn_image_0000002540612572.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=FE68AAF6ADF10CBC907B48FC024D68E23891D933E3DC561B76CB110A1B5F01BB)
 
 ### 示例14（设置中西文自动间距）
 
 从API version 20开始，该示例通过[enableAutoSpacing](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#enableautospacing20)属性设置中西文自动间距。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample {
@@ -2464,7 +2491,7 @@ struct TextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/GmY2307oQdGr16HvennmPg/zh-cn_image_0000002571172567.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=4E38E77A36D841ECB48FC6BB75CE5AC94AAF531FA0075076D60F54E4A609D1A3)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/GmY2307oQdGr16HvennmPg/zh-cn_image_0000002571172567.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=487A4CB7D6FBE5E74A8029348E6B57D5A6A43029D735A5CF26E59E213F770A58)
 
 ### 示例15（文本颜色按线性或径向渐变）
 
@@ -2532,14 +2559,13 @@ struct ShaderColorStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/wJzHz3cBQ9SVJyVnw7gNag/zh-cn_image_0000002540772226.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=AB17BDA38C28D2D3D20122DB39DDE385C1B83BEFED99D40B513319507BB08F2D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/wJzHz3cBQ9SVJyVnw7gNag/zh-cn_image_0000002540772226.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=6584EDD83F9A980EFDD806FBD7B40006F17A55346EDF6C38518754C6F445F292)
 
 ### 示例16（配置除去行尾空格）
 
 从API version 20开始，该示例通过[optimizeTrailingSpace](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#optimizetrailingspace20)属性展示了文本如何配置除去行尾空格的效果，一般需要与对齐功能搭配使用，实际显示需要字体引擎支持。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample16 {
@@ -2563,14 +2589,13 @@ struct TextExample16 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/oSZSpSatS5ubpy0eWffgDA/zh-cn_image_0000002571292521.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=53E80CF1AA318DD56621DA42BFC88F9C62F0C94146A5A544208140C094749887)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/oSZSpSatS5ubpy0eWffgDA/zh-cn_image_0000002571292521.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=0A90D472701697BE9A69138AE0C724F289A51C3DDB0B51F7F3412C6C7C1C06EF)
 
 ### 示例17（文本垂直对齐）
 
 从API version 20开始，该示例通过[textVerticalAlign](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textverticalalign20)属性展示了文本如何设置文本垂直对齐效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextExample14 {
@@ -2579,10 +2604,10 @@ struct TextExample14 {
       Text() {
         Span("Hello")
           .fontSize(50)
-        // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+
         ImageSpan($r('app.media.startIcon'))
           .width(30).height(30)
-          .verticalAlign(ImageSpanAlignment.FOLLOW_PARAGRAPH)// 从API version 20开始，支持ImageSpanAlignment.FOLLOW_PARAGRAPH
+          .verticalAlign(ImageSpanAlignment.FOLLOW_PARAGRAPH)
         Span("World")
       }
       .textVerticalAlign(TextVerticalAlign.CENTER)
@@ -2594,20 +2619,20 @@ struct TextExample14 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/IzirgPZZRiaRDP8ZH2Mrqg/zh-cn_image_0000002540612574.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=E19944FC9A662C8FEDC4E21A7C896052098E032143EA3864DBDA0E2EC5DB2BAA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/IzirgPZZRiaRDP8ZH2Mrqg/zh-cn_image_0000002540612574.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=E1800CC1BC9F9672B58AE121A612B0E5774C3F9E0B6C2B1BDFDA285C43BBF46F)
 
 ### 示例18（文本翻牌动效）
 
 从API version 20开始，该示例通过[contentTransition](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#contenttransition20)属性展示了数字翻牌效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct TextNumberTransition {
   @State number: number = 98;
   @State numberTransition: NumericTextTransition =
     new NumericTextTransition({ flipDirection: FlipDirection.DOWN, enableBlur: false });
+
   build() {
     Column() {
       Text(this.number + "")
@@ -2627,7 +2652,7 @@ struct TextNumberTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/TVITIgruSJ2URr2bXIqNCg/zh-cn_image_0000002571172569.gif?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=FCBD435683934E9FFF5657693354E2F09ACF1624AC399013B232A54F907BF684)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/TVITIgruSJ2URr2bXIqNCg/zh-cn_image_0000002571172569.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=BF8537F8FD43F00F54A8F3233FA51C7396F5DB82FBCF0D8F354A1A04F04538F2)
 
 ### 示例19（文本内容区垂直对齐）
 
@@ -2637,6 +2662,7 @@ struct TextNumberTransition {
 @Entry
 @Component
 struct TextContentAlignExample {
+
   build() {
     Column() {
       Row() {
@@ -2652,7 +2678,7 @@ struct TextContentAlignExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/gtZbZ5TtRFaKUZRzOzudnw/zh-cn_image_0000002540772228.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=8A4C892B501E3D15824E9802C9B46E41361E262A3C77091BFD975ED012280765)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/gtZbZ5TtRFaKUZRzOzudnw/zh-cn_image_0000002540772228.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=5AC277DE25A71FB53CE0D95E6DC4F2FA869DD5EA623473B344EE761AC33AD92F)
 
 ### 示例20（倍数行高和最大最小行高）
 
@@ -2660,10 +2686,12 @@ struct TextContentAlignExample {
 
 ```typescript
 import { LengthUnit } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Index {
   @State message: string = 'hello';
+
   build() {
     Scroll() {
       Column() {
@@ -2694,7 +2722,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/FLzSSe6kR2KSI8cbGVyDVw/zh-cn_image_0000002571292523.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=10D140B37B54FF41D79ACB1A125DB27190C134B4961BFD6186EEE3176F3E9E45)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/FLzSSe6kR2KSI8cbGVyDVw/zh-cn_image_0000002571292523.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=E0CDE30A3479E7B9D7A5F7ED4D97E9D27D7D5EEE99A52A55F632F8089F0375F9)
 
 ### 示例21（文本设置显示最小行数）
 
@@ -2706,6 +2734,7 @@ struct Index {
 struct TextExample1 {
   @State message1: string = 'Hello world!';
   @State message2: string = 'The minimum number of lines displayed for this text setting is 1';
+
   build() {
     Column() {
       Text(this.message1)
@@ -2725,4 +2754,4 @@ struct TextExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/BigTrq3eQvSAPlRTab09mQ/zh-cn_image_0000002540612576.png?HW-CC-KV=V1&HW-CC-Date=20260416T025751Z&HW-CC-Expire=86400&HW-CC-Sign=1B467EACFE19AA284A90BBCEC020980C838D265EB421AEA6E86788E0BA041C10)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/BigTrq3eQvSAPlRTab09mQ/zh-cn_image_0000002540612576.png?HW-CC-KV=V1&HW-CC-Date=20260417T025338Z&HW-CC-Expire=86400&HW-CC-Sign=3CA83C16246C0F4516B90FC3D74DAA6E7E01FD8409417F0ED0D64EAB0D797E8C)
