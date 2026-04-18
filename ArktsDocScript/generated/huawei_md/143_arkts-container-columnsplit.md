@@ -92,7 +92,6 @@ divider(value: ColumnSplitDividerStyle | null)
 本示例展示如何设置可拖动的ColumnSplit组件及其效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ColumnSplitExample {
@@ -107,21 +106,20 @@ struct ColumnSplitExample {
         Text('5').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
       .borderWidth(1)
-      .resizeable(true) // 可拖动
+      .resizeable(true)
       .width('90%').height('60%')
     }.width('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/_kct-ihuSNKrHZdTfJ7SLA/zh-cn_image_0000002571292387.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025246Z&HW-CC-Expire=86400&HW-CC-Sign=30A0FB8359B113664498050628D096CCECB03424326727FFC5A7F864FC783DD2)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ZJ7sekuxSGGqyVlbDXZHXA/zh-cn_image_0000002572640815.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024315Z&HW-CC-Expire=86400&HW-CC-Sign=DD5D30FD83DC0418123E5D4A85F305E073EF9E85F3092CD382511116F02397C1)
 
 ### 示例2（设置带有间隔的ColumnSplit组件）
 
 本示例展示如何设置带有间隔的ColumnSplit组件及其效果。
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ColumnSplitDividerExample {
@@ -136,7 +134,7 @@ struct ColumnSplitDividerExample {
         Text('5').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
       }
       .borderWidth(1)
-      .divider({ startMargin: 5, endMargin: 5 }) // 设置间隔
+      .divider({ startMargin: 5, endMargin: 5 })
       .width('90%')
       .height('60%')
     }.width('100%')
@@ -144,4 +142,4 @@ struct ColumnSplitDividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/LrdgmflFQVOLIQjyKvksdw/zh-cn_image_0000002540612440.png?HW-CC-KV=V1&HW-CC-Date=20260417T025246Z&HW-CC-Expire=86400&HW-CC-Sign=4BC736E64C149F2FCD4F556A8AB89CD889049DCF57F03F057D68A51E78E32B43)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/bdOMQ8P9RVKPvsBuX0QJqw/zh-cn_image_0000002542120508.png?HW-CC-KV=V1&HW-CC-Date=20260418T024315Z&HW-CC-Expire=86400&HW-CC-Sign=1C1B22FAC880D0FDD4020D034AE2DD400AA5341BBCF39635C9AF9307F1470E08)

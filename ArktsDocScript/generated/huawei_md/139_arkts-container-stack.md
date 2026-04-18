@@ -88,4 +88,4 @@ struct StackExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/TzMVVPdIR-ioLwd7655Phw/zh-cn_image_0000002571172427.png?HW-CC-KV=V1&HW-CC-Date=20260417T025243Z&HW-CC-Expire=86400&HW-CC-Sign=7900A4CE12FBD09A7E6FD03A04C19BE195589857323470750434C171B958B002)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/3x4vwOupRAmuA--HJIkwlA/zh-cn_image_0000002572680771.png?HW-CC-KV=V1&HW-CC-Date=20260418T024310Z&HW-CC-Expire=86400&HW-CC-Sign=C9F970C329A125BEC7FD4E0F9BCD173DFE1A900FB05D00735F40F3269DD11AB6)

@@ -253,4 +253,4 @@ struct TestSnackBar {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/S4FLhnK4TYar9yu7QPy72Q/zh-cn_image_0000002532304107.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025458Z&HW-CC-Expire=86400&HW-CC-Sign=10619A9C7E49B21F37E9213FC7C5427A215EF1792F0C52618273B835D7C1FAE5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d53B3p1GRzuGd61LvVnXNw/zh-cn_image_0000002532304107.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024525Z&HW-CC-Expire=86400&HW-CC-Sign=520116DFFB32E9B684D0B54D82B0F10FF9DE1C0950563403FCB7797BE6836596)

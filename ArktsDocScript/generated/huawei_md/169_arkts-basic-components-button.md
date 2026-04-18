@@ -513,7 +513,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/pTFnOqtPTl-B9AXcbF-hdg/zh-cn_image_0000002571172521.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025321Z&HW-CC-Expire=86400&HW-CC-Sign=E4E723681DA183D4CF7E74FA275010E144CAD460094B5603A2151ECA3A489AEF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/pXSJofD4S_22a_bqE81Dsw/zh-cn_image_0000002572680865.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024349Z&HW-CC-Expire=86400&HW-CC-Sign=109BAF1F08173648CBFF48B25D19206F0FC71B2AB6955C05E1164A8824F4DA59)
 
 ### 示例2 （为按钮添加渲染控制）
 
@@ -544,7 +544,7 @@ struct SwipeGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/BKbHY9SpRKSGNgveQ4Lesw/zh-cn_image_0000002540772180.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025321Z&HW-CC-Expire=86400&HW-CC-Sign=E98BC6D68C451BDDA4C85A0CE00ECDA1A43F6B02409F68AB8ADA5481B55233F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Ed_RmB0eSQOw0qgoZvQ6oQ/zh-cn_image_0000002541960958.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024349Z&HW-CC-Expire=86400&HW-CC-Sign=91B9546B01DBD1E7287D71AAD7CA9EEC98D5934B070DF2B9D2381D96EA1CA681)
 
 ### 示例3 （设置按钮文本样式）
 
@@ -585,7 +585,7 @@ struct ButtonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/SOyG9KdwTzWeyniz1z2RTg/zh-cn_image_0000002571292475.png?HW-CC-KV=V1&HW-CC-Date=20260417T025321Z&HW-CC-Expire=86400&HW-CC-Sign=7782776D0560D63F8601ED6570DBECB3E301F6E8A85DF790B3F256869887A6BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/epBO8vbkTPuqkBBGQE_thg/zh-cn_image_0000002572640903.png?HW-CC-KV=V1&HW-CC-Date=20260418T024349Z&HW-CC-Expire=86400&HW-CC-Sign=76CB8AF714B51805B5CAEDBCC849715266D66DBED5783EE17715D582E36BA04D)
 
 ### 示例4（设置不同尺寸按钮的重要程度）
 
@@ -623,7 +623,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/7toiS8kiRee4rTLvrZpazg/zh-cn_image_0000002540612528.jpeg?HW-CC-KV=V1&HW-CC-Date=20260417T025321Z&HW-CC-Expire=86400&HW-CC-Sign=B3F668BCD12D1A1C1E93EBC191944BE67DDBF37E5483A2510AEB66243A77C8BC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/bBzNqzx1SBin4WInAspQrg/zh-cn_image_0000002542120596.jpeg?HW-CC-KV=V1&HW-CC-Date=20260418T024349Z&HW-CC-Expire=86400&HW-CC-Sign=6E904A430BA272DCED665F8FB0335EE3EB21457651AC7882B0C3E23DE874668D)
 
 ### 示例5（设置按钮的角色）
 
@@ -652,7 +652,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/EZftGN4OSvezwbbvAHSlHw/zh-cn_image_0000002571172523.jpeg?HW-CC-KV=V1&HW-CC-Date=20260417T025321Z&HW-CC-Expire=86400&HW-CC-Sign=0F46DF6FEE7C2563BBDFA9281833E4DAEE1423E25B6DDAB912F9C2264B25DE1B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/W5wh4LlXQDOt-J0Umhd6bw/zh-cn_image_0000002572680867.jpeg?HW-CC-KV=V1&HW-CC-Date=20260418T024349Z&HW-CC-Expire=86400&HW-CC-Sign=F27A4BB927CD222093A857C27B0571E86AE25B44BC10CCFC117CDDECCD1F8E54)
 
 ### 示例6（设置自定义样式按钮）
 
@@ -723,7 +723,7 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/yKHmWpNoQ0azfbYkkEcnmg/zh-cn_image_0000002540772182.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025321Z&HW-CC-Expire=86400&HW-CC-Sign=EFA79E680D341A423B5688B28E6E790901D5057AFA547DE1FFBE1E716C0ABE59)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/1wqlSjHPRfum-Hs2n-AYMQ/zh-cn_image_0000002541960960.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024349Z&HW-CC-Expire=86400&HW-CC-Sign=F00E52D7DC138DCE020D452FC25C462BEF62B4B0B46357AF82E8D4BFB1ED3600)
 
 ### 示例7（设置圆角矩形按钮）
 
@@ -765,4 +765,4 @@ struct ButtonExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/-bAMtMl1TFauFWnpPFEPQg/zh-cn_image_0000002571292477.jpeg?HW-CC-KV=V1&HW-CC-Date=20260417T025321Z&HW-CC-Expire=86400&HW-CC-Sign=9D25D53F1335AEAA405CE1B031F2205F6F27380AE6F8AC6A087DE5A8963B22AF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/CrKcJ3S3SuO3OV4nnCLICw/zh-cn_image_0000002572640905.jpeg?HW-CC-KV=V1&HW-CC-Date=20260418T024349Z&HW-CC-Expire=86400&HW-CC-Sign=DEA69FD46E0DE903838E50A3296650F0E864B95CCFC5FDA9F4BCE67C5B2CDD66)

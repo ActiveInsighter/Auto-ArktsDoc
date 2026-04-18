@@ -55,18 +55,16 @@ keyframeAnimateTo(param: KeyframeAnimateParam, keyframes: Array<KeyframeState>):
 该示例主要演示如何通过keyframeAnimateTo来设置关键帧动画。
 
 ```typescript
+// xxx.ets
 import { UIContext } from '@kit.ArkUI';
-
 @Entry
 @Component
 struct KeyframeDemo {
   @State myScale: number = 1.0;
   uiContext: UIContext | undefined = undefined;
-
   aboutToAppear() {
     this.uiContext = this.getUIContext?.();
   }
-
   build() {
     Column() {
       Circle()
@@ -81,7 +79,7 @@ struct KeyframeDemo {
             return;
           }
           this.myScale = 1;
-
+          // 设置关键帧动画整体播放3次
           this.uiContext.keyframeAnimateTo({
               iterations: 3,
               expectedFrameRateRange: {
@@ -91,14 +89,14 @@ struct KeyframeDemo {
               }
             }, [
             {
-
+              // 第一段关键帧动画时长为800ms，scale属性做从1到1.5的动画
               duration: 800,
               event: () => {
                 this.myScale = 1.5;
               }
             },
             {
-
+              // 第二段关键帧动画时长为500ms，scale属性做从1.5到1的动画
               duration: 500,
               event: () => {
                 this.myScale = 1;
@@ -111,4 +109,4 @@ struct KeyframeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/2VJS3QigTMq13aVQ1lagPw/zh-cn_image_0000002540772492.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025433Z&HW-CC-Expire=86400&HW-CC-Sign=B5171B191099F87B5C99865DC6D7426B5F8280BB357A134E4AF0EC6CF100AD3D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/JK_Ic0z3QuaOg082eFSVgQ/zh-cn_image_0000002541961270.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024500Z&HW-CC-Expire=86400&HW-CC-Sign=FB7068FF3303D710F2D1E60570E16DD74BDCA5645CE0C0ABC76FFB9D901EAFD6)

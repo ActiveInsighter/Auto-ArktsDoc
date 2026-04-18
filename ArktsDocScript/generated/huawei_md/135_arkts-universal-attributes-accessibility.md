@@ -557,7 +557,7 @@ accessibilityTextHint(value: string):T
 设置组件的文本提示信息，供无障碍辅助应用查询。
 
 > **说明**
-> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。
+> 从API version 20开始，该接口支持在[attributeModifier](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-attribute-modifier#attributemodifier)中调用。该接口为组件通用属性设置，通过该属性接口进行配置的文本内容仅会被车机的无障碍服务所监听并响应，因此该接口仅在与车机交互的场景下生效，用于和车机服务进行[地址推送联动](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-address-hop)。
 
 **卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
@@ -854,4 +854,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/FbtzON1ES92iToaSftJWeQ/zh-cn_image_0000002571292347.png?HW-CC-KV=V1&HW-CC-Date=20260417T025237Z&HW-CC-Expire=86400&HW-CC-Sign=6BF2B2642466D7678A1720BFF7F02B3C1D9081A6B00E182C67BEFA90D91CD49B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/CutPQN7fTAODYQwPh7W-Tg/zh-cn_image_0000002572640775.png?HW-CC-KV=V1&HW-CC-Date=20260418T024307Z&HW-CC-Expire=86400&HW-CC-Sign=DBC40D8EFF1B0FC0E10952C507AA2438EC3679A758EADD9408479573B273523F)

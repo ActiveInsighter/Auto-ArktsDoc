@@ -29,7 +29,7 @@ Text() {
 }.textVerticalAlign(TextVerticalAlign.CENTER)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/TOTfqtgCSuuMw_opkIyZ4Q/zh-cn_image_0000002540611488.png?HW-CC-KV=V1&HW-CC-Date=20260417T025109Z&HW-CC-Expire=86400&HW-CC-Sign=FC6665D1103151D552B3291C643A76451F4995774A8C80DFE86B3F3F8F54B015)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/h3qXw-vvTImjpOWWyJoaLg/zh-cn_image_0000002541959938.png?HW-CC-KV=V1&HW-CC-Date=20260418T024133Z&HW-CC-Expire=86400&HW-CC-Sign=8299E7A791ACC3CCC2950A1BD83FDDB3D901D557C582BF725611B1C16F297ADF)
 
 ## 使用属性字符串实现图文混排
 
@@ -223,4 +223,4 @@ struct styled_string_demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/xMCiTKgEQk6IdbMdEAVNdg/zh-cn_image_0000002571171483.png?HW-CC-KV=V1&HW-CC-Date=20260417T025109Z&HW-CC-Expire=86400&HW-CC-Sign=CD0264F51ABF25972ED07C8CF7CE01E0F037D8EAEFEAC2CD3DD6F2CBF27C2D51)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/c5wIBQXWQ32zJxaYv-9MBg/zh-cn_image_0000002572639883.png?HW-CC-KV=V1&HW-CC-Date=20260418T024133Z&HW-CC-Expire=86400&HW-CC-Sign=07B147F3FAEB3E473055439D080A603359163B97EF7BD276BFDD8CBE8D21E449)

@@ -240,6 +240,7 @@ struct DotIndicatorDemo {
       this.list.push(i);
     }
   }
+
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -264,6 +265,7 @@ struct DotIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
+
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(
@@ -285,7 +287,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/trdxoTqQTEG2rgwd1yPswQ/zh-cn_image_0000002571292443.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025311Z&HW-CC-Expire=86400&HW-CC-Sign=4E094D65AEDC39331625CD47150926FDEDC14368FB8838F27D051B7A1B63B438)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Pwtk2ifhSwGw2qRj96PcAw/zh-cn_image_0000002572640871.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024339Z&HW-CC-Expire=86400&HW-CC-Sign=BA4C0E7204F31240CE8FB947FFE45D52A8B05CBC8479D80A41CC9F50998DA4AE)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -303,6 +305,7 @@ struct DigitIndicatorDemo {
       this.list.push(i);
     }
   }
+
   build() {
     Column() {
       Swiper(this.swiperController) {
@@ -327,6 +330,7 @@ struct DigitIndicatorDemo {
       .onChange((index: number) => {
         console.info(index.toString());
       })
+
       IndicatorComponent(this.indicatorController)
         .initialIndex(0)
         .style(Indicator.digit()
@@ -345,4 +349,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/4PsTJScoTgCASjSQEZU1vw/zh-cn_image_0000002540612496.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025311Z&HW-CC-Expire=86400&HW-CC-Sign=4F2EB888CC222A19937EC430E38B5242832BB6A2388703B52A6C314B5FBF587B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/mglkPfn2RmCtH_hZJUVQ_Q/zh-cn_image_0000002542120564.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024339Z&HW-CC-Expire=86400&HW-CC-Sign=5E8D85ED7381E5B7CE53273FF7AD247502AEA5954ACDA48C5C1F825AE5CA045E)

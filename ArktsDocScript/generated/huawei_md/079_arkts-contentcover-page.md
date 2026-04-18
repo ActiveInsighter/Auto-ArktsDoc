@@ -234,4 +234,4 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/yAwACNz0StGm-NDuQSwoxQ/zh-cn_image_0000002571171559.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025145Z&HW-CC-Expire=86400&HW-CC-Sign=FB39EC967EE958DE176C24FBC4F8BE6612FFECDE321A3D0DCCEF9DF1460C63C6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/YhdLt0wFRBehnIq4Y5nAKw/zh-cn_image_0000002572639957.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024211Z&HW-CC-Expire=86400&HW-CC-Sign=D732107BE398EAB95FB1EDDCA078B06B581C21D6EBE980CA0B6978BBB180DC8E)

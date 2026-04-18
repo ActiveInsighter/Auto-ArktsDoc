@@ -446,4 +446,4 @@ struct SideBarContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/hL9OWgAeSui5QFHdoshaXw/zh-cn_image_0000002540772094.png?HW-CC-KV=V1&HW-CC-Date=20260417T025247Z&HW-CC-Expire=86400&HW-CC-Sign=B87671FCBBBD929D04E421B89016A43EDCEB8C77F11840CFB04C22D19EA7F4AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/fOawYyIPTwO9rbfoBHX-Ug/zh-cn_image_0000002541960872.png?HW-CC-KV=V1&HW-CC-Date=20260418T024317Z&HW-CC-Expire=86400&HW-CC-Sign=3EFCBB7E7625F3F50554C3E5E7C652DC7B34100E2A79092FABB6455843C589FB)

@@ -104,4 +104,4 @@ export struct SpringCurve {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/O_8sX8ArTeKx4YtB2KTbnA/zh-cn_image_0000002540611652.gif?HW-CC-KV=V1&HW-CC-Date=20260417T025205Z&HW-CC-Expire=86400&HW-CC-Sign=FF2A5010303A2676C287E939324B2B4B0103031E22BBFA587D68C60DACFF1CFF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/NvHZFiKTQ5q0BTg0MJohKw/zh-cn_image_0000002541960084.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024232Z&HW-CC-Expire=86400&HW-CC-Sign=193BE3FB36C0C9E17E2AF15900F52964626B10CC9D987590C9756B6693EC439B)
