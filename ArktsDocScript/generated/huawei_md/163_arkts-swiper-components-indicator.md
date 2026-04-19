@@ -287,7 +287,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Pwtk2ifhSwGw2qRj96PcAw/zh-cn_image_0000002572640871.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024339Z&HW-CC-Expire=86400&HW-CC-Sign=BA4C0E7204F31240CE8FB947FFE45D52A8B05CBC8479D80A41CC9F50998DA4AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Pwtk2ifhSwGw2qRj96PcAw/zh-cn_image_0000002572640871.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=902D33B49715F377049599A29CD72EB2D177BC148B795716B865814B5CE8D109)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -349,4 +349,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/mglkPfn2RmCtH_hZJUVQ_Q/zh-cn_image_0000002542120564.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024339Z&HW-CC-Expire=86400&HW-CC-Sign=5E8D85ED7381E5B7CE53273FF7AD247502AEA5954ACDA48C5C1F825AE5CA045E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/mglkPfn2RmCtH_hZJUVQ_Q/zh-cn_image_0000002542120564.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=AAB29B30786ABFF020D3BDFAA91DDDD5E26C09D72B566F0FB41B334D39365293)

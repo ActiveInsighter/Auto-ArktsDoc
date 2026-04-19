@@ -71,4 +71,4 @@ struct ObscuredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/1q9yZNfNTt6DBWRHwP2-iQ/zh-cn_image_0000002541960756.png?HW-CC-KV=V1&HW-CC-Date=20260418T024253Z&HW-CC-Expire=86400&HW-CC-Sign=CA33A7268BC170AAD5A4ED0EB176B324F645A1CF11AC99FFF96F6641C02ED725)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/1q9yZNfNTt6DBWRHwP2-iQ/zh-cn_image_0000002541960756.png?HW-CC-KV=V1&HW-CC-Date=20260419T025857Z&HW-CC-Expire=86400&HW-CC-Sign=A912967A7F0E634685D0C527D6EE474F14703701E02EA51BED114936D687AF28)

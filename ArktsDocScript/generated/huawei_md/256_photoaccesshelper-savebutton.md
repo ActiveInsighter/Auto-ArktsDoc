@@ -17,10 +17,12 @@
 ```typescript
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { common } from '@kit.AbilityKit';
+
 @Entry
 @Component
 struct Index {
   @State outputText: string = '支持的类型为：\n';
+
   build() {
     Row() {
       Button("example").onClick(async () => {
@@ -32,10 +34,11 @@ struct Index {
     .height('90%')
   }
 }
+
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper){
   try {
     let outputText = '支持的类型为：\n';
-    // 参数为1表示获取支持的图片类型格式，参数为2表示获取支持的视频类型格式。
+
     let imageFormat  = await phAccessHelper.getSupportedPhotoFormats(1);
     let result = "";
     for (let i = 0; i < imageFormat.length; i++) {
@@ -70,6 +73,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper){
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { common } from '@kit.AbilityKit';
 import { dataSharePredicates } from '@kit.ArkData';
+
 @Entry
 @Component
 struct Index {
@@ -78,10 +82,10 @@ struct Index {
     icon: SaveIconStyle.FULL_FILLED,
     text: SaveDescription.SAVE_IMAGE,
     buttonType: ButtonType.Capsule
-  } // 设置安全控件按钮属性。
+  }
   onCallback = (changeData: photoAccessHelper.ChangeData) => {
     for (let i = 0; i < changeData.uris.length; i++) {
-      // 保存媒体库资源成功后，会监听到类型为NOTIFY_ADD的资产URI。
+
       if (changeData.uris[i] === this.uriString && changeData.type === photoAccessHelper.NotifyType.NOTIFY_ADD) {
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.URI, changeData.uris[i]);
@@ -89,6 +93,7 @@ struct Index {
           fetchColumns: [],
           predicates: predicates
         };
+
         let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
         let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
         phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
@@ -103,23 +108,25 @@ struct Index {
       }
     }
   }
+
   build() {
     Row() {
       Column() {
-        SaveButton(this.saveButtonOptions)// 创建安全控件按钮。
+        SaveButton(this.saveButtonOptions)
           .onClick(async (event, result: SaveButtonOnClickResult) => {
             if (result == SaveButtonOnClickResult.SUCCESS) {
                try {
                 let context: Context = this.getUIContext().getHostContext() as common.UIAbilityContext;
                 let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-                // 注册默认监听。
+
                    phAccessHelper.registerChange(
                    photoAccessHelper.DefaultChangeUri.DEFAULT_PHOTO_URI, true, this.onCallback);
-                // 需要确保fileUri对应的资源存在。
+
                 let fileUri = 'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.jpg';
                 let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
                   photoAccessHelper.MediaAssetChangeRequest.createImageAssetRequest(context, fileUri);
                 await phAccessHelper.applyChanges(assetChangeRequest);
+
                 this.uriString = assetChangeRequest.getAsset().uri;
                 console.info('createAsset successfully, uri: ' + this.uriString);
               } catch (err) {
@@ -153,25 +160,26 @@ struct Index {
 ```typescript
 import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { fileIo } from '@kit.CoreFileKit';
+
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper){
   try {
-    // 指定待保存到媒体库的位于应用沙箱的图片uri。
+
     let srcFileUri = 'file://com.example.temptest/data/storage/el2/base/haps/entry/files/test.jpg';
     let srcFileUris: Array<string> = [
       srcFileUri
     ];
-    // 指定待保存照片的创建选项，包括文件后缀和照片类型，标题和照片子类型可选。
+
     let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
       {
-        title: 'test', // 可选。
+        title: 'test',
         fileNameExtension: 'jpg',
         photoType: photoAccessHelper.PhotoType.IMAGE,
-        subtype: photoAccessHelper.PhotoSubtype.DEFAULT, // 可选。
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
       }
     ];
-    // 基于弹窗授权的方式获取媒体库的目标uri。
+
     let desFileUris: Array<string> = await phAccessHelper.showAssetsCreationDialog(srcFileUris, photoCreationConfigs);
-    // 将来源于应用沙箱的照片内容写入媒体库的目标uri。
+
     let desFile: fileIo.File = await fileIo.open(desFileUris[0], fileIo.OpenMode.WRITE_ONLY);
     let srcFile: fileIo.File = await fileIo.open(srcFileUri, fileIo.OpenMode.READ_ONLY);
     await fileIo.copyFile(srcFile.fd, desFile.fd);

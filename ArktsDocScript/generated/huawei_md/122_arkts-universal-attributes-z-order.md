@@ -63,11 +63,11 @@ struct ZIndexExample {
 
 Stack容器内子组件不设置zIndex的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/069SXMS1RtCCUg3vAWLfhg/zh-cn_image_0000002542120390.png?HW-CC-KV=V1&HW-CC-Date=20260418T024252Z&HW-CC-Expire=86400&HW-CC-Sign=F85793ED119F5949256BBDCFBFE3AE28EAE7D8159CB4CDB09C9660586D254FC9)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/069SXMS1RtCCUg3vAWLfhg/zh-cn_image_0000002542120390.png?HW-CC-KV=V1&HW-CC-Date=20260419T025856Z&HW-CC-Expire=86400&HW-CC-Sign=1FFAD3FEE7ABE36A38BA29E04FE69D89FCEFD0E49AFC4CEC72C8AC465DDE8635)
 
 Stack容器子组件设置zIndex后的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/rRygGPb4ToCJdzdmW5TpaQ/zh-cn_image_0000002572680661.png?HW-CC-KV=V1&HW-CC-Date=20260418T024252Z&HW-CC-Expire=86400&HW-CC-Sign=7A7E167E78EB48917F27AF9E3C1A7E411F98A0E39E1CB8D9149F3D666CDA53AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/rRygGPb4ToCJdzdmW5TpaQ/zh-cn_image_0000002572680661.png?HW-CC-KV=V1&HW-CC-Date=20260419T025856Z&HW-CC-Expire=86400&HW-CC-Sign=A4E9302D72E0CD7467823B8886658371379EC0D5D74ADEB036381902E4A86501)
 
 ### 示例2（动态修改zIndex属性）
 
@@ -103,15 +103,15 @@ struct ZIndexExample {
 
 不点击Button修改zIndex值的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/A-sHOZlFQu6279xTA8-B3g/zh-cn_image_0000002541960754.png?HW-CC-KV=V1&HW-CC-Date=20260418T024252Z&HW-CC-Expire=86400&HW-CC-Sign=0B1D223C837DDDFC587C33F1F38C3D8FDB5289037216D177E47A94F580E55460)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/A-sHOZlFQu6279xTA8-B3g/zh-cn_image_0000002541960754.png?HW-CC-KV=V1&HW-CC-Date=20260419T025856Z&HW-CC-Expire=86400&HW-CC-Sign=5C3BA111343E20434FD95F682DFE1C16DC17AEE0F2A5AA04518CD2E7876EB582)
 
 点击Button动态修改zIndex，使Text1和Text2的zIndex相等，因为在点击Button前的层级顺序上根据zIndex进行稳定排序，层级顺序不发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/9uvqOd1uR2OwNkaTfPi8Cw/zh-cn_image_0000002572640699.png?HW-CC-KV=V1&HW-CC-Date=20260418T024252Z&HW-CC-Expire=86400&HW-CC-Sign=78B2978AE6E63F4DA9617ADB9FE84BAB72B57D3919465E37313FF0C706895885)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/9uvqOd1uR2OwNkaTfPi8Cw/zh-cn_image_0000002572640699.png?HW-CC-KV=V1&HW-CC-Date=20260419T025856Z&HW-CC-Expire=86400&HW-CC-Sign=F259AE365300B053B0088387B047AAA37123F0310AD0E08D2878B50FBB20D8EB)
 
 点击Button动态修改zIndex，使Text2的zIndex大于Text1，层级顺序发生改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/BXfd2ExuSIu-aJduYOzwxg/zh-cn_image_0000002542120392.png?HW-CC-KV=V1&HW-CC-Date=20260418T024252Z&HW-CC-Expire=86400&HW-CC-Sign=8019D27B4304165FD2D302B83BBC95723A47B716EFB01360F6A0353329B0F844)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/BXfd2ExuSIu-aJduYOzwxg/zh-cn_image_0000002542120392.png?HW-CC-KV=V1&HW-CC-Date=20260419T025856Z&HW-CC-Expire=86400&HW-CC-Sign=0716CB85DD075B2A0C7911EA26884B89E6057E4030566AC7AF5CF3A724441518)
 
 ### 示例3（设置不同容器内组件的zIndex属性）
 
@@ -145,4 +145,4 @@ struct ZIndexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/HoZpnoJXT7KgznBYiVyOfw/zh-cn_image_0000002572680663.png?HW-CC-KV=V1&HW-CC-Date=20260418T024252Z&HW-CC-Expire=86400&HW-CC-Sign=6485A4DC288E94F8B10AF19A586EB817D1F60B95BFA236708ABAFC3E83F08044)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/HoZpnoJXT7KgznBYiVyOfw/zh-cn_image_0000002572680663.png?HW-CC-KV=V1&HW-CC-Date=20260419T025856Z&HW-CC-Expire=86400&HW-CC-Sign=11CA466FC5003382BD1177E89E31B9D7E8C47D926F8B8ECD20A6F637EE73A7CA)

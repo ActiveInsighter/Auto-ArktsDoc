@@ -165,7 +165,7 @@ columns: {md:4, lg:8}
 > - 栅格子组件仅能通过span、offset计算子组件位置与大小。多个子组件span超过规定列数时自动换行。
 > - 单个元素span大小超过最大列数时后台默认span为最大column数。
 > - 新一行的Offset加上子组件的span超过总列数时，将下一个子组件在新的一行放置。
-> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/RuMmLGNeT6iqu_zZZCsk9Q/zh-cn_image_0000002542120506.png?HW-CC-KV=V1&HW-CC-Date=20260418T024313Z&HW-CC-Expire=86400&HW-CC-Sign=D7202408D01A07CC730BCBE414DB1B226931F40BD09F8B72A30315595B1BDC45)
+> - 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/RuMmLGNeT6iqu_zZZCsk9Q/zh-cn_image_0000002542120506.png?HW-CC-KV=V1&HW-CC-Date=20260419T025917Z&HW-CC-Expire=86400&HW-CC-Sign=35FFF6AACD02970240A5A810BA3D90B181F78DE242A7FACC3D7013C1CEEF5C76)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -262,7 +262,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ISXXfUXbT66ss15ruirLVQ/zh-cn_image_0000002572680777.png?HW-CC-KV=V1&HW-CC-Date=20260418T024313Z&HW-CC-Expire=86400&HW-CC-Sign=32F9CF2618BD0C2035ADDF6455F360234EF1CE8972AFDAFBE4955268566DB39C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/ISXXfUXbT66ss15ruirLVQ/zh-cn_image_0000002572680777.png?HW-CC-KV=V1&HW-CC-Date=20260419T025917Z&HW-CC-Expire=86400&HW-CC-Sign=C8EE6B8BB5630B3910FE86E30B05604F77FE46CF8661D18A8DC47EAE504D8146)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -330,4 +330,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/xBzi1f6xQ4SFNImXKG8VXg/zh-cn_image_0000002541960870.png?HW-CC-KV=V1&HW-CC-Date=20260418T024313Z&HW-CC-Expire=86400&HW-CC-Sign=3857AD2B4795D842A9963541B24E3943DEBF289BCD062593CFDC76B9D676E452)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/xBzi1f6xQ4SFNImXKG8VXg/zh-cn_image_0000002541960870.png?HW-CC-KV=V1&HW-CC-Date=20260419T025917Z&HW-CC-Expire=86400&HW-CC-Sign=F3F0971661F262E3374FFB64AECFB84A1AA55F2BAF14A809E1806555137F5AA9)

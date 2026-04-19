@@ -406,7 +406,7 @@ struct PositionExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/WhTXys8zQoOHl-mDSjcQqQ/zh-cn_image_0000002541960760.png?HW-CC-KV=V1&HW-CC-Date=20260418T024256Z&HW-CC-Expire=86400&HW-CC-Sign=D800DE411D1C784C75DE108AD1564436D62D85809ED93D72A75B37FECEE40291)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/WhTXys8zQoOHl-mDSjcQqQ/zh-cn_image_0000002541960760.png?HW-CC-KV=V1&HW-CC-Date=20260419T025901Z&HW-CC-Expire=86400&HW-CC-Sign=7E873753DF3E92ECB56A3B450E41C14332EC465FBD08D46A2ED7D41488C9A2D3)
 
 ### 示例2（位置偏移）
 
@@ -491,7 +491,7 @@ struct PositionExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/nI6vercgRhSNN1YXfhx3XA/zh-cn_image_0000002572640705.png?HW-CC-KV=V1&HW-CC-Date=20260418T024256Z&HW-CC-Expire=86400&HW-CC-Sign=F4EEB1CBAE1FF208E012D42C8A36588A4C64A768E67A066A845896FF495E2071)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/nI6vercgRhSNN1YXfhx3XA/zh-cn_image_0000002572640705.png?HW-CC-KV=V1&HW-CC-Date=20260419T025901Z&HW-CC-Expire=86400&HW-CC-Sign=B417B7A484530680AB02E8F8B688012982FB1F419F20CE11C1AA5592B691CD90)
 
 ### 示例3（绝对定位和相对偏移）
 
@@ -569,7 +569,7 @@ struct Example3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/GVOK2VsuQZ-sF5-M3rjnug/zh-cn_image_0000002542120398.jpeg?HW-CC-KV=V1&HW-CC-Date=20260418T024256Z&HW-CC-Expire=86400&HW-CC-Sign=910CCE85F68297590517F64913B487297ABEBD101E10B2CAC63132F9E0A49FBF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/GVOK2VsuQZ-sF5-M3rjnug/zh-cn_image_0000002542120398.jpeg?HW-CC-KV=V1&HW-CC-Date=20260419T025901Z&HW-CC-Expire=86400&HW-CC-Sign=BD7A43445EEA7CA6CEE794DB7D506AE6D97916D979AA94F12A06AB8294ABBFE3)
 
 ### 示例4（镜像效果）
 
@@ -670,11 +670,11 @@ struct Example4 {
 
 镜像前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/sG_PXHg2SziK7a1xoDIoCQ/zh-cn_image_0000002572680669.png?HW-CC-KV=V1&HW-CC-Date=20260418T024256Z&HW-CC-Expire=86400&HW-CC-Sign=0A766D7C2EC0D4D4AC5FFDC2D322CE70AF65E3F0D96282D741A1024DC03F3A6A)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/sG_PXHg2SziK7a1xoDIoCQ/zh-cn_image_0000002572680669.png?HW-CC-KV=V1&HW-CC-Date=20260419T025901Z&HW-CC-Expire=86400&HW-CC-Sign=3D42BC446E7374696849076418DA55941742EDDC0A29CDA528A7975F316DA268)
 
 镜像后效果如下，镜像生效条件请参考[使用镜像能力](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-internationalization#使用镜像能力)：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/6B4tzB0STxqEpqpjIkHCgQ/zh-cn_image_0000002541960762.png?HW-CC-KV=V1&HW-CC-Date=20260418T024256Z&HW-CC-Expire=86400&HW-CC-Sign=CD1541B8F6284E94B8F95B222C9568F3E4859B790DFE15A1E1716482BDB582AE)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/6B4tzB0STxqEpqpjIkHCgQ/zh-cn_image_0000002541960762.png?HW-CC-KV=V1&HW-CC-Date=20260419T025901Z&HW-CC-Expire=86400&HW-CC-Sign=C9268EAC25A10E994D4977BB95FB19F878EE7C42D402BA7259A39B0BCC9068F6)
 
 ### 示例5（align属性适配镜像特性）
 
@@ -742,7 +742,7 @@ struct buttonTestDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/9iLth9wfQFS3JuhDO6lQaw/zh-cn_image_0000002572640707.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024256Z&HW-CC-Expire=86400&HW-CC-Sign=48F731714417BAB575ACD41B85D009C3B3B1DABEE5E0F0CE5BE21A5184445875)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/9iLth9wfQFS3JuhDO6lQaw/zh-cn_image_0000002572640707.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025901Z&HW-CC-Expire=86400&HW-CC-Sign=259E198736E32A4CEAFAFC70ECC6BB964FBFBF674AECD43E318DA71ED618D8A2)
 
 ### 示例6（layoutGravity属性单独设置Stack组件中子组件的对齐规则）
 
@@ -803,4 +803,4 @@ struct Index5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/PqRTab8vSKOfdRQlmlTW3Q/zh-cn_image_0000002542120400.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024256Z&HW-CC-Expire=86400&HW-CC-Sign=BA948F2E4D650BD7B270F5867D4788B5BB59463C4E332AAC7493647658FA9ABD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/PqRTab8vSKOfdRQlmlTW3Q/zh-cn_image_0000002542120400.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025901Z&HW-CC-Expire=86400&HW-CC-Sign=4943A357D59DE9FA8CE1E062CB2E8BB3C77A576DF42AD883E91CA2C22EF55505)

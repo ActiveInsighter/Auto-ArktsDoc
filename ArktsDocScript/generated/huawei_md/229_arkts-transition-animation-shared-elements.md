@@ -56,13 +56,13 @@ sharedTransition(id: string, options?: sharedTransitionOptions): T
 示例代码为点击图片跳转页面时，显示共享元素图片的自定义转场动效。
 
 ```typescript
+// xxx.ets
 @Entry
 @Component
 struct SharedTransitionExample {
-
   build() {
     Column() {
-
+      // $r('app.media.ic_health_heart')需要替换为开发者所需的图像资源文件。
       Image($r('app.media.ic_health_heart')).width(50).height(50).margin({ left: 20, top: 20 })
         .sharedTransition('sharedImage', { duration: 800, curve: Curve.Linear, delay: 100 })
     }.width('100%').height('100%').alignItems(HorizontalAlign.Start)
@@ -70,7 +70,6 @@ struct SharedTransitionExample {
       this.getUIContext().getRouter().pushUrl({ url: 'pages/PageB' })
     })
   }
-
   pageTransition() {
     PageTransitionEnter({ type: RouteType.None, duration: 0 })
     PageTransitionExit({ type: RouteType.None, duration: 0 })
@@ -79,17 +78,17 @@ struct SharedTransitionExample {
 ```
 
 ```typescript
+// PageB.ets
 @Entry
 @Component
 struct PageBExample {
   build() {
     Stack() {
-
+      // $r('app.media.ic_health_heart')需要替换为开发者所需的图像资源文件。
       Image($r('app.media.ic_health_heart')).width(150).height(150)
         .sharedTransition('sharedImage', { duration: 800, curve: Curve.Linear, delay: 100 })
     }.width('100%').height('100%')
   }
-
   pageTransition() {
     PageTransitionEnter({ type: RouteType.None, duration: 0 })
     PageTransitionExit({ type: RouteType.None, duration: 0 })
@@ -97,4 +96,4 @@ struct PageBExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/bw3bHYKSTF64UESIThQgdw/zh-cn_image_0000002541961274.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024504Z&HW-CC-Expire=86400&HW-CC-Sign=6C70245628C803A193B796F01FAFA0CA7046C26F060D06F1855490EA1C21CB3E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/bw3bHYKSTF64UESIThQgdw/zh-cn_image_0000002541961274.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030111Z&HW-CC-Expire=86400&HW-CC-Sign=8AD7D78BB1182CF066692748571172D46C8D9DA17F2C6927F9310C4BE1407091)

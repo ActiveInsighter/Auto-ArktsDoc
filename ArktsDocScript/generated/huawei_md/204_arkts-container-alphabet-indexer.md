@@ -680,7 +680,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/JbPT4lYNQHSuaYXr8UYQ-Q/zh-cn_image_0000002572641091.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024435Z&HW-CC-Expire=86400&HW-CC-Sign=54385C9295101168AD5ED4D1F486F33BB38778C20244F1C35325090CD605C34D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/JbPT4lYNQHSuaYXr8UYQ-Q/zh-cn_image_0000002572641091.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030043Z&HW-CC-Expire=86400&HW-CC-Sign=6E975DE7307069F99709F678FD5AD18495864788BB2F54D07529536214F955D6)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -820,7 +820,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/4ZH4FvwmRWSzPa8O7BG6EA/zh-cn_image_0000002542120784.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024435Z&HW-CC-Expire=86400&HW-CC-Sign=937CDDF85199C97E3153E6ED0A22622C6193B6A7E91685560229E9A7BBAE2323)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/4ZH4FvwmRWSzPa8O7BG6EA/zh-cn_image_0000002542120784.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030043Z&HW-CC-Expire=86400&HW-CC-Sign=15A7FED922D094B20652C642C68BECCF992EB9C2B5048569DEDDF4651C5DDBD7)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -949,4 +949,4 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/MZvfmsAvRaWC-NS7U5gd-g/zh-cn_image_0000002572681055.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024435Z&HW-CC-Expire=86400&HW-CC-Sign=17704F40A2021A9FC0B0CA2E5BAC6C9090D7AF53B02DAF254A5BA3B2A33573AD)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/MZvfmsAvRaWC-NS7U5gd-g/zh-cn_image_0000002572681055.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030043Z&HW-CC-Expire=86400&HW-CC-Sign=9AB73D9009853DEC85997A0B24FF16D4112C73F481ACCA61D0E7BBB397E3362A)

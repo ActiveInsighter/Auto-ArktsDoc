@@ -2100,7 +2100,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/fAlAoBraR2GWbqtqVqCW4g/zh-cn_image_0000002572680835.png?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=2FA4799580B7E4D15C386A617CE7F0BA7E3539AABFCB3B832D4E916D5EEE090F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/fAlAoBraR2GWbqtqVqCW4g/zh-cn_image_0000002572680835.png?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=2CC629FBAE5CC2D7DD11E6F918992D3A190F6DCD761CEDCCB61B92BD65C93255)
 
 ### 示例2（使用导航控制器方法）
 
@@ -2362,7 +2362,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/PBiljoT1Qh6h8AyDXzNL6A/zh-cn_image_0000002541960928.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=5C39D5C4A82E32C3A2C3D563476098C038CC7BE066D4182ED7C723E4FA97F8EB)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/PBiljoT1Qh6h8AyDXzNL6A/zh-cn_image_0000002541960928.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=835040593AEE4CA3FE90335F0D1814ECE954949CF5423ECAF143327E329E97E3)
 
 ### 示例3（设置可交互转场动画）
 
@@ -2831,7 +2831,7 @@ export class CustomTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5CnpQIgSTBOIOe2mHSR_hQ/zh-cn_image_0000002572640873.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=0AC7F24EC57D69CF1FDEDA2704DE8F59083395BA48D85819B632E91805137D5C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5CnpQIgSTBOIOe2mHSR_hQ/zh-cn_image_0000002572640873.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=90206243C8F1E5D99DA4C0354DA31BAD2A49EBD44C868A1EE93CC8FE16E8CAF5)
 
 ### 示例4（Navigation带参返回）
 
@@ -3119,7 +3119,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/tyNjXu5SSWeVw7uDdqyZlg/zh-cn_image_0000002542120566.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=0EC0C5E27CA93AF62FFFD805FAAD0C73F67B8541588ED56AA17598EE590A0911)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/tyNjXu5SSWeVw7uDdqyZlg/zh-cn_image_0000002542120566.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=1943A4238369C9CF41C1BAD3B02C36CF9DF3707A6C79B4452D8B24E5DB1E1359)
 
 ### 示例5（设置背景颜色和模糊效果）
 
@@ -3412,7 +3412,7 @@ export const EFFECT_OPTION_2: BackgroundEffectOptions = {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/BaWp923IQc-_wKN6_AVfxg/zh-cn_image_0000002572680837.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=9C838A0CDDFE82D0A2662F67079991E8228CEEDC90F3B012BB509860DDACBFE8)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/BaWp923IQc-_wKN6_AVfxg/zh-cn_image_0000002572680837.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=A264DCE897E1E002D491B3816A107D9F562A2B614BDAFCF371AEE5BB652059AE)
 
 ### 示例6（嵌套场景下获取外层栈）
 
@@ -3482,7 +3482,7 @@ export function PageOneBuilder(name: string) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/g5Eo1Z1tSNu1wt30oNjN5w/zh-cn_image_0000002541960930.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=CC98D93D31F8AB2817B200C2516E49AC8E0A4FAEE0B0DB6740DD08ABAD85288C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/g5Eo1Z1tSNu1wt30oNjN5w/zh-cn_image_0000002541960930.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=11E78B2E4176AB8614D51497AFA73E469FBAD812BCF1638B7BCFFC47F8B20FA7)
 
 ### 示例7（通过onReady获取栈）
 
@@ -3594,7 +3594,7 @@ struct NavigationExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/4doJHFvoSsKAXdST_K2ASQ/zh-cn_image_0000002572640875.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=D04AAD5D91DDC3B0CE118EF70F344CE6F724A8DD530B99E71E95EBD4265B086B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/4doJHFvoSsKAXdST_K2ASQ/zh-cn_image_0000002572640875.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=7CC502551906DB2A485F204C63B045D9BA601A5E72BE1D49B08A59F81F12F788)
 
 ### 示例8（NavDestination生命周期时序）
 
@@ -3715,7 +3715,7 @@ struct NavigationExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/fW5RbJQiQhmFFSmy6A0JTQ/zh-cn_image_0000002542120568.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=DF72F5F178C11F7D0387F378AF7A28B5DE088F09A4C505391CE61FF3FB6BE1F5)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/fW5RbJQiQhmFFSmy6A0JTQ/zh-cn_image_0000002542120568.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=1B7FAF1B6239993A667B1B33B2EDE81F6F9207B9FCA81327E15A05A754012872)
 
 ### 示例9（标题栏布局效果）
 
@@ -3787,7 +3787,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/3NkUFt6ET2qpNUvX9ls6Ug/zh-cn_image_0000002572680839.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=116C88737DD70CBBEFD6016CEE1CC2817DE9ED359884250AD740A430D150FF37)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/3NkUFt6ET2qpNUvX9ls6Ug/zh-cn_image_0000002572680839.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=4183388E2706F7EAD88624FBAFC827BB4177669ED8088B35C02FA421C9B6C371)
 
 ### 示例10（定义导航控制器派生类）
 
@@ -3929,7 +3929,7 @@ export class NewParam {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/2qL5s_CkSmi3xSUlRQmKuA/zh-cn_image_0000002541960932.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=C250F13AFEA4DA8847CFE54C4DF058D0D129664B2B0CAD44B15BF774DF9E5BAF)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/2qL5s_CkSmi3xSUlRQmKuA/zh-cn_image_0000002541960932.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=69810D5D78D0AE4D7C086168DC377A9C879920A5935CA8835DD01D40D88D0AD8)
 
 ### 示例11（使用Symbol组件）
 
@@ -4078,7 +4078,7 @@ export struct NavigationMenu {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/efepd8DiTuKtmxPI5Dpf_A/zh-cn_image_0000002572640877.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=DE8E3283E1C2AA90EA6C38D2443E50871865FE220769E158ACB79846AD09B453)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/efepd8DiTuKtmxPI5Dpf_A/zh-cn_image_0000002572640877.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=06CD084DEA813239DD61E12A3CB53DC28123E2124B94E9EA48CAF173F0204952)
 
 ### 示例12（设置自定义标题栏边距）
 
@@ -4324,7 +4324,7 @@ export class SubTitleTextModifier extends TextModifier {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/pbyu1JQBSsyXr5VqdxczhA/zh-cn_image_0000002542120570.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=7E8B29F56E9F18EA8B4A3AE6F89EB7FD13DB2F1FC135EC4281A1B5A9D13D0C97)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/pbyu1JQBSsyXr5VqdxczhA/zh-cn_image_0000002542120570.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=20CEDCE1D167EFE306B0070205BB157B9E7A468AA4EB2852FD1A6436D3112EAF)
 
 ### 示例13（自定义转场动画）
 
@@ -4561,7 +4561,7 @@ export class CustomTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/sLrsnQcTRgWVDf0V1lQBHw/zh-cn_image_0000002572680841.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=7CC6A0944655C3AC42871C166C91BD057FD6AD0CBACB9E77DD959B1036DA2360)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/sLrsnQcTRgWVDf0V1lQBHw/zh-cn_image_0000002572680841.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=FCAE19B1FDE2DF5905C2220DA9451CE1B954C21E4AB703BC65FAD204DFED0795)
 
 ### 示例14（设置Navigation双栏模式）
 
@@ -4693,7 +4693,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/w0ZqgQLuTBe0B6IYsyk9Xw/zh-cn_image_0000002541960934.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=AE890818E746CF0F18BAFD77C3499BCC7B92947F2405E1252E4E1C4FCC771944)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/w0ZqgQLuTBe0B6IYsyk9Xw/zh-cn_image_0000002541960934.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=F9363C2D1447D7B14C475353EAE624DA465CC2476B7C175165C04DA4F44E368F)
 
 ### 示例15（Navigation工具栏自适应）
 
@@ -4764,7 +4764,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/oZm5yrOTR9qov7PPAmbKFA/zh-cn_image_0000002572640879.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=EF9B140AD13B3D47B410AB29189C383D8F10382E9DBA729098BBD822648C9455)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/oZm5yrOTR9qov7PPAmbKFA/zh-cn_image_0000002572640879.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=00B851C7DFCF5C0F4BA99F6928C51406F2A3C0350C9EE7BF19D8595E9BF671C8)
 
 ### 示例16（Navigation使用NavDestination作为导航页）
 
@@ -4851,7 +4851,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_cSy42HlRw6RtqGzPS6aWA/zh-cn_image_0000002542120572.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=F490AEF7E538688166D036B883AB6681DF7E5030015FA3382B5D64F9C43FFCBA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_cSy42HlRw6RtqGzPS6aWA/zh-cn_image_0000002542120572.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=9D076596FD6CCE09CFD1D844C950A1B1D9DAD89AD9C79A1D28BE067FDB3C1285)
 
 ### 示例17（使用新增导航控制器方法）
 
@@ -5117,7 +5117,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/0z6z4NqvR2qbD1jqzwWadA/zh-cn_image_0000002572680843.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=396F90493E78956BAE1400912BA2644F64090C1643A06679218F9D3D89763A52)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/0z6z4NqvR2qbD1jqzwWadA/zh-cn_image_0000002572680843.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=FADA854BB2EF6AB600032D05593B9B145C08E86C9E2B5569895ECBFC42CBEC33)
 
 ### 示例18（设置Navigation可恢复）
 
@@ -5283,4 +5283,4 @@ export struct NavigationMenu {
 > 4. 输入"aa force-stop 工程包名 -p pid值 -r RESOURCE_CONTROL"进行回车，模拟资源使用不当导致的应用退出。
 > 5. 点击应用重新进入，可发现页面依然是点击跳转按钮后的页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/3IEa16CCRT2mp2k-WvDX0A/zh-cn_image_0000002541960936.gif?HW-CC-KV=V1&HW-CC-Date=20260418T024340Z&HW-CC-Expire=86400&HW-CC-Sign=5A30107519D9B8B0D662A0C81187FC4CB13248976C1235BA7373B0F8453EDD63)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/3IEa16CCRT2mp2k-WvDX0A/zh-cn_image_0000002541960936.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025946Z&HW-CC-Expire=86400&HW-CC-Sign=CD48A3855E62AE3CA66A4DFF7FDC1CE426E7121FA76AFD5D16D0365D66D85E77)
