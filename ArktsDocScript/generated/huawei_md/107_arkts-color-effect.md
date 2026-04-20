@@ -100,7 +100,7 @@ struct LinearGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/QJTAOjJ9TkOyW4xJzluhhA/zh-cn_image_0000002572640033.png?HW-CC-KV=V1&HW-CC-Date=20260419T025842Z&HW-CC-Expire=86400&HW-CC-Sign=22A944EF1C1D56CD4242359A4933E573C76042E7C38C63CF112BDD7A92D36DCA)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/QJTAOjJ9TkOyW4xJzluhhA/zh-cn_image_0000002572640033.png?HW-CC-KV=V1&HW-CC-Date=20260420T025926Z&HW-CC-Expire=86400&HW-CC-Sign=E44F83FD0C8D5D2AC3ED5A5247A9E2039FF424D5057ABA7B266E3AE7E30FB167)
 
 ## 为组件添加角度渐变效果
 
@@ -210,7 +210,7 @@ struct SweepGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/HglCQ51fQ5SzHiwd6BV_Ug/zh-cn_image_0000002542119726.png?HW-CC-KV=V1&HW-CC-Date=20260419T025842Z&HW-CC-Expire=86400&HW-CC-Sign=D1962770082AC52DD43542C973BE5C6D2734784BDDA4C75D175D15EA8B64C8F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/HglCQ51fQ5SzHiwd6BV_Ug/zh-cn_image_0000002542119726.png?HW-CC-KV=V1&HW-CC-Date=20260420T025926Z&HW-CC-Expire=86400&HW-CC-Sign=B2812D9D43C0546283CD4C6A5C4111E585CCA712C257BCED3C2A02BC8B76E13A)
 
 ## 为组件添加径向渐变效果
 
@@ -315,4 +315,4 @@ struct RadialGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/XqMvkNX3QHG9VPnZQvLexg/zh-cn_image_0000002572679997.png?HW-CC-KV=V1&HW-CC-Date=20260419T025842Z&HW-CC-Expire=86400&HW-CC-Sign=C61D6C9B924C69DB3807A5C135B48DFE1AFA5972AB1078B3BAFC6DEFE382CF4F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/XqMvkNX3QHG9VPnZQvLexg/zh-cn_image_0000002572679997.png?HW-CC-KV=V1&HW-CC-Date=20260420T025926Z&HW-CC-Expire=86400&HW-CC-Sign=862A08BF9EA672E994D3DAE7CBE9B4E981171376295D87628396B84570A13B05)

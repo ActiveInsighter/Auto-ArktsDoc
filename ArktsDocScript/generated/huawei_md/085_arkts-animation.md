@@ -3,7 +3,7 @@
 
 UI（用户界面）是用户与设备进行交互的界面，包含各种可视化组件（如按钮、列表等）。属性作为接口，用于控制组件的行为，属性值的变化会引起UI的变化。动画可在UI发生改变时，添加流畅的过渡效果，使属性值从起始状态逐渐变化到终点状态，避免因瞬间变化造成的突兀感，保持用户的视觉焦点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zFKteO8MTNWs7SAkiAB7kQ/zh-cn_image_0000002572640011.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025824Z&HW-CC-Expire=86400&HW-CC-Sign=AA7CD337846B2E360C33795610890E7E33B203C75E536E7088F2E1AC7091AC75)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/zFKteO8MTNWs7SAkiAB7kQ/zh-cn_image_0000002572640011.gif?HW-CC-KV=V1&HW-CC-Date=20260420T025907Z&HW-CC-Expire=86400&HW-CC-Sign=19B4F201EB8EC6760C4272FF357CB9EB4BD4E2BDF69B6A9A5BE88012783CEF56)
 
 动画的目的包括：
 

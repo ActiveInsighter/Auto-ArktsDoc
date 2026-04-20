@@ -179,7 +179,6 @@ reverse(isReversed: Optional<boolean>)
 本示例展示设置Column组件的布局属性，如间距、对齐方式等属性后的效果。
 
 ```typescript
-// resources/base/element/string.json
 {
   "string": [
     {
@@ -191,47 +190,49 @@ reverse(isReversed: Optional<boolean>)
 ```
 
 ```typescript
-// xxx.ets
 @Entry
 @Component
 struct ColumnExample {
   build() {
     Scroll() {
       Column({ space: 5 }) {
-        // 设置子元素垂直方向间距为5
+
         Text('space').width('90%')
         Column({ space: 5 }) {
           Column().width('100%').height(30).backgroundColor(0xAFEEEE)
           Column().width('100%').height(30).backgroundColor(0x00FFFF)
         }.width('90%').height(100).border({ width: 1 })
-        // 通过资源引用方式设置子元素垂直方向间距
+
         Text('Resource space').width('90%')
         Column({ space: $r('app.string.stringSpace') }) {
           Column().width('100%').height(30).backgroundColor(0xAFEEEE)
           Column().width('100%').height(30).backgroundColor(0x00FFFF)
         }.width('90%').height(100).border({ width: 1 })
-        // 设置子元素水平方向对齐方式
+
         Text('alignItems(Start)').width('90%')
         Column() {
           Column().width('50%').height(30).backgroundColor(0xAFEEEE)
           Column().width('50%').height(30).backgroundColor(0x00FFFF)
         }.alignItems(HorizontalAlign.Start).width('90%').border({ width: 1 })
+
         Text('alignItems(End)').width('90%')
         Column() {
           Column().width('50%').height(30).backgroundColor(0xAFEEEE)
           Column().width('50%').height(30).backgroundColor(0x00FFFF)
         }.alignItems(HorizontalAlign.End).width('90%').border({ width: 1 })
+
         Text('alignItems(Center)').width('90%')
         Column() {
           Column().width('50%').height(30).backgroundColor(0xAFEEEE)
           Column().width('50%').height(30).backgroundColor(0x00FFFF)
         }.alignItems(HorizontalAlign.Center).width('90%').border({ width: 1 })
-        // 设置子元素垂直方向的对齐方式
+
         Text('justifyContent(Center)').width('90%')
         Column() {
           Column().width('90%').height(30).backgroundColor(0xAFEEEE)
           Column().width('90%').height(30).backgroundColor(0x00FFFF)
         }.height(100).border({ width: 1 }).justifyContent(FlexAlign.Center)
+
         Text('justifyContent(End)').width('90%')
         Column() {
           Column().width('90%').height(30).backgroundColor(0xAFEEEE)
@@ -243,7 +244,7 @@ struct ColumnExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/2EfOdDAGTNWGEyeHA6eDsA/zh-cn_image_0000002572680769.png?HW-CC-KV=V1&HW-CC-Date=20260419T025911Z&HW-CC-Expire=86400&HW-CC-Sign=E440127FEE6B770B7972AFD1291EA5A14DCEE197676F5431C80913386F73DF94)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/2EfOdDAGTNWGEyeHA6eDsA/zh-cn_image_0000002572680769.png?HW-CC-KV=V1&HW-CC-Date=20260420T025846Z&HW-CC-Expire=86400&HW-CC-Sign=1AC58207F6490157E23917BC665CF68480BC2E1DC12FE7AB0925C7C7FABA8ED4)
 
 ### 示例2（设置反转属性）
 
@@ -259,6 +260,7 @@ struct ColumnReverseSample {
         .width(50)
         .height(100)
         .backgroundColor(0xAFEEEE)
+
       Text("2")
         .width(50)
         .height(100)
@@ -272,4 +274,4 @@ struct ColumnReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/rt72zq60RhSibBg1pD8mdQ/zh-cn_image_0000002541960862.png?HW-CC-KV=V1&HW-CC-Date=20260419T025911Z&HW-CC-Expire=86400&HW-CC-Sign=C702E5BA63A75BFC9205F9B256F0D1AF9EA384CCD19DA08E8420CEEFC9CE1F1F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/rt72zq60RhSibBg1pD8mdQ/zh-cn_image_0000002541960862.png?HW-CC-KV=V1&HW-CC-Date=20260420T025846Z&HW-CC-Expire=86400&HW-CC-Sign=13C573E2E25866814E1D4EE2BFEE263878A546B9730BA749BC2A74B46F640B27)

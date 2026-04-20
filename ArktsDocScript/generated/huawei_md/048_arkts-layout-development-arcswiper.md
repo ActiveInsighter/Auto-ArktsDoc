@@ -21,14 +21,14 @@ ArcSwiper提供了默认的弧形导航点样式，导航点默认显示在ArcSw
 
 通过indicator属性，开发者可以设置弧形导航点的方向，同时也可以设置导航点和被选中导航点的颜色。
 
-- 导航点使用默认样式 ```typescript ArcSwiper() {  Text('0')  .width(233)  .height(233)  .backgroundColor(Color.Gray)  .textAlign(TextAlign.Center)  .fontSize(30)  Text('1')  .width(233)  .height(233)  .backgroundColor(Color.Green)  .textAlign(TextAlign.Center)  .fontSize(30)  Text('2')  .width(233)  .height(233)  .backgroundColor(Color.Pink)  .textAlign(TextAlign.Center)  .fontSize(30) } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/9rYOxmsoQmGFJhWv7CxJRw/zh-cn_image_0000002572679867.png?HW-CC-KV=V1&HW-CC-Date=20260419T025749Z&HW-CC-Expire=86400&HW-CC-Sign=CA6386A8B876802A14B23E46B9CCC44FD5B11C6FBB5EFABC62CAFCBCF59C813A)
-- 自定义导航点样式 导航点位于ArcSwiper组件6点钟方向，导航点颜色设为红色，被选中导航点颜色为蓝色。 ```typescript ArcSwiper() { } .indicator(  new ArcDotIndicator()  .arcDirection(ArcDirection.SIX_CLOCK_DIRECTION)  .itemColor(Color.Red)  .selectedItemColor(Color.Blue) ) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/sSBHaAtnRbOUDh0VXzqm8g/zh-cn_image_0000002541959960.png?HW-CC-KV=V1&HW-CC-Date=20260419T025749Z&HW-CC-Expire=86400&HW-CC-Sign=581CF816476BB59EB1F9862AF9B245B58AB43D1E88F94F81447E354A6A77DCC8)
+- 导航点使用默认样式 ```typescript ArcSwiper() {  Text('0')  .width(233)  .height(233)  .backgroundColor(Color.Gray)  .textAlign(TextAlign.Center)  .fontSize(30)  Text('1')  .width(233)  .height(233)  .backgroundColor(Color.Green)  .textAlign(TextAlign.Center)  .fontSize(30)  Text('2')  .width(233)  .height(233)  .backgroundColor(Color.Pink)  .textAlign(TextAlign.Center)  .fontSize(30) } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/9rYOxmsoQmGFJhWv7CxJRw/zh-cn_image_0000002572679867.png?HW-CC-KV=V1&HW-CC-Date=20260420T025832Z&HW-CC-Expire=86400&HW-CC-Sign=753A8F93B1AC966EBE4AFBD4BABE3DDB8614FE6D92C905B3537ECEDC21DD165B)
+- 自定义导航点样式 导航点位于ArcSwiper组件6点钟方向，导航点颜色设为红色，被选中导航点颜色为蓝色。 ```typescript ArcSwiper() { } .indicator(  new ArcDotIndicator()  .arcDirection(ArcDirection.SIX_CLOCK_DIRECTION)  .itemColor(Color.Red)  .selectedItemColor(Color.Blue) ) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/sSBHaAtnRbOUDh0VXzqm8g/zh-cn_image_0000002541959960.png?HW-CC-KV=V1&HW-CC-Date=20260420T025832Z&HW-CC-Expire=86400&HW-CC-Sign=48F85AF9B4E4F7FEEAECE4BE8254049E846631107627CD8CBEA98F93A2AECE7A)
 
 ## 控制页面切换方式
 
 ArcSwiper支持滑动手指、点击导航点、旋转表冠和控制控制器四种方式切换页面。以下示例展示通过控制控制器和旋转表冠翻页的方法。
 
-- 控制控制器翻页。 ```typescript import {  ArcButton,  ArcButtonOptions,  ArcButtonStatus,  ArcButtonStyleMode,  ArcButtonPosition,  ArcSwiper,  ArcSwiperAttribute,  ArcSwiperController, } from '@kit.ArkUI'; @Component export struct ArcSwiperToggle {  private wearableSwiperController: ArcSwiperController = new ArcSwiperController();  build() {  Column({ space: 12 }) {  Stack() {  ArcSwiper(  this.wearableSwiperController  ) {  }  .vertical(true)  .indicator(false)  Column() {  ArcButton({  options: new ArcButtonOptions({  label: 'previous',  position: ArcButtonPosition.TOP_EDGE,  styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,  onClick: () => {  this.wearableSwiperController.showPrevious();  }  })  })  Blank()  ArcButton({  options: new ArcButtonOptions({  label: 'next',  position: ArcButtonPosition.BOTTOM_EDGE,  styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,  onClick: () => {  this.wearableSwiperController.showNext();  }  })  })  }.width('100%').height('100%')  }  }  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/2uHqYFx0Sr6Yd3EhuOouVw/zh-cn_image_0000002572639905.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025749Z&HW-CC-Expire=86400&HW-CC-Sign=4D70CBECB329D0F601EA362571D86AA4494569C09B145245FAC06F814F89744D)
+- 控制控制器翻页。 ```typescript import {  ArcButton,  ArcButtonOptions,  ArcButtonStatus,  ArcButtonStyleMode,  ArcButtonPosition,  ArcSwiper,  ArcSwiperAttribute,  ArcSwiperController, } from '@kit.ArkUI'; @Component export struct ArcSwiperToggle {  private wearableSwiperController: ArcSwiperController = new ArcSwiperController();  build() {  Column({ space: 12 }) {  Stack() {  ArcSwiper(  this.wearableSwiperController  ) {  }  .vertical(true)  .indicator(false)  Column() {  ArcButton({  options: new ArcButtonOptions({  label: 'previous',  position: ArcButtonPosition.TOP_EDGE,  styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,  onClick: () => {  this.wearableSwiperController.showPrevious();  }  })  })  Blank()  ArcButton({  options: new ArcButtonOptions({  label: 'next',  position: ArcButtonPosition.BOTTOM_EDGE,  styleMode: ArcButtonStyleMode.EMPHASIZED_LIGHT,  onClick: () => {  this.wearableSwiperController.showNext();  }  })  })  }.width('100%').height('100%')  }  }  } } ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/2uHqYFx0Sr6Yd3EhuOouVw/zh-cn_image_0000002572639905.gif?HW-CC-KV=V1&HW-CC-Date=20260420T025832Z&HW-CC-Expire=86400&HW-CC-Sign=FC93A777AFC7FAAA1143A9C0AAFD571A9ECD788A881298775C6E6796748B4ED2)
 - 旋转表冠翻页。 ArcSwiper在获得焦点时能够响应旋转表冠的操作，用户可以通过旋转表冠来滑动ArcSwiper，从而浏览数据。 ```typescript ArcSwiper( ) { } .focusable(true) .focusOnTouch(true) .defaultFocus(true) ``` 还可以通过设置[digitalCrownSensitivity](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-arcswiper#digitalcrownsensitivity)属性来调整表冠对事件响应的灵敏度，以适应不同规模的数据处理。在处理大量数据时，可以提高响应事件的灵敏度；而在处理少量数据时，则可以降低灵敏度设置。 ```typescript ArcSwiper( ) { } .digitalCrownSensitivity(CrownSensitivity.MEDIUM) ```
 
 ## 设置轮播方向
@@ -37,8 +37,8 @@ ArcSwiper支持水平和垂直方向上进行轮播，主要通过[vertical](htt
 
 当vertical为true时，表示在垂直方向上进行轮播；为false时，表示在水平方向上进行轮播。vertical默认值为false。
 
-- 设置水平方向上轮播。 ```typescript ArcSwiper() { } .indicator(true) .vertical(false) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/MmXMrZjLRHuGuuQao2oRKw/zh-cn_image_0000002572679867.png?HW-CC-KV=V1&HW-CC-Date=20260419T025749Z&HW-CC-Expire=86400&HW-CC-Sign=B0CA0E2814DAA71A24A8AA09A3B14B923EC42E3FE878E3822AB2EC67879CD32C)
-- 设置垂直方向轮播，导航点设为3点钟方向。 ```typescript ArcSwiper() { } .indicator(new ArcDotIndicator()  .arcDirection(ArcDirection.THREE_CLOCK_DIRECTION)) .vertical(true) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/BtIzeSqxSAeE2PlirYb2Ew/zh-cn_image_0000002542119598.png?HW-CC-KV=V1&HW-CC-Date=20260419T025749Z&HW-CC-Expire=86400&HW-CC-Sign=01DC5105A2E6669377475EC8B9C88DE0925C265F56B89067F8A29E9B120557DD)
+- 设置水平方向上轮播。 ```typescript ArcSwiper() { } .indicator(true) .vertical(false) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/MmXMrZjLRHuGuuQao2oRKw/zh-cn_image_0000002572679867.png?HW-CC-KV=V1&HW-CC-Date=20260420T025832Z&HW-CC-Expire=86400&HW-CC-Sign=E2B3DA7F2213D7F16E5FA730B71C705F4BD75B245CAAC800FD706F60A0744845)
+- 设置垂直方向轮播，导航点设为3点钟方向。 ```typescript ArcSwiper() { } .indicator(new ArcDotIndicator()  .arcDirection(ArcDirection.THREE_CLOCK_DIRECTION)) .vertical(true) ``` ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/BtIzeSqxSAeE2PlirYb2Ew/zh-cn_image_0000002542119598.png?HW-CC-KV=V1&HW-CC-Date=20260420T025832Z&HW-CC-Expire=86400&HW-CC-Sign=157A4EF4D32BC5931D4F3578296DB0D923C1B1FE628726548E6F63B3F35CA15A)
 
 ## 自定义切换动画
 
@@ -104,7 +104,7 @@ export struct ArcSwiperAction {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LcB8e3ahQLmguFiu6Bgpdw/zh-cn_image_0000002572679869.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025749Z&HW-CC-Expire=86400&HW-CC-Sign=50B2114FCA85E752D98B4C158BB3018A9C1D8350B567C661F0A6B55341459911)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LcB8e3ahQLmguFiu6Bgpdw/zh-cn_image_0000002572679869.gif?HW-CC-KV=V1&HW-CC-Date=20260420T025832Z&HW-CC-Expire=86400&HW-CC-Sign=707BB1D4D9C49069939EEC6371ED37C9C503CCBEB70B64D907747938A48037D1)
 
 ## 实现侧滑返回
 
@@ -163,4 +163,4 @@ export struct ArcSwiperSideSlip {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/JQtqluyURFu9K6QwrEiIag/zh-cn_image_0000002541959962.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025749Z&HW-CC-Expire=86400&HW-CC-Sign=2F849EB0DB605FF06456DD954D5CE3B0CE1A6ED9388A58ABB956ABF54290241B)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/JQtqluyURFu9K6QwrEiIag/zh-cn_image_0000002541959962.gif?HW-CC-KV=V1&HW-CC-Date=20260420T025832Z&HW-CC-Expire=86400&HW-CC-Sign=15D41C324C4E4CD9CB0216DC810940A3E15FA78322DA5B34EE04A189B9DCACA8)

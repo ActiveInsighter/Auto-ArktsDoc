@@ -17,8 +17,8 @@ ArkUI的弹出框节点都是直接挂载在根节点上，会根据层级从小
 > **说明**
 > 详细变量定义请参考[完整示例](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-levelorder#完整示例)。
 
-1. 初始化一个弹出框内容区，内部包含一个Text组件。 ```typescript @Builder normalCustomDialog(index: number) {  Column() {  // 请在resources\base\element\string.json文件中配置name为'open_normal_dialog'，value为非空字符串的资源  Text(this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('open_normal_dialog') as string +  index).fontSize(30)  }.height(400).padding(5).justifyContent(FlexAlign.SpaceBetween) } ```
-2. 初始化另一个弹出框内容区，内部包含一个点击打开普通弹出框的按钮，点击事件中通过调用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中[getPromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getpromptaction)方法获取[PromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction)对象，再通过该对象调用[openCustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#opencustomdialog12-1)接口，并且设置层级为0的[levelOrder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#basedialogoptions11)参数来创建普通层级弹出框。 ```typescript @Builder topCustomDialog() {  Column() {  // 请将$r('app.string.top_dialog')替换为实际资源文件，在本示例中该资源文件的value值为"我是置顶弹窗"  Text($r('app.string.top_dialog')).fontSize(30)  Row({ space: 50 }) {  // 请将$r('app.string.open_dialog')替换为实际资源文件，在本示例中该资源文件的value值为"点我打开普通弹窗"  Button($r('app.string.open_dialog'))  .onClick(() => {  this.getUIContext().getPromptAction().openCustomDialog({  builder: () => {  this.normalCustomDialog(this.dialogIndex);  },  levelOrder: LevelOrder.clamp(0),  })  .catch((err: BusinessError) => {  hilog.error(DOMAIN, 'dialogBoxLayer', 'openCustomDialog error: ' + err.code + '' + err.message);  });  this.dialogIndex++;  })  }  }.height(200).padding(5).justifyContent(FlexAlign.SpaceBetween) } ```
+1. 初始化一个弹出框内容区，内部包含一个Text组件。 ```typescript @Builder normalCustomDialog(index: number) {  Column() {  Text(this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('open_normal_dialog') as string +  index).fontSize(30)  }.height(400).padding(5).justifyContent(FlexAlign.SpaceBetween) } ```
+2. 初始化另一个弹出框内容区，内部包含一个点击打开普通弹出框的按钮，点击事件中通过调用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中[getPromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getpromptaction)方法获取[PromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction)对象，再通过该对象调用[openCustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#opencustomdialog12-1)接口，并且设置层级为0的[levelOrder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#basedialogoptions11)参数来创建普通层级弹出框。 ```typescript @Builder topCustomDialog() {  Column() {  Text($r('app.string.top_dialog')).fontSize(30)  Row({ space: 50 }) {  Button($r('app.string.open_dialog'))  .onClick(() => {  this.getUIContext().getPromptAction().openCustomDialog({  builder: () => {  this.normalCustomDialog(this.dialogIndex);  },  levelOrder: LevelOrder.clamp(0),  })  .catch((err: BusinessError) => {  hilog.error(DOMAIN, 'dialogBoxLayer', 'openCustomDialog error: ' + err.code + '' + err.message);  });  this.dialogIndex++;  })  }  }.height(200).padding(5).justifyContent(FlexAlign.SpaceBetween) } ```
 3. 通过调用[UIContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext)中[getPromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#getpromptaction)方法获取[PromptAction](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction)对象，再通过该对象调用[openCustomDialog](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-promptaction#opencustomdialog12-1)接口，并且设置层级为100000的[levelOrder](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-promptaction#basedialogoptions11)参数来创建最高层级弹出框。 ```typescript this.getUIContext().getPromptAction().openCustomDialog({  builder: () => {  this.topCustomDialog();  },  levelOrder: LevelOrder.clamp(100000) }).catch((err: BusinessError) => {  hilog.error(DOMAIN, 'dialogBoxLayer', 'openCustomDialog error: ' + err.code + ' ' + err.message); }); ```
 
 ## 完整示例
@@ -27,27 +27,31 @@ ArkUI的弹出框节点都是直接挂载在根节点上，会根据层级从小
 import { LevelOrder } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+
 const INDEX: number = 0;
 const DOMAIN = 0x0000;
+
 @Entry
 @Component
 export struct DialogBoxLayer {
   @StorageLink('dialogIndex') dialogIndex: number = INDEX;
+
   @Builder
   normalCustomDialog(index: number) {
     Column() {
-      // 请在resources\base\element\string.json文件中配置name为'open_normal_dialog'，value为非空字符串的资源
+
       Text(this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('open_normal_dialog') as string +
         index).fontSize(30)
     }.height(400).padding(5).justifyContent(FlexAlign.SpaceBetween)
   }
+
   @Builder
   topCustomDialog() {
     Column() {
-      // 请将$r('app.string.top_dialog')替换为实际资源文件，在本示例中该资源文件的value值为"我是置顶弹窗"
+
       Text($r('app.string.top_dialog')).fontSize(30)
       Row({ space: 50 }) {
-        // 请将$r('app.string.open_dialog')替换为实际资源文件，在本示例中该资源文件的value值为"点我打开普通弹窗"
+
         Button($r('app.string.open_dialog'))
           .onClick(() => {
             this.getUIContext().getPromptAction().openCustomDialog({
@@ -64,11 +68,12 @@ export struct DialogBoxLayer {
       }
     }.height(200).padding(5).justifyContent(FlexAlign.SpaceBetween)
   }
+
   build() {
     NavDestination() {
       Row() {
         Column({ space: 5 }) {
-          // 请将$r('app.string.click_dialog')替换为实际资源文件，在本示例中该资源文件的value值为"点击弹窗"
+
           Button($r('app.string.click_dialog'))
             .fontSize(20)
             .onClick(() => {
@@ -88,4 +93,4 @@ export struct DialogBoxLayer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/1aPqiR6zSHSe2UU4LuRicQ/zh-cn_image_0000002542119634.gif?HW-CC-KV=V1&HW-CC-Date=20260419T025806Z&HW-CC-Expire=86400&HW-CC-Sign=019207C19EEA6400BFBCA05F71A2BDA25D51A493D3270EF981797E9D9FD5530D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/1aPqiR6zSHSe2UU4LuRicQ/zh-cn_image_0000002542119634.gif?HW-CC-KV=V1&HW-CC-Date=20260420T025848Z&HW-CC-Expire=86400&HW-CC-Sign=53098604F7EB68FBCF62004C481BAFDD2CB63CF5D0989BFD6EF5899663F6C32F)

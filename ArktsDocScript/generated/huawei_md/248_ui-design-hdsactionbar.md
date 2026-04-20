@@ -264,4 +264,4 @@ struct TestActionBar {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/-sSt_ixLRjOvGi4x3ocvLA/zh-cn_image_0000002532144121.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030133Z&HW-CC-Expire=86400&HW-CC-Sign=7458B219FD08A88B53D814A96685307CB3CABAB683E29F395FD922822283530E)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/-sSt_ixLRjOvGi4x3ocvLA/zh-cn_image_0000002532144121.gif?HW-CC-KV=V1&HW-CC-Date=20260420T030223Z&HW-CC-Expire=86400&HW-CC-Sign=C9C5583A67F0E62D73BF98D5DC4BEC79C13B698AD2F24624964D380DC1E8C384)

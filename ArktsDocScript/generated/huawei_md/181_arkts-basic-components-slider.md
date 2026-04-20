@@ -966,7 +966,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/PE8JGr1PTGSC60cHwtuSHQ/zh-cn_image_0000002572680899.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030010Z&HW-CC-Expire=86400&HW-CC-Sign=5D0CA855A958D683ED46DBCBD095715F26BB6CB2F3DE392F3D5C5D286BCC35B4)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/PE8JGr1PTGSC60cHwtuSHQ/zh-cn_image_0000002572680899.gif?HW-CC-KV=V1&HW-CC-Date=20260420T030059Z&HW-CC-Expire=86400&HW-CC-Sign=0824E6657DB598B52BC327A8531434FE572B0021BBB899315310CF780B9416FD)
 
 ### 示例2（设置滑动条样式）
 
@@ -1021,7 +1021,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/6XB7a5DLSE-jrHIc-nYzEw/zh-cn_image_0000002541960992.png?HW-CC-KV=V1&HW-CC-Date=20260419T030010Z&HW-CC-Expire=86400&HW-CC-Sign=D553AC0D5272057D7DD9221B88B78B451D9FD3BFDA26251392069900101740B0)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/6XB7a5DLSE-jrHIc-nYzEw/zh-cn_image_0000002541960992.png?HW-CC-KV=V1&HW-CC-Date=20260420T030059Z&HW-CC-Expire=86400&HW-CC-Sign=1F0FF5070ACF92AC0976DC436F2C81024FC069326D3A77336B466FB2E8D2A7A6)
 
 ### 示例3（自定义滑动条）
 
@@ -1137,7 +1137,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/qXNbxdhlTLqhtC-jfxTgjg/zh-cn_image_0000002572640937.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030010Z&HW-CC-Expire=86400&HW-CC-Sign=D25AE9A509297B429E9B1D1BB5F4B3BBE4E7CC067C705EFDE6735DD9328FCE1C)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/qXNbxdhlTLqhtC-jfxTgjg/zh-cn_image_0000002572640937.gif?HW-CC-KV=V1&HW-CC-Date=20260420T030059Z&HW-CC-Expire=86400&HW-CC-Sign=E27E77152E8B1411E3B2F1A0E3315491B8AFB068866157A9C1B94A38BCA6D017)
 
 ### 示例4（设置滑动条渐变色）
 
@@ -1219,7 +1219,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/-EcXftCUSbGzZon07tG2vw/zh-cn_image_0000002542120630.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030010Z&HW-CC-Expire=86400&HW-CC-Sign=593EDED7038C090C3E938A110C39766868B77A29B23DA4551C07D26D73D3B78F)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/-EcXftCUSbGzZon07tG2vw/zh-cn_image_0000002542120630.gif?HW-CC-KV=V1&HW-CC-Date=20260420T030059Z&HW-CC-Expire=86400&HW-CC-Sign=2CA8BCF6B203C771375F8CA8BE1B31DFDD7008B877EF5E1A756C25DF9D8E3FAF)
 
 ### 示例5（滑动条设置前后缀内容）
 
@@ -1435,7 +1435,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/KqPv0ajzT9elrq_CyHJ5cQ/zh-cn_image_0000002572680901.jpeg?HW-CC-KV=V1&HW-CC-Date=20260419T030010Z&HW-CC-Expire=86400&HW-CC-Sign=FD914B41E19408095B476CF8BD819BD72406D8BC9D079D6B8A1EDFA13E99ED7D)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/KqPv0ajzT9elrq_CyHJ5cQ/zh-cn_image_0000002572680901.jpeg?HW-CC-KV=V1&HW-CC-Date=20260420T030059Z&HW-CC-Expire=86400&HW-CC-Sign=687FFACEC03BDA7FC6A2EA309205642ECA17EB211C86367EA9B439035CC04048)
 
 ### 示例6（滑动条设置刻度点无障碍文本）
 
@@ -1503,7 +1503,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/2oC1sjoSRtmtYvig7hM6hA/zh-cn_image_0000002541960994.png?HW-CC-KV=V1&HW-CC-Date=20260419T030010Z&HW-CC-Expire=86400&HW-CC-Sign=2A3DE216DEBB5BC90DB4A688D5B1B76FA85F5C9EB2EAED19B17639751A601EEC)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/2oC1sjoSRtmtYvig7hM6hA/zh-cn_image_0000002541960994.png?HW-CC-KV=V1&HW-CC-Date=20260420T030059Z&HW-CC-Expire=86400&HW-CC-Sign=E622F23FCD148A41C0FD27346144F2FAF8F6886B942A0D9891AD8D4DF55C469C)
 
 ### 示例7（设置滑动条的双向绑定）
 
@@ -1535,7 +1535,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/_bxd4oFIRy-DMfUAy0d8eg/zh-cn_image_0000002572640939.gif?HW-CC-KV=V1&HW-CC-Date=20260419T030010Z&HW-CC-Expire=86400&HW-CC-Sign=783E79E7677B0C0A5735F6709BD9E71DE7E326CB16AE75D921546182CDB299F6)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/_bxd4oFIRy-DMfUAy0d8eg/zh-cn_image_0000002572640939.gif?HW-CC-KV=V1&HW-CC-Date=20260420T030059Z&HW-CC-Expire=86400&HW-CC-Sign=B17792212C87439EBD64FB719B26C198ADAD10D199CC1715CB0B37575EC4FBB6)
 
 ### 示例8（滑块设置渐变色）
 
@@ -1654,4 +1654,4 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/JhxVpHlCT4SgA0bShD71ng/zh-cn_image_0000002542120632.png?HW-CC-KV=V1&HW-CC-Date=20260419T030010Z&HW-CC-Expire=86400&HW-CC-Sign=A08449A43F15A5A1E7C79C07BB0575C9DCEEF41EFD16702609A1D23C1A12EA02)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/JhxVpHlCT4SgA0bShD71ng/zh-cn_image_0000002542120632.png?HW-CC-KV=V1&HW-CC-Date=20260420T030059Z&HW-CC-Expire=86400&HW-CC-Sign=659F887E089C396C0F20D5244547A917DACA6296CCBF27C169FD8FCFE3707AE4)
